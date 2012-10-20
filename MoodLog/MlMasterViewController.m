@@ -40,6 +40,10 @@
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -245,7 +249,7 @@
 
 - (void)configureCell:(MlCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
     NSDate *today = [object valueForKey:@"dateCreated"];
     NSCalendar *gregorian = [[NSCalendar alloc]
@@ -263,13 +267,25 @@
     dateFormatter.dateFormat = @"h:mm a";
     
     cell.timeLabel.text = [dateFormatter stringFromDate: today];
+    
+    // Fetch the Mood list for this journal entry
+    NSSet *emotionsforEntry = object.relationshipEmotions; // Get all the emotions for this record
+    NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
+    NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+    NSString *selectedEms = [[NSString alloc] init];
+    for (id emotion in emotionArray) {
+        selectedEms = [selectedEms stringByAppendingFormat:@"%@ ", ((Emotions *)emotion).name];
+    }
+
     NSString *entry = [object valueForKey:@"journalEntry"];
+    NSString *displayString = [[NSString alloc] init];
     if (entry) {
-        cell.mainLabel.text = [NSString stringWithFormat:@"%@", [object valueForKey:@"journalEntry"]];
+        displayString = [NSString stringWithFormat:@"%@", [object valueForKey:@"journalEntry"]];
     }
-    else {
-        cell.mainLabel.text = [NSString stringWithFormat:@"Today I feel...%@", @"happy"];
+    if (selectedEms) {
+        displayString = [displayString stringByAppendingFormat:@" Today I feel… %@", selectedEms];
     }
+    cell.mainLabel.text = displayString;
     
 }
 
