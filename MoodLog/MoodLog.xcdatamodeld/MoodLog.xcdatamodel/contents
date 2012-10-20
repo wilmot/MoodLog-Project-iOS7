@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Emotions" representedClassName="Emotions" syncable="YES">
+        <attribute name="emotionDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="face" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="feelValue" optional="YES" attributeType="Integer 16" minValueString="-10" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="hybrid" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parrotLevel" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="2" defaultValueString="2" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="logParent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MoodLogEvents" inverseName="relationshipEmotions" inverseEntity="MoodLogEvents" syncable="YES"/>
+    </entity>
+    <entity name="MoodLogEvents" representedClassName="MoodLogEvents">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date">
+            <userInfo/>
+        </attribute>
+        <attribute name="energy" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="health" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="journalEntry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="sleep" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weather" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="relationshipEmotions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Emotions" inverseName="logParent" inverseEntity="Emotions" syncable="YES"/>
+        <relationship name="relationshipStressors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stressors" inverseName="logParent2" inverseEntity="Stressors" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="Stressors" representedClassName="Stressors" syncable="YES">
+        <attribute name="defaultValue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="strength" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="10" defaultValueString="5" syncable="YES"/>
+        <attribute name="stressorDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="logParent2" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MoodLogEvents" inverseName="relationshipStressors" inverseEntity="MoodLogEvents" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Emotions" positionX="-830" positionY="-603" width="128" height="178"/>
+        <element name="MoodLogEvents" positionX="-1044" positionY="-612" width="128" height="223"/>
+        <element name="Stressors" positionX="-684" positionY="-459" width="128" height="118"/>
     </elements>
 </model>

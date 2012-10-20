@@ -7,8 +7,12 @@
 //
 
 #import "MlMasterViewController.h"
-
 #import "MlDetailViewController.h"
+#import "MlCell.h"
+#import "MlMoodDataItem.h"
+#import "MlAppDelegate.h"
+#import "MoodLogEvents.h"
+#import "Emotions.h"
 
 @interface MlMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -46,11 +50,18 @@
 {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    MoodLogEvents *newMood = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
     // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    newMood.dateCreated = [NSDate date];
+        
+    for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList) {
+        Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions"inManagedObjectContext:context];
+        emotion.name = mood.mood;
+        emotion.selected = [NSNumber numberWithBool:mood.selected];
+        emotion.logParent = newMood;
+    }
+
     
     // Save the context.
     NSError *error = nil;
@@ -60,6 +71,12 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    
+    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:0] - 1) inSection:0];
+    [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    [self.tableView selectRowAtIndexPath:scrollIndexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
+    [self tableView:self.tableView didSelectRowAtIndexPath:scrollIndexPath];
+    [self performSegueWithIdentifier:@"showDetail" sender:self]; // Go to the detail view
 }
 
 #pragma mark - Table View
@@ -77,7 +94,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MlCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -137,14 +154,14 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"MoodLogEvents" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -194,7 +211,7 @@
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
+           break;
             
         case NSFetchedResultsChangeDelete:
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -226,10 +243,34 @@
 }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(MlCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+
+    NSDate *today = [object valueForKey:@"dateCreated"];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *weekdayComponents =
+    [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
+    NSInteger day = [weekdayComponents day];
+    NSInteger weekday = [weekdayComponents weekday];
+    NSArray *dayNames = @[@"Sunday",@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday"];
+    
+    cell.dateLabel.text = [NSString stringWithFormat:@"%d", day];
+    cell.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"h:mm a";
+    
+    cell.timeLabel.text = [dateFormatter stringFromDate: today];
+    NSString *entry = [object valueForKey:@"journalEntry"];
+    if (entry) {
+        cell.mainLabel.text = [NSString stringWithFormat:@"%@", [object valueForKey:@"journalEntry"]];
+    }
+    else {
+        cell.mainLabel.text = [NSString stringWithFormat:@"Today I feel...%@", @"happy"];
+    }
+    
 }
 
 @end

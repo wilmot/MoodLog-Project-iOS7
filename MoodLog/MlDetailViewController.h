@@ -8,9 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MlDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface MlDetailViewController : UIViewController <UISplitViewControllerDelegate, UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *weekdayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITextView *entryLogTextView;
+@property (weak, nonatomic) IBOutlet UINavigationItem *detailToolBar;
+@property (weak, nonatomic) IBOutlet UISlider *sleepSlider;
+@property (weak, nonatomic) IBOutlet UISlider *energySlider;
+@property (weak, nonatomic) IBOutlet UISlider *healthSlider;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+
+- (IBAction)pressedDoneButton:(id)sender;
+- (IBAction)moveSleepSlider:(id)sender;
+- (IBAction)moveEnergySlider:(id)sender;
+- (IBAction)moveHealthSlider:(id)sender;
 
 @property (strong, nonatomic) id detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

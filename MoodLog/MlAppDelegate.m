@@ -9,6 +9,7 @@
 #import "MlAppDelegate.h"
 
 #import "MlMasterViewController.h"
+#import "MlMoodDataItem.h"
 
 @implementation MlAppDelegate
 
@@ -32,6 +33,17 @@
         MlMasterViewController *controller = (MlMasterViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     }
+    
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];
+    self.moodList = [NSArray arrayWithContentsOfFile:plistPath];
+    self.moodDataList = [[NSArray alloc] init];
+    for (id mood in self.moodList) {
+        MlMoodDataItem  *aMoodDataItem = [[MlMoodDataItem alloc] init];
+        aMoodDataItem.mood = mood;
+        aMoodDataItem.selected = FALSE;
+        self.moodDataList = [self.moodDataList arrayByAddingObject:aMoodDataItem];
+    }
+    
     return YES;
 }
 							
@@ -119,7 +131,7 @@
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:@{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES} error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
