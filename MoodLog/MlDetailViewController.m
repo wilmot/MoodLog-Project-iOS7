@@ -8,6 +8,7 @@
 
 #import "MlDetailViewController.h"
 #import "MlMoodCollectionViewController.h"
+#import "MlDatePickerViewController.h"
 
 @interface MlDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -16,7 +17,8 @@
 
 @implementation MlDetailViewController
 
-MlMoodCollectionViewController *myMoodCollectionViewController;
+static MlMoodCollectionViewController *myMoodCollectionViewController;
+static MlDatePickerViewController *myDatePickerViewController;
 
 #pragma mark - Managing the detail item
 
@@ -40,11 +42,15 @@ MlMoodCollectionViewController *myMoodCollectionViewController;
     [self configureView];
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    [self configureView];
+}
+
 - (void)configureView
 {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        NSDate *today = [self.detailItem valueForKey:@"dateCreated"];
+        NSDate *today = [self.detailItem valueForKey:@"date"];
         
         NSCalendar *gregorian = [[NSCalendar alloc]
                                  initWithCalendarIdentifier:NSGregorianCalendar];
@@ -61,6 +67,10 @@ MlMoodCollectionViewController *myMoodCollectionViewController;
         dateFormatter.dateFormat = @"h:mm a";
         
         self.detailDescriptionLabel.text = [dateFormatter stringFromDate: today];
+        
+        dateFormatter.dateFormat = @"MMMM";
+        self.monthLabel.text = [dateFormatter stringFromDate: today];
+        
         self.entryLogTextView.text = [self.detailItem valueForKey:@"journalEntry"];
         
         // Set the sliders
@@ -128,7 +138,15 @@ MlMoodCollectionViewController *myMoodCollectionViewController;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
+    if ([segue.identifier isEqualToString:@"MoodCollectionSegue"]) {
+        myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
+    }
+    if ([segue.identifier isEqualToString:@"DatePicker"]) {
+        // do stuff around the date & time
+        myDatePickerViewController = [segue destinationViewController];
+        myDatePickerViewController.detailItem = self.detailItem;
+        myDatePickerViewController.dateToSet = [self.detailItem valueForKey:@"date"];
+    }
 }
 
 - (IBAction)sortABC:(id)sender {
@@ -159,6 +177,7 @@ MlMoodCollectionViewController *myMoodCollectionViewController;
 
 - (void)viewDidUnload {
     [self setMoodContainer:nil];
+    [self setMonthLabel:nil];
     [super viewDidUnload];
 }
 @end

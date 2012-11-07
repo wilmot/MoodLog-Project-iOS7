@@ -62,7 +62,7 @@
     
     // ((year * 1000) + month) -- store the header in a language-agnostic way
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMood.dateCreated];
+    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMood.date];
     newMood.header = [NSString stringWithFormat:@"%d", ([components year] * 1000) + [components month]];
     newMood.sortStyle = @"Alphabetical"; // Default sort style
     
@@ -293,7 +293,7 @@
 {
     MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
-    NSDate *today = [object valueForKey:@"dateCreated"];
+    NSDate *today = [object valueForKey:@"date"];
     NSCalendar *gregorian = [[NSCalendar alloc]
                              initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *weekdayComponents =
