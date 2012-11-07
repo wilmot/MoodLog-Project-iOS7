@@ -82,6 +82,12 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self.entryLogTextView setDelegate:self];
     // Hide the Done/Edit button
     [self.detailToolBar setRightBarButtonItem:nil animated:YES];
+    [self.sleepSlider setMinimumTrackTintColor:[UIColor greenColor]];
+    [self.sleepSlider setMaximumTrackTintColor:[UIColor redColor]];
+    [self.energySlider setMinimumTrackTintColor:[UIColor greenColor]];
+    [self.energySlider setMaximumTrackTintColor:[UIColor redColor]];
+    [self.healthSlider setMinimumTrackTintColor:[UIColor greenColor]];
+    [self.healthSlider setMaximumTrackTintColor:[UIColor redColor]];
 }
 
 - (void)didReceiveMemoryWarning
