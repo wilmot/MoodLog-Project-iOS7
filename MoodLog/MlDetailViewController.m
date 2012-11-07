@@ -155,11 +155,18 @@ static MlDatePickerViewController *myDatePickerViewController;
     [myMoodCollectionViewController refresh];
 }
 
+- (IBAction)sortCBA:(id)sender {
+    [self.detailItem setValue:@"Reverse Alphabetical" forKey:@"sortStyle"];
+    [self saveContext];
+    [myMoodCollectionViewController refresh];
+}
+
 - (IBAction)sortShuffle:(id)sender {
     [self.detailItem setValue:@"Shuffle" forKey:@"sortStyle"];
     [self saveContext];
     [myMoodCollectionViewController refresh];
 }
+
 
 #pragma mark - Entry Log UITextView delegate methods
 - (void)textViewDidBeginEditing:(UITextView *)textView {

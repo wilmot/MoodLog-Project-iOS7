@@ -23,5 +23,6 @@
 @property (nonatomic, retain) NSManagedObject *logParent;
 
 - (NSComparisonResult)compare:(Emotions *)otherObject;
+- (NSComparisonResult)reverseCompare:(Emotions *)otherObject;
 
 @end

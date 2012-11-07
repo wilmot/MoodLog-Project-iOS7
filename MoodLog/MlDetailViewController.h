@@ -28,6 +28,7 @@
 - (IBAction)moveEnergySlider:(id)sender;
 - (IBAction)moveHealthSlider:(id)sender;
 - (IBAction)sortABC:(id)sender;
+- (IBAction)sortCBA:(id)sender;
 - (IBAction)sortShuffle:(id)sender;
 
 @property (strong, nonatomic) id detailItem;

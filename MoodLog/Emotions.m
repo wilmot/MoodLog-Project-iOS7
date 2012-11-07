@@ -25,4 +25,8 @@
     return [self.name compare:otherObject.name];
 }
 
+- (NSComparisonResult)reverseCompare:(Emotions *)otherObject {
+    return [otherObject.name compare:self.name];
+}
+
 @end

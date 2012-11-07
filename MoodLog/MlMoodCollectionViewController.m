@@ -80,6 +80,9 @@ NSArray *emotionArray;
     if ( myLogEntry.sortStyle == @"Alphabetical") {
         emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(compare:)];
     }
+    else if ( myLogEntry.sortStyle == @"Reverse Alphabetical") {
+        emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(reverseCompare:)];
+    }
     else { // Shuffle
         NSMutableArray *emotionMutableArray = [NSMutableArray arrayWithArray:[emotionsforEntry allObjects]]; // whatever order they happen to be in
         [emotionMutableArray shuffle];
