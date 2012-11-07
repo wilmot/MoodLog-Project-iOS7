@@ -58,16 +58,24 @@
     
     // If appropriate, configure the new managed object.
     newMood.dateCreated = [NSDate date];
-        
+    newMood.date = newMood.dateCreated;
+    
+    // ((year * 1000) + month) -- store the header in a language-agnostic way
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMood.dateCreated];
+    newMood.header = [NSString stringWithFormat:@"%d", ([components year] * 1000) + [components month]];
+    newMood.sortStyle = @"Alphabetical"; // Default sort style
+    
+    // Every record has a full set of moods; only some are selected or arranged
     for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList) {
-        Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions"inManagedObjectContext:context];
+        Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:context];
         emotion.name = mood.mood;
         emotion.selected = [NSNumber numberWithBool:mood.selected];
         emotion.logParent = newMood;
     }
 
     
-    // Save the context.
+    // Save the context
     NSError *error = nil;
     if (![context save:&error]) {
          // Replace this implementation with code to handle the error appropriately.
@@ -76,11 +84,12 @@
         abort();
     }
     
-    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:0] - 1) inSection:0];
+    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
+    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
     [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     [self.tableView selectRowAtIndexPath:scrollIndexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
     [self tableView:self.tableView didSelectRowAtIndexPath:scrollIndexPath];
-    [self performSegueWithIdentifier:@"showDetail" sender:self]; // Go to the detail view
+    [self performSegueWithIdentifier:@"showDetail" sender:sender]; // Go to the detail view
 }
 
 #pragma mark - Table View
@@ -95,6 +104,13 @@
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [sectionInfo numberOfObjects];
 }
+
+// Setting the cell height in the Storyboard doesn't set it in the running app, so I override heightForRowAtIndexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    return cell.bounds.size.height;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -139,6 +155,32 @@
     }
 }
 
+-(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Header"];
+    UILabel *label = (UILabel *)[cell viewWithTag:100];
+    NSString *header = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    
+    static NSArray *monthSymbols = nil;
+    
+    if (!monthSymbols) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setCalendar:[NSCalendar currentCalendar]];
+        monthSymbols = [formatter monthSymbols];
+    }
+    
+    NSInteger numericSection = [header integerValue];
+    
+	NSInteger year = numericSection / 1000;
+	NSInteger month = numericSection - (year * 1000);
+	
+	NSString *headerTitle = [NSString stringWithFormat:@"%@ %d", [monthSymbols objectAtIndex:month-1], year];
+
+    
+    [label setText:headerTitle];
+    return (UIView *)cell;
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
@@ -165,14 +207,14 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"header" cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -273,17 +315,32 @@
     NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
     NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
     NSString *selectedEms = [[NSString alloc] init];
-    for (id emotion in emotionArray) {
-        selectedEms = [selectedEms stringByAppendingFormat:@"%@ ", ((Emotions *)emotion).name];
+    NSString *lastEm = [[NSString alloc] init];
+    if ([emotionArray count] > 0) {
+        NSMutableArray *mutableEmotionArray = [NSMutableArray arrayWithArray:emotionArray];
+        // Treat the first one as special (no comma before)
+        selectedEms = [((Emotions *)[mutableEmotionArray objectAtIndex:0]).name lowercaseString];
+        // Treat the last emotion as special (preface with 'and' and end with '.')
+        [mutableEmotionArray removeObjectAtIndex:0];
+        if ([mutableEmotionArray count] > 0) {
+            lastEm = [NSString stringWithFormat:@" and %@.", [((Emotions *)[mutableEmotionArray objectAtIndex:[mutableEmotionArray count] - 1]).name lowercaseString]];
+            [mutableEmotionArray removeObjectAtIndex:[mutableEmotionArray count] - 1];
+        }
+        else {
+            lastEm = @".";
+        }
+        for (id emotion in mutableEmotionArray) {
+            selectedEms = [selectedEms stringByAppendingFormat:@", %@", [((Emotions *)emotion).name lowercaseString]];
+        }
+        
     }
-
     NSString *entry = [object valueForKey:@"journalEntry"];
-    NSString *displayString = [[NSString alloc] init];
-    if (entry) {
-        displayString = [NSString stringWithFormat:@"%@", [object valueForKey:@"journalEntry"]];
+    NSString *displayString = [[NSString alloc] init];    
+    if ([entry length] > 0) {
+        displayString = [NSString stringWithFormat:@"%@\n", [object valueForKey:@"journalEntry"]];
     }
-    if (selectedEms) {
-        displayString = [displayString stringByAppendingFormat:@" Today I feel… %@", selectedEms];
+    if (emotionArray) {
+        displayString = [displayString stringByAppendingFormat:@"I feel %@%@", selectedEms, lastEm];
     }
     cell.mainLabel.text = displayString;
     

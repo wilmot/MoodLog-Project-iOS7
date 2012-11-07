@@ -13,6 +13,30 @@
 #import "Emotions.h"
 #import "MoodLogEvents.h"
 
+// From http://stackoverflow.com/questions/56648/whats-the-best-way-to-shuffle-an-nsmutablearray
+// This category enhances NSMutableArray by providing
+// methods to randomly shuffle the elements.
+@interface NSMutableArray (Shuffling)
+- (void)shuffle;
+@end
+
+//  NSMutableArray_Shuffling.m
+
+@implementation NSMutableArray (Shuffling)
+
+- (void)shuffle
+{
+    NSUInteger count = [self count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        NSInteger nElements = count - i;
+        NSInteger n = (arc4random() % nElements) + i;
+        [self exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+}
+
+@end
+
 @interface MlMoodCollectionViewController ()
 
 @end
@@ -44,9 +68,7 @@ NSArray *emotionArray;
     selectedColor = [UIColor colorWithRed:162.0f/255.0f
                                     green:235.0f/255.0f
                                      blue:180.0f/255.0f
-                                    alpha:1.0f];
-    
-    
+                                    alpha:1.0f];    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -54,7 +76,20 @@ NSArray *emotionArray;
     // Fetch the Mood list for this journal entry
     MoodLogEvents *myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;    
     NSSet *emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record
-    emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(compare:)];
+
+    if ( myLogEntry.sortStyle == @"Alphabetical") {
+        emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(compare:)];
+    }
+    else { // Shuffle
+        NSMutableArray *emotionMutableArray = [NSMutableArray arrayWithArray:[emotionsforEntry allObjects]]; // whatever order they happen to be in
+        [emotionMutableArray shuffle];
+        emotionArray = [NSArray arrayWithArray:emotionMutableArray];
+    }
+}
+
+- (void) refresh {
+    [self viewWillAppear:YES]; // re-sort the set
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +106,8 @@ NSArray *emotionArray;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [((MlDetailViewController *)([self parentViewController])).entryLogTextView resignFirstResponder];
     // Emotions *aMood = [self.fetchedResultsController objectAtIndexPath:indexPath];
     Emotions *aMood = [emotionArray objectAtIndex:indexPath.row];
     if ([aMood.selected floatValue]) { // if it's already selected

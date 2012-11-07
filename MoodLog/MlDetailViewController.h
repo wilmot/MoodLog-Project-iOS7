@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *sleepSlider;
 @property (weak, nonatomic) IBOutlet UISlider *energySlider;
 @property (weak, nonatomic) IBOutlet UISlider *healthSlider;
+@property (weak, nonatomic) IBOutlet UIView *moodContainer;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
@@ -25,6 +26,8 @@
 - (IBAction)moveSleepSlider:(id)sender;
 - (IBAction)moveEnergySlider:(id)sender;
 - (IBAction)moveHealthSlider:(id)sender;
+- (IBAction)sortABC:(id)sender;
+- (IBAction)sortShuffle:(id)sender;
 
 @property (strong, nonatomic) id detailItem;
 

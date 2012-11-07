@@ -7,6 +7,7 @@
 //
 
 #import "MlDetailViewController.h"
+#import "MlMoodCollectionViewController.h"
 
 @interface MlDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -14,6 +15,8 @@
 @end
 
 @implementation MlDetailViewController
+
+MlMoodCollectionViewController *myMoodCollectionViewController;
 
 #pragma mark - Managing the detail item
 
@@ -100,18 +103,20 @@
 
 - (IBAction)moveSleepSlider:(id)sender {
     [self.detailItem setValue:[NSNumber numberWithFloat:[(UISlider *)sender value]] forKey:@"sleep"];
-    // Save the context.
-    NSError *error = nil;
-    if (![[self.detailItem managedObjectContext] save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+    [self saveContext];
 }
 
 - (IBAction)moveEnergySlider:(id)sender {
     [self.detailItem setValue:[NSNumber numberWithFloat:[(UISlider *)sender value]] forKey:@"energy"];
+    [self saveContext];
+}
+
+- (IBAction)moveHealthSlider:(id)sender {
+    [self.detailItem setValue:[NSNumber numberWithFloat:[(UISlider *)sender value]] forKey:@"health"];
+    [self saveContext];
+}
+
+- (void) saveContext { // Save data to the database
     // Save the context.
     NSError *error = nil;
     if (![[self.detailItem managedObjectContext] save:&error]) {
@@ -122,16 +127,20 @@
     }
 }
 
-- (IBAction)moveHealthSlider:(id)sender {
-    [self.detailItem setValue:[NSNumber numberWithFloat:[(UISlider *)sender value]] forKey:@"health"];
-    // Save the context.
-    NSError *error = nil;
-    if (![[self.detailItem managedObjectContext] save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
+}
+
+- (IBAction)sortABC:(id)sender {
+    [self.detailItem setValue:@"Alphabetical" forKey:@"sortStyle"];
+    [self saveContext];
+    [myMoodCollectionViewController refresh];
+}
+
+- (IBAction)sortShuffle:(id)sender {
+    [self.detailItem setValue:@"Shuffle" forKey:@"sortStyle"];
+    [self saveContext];
+    [myMoodCollectionViewController refresh];
 }
 
 #pragma mark - Entry Log UITextView delegate methods
@@ -145,14 +154,11 @@
  
     // Save the database record.
     [self.detailItem setValue:[self.entryLogTextView text] forKey:@"journalEntry"];
-    // Save the context.
-    NSError *error = nil;
-    if (![[self.detailItem managedObjectContext] save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+    [self saveContext];
 }
 
+- (void)viewDidUnload {
+    [self setMoodContainer:nil];
+    [super viewDidUnload];
+}
 @end
