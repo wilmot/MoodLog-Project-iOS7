@@ -68,7 +68,7 @@ static MlDatePickerViewController *myDatePickerViewController;
         
         self.detailDescriptionLabel.text = [dateFormatter stringFromDate: today];
         
-        dateFormatter.dateFormat = @"MMMM";
+        dateFormatter.dateFormat = @"MMM YYYY";
         self.monthLabel.text = [dateFormatter stringFromDate: today];
         
         self.entryLogTextView.text = [self.detailItem valueForKey:@"journalEntry"];
