@@ -68,7 +68,9 @@ NSArray *emotionArray;
     selectedColor = [UIColor colorWithRed:162.0f/255.0f
                                     green:235.0f/255.0f
                                      blue:180.0f/255.0f
-                                    alpha:1.0f];    
+                                    alpha:1.0f];
+//    MlFlowLayout *myLayout = [[MlFlowLayout alloc]init];
+//    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -130,7 +132,6 @@ NSArray *emotionArray;
 
 
     [collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
-
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;

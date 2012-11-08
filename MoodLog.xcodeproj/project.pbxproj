@@ -48,6 +48,9 @@
 		4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */; };
 		4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */; };
 		4C97310E16308E5F00E1D0B9 /* BlackLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C97310D16308E5F00E1D0B9 /* BlackLine.png */; };
+		4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */; };
+		4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F0164B8C870055CC3D /* MlMailViewController.m */; };
+		4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +119,12 @@
 		4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCollectionViewCell.h; sourceTree = "<group>"; };
 		4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCollectionViewCell.m; sourceTree = "<group>"; };
 		4C97310D16308E5F00E1D0B9 /* BlackLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackLine.png; sourceTree = "<group>"; };
+		4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartViewController.h; sourceTree = "<group>"; };
+		4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartViewController.m; sourceTree = "<group>"; };
+		4CFB21EF164B8C870055CC3D /* MlMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMailViewController.h; sourceTree = "<group>"; };
+		4CFB21F0164B8C870055CC3D /* MlMailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMailViewController.m; sourceTree = "<group>"; };
+		4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCalendarViewController.h; sourceTree = "<group>"; };
+		4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCalendarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +215,12 @@
 				4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */,
 				4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */,
 				4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */,
+				4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */,
+				4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */,
+				4CFB21EF164B8C870055CC3D /* MlMailViewController.h */,
+				4CFB21F0164B8C870055CC3D /* MlMailViewController.m */,
+				4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */,
+				4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */,
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
 				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
 				4C55CC06162DE67500EAA878 /* MoodLog.xcdatamodeld */,
@@ -399,6 +414,9 @@
 				4C589C67163200F100428C52 /* Stressors.m in Sources */,
 				4C0C76641649DC3000DD372F /* MoodLogEvents.m in Sources */,
 				4C0C766C1649F95100DD372F /* MlDatePickerViewController.m in Sources */,
+				4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */,
+				4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */,
+				4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
