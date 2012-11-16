@@ -7,7 +7,6 @@
 //
 
 #import "MlDetailViewController.h"
-#import "MlMoodCollectionViewController.h"
 #import "MlDatePickerViewController.h"
 
 @interface MlDetailViewController ()
@@ -17,7 +16,6 @@
 
 @implementation MlDetailViewController
 
-static MlMoodCollectionViewController *myMoodCollectionViewController;
 static MlDatePickerViewController *myDatePickerViewController;
 
 #pragma mark - Managing the detail item
@@ -145,7 +143,7 @@ static MlDatePickerViewController *myDatePickerViewController;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"MoodCollectionSegue"]) {
-        myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
+        self.myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
     }
     if ([segue.identifier isEqualToString:@"DatePicker"]) {
         // do stuff around the date & time
@@ -158,19 +156,19 @@ static MlDatePickerViewController *myDatePickerViewController;
 - (IBAction)sortABC:(id)sender {
     [self.detailItem setValue:@"Alphabetical" forKey:@"sortStyle"];
     [self saveContext];
-    [myMoodCollectionViewController refresh];
+    [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortCBA:(id)sender {
     [self.detailItem setValue:@"Reverse Alphabetical" forKey:@"sortStyle"];
     [self saveContext];
-    [myMoodCollectionViewController refresh];
+    [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortShuffle:(id)sender {
     [self.detailItem setValue:@"Shuffle" forKey:@"sortStyle"];
     [self saveContext];
-    [myMoodCollectionViewController refresh];
+    [self.myMoodCollectionViewController refresh];
 }
 
 

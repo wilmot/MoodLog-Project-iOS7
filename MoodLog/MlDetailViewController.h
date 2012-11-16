@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MlMoodCollectionViewController.h"
 
 @interface MlDetailViewController : UIViewController <UISplitViewControllerDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *weekdayLabel;
@@ -20,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UISlider *energySlider;
 @property (weak, nonatomic) IBOutlet UISlider *healthSlider;
 @property (weak, nonatomic) IBOutlet UIView *moodContainer;
+
+@property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
+
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 

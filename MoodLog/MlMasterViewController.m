@@ -44,9 +44,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     [self.tableView reloadData];
 
-    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
-    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
-    [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+//    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
+//    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
+//    [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,7 +94,7 @@
     [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     [self.tableView selectRowAtIndexPath:scrollIndexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
     [self tableView:self.tableView didSelectRowAtIndexPath:scrollIndexPath];
-    [self performSegueWithIdentifier:@"showDetail" sender:sender]; // Go to the detail view
+//    [self performSegueWithIdentifier:@"showDetail" sender:sender]; // Go to the detail view -- hmm, commengting this out didn't hurt anything.
 }
 
 #pragma mark - Table View
@@ -157,6 +157,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         self.detailViewController.detailItem = object;
+        [[self.detailViewController myMoodCollectionViewController] refresh];
     }
 }
 

@@ -21,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="64"/>
+            <point key="canvasLocation" x="-453" y="-188"/>
         </scene>
         <!--Ml Mail View Controller-->
         <scene sceneID="0Fh-D0-TzF">
@@ -49,20 +49,28 @@
                                     <action selector="doneButton:" destination="rBa-Dg-5ia" eventType="touchUpInside" id="6DJ-uC-Jw9"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="skeptical.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JLd-Gk-QG6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="Fgu-6c-5Mj"/>
+                                    <constraint firstAttribute="height" constant="154" id="fdv-gc-ZnZ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="41I-jK-uJx" firstAttribute="top" secondItem="Obd-sT-em8" secondAttribute="top" constant="100" id="4DX-re-bS3"/>
+                            <constraint firstItem="JLd-Gk-QG6" firstAttribute="centerX" secondItem="Obd-sT-em8" secondAttribute="centerX" type="default" id="4HW-Qo-wEa"/>
+                            <constraint firstItem="JLd-Gk-QG6" firstAttribute="centerX" secondItem="Va0-6u-6J7" secondAttribute="centerX" type="default" id="4TU-CJ-VxK"/>
                             <constraint firstAttribute="bottom" secondItem="Va0-6u-6J7" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="B4X-fh-Prf"/>
-                            <constraint firstItem="Va0-6u-6J7" firstAttribute="centerX" secondItem="41I-jK-uJx" secondAttribute="centerX" type="default" id="LCK-ZO-GPI"/>
-                            <constraint firstItem="41I-jK-uJx" firstAttribute="centerX" secondItem="Obd-sT-em8" secondAttribute="centerX" type="default" id="eXY-6b-OZU"/>
+                            <constraint firstItem="JLd-Gk-QG6" firstAttribute="top" secondItem="41I-jK-uJx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NuJ-0y-Wb0"/>
+                            <constraint firstItem="41I-jK-uJx" firstAttribute="leading" secondItem="Obd-sT-em8" secondAttribute="leading" constant="62" id="OCN-od-wg9"/>
+                            <constraint firstItem="41I-jK-uJx" firstAttribute="top" secondItem="Obd-sT-em8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Q4n-JF-jRn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hzj-oy-EkR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLz-ia-5WE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101" y="716"/>
+            <point key="canvasLocation" x="-463" y="664"/>
         </scene>
         <!--Ml Chart View Controller-->
         <scene sceneID="GWb-6l-yiG">
@@ -94,12 +102,20 @@
                                     <action selector="pressDone:" destination="zmo-WF-G1c" eventType="touchUpInside" id="EVW-Oa-Jgf"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="chart.png" translatesAutoresizingMaskIntoConstraints="NO" id="yTj-1z-0F7">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="K2a-DK-7JH"/>
+                                    <constraint firstAttribute="height" constant="99" id="zbu-cm-pGq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1kq-jG-HF6" firstAttribute="centerX" secondItem="jOE-sb-OK0" secondAttribute="centerX" type="default" id="H4c-7s-b5I"/>
+                            <constraint firstItem="yTj-1z-0F7" firstAttribute="centerX" secondItem="jOE-sb-OK0" secondAttribute="centerX" type="default" id="B8v-17-Hsm"/>
+                            <constraint firstItem="yTj-1z-0F7" firstAttribute="centerX" secondItem="1kq-jG-HF6" secondAttribute="centerX" type="default" id="L0y-vt-oCP"/>
+                            <constraint firstItem="yTj-1z-0F7" firstAttribute="centerX" secondItem="X4I-2U-08Z" secondAttribute="centerX" type="default" id="MLL-Vx-eea"/>
                             <constraint firstItem="1kq-jG-HF6" firstAttribute="top" secondItem="jOE-sb-OK0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Z4a-95-Qba"/>
-                            <constraint firstItem="X4I-2U-08Z" firstAttribute="centerX" secondItem="1kq-jG-HF6" secondAttribute="centerX" type="default" id="p13-8P-JrJ"/>
+                            <constraint firstItem="yTj-1z-0F7" firstAttribute="top" secondItem="jOE-sb-OK0" secondAttribute="top" constant="124" id="t0d-kP-j3r"/>
                             <constraint firstAttribute="bottom" secondItem="X4I-2U-08Z" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="uG6-fX-6zc"/>
                         </constraints>
                     </view>
@@ -110,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIT-fV-EUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519" y="745"/>
+            <point key="canvasLocation" x="-13" y="669"/>
         </scene>
         <!--Ml Calendar View Controller-->
         <scene sceneID="OW2-HO-A7d">
@@ -143,17 +159,22 @@
                                     <action selector="doneButton:" destination="cla-Sg-uCE" eventType="touchUpInside" id="ses-Dw-Nwj"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="CalendarBlank.png" translatesAutoresizingMaskIntoConstraints="NO" id="nf5-LX-JOI"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="CalendarBlank.png" translatesAutoresizingMaskIntoConstraints="NO" id="nf5-LX-JOI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="6cc-Rb-kqq"/>
+                                    <constraint firstAttribute="width" constant="128" id="pna-Nj-1Oe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.032109375844489231" green="0.34510522959183676" blue="0.073189996363187321" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="nf5-LX-JOI" firstAttribute="top" secondItem="FP1-h9-hCK" secondAttribute="top" constant="118" id="1JJ-2N-vSI"/>
-                            <constraint firstItem="nf5-LX-JOI" firstAttribute="centerX" secondItem="GtN-AZ-HAX" secondAttribute="centerX" type="default" id="56x-Ny-Epa"/>
+                            <constraint firstItem="cPK-vZ-gLL" firstAttribute="centerX" secondItem="FP1-h9-hCK" secondAttribute="centerX" type="default" id="3N2-Ky-FXD"/>
                             <constraint firstItem="GtN-AZ-HAX" firstAttribute="top" secondItem="FP1-h9-hCK" secondAttribute="top" constant="56" id="CpB-q2-vTX"/>
-                            <constraint firstItem="cPK-vZ-gLL" firstAttribute="centerX" secondItem="FP1-h9-hCK" secondAttribute="centerX" type="default" id="JFv-kr-BX1"/>
-                            <constraint firstItem="nf5-LX-JOI" firstAttribute="centerX" secondItem="K2D-4A-xH5" secondAttribute="centerX" type="default" id="aNu-Xf-ltB"/>
+                            <constraint firstItem="nf5-LX-JOI" firstAttribute="centerX" secondItem="GtN-AZ-HAX" secondAttribute="centerX" type="default" id="K2m-eN-55C"/>
+                            <constraint firstItem="nf5-LX-JOI" firstAttribute="centerX" secondItem="K2D-4A-xH5" secondAttribute="centerX" type="default" id="Tew-wS-uhB"/>
                             <constraint firstItem="cPK-vZ-gLL" firstAttribute="top" secondItem="FP1-h9-hCK" secondAttribute="top" constant="20" symbolic="YES" type="default" id="bSO-tH-tuC"/>
                             <constraint firstAttribute="bottom" secondItem="K2D-4A-xH5" secondAttribute="bottom" constant="12" id="nLO-hl-liN"/>
+                            <constraint firstItem="nf5-LX-JOI" firstAttribute="top" secondItem="FP1-h9-hCK" secondAttribute="top" constant="79" id="s8y-6O-R42"/>
                             <constraint firstItem="cPK-vZ-gLL" firstAttribute="centerX" secondItem="GtN-AZ-HAX" secondAttribute="centerX" type="default" id="zfW-U4-5No"/>
                         </constraints>
                     </view>
@@ -161,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSk-dv-crX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904" y="848"/>
+            <point key="canvasLocation" x="464" y="704"/>
         </scene>
         <!--Ml Master View Controller - Master-->
         <scene sceneID="18">
@@ -298,7 +319,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501" y="64"/>
+            <point key="canvasLocation" x="83" y="-164"/>
         </scene>
         <!--Ml Detail View Controller - Detail-->
         <scene sceneID="24">
@@ -733,7 +754,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="64"/>
+            <point key="canvasLocation" x="742" y="-744"/>
         </scene>
         <!--Ml Mood Collection View Controller-->
         <scene sceneID="aKD-vW-xva">
@@ -784,7 +805,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70y-83-CCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="140"/>
+            <point key="canvasLocation" x="1312" y="-540"/>
         </scene>
         <!--Ml Date Picker View Controller-->
         <scene sceneID="yyF-4Y-Xyf">
@@ -849,7 +870,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9K-lO-lEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1278" y="476"/>
+            <point key="canvasLocation" x="1312" y="-128"/>
         </scene>
     </scenes>
     <resources>
@@ -858,95 +879,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="calendar.png" width="22" height="18"/>
         <image name="chart.png" width="22" height="18"/>
         <image name="shuffle_off.png" width="25" height="21"/>
+        <image name="skeptical.jpg" width="768" height="1024"/>
     </resources>
-    <classes>
-        <class className="MlCalendarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCalendarViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButton:"/>
-            </relationships>
-        </class>
-        <class className="MlCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlChartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressDone:"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MlCollectionViewCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCollectionViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="moodName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlDatePickerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDatePickerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="datePicked:"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="MlDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="moveEnergySlider:"/>
-                <relationship kind="action" name="moveHealthSlider:"/>
-                <relationship kind="action" name="moveSleepSlider:"/>
-                <relationship kind="action" name="pressedDoneButton:"/>
-                <relationship kind="action" name="sortABC:"/>
-                <relationship kind="action" name="sortCBA:"/>
-                <relationship kind="action" name="sortShuffle:"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="detailToolBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="energySlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="entryLogTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="healthSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="moodContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sleepSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlMailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButton:"/>
-            </relationships>
-        </class>
-        <class className="MlMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMasterViewController.h"/>
-        </class>
-        <class className="MlMoodCollectionViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
