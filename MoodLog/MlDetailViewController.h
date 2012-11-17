@@ -21,8 +21,11 @@
 @property (weak, nonatomic) IBOutlet UISlider *energySlider;
 @property (weak, nonatomic) IBOutlet UISlider *healthSlider;
 @property (weak, nonatomic) IBOutlet UIView *moodContainer;
+@property (weak, nonatomic) IBOutlet UIButton *sortABCButton;
 
 @property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
+@property (weak, nonatomic) IBOutlet UIButton *SortCBAButton;
+@property (weak, nonatomic) IBOutlet UIButton *sortShuffleButton;
 
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;

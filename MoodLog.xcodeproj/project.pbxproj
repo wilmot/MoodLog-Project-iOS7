@@ -18,6 +18,7 @@
 		4C0C767F164ACEB800DD372F /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C767E164ACEB800DD372F /* calendar.png */; };
 		4C0C7681164AD06E00DD372F /* junk.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C7680164AD06E00DD372F /* junk.png */; };
 		4C0C7683164AD3BC00DD372F /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C7682164AD3BC00DD372F /* chart.png */; };
+		4C3E0FB71657122100B0E060 /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E0FB61657122100B0E060 /* Prefs.m */; };
 		4C55CBE7162DE67400EAA878 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE6162DE67400EAA878 /* UIKit.framework */; };
 		4C55CBE9162DE67400EAA878 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE8162DE67400EAA878 /* Foundation.framework */; };
 		4C55CBEB162DE67400EAA878 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */; };
@@ -77,6 +78,8 @@
 		4C0C767E164ACEB800DD372F /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Images/calendar.png; sourceTree = "<group>"; };
 		4C0C7680164AD06E00DD372F /* junk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = junk.png; path = Images/junk.png; sourceTree = "<group>"; };
 		4C0C7682164AD3BC00DD372F /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chart.png; path = Images/chart.png; sourceTree = "<group>"; };
+		4C3E0FB51657122100B0E060 /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
+		4C3E0FB61657122100B0E060 /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prefs.m; sourceTree = "<group>"; };
 		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -199,6 +202,8 @@
 		4C55CBEE162DE67400EAA878 /* MoodLog */ = {
 			isa = PBXGroup;
 			children = (
+				4C3E0FB51657122100B0E060 /* Prefs.h */,
+				4C3E0FB61657122100B0E060 /* Prefs.m */,
 				4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */,
 				4C55CBF8162DE67500EAA878 /* MlAppDelegate.m */,
 				4C7CA28C1630770800CC5CCA /* MlMoodDataItem.h */,
@@ -417,6 +422,7 @@
 				4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */,
 				4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */,
 				4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */,
+				4C3E0FB71657122100B0E060 /* Prefs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "MlDetailViewController.h"
 #import "MlDatePickerViewController.h"
+#import "Prefs.h"
 
 @interface MlDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -75,6 +76,8 @@ static MlDatePickerViewController *myDatePickerViewController;
         [self.sleepSlider setValue:[[self.detailItem valueForKey:@"sleep"] floatValue]];
         [self.energySlider setValue:[[self.detailItem valueForKey:@"energy"] floatValue]];
         [self.healthSlider setValue:[[self.detailItem valueForKey:@"health"] floatValue]];
+        
+        [self selectButton]; // Highlight the correct button
   
     }
     [self.entryLogTextView setDelegate:self];
@@ -154,23 +157,45 @@ static MlDatePickerViewController *myDatePickerViewController;
 }
 
 - (IBAction)sortABC:(id)sender {
-    [self.detailItem setValue:@"Alphabetical" forKey:@"sortStyle"];
+    [self.detailItem setValue:alphabeticalSort forKey:@"sortStyle"];
     [self saveContext];
+    [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortCBA:(id)sender {
-    [self.detailItem setValue:@"Reverse Alphabetical" forKey:@"sortStyle"];
+    [self.detailItem setValue:reverseAlphabeticalSort forKey:@"sortStyle"];
     [self saveContext];
+    [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortShuffle:(id)sender {
-    [self.detailItem setValue:@"Shuffle" forKey:@"sortStyle"];
+    [self.detailItem setValue:shuffleSort forKey:@"sortStyle"];
     [self saveContext];
+    [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
+- (void) selectButton {
+    NSString *aButton = [self.detailItem valueForKey:@"sortStyle"];
+    if ([aButton isEqualToString:alphabeticalSort]) {
+        [self.sortABCButton setSelected:YES];
+        [self.SortCBAButton setSelected:NO];
+        [self.sortShuffleButton setSelected:NO];
+    }
+    else if ([aButton isEqualToString:reverseAlphabeticalSort]) {
+        [self.sortABCButton setSelected:NO];
+        [self.SortCBAButton setSelected:YES];
+        [self.sortShuffleButton setSelected:NO];
+        
+    }
+    else if ([aButton isEqualToString:shuffleSort]) {
+        [self.sortABCButton setSelected:NO];
+        [self.SortCBAButton setSelected:NO];
+        [self.sortShuffleButton setSelected:YES];
+    }
+}
 
 #pragma mark - Entry Log UITextView delegate methods
 - (void)textViewDidBeginEditing:(UITextView *)textView {
@@ -189,6 +214,9 @@ static MlDatePickerViewController *myDatePickerViewController;
 - (void)viewDidUnload {
     [self setMoodContainer:nil];
     [self setMonthLabel:nil];
+    [self setSortABCButton:nil];
+    [self setSortCBAButton:nil];
+    [self setSortShuffleButton:nil];
     [super viewDidUnload];
 }
 @end

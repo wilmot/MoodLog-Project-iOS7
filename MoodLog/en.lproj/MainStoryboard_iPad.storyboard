@@ -103,8 +103,11 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="sortABC:" destination="4" eventType="touchUpInside" id="BJf-pL-lNs"/>
@@ -120,25 +123,31 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="sortCBA:" destination="4" eventType="touchUpInside" id="aVR-sm-PMW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrI-2T-fGN">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrI-2T-fGN">
                                         <color key="backgroundColor" red="0.032109375840000003" green="0.34510522960000001" blue="0.073189996359999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="5i8-Xy-mRX"/>
+                                            <constraint firstAttribute="width" constant="85" id="S3S-Z3-vA5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="shuffle_off.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="shuffle_on.png">
+                                            <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="sortShuffle:" destination="4" eventType="touchUpInside" id="dnL-p5-lVd"/>
@@ -162,32 +171,32 @@
                                     <constraint firstItem="zRH-Ru-3lC" firstAttribute="baseline" secondItem="nrI-2T-fGN" secondAttribute="baseline" type="default" id="4MQ-9k-9QF"/>
                                     <constraint firstItem="kHv-9K-1Og" firstAttribute="baseline" secondItem="ULa-tI-YUD" secondAttribute="baseline" type="default" id="4VR-yI-hta"/>
                                     <constraint firstItem="qrA-RA-WQZ" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" type="user" id="7en-Wh-4DL"/>
+                                    <constraint firstItem="kHv-9K-1Og" firstAttribute="trailing" secondItem="nrI-2T-fGN" secondAttribute="trailing" type="user" id="9iE-aO-FGR"/>
+                                    <constraint firstItem="qrA-RA-WQZ" firstAttribute="trailing" secondItem="jLN-2n-pAY" secondAttribute="trailing" type="user" id="Ade-cv-Sim"/>
                                     <constraint firstItem="zRH-Ru-3lC" firstAttribute="baseline" secondItem="E90-qo-eiT" secondAttribute="baseline" type="user" id="Bqo-Dd-d3z"/>
-                                    <constraint firstItem="nrI-2T-fGN" firstAttribute="trailing" secondItem="kHv-9K-1Og" secondAttribute="trailing" type="user" id="Coy-87-wlR"/>
                                     <constraint firstItem="zRH-Ru-3lC" firstAttribute="top" secondItem="E90-qo-eiT" secondAttribute="top" type="default" id="Dql-uF-AKF"/>
+                                    <constraint firstItem="PzT-TS-ees" firstAttribute="trailing" secondItem="jLN-2n-pAY" secondAttribute="trailing" type="user" id="I3K-YJ-d4H"/>
                                     <constraint firstItem="ZvU-KF-zFZ" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="19" id="Ifb-W5-pwe"/>
                                     <constraint firstItem="ULa-tI-YUD" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="6" id="KDc-Nn-vhV"/>
-                                    <constraint firstItem="PzT-TS-ees" firstAttribute="trailing" secondItem="jLN-2n-pAY" secondAttribute="trailing" type="user" id="NnM-Pu-AAG"/>
                                     <constraint firstItem="zRH-Ru-3lC" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="94" id="O7w-T2-rOW"/>
                                     <constraint firstItem="Ssj-1G-Kei" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="27" id="OXV-n5-vru"/>
                                     <constraint firstItem="70N-qG-MbL" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="151" id="TN5-bF-2lQ"/>
                                     <constraint firstItem="302-3f-Yxc" firstAttribute="centerX" secondItem="icS-Sw-krK" secondAttribute="centerX" type="default" id="W5u-mU-bLQ"/>
                                     <constraint firstItem="E90-qo-eiT" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="179" id="blK-8a-u6j"/>
                                     <constraint firstItem="E90-qo-eiT" firstAttribute="bottom" secondItem="zRH-Ru-3lC" secondAttribute="bottom" type="default" id="ddu-j5-C0t"/>
-                                    <constraint firstItem="qrA-RA-WQZ" firstAttribute="centerX" secondItem="jLN-2n-pAY" secondAttribute="centerX" type="user" id="hsF-n1-9Mf"/>
+                                    <constraint firstItem="PzT-TS-ees" firstAttribute="leading" secondItem="nrI-2T-fGN" secondAttribute="trailing" constant="1" type="user" id="f1x-uF-H3I"/>
                                     <constraint firstItem="icS-Sw-krK" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="23" id="hx6-xJ-wo9"/>
-                                    <constraint firstItem="PzT-TS-ees" firstAttribute="leading" secondItem="nrI-2T-fGN" secondAttribute="trailing" constant="1" type="user" id="iv8-2h-2t9"/>
-                                    <constraint firstItem="qrA-RA-WQZ" firstAttribute="trailing" secondItem="jLN-2n-pAY" secondAttribute="trailing" type="user" id="jnQ-XB-x0a"/>
                                     <constraint firstItem="PzT-TS-ees" firstAttribute="bottom" secondItem="nrI-2T-fGN" secondAttribute="bottom" type="default" id="kn8-dr-ize"/>
                                     <constraint firstItem="PzT-TS-ees" firstAttribute="top" secondItem="nrI-2T-fGN" secondAttribute="top" type="default" id="kue-v2-Db2"/>
                                     <constraint firstItem="ZvU-KF-zFZ" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="69" id="lfi-JK-ik7"/>
                                     <constraint firstItem="ULa-tI-YUD" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="7" id="lwO-Yq-V8C"/>
                                     <constraint firstItem="Ssj-1G-Kei" firstAttribute="trailing" secondItem="jLN-2n-pAY" secondAttribute="trailing" type="default" id="mLz-hz-f7C"/>
-                                    <constraint firstItem="kHv-9K-1Og" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="130" type="user" id="o8A-RQ-Re9"/>
                                     <constraint firstItem="70N-qG-MbL" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="27" id="ovv-FX-KX4"/>
                                     <constraint firstItem="302-3f-Yxc" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="36" id="pER-iL-Jhp"/>
+                                    <constraint firstItem="qrA-RA-WQZ" firstAttribute="centerX" secondItem="jLN-2n-pAY" secondAttribute="centerX" type="user" id="rbP-hX-03Q"/>
                                     <constraint firstItem="icS-Sw-krK" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" type="default" id="ss4-vA-NZl"/>
                                     <constraint firstItem="qrA-RA-WQZ" firstAttribute="bottom" secondItem="jLN-2n-pAY" secondAttribute="bottom" type="default" id="tcz-Vg-Mxd"/>
+                                    <constraint firstItem="kHv-9K-1Og" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="130" type="user" id="v5f-P8-cfg"/>
                                     <constraint firstItem="qrA-RA-WQZ" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="199" id="xNz-Lq-4ik"/>
                                     <constraint firstItem="E90-qo-eiT" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" type="default" id="ybM-8E-sGQ"/>
                                 </constraints>
@@ -211,6 +220,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="SortCBAButton" destination="zRH-Ru-3lC" id="zCg-3T-fcA"/>
                         <outlet property="dateLabel" destination="ZvU-KF-zFZ" id="vNc-9g-Ugi"/>
                         <outlet property="detailDescriptionLabel" destination="70N-qG-MbL" id="k3E-T9-bap"/>
                         <outlet property="detailToolBar" destination="53" id="YKe-Jw-DI0"/>
@@ -219,6 +229,8 @@
                         <outlet property="monthLabel" destination="ULa-tI-YUD" id="shw-EM-Una"/>
                         <outlet property="moodContainer" destination="qrA-RA-WQZ" id="dkK-u0-IRI"/>
                         <outlet property="scrollView" destination="jLN-2n-pAY" id="xbi-Dc-yLj"/>
+                        <outlet property="sortABCButton" destination="E90-qo-eiT" id="mvg-gM-4Io"/>
+                        <outlet property="sortShuffleButton" destination="nrI-2T-fGN" id="QGw-8g-7UL"/>
                         <outlet property="weekdayLabel" destination="302-3f-Yxc" id="X0O-fx-z1h"/>
                     </connections>
                 </viewController>
@@ -441,6 +453,7 @@
     <resources>
         <image name="CalendarBlank.png" width="257" height="258"/>
         <image name="shuffle_off.png" width="25" height="21"/>
+        <image name="shuffle_on.png" width="25" height="21"/>
     </resources>
     <classes>
         <class className="MlCell" superclassName="UITableViewCell">
@@ -468,6 +481,7 @@
                 <relationship kind="action" name="sortABC:"/>
                 <relationship kind="action" name="sortCBA:"/>
                 <relationship kind="action" name="sortShuffle:"/>
+                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="detailToolBar" candidateClass="UINavigationItem"/>
@@ -479,6 +493,8 @@
                 <relationship kind="outlet" name="moodContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="sleepSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

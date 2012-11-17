@@ -12,6 +12,7 @@
 #import "MlDetailViewController.h"
 #import "Emotions.h"
 #import "MoodLogEvents.h"
+#import "Prefs.h"
 
 // From http://stackoverflow.com/questions/56648/whats-the-best-way-to-shuffle-an-nsmutablearray
 // This category enhances NSMutableArray by providing
@@ -74,26 +75,25 @@ NSArray *emotionArray;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    [self refresh];
+}
 
+- (void) refresh {
     // Fetch the Mood list for this journal entry
-    MoodLogEvents *myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;    
+    MoodLogEvents *myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
     NSSet *emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record
-
-    if ( myLogEntry.sortStyle == @"Alphabetical") {
+    
+    if ( [myLogEntry.sortStyle isEqualToString:alphabeticalSort]) {
         emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(compare:)];
     }
-    else if ( myLogEntry.sortStyle == @"Reverse Alphabetical") {
+    else if ( [myLogEntry.sortStyle isEqualToString:reverseAlphabeticalSort]) {
         emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(reverseCompare:)];
     }
-    else { // Shuffle
+    else if ([myLogEntry.sortStyle isEqualToString:shuffleSort]) { // Shuffle
         NSMutableArray *emotionMutableArray = [NSMutableArray arrayWithArray:[emotionsforEntry allObjects]]; // whatever order they happen to be in
         [emotionMutableArray shuffle];
         emotionArray = [NSArray arrayWithArray:emotionMutableArray];
     }
-}
-
-- (void) refresh {
-    [self viewWillAppear:YES]; // re-sort the set
     [self.collectionView reloadData];
 }
 
