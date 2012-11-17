@@ -117,10 +117,12 @@ NSArray *emotionArray;
     [[detailViewController entryLogTextView] resignFirstResponder];
     Emotions *aMood = [emotionArray objectAtIndex:indexPath.row];
     if ([aMood.selected floatValue]) { // if it's already selected
-        aMood.selected = [NSNumber numberWithBool:NO];
+       // aMood.selected = [NSNumber numberWithBool:NO];
+        [aMood setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
     }
     else {
-        aMood.selected = [NSNumber numberWithBool:YES];
+        //aMood.selected = [NSNumber numberWithBool:YES];
+        [aMood setValue:[NSNumber numberWithBool:YES] forKey:@"selected"];
     }
     // Save the context.
     NSError *error = nil;
@@ -132,6 +134,7 @@ NSArray *emotionArray;
     }
 
     [collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+    detailViewController.detailItem.sortStyle = detailViewController.detailItem.sortStyle; // Hack to get the Master list to update
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;

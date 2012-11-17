@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MlMoodCollectionViewController.h"
+#import "MoodLogEvents.h"
 
 @interface MlDetailViewController : UIViewController <UISplitViewControllerDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *weekdayLabel;
@@ -22,13 +23,14 @@
 @property (weak, nonatomic) IBOutlet UISlider *healthSlider;
 @property (weak, nonatomic) IBOutlet UIView *moodContainer;
 @property (weak, nonatomic) IBOutlet UIButton *sortABCButton;
-
-@property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 @property (weak, nonatomic) IBOutlet UIButton *SortCBAButton;
 @property (weak, nonatomic) IBOutlet UIButton *sortShuffleButton;
-
-
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+
+@property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
+@property (strong, nonatomic) MoodLogEvents *detailItem;
+
+
 
 - (IBAction)pressedDoneButton:(id)sender;
 - (IBAction)moveSleepSlider:(id)sender;
@@ -37,7 +39,6 @@
 - (IBAction)sortABC:(id)sender;
 - (IBAction)sortCBA:(id)sender;
 - (IBAction)sortShuffle:(id)sender;
-
-@property (strong, nonatomic) id detailItem;
+- (IBAction)testButton:(id)sender;
 
 @end

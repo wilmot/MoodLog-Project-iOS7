@@ -12,6 +12,8 @@
  NSString *const reverseAlphabeticalSort = @"Reverse Alphabetical";
  NSString *const shuffleSort = @"Shuffle";
 
+// Notes:
+// When the button image is the wrong size (this looks like a bug), try adding and deleting a title. This seemed to fix it in at least one case
 
 @implementation Prefs
 

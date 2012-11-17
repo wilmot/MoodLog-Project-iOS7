@@ -157,24 +157,28 @@ static MlDatePickerViewController *myDatePickerViewController;
 }
 
 - (IBAction)sortABC:(id)sender {
-    [self.detailItem setValue:alphabeticalSort forKey:@"sortStyle"];
+    self.detailItem.sortStyle = alphabeticalSort;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortCBA:(id)sender {
-    [self.detailItem setValue:reverseAlphabeticalSort forKey:@"sortStyle"];
+    self.detailItem.sortStyle = reverseAlphabeticalSort;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortShuffle:(id)sender {
-    [self.detailItem setValue:shuffleSort forKey:@"sortStyle"];
+    self.detailItem.sortStyle = shuffleSort;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
+}
+
+- (IBAction)testButton:(id)sender {
+    self.detailItem.sortStyle = shuffleSort;
 }
 
 - (void) selectButton {
