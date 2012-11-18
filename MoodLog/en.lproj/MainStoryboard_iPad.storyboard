@@ -170,19 +170,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcI-cV-52N">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="testButton:" destination="4" eventType="touchUpInside" id="rm3-ln-6Dd"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="xEi-qE-v6Q" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" type="default" id="24F-lf-Fil"/>
@@ -191,7 +178,6 @@
                                     <constraint firstItem="R3q-IU-bL8" firstAttribute="bottom" secondItem="TQR-W7-eTZ" secondAttribute="bottom" type="default" id="5AN-yp-63w"/>
                                     <constraint firstItem="NKv-of-L2m" firstAttribute="baseline" secondItem="xEi-qE-v6Q" secondAttribute="baseline" type="user" id="5lp-33-lFK"/>
                                     <constraint firstItem="R3q-IU-bL8" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="303" type="user" id="72C-dq-3FX"/>
-                                    <constraint firstItem="wcI-cV-52N" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" type="default" id="7Ou-oa-66c"/>
                                     <constraint firstItem="qrA-RA-WQZ" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" type="user" id="7en-Wh-4DL"/>
                                     <constraint firstItem="qrA-RA-WQZ" firstAttribute="trailing" secondItem="jLN-2n-pAY" secondAttribute="trailing" type="user" id="Ade-cv-Sim"/>
                                     <constraint firstItem="NKv-of-L2m" firstAttribute="top" secondItem="TQR-W7-eTZ" secondAttribute="top" type="default" id="Cx0-tx-j3a"/>
@@ -208,11 +194,11 @@
                                     <constraint firstItem="KOE-v8-lKd" firstAttribute="leading" secondItem="R3q-IU-bL8" secondAttribute="trailing" constant="1" type="user" id="aAZ-Uc-wiD"/>
                                     <constraint firstItem="70N-qG-MbL" firstAttribute="bottom" secondItem="Ssj-1G-Kei" secondAttribute="bottom" type="default" id="bJA-Oz-SeQ"/>
                                     <constraint firstItem="ZvU-KF-zFZ" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="19" id="bfR-gf-FEX"/>
+                                    <constraint firstItem="NKv-of-L2m" firstAttribute="baseline" secondItem="KOE-v8-lKd" secondAttribute="baseline" type="default" id="gaB-WJ-7Xj"/>
                                     <constraint firstItem="KOE-v8-lKd" firstAttribute="trailing" secondItem="jLN-2n-pAY" secondAttribute="trailing" type="user" id="hAq-Yw-AdI"/>
                                     <constraint firstItem="KOE-v8-lKd" firstAttribute="bottom" secondItem="R3q-IU-bL8" secondAttribute="bottom" type="default" id="hXk-ED-fNx"/>
                                     <constraint firstItem="icS-Sw-krK" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="23" id="hx6-xJ-wo9"/>
                                     <constraint firstAttribute="bottom" secondItem="qrA-RA-WQZ" secondAttribute="bottom" constant="144" id="k3C-sh-nrD"/>
-                                    <constraint firstItem="wcI-cV-52N" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="341" id="kiq-AO-3zY"/>
                                     <constraint firstItem="NKv-of-L2m" firstAttribute="bottom" secondItem="xEi-qE-v6Q" secondAttribute="bottom" type="default" id="l62-9m-elX"/>
                                     <constraint firstItem="ZvU-KF-zFZ" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="69" id="lfi-JK-ik7"/>
                                     <constraint firstItem="ULa-tI-YUD" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="7" id="lwO-Yq-V8C"/>
@@ -360,22 +346,13 @@
                                     <outlet property="weekdayLabel" destination="Uir-cU-JsO" id="zSc-II-6cA"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Header" rowHeight="23" id="Xeo-Iy-g27">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Header" rowHeight="23" id="Xeo-Iy-g27" customClass="MlCell">
                                 <rect key="frame" x="0.0" y="82" width="320" height="23"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Wednesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="aSs-Qk-AeD">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="7EV-dN-bEi"/>
-                                                <constraint firstAttribute="width" constant="40" type="user" id="Q7s-cm-HFM"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-Ml-GP4">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="306" id="Yd3-eJ-kU6"/>
@@ -387,12 +364,10 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="aSs-Qk-AeD" firstAttribute="leading" secondItem="Xeo-Iy-g27" secondAttribute="leading" constant="4" id="0GI-eM-eV4"/>
                                     <constraint firstItem="S4r-Ml-GP4" firstAttribute="centerX" secondItem="Xeo-Iy-g27" secondAttribute="centerX" type="default" id="7FC-Oh-1SO"/>
                                     <constraint firstItem="S4r-Ml-GP4" firstAttribute="top" secondItem="Xeo-Iy-g27" secondAttribute="top" type="default" id="UxW-kY-qrS"/>
-                                    <constraint firstItem="aSs-Qk-AeD" firstAttribute="centerY" secondItem="Xeo-Iy-g27" secondAttribute="centerY" type="default" id="jf0-RE-9CA"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -506,7 +481,6 @@
                 <relationship kind="action" name="sortABC:"/>
                 <relationship kind="action" name="sortCBA:"/>
                 <relationship kind="action" name="sortShuffle:"/>
-                <relationship kind="action" name="testButton:"/>
                 <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
@@ -544,9 +518,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

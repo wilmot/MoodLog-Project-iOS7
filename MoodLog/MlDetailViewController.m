@@ -177,10 +177,6 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self.myMoodCollectionViewController refresh];
 }
 
-- (IBAction)testButton:(id)sender {
-    self.detailItem.sortStyle = shuffleSort;
-}
-
 - (void) selectButton {
     NSString *aButton = [self.detailItem valueForKey:@"sortStyle"];
     if ([aButton isEqualToString:alphabeticalSort]) {

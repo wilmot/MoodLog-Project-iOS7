@@ -39,6 +39,5 @@
 - (IBAction)sortABC:(id)sender;
 - (IBAction)sortCBA:(id)sender;
 - (IBAction)sortShuffle:(id)sender;
-- (IBAction)testButton:(id)sender;
 
 @end
