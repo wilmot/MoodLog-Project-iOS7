@@ -57,7 +57,13 @@ static MlDatePickerViewController *myDatePickerViewController;
         [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
         NSInteger day = [weekdayComponents day];
         NSInteger weekday = [weekdayComponents weekday];
-        NSArray *dayNames = @[@"Sunday",@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday"];
+ 
+        static NSArray *dayNames = nil;
+        if (!dayNames) {
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setCalendar:[NSCalendar currentCalendar]];
+            dayNames = [formatter weekdaySymbols];
+        }
         
         self.dateLabel.text = [NSString stringWithFormat:@"%d", day];
         self.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];
