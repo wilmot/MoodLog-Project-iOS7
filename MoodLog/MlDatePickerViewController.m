@@ -59,6 +59,8 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    
+    [self.detailViewController configureView]; // update the displayed values in the view
 }
 
 @end

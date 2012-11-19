@@ -65,7 +65,7 @@ static MlDatePickerViewController *myDatePickerViewController;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
         dateFormatter.dateFormat = @"h:mm a";
         
-        self.detailDescriptionLabel.text = [dateFormatter stringFromDate: today];
+        self.timeLabel.text = [dateFormatter stringFromDate: today];
         
         dateFormatter.dateFormat = @"MMM YYYY";
         self.monthLabel.text = [dateFormatter stringFromDate: today];
@@ -76,6 +76,10 @@ static MlDatePickerViewController *myDatePickerViewController;
         [self.sleepSlider setValue:[[self.detailItem valueForKey:@"sleep"] floatValue]];
         [self.energySlider setValue:[[self.detailItem valueForKey:@"energy"] floatValue]];
         [self.healthSlider setValue:[[self.detailItem valueForKey:@"health"] floatValue]];
+        // Set the slider colors
+        [self moveSlider:@"sleep" sender:self.sleepSlider];
+        [self moveSlider:@"energy" sender:self.energySlider];
+        [self moveSlider:@"health" sender:self.healthSlider ];
         
         [self selectButton]; // Highlight the correct button
   
@@ -83,12 +87,6 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self.entryLogTextView setDelegate:self];
     // Hide the Done/Edit button
     [self.detailToolBar setRightBarButtonItem:nil animated:YES];
-    [self.sleepSlider setMinimumTrackTintColor:[UIColor greenColor]];
-    [self.sleepSlider setMaximumTrackTintColor:[UIColor redColor]];
-    [self.energySlider setMinimumTrackTintColor:[UIColor greenColor]];
-    [self.energySlider setMaximumTrackTintColor:[UIColor redColor]];
-    [self.healthSlider setMinimumTrackTintColor:[UIColor greenColor]];
-    [self.healthSlider setMaximumTrackTintColor:[UIColor redColor]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,18 +117,33 @@ static MlDatePickerViewController *myDatePickerViewController;
 }
 
 - (IBAction)moveSleepSlider:(id)sender {
-    [self.detailItem setValue:[NSNumber numberWithFloat:[(UISlider *)sender value]] forKey:@"sleep"];
-    [self saveContext];
+    [self moveSlider:@"sleep" sender:sender];
 }
 
 - (IBAction)moveEnergySlider:(id)sender {
-    [self.detailItem setValue:[NSNumber numberWithFloat:[(UISlider *)sender value]] forKey:@"energy"];
-    [self saveContext];
+    [self moveSlider:@"energy" sender:sender];
 }
 
 - (IBAction)moveHealthSlider:(id)sender {
-    [self.detailItem setValue:[NSNumber numberWithFloat:[(UISlider *)sender value]] forKey:@"health"];
-    [self saveContext];
+    [self moveSlider:@"health" sender:sender];
+}
+
+- (void) moveSlider:(NSString *)key sender:(id) sender {
+    NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
+    [self.detailItem setValue:sliderValue forKey:key];
+    
+    UIColor *sliderColor;
+    if ([sliderValue integerValue] >= 0) { // Tint green
+        sliderColor = [UIColor colorWithRed:fabsf(([sliderValue floatValue] - 10.0)/20.0) green:([sliderValue floatValue] + 10.0)/20.0 blue:1.0 - ([sliderValue floatValue] + 10.0)/20.0 alpha:1.0];
+    }
+    else { // Tint red
+        sliderColor = [UIColor colorWithRed:fabsf(([sliderValue floatValue] - 10.0)/20.0) green:([sliderValue floatValue] + 10.0)/20.0 blue:1.0 - fabsf(([sliderValue floatValue] - 10.0)/20.0) alpha:1.0];
+    }
+    [sender setMinimumTrackTintColor:sliderColor];
+    [sender setMaximumTrackTintColor:sliderColor];
+    //[sender setThumbTintColor:sliderColor];
+    
+    [self saveContext];    
 }
 
 - (void) saveContext { // Save data to the database
@@ -153,6 +166,7 @@ static MlDatePickerViewController *myDatePickerViewController;
         myDatePickerViewController = [segue destinationViewController];
         myDatePickerViewController.detailItem = self.detailItem;
         myDatePickerViewController.dateToSet = [self.detailItem valueForKey:@"date"];
+        myDatePickerViewController.detailViewController = self;
     }
 }
 
