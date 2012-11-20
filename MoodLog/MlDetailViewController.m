@@ -124,19 +124,21 @@ static MlDatePickerViewController *myDatePickerViewController;
 
 - (IBAction)moveSleepSlider:(id)sender {
     [self moveSlider:@"sleep" sender:sender];
+    [self setSliderData:@"sleep" sender:sender];
 }
 
 - (IBAction)moveEnergySlider:(id)sender {
     [self moveSlider:@"energy" sender:sender];
+    [self setSliderData:@"energy" sender:sender];
 }
 
 - (IBAction)moveHealthSlider:(id)sender {
     [self moveSlider:@"health" sender:sender];
+    [self setSliderData:@"health" sender:sender];
 }
 
 - (void) moveSlider:(NSString *)key sender:(id) sender {
     NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
-    [self.detailItem setValue:sliderValue forKey:key];
     
     UIColor *sliderColor;
     if ([sliderValue integerValue] >= 0) { // Tint green
@@ -148,8 +150,12 @@ static MlDatePickerViewController *myDatePickerViewController;
     [sender setMinimumTrackTintColor:sliderColor];
     [sender setMaximumTrackTintColor:sliderColor];
     //[sender setThumbTintColor:sliderColor];
-    
-    [self saveContext];    
+}
+
+- (void) setSliderData: (NSString *)key sender:(id) sender {
+    NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
+    [self.detailItem setValue:sliderValue forKey:key];
+    [self saveContext];
 }
 
 - (void) saveContext { // Save data to the database
@@ -197,6 +203,18 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self.myMoodCollectionViewController refresh];
 }
 
+- (IBAction)toggleFaces:(id)sender {
+    if (self.myMoodCollectionViewController.cellIdentifier == @"moodCell") {
+        self.myMoodCollectionViewController.cellIdentifier = @"moodCellFaces";
+        [self.toggleFacesButton setSelected:YES];
+    }
+    else {
+        self.myMoodCollectionViewController.cellIdentifier = @"moodCell";
+        [self.toggleFacesButton setSelected:NO];
+    }
+    [self.myMoodCollectionViewController refresh];
+}
+
 - (void) selectButton {
     NSString *aButton = [self.detailItem valueForKey:@"sortStyle"];
     if ([aButton isEqualToString:alphabeticalSort]) {
@@ -237,6 +255,7 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self setSortABCButton:nil];
     [self setSortCBAButton:nil];
     [self setSortShuffleButton:nil];
+    [self setToggleFacesButton:nil];
     [super viewDidUnload];
 }
 @end

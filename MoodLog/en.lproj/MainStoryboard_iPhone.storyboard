@@ -616,12 +616,18 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Faces">
-                                            <color key="titleColor" red="1" green="0.93093626039999999" blue="0.98942959419999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toggleFaces:" destination="21" eventType="touchUpInside" id="ik1-oT-1QI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LX-fO-wbU">
                                         <constraints>
@@ -784,6 +790,7 @@
                         <outlet property="sortABCButton" destination="A1s-Iu-BbV" id="Xac-SG-z7V"/>
                         <outlet property="sortShuffleButton" destination="Rjx-y4-eZH" id="h7j-qk-XhD"/>
                         <outlet property="timeLabel" destination="27" id="3fM-v2-zCq"/>
+                        <outlet property="toggleFacesButton" destination="kCU-OR-Vdv" id="Hak-yq-ooK"/>
                         <outlet property="weekdayLabel" destination="Km8-mh-0aY" id="0EC-xD-dUy"/>
                     </connections>
                 </viewController>
@@ -807,7 +814,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCell" id="prs-p7-24r" customClass="MlCollectionViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="96" height="18"/>
+                                <rect key="frame" x="0.0" y="49" width="96" height="18"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="96" height="18"/>
@@ -829,6 +836,34 @@
                                 <size key="customSize" width="96" height="18"/>
                                 <connections>
                                     <outlet property="moodName" destination="Opd-Bc-yL8" id="gQA-el-TmW"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellFaces" id="u75-FG-Pvj" customClass="MlCollectionViewCell">
+                                <rect key="frame" x="96" y="0.0" width="98" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="98" height="117"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Blank100.png" translatesAutoresizingMaskIntoConstraints="NO" id="xWZ-qo-RsA"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ecstatic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="iwh-NI-n5p">
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="iwh-NI-n5p" secondAttribute="bottom" constant="2" id="IBA-yv-aV3"/>
+                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="leading" secondItem="u75-FG-Pvj" secondAttribute="leading" type="default" id="TFC-XF-wff"/>
+                                    <constraint firstAttribute="bottom" secondItem="xWZ-qo-RsA" secondAttribute="bottom" constant="20" type="default" id="Td6-Vm-q32"/>
+                                    <constraint firstAttribute="centerX" secondItem="xWZ-qo-RsA" secondAttribute="centerX" type="user" id="pXG-EZ-lej"/>
+                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="trailing" secondItem="u75-FG-Pvj" secondAttribute="trailing" type="default" id="zfN-3U-b1f"/>
+                                </constraints>
+                                <size key="customSize" width="98" height="117"/>
+                                <connections>
+                                    <outlet property="moodName" destination="iwh-NI-n5p" id="sbM-uo-62g"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -912,6 +947,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="BlackLine.png" width="278" height="2"/>
+        <image name="Blank100.png" width="87" height="100"/>
         <image name="CalendarBlank.png" width="257" height="258"/>
         <image name="calendar.png" width="22" height="18"/>
         <image name="chart.png" width="22" height="18"/>
@@ -965,6 +1001,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="sortABC:"/>
                 <relationship kind="action" name="sortCBA:"/>
                 <relationship kind="action" name="sortShuffle:"/>
+                <relationship kind="action" name="toggleFaces:"/>
                 <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="detailToolBar" candidateClass="UINavigationItem"/>
@@ -979,6 +1016,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -1008,9 +1046,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

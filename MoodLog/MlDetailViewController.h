@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sortABCButton;
 @property (weak, nonatomic) IBOutlet UIButton *SortCBAButton;
 @property (weak, nonatomic) IBOutlet UIButton *sortShuffleButton;
+@property (weak, nonatomic) IBOutlet UIButton *toggleFacesButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 @property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
@@ -39,6 +40,7 @@
 - (IBAction)sortABC:(id)sender;
 - (IBAction)sortCBA:(id)sender;
 - (IBAction)sortShuffle:(id)sender;
+- (IBAction)toggleFaces:(id)sender;
 
 - (void)configureView;
 

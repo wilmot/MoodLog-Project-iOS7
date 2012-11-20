@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MlMoodCollectionViewController : UICollectionViewController
+@interface MlMoodCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSString *cellIdentifier;
 
 - (void) refresh;
 

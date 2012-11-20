@@ -72,6 +72,10 @@ NSArray *emotionArray;
                                     alpha:1.0f];
 //    MlFlowLayout *myLayout = [[MlFlowLayout alloc]init];
 //    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
+
+    if (!self.cellIdentifier) {
+        self.cellIdentifier = @"moodCell";
+    }
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -137,11 +141,29 @@ NSArray *emotionArray;
     detailViewController.detailItem.sortStyle = detailViewController.detailItem.sortStyle; // Hack to get the Master list to update
 }
 
+#pragma mark - Delegate methods
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize size = CGSizeMake(10.0, 10.0);
+    
+    if (self.cellIdentifier == @"moodCell") {
+        size = CGSizeMake(96.0, 18.0);
+    }
+    else if (self.cellIdentifier == @"moodCellFaces"){
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+            size = CGSizeMake(100.0, 116.0);
+        }
+        else { // iPhone
+            size = CGSizeMake(98.0, 117.0);
+        }
+    }
+    return size;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     // we're going to use a custom UICollectionViewCell, which will hold an image and its label
     //
-    MlCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"moodCell" forIndexPath:indexPath];
+    MlCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
         
     // Configure the cell...
     // Emotions *aMood = [self.fetchedResultsController objectAtIndexPath:indexPath];
