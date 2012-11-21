@@ -814,7 +814,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCell" id="prs-p7-24r" customClass="MlCollectionViewCell">
-                                <rect key="frame" x="0.0" y="49" width="96" height="18"/>
+                                <rect key="frame" x="0.0" y="44" width="96" height="18"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="96" height="18"/>
@@ -839,15 +839,15 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellFaces" id="u75-FG-Pvj" customClass="MlCollectionViewCell">
-                                <rect key="frame" x="96" y="0.0" width="98" height="117"/>
+                                <rect key="frame" x="96" y="0.0" width="80" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="98" height="117"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="107"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Blank100.png" translatesAutoresizingMaskIntoConstraints="NO" id="xWZ-qo-RsA">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="xWZ-qo-RsA">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="87" id="yc5-ZK-5MD"/>
+                                                <constraint firstAttribute="height" constant="93" id="cC7-Xh-LpW"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ecstatic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="iwh-NI-n5p">
@@ -859,13 +859,14 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="iwh-NI-n5p" secondAttribute="bottom" constant="2" id="IBA-yv-aV3"/>
-                                    <constraint firstAttribute="bottom" secondItem="xWZ-qo-RsA" secondAttribute="bottom" constant="20" type="default" id="MYz-JE-PY2"/>
-                                    <constraint firstItem="xWZ-qo-RsA" firstAttribute="centerX" secondItem="iwh-NI-n5p" secondAttribute="centerX" type="default" id="Rpx-ue-KRg"/>
-                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="leading" secondItem="u75-FG-Pvj" secondAttribute="leading" type="default" id="TFC-XF-wff"/>
-                                    <constraint firstAttribute="centerX" secondItem="xWZ-qo-RsA" secondAttribute="centerX" type="user" id="pXG-EZ-lej"/>
+                                    <constraint firstItem="xWZ-qo-RsA" firstAttribute="top" secondItem="u75-FG-Pvj" secondAttribute="top" constant="2" id="Abr-ee-Kqa"/>
+                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="trailing" secondItem="u75-FG-Pvj" secondAttribute="trailing" type="default" id="Q9j-r7-dRU"/>
+                                    <constraint firstItem="xWZ-qo-RsA" firstAttribute="trailing" secondItem="u75-FG-Pvj" secondAttribute="trailing" type="default" id="Rt6-py-Gsh"/>
+                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="leading" secondItem="u75-FG-Pvj" secondAttribute="leading" type="default" id="cHv-T5-z23"/>
+                                    <constraint firstItem="xWZ-qo-RsA" firstAttribute="leading" secondItem="u75-FG-Pvj" secondAttribute="leading" type="default" id="cbd-ww-J8e"/>
+                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="bottom" secondItem="u75-FG-Pvj" secondAttribute="bottom" type="default" id="hqE-Ql-dRD"/>
                                 </constraints>
-                                <size key="customSize" width="98" height="117"/>
+                                <size key="customSize" width="80" height="107"/>
                                 <connections>
                                     <outlet property="moodName" destination="iwh-NI-n5p" id="sbM-uo-62g"/>
                                 </connections>
@@ -951,7 +952,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="BlackLine.png" width="278" height="2"/>
-        <image name="Blank100.png" width="86" height="100"/>
+        <image name="Blank.png" width="100" height="123"/>
         <image name="CalendarBlank.png" width="257" height="258"/>
         <image name="calendar.png" width="22" height="18"/>
         <image name="chart.png" width="22" height="18"/>

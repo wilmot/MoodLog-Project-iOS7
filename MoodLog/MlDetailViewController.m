@@ -88,6 +88,7 @@ static MlDatePickerViewController *myDatePickerViewController;
         [self moveSlider:@"health" sender:self.healthSlider ];
         
         [self selectButton]; // Highlight the correct button
+        [self setFaces:[self.detailItem.showFaces boolValue]];
   
     }
     [self.entryLogTextView setDelegate:self];
@@ -204,14 +205,19 @@ static MlDatePickerViewController *myDatePickerViewController;
 }
 
 - (IBAction)toggleFaces:(id)sender {
-    if (self.myMoodCollectionViewController.cellIdentifier == @"moodCell") {
+    [self setFaces:![self.detailItem.showFaces boolValue]];
+}
+
+- (void) setFaces:(BOOL)facesState {
+    if (facesState == YES) {
         self.myMoodCollectionViewController.cellIdentifier = @"moodCellFaces";
-        [self.toggleFacesButton setSelected:YES];
     }
     else {
         self.myMoodCollectionViewController.cellIdentifier = @"moodCell";
-        [self.toggleFacesButton setSelected:NO];
     }
+    self.detailItem.showFaces = [NSNumber numberWithBool:facesState]; // Save state in database
+    [self.toggleFacesButton setSelected:facesState];
+    [self saveContext];
     [self.myMoodCollectionViewController refresh];
 }
 

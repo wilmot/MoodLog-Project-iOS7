@@ -153,7 +153,7 @@ NSArray *emotionArray;
             size = CGSizeMake(86.0, 116.0);
         }
         else { // iPhone
-            size = CGSizeMake(98.0, 117.0);
+            size = CGSizeMake(80.0, 107.0);
         }
     }
     return size;
@@ -171,6 +171,7 @@ NSArray *emotionArray;
 
     if ([aMood.selected floatValue]) {
         // set the color of the bg to something selected
+        [cell setBackgroundColor:selectedColor];
         [[cell moodName] setBackgroundColor:selectedColor];
         [[cell moodName] setTextColor:[UIColor blackColor]];
         [[cell moodName] setFont:[UIFont boldSystemFontOfSize:14.0]];
@@ -178,6 +179,7 @@ NSArray *emotionArray;
     }
     else {
         // set the color to normal boring
+        [cell setBackgroundColor:normalColor];
         [[cell moodName] setBackgroundColor:normalColor];
         [[cell moodName] setTextColor:[UIColor blackColor]];
         [[cell moodName] setFont:[UIFont systemFontOfSize:14.0]];

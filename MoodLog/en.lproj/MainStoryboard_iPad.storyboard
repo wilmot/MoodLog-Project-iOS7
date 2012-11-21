@@ -716,7 +716,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <rect key="frame" x="0.0" y="0.0" width="86" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Blank100.png" translatesAutoresizingMaskIntoConstraints="NO" id="X6e-aC-Qqf"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="X6e-aC-Qqf">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="CmH-8h-Hdw"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enthusiastic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-GW-qmE">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -726,11 +730,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="X6e-aC-Qqf" firstAttribute="centerX" secondItem="5Yu-ay-KNG" secondAttribute="centerX" type="default" id="HMg-HJ-lUm"/>
                                     <constraint firstItem="VM7-GW-qmE" firstAttribute="top" secondItem="5Yu-ay-KNG" secondAttribute="top" constant="96" id="PmX-pW-Uvf"/>
                                     <constraint firstItem="VM7-GW-qmE" firstAttribute="leading" secondItem="5Yu-ay-KNG" secondAttribute="leading" type="default" id="TH7-WH-y1x"/>
+                                    <constraint firstItem="X6e-aC-Qqf" firstAttribute="leading" secondItem="5Yu-ay-KNG" secondAttribute="leading" type="default" id="VyS-zA-Jcc"/>
                                     <constraint firstItem="X6e-aC-Qqf" firstAttribute="top" secondItem="5Yu-ay-KNG" secondAttribute="top" type="default" id="kdg-YU-cOf"/>
-                                    <constraint firstItem="X6e-aC-Qqf" firstAttribute="centerX" secondItem="VM7-GW-qmE" secondAttribute="centerX" type="default" id="wEZ-uW-G9X"/>
+                                    <constraint firstItem="X6e-aC-Qqf" firstAttribute="trailing" secondItem="VM7-GW-qmE" secondAttribute="trailing" type="default" id="po5-o2-94b"/>
+                                    <constraint firstItem="X6e-aC-Qqf" firstAttribute="trailing" secondItem="5Yu-ay-KNG" secondAttribute="trailing" type="default" id="r1k-DE-Khz"/>
                                 </constraints>
                                 <size key="customSize" width="86" height="116"/>
                                 <connections>
@@ -748,7 +753,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="BlackLine.png" width="278" height="2"/>
-        <image name="Blank100.png" width="86" height="100"/>
+        <image name="Blank.png" width="100" height="123"/>
         <image name="CalendarBlank.png" width="257" height="258"/>
         <image name="shuffle_off.png" width="25" height="21"/>
         <image name="shuffle_on.png" width="25" height="21"/>
@@ -825,6 +830,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
