@@ -150,7 +150,7 @@ NSArray *emotionArray;
     }
     else if (self.cellIdentifier == @"moodCellFaces"){
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-            size = CGSizeMake(100.0, 116.0);
+            size = CGSizeMake(86.0, 116.0);
         }
         else { // iPhone
             size = CGSizeMake(98.0, 117.0);
