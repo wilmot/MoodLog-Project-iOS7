@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *mood;
 @property (strong, nonatomic) NSString *category;
+@property (strong, nonatomic) NSString *facePath;
 @property (nonatomic, assign) BOOL selected;
 
 @end

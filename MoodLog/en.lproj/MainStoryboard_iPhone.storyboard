@@ -814,7 +814,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCell" id="prs-p7-24r" customClass="MlCollectionViewCell">
-                                <rect key="frame" x="0.0" y="44" width="96" height="18"/>
+                                <rect key="frame" x="0.0" y="48" width="96" height="18"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="96" height="18"/>
@@ -839,18 +839,14 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellFaces" id="u75-FG-Pvj" customClass="MlCollectionViewCell">
-                                <rect key="frame" x="96" y="0.0" width="80" height="107"/>
+                                <rect key="frame" x="96" y="0.0" width="80" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="107"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="114"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="xWZ-qo-RsA">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="93" id="cC7-Xh-LpW"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ecstatic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="iwh-NI-n5p">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="xWZ-qo-RsA"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ecstatic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="iwh-NI-n5p">
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -859,15 +855,15 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="xWZ-qo-RsA" firstAttribute="top" secondItem="u75-FG-Pvj" secondAttribute="top" constant="2" id="Abr-ee-Kqa"/>
-                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="trailing" secondItem="u75-FG-Pvj" secondAttribute="trailing" type="default" id="Q9j-r7-dRU"/>
-                                    <constraint firstItem="xWZ-qo-RsA" firstAttribute="trailing" secondItem="u75-FG-Pvj" secondAttribute="trailing" type="default" id="Rt6-py-Gsh"/>
-                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="leading" secondItem="u75-FG-Pvj" secondAttribute="leading" type="default" id="cHv-T5-z23"/>
-                                    <constraint firstItem="xWZ-qo-RsA" firstAttribute="leading" secondItem="u75-FG-Pvj" secondAttribute="leading" type="default" id="cbd-ww-J8e"/>
-                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="bottom" secondItem="u75-FG-Pvj" secondAttribute="bottom" type="default" id="hqE-Ql-dRD"/>
+                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="trailing" secondItem="u75-FG-Pvj" secondAttribute="trailing" type="default" id="0XL-XU-hbo"/>
+                                    <constraint firstAttribute="bottom" secondItem="iwh-NI-n5p" secondAttribute="bottom" constant="2" id="Mit-b8-ShC"/>
+                                    <constraint firstItem="xWZ-qo-RsA" firstAttribute="top" secondItem="u75-FG-Pvj" secondAttribute="top" constant="2" id="R5n-pk-dzt"/>
+                                    <constraint firstItem="xWZ-qo-RsA" firstAttribute="leading" secondItem="u75-FG-Pvj" secondAttribute="leading" type="default" id="cdk-Kr-f0O"/>
+                                    <constraint firstItem="iwh-NI-n5p" firstAttribute="leading" secondItem="u75-FG-Pvj" secondAttribute="leading" type="default" id="gwo-ct-Y7n"/>
                                 </constraints>
-                                <size key="customSize" width="80" height="107"/>
+                                <size key="customSize" width="80" height="114"/>
                                 <connections>
+                                    <outlet property="face" destination="xWZ-qo-RsA" id="1Sh-ql-0Rf"/>
                                     <outlet property="moodName" destination="iwh-NI-n5p" id="sbM-uo-62g"/>
                                 </connections>
                             </collectionViewCell>
@@ -952,7 +948,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="BlackLine.png" width="278" height="2"/>
-        <image name="Blank.png" width="100" height="123"/>
+        <image name="Blank.png" width="80" height="98"/>
         <image name="CalendarBlank.png" width="257" height="258"/>
         <image name="calendar.png" width="22" height="18"/>
         <image name="chart.png" width="22" height="18"/>

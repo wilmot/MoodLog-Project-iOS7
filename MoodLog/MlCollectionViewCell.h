@@ -10,5 +10,6 @@
 
 @interface MlCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *moodName;
+@property (weak, nonatomic) IBOutlet UIImageView *face;
 
 @end

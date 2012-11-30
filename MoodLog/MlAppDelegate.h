@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSArray *moodList;
+@property (strong, nonatomic) NSDictionary *moodListDictionary;
 @property (strong, nonatomic) NSArray *moodDataList;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

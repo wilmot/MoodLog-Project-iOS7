@@ -153,7 +153,7 @@ NSArray *emotionArray;
             size = CGSizeMake(86.0, 116.0);
         }
         else { // iPhone
-            size = CGSizeMake(80.0, 107.0);
+            size = CGSizeMake(80.0, 114.0);
         }
     }
     return size;
@@ -168,6 +168,9 @@ NSArray *emotionArray;
     // Configure the cell...
     // Emotions *aMood = [self.fetchedResultsController objectAtIndexPath:indexPath];
     Emotions *aMood = [emotionArray objectAtIndex:indexPath.row];
+    NSString *facePath = [[NSBundle mainBundle] pathForResource:aMood.facePath ofType:@"png"];
+    UIImage *myImage = [UIImage imageWithContentsOfFile:facePath];
+    [[cell face] setImage:myImage];
 
     if ([aMood.selected floatValue]) {
         // set the color of the bg to something selected
@@ -183,7 +186,12 @@ NSArray *emotionArray;
         [[cell moodName] setBackgroundColor:normalColor];
         [[cell moodName] setTextColor:[UIColor blackColor]];
         [[cell moodName] setFont:[UIFont systemFontOfSize:14.0]];
-        [[cell moodName] setText:[NSString stringWithFormat:@"    %@", aMood.name]];
+        if (self.cellIdentifier == @"moodCell") {
+            [[cell moodName] setText:[NSString stringWithFormat:@"    %@", aMood.name]];
+        }
+        else if (self.cellIdentifier == @"moodCellFaces") {
+            [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];            
+        }
     }
 
     

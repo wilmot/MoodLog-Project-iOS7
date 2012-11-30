@@ -2,23 +2,28 @@
 //  Emotions.m
 //  MoodLog
 //
-//  Created by Barry A. Langdon-Lassagne on 10/19/12.
+//  Created by Barry A. Langdon-Lassagne on 11/27/12.
 //  Copyright (c) 2012 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
 #import "Emotions.h"
+#import "MoodLogEvents.h"
 
 
 @implementation Emotions
 
+@dynamic category;
 @dynamic emotionDescription;
-@dynamic face;
 @dynamic feelValue;
 @dynamic hybrid;
 @dynamic name;
 @dynamic parrotLevel;
-@dynamic source;
 @dynamic selected;
+@dynamic source;
+@dynamic x;
+@dynamic y;
+@dynamic facePath;
+@dynamic face;
 @dynamic logParent;
 
 - (NSComparisonResult)compare:(Emotions *)otherObject {
@@ -28,5 +33,6 @@
 - (NSComparisonResult)reverseCompare:(Emotions *)otherObject {
     return [otherObject.name compare:self.name];
 }
+
 
 @end

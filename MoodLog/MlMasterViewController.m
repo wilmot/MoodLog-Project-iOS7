@@ -41,8 +41,22 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    NSIndexPath *selection = [self.tableView indexPathForSelectedRow];
+    
+    [[self tableView] reloadData];
+    
+    
+    if (selection){
+        [[self tableView] selectRowAtIndexPath:selection animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }
+    
+//    [super viewWillAppear:animated]; //Trick is calling super last in this case. Then you can  retrieve previously selected row to --> NSIndexPath *selection
+
+}
+
 - (void)viewDidAppear:(BOOL)animated {
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 
 //    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
 //    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
@@ -75,6 +89,7 @@
     for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList) {
         Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:context];
         emotion.name = mood.mood;
+        emotion.facePath = mood.facePath;
         emotion.selected = [NSNumber numberWithBool:mood.selected];
         emotion.logParent = newMood;
     }
@@ -94,7 +109,13 @@
     [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     [self.tableView selectRowAtIndexPath:scrollIndexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
     [self tableView:self.tableView didSelectRowAtIndexPath:scrollIndexPath];
-//    [self performSegueWithIdentifier:@"showDetail" sender:sender]; // Go to the detail view -- hmm, commengting this out didn't hurt anything.
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        // iPad
+    }
+    else { // iPhone
+        [self performSegueWithIdentifier:@"showDetail" sender:sender];
+    }
+
 }
 
 #pragma mark - Table View

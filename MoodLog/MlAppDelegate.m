@@ -34,12 +34,22 @@
         controller.managedObjectContext = self.managedObjectContext;
     }
     
+//    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];
+//    self.moodList = [NSArray arrayWithContentsOfFile:plistPath];
+//    self.moodDataList = [[NSArray alloc] init];
+//    for (id mood in self.moodList) {
+//        MlMoodDataItem  *aMoodDataItem = [[MlMoodDataItem alloc] init];
+//        aMoodDataItem.mood = mood;
+//        aMoodDataItem.selected = FALSE;
+//        self.moodDataList = [self.moodDataList arrayByAddingObject:aMoodDataItem];
+//    }
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];
-    self.moodList = [NSArray arrayWithContentsOfFile:plistPath];
+    self.moodListDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     self.moodDataList = [[NSArray alloc] init];
-    for (id mood in self.moodList) {
+    for (id mood in self.moodListDictionary) {
         MlMoodDataItem  *aMoodDataItem = [[MlMoodDataItem alloc] init];
         aMoodDataItem.mood = mood;
+        aMoodDataItem.facePath = [[self.moodListDictionary valueForKey:mood] valueForKey:@"facePath"];
         aMoodDataItem.selected = FALSE;
         self.moodDataList = [self.moodDataList arrayByAddingObject:aMoodDataItem];
     }
