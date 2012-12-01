@@ -11,11 +11,11 @@
 		<key>facePath</key>
 		<string>Adored</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Parrot</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>0</string>
+		<string>3</string>
 	</dict>
 	<key>Adoring</key>
 	<dict>
@@ -26,11 +26,11 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Parrot</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>0</string>
+		<string>3</string>
 	</dict>
 	<key>Affectionate</key>
 	<dict>
@@ -41,7 +41,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -71,7 +71,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -82,11 +82,11 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-3</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Bothered</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -101,7 +101,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -116,7 +116,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -131,7 +131,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -140,17 +140,17 @@
 	<key>Amused</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Joy</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>7</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>0</string>
+		<string>3</string>
 	</dict>
 	<key>Angry</key>
 	<dict>
@@ -172,11 +172,11 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-5</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Annoyed</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -187,11 +187,11 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Plutchik</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -204,9 +204,24 @@
 		<key>feelValue</key>
 		<integer>0</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Anxious</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>-4</string>
+	</dict>
+	<key>Apologetic</key>
+	<dict>
+		<key>category</key>
+		<string>None</string>
+		<key>feelValue</key>
+		<integer>-3</integer>
+		<key>facePath</key>
+		<string>Apologetic</string>
+		<key>source</key>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -221,7 +236,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -236,7 +251,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -247,11 +262,11 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-9</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Ashamed</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -266,7 +281,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -281,7 +296,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -291,12 +306,14 @@
 	<dict>
 		<key>category</key>
 		<string>None</string>
+		<key>New item</key>
+		<string></string>
 		<key>feelValue</key>
 		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -311,7 +328,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -322,11 +339,11 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-4</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Angry</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -337,26 +354,41 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>10</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Blissful</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
 		<string>0</string>
+	</dict>
+	<key>Bored</key>
+	<dict>
+		<key>category</key>
+		<string>None</string>
+		<key>feelValue</key>
+		<integer>-2</integer>
+		<key>facePath</key>
+		<string>Bored</string>
+		<key>source</key>
+		<string>Need Source</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>3</string>
 	</dict>
 	<key>Broken</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-10</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Broken</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -371,7 +403,22 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>0</string>
+	</dict>
+	<key>Cautious</key>
+	<dict>
+		<key>category</key>
+		<string>None</string>
+		<key>feelValue</key>
+		<integer>-2</integer>
+		<key>facePath</key>
+		<string>Cautious</string>
+		<key>source</key>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -386,7 +433,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -401,7 +448,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -412,11 +459,11 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Confident</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -425,13 +472,28 @@
 	<key>Content</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Joy</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Content</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Parrot</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>2</string>
+	</dict>
+	<key>Curious</key>
+	<dict>
+		<key>category</key>
+		<string>Reactive</string>
+		<key>feelValue</key>
+		<integer>5</integer>
+		<key>facePath</key>
+		<string>Curious</string>
+		<key>source</key>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -442,17 +504,17 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-10</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Broken</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Dejectied</key>
+	<key>Dejected</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
@@ -461,7 +523,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -476,7 +538,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -491,7 +553,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -506,7 +568,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -521,7 +583,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -536,7 +598,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -551,7 +613,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -562,11 +624,11 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-9</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Plutchik</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -581,7 +643,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -596,7 +658,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -611,7 +673,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -626,7 +688,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -641,7 +703,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -656,7 +718,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -669,9 +731,9 @@
 		<key>feelValue</key>
 		<integer>0</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Embarrased</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -686,7 +748,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -701,7 +763,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -716,7 +778,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -731,7 +793,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -746,7 +808,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -761,7 +823,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -776,7 +838,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -791,7 +853,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -806,7 +868,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -821,7 +883,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -836,7 +898,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -851,7 +913,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -866,7 +928,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -881,7 +943,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -896,7 +958,7 @@
 		<key>facePath</key>
 		<string>Glad</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -911,7 +973,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -926,7 +988,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -941,7 +1003,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -956,7 +1018,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -971,7 +1033,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -986,7 +1048,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1001,7 +1063,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1016,7 +1078,7 @@
 		<key>facePath</key>
 		<string>Happy</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1031,7 +1093,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1046,7 +1108,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1061,7 +1123,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1076,7 +1138,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1091,7 +1153,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1106,7 +1168,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1121,7 +1183,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1136,7 +1198,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1151,7 +1213,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1166,7 +1228,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1181,7 +1243,22 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>0</string>
+	</dict>
+	<key>Interested</key>
+	<dict>
+		<key>category</key>
+		<string>Reactive</string>
+		<key>feelValue</key>
+		<integer>6</integer>
+		<key>facePath</key>
+		<string>Curious</string>
+		<key>source</key>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1196,7 +1273,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1211,7 +1288,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1226,7 +1303,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1235,17 +1312,17 @@
 	<key>Joyful</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Joy</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>10</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Happy</string>
 		<key>source</key>
 		<string>Parrot, Plutchik</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>0</string>
+		<string>1</string>
 	</dict>
 	<key>Jubilant</key>
 	<dict>
@@ -1256,7 +1333,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1271,7 +1348,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1286,7 +1363,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1301,7 +1378,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1316,7 +1393,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1331,41 +1408,41 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Parrot</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>0</string>
+		<string>1</string>
 	</dict>
 	<key>Loved</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Love</string>
 		<key>feelValue</key>
 		<integer>0</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Adored</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Parrot</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>0</string>
+		<string>1</string>
 	</dict>
 	<key>Lovable</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Love</string>
 		<key>feelValue</key>
 		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Parrot</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>0</string>
+		<string>1</string>
 	</dict>
 	<key>Lustful</key>
 	<dict>
@@ -1376,7 +1453,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1391,7 +1468,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1406,7 +1483,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1421,7 +1498,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1436,7 +1513,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1451,7 +1528,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1466,7 +1543,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1481,7 +1558,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1496,7 +1573,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1511,7 +1588,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1526,7 +1603,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1541,7 +1618,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1556,7 +1633,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1571,7 +1648,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1586,7 +1663,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1601,7 +1678,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1616,7 +1693,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1631,7 +1708,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1646,7 +1723,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1661,7 +1738,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1676,7 +1753,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1706,7 +1783,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1721,7 +1798,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1736,7 +1813,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1751,7 +1828,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1760,7 +1837,7 @@
 	<key>Surprised</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Surprise</string>
 		<key>feelValue</key>
 		<integer>0</integer>
 		<key>facePath</key>
@@ -1770,18 +1847,18 @@
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>0</string>
+		<string>1</string>
 	</dict>
 	<key>Suspicious</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-3</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Skeptical</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1796,7 +1873,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1811,7 +1888,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1826,7 +1903,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1841,7 +1918,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1856,7 +1933,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1871,7 +1948,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1880,13 +1957,13 @@
 	<key>Trusting</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Trust</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Plutchik</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1901,7 +1978,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1916,7 +1993,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1931,7 +2008,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1946,7 +2023,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1957,11 +2034,11 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-3</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Worried</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1976,7 +2053,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
@@ -1991,7 +2068,7 @@
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
-		<string>Parrot, Plutchik</string>
+		<string>Need Source</string>
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
