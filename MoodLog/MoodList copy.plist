@@ -7,9 +7,9 @@
 		<key>category</key>
 		<string>Love</string>
 		<key>feelValue</key>
-		<integer>10</integer>
+		<integer>0</integer>
 		<key>facePath</key>
-		<string>Adored</string>
+		<string>Blank</string>
 		<key>source</key>
 		<string>Parrot, Plutchik</string>
 		<key>emotionDescription</key>
@@ -890,11 +890,11 @@
 	<key>Glad</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<integer>8</integer>
+		<integer>0</integer>
 		<key>facePath</key>
-		<string>Glad</string>
+		<string>Blank</string>
 		<key>source</key>
 		<string>Parrot, Plutchik</string>
 		<key>emotionDescription</key>
