@@ -926,9 +926,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CDS-YE-AKi" firstAttribute="trailing" secondItem="pOy-w1-VWZ" secondAttribute="trailing" type="user" id="6ms-TT-TRG"/>
-                            <constraint firstItem="CDS-YE-AKi" firstAttribute="trailing" secondItem="pOy-w1-VWZ" secondAttribute="trailing" type="user" id="7fY-4p-Pos"/>
                             <constraint firstItem="CDS-YE-AKi" firstAttribute="leading" secondItem="pOy-w1-VWZ" secondAttribute="leading" type="user" id="S1G-dm-bve"/>
+                            <constraint firstItem="CDS-YE-AKi" firstAttribute="trailing" secondItem="pOy-w1-VWZ" secondAttribute="trailing" type="default" id="UC1-fB-mVp"/>
                             <constraint firstItem="bgL-bd-sIh" firstAttribute="leading" secondItem="pOy-w1-VWZ" secondAttribute="leading" constant="28" id="V8S-g2-3BA"/>
                             <constraint firstItem="bgL-bd-sIh" firstAttribute="top" secondItem="pOy-w1-VWZ" secondAttribute="top" constant="6" id="jPv-h5-d7M"/>
                             <constraint firstItem="CDS-YE-AKi" firstAttribute="leading" secondItem="pOy-w1-VWZ" secondAttribute="leading" type="user" id="p8g-X8-MUg"/>

@@ -90,10 +90,16 @@ static MlDatePickerViewController *myDatePickerViewController;
         [self selectButton]; // Highlight the correct button
         [self setFaces:[self.detailItem.showFaces boolValue]];
   
+        [self.entryLogTextView setDelegate:self];
+        [self.blankCoveringView setHidden:YES];
+        [self.scrollView setHidden:NO];
+        [self.detailToolBar setRightBarButtonItem:nil animated:YES];
     }
-    [self.entryLogTextView setDelegate:self];
-    // Hide the Done/Edit button
-    [self.detailToolBar setRightBarButtonItem:nil animated:YES];
+    else { // Nothing selected
+        [self.blankCoveringView setHidden:NO];
+        [self.scrollView setHidden:YES];
+        [self.detailToolBar setRightBarButtonItem:nil animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -208,6 +214,11 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self setFaces:![self.detailItem.showFaces boolValue]];
 }
 
+- (IBAction)addEntryFromStartScreen:(id)sender {
+    NSLog(@"Adding a new entry");
+    
+}
+
 - (void) setFaces:(BOOL)facesState {
     if (facesState == YES) {
         self.myMoodCollectionViewController.cellIdentifier = @"moodCellFaces";
@@ -262,6 +273,7 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self setSortCBAButton:nil];
     [self setSortShuffleButton:nil];
     [self setToggleFacesButton:nil];
+    [self setBlankCoveringView:nil];
     [super viewDidUnload];
 }
 @end

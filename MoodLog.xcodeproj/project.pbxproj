@@ -62,6 +62,8 @@
 		4C4C5438166A936A00DDDBA2 /* Skeptical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C5436166A936900DDDBA2 /* Skeptical@2x.png */; };
 		4C4C543B166A93C800DDDBA2 /* Worried.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C5439166A93C700DDDBA2 /* Worried.png */; };
 		4C4C543C166A93C800DDDBA2 /* Worried@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C543A166A93C700DDDBA2 /* Worried@2x.png */; };
+		4C4C543F166D46FB00DDDBA2 /* Adoring.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C543D166D46F900DDDBA2 /* Adoring.png */; };
+		4C4C5440166D46FB00DDDBA2 /* Adoring@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C543E166D46FA00DDDBA2 /* Adoring@2x.png */; };
 		4C55CBE7162DE67400EAA878 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE6162DE67400EAA878 /* UIKit.framework */; };
 		4C55CBE9162DE67400EAA878 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE8162DE67400EAA878 /* Foundation.framework */; };
 		4C55CBEB162DE67400EAA878 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */; };
@@ -96,6 +98,7 @@
 		4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */; };
 		4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F0164B8C870055CC3D /* MlMailViewController.m */; };
 		4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */; };
+		4CFD9FA5166D85AB00805D6B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD9FA4166D85AB00805D6B /* add.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +121,7 @@
 		4C0C7682164AD3BC00DD372F /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chart.png; path = Images/chart.png; sourceTree = "<group>"; };
 		4C3E0FB51657122100B0E060 /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
 		4C3E0FB61657122100B0E060 /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prefs.m; sourceTree = "<group>"; };
-		4C4C53D4166569A400DDDBA2 /* MoodLog 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MoodLog 3.xcdatamodel"; sourceTree = "<group>"; };
+		4C4C53D4166569A400DDDBA2 /* MoodLog 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 3.xcdatamodel"; sourceTree = "<group>"; };
 		4C4C53DC16656D5800DDDBA2 /* Emotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotions.h; sourceTree = "<group>"; };
 		4C4C53DD16656D5800DDDBA2 /* Emotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emotions.m; sourceTree = "<group>"; };
 		4C4C53DF1665F14900DDDBA2 /* MoodList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoodList.plist; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 		4C4C5436166A936900DDDBA2 /* Skeptical@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Skeptical@2x.png"; sourceTree = "<group>"; };
 		4C4C5439166A93C700DDDBA2 /* Worried.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Worried.png; sourceTree = "<group>"; };
 		4C4C543A166A93C700DDDBA2 /* Worried@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Worried@2x.png"; sourceTree = "<group>"; };
+		4C4C543D166D46F900DDDBA2 /* Adoring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Adoring.png; sourceTree = "<group>"; };
+		4C4C543E166D46FA00DDDBA2 /* Adoring@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Adoring@2x.png"; sourceTree = "<group>"; };
 		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -218,6 +223,7 @@
 		4CFB21F0164B8C870055CC3D /* MlMailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMailViewController.m; sourceTree = "<group>"; };
 		4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCalendarViewController.h; sourceTree = "<group>"; };
 		4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCalendarViewController.m; sourceTree = "<group>"; };
+		4CFD9FA4166D85AB00805D6B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Images/add.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				4C4C53F11669ECDB00DDDBA2 /* Adored.png */,
+				4C4C543D166D46F900DDDBA2 /* Adoring.png */,
+				4C4C543E166D46FA00DDDBA2 /* Adoring@2x.png */,
 				4C4C53F21669ECDB00DDDBA2 /* Adored@2x.png */,
 				4C4C53E11666ECA400DDDBA2 /* Afraid.png */,
 				4C4C53E21666ECA400DDDBA2 /* Afraid@2x.png */,
@@ -377,6 +385,7 @@
 		4C55CBEF162DE67400EAA878 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CFD9FA4166D85AB00805D6B /* add.png */,
 				4C0C7671164AC84000DD372F /* Faces */,
 				4C0C767A164AC84800DD372F /* shuffle_off.png */,
 				4C0C7680164AD06E00DD372F /* junk.png */,
@@ -550,6 +559,9 @@
 				4C4C5438166A936A00DDDBA2 /* Skeptical@2x.png in Resources */,
 				4C4C543B166A93C800DDDBA2 /* Worried.png in Resources */,
 				4C4C543C166A93C800DDDBA2 /* Worried@2x.png in Resources */,
+				4C4C543F166D46FB00DDDBA2 /* Adoring.png in Resources */,
+				4C4C5440166D46FB00DDDBA2 /* Adoring@2x.png in Resources */,
+				4CFD9FA5166D85AB00805D6B /* add.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

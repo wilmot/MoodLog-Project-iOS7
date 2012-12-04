@@ -22,9 +22,9 @@
 		<key>category</key>
 		<string>Love</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>9</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Adoring</string>
 		<key>source</key>
 		<string>Parrot</string>
 		<key>emotionDescription</key>
@@ -35,11 +35,11 @@
 	<key>Affectionate</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Love</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Adoring</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
