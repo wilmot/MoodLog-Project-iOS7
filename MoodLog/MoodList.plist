@@ -39,7 +39,7 @@
 		<key>feelValue</key>
 		<integer>8</integer>
 		<key>facePath</key>
-		<string>Adoring</string>
+		<string>Affectionate</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -65,11 +65,11 @@
 	<key>Aggravated</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Anger</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-6</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Aggravated</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -95,11 +95,11 @@
 	<key>Alarmed</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Surprise</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-3</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Alarmed</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -110,11 +110,26 @@
 	<key>Alienated</key>
 	<dict>
 		<key>category</key>
+		<string>Sad</string>
+		<key>feelValue</key>
+		<integer>-5</integer>
+		<key>facePath</key>
+		<string>Alienated</string>
+		<key>source</key>
+		<string>Need Source</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>0</string>
+	</dict>
+	<key>Ambivalent</key>
+	<dict>
+		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-1</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Ambivalent</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -125,11 +140,11 @@
 	<key>Amazed</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Happy</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>5</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Amazed</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
