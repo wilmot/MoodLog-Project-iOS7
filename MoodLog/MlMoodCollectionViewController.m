@@ -145,10 +145,10 @@ NSArray *emotionArray;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size = CGSizeMake(10.0, 10.0);
     
-    if (self.cellIdentifier == @"moodCell") {
+    if ([self.cellIdentifier isEqual: @"moodCell"]) {
         size = CGSizeMake(96.0, 18.0);
     }
-    else if (self.cellIdentifier == @"moodCellFaces"){
+    else if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             size = CGSizeMake(86.0, 116.0);
         }
@@ -186,10 +186,10 @@ NSArray *emotionArray;
         [[cell moodName] setBackgroundColor:normalColor];
         [[cell moodName] setTextColor:[UIColor blackColor]];
         [[cell moodName] setFont:[UIFont systemFontOfSize:14.0]];
-        if (self.cellIdentifier == @"moodCell") {
+        if ([self.cellIdentifier isEqual: @"moodCell"]) {
             [[cell moodName] setText:[NSString stringWithFormat:@"    %@", aMood.name]];
         }
-        else if (self.cellIdentifier == @"moodCellFaces") {
+        else if ([self.cellIdentifier isEqual: @"moodCellFaces"]) {
             [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];            
         }
     }

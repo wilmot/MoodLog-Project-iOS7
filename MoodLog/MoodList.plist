@@ -197,14 +197,14 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Anticipatory</key>
+	<key>Anticipating</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
 		<integer>8</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Anticipating</string>
 		<key>source</key>
 		<string>Plutchik</string>
 		<key>emotionDescription</key>
@@ -247,9 +247,9 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>-7</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Apprehensive</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -262,9 +262,9 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>7</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Aroused</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -292,9 +292,9 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>7</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Astonished</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -307,9 +307,9 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Attractive</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -321,12 +321,10 @@
 	<dict>
 		<key>category</key>
 		<string>None</string>
-		<key>New item</key>
-		<string></string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>7</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Attracted</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -339,9 +337,9 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>10</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Awed</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -414,9 +412,9 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Caring</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -444,9 +442,9 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Cheerful</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -459,9 +457,9 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<integer>0</integer>
+		<integer>9</integer>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Compassionate</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -904,7 +902,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Fondness</key>
+	<key>Fond</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
@@ -1024,7 +1022,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Grief</key>
+	<key>Grieving</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
@@ -1069,7 +1067,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Guilt</key>
+	<key>Guilty</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
@@ -1189,7 +1187,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Hurt</key>
+	<key>Hurting</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
@@ -1294,6 +1292,21 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
+	<key>Irritated</key>
+	<dict>
+		<key>category</key>
+		<string>None</string>
+		<key>feelValue</key>
+		<integer>0</integer>
+		<key>facePath</key>
+		<string>Blank</string>
+		<key>source</key>
+		<string>Need Source</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>0</string>
+	</dict>
 	<key>Isolated</key>
 	<dict>
 		<key>category</key>
@@ -1324,7 +1337,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Joyful</key>
+	<key>Joyous</key>
 	<dict>
 		<key>category</key>
 		<string>Joy</string>
@@ -1669,7 +1682,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Rapture</key>
+	<key>Rapturous</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
@@ -1684,7 +1697,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Regret</key>
+	<key>Regretful</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
@@ -1744,7 +1757,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Resentment</key>
+	<key>Resenting</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
@@ -1759,7 +1772,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Revulsion</key>
+	<key>Revulsed</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
@@ -1894,7 +1907,7 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Tenderness</key>
+	<key>Tender</key>
 	<dict>
 		<key>category</key>
 		<string>None</string>
