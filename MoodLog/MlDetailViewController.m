@@ -89,11 +89,17 @@ static MlDatePickerViewController *myDatePickerViewController;
         
         [self selectButton]; // Highlight the correct button
         [self setFaces:[self.detailItem.showFaces boolValue]];
+        if (self.detailItem.editing.boolValue == YES) {
+            [self.expandButton setTitle:@"Done" forState:UIControlStateNormal];
+        } else {
+            [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
+        }
   
         [self.entryLogTextView setDelegate:self];
         [self.blankCoveringView setHidden:YES];
         [self.scrollView setHidden:NO];
         [self.detailToolBar setRightBarButtonItem:nil animated:YES];
+        
     }
     else { // Nothing selected
         [self.blankCoveringView setHidden:NO];
@@ -127,6 +133,7 @@ static MlDatePickerViewController *myDatePickerViewController;
 - (IBAction)pressedDoneButton:(id)sender {
     // is it a Done button or an Edit button?
     [self.entryLogTextView resignFirstResponder];
+    [self.detailToolBar setRightBarButtonItem:nil animated:YES];
 }
 
 - (IBAction)moveSleepSlider:(id)sender {
@@ -219,6 +226,20 @@ static MlDatePickerViewController *myDatePickerViewController;
     
 }
 
+- (IBAction)pressedExpandButton:(id)sender {
+    if ([self.expandButton.titleLabel.text isEqual:@"Edit"]) {
+        [self.expandButton setTitle:@"Done" forState:UIControlStateNormal];
+        self.detailItem.editing = [NSNumber numberWithBool:YES];
+        [self.myMoodCollectionViewController refresh];
+    }
+    else {
+        [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
+        self.detailItem.editing = [NSNumber numberWithBool:NO];
+        [self.myMoodCollectionViewController refresh];
+    }
+    [self saveContext];
+}
+
 - (void) setFaces:(BOOL)facesState {
     if (facesState == YES) {
         self.myMoodCollectionViewController.cellIdentifier = @"moodCellFaces";
@@ -274,6 +295,9 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self setSortShuffleButton:nil];
     [self setToggleFacesButton:nil];
     [self setBlankCoveringView:nil];
+    [self setExpandButton:nil];
+    [self setMoodViewWithHeader:nil];
+    [self setExpandButton:nil];
     [super viewDidUnload];
 }
 @end

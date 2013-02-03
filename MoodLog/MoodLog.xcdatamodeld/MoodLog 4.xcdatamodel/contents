@@ -20,6 +20,7 @@
         <attribute name="dateCreated" optional="YES" attributeType="Date">
             <userInfo/>
         </attribute>
+        <attribute name="editing" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="energy" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="header" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="health" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>

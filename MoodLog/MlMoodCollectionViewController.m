@@ -87,14 +87,31 @@ NSArray *emotionArray;
     MoodLogEvents *myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
     NSSet *emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record
     
+    NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
     if ( [myLogEntry.sortStyle isEqualToString:alphabeticalSort]) {
-        emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(compare:)];
+        if (myLogEntry.editing.boolValue  == YES) {
+            emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(compare:)];
+        }
+        else {
+            emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+        }
     }
     else if ( [myLogEntry.sortStyle isEqualToString:reverseAlphabeticalSort]) {
+        if (myLogEntry.editing.boolValue == YES) {
         emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(reverseCompare:)];
+        }
+        else {
+            emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(reverseCompare:)];
+        }
     }
     else if ([myLogEntry.sortStyle isEqualToString:shuffleSort]) { // Shuffle
-        NSMutableArray *emotionMutableArray = [NSMutableArray arrayWithArray:[emotionsforEntry allObjects]]; // whatever order they happen to be in
+        NSMutableArray *emotionMutableArray;
+        if (myLogEntry.editing.boolValue == YES) {
+            emotionMutableArray = [NSMutableArray arrayWithArray:[emotionsforEntry allObjects]]; // whatever order they happen to be in
+        }
+        else {
+            emotionMutableArray = [NSMutableArray arrayWithArray:[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects]];
+        }
         [emotionMutableArray shuffle];
         emotionArray = [NSArray arrayWithArray:emotionMutableArray];
     }
@@ -115,30 +132,30 @@ NSArray *emotionArray;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    MlDetailViewController *detailViewController = ((MlDetailViewController *)([self parentViewController]));
+    MoodLogEvents *myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
+    if (myLogEntry.editing.boolValue == YES) {
+        MlDetailViewController *detailViewController = ((MlDetailViewController *)([self parentViewController]));
 
-    [[detailViewController entryLogTextView] resignFirstResponder];
-    Emotions *aMood = [emotionArray objectAtIndex:indexPath.row];
-    if ([aMood.selected floatValue]) { // if it's already selected
-       // aMood.selected = [NSNumber numberWithBool:NO];
-        [aMood setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
-    }
-    else {
-        //aMood.selected = [NSNumber numberWithBool:YES];
-        [aMood setValue:[NSNumber numberWithBool:YES] forKey:@"selected"];
-    }
-    // Save the context.
-    NSError *error = nil;
-    if (![[detailViewController.detailItem managedObjectContext] save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+        [[detailViewController entryLogTextView] resignFirstResponder];
+        Emotions *aMood = [emotionArray objectAtIndex:indexPath.row];
+        if ([aMood.selected floatValue]) { // if it's already selected
+            [aMood setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
+        }
+        else {
+            [aMood setValue:[NSNumber numberWithBool:YES] forKey:@"selected"];
+        }
+        // Save the context.
+        NSError *error = nil;
+        if (![[detailViewController.detailItem managedObjectContext] save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
 
-    [collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
-    detailViewController.detailItem.sortStyle = detailViewController.detailItem.sortStyle; // Hack to get the Master list to update
+        [collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+        detailViewController.detailItem.sortStyle = detailViewController.detailItem.sortStyle; // Hack to get the Master list to update
+    }
 }
 
 #pragma mark - Delegate methods
@@ -193,7 +210,6 @@ NSArray *emotionArray;
             [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];            
         }
     }
-
     
     return cell;
 }

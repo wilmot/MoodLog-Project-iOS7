@@ -2,8 +2,8 @@
 //  MoodLogEvents.m
 //  MoodLog
 //
-//  Created by Barry A. Langdon-Lassagne on 11/21/12.
-//  Copyright (c) 2012 Barry A. Langdon-Lassagne. All rights reserved.
+//  Created by Barry A. Langdon-Lassagne on 2/2/13.
+//  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
 #import "MoodLogEvents.h"
@@ -21,11 +21,12 @@
 @dynamic id;
 @dynamic journalEntry;
 @dynamic location;
+@dynamic showFaces;
 @dynamic sleep;
 @dynamic sortStyle;
 @dynamic userName;
 @dynamic weather;
-@dynamic showFaces;
+@dynamic editing;
 @dynamic relationshipEmotions;
 @dynamic relationshipStressors;
 

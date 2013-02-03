@@ -83,6 +83,7 @@
     NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMood.date];
     newMood.header = [NSString stringWithFormat:@"%d", ([components year] * 1000) + [components month]];
     newMood.sortStyle = @"Alphabetical"; // Default sort style
+    newMood.editing = [NSNumber numberWithBool:YES];
     
     // Every record has a full set of moods; only some are selected or arranged
     for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList) {
