@@ -15,8 +15,9 @@
 @interface MlMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) MlDetailViewController *detailViewController;
-
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (void)insertNewObject:(id)sender;
 
 @end

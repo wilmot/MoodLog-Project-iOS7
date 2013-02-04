@@ -8,7 +8,6 @@
 
 #import "MlAppDelegate.h"
 
-#import "MlMasterViewController.h"
 #import "MlMoodDataItem.h"
 
 @implementation MlAppDelegate
@@ -16,6 +15,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize masterViewController = _masterViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -26,12 +26,12 @@
         splitViewController.delegate = (id)navigationController.topViewController;
         
         UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-        MlMasterViewController *controller = (MlMasterViewController *)masterNavigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
+        _masterViewController = (MlMasterViewController *)masterNavigationController.topViewController;
+        _masterViewController.managedObjectContext = self.managedObjectContext;
     } else {
         UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-        MlMasterViewController *controller = (MlMasterViewController *)navigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
+        _masterViewController = (MlMasterViewController *)navigationController.topViewController;
+        _masterViewController.managedObjectContext = self.managedObjectContext;
     }
     
 //    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];

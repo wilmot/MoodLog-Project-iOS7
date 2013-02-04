@@ -7,6 +7,8 @@
 //
 
 #import "MlDetailViewController.h"
+#import "MlMasterViewController.h"
+#import "MlAppDelegate.h"
 #import "MlDatePickerViewController.h"
 #import "Prefs.h"
 
@@ -222,8 +224,8 @@ static MlDatePickerViewController *myDatePickerViewController;
 }
 
 - (IBAction)addEntryFromStartScreen:(id)sender {
-    NSLog(@"Adding a new entry");
-    
+    MlMasterViewController *controller = [(MlAppDelegate *)[UIApplication sharedApplication].delegate masterViewController];
+    [controller insertNewObject:self];
 }
 
 - (IBAction)pressedExpandButton:(id)sender {
