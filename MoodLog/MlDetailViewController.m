@@ -91,10 +91,19 @@ static MlDatePickerViewController *myDatePickerViewController;
         
         [self selectButton]; // Highlight the correct button
         [self setFaces:[self.detailItem.showFaces boolValue]];
-        if (self.detailItem.editing.boolValue == YES) {
-            [self.expandButton setTitle:@"Done" forState:UIControlStateNormal];
-        } else {
-            [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+            // iPad
+            if (self.detailItem.editing.boolValue == YES) {
+                [self.expandButton setTitle:@"Done" forState:UIControlStateNormal];
+            } else {
+                [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
+            }
+        }
+        else { // iPhone
+            if (self.detailItem.editing.boolValue == YES) {
+                // Go to the modal mood list
+                [self performSegueWithIdentifier: @"MoodFullScreenSegue" sender: self];
+            }
         }
   
         [self.entryLogTextView setDelegate:self];
@@ -188,8 +197,13 @@ static MlDatePickerViewController *myDatePickerViewController;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"MoodCollectionSegue"]) {
         self.myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
+        ((MlMoodCollectionViewController *)[segue destinationViewController]).detailItem = self.detailItem;
     }
-    if ([segue.identifier isEqualToString:@"DatePicker"]) {
+    else if ([segue.identifier isEqualToString:@"MoodFullScreenSegue"]) {
+        [self pressedDoneButton:self]; // Make sure textfield isn't still in edit mode
+        ((MlMoodCollectionViewController *)[segue destinationViewController]).detailItem = self.detailItem;
+    }
+    else if ([segue.identifier isEqualToString:@"DatePicker"]) {
         // do stuff around the date & time
         myDatePickerViewController = [segue destinationViewController];
         myDatePickerViewController.detailItem = self.detailItem;
@@ -234,16 +248,26 @@ static MlDatePickerViewController *myDatePickerViewController;
 }
 
 - (IBAction)pressedExpandButton:(id)sender {
-    if ([self.expandButton.titleLabel.text isEqual:@"Edit"]) {
-        [self.expandButton setTitle:@"Done" forState:UIControlStateNormal];
+    [self pressedDoneButton:self];
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        // iPad
+        if ([self.expandButton.titleLabel.text isEqual:@"Edit"]) {
+            [self.expandButton setTitle:@"Done" forState:UIControlStateNormal];
+            self.detailItem.editing = [NSNumber numberWithBool:YES];
+            [self.myMoodCollectionViewController refresh];
+        }
+        else {
+            [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
+            self.detailItem.editing = [NSNumber numberWithBool:NO];
+            [self.myMoodCollectionViewController refresh];
+        }
+    }
+    else { // iPhone
+        // On the iPhone I have a segue to a modal view, so I don't change the button text
         self.detailItem.editing = [NSNumber numberWithBool:YES];
         [self.myMoodCollectionViewController refresh];
     }
-    else {
-        [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
-        self.detailItem.editing = [NSNumber numberWithBool:NO];
-        [self.myMoodCollectionViewController refresh];
-    }
+    
     [self saveContext];
 }
 

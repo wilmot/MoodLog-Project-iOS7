@@ -48,6 +48,7 @@ UIColor *normalColor;
 UIColor *selectedColor;
 NSString *check = @"✅";
 NSArray *emotionArray;
+MoodLogEvents *myLogEntry;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -83,9 +84,18 @@ NSArray *emotionArray;
 }
 
 - (void) refresh {
+    NSSet *emotionsforEntry;
     // Fetch the Mood list for this journal entry
-    MoodLogEvents *myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
-    NSSet *emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        // iPad
+        myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
+        emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record
+   }
+    else {
+        myLogEntry = self.detailItem;
+        emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record        
+    }
+
     
     NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
     if ( [myLogEntry.sortStyle isEqualToString:alphabeticalSort]) {
@@ -132,11 +142,13 @@ NSArray *emotionArray;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    MoodLogEvents *myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
     if (myLogEntry.editing.boolValue == YES) {
         MlDetailViewController *detailViewController = ((MlDetailViewController *)([self parentViewController]));
 
-        [[detailViewController entryLogTextView] resignFirstResponder];
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+            // iPad
+            [[detailViewController entryLogTextView] resignFirstResponder];
+        }
         Emotions *aMood = [emotionArray objectAtIndex:indexPath.row];
         if ([aMood.selected floatValue]) { // if it's already selected
             [aMood setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];

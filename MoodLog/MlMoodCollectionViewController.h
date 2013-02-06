@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoodLogEvents.h"
 
 @interface MlMoodCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSString *cellIdentifier;
+@property (strong, nonatomic) MoodLogEvents *detailItem;
 
 - (void) refresh;
 
