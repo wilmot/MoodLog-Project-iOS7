@@ -49,6 +49,11 @@
     if (selection){
         [[self tableView] selectRowAtIndexPath:selection animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
+    else { // On first load, go to the bottom of the TableView (dates are in ascending order)
+        NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
+        NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
+        [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    }
     
 //    [super viewWillAppear:animated]; //Trick is calling super last in this case. Then you can  retrieve previously selected row to --> NSIndexPath *selection
 
@@ -84,6 +89,8 @@
     newMood.header = [NSString stringWithFormat:@"%d", ([components year] * 1000) + [components month]];
     newMood.sortStyle = @"Alphabetical"; // Default sort style
     newMood.editing = [NSNumber numberWithBool:YES];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    newMood.showFaces = [NSNumber numberWithBool:[defaults boolForKey:@"DefaultFacesState"]];
     
     // Every record has a full set of moods; only some are selected or arranged
     for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList) {

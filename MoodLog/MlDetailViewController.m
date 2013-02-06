@@ -220,7 +220,12 @@ static MlDatePickerViewController *myDatePickerViewController;
 }
 
 - (IBAction)toggleFaces:(id)sender {
-    [self setFaces:![self.detailItem.showFaces boolValue]];
+    Boolean facesState = ![self.detailItem.showFaces boolValue];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [self setFaces:facesState];
+    [defaults setBool:facesState forKey:@"DefaultFacesState"];
+    [defaults synchronize];
+
 }
 
 - (IBAction)addEntryFromStartScreen:(id)sender {
