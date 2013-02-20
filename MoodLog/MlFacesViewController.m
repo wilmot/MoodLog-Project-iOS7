@@ -30,14 +30,16 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void) viewWillAppear:(BOOL)animated  {
+- (void) viewWillAppear:(BOOL)animated {
     [self selectButton]; // Highlight the correct button
     [self setFaces:[self.detailItem.showFaces boolValue]];
-    
+    self.detailItem.editing = [NSNumber numberWithBool:YES];
+    [self saveContext];
+    [self.myMoodCollectionViewController refresh];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"MoodCollectionSegue"]) {
+    if ([segue.identifier isEqualToString:@"MoodCollectionSegue2"]) {
         self.myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
         ((MlMoodCollectionViewController *)[segue destinationViewController]).detailItem = self.detailItem;
     }
@@ -107,7 +109,7 @@
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
-    self.detailItem.editing = NO;
+    self.detailItem.editing = [NSNumber numberWithBool:NO];
     [self saveContext];
     [self dismissModalViewControllerAnimated:YES];
 }

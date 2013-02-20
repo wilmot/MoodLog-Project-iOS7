@@ -264,8 +264,6 @@ static MlDatePickerViewController *myDatePickerViewController;
     }
     else { // iPhone
         // On the iPhone I have a segue to a modal view, so I don't change the button text
-        self.detailItem.editing = [NSNumber numberWithBool:YES];
-        [self.myMoodCollectionViewController refresh];
     }
     
     [self saveContext];
