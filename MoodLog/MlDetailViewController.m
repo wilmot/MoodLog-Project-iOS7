@@ -29,7 +29,10 @@ static MlDatePickerViewController *myDatePickerViewController;
         _detailItem = newDetailItem;
         
         // Update the view.
-        [self configureView];
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+            // iPad
+            [self configureView]; // BL-L ***REMIND. Not sure why this is needed for the iPad version
+        }
     }
 
     if (self.masterPopoverController != nil) {
@@ -99,7 +102,8 @@ static MlDatePickerViewController *myDatePickerViewController;
                 [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
             }
         }
-        else { // iPhone
+        else {
+            // iPhone
             if (self.detailItem.editing.boolValue == YES) {
                 // Go to the modal mood list
                 [self performSegueWithIdentifier: @"MoodFullScreenSegue" sender: self];
