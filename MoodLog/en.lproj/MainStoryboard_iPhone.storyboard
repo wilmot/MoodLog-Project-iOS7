@@ -129,10 +129,9 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="lEH-i2-zcv" customClass="MlChartCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="BW3-jc-NZD">
-                        <rect key="frame" x="0.0" y="0.0" width="508" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="P2l-Xh-azZ">
                             <size key="itemSize" width="92" height="255"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -140,11 +139,97 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="chartCell" id="SvH-4j-IcZ" customClass="MlChartCollectionViewCell">
-                                <rect key="frame" x="0.0" y="32" width="92" height="255"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="chartCellPortrait" id="VVa-cL-jyv" customClass="MlChartCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="92" height="508"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="92" height="255"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="92" height="508"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="GrayLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="vS9-sB-7Jw"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exX-o9-fM6">
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SS-2P-hen">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="33" id="DlM-Fu-Hxl"/>
+                                                        <constraint firstAttribute="height" constant="16" id="dsn-Q3-BMY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="January" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVC-Fe-GMv">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="Cis-qT-D7Q"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10:01 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ij3-fH-Xl6">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="5NU-m7-02j"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.03033679165" green="0.44539222119999999" blue="0.082693211729999994" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="ij3-fH-Xl6" firstAttribute="trailing" secondItem="exX-o9-fM6" secondAttribute="trailing" type="default" id="1Y3-0x-qlh"/>
+                                                <constraint firstItem="RVC-Fe-GMv" firstAttribute="top" secondItem="exX-o9-fM6" secondAttribute="top" constant="1" id="8rg-a8-iv6"/>
+                                                <constraint firstAttribute="bottom" secondItem="ij3-fH-Xl6" secondAttribute="bottom" constant="4" id="BQz-eh-etD"/>
+                                                <constraint firstItem="ij3-fH-Xl6" firstAttribute="centerX" secondItem="1SS-2P-hen" secondAttribute="centerX" type="default" id="FwM-fb-sVf"/>
+                                                <constraint firstItem="ij3-fH-Xl6" firstAttribute="leading" secondItem="exX-o9-fM6" secondAttribute="leading" type="default" id="VIt-Tc-yWF"/>
+                                                <constraint firstItem="1SS-2P-hen" firstAttribute="centerY" secondItem="exX-o9-fM6" secondAttribute="centerY" type="default" id="ecd-sN-cob"/>
+                                                <constraint firstItem="RVC-Fe-GMv" firstAttribute="trailing" secondItem="exX-o9-fM6" secondAttribute="trailing" type="default" id="lVK-fQ-RiE"/>
+                                                <constraint firstItem="RVC-Fe-GMv" firstAttribute="leading" secondItem="exX-o9-fM6" secondAttribute="leading" type="default" id="oF8-Eo-Qee"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="35" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="87" translatesAutoresizingMaskIntoConstraints="NO" id="3o9-at-m4r">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="87" id="m16-F4-xCn"/>
+                                                <constraint firstAttribute="height" constant="458" id="mkQ-bo-xdO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" red="0.61276848230000003" green="0.87081473210000004" blue="0.62339651399999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="GrayLineVertical.png" translatesAutoresizingMaskIntoConstraints="NO" id="Smu-XX-QqJ">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="508" id="SxF-FK-JY5"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="vS9-sB-7Jw" firstAttribute="centerY" secondItem="3o9-at-m4r" secondAttribute="centerY" type="default" id="1KG-iO-A8Q"/>
+                                    <constraint firstItem="exX-o9-fM6" firstAttribute="top" secondItem="VVa-cL-jyv" secondAttribute="top" constant="460" id="6kM-sv-bfF"/>
+                                    <constraint firstItem="3o9-at-m4r" firstAttribute="top" secondItem="VVa-cL-jyv" secondAttribute="top" constant="1" id="ANv-ui-OAh"/>
+                                    <constraint firstItem="vS9-sB-7Jw" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" constant="-156" id="EaP-ak-Lfe"/>
+                                    <constraint firstItem="exX-o9-fM6" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" type="default" id="YyR-Uf-bje"/>
+                                    <constraint firstItem="3o9-at-m4r" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" constant="4" id="aMN-Wj-htR"/>
+                                    <constraint firstItem="3o9-at-m4r" firstAttribute="top" secondItem="Smu-XX-QqJ" secondAttribute="top" type="default" id="m0e-sh-RPH"/>
+                                    <constraint firstItem="Smu-XX-QqJ" firstAttribute="trailing" secondItem="3o9-at-m4r" secondAttribute="trailing" type="default" id="sC9-hV-M4B"/>
+                                    <constraint firstAttribute="bottom" secondItem="exX-o9-fM6" secondAttribute="bottom" constant="-2" id="tLm-rd-Iwm"/>
+                                    <constraint firstItem="exX-o9-fM6" firstAttribute="trailing" secondItem="VVa-cL-jyv" secondAttribute="trailing" type="default" id="vUw-lz-w71"/>
+                                </constraints>
+                                <size key="customSize" width="92" height="508"/>
+                                <connections>
+                                    <outlet property="dateLabel" destination="1SS-2P-hen" id="vzT-KJ-n7v"/>
+                                    <outlet property="emotionsLabel" destination="3o9-at-m4r" id="6aE-ev-zEp"/>
+                                    <outlet property="monthLabel" destination="RVC-Fe-GMv" id="ZaI-XM-CSt"/>
+                                    <outlet property="timeLabel" destination="ij3-fH-Xl6" id="7H2-j2-waO"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="chartCell" id="SvH-4j-IcZ" customClass="MlChartCollectionViewCell">
+                                <rect key="frame" x="92" y="124" width="92" height="260"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="92" height="260"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="GrayLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="YBk-Tv-NpP"/>
@@ -180,18 +265,18 @@
                                             <constraints>
                                                 <constraint firstItem="a0D-Pm-GhV" firstAttribute="leading" secondItem="NRZ-Pd-IKu" secondAttribute="leading" type="default" id="7HQ-zT-kYW"/>
                                                 <constraint firstItem="v62-WT-GIt" firstAttribute="top" secondItem="NRZ-Pd-IKu" secondAttribute="top" constant="1" id="JBE-Ua-ipS"/>
-                                                <constraint firstItem="zBC-Y7-bCv" firstAttribute="top" secondItem="NRZ-Pd-IKu" secondAttribute="top" constant="18" id="QbZ-GE-XAP"/>
-                                                <constraint firstAttribute="bottom" secondItem="a0D-Pm-GhV" secondAttribute="bottom" constant="2" id="ZiZ-yV-Prr"/>
+                                                <constraint firstAttribute="bottom" secondItem="a0D-Pm-GhV" secondAttribute="bottom" constant="4" id="Jkr-Cz-QNs"/>
+                                                <constraint firstItem="zBC-Y7-bCv" firstAttribute="top" secondItem="NRZ-Pd-IKu" secondAttribute="top" constant="16" id="P9L-YI-TfS"/>
                                                 <constraint firstItem="a0D-Pm-GhV" firstAttribute="trailing" secondItem="NRZ-Pd-IKu" secondAttribute="trailing" type="default" id="hG3-4m-ZAp"/>
                                                 <constraint firstItem="v62-WT-GIt" firstAttribute="trailing" secondItem="NRZ-Pd-IKu" secondAttribute="trailing" type="default" id="kcc-mK-5ya"/>
                                                 <constraint firstItem="v62-WT-GIt" firstAttribute="leading" secondItem="NRZ-Pd-IKu" secondAttribute="leading" type="default" id="sas-dS-Ydy"/>
-                                                <constraint firstItem="a0D-Pm-GhV" firstAttribute="centerX" secondItem="zBC-Y7-bCv" secondAttribute="centerX" type="default" id="xaf-JZ-xaN"/>
+                                                <constraint firstItem="a0D-Pm-GhV" firstAttribute="centerX" secondItem="zBC-Y7-bCv" secondAttribute="centerX" type="default" id="tHF-qo-DOA"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="87" translatesAutoresizingMaskIntoConstraints="NO" id="tya-cL-wef">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="84" translatesAutoresizingMaskIntoConstraints="NO" id="tya-cL-wef">
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="84" id="FcV-9G-DqT"/>
                                                 <constraint firstAttribute="height" constant="205" id="IOo-e3-RfD"/>
-                                                <constraint firstAttribute="width" constant="87" id="Sy5-eP-ZxB"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.61276848231232917" green="0.87081473214285721" blue="0.62339651403338869" alpha="1" colorSpace="calibratedRGB"/>
@@ -203,17 +288,18 @@
                                 </view>
                                 <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="IBo-0j-yjQ" firstAttribute="trailing" secondItem="tya-cL-wef" secondAttribute="trailing" type="default" id="6zx-yE-jRD"/>
-                                    <constraint firstItem="IBo-0j-yjQ" firstAttribute="trailing" secondItem="NRZ-Pd-IKu" secondAttribute="trailing" type="default" id="7jr-nL-Sb9"/>
-                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="bottom" secondItem="SvH-4j-IcZ" secondAttribute="bottom" type="default" id="Dez-ZN-uer"/>
-                                    <constraint firstItem="tya-cL-wef" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" type="default" id="FUe-oR-BiO"/>
-                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" type="default" id="HGP-Cf-AHO"/>
-                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="205" id="ZUK-RZ-yHh"/>
-                                    <constraint firstItem="IBo-0j-yjQ" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="-17" id="ebQ-3s-4Wy"/>
+                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" type="default" id="4j3-cR-Ox7"/>
+                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="210" id="A9R-FQ-Haa"/>
+                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="bottom" secondItem="SvH-4j-IcZ" secondAttribute="bottom" type="default" id="B06-6E-8pv"/>
+                                    <constraint firstItem="tya-cL-wef" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" constant="5" id="KuE-xQ-CyR"/>
+                                    <constraint firstItem="YBk-Tv-NpP" firstAttribute="centerY" secondItem="tya-cL-wef" secondAttribute="centerY" type="default" id="Lkk-I6-bjc"/>
+                                    <constraint firstItem="tya-cL-wef" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="2" id="UEe-kf-K3W"/>
+                                    <constraint firstItem="IBo-0j-yjQ" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="dBF-K4-BbT"/>
+                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="diF-GT-Ctm"/>
+                                    <constraint firstItem="IBo-0j-yjQ" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" type="default" id="kPi-A3-M1a"/>
                                     <constraint firstItem="YBk-Tv-NpP" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" constant="-156" id="q0N-KW-4vC"/>
-                                    <constraint firstItem="IBo-0j-yjQ" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="rdc-JZ-6UC"/>
-                                    <constraint firstItem="YBk-Tv-NpP" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="100" id="uoQ-Uk-5Uj"/>
                                 </constraints>
+                                <size key="customSize" width="92" height="260"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="zBC-Y7-bCv" id="DVn-AU-OOE"/>
                                     <outlet property="emotionsLabel" destination="tya-cL-wef" id="gPX-nU-cFN"/>
@@ -227,14 +313,13 @@
                             <outlet property="delegate" destination="lEH-i2-zcv" id="rHe-pb-qhx"/>
                         </connections>
                     </collectionView>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="collectionView" destination="BW3-jc-NZD" id="zxO-YT-9Rp"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SsT-2h-tGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361" y="739"/>
+            <point key="canvasLocation" x="340" y="688"/>
         </scene>
         <!--Ml Calendar View Controller-->
         <scene sceneID="OW2-HO-A7d">
@@ -990,7 +1075,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="FED-j2-6ML" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Wbp-Ub-rp4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="221"/>
+                        <rect key="frame" x="0.0" y="0.0" width="321" height="221"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XmS-WN-o2f">
@@ -1422,6 +1507,137 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="shuffle_off.png" width="25" height="21"/>
         <image name="shuffle_on.png" width="25" height="21"/>
     </resources>
+    <classes>
+        <class className="MlCalendarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCalendarViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButton:"/>
+            </relationships>
+        </class>
+        <class className="MlCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlChartCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emotionsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlChartCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="MlChartViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressDone:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MlCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="face" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="moodName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlDatePickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDatePickerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="datePicked:"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+            </relationships>
+        </class>
+        <class className="MlDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addEntryFromStartScreen:"/>
+                <relationship kind="action" name="moveEnergySlider:"/>
+                <relationship kind="action" name="moveHealthSlider:"/>
+                <relationship kind="action" name="moveSleepSlider:"/>
+                <relationship kind="action" name="pressedDoneButton:"/>
+                <relationship kind="action" name="pressedExpandButton:"/>
+                <relationship kind="action" name="sortABC:"/>
+                <relationship kind="action" name="sortCBA:"/>
+                <relationship kind="action" name="sortShuffle:"/>
+                <relationship kind="action" name="toggleFaces:"/>
+                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="blankCoveringView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailToolBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="energySlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="entryLogTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="expandButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="healthSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="moodContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="moodViewWithHeader" candidateClass="UIView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="sleepSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlFacesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlFacesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonPressed:"/>
+                <relationship kind="action" name="sortABC:"/>
+                <relationship kind="action" name="sortCBA:"/>
+                <relationship kind="action" name="sortShuffle:"/>
+                <relationship kind="action" name="toggleFaces:"/>
+                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MlMailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButton:"/>
+            </relationships>
+        </class>
+        <class className="MlMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMasterViewController.h"/>
+        </class>
+        <class className="MlMoodCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

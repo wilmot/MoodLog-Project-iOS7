@@ -11,6 +11,9 @@
 #import "MoodLogEvents.h"
 #import "Emotions.h"
 
+CGSize cellSize;
+NSUInteger labelLines;
+
 @interface MlChartCollectionViewController ()
 
 @end
@@ -31,15 +34,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     if (!self.cellIdentifier) {
-        self.cellIdentifier = @"chartCell";
+        self.cellIdentifier = @"chartCellPortrait";
     }
 //    NSLog(@"viewDidLoad, collectionView: %@", self.collectionView);
 }
 
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-//    NSLog(@"viewWillAppear, collectionView: %@", self.collectionView);
-//}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear, collectionView: %@", self.collectionView);
+    UIInterfaceOrientation *orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    [self setCellTypeAndSize:orientation];
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -58,7 +63,30 @@
 
 - (void)viewDidUnload {
     [self setCollectionView:nil];
+    [self setManagedObjectContext:nil];
+    [self setFetchedResultsController:nil];
     [super viewDidUnload];
+}
+
+- (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation {
+    if (toInterfaceOrientation == UIDeviceOrientationPortrait || toInterfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
+        //portrait
+        self.cellIdentifier = @"chartCellPortrait";
+        cellSize = CGSizeMake(92.0,508.0);
+        labelLines = 35;
+    }
+    else {
+        //landscape
+        self.cellIdentifier = @"chartCell";
+        cellSize = CGSizeMake(92.0,260.0);
+        labelLines = 15;
+    }
+    [self.collectionView reloadData];
+}
+
+#pragma mark - Orientation change
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self setCellTypeAndSize:toInterfaceOrientation];
 }
 
 #pragma mark - Delegate methods
@@ -76,17 +104,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIInterfaceOrientation  orientation = [UIDevice currentDevice].orientation;
-    CGSize size;
-    if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown) {
-        //portrait
-        size = CGSizeMake(92.0,255.0);
-    }
-    else {
-        //landscape
-        size = CGSizeMake(92.0,255.0);
-    }
-    return size;
+    return cellSize; // set when orientation changes
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
@@ -171,7 +189,7 @@
     NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
     NSString *selectedEms = [[NSString alloc] init];
     NSString *lastEm = [[NSString alloc] init];
-    NSUInteger blankLines = 15 - MIN([emotionArray count], 15);
+    NSUInteger blankLines = labelLines - MIN([emotionArray count], labelLines); // Label in collectionview is labelLines lines tall
     
     if ([emotionArray count] > 0) {
         NSMutableArray *mutableEmotionArray = [NSMutableArray arrayWithArray:emotionArray];
@@ -192,8 +210,6 @@
         displayString = [displayString stringByAppendingFormat:@"%@%@", selectedEms, lastEm];
     }
     cell.emotionsLabel.text = displayString;
-
-    
 }
 
 
