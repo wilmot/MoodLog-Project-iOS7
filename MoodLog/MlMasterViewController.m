@@ -45,7 +45,6 @@
     
     [[self tableView] reloadData];
     
-    
     if (selection){
         [[self tableView] selectRowAtIndexPath:selection animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
@@ -221,6 +220,9 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         MoodLogEvents *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
+    }
+    else     if ([[segue identifier] isEqualToString:@"chartView"]) {
+        [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
     }
 }
 

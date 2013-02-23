@@ -67,10 +67,6 @@ MoodLogEvents *myLogEntry;
                                   green:255.0f/255.0f
                                    blue:199.0f/255.0f
                                   alpha:1.0f];
-    selectedColor = [UIColor colorWithRed:162.0f/255.0f
-                                    green:235.0f/255.0f
-                                     blue:180.0f/255.0f
-                                    alpha:1.0f];
 //    MlFlowLayout *myLayout = [[MlFlowLayout alloc]init];
 //    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
 
@@ -96,7 +92,21 @@ MoodLogEvents *myLogEntry;
         emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record        
     }
 
+    // Set the background color for selected items
+    if (myLogEntry.editing.boolValue == YES) {
+        selectedColor = [UIColor colorWithRed:162.0f/255.0f
+                                        green:235.0f/255.0f
+                                         blue:180.0f/255.0f
+                                        alpha:1.0f];
+    }
+    else {
+        selectedColor = [UIColor colorWithRed:202.0f/255.0f
+                                        green:255.0f/255.0f
+                                         blue:199.0f/255.0f
+                                        alpha:1.0f];
+    }
     
+   
     NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
     if ( [myLogEntry.sortStyle isEqualToString:alphabeticalSort]) {
         if (myLogEntry.editing.boolValue  == YES) {
@@ -206,8 +216,15 @@ MoodLogEvents *myLogEntry;
         [cell setBackgroundColor:selectedColor];
         [[cell moodName] setBackgroundColor:selectedColor];
         [[cell moodName] setTextColor:[UIColor blackColor]];
-        [[cell moodName] setFont:[UIFont boldSystemFontOfSize:14.0]];
-        [[cell moodName] setText:[NSString stringWithFormat:@"%@%@",check, aMood.name]];
+        if (myLogEntry.editing.boolValue == YES) {
+            [[cell moodName] setFont:[UIFont boldSystemFontOfSize:14.0]];
+            [[cell moodName] setText:[NSString stringWithFormat:@"%@%@",check, aMood.name]];
+        }
+        else {
+            [[cell moodName] setFont:[UIFont systemFontOfSize:14.0]];
+           //[[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];
+            [[cell moodName] setText:[NSString stringWithFormat:@"%@%@",check, aMood.name]];
+        }
     }
     else {
         // set the color to normal boring

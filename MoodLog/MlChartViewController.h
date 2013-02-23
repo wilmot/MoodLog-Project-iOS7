@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MlChartCollectionViewController.h"
 
 @interface MlChartViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+
 - (IBAction)pressDone:(id)sender;
+
+@property (weak, nonatomic) MlChartCollectionViewController *myChartCollectionViewController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

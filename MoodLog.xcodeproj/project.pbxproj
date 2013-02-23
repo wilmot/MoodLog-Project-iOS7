@@ -13,6 +13,7 @@
 		4C0C767F164ACEB800DD372F /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C767E164ACEB800DD372F /* calendar.png */; };
 		4C0C7681164AD06E00DD372F /* junk.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C7680164AD06E00DD372F /* junk.png */; };
 		4C0C7683164AD3BC00DD372F /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C7682164AD3BC00DD372F /* chart.png */; };
+		4C1502F916D88AAA00B9E8BC /* GrayLineVertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1502F816D88AAA00B9E8BC /* GrayLineVertical.png */; };
 		4C3E0FB71657122100B0E060 /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E0FB61657122100B0E060 /* Prefs.m */; };
 		4C4C53DE16656D5800DDDBA2 /* Emotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C53DD16656D5800DDDBA2 /* Emotions.m */; };
 		4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53DF1665F14900DDDBA2 /* MoodList.plist */; };
@@ -115,6 +116,7 @@
 		4C7C788F162E8F2C008DC828 /* CalendarBlank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C788E162E8F2C008DC828 /* CalendarBlank.png */; };
 		4C7C789E162E9192008DC828 /* MlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C789D162E9192008DC828 /* MlCell.m */; };
 		4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */; };
+		4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */; };
 		4C8F362A16BA0D7900AD101A /* Compassionate.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F361616BA0D7900AD101A /* Compassionate.png */; };
 		4C8F362B16BA0D7900AD101A /* Compassionate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F361716BA0D7900AD101A /* Compassionate@2x.png */; };
 		4C8F362C16BA0D7900AD101A /* Cheerful.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F361816BA0D7900AD101A /* Cheerful.png */; };
@@ -135,12 +137,15 @@
 		4C8F363B16BA0D7900AD101A /* Apprehensive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F362716BA0D7900AD101A /* Apprehensive@2x.png */; };
 		4C8F363C16BA0D7900AD101A /* Anticipating.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F362816BA0D7900AD101A /* Anticipating.png */; };
 		4C8F363D16BA0D7900AD101A /* Anticipating@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F362916BA0D7900AD101A /* Anticipating@2x.png */; };
+		4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */; };
 		4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */; };
 		4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */; };
 		4C97310E16308E5F00E1D0B9 /* BlackLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C97310D16308E5F00E1D0B9 /* BlackLine.png */; };
 		4CDAAAD016BDEBC600A79F09 /* MoodLogEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAAACF16BDEBC600A79F09 /* MoodLogEvents.m */; };
 		4CECC214165D4D7400EE3C6B /* Blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CECC212165D4D7400EE3C6B /* Blank.png */; };
 		4CECC215165D4D7400EE3C6B /* Blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CECC213165D4D7400EE3C6B /* Blank@2x.png */; };
+		4CF7696E16D850B2006ECD96 /* BlackLineVertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF7696D16D850B2006ECD96 /* BlackLineVertical.png */; };
+		4CF7697016D85A90006ECD96 /* GrayLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF7696F16D85A90006ECD96 /* GrayLine.png */; };
 		4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */; };
 		4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F0164B8C870055CC3D /* MlMailViewController.m */; };
 		4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */; };
@@ -165,6 +170,7 @@
 		4C0C767E164ACEB800DD372F /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Images/calendar.png; sourceTree = "<group>"; };
 		4C0C7680164AD06E00DD372F /* junk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = junk.png; path = Images/junk.png; sourceTree = "<group>"; };
 		4C0C7682164AD3BC00DD372F /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chart.png; path = Images/chart.png; sourceTree = "<group>"; };
+		4C1502F816D88AAA00B9E8BC /* GrayLineVertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayLineVertical.png; sourceTree = "<group>"; };
 		4C3E0FB51657122100B0E060 /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
 		4C3E0FB61657122100B0E060 /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prefs.m; sourceTree = "<group>"; };
 		4C4C53D4166569A400DDDBA2 /* MoodLog 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -269,6 +275,8 @@
 		4C7C789D162E9192008DC828 /* MlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCell.m; sourceTree = "<group>"; };
 		4C7CA28C1630770800CC5CCA /* MlMoodDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodDataItem.h; sourceTree = "<group>"; };
 		4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodDataItem.m; sourceTree = "<group>"; };
+		4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewController.h; sourceTree = "<group>"; };
+		4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewController.m; sourceTree = "<group>"; };
 		4C8F361616BA0D7900AD101A /* Compassionate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Compassionate.png; sourceTree = "<group>"; };
 		4C8F361716BA0D7900AD101A /* Compassionate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compassionate@2x.png"; sourceTree = "<group>"; };
 		4C8F361816BA0D7900AD101A /* Cheerful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cheerful.png; sourceTree = "<group>"; };
@@ -289,6 +297,8 @@
 		4C8F362716BA0D7900AD101A /* Apprehensive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Apprehensive@2x.png"; sourceTree = "<group>"; };
 		4C8F362816BA0D7900AD101A /* Anticipating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anticipating.png; sourceTree = "<group>"; };
 		4C8F362916BA0D7900AD101A /* Anticipating@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Anticipating@2x.png"; sourceTree = "<group>"; };
+		4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewCell.h; sourceTree = "<group>"; };
+		4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewCell.m; sourceTree = "<group>"; };
 		4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodCollectionViewController.h; sourceTree = "<group>"; };
 		4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewController.m; sourceTree = "<group>"; };
 		4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCollectionViewCell.h; sourceTree = "<group>"; };
@@ -300,6 +310,8 @@
 		4CECC212165D4D7400EE3C6B /* Blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank.png; sourceTree = "<group>"; };
 		4CECC213165D4D7400EE3C6B /* Blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blank@2x.png"; sourceTree = "<group>"; };
 		4CECC217165D50E800EE3C6B /* MoodLog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 2.xcdatamodel"; sourceTree = "<group>"; };
+		4CF7696D16D850B2006ECD96 /* BlackLineVertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackLineVertical.png; sourceTree = "<group>"; };
+		4CF7696F16D85A90006ECD96 /* GrayLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayLine.png; sourceTree = "<group>"; };
 		4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartViewController.h; sourceTree = "<group>"; };
 		4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartViewController.m; sourceTree = "<group>"; };
 		4CFB21EF164B8C870055CC3D /* MlMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMailViewController.h; sourceTree = "<group>"; };
@@ -473,14 +485,18 @@
 				4C55CC0D162DE67500EAA878 /* MlDetailViewController.m */,
 				4C7C789C162E9192008DC828 /* MlCell.h */,
 				4C7C789D162E9192008DC828 /* MlCell.m */,
-				4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */,
-				4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */,
 				4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */,
 				4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */,
+				4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */,
+				4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */,
 				4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */,
 				4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */,
 				4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */,
 				4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */,
+				4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */,
+				4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */,
+				4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */,
+				4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */,
 				4C5D051016C1F1BC0028C421 /* MlFacesViewController.h */,
 				4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */,
 				4CFB21EF164B8C870055CC3D /* MlMailViewController.h */,
@@ -512,7 +528,10 @@
 				4C0C767E164ACEB800DD372F /* calendar.png */,
 				4C0C7682164AD3BC00DD372F /* chart.png */,
 				4C4C53DF1665F14900DDDBA2 /* MoodList.plist */,
+				4CF7696F16D85A90006ECD96 /* GrayLine.png */,
+				4C1502F816D88AAA00B9E8BC /* GrayLineVertical.png */,
 				4C97310D16308E5F00E1D0B9 /* BlackLine.png */,
+				4CF7696D16D850B2006ECD96 /* BlackLineVertical.png */,
 				4C7C788E162E8F2C008DC828 /* CalendarBlank.png */,
 				4C55CBF0162DE67400EAA878 /* MoodLog-Info.plist */,
 				4C55CBF1162DE67400EAA878 /* InfoPlist.strings */,
@@ -715,6 +734,9 @@
 				4CFD9FA5166D85AB00805D6B /* add.png in Resources */,
 				4C643D9B16B11C2100CA4F32 /* IconPlaceholder@2x.png in Resources */,
 				4C643D9D16B11C2900CA4F32 /* IconPlaceholder.png in Resources */,
+				4CF7696E16D850B2006ECD96 /* BlackLineVertical.png in Resources */,
+				4CF7697016D85A90006ECD96 /* GrayLine.png in Resources */,
+				4C1502F916D88AAA00B9E8BC /* GrayLineVertical.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,6 +800,8 @@
 				4C4C53DE16656D5800DDDBA2 /* Emotions.m in Sources */,
 				4CDAAAD016BDEBC600A79F09 /* MoodLogEvents.m in Sources */,
 				4C5D051216C1F1BD0028C421 /* MlFacesViewController.m in Sources */,
+				4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */,
+				4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

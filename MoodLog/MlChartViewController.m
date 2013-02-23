@@ -29,6 +29,15 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ChartCollectionSegue"]) {
+        self.myChartCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
+        self.myChartCollectionViewController.managedObjectContext = self.managedObjectContext;
+    }
+}
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

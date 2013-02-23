@@ -1,4 +1,4 @@
-//
+    //
 //  MlDetailViewController.m
 //  MoodLog
 //
@@ -31,10 +31,9 @@ static MlDatePickerViewController *myDatePickerViewController;
         // Update the view.
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             // iPad
-            [self configureView]; // BL-L ***REMIND. Not sure why this is needed for the iPad version
+            [self configureView];
         }
     }
-
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
     }        
