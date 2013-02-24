@@ -146,7 +146,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="92" height="508"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="GrayLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="vS9-sB-7Jw"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vV9-bp-84D" customClass="MlChartDrawingView">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="42" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6m-Yb-uZ3">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="46" id="cFr-nQ-K3B"/>
+                                                <constraint firstAttribute="width" constant="65" id="cOy-hD-gq6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                            <color key="textColor" red="0.71372550729999995" green="1" blue="0.78431379800000001" alpha="1" colorSpace="deviceRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="35" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="87" translatesAutoresizingMaskIntoConstraints="NO" id="3o9-at-m4r">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="461" id="IBo-je-Ivd"/>
+                                                <constraint firstAttribute="width" constant="87" id="m16-F4-xCn"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" red="0.61276848230000003" green="0.87081473210000004" blue="0.62339651399999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exX-o9-fM6">
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SS-2P-hen">
@@ -187,38 +207,28 @@
                                                 <constraint firstItem="RVC-Fe-GMv" firstAttribute="leading" secondItem="exX-o9-fM6" secondAttribute="leading" type="default" id="oF8-Eo-Qee"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="35" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="87" translatesAutoresizingMaskIntoConstraints="NO" id="3o9-at-m4r">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="87" id="m16-F4-xCn"/>
-                                                <constraint firstAttribute="height" constant="458" id="mkQ-bo-xdO"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <color key="textColor" red="0.61276848230000003" green="0.87081473210000004" blue="0.62339651399999996" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="GrayLineVertical.png" translatesAutoresizingMaskIntoConstraints="NO" id="Smu-XX-QqJ">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="508" id="SxF-FK-JY5"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="vS9-sB-7Jw" firstAttribute="centerY" secondItem="3o9-at-m4r" secondAttribute="centerY" type="default" id="1KG-iO-A8Q"/>
                                     <constraint firstItem="exX-o9-fM6" firstAttribute="top" secondItem="VVa-cL-jyv" secondAttribute="top" constant="460" id="6kM-sv-bfF"/>
-                                    <constraint firstItem="3o9-at-m4r" firstAttribute="top" secondItem="VVa-cL-jyv" secondAttribute="top" constant="1" id="ANv-ui-OAh"/>
-                                    <constraint firstItem="vS9-sB-7Jw" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" constant="-156" id="EaP-ak-Lfe"/>
-                                    <constraint firstItem="exX-o9-fM6" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" type="default" id="YyR-Uf-bje"/>
-                                    <constraint firstItem="3o9-at-m4r" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" constant="4" id="aMN-Wj-htR"/>
-                                    <constraint firstItem="3o9-at-m4r" firstAttribute="top" secondItem="Smu-XX-QqJ" secondAttribute="top" type="default" id="m0e-sh-RPH"/>
-                                    <constraint firstItem="Smu-XX-QqJ" firstAttribute="trailing" secondItem="3o9-at-m4r" secondAttribute="trailing" type="default" id="sC9-hV-M4B"/>
+                                    <constraint firstItem="vV9-bp-84D" firstAttribute="top" secondItem="VVa-cL-jyv" secondAttribute="top" type="default" id="Ass-MP-lS1"/>
+                                    <constraint firstItem="vV9-bp-84D" firstAttribute="trailing" secondItem="VVa-cL-jyv" secondAttribute="trailing" type="default" id="MZB-fA-U69"/>
+                                    <constraint firstItem="vV9-bp-84D" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" type="default" id="NhC-xT-O4y"/>
+                                    <constraint firstItem="3o9-at-m4r" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" constant="2" id="XhQ-ql-1cL"/>
+                                    <constraint firstItem="vV9-bp-84D" firstAttribute="bottom" secondItem="3o9-at-m4r" secondAttribute="bottom" type="default" id="dSF-S6-1aj"/>
+                                    <constraint firstItem="e6m-Yb-uZ3" firstAttribute="centerX" secondItem="vV9-bp-84D" secondAttribute="centerX" type="default" id="dfU-JI-sEb"/>
+                                    <constraint firstItem="exX-o9-fM6" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" type="default" id="lqh-Ji-iEu"/>
+                                    <constraint firstItem="exX-o9-fM6" firstAttribute="trailing" secondItem="VVa-cL-jyv" secondAttribute="trailing" type="default" id="owF-15-wxB"/>
                                     <constraint firstAttribute="bottom" secondItem="exX-o9-fM6" secondAttribute="bottom" constant="-2" id="tLm-rd-Iwm"/>
-                                    <constraint firstItem="exX-o9-fM6" firstAttribute="trailing" secondItem="VVa-cL-jyv" secondAttribute="trailing" type="default" id="vUw-lz-w71"/>
+                                    <constraint firstItem="3o9-at-m4r" firstAttribute="top" secondItem="VVa-cL-jyv" secondAttribute="top" type="default" id="wgJ-Pr-V94"/>
+                                    <constraint firstItem="e6m-Yb-uZ3" firstAttribute="top" secondItem="VVa-cL-jyv" secondAttribute="top" constant="20" type="default" id="zcU-Ye-EX7"/>
                                 </constraints>
                                 <size key="customSize" width="92" height="508"/>
                                 <connections>
+                                    <outlet property="chartDrawingView" destination="vV9-bp-84D" id="9AK-oH-X0h"/>
+                                    <outlet property="chartHeightLabel" destination="e6m-Yb-uZ3" id="exJ-Mn-8eC"/>
                                     <outlet property="dateLabel" destination="1SS-2P-hen" id="vzT-KJ-n7v"/>
                                     <outlet property="emotionsLabel" destination="3o9-at-m4r" id="6aE-ev-zEp"/>
                                     <outlet property="monthLabel" destination="RVC-Fe-GMv" id="ZaI-XM-CSt"/>
@@ -232,7 +242,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="92" height="260"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="GrayLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="YBk-Tv-NpP"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyO-Ka-fAa" customClass="MlChartDrawingView">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRZ-Pd-IKu">
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBC-Y7-bCv">
@@ -273,6 +285,15 @@
                                                 <constraint firstItem="a0D-Pm-GhV" firstAttribute="centerX" secondItem="zBC-Y7-bCv" secondAttribute="centerX" type="default" id="tHF-qo-DOA"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="42" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rS9-fe-dvO">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="46" id="UdP-Eg-xHf"/>
+                                                <constraint firstAttribute="width" constant="65" id="V2p-4i-mTV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                            <color key="textColor" red="0.7137255072593689" green="1" blue="0.78431379795074463" alpha="1" colorSpace="deviceRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="84" translatesAutoresizingMaskIntoConstraints="NO" id="tya-cL-wef">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="84" id="FcV-9G-DqT"/>
@@ -282,25 +303,28 @@
                                             <color key="textColor" red="0.61276848231232917" green="0.87081473214285721" blue="0.62339651403338869" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="GrayLineVertical.png" translatesAutoresizingMaskIntoConstraints="NO" id="IBo-0j-yjQ"/>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="rS9-fe-dvO" firstAttribute="centerX" secondItem="tya-cL-wef" secondAttribute="centerX" type="default" id="03P-7M-8UM"/>
                                     <constraint firstItem="NRZ-Pd-IKu" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" type="default" id="4j3-cR-Ox7"/>
+                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" type="default" id="7Dv-Ss-8xU"/>
                                     <constraint firstItem="NRZ-Pd-IKu" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="210" id="A9R-FQ-Haa"/>
+                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" type="default" id="Aoj-gl-miP"/>
                                     <constraint firstItem="NRZ-Pd-IKu" firstAttribute="bottom" secondItem="SvH-4j-IcZ" secondAttribute="bottom" type="default" id="B06-6E-8pv"/>
-                                    <constraint firstItem="tya-cL-wef" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" constant="5" id="KuE-xQ-CyR"/>
-                                    <constraint firstItem="YBk-Tv-NpP" firstAttribute="centerY" secondItem="tya-cL-wef" secondAttribute="centerY" type="default" id="Lkk-I6-bjc"/>
-                                    <constraint firstItem="tya-cL-wef" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="2" id="UEe-kf-K3W"/>
-                                    <constraint firstItem="IBo-0j-yjQ" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="dBF-K4-BbT"/>
+                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="IFU-y7-19P"/>
+                                    <constraint firstItem="tya-cL-wef" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" constant="5" id="TNa-oF-fvu"/>
+                                    <constraint firstItem="tya-cL-wef" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="2" id="cBy-2A-bhw"/>
                                     <constraint firstItem="NRZ-Pd-IKu" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="diF-GT-Ctm"/>
-                                    <constraint firstItem="IBo-0j-yjQ" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" type="default" id="kPi-A3-M1a"/>
-                                    <constraint firstItem="YBk-Tv-NpP" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" constant="-156" id="q0N-KW-4vC"/>
+                                    <constraint firstItem="rS9-fe-dvO" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="11" id="fIP-UK-cib"/>
+                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="centerY" secondItem="tya-cL-wef" secondAttribute="centerY" type="default" id="xua-jl-p4h"/>
                                 </constraints>
                                 <size key="customSize" width="92" height="260"/>
                                 <connections>
+                                    <outlet property="chartDrawingView" destination="iyO-Ka-fAa" id="XOz-bS-FzI"/>
+                                    <outlet property="chartHeightLabel" destination="rS9-fe-dvO" id="fql-Zw-FYc"/>
                                     <outlet property="dateLabel" destination="zBC-Y7-bCv" id="DVn-AU-OOE"/>
                                     <outlet property="emotionsLabel" destination="tya-cL-wef" id="gPX-nU-cFN"/>
                                     <outlet property="monthLabel" destination="v62-WT-GIt" id="Xkz-FD-4cb"/>
@@ -1075,7 +1099,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="FED-j2-6ML" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Wbp-Ub-rp4">
-                        <rect key="frame" x="0.0" y="0.0" width="321" height="221"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="221"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XmS-WN-o2f">
@@ -1499,8 +1523,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="BlackLine.png" width="278" height="2"/>
         <image name="Blank.png" width="80" height="98"/>
         <image name="CalendarBlank.png" width="257" height="258"/>
-        <image name="GrayLine.png" width="278" height="1"/>
-        <image name="GrayLineVertical.png" width="1" height="278"/>
         <image name="Sad@2x.png" width="160" height="196"/>
         <image name="calendar.png" width="22" height="18"/>
         <image name="chart.png" width="22" height="18"/>
@@ -1526,6 +1548,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="MlChartCollectionViewCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="chartDrawingView" candidateClass="MlChartDrawingView"/>
+                <relationship kind="outlet" name="chartHeightLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="emotionsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
@@ -1537,6 +1561,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <relationships>
                 <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
             </relationships>
+        </class>
+        <class className="MlChartDrawingView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartDrawingView.h"/>
         </class>
         <class className="MlChartViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartViewController.h"/>
@@ -1633,9 +1660,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -65,6 +65,7 @@
 		4C4C543C166A93C800DDDBA2 /* Worried@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C543A166A93C700DDDBA2 /* Worried@2x.png */; };
 		4C4C543F166D46FB00DDDBA2 /* Adoring.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C543D166D46F900DDDBA2 /* Adoring.png */; };
 		4C4C5440166D46FB00DDDBA2 /* Adoring@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C543E166D46FA00DDDBA2 /* Adoring@2x.png */; };
+		4C52861816D9A654007C878C /* MlChartDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C52861716D9A654007C878C /* MlChartDrawingView.m */; };
 		4C55CBE7162DE67400EAA878 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE6162DE67400EAA878 /* UIKit.framework */; };
 		4C55CBE9162DE67400EAA878 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE8162DE67400EAA878 /* Foundation.framework */; };
 		4C55CBEB162DE67400EAA878 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */; };
@@ -225,6 +226,8 @@
 		4C4C543A166A93C700DDDBA2 /* Worried@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Worried@2x.png"; sourceTree = "<group>"; };
 		4C4C543D166D46F900DDDBA2 /* Adoring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Adoring.png; sourceTree = "<group>"; };
 		4C4C543E166D46FA00DDDBA2 /* Adoring@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Adoring@2x.png"; sourceTree = "<group>"; };
+		4C52861616D9A654007C878C /* MlChartDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartDrawingView.h; sourceTree = "<group>"; };
+		4C52861716D9A654007C878C /* MlChartDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartDrawingView.m; sourceTree = "<group>"; };
 		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -497,6 +500,8 @@
 				4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */,
 				4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */,
 				4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */,
+				4C52861616D9A654007C878C /* MlChartDrawingView.h */,
+				4C52861716D9A654007C878C /* MlChartDrawingView.m */,
 				4C5D051016C1F1BC0028C421 /* MlFacesViewController.h */,
 				4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */,
 				4CFB21EF164B8C870055CC3D /* MlMailViewController.h */,
@@ -802,6 +807,7 @@
 				4C5D051216C1F1BD0028C421 /* MlFacesViewController.m in Sources */,
 				4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */,
 				4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */,
+				4C52861816D9A654007C878C /* MlChartDrawingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

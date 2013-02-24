@@ -13,6 +13,7 @@
 
 CGSize cellSize;
 NSUInteger labelLines;
+NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionViewCells (date labels are there)
 
 @interface MlChartCollectionViewController ()
 
@@ -41,7 +42,7 @@ NSUInteger labelLines;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSLog(@"viewWillAppear, collectionView: %@", self.collectionView);
+//    NSLog(@"viewWillAppear, collectionView: %@", self.collectionView);
     UIInterfaceOrientation *orientation = [[UIApplication sharedApplication] statusBarOrientation];
     [self setCellTypeAndSize:orientation];
 }
@@ -210,7 +211,10 @@ NSUInteger labelLines;
         displayString = [displayString stringByAppendingFormat:@"%@%@", selectedEms, lastEm];
     }
     cell.emotionsLabel.text = displayString;
+    CGFloat height = (arc4random() % 20) - 10.0;
+    cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
+    [cell.chartDrawingView setChartHeight:height];
+    [cell.chartDrawingView setNeedsDisplay]; // without this, the bars don't match the data
 }
-
 
 @end
