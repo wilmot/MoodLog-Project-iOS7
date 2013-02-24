@@ -95,11 +95,12 @@
     for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList) {
         Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:context];
         emotion.name = mood.mood;
+        emotion.parrotLevel = [NSNumber numberWithInt:[mood.parrotLevel integerValue]];
+        emotion.feelValue = [NSNumber numberWithInt:[mood.feelValue integerValue]];
         emotion.facePath = mood.facePath;
         emotion.selected = [NSNumber numberWithBool:mood.selected];
         emotion.logParent = newMood;
     }
-
     
     // Save the context
     NSError *error = nil;

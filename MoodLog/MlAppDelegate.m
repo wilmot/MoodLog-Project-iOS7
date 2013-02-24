@@ -50,6 +50,8 @@
         MlMoodDataItem  *aMoodDataItem = [[MlMoodDataItem alloc] init];
         aMoodDataItem.mood = mood;
         aMoodDataItem.facePath = [[self.moodListDictionary valueForKey:mood] valueForKey:@"facePath"];
+        aMoodDataItem.feelValue = [[self.moodListDictionary valueForKey:mood] valueForKey:@"feelValue"];
+        aMoodDataItem.parrotLevel = [[self.moodListDictionary valueForKey:mood] valueForKey:@"parrotLevel"];
         aMoodDataItem.selected = FALSE;
         self.moodDataList = [self.moodDataList arrayByAddingObject:aMoodDataItem];
     }

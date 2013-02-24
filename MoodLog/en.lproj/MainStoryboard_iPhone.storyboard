@@ -214,10 +214,10 @@
                                 <constraints>
                                     <constraint firstItem="exX-o9-fM6" firstAttribute="top" secondItem="VVa-cL-jyv" secondAttribute="top" constant="460" id="6kM-sv-bfF"/>
                                     <constraint firstItem="vV9-bp-84D" firstAttribute="top" secondItem="VVa-cL-jyv" secondAttribute="top" type="default" id="Ass-MP-lS1"/>
+                                    <constraint firstItem="vV9-bp-84D" firstAttribute="centerY" secondItem="3o9-at-m4r" secondAttribute="centerY" type="default" id="Dh5-tp-93m"/>
                                     <constraint firstItem="vV9-bp-84D" firstAttribute="trailing" secondItem="VVa-cL-jyv" secondAttribute="trailing" type="default" id="MZB-fA-U69"/>
                                     <constraint firstItem="vV9-bp-84D" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" type="default" id="NhC-xT-O4y"/>
                                     <constraint firstItem="3o9-at-m4r" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" constant="2" id="XhQ-ql-1cL"/>
-                                    <constraint firstItem="vV9-bp-84D" firstAttribute="bottom" secondItem="3o9-at-m4r" secondAttribute="bottom" type="default" id="dSF-S6-1aj"/>
                                     <constraint firstItem="e6m-Yb-uZ3" firstAttribute="centerX" secondItem="vV9-bp-84D" secondAttribute="centerX" type="default" id="dfU-JI-sEb"/>
                                     <constraint firstItem="exX-o9-fM6" firstAttribute="leading" secondItem="VVa-cL-jyv" secondAttribute="leading" type="default" id="lqh-Ji-iEu"/>
                                     <constraint firstItem="exX-o9-fM6" firstAttribute="trailing" secondItem="VVa-cL-jyv" secondAttribute="trailing" type="default" id="owF-15-wxB"/>
@@ -276,13 +276,13 @@
                                             <color key="backgroundColor" red="0.03033679165" green="0.44539222119999999" blue="0.082693211729999994" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="a0D-Pm-GhV" firstAttribute="leading" secondItem="NRZ-Pd-IKu" secondAttribute="leading" type="default" id="7HQ-zT-kYW"/>
-                                                <constraint firstItem="v62-WT-GIt" firstAttribute="top" secondItem="NRZ-Pd-IKu" secondAttribute="top" constant="1" id="JBE-Ua-ipS"/>
-                                                <constraint firstAttribute="bottom" secondItem="a0D-Pm-GhV" secondAttribute="bottom" constant="4" id="Jkr-Cz-QNs"/>
-                                                <constraint firstItem="zBC-Y7-bCv" firstAttribute="top" secondItem="NRZ-Pd-IKu" secondAttribute="top" constant="16" id="P9L-YI-TfS"/>
+                                                <constraint firstItem="v62-WT-GIt" firstAttribute="top" secondItem="NRZ-Pd-IKu" secondAttribute="top" type="default" id="biW-aj-9nl"/>
+                                                <constraint firstAttribute="bottom" secondItem="a0D-Pm-GhV" secondAttribute="bottom" constant="3" id="cf4-91-Hay"/>
+                                                <constraint firstItem="a0D-Pm-GhV" firstAttribute="centerX" secondItem="zBC-Y7-bCv" secondAttribute="centerX" type="default" id="g45-BV-FhU"/>
                                                 <constraint firstItem="a0D-Pm-GhV" firstAttribute="trailing" secondItem="NRZ-Pd-IKu" secondAttribute="trailing" type="default" id="hG3-4m-ZAp"/>
+                                                <constraint firstItem="zBC-Y7-bCv" firstAttribute="top" secondItem="NRZ-Pd-IKu" secondAttribute="top" constant="11" id="hq7-G7-tqG"/>
                                                 <constraint firstItem="v62-WT-GIt" firstAttribute="trailing" secondItem="NRZ-Pd-IKu" secondAttribute="trailing" type="default" id="kcc-mK-5ya"/>
                                                 <constraint firstItem="v62-WT-GIt" firstAttribute="leading" secondItem="NRZ-Pd-IKu" secondAttribute="leading" type="default" id="sas-dS-Ydy"/>
-                                                <constraint firstItem="a0D-Pm-GhV" firstAttribute="centerX" secondItem="zBC-Y7-bCv" secondAttribute="centerX" type="default" id="tHF-qo-DOA"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="42" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rS9-fe-dvO">
@@ -294,10 +294,10 @@
                                             <color key="textColor" red="0.7137255072593689" green="1" blue="0.78431379795074463" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="84" translatesAutoresizingMaskIntoConstraints="NO" id="tya-cL-wef">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="87" translatesAutoresizingMaskIntoConstraints="NO" id="tya-cL-wef">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="84" id="FcV-9G-DqT"/>
-                                                <constraint firstAttribute="height" constant="205" id="IOo-e3-RfD"/>
+                                                <constraint firstAttribute="width" constant="87" id="HaV-0g-Wy1"/>
+                                                <constraint firstAttribute="height" constant="220" id="ahl-R4-A6e"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.61276848231232917" green="0.87081473214285721" blue="0.62339651403338869" alpha="1" colorSpace="calibratedRGB"/>
@@ -308,18 +308,18 @@
                                 </view>
                                 <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="rS9-fe-dvO" firstAttribute="centerX" secondItem="tya-cL-wef" secondAttribute="centerX" type="default" id="03P-7M-8UM"/>
-                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" type="default" id="4j3-cR-Ox7"/>
-                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" type="default" id="7Dv-Ss-8xU"/>
-                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="210" id="A9R-FQ-Haa"/>
-                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" type="default" id="Aoj-gl-miP"/>
-                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="bottom" secondItem="SvH-4j-IcZ" secondAttribute="bottom" type="default" id="B06-6E-8pv"/>
-                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="IFU-y7-19P"/>
-                                    <constraint firstItem="tya-cL-wef" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" constant="5" id="TNa-oF-fvu"/>
-                                    <constraint firstItem="tya-cL-wef" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="2" id="cBy-2A-bhw"/>
-                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="diF-GT-Ctm"/>
+                                    <constraint firstItem="tya-cL-wef" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" type="default" id="98Q-Vs-Kww"/>
+                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="bottom" secondItem="SvH-4j-IcZ" secondAttribute="bottom" type="default" id="9mq-OL-Hmd"/>
+                                    <constraint firstItem="tya-cL-wef" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="DPT-Eu-KfN"/>
+                                    <constraint firstItem="rS9-fe-dvO" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" constant="15" id="MRj-vK-bNj"/>
+                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" type="default" id="Ss3-GY-ooD"/>
+                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" type="default" id="UCJ-kr-hMa"/>
+                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="aDK-fI-FuF"/>
+                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="trailing" secondItem="SvH-4j-IcZ" secondAttribute="trailing" type="default" id="bnh-9P-8Xo"/>
+                                    <constraint firstItem="NRZ-Pd-IKu" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="220" id="dIE-dg-YCm"/>
+                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="leading" secondItem="SvH-4j-IcZ" secondAttribute="leading" type="default" id="eed-H7-FuT"/>
                                     <constraint firstItem="rS9-fe-dvO" firstAttribute="top" secondItem="SvH-4j-IcZ" secondAttribute="top" constant="11" id="fIP-UK-cib"/>
-                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="centerY" secondItem="tya-cL-wef" secondAttribute="centerY" type="default" id="xua-jl-p4h"/>
+                                    <constraint firstItem="iyO-Ka-fAa" firstAttribute="bottom" secondItem="tya-cL-wef" secondAttribute="bottom" type="default" id="fdD-d3-Pvd"/>
                                 </constraints>
                                 <size key="customSize" width="92" height="260"/>
                                 <connections>
@@ -1529,139 +1529,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="shuffle_off.png" width="25" height="21"/>
         <image name="shuffle_on.png" width="25" height="21"/>
     </resources>
-    <classes>
-        <class className="MlCalendarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCalendarViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButton:"/>
-            </relationships>
-        </class>
-        <class className="MlCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlChartCollectionViewCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="chartDrawingView" candidateClass="MlChartDrawingView"/>
-                <relationship kind="outlet" name="chartHeightLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emotionsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlChartCollectionViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="MlChartDrawingView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartDrawingView.h"/>
-        </class>
-        <class className="MlChartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressDone:"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MlCollectionViewCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCollectionViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="face" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="moodName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlDatePickerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDatePickerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="datePicked:"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="MlDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addEntryFromStartScreen:"/>
-                <relationship kind="action" name="moveEnergySlider:"/>
-                <relationship kind="action" name="moveHealthSlider:"/>
-                <relationship kind="action" name="moveSleepSlider:"/>
-                <relationship kind="action" name="pressedDoneButton:"/>
-                <relationship kind="action" name="pressedExpandButton:"/>
-                <relationship kind="action" name="sortABC:"/>
-                <relationship kind="action" name="sortCBA:"/>
-                <relationship kind="action" name="sortShuffle:"/>
-                <relationship kind="action" name="toggleFaces:"/>
-                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="blankCoveringView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="detailToolBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="energySlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="entryLogTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="expandButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="healthSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="moodContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="moodViewWithHeader" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sleepSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlFacesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlFacesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="action" name="sortABC:"/>
-                <relationship kind="action" name="sortCBA:"/>
-                <relationship kind="action" name="sortShuffle:"/>
-                <relationship kind="action" name="toggleFaces:"/>
-                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MlMailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButton:"/>
-            </relationships>
-        </class>
-        <class className="MlMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMasterViewController.h"/>
-        </class>
-        <class className="MlMoodCollectionViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

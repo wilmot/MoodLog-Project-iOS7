@@ -62,7 +62,7 @@ static NSUInteger numberOfDivisions = 20;
     // Bar should start in the middle
     // and draw up for positive, down for negative
     // Range is -10..10
-    barHeight =  interval*abs(self.chartHeight);
+    barHeight = interval*abs(round(self.chartHeight));
     if (self.chartHeight > 0) {
         barOriginY = interval*10.0 - barHeight;
     }

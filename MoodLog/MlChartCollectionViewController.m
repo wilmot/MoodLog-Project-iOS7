@@ -80,7 +80,7 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
         //landscape
         self.cellIdentifier = @"chartCell";
         cellSize = CGSizeMake(92.0,260.0);
-        labelLines = 15;
+        labelLines = 17;
     }
     [self.collectionView reloadData];
 }
@@ -189,18 +189,14 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
     NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
     NSString *selectedEms = [[NSString alloc] init];
-    NSString *lastEm = [[NSString alloc] init];
-    NSUInteger blankLines = labelLines - MIN([emotionArray count], labelLines); // Label in collectionview is labelLines lines tall
+    NSUInteger emotionArrayCount = [emotionArray count];
+    NSUInteger blankLines = labelLines - MIN(emotionArrayCount, labelLines); // Label in collectionview is labelLines lines tall
+    CGFloat feelTotal = 0;
     
-    if ([emotionArray count] > 0) {
-        NSMutableArray *mutableEmotionArray = [NSMutableArray arrayWithArray:emotionArray];
-        // Treat the last emotion as special (preface with 'and' and end with '.')
-        if ([mutableEmotionArray count] > 0) {
-            lastEm = [NSString stringWithFormat:@"%@", [((Emotions *)[mutableEmotionArray objectAtIndex:[mutableEmotionArray count] - 1]).name lowercaseString]];
-            [mutableEmotionArray removeObjectAtIndex:[mutableEmotionArray count] - 1];
-        }
-        for (id emotion in mutableEmotionArray) {
+    if (emotionArrayCount > 0) {
+        for (id emotion in emotionArray) {
             selectedEms = [selectedEms stringByAppendingFormat:@"%@\n", [((Emotions *)emotion).name lowercaseString]];
+            feelTotal += ((Emotions *)emotion).feelValue.floatValue;
         }
     }
     NSString *displayString = [[NSString alloc] init];
@@ -208,10 +204,10 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
         displayString = [displayString stringByAppendingString:@"\n"];
     }
     if (emotionArray) {
-        displayString = [displayString stringByAppendingFormat:@"%@%@", selectedEms, lastEm];
+        displayString = [displayString stringByAppendingFormat:@"%@", selectedEms];
     }
     cell.emotionsLabel.text = displayString;
-    CGFloat height = (arc4random() % 20) - 10.0;
+    CGFloat height = emotionArrayCount>0 ? feelTotal/emotionArrayCount : 0; // Average (mean)
     cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
     [cell.chartDrawingView setChartHeight:height];
     [cell.chartDrawingView setNeedsDisplay]; // without this, the bars don't match the data
