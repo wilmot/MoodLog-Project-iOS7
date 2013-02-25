@@ -38,6 +38,28 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    // [self updateOldRecords];
+}
+
+- (void) updateOldRecords {
+    NSArray *moodDataList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList;
+    for (MoodLogEvents *object in [[self fetchedResultsController] fetchedObjects]) {
+        NSLog(@"Stuff: %@", object);
+        NSSet *emotions = object.relationshipEmotions;
+        for(Emotions *emotion in emotions) {
+            for (MlMoodDataItem *mood in moodDataList) {
+                if ([emotion.name isEqualToString:mood.mood]) {
+                    emotion.category = mood.category;
+                    emotion.parrotLevel = [NSNumber numberWithInt:[mood.parrotLevel integerValue]];
+                    emotion.feelValue = [NSNumber numberWithInt:[mood.feelValue integerValue]];
+                    emotion.facePath = mood.facePath;
+                }
+            }
+            
+        }
+    }
+    
+    [self saveContext];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -54,8 +76,7 @@
         [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }
     
-//    [super viewWillAppear:animated]; //Trick is calling super last in this case. Then you can  retrieve previously selected row to --> NSIndexPath *selection
-
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -74,9 +95,8 @@
 
 - (void)insertNewObject:(id)sender
 {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    MoodLogEvents *newMood = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    MoodLogEvents *newMood = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:self.managedObjectContext];
     
     // If appropriate, configure the new managed object.
     newMood.dateCreated = [NSDate date];
@@ -93,7 +113,7 @@
     
     // Every record has a full set of moods; only some are selected or arranged
     for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList) {
-        Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:context];
+        Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:self.managedObjectContext];
         emotion.name = mood.mood;
         emotion.parrotLevel = [NSNumber numberWithInt:[mood.parrotLevel integerValue]];
         emotion.feelValue = [NSNumber numberWithInt:[mood.feelValue integerValue]];
@@ -103,13 +123,7 @@
     }
     
     // Save the context
-    NSError *error = nil;
-    if (![context save:&error]) {
-         // Replace this implementation with code to handle the error appropriately.
-         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+    [self saveContext];
     
     NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
     NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
@@ -161,17 +175,21 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        [self.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
         
-        NSError *error = nil;
-        if (![context save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }   
+        [self saveContext];
+    }
+}
+
+- (void) saveContext { // Save data to the database
+    // Save the context.
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath

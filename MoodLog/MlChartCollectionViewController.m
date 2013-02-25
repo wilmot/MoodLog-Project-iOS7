@@ -195,7 +195,7 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     
     if (emotionArrayCount > 0) {
         for (id emotion in emotionArray) {
-            selectedEms = [selectedEms stringByAppendingFormat:@"%@\n", [((Emotions *)emotion).name lowercaseString]];
+            selectedEms = [selectedEms stringByAppendingFormat:@"%@ (%@)\n", [((Emotions *)emotion).name lowercaseString], ((Emotions *)emotion).feelValue];
             feelTotal += ((Emotions *)emotion).feelValue.floatValue;
         }
     }
