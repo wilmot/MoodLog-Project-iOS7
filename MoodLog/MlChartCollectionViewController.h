@@ -12,7 +12,10 @@
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSString *cellIdentifier;
+@property (strong, nonatomic) NSString *chartType;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation;
 
 @end

@@ -12,5 +12,7 @@
 
 @property (nonatomic, assign) CGRect barRect;
 @property (nonatomic, assign) CGFloat chartHeight;
+@property (strong, nonatomic) NSString *chartType;
+@property (strong, nonatomic) NSDictionary *categoryCounts;
 
 @end

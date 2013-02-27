@@ -10,9 +10,12 @@
 #import "MlChartCollectionViewController.h"
 
 @interface MlChartViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 
 - (IBAction)pressDone:(id)sender;
+- (IBAction)chooseSegment:(id)sender;
 
 @property (weak, nonatomic) MlChartCollectionViewController *myChartCollectionViewController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

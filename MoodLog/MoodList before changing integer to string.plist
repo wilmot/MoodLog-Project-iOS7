@@ -7,7 +7,7 @@
 		<key>category</key>
 		<string>Love</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>10</integer>
 		<key>facePath</key>
 		<string>Adored</string>
 		<key>source</key>
@@ -15,14 +15,14 @@
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>2</string>
+		<string>3</string>
 	</dict>
 	<key>Adoring</key>
 	<dict>
 		<key>category</key>
 		<string>Love</string>
 		<key>feelValue</key>
-		<string>9</string>
+		<integer>9</integer>
 		<key>facePath</key>
 		<string>Adoring</string>
 		<key>source</key>
@@ -30,14 +30,14 @@
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>2</string>
+		<string>3</string>
 	</dict>
 	<key>Affectionate</key>
 	<dict>
 		<key>category</key>
 		<string>Love</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Affectionate</string>
 		<key>source</key>
@@ -52,7 +52,7 @@
 		<key>category</key>
 		<string>Fear</string>
 		<key>feelValue</key>
-		<string>-7</string>
+		<integer>-7</integer>
 		<key>facePath</key>
 		<string>Afraid</string>
 		<key>source</key>
@@ -67,7 +67,7 @@
 		<key>category</key>
 		<string>Anger</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>-6</integer>
 		<key>facePath</key>
 		<string>Aggravated</string>
 		<key>source</key>
@@ -80,9 +80,9 @@
 	<key>Agitated</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-3</string>
+		<integer>-3</integer>
 		<key>facePath</key>
 		<string>Bothered</string>
 		<key>source</key>
@@ -97,7 +97,7 @@
 		<key>category</key>
 		<string>Surprise</string>
 		<key>feelValue</key>
-		<string>-3</string>
+		<integer>-3</integer>
 		<key>facePath</key>
 		<string>Alarmed</string>
 		<key>source</key>
@@ -110,9 +110,9 @@
 	<key>Alienated</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>Sad</string>
 		<key>feelValue</key>
-		<string>-5</string>
+		<integer>-5</integer>
 		<key>facePath</key>
 		<string>Alienated</string>
 		<key>source</key>
@@ -125,9 +125,9 @@
 	<key>Ambivalent</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-1</string>
+		<integer>-1</integer>
 		<key>facePath</key>
 		<string>Ambivalent</string>
 		<key>source</key>
@@ -140,9 +140,9 @@
 	<key>Amazed</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>Happy</string>
 		<key>feelValue</key>
-		<string>5</string>
+		<integer>5</integer>
 		<key>facePath</key>
 		<string>Amazed</string>
 		<key>source</key>
@@ -157,7 +157,7 @@
 		<key>category</key>
 		<string>Joy</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>7</integer>
 		<key>facePath</key>
 		<string>Amused</string>
 		<key>source</key>
@@ -165,14 +165,14 @@
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>2</string>
+		<string>3</string>
 	</dict>
 	<key>Angry</key>
 	<dict>
 		<key>category</key>
 		<string>Anger</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>-10</integer>
 		<key>facePath</key>
 		<string>Angry</string>
 		<key>source</key>
@@ -185,9 +185,9 @@
 	<key>Annoyed</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-5</string>
+		<integer>-5</integer>
 		<key>facePath</key>
 		<string>Annoyed</string>
 		<key>source</key>
@@ -200,9 +200,9 @@
 	<key>Anticipating</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Anticipating</string>
 		<key>source</key>
@@ -215,9 +215,9 @@
 	<key>Anxious</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Anxious</string>
 		<key>source</key>
@@ -225,14 +225,14 @@
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>0</string>
+		<string>-4</string>
 	</dict>
 	<key>Apologetic</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-3</string>
+		<integer>-3</integer>
 		<key>facePath</key>
 		<string>Apologetic</string>
 		<key>source</key>
@@ -245,9 +245,9 @@
 	<key>Apprehensive</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-7</string>
+		<integer>-7</integer>
 		<key>facePath</key>
 		<string>Apprehensive</string>
 		<key>source</key>
@@ -260,9 +260,9 @@
 	<key>Aroused</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>7</integer>
 		<key>facePath</key>
 		<string>Aroused</string>
 		<key>source</key>
@@ -275,9 +275,9 @@
 	<key>Ashamed</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-9</string>
+		<integer>-9</integer>
 		<key>facePath</key>
 		<string>Ashamed</string>
 		<key>source</key>
@@ -290,9 +290,9 @@
 	<key>Astonished</key>
 	<dict>
 		<key>category</key>
-		<string>Surprise</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>7</integer>
 		<key>facePath</key>
 		<string>Astonished</string>
 		<key>source</key>
@@ -305,9 +305,9 @@
 	<key>Attractive</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Attractive</string>
 		<key>source</key>
@@ -320,9 +320,9 @@
 	<key>Attracted</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>7</integer>
 		<key>facePath</key>
 		<string>Attracted</string>
 		<key>source</key>
@@ -335,9 +335,9 @@
 	<key>Awed</key>
 	<dict>
 		<key>category</key>
-		<string>Surprise</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>10</integer>
 		<key>facePath</key>
 		<string>Awed</string>
 		<key>source</key>
@@ -350,9 +350,9 @@
 	<key>Bitter</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-4</string>
+		<integer>-4</integer>
 		<key>facePath</key>
 		<string>Angry</string>
 		<key>source</key>
@@ -365,9 +365,9 @@
 	<key>Blissful</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>10</integer>
 		<key>facePath</key>
 		<string>Blissful</string>
 		<key>source</key>
@@ -382,7 +382,7 @@
 		<key>category</key>
 		<string>None</string>
 		<key>feelValue</key>
-		<string>-2</string>
+		<integer>-2</integer>
 		<key>facePath</key>
 		<string>Bored</string>
 		<key>source</key>
@@ -390,14 +390,14 @@
 		<key>emotionDescription</key>
 		<string></string>
 		<key>parrotLevel</key>
-		<string>2</string>
+		<string>3</string>
 	</dict>
 	<key>Broken</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>-10</integer>
 		<key>facePath</key>
 		<string>Broken</string>
 		<key>source</key>
@@ -410,9 +410,9 @@
 	<key>Caring</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Caring</string>
 		<key>source</key>
@@ -425,9 +425,9 @@
 	<key>Cautious</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-2</string>
+		<integer>-2</integer>
 		<key>facePath</key>
 		<string>Cautious</string>
 		<key>source</key>
@@ -440,9 +440,9 @@
 	<key>Cheerful</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Cheerful</string>
 		<key>source</key>
@@ -455,9 +455,9 @@
 	<key>Compassionate</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>9</string>
+		<integer>9</integer>
 		<key>facePath</key>
 		<string>Compassionate</string>
 		<key>source</key>
@@ -470,9 +470,9 @@
 	<key>Confident</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Confident</string>
 		<key>source</key>
@@ -487,7 +487,7 @@
 		<key>category</key>
 		<string>Joy</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Content</string>
 		<key>source</key>
@@ -500,9 +500,9 @@
 	<key>Curious</key>
 	<dict>
 		<key>category</key>
-		<string>Surprise</string>
+		<string>Reactive</string>
 		<key>feelValue</key>
-		<string>5</string>
+		<integer>5</integer>
 		<key>facePath</key>
 		<string>Curious</string>
 		<key>source</key>
@@ -515,9 +515,9 @@
 	<key>Defeated</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>-10</integer>
 		<key>facePath</key>
 		<string>Broken</string>
 		<key>source</key>
@@ -530,9 +530,9 @@
 	<key>Dejected</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -545,9 +545,9 @@
 	<key>Delighted</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>9</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -560,9 +560,9 @@
 	<key>Depressed</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -575,9 +575,9 @@
 	<key>Desireable</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -590,9 +590,9 @@
 	<key>Desiring</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -605,9 +605,9 @@
 	<key>Despairing</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -620,9 +620,9 @@
 	<key>Disappointed</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-5</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -635,9 +635,9 @@
 	<key>Disgusted</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-9</string>
+		<integer>-9</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -650,9 +650,9 @@
 	<key>Disliked</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -665,9 +665,9 @@
 	<key>Dismayed</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -680,9 +680,9 @@
 	<key>Displeased</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-3</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -695,9 +695,9 @@
 	<key>Distressed</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -710,9 +710,9 @@
 	<key>Ecstatic</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -725,9 +725,9 @@
 	<key>Elated</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -740,9 +740,9 @@
 	<key>Embarrassed</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-7</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Embarrased</string>
 		<key>source</key>
@@ -755,9 +755,9 @@
 	<key>Empathetic</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>9</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -770,9 +770,9 @@
 	<key>Enthralled</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -785,9 +785,9 @@
 	<key>Enthusiastic</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -800,9 +800,9 @@
 	<key>Envious</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-7</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -815,9 +815,9 @@
 	<key>Euphoric</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -830,9 +830,9 @@
 	<key>Exasperated</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>9</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -845,9 +845,9 @@
 	<key>Excited</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -860,9 +860,9 @@
 	<key>Exhilarated</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -875,9 +875,9 @@
 	<key>Fearful</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -890,9 +890,9 @@
 	<key>Ferocious</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>9</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -905,9 +905,9 @@
 	<key>Fond</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -920,9 +920,9 @@
 	<key>Frightful</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -935,9 +935,9 @@
 	<key>Frustrated</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>5</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -950,9 +950,9 @@
 	<key>Furious</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -967,7 +967,7 @@
 		<key>category</key>
 		<string>Joy</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Glad</string>
 		<key>source</key>
@@ -980,9 +980,9 @@
 	<key>Gleeful</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -995,9 +995,9 @@
 	<key>Gloomy</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1010,9 +1010,9 @@
 	<key>Glum</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-5</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1025,9 +1025,9 @@
 	<key>Grieving</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1040,9 +1040,9 @@
 	<key>Grouchy</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1055,9 +1055,9 @@
 	<key>Grumpy</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-2</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1070,9 +1070,9 @@
 	<key>Guilty</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-3</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1087,7 +1087,7 @@
 		<key>category</key>
 		<string>Joy</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>10</integer>
 		<key>facePath</key>
 		<string>Happy</string>
 		<key>source</key>
@@ -1100,9 +1100,9 @@
 	<key>Hating</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1115,9 +1115,9 @@
 	<key>Homesick</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1130,9 +1130,9 @@
 	<key>Hopeful</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1145,9 +1145,9 @@
 	<key>Horrified</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1160,9 +1160,9 @@
 	<key>Hostile</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-9</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1175,9 +1175,9 @@
 	<key>Humiliated</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1190,9 +1190,9 @@
 	<key>Hurting</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-5</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1205,9 +1205,9 @@
 	<key>Hysterical</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1220,9 +1220,9 @@
 	<key>Infatuated</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1235,9 +1235,9 @@
 	<key>Insecure</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-2</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1250,7 +1250,9 @@
 	<key>Insulted</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
+		<key>feelValue</key>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1263,9 +1265,9 @@
 	<key>Interested</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>Reactive</string>
 		<key>feelValue</key>
-		<string>5</string>
+		<integer>6</integer>
 		<key>facePath</key>
 		<string>Curious</string>
 		<key>source</key>
@@ -1278,9 +1280,9 @@
 	<key>Irritable</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-2</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1293,9 +1295,9 @@
 	<key>Irritated</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-3</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1308,9 +1310,9 @@
 	<key>Isolated</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-2</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1323,9 +1325,9 @@
 	<key>Jealous</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1340,7 +1342,7 @@
 		<key>category</key>
 		<string>Joy</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>10</integer>
 		<key>facePath</key>
 		<string>Happy</string>
 		<key>source</key>
@@ -1353,9 +1355,9 @@
 	<key>Jubilant</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1368,9 +1370,9 @@
 	<key>Likable</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>5</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1383,9 +1385,9 @@
 	<key>Loathing</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-9</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1398,9 +1400,9 @@
 	<key>Lonely</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1413,9 +1415,9 @@
 	<key>Longing</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>2</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1428,9 +1430,9 @@
 	<key>Loving</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1445,7 +1447,7 @@
 		<key>category</key>
 		<string>Love</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Adored</string>
 		<key>source</key>
@@ -1460,7 +1462,7 @@
 		<key>category</key>
 		<string>Love</string>
 		<key>feelValue</key>
-		<string>6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1473,9 +1475,9 @@
 	<key>Lustful</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1488,9 +1490,9 @@
 	<key>Melancholy</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1503,9 +1505,9 @@
 	<key>Miserable</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1518,9 +1520,9 @@
 	<key>Mortified</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1533,9 +1535,9 @@
 	<key>Neglected</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-5</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1548,9 +1550,9 @@
 	<key>Nervous</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-2</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1563,9 +1565,9 @@
 	<key>Optimistic</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1578,9 +1580,9 @@
 	<key>Outraged</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1593,9 +1595,9 @@
 	<key>Panicked</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-7</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1608,9 +1610,9 @@
 	<key>Passionate</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>9</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1623,9 +1625,9 @@
 	<key>Pessimistic</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-2</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1638,9 +1640,9 @@
 	<key>Pitying</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-3</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1653,9 +1655,9 @@
 	<key>Pleased</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>7</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1668,9 +1670,9 @@
 	<key>Proud</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1683,9 +1685,9 @@
 	<key>Rapturous</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1698,9 +1700,9 @@
 	<key>Regretful</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1713,9 +1715,9 @@
 	<key>Rejected</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1728,9 +1730,9 @@
 	<key>Relieved</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1743,9 +1745,9 @@
 	<key>Remorseful</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1758,9 +1760,9 @@
 	<key>Resenting</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1773,9 +1775,9 @@
 	<key>Revulsed</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1790,7 +1792,7 @@
 		<key>category</key>
 		<string>Sadness</string>
 		<key>feelValue</key>
-		<string>-8</string>
+		<integer>-6</integer>
 		<key>facePath</key>
 		<string>Sad</string>
 		<key>source</key>
@@ -1803,9 +1805,9 @@
 	<key>Satisfied</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>5</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1818,9 +1820,9 @@
 	<key>Sentimental</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1833,9 +1835,9 @@
 	<key>Shocked</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1848,9 +1850,9 @@
 	<key>Suffering</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1865,7 +1867,7 @@
 		<key>category</key>
 		<string>Surprise</string>
 		<key>feelValue</key>
-		<string>3</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1878,9 +1880,9 @@
 	<key>Suspicious</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-3</string>
+		<integer>-3</integer>
 		<key>facePath</key>
 		<string>Skeptical</string>
 		<key>source</key>
@@ -1893,9 +1895,9 @@
 	<key>Sympathetic</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1908,9 +1910,9 @@
 	<key>Tender</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1923,9 +1925,9 @@
 	<key>Terrified</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1938,9 +1940,9 @@
 	<key>Thrilled</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1953,9 +1955,9 @@
 	<key>Tormented</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1968,9 +1970,9 @@
 	<key>Triumphant</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1983,9 +1985,9 @@
 	<key>Trusting</key>
 	<dict>
 		<key>category</key>
-		<string>Love</string>
+		<string>Trust</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>8</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -1998,9 +2000,9 @@
 	<key>Uneasy</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-2</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -2013,9 +2015,9 @@
 	<key>Unhappy</key>
 	<dict>
 		<key>category</key>
-		<string>Sadness</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-6</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -2028,9 +2030,9 @@
 	<key>Unlovable</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-4</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -2043,9 +2045,9 @@
 	<key>Vengeful</key>
 	<dict>
 		<key>category</key>
-		<string>Anger</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -2058,9 +2060,9 @@
 	<key>Worried</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-3</string>
+		<integer>-3</integer>
 		<key>facePath</key>
 		<string>Worried</string>
 		<key>source</key>
@@ -2073,9 +2075,9 @@
 	<key>Worthy</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>8</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>
@@ -2088,9 +2090,9 @@
 	<key>Worthless</key>
 	<dict>
 		<key>category</key>
-		<string>Fear</string>
+		<string>None</string>
 		<key>feelValue</key>
-		<string>-10</string>
+		<integer>0</integer>
 		<key>facePath</key>
 		<string>Blank</string>
 		<key>source</key>

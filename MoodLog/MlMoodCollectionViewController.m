@@ -66,7 +66,7 @@ MoodLogEvents *myLogEntry;
     normalColor = [UIColor colorWithRed:202.0f/255.0f
                                   green:255.0f/255.0f
                                    blue:199.0f/255.0f
-                                  alpha:1.0f];
+                                  alpha:0.0f];
 //    MlFlowLayout *myLayout = [[MlFlowLayout alloc]init];
 //    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
 
@@ -97,13 +97,13 @@ MoodLogEvents *myLogEntry;
         selectedColor = [UIColor colorWithRed:162.0f/255.0f
                                         green:235.0f/255.0f
                                          blue:180.0f/255.0f
-                                        alpha:1.0f];
+                                        alpha:0.5f];
     }
     else {
         selectedColor = [UIColor colorWithRed:202.0f/255.0f
                                         green:255.0f/255.0f
                                          blue:199.0f/255.0f
-                                        alpha:1.0f];
+                                        alpha:0.0f];
     }
     
    
@@ -214,7 +214,6 @@ MoodLogEvents *myLogEntry;
     if ([aMood.selected floatValue]) {
         // set the color of the bg to something selected
         [cell setBackgroundColor:selectedColor];
-        [[cell moodName] setBackgroundColor:selectedColor];
         [[cell moodName] setTextColor:[UIColor blackColor]];
         if (myLogEntry.editing.boolValue == YES) {
             [[cell moodName] setFont:[UIFont boldSystemFontOfSize:14.0]];
@@ -222,14 +221,12 @@ MoodLogEvents *myLogEntry;
         }
         else {
             [[cell moodName] setFont:[UIFont systemFontOfSize:14.0]];
-           //[[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];
             [[cell moodName] setText:[NSString stringWithFormat:@"%@%@",check, aMood.name]];
         }
     }
     else {
         // set the color to normal boring
         [cell setBackgroundColor:normalColor];
-        [[cell moodName] setBackgroundColor:normalColor];
         [[cell moodName] setTextColor:[UIColor blackColor]];
         [[cell moodName] setFont:[UIFont systemFontOfSize:14.0]];
         if ([self.cellIdentifier isEqual: @"moodCell"]) {

@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.myChartCollectionViewController.chartType = @"Bar"; // Default chart type
+    [self.segment setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
+    [self.toolBar setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -44,10 +47,24 @@
 
 - (void)viewDidUnload {
     [self setDoneButton:nil];
+    [self setSegment:nil];
+    [self setToolBar:nil];
     [super viewDidUnload];
 }
 - (IBAction)pressDone:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)chooseSegment:(id)sender {
+    NSLog(@"Segment chosen: %d", self.segment.selectedSegmentIndex);
+    if (self.segment.selectedSegmentIndex == 0) { // Bar Chart
+        self.myChartCollectionViewController.chartType = @"Bar";
+    }
+    else { // Pie Chart
+        self.myChartCollectionViewController.chartType = @"Pie";        
+    }
+    UIInterfaceOrientation *orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    [self.myChartCollectionViewController setCellTypeAndSize:orientation];
 }
 
 @end

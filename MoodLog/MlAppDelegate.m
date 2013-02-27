@@ -32,7 +32,9 @@
         UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
         _masterViewController = (MlMasterViewController *)navigationController.topViewController;
         _masterViewController.managedObjectContext = self.managedObjectContext;
+        [navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
     }
+
     
 //    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];
 //    self.moodList = [NSArray arrayWithContentsOfFile:plistPath];
@@ -52,6 +54,7 @@
         aMoodDataItem.facePath = [[self.moodListDictionary valueForKey:mood] valueForKey:@"facePath"];
         aMoodDataItem.feelValue = [[self.moodListDictionary valueForKey:mood] valueForKey:@"feelValue"];
         aMoodDataItem.parrotLevel = [[self.moodListDictionary valueForKey:mood] valueForKey:@"parrotLevel"];
+        aMoodDataItem.category = [[self.moodListDictionary valueForKey:mood] valueForKey:@"category"];
         aMoodDataItem.selected = FALSE;
         self.moodDataList = [self.moodDataList arrayByAddingObject:aMoodDataItem];
     }

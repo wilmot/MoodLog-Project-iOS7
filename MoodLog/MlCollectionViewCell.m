@@ -19,13 +19,18 @@
     return self;
 }
 
-/*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    if ([self.reuseIdentifier isEqual:@"moodCellFaces"]) {
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        // Horizontal gray line along bottom
+        CGContextSetRGBStrokeColor(context, 0.2, 0.6, 0.2, 0.45);
+        CGContextMoveToPoint(context, 0.0, rect.size.height); //start at this point
+        CGContextAddLineToPoint(context, rect.size.width, rect.size.height); //draw to this point
+        CGContextStrokePath(context);
+    }
 }
-*/
 
 @end

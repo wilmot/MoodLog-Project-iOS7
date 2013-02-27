@@ -71,16 +71,30 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
 
 - (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation {
     if (toInterfaceOrientation == UIDeviceOrientationPortrait || toInterfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
-        //portrait
-        self.cellIdentifier = @"chartCellPortrait";
-        cellSize = CGSizeMake(92.0,508.0);
-        labelLines = 35;
+        // portrait
+        if ([self.chartType isEqualToString:@"Bar"]) {
+            self.cellIdentifier = @"chartCellPortrait";
+            cellSize = CGSizeMake(92.0,508.0);
+            labelLines = 35;
+        }
+        else { // Pie
+            self.cellIdentifier = @"pieChartCellPortrait";
+            cellSize = CGSizeMake(92.0,508.0);
+            labelLines = 35;
+        }
     }
     else {
-        //landscape
-        self.cellIdentifier = @"chartCell";
-        cellSize = CGSizeMake(92.0,260.0);
-        labelLines = 17;
+        // landscape
+        if ([self.chartType isEqualToString:@"Bar"]) {
+            self.cellIdentifier = @"chartCell";
+            cellSize = CGSizeMake(92.0,260.0);
+            labelLines = 17;
+        }
+        else { // Pie
+            self.cellIdentifier = @"pieChartCell";
+            cellSize = CGSizeMake(92.0,260.0);
+            labelLines = 17;            
+        }
     }
     [self.collectionView reloadData];
 }
@@ -162,11 +176,6 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     NSDate *today = [object valueForKey:@"date"];
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *weekdayComponents =
-    [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
-    NSInteger day = [weekdayComponents day];
     
     static NSArray *dayNames = nil;
     if (!dayNames) {
@@ -179,10 +188,11 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     dateFormatter.dateFormat = @"h:mm a";
     
     cell.timeLabel.text = [dateFormatter stringFromDate: today];
-    dateFormatter.dateFormat = @"MMMM yyyy";
+    dateFormatter.dateFormat = @"MMMM dd";
     cell.monthLabel.text = [dateFormatter stringFromDate: today];
 
-    cell.dateLabel.text = [NSString stringWithFormat:@"%d", day];
+    dateFormatter.dateFormat = @"yyyy";
+    cell.dateLabel.text = [dateFormatter stringFromDate: today];
     
     // Fetch the Mood list for this journal entry
     NSSet *emotionsforEntry = object.relationshipEmotions; // Get all the emotions for this record
@@ -193,10 +203,15 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     NSUInteger blankLines = labelLines - MIN(emotionArrayCount, labelLines); // Label in collectionview is labelLines lines tall
     CGFloat feelTotal = 0;
     
+    NSMutableDictionary *categoryCounts = [@{@"Love" : @0, @"Joy" : @0, @"Fear" : @0, @"Anger" : @0, @"Surprise" : @0, @"Sadness" : @0} mutableCopy];
     if (emotionArrayCount > 0) {
         for (id emotion in emotionArray) {
             selectedEms = [selectedEms stringByAppendingFormat:@"%@ (%@)\n", [((Emotions *)emotion).name lowercaseString], ((Emotions *)emotion).feelValue];
             feelTotal += ((Emotions *)emotion).feelValue.floatValue;
+            NSString *thisCategory = ((Emotions *)emotion).category;
+            if (categoryCounts[thisCategory]) {
+                categoryCounts[thisCategory] = @([categoryCounts[thisCategory] integerValue] + [@1 integerValue]); // increment
+            }
         }
     }
     NSString *displayString = [[NSString alloc] init];
@@ -206,10 +221,23 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     if (emotionArray) {
         displayString = [displayString stringByAppendingFormat:@"%@", selectedEms];
     }
-    cell.emotionsLabel.text = displayString;
-    CGFloat height = emotionArrayCount>0 ? feelTotal/emotionArrayCount : 0; // Average (mean)
-    cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
-    [cell.chartDrawingView setChartHeight:height];
+    if ([self.chartType isEqualToString:@"Bar"]) {
+        cell.emotionsLabel.text = displayString;
+    }
+    else { // Pie
+        cell.emotionsLabel.text = [categoryCounts description];
+    }
+    cell.chartDrawingView.chartType = self.chartType;
+    cell.chartDrawingView.categoryCounts = categoryCounts;
+    if ([self.chartType isEqualToString:@"Bar"]) {
+        CGFloat height = emotionArrayCount>0 ? feelTotal/emotionArrayCount : 0; // Average (mean)
+        cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
+        [cell.chartDrawingView setChartHeight:height];
+
+    }
+    else { // Pie
+        
+    }
     [cell.chartDrawingView setNeedsDisplay]; // without this, the bars don't match the data
 }
 
