@@ -116,6 +116,14 @@ MoodLogEvents *myLogEntry;
             emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
         }
     }
+    else if ( [myLogEntry.sortStyle isEqualToString:groupSort]) {
+        if (myLogEntry.editing.boolValue == YES) {
+            emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(categoryCompare:)];
+        }
+        else {
+            emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(categoryCompare:)];
+        }       
+    }
     else if ( [myLogEntry.sortStyle isEqualToString:reverseAlphabeticalSort]) {
         if (myLogEntry.editing.boolValue == YES) {
         emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(reverseCompare:)];

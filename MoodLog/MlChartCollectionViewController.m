@@ -10,10 +10,32 @@
 #import "MlChartCollectionViewCell.h"
 #import "MoodLogEvents.h"
 #import "Emotions.h"
+#import "Prefs.h"
 
 CGSize cellSize;
 NSUInteger labelLines;
 NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionViewCells (date labels are there)
+
+// Category for UILabel to align text to the bottom by adding newlines
+@interface UILabel (AlignBottom)
+- (void)addLines;
+@end
+
+@implementation UILabel (AlignBottom)
+
+- (void)addLines {
+    [self setNumberOfLines:labelLines];
+    
+    unsigned numberOfLines, index, stringLength = [self.text length];
+    for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
+        index = NSMaxRange([self.text lineRangeForRange:NSMakeRange(index, 0)]);
+
+    int newLinesToAdd = labelLines - numberOfLines;
+    for(int i=0; i<newLinesToAdd; i++)
+        self.text = [NSString stringWithFormat:@" \n%@",self.text];
+}
+@end
+
 
 @interface MlChartCollectionViewController ()
 
@@ -49,11 +71,12 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    NSLog(@"viewDidAppear, collectionView: %@", self.collectionView);
     // On first load, go to the end of the CollectionView (most recent)
-    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
-    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.collectionView numberOfItemsInSection:lastSection] - 1) inSection:lastSection];
-    [self.collectionView scrollToItemAtIndexPath:scrollIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+    if ([[self.fetchedResultsController sections] count]) { // If there are any records
+        NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
+        NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.collectionView numberOfItemsInSection:lastSection] - 1) inSection:lastSection];
+        [self.collectionView scrollToItemAtIndexPath:scrollIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,15 +95,16 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
 - (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation {
     if (toInterfaceOrientation == UIDeviceOrientationPortrait || toInterfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
         // portrait
+        NSUInteger frameheight = [[UIScreen mainScreen] bounds].size.height; // Different sizes for iPhone 4 vs. iPhone 5
         if ([self.chartType isEqualToString:@"Bar"]) {
             self.cellIdentifier = @"chartCellPortrait";
-            cellSize = CGSizeMake(92.0,508.0);
-            labelLines = 35;
+            cellSize = CGSizeMake(92.0,frameheight - 60);
+            labelLines = frameheight/16;
         }
         else { // Pie
             self.cellIdentifier = @"pieChartCellPortrait";
-            cellSize = CGSizeMake(92.0,508.0);
-            labelLines = 35;
+            cellSize = CGSizeMake(92.0,frameheight - 60);
+            labelLines = frameheight/16;
         }
     }
     else {
@@ -200,10 +224,9 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
     NSString *selectedEms = [[NSString alloc] init];
     NSUInteger emotionArrayCount = [emotionArray count];
-    NSUInteger blankLines = labelLines - MIN(emotionArrayCount, labelLines); // Label in collectionview is labelLines lines tall
     CGFloat feelTotal = 0;
     
-    NSMutableDictionary *categoryCounts = [@{@"Love" : @0, @"Joy" : @0, @"Fear" : @0, @"Anger" : @0, @"Surprise" : @0, @"Sadness" : @0} mutableCopy];
+    NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, fear : @0, anger : @0, sadness : @0} mutableCopy];
     if (emotionArrayCount > 0) {
         for (id emotion in emotionArray) {
             selectedEms = [selectedEms stringByAppendingFormat:@"%@ (%@)\n", [((Emotions *)emotion).name lowercaseString], ((Emotions *)emotion).feelValue];
@@ -215,18 +238,20 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
         }
     }
     NSString *displayString = [[NSString alloc] init];
-    for (int i=0;i<blankLines;i++) {
-        displayString = [displayString stringByAppendingString:@"\n"];
-    }
-    if (emotionArray) {
-        displayString = [displayString stringByAppendingFormat:@"%@", selectedEms];
-    }
     if ([self.chartType isEqualToString:@"Bar"]) {
-        cell.emotionsLabel.text = displayString;
+        if (emotionArray) {
+            displayString = [displayString stringByAppendingFormat:@"%@", selectedEms];
+        }
     }
     else { // Pie
-        cell.emotionsLabel.text = [categoryCounts description];
+        displayString = [categoryCounts description];
     }
+    cell.emotionsLabel.text = displayString;
+    [cell.emotionsLabel addLines];
+    unsigned numberOfLines, index, stringLength = [displayString length];
+    for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
+        index = NSMaxRange([displayString lineRangeForRange:NSMakeRange(index, 0)]);
+
     cell.chartDrawingView.chartType = self.chartType;
     cell.chartDrawingView.categoryCounts = categoryCounts;
     if ([self.chartType isEqualToString:@"Bar"]) {

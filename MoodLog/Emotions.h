@@ -28,6 +28,7 @@
 @property (nonatomic, retain) MoodLogEvents *logParent;
 
 - (NSComparisonResult)compare:(Emotions *)otherObject;
+- (NSComparisonResult)categoryCompare:(Emotions *)otherObject;
 - (NSComparisonResult)reverseCompare:(Emotions *)otherObject;
 
 @end

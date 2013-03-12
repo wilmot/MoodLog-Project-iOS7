@@ -435,7 +435,7 @@
 			</dict>
 		</array>
 		<key>Frame</key>
-		<string>{{198, 46}, {710, 832}}</string>
+		<string>{{175, 46}, {710, 832}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>

@@ -380,7 +380,7 @@
 	<key>Bored</key>
 	<dict>
 		<key>category</key>
-		<string>None</string>
+		<string>Anger</string>
 		<key>feelValue</key>
 		<string>-2</string>
 		<key>facePath</key>

@@ -38,7 +38,7 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    // [self updateOldRecords];
+    //[self updateOldRecords];
 }
 
 - (void) updateOldRecords {
@@ -71,9 +71,15 @@
         [[self tableView] selectRowAtIndexPath:selection animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
     else { // On first load, go to the bottom of the TableView (dates are in ascending order)
-        NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
-        NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
-        [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        NSUInteger lastSection;
+        if ([[self.fetchedResultsController sections] count]) {
+            lastSection = [[self.fetchedResultsController sections] count] - 1;
+            NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
+            [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        }
+        else {
+            lastSection = 0; // no records yet
+        }
     }
     
     [super viewWillAppear:animated];
@@ -115,6 +121,7 @@
     for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList) {
         Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:self.managedObjectContext];
         emotion.name = mood.mood;
+        emotion.category = mood.category;
         emotion.parrotLevel = [NSNumber numberWithInt:[mood.parrotLevel integerValue]];
         emotion.feelValue = [NSNumber numberWithInt:[mood.feelValue integerValue]];
         emotion.facePath = mood.facePath;

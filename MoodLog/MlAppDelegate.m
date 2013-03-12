@@ -59,6 +59,16 @@
         self.moodDataList = [self.moodDataList arrayByAddingObject:aMoodDataItem];
     }
     
+    
+    // See if there are any defaults and register some if not
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];;;
+    id testObject = [defaults objectForKey:@"ChartSegmentState"];
+	if (testObject == nil) {
+        [defaults setInteger:0 forKey:@"ChartSegmentState"];
+        [defaults setBool:YES forKey:@"DefaultFacesState"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
+    
     return YES;
 }
 							

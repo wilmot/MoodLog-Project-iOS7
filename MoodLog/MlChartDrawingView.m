@@ -7,6 +7,7 @@
 //
 
 #import "MlChartDrawingView.h"
+#import "Prefs.h"
 
 @implementation MlChartDrawingView
 
@@ -61,31 +62,31 @@ static NSUInteger numberOfDivisions = 20;
         CGContextDrawPath(context,kCGPathStroke);
         NSLog(@"Category Counts: %@", self.categoryCounts);
         
-        NSLog(@" %@", self.categoryCounts[@"Love"]);
-        CGFloat loveCount = [self.categoryCounts[@"Love"] floatValue];
-        NSLog(@" %@", self.categoryCounts[@"Joy"]);
-        CGFloat joyCount = [self.categoryCounts[@"Joy"] floatValue];
-        NSLog(@" %@", self.categoryCounts[@"Anger"]);
-        CGFloat angerCount = [self.categoryCounts[@"Anger"] floatValue];
-        NSLog(@" %@", self.categoryCounts[@"Fear"]);
-        CGFloat fearCount = [self.categoryCounts[@"Fear"] floatValue];
-        NSLog(@" %@", self.categoryCounts[@"Sadness"]);
-        CGFloat sadnessCount = [self.categoryCounts[@"Sadness"] floatValue];
-        NSLog(@" %@", self.categoryCounts[@"Surprise"]);
-        CGFloat surpriseCount = [self.categoryCounts[@"Surprise"] floatValue];
-        CGFloat totalCount = loveCount + joyCount + angerCount + fearCount + sadnessCount + surpriseCount;
+        NSLog(@" %@", self.categoryCounts[love]);
+        CGFloat loveCount = [self.categoryCounts[love] floatValue];
+        NSLog(@" %@", self.categoryCounts[joy]);
+        CGFloat joyCount = [self.categoryCounts[joy] floatValue];
+        NSLog(@" %@", self.categoryCounts[surprise]);
+        CGFloat surpriseCount = [self.categoryCounts[surprise] floatValue];
+        NSLog(@" %@", self.categoryCounts[fear]);
+        CGFloat fearCount = [self.categoryCounts[fear] floatValue];
+        NSLog(@" %@", self.categoryCounts[anger]);
+        CGFloat angerCount = [self.categoryCounts[anger] floatValue];
+        NSLog(@" %@", self.categoryCounts[sadness]);
+        CGFloat sadnessCount = [self.categoryCounts[sadness] floatValue];
+        CGFloat totalCount = loveCount + joyCount + surpriseCount + fearCount + angerCount + sadnessCount;
         CGFloat loveStart = 0;
         CGFloat loveEnd = 2*pi*(loveCount/totalCount);
         CGFloat joyStart = loveEnd;
         CGFloat joyEnd = joyStart + 2*pi*(joyCount/totalCount);
-        CGFloat angerStart = joyEnd;
-        CGFloat angerEnd = angerStart + 2*pi*(angerCount/totalCount);
-        CGFloat fearStart = angerEnd;
-        CGFloat fearEnd = fearStart + 2*pi*(fearCount/totalCount);
-        CGFloat sadnessStart = fearEnd;
-        CGFloat sadnessEnd = sadnessStart + 2*pi*(sadnessCount/totalCount);
-        CGFloat surpriseStart = sadnessEnd;
+        CGFloat surpriseStart = joyEnd;
         CGFloat surpriseEnd = surpriseStart + 2*pi*(surpriseCount/totalCount);
+        CGFloat fearStart = surpriseEnd;
+        CGFloat fearEnd = fearStart + 2*pi*(fearCount/totalCount);
+        CGFloat angerStart = fearEnd;
+        CGFloat angerEnd = angerStart + 2*pi*(angerCount/totalCount);
+        CGFloat sadnessStart = angerEnd;
+        CGFloat sadnessEnd = sadnessStart + 2*pi*(sadnessCount/totalCount);
         // Love
         CGContextSetFillColor(context, CGColorGetComponents( [[UIColor redColor] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);

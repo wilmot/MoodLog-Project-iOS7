@@ -52,6 +52,13 @@
     [self.myMoodCollectionViewController refresh];
 }
 
+- (IBAction)sortGroup:(id)sender {
+    self.detailItem.sortStyle = groupSort;
+    [self saveContext];
+    [self selectButton];
+    [self.myMoodCollectionViewController refresh];
+}
+
 - (IBAction)sortCBA:(id)sender {
     self.detailItem.sortStyle = reverseAlphabeticalSort;
     [self saveContext];
@@ -71,17 +78,26 @@
     if ([aButton isEqualToString:alphabeticalSort]) {
         [self.sortABCButton setSelected:YES];
         [self.SortCBAButton setSelected:NO];
+        [self.sortGroupButton setSelected:NO];
         [self.sortShuffleButton setSelected:NO];
     }
     else if ([aButton isEqualToString:reverseAlphabeticalSort]) {
         [self.sortABCButton setSelected:NO];
         [self.SortCBAButton setSelected:YES];
+        [self.sortGroupButton setSelected:NO];
         [self.sortShuffleButton setSelected:NO];
         
+    }
+    else if ([aButton isEqualToString:groupSort]) {
+        [self.sortABCButton setSelected:NO];
+        [self.SortCBAButton setSelected:NO];
+        [self.sortGroupButton setSelected:YES];
+        [self.sortShuffleButton setSelected:NO];
     }
     else if ([aButton isEqualToString:shuffleSort]) {
         [self.sortABCButton setSelected:NO];
         [self.SortCBAButton setSelected:NO];
+        [self.sortGroupButton setSelected:NO];
         [self.sortShuffleButton setSelected:YES];
     }
 }
@@ -131,4 +147,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setSortGroupButton:nil];
+    [super viewDidUnload];
+}
 @end

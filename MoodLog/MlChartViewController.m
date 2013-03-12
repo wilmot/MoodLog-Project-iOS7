@@ -30,6 +30,13 @@
     self.myChartCollectionViewController.chartType = @"Bar"; // Default chart type
     [self.segment setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
     [self.toolBar setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.segment.selectedSegmentIndex = [defaults integerForKey:@"ChartSegmentState"];
+    [self chooseSegment:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -56,7 +63,6 @@
 }
 
 - (IBAction)chooseSegment:(id)sender {
-    NSLog(@"Segment chosen: %d", self.segment.selectedSegmentIndex);
     if (self.segment.selectedSegmentIndex == 0) { // Bar Chart
         self.myChartCollectionViewController.chartType = @"Bar";
     }
@@ -65,6 +71,9 @@
     }
     UIInterfaceOrientation *orientation = [[UIApplication sharedApplication] statusBarOrientation];
     [self.myChartCollectionViewController setCellTypeAndSize:orientation];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:self.segment.selectedSegmentIndex forKey:@"ChartSegmentState"];
+    [defaults synchronize];
 }
 
 @end

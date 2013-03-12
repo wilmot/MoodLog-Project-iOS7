@@ -222,6 +222,13 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self.myMoodCollectionViewController refresh];
 }
 
+- (IBAction)sortGroup:(id)sender {
+    self.detailItem.sortStyle = groupSort;
+    [self saveContext];
+    [self selectButton];
+    [self.myMoodCollectionViewController refresh];    
+}
+
 - (IBAction)sortCBA:(id)sender {
     self.detailItem.sortStyle = reverseAlphabeticalSort;
     [self saveContext];
@@ -290,17 +297,27 @@ static MlDatePickerViewController *myDatePickerViewController;
     if ([aButton isEqualToString:alphabeticalSort]) {
         [self.sortABCButton setSelected:YES];
         [self.SortCBAButton setSelected:NO];
+        [self.sortGroupButton setSelected:NO];
         [self.sortShuffleButton setSelected:NO];
     }
     else if ([aButton isEqualToString:reverseAlphabeticalSort]) {
         [self.sortABCButton setSelected:NO];
         [self.SortCBAButton setSelected:YES];
+        [self.sortGroupButton setSelected:NO];
+        [self.sortShuffleButton setSelected:NO];
+        
+    }
+    else if ([aButton isEqualToString:groupSort]) {
+        [self.sortABCButton setSelected:NO];
+        [self.SortCBAButton setSelected:NO];
+        [self.sortGroupButton setSelected:YES];
         [self.sortShuffleButton setSelected:NO];
         
     }
     else if ([aButton isEqualToString:shuffleSort]) {
         [self.sortABCButton setSelected:NO];
         [self.SortCBAButton setSelected:NO];
+        [self.sortGroupButton setSelected:NO];
         [self.sortShuffleButton setSelected:YES];
     }
 }
@@ -330,6 +347,7 @@ static MlDatePickerViewController *myDatePickerViewController;
     [self setExpandButton:nil];
     [self setMoodViewWithHeader:nil];
     [self setExpandButton:nil];
+    [self setSortGroupButton:nil];
     [super viewDidUnload];
 }
 @end

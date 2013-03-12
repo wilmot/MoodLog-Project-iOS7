@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 
 FOUNDATION_EXPORT NSString *const alphabeticalSort;
+FOUNDATION_EXPORT NSString *const groupSort;
 FOUNDATION_EXPORT NSString *const reverseAlphabeticalSort;
 FOUNDATION_EXPORT NSString *const shuffleSort;
+FOUNDATION_EXPORT NSString *const love;
+FOUNDATION_EXPORT NSString *const joy;
+FOUNDATION_EXPORT NSString *const surprise;
+FOUNDATION_EXPORT NSString *const fear;
+FOUNDATION_EXPORT NSString *const anger;
+FOUNDATION_EXPORT NSString *const sadness;
 
 @interface Prefs : NSObject
 
