@@ -534,7 +534,7 @@
 		<key>feelValue</key>
 		<string>-6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Dejected</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -549,7 +549,7 @@
 		<key>feelValue</key>
 		<string>9</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Delighted</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -564,7 +564,7 @@
 		<key>feelValue</key>
 		<string>-8</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Depressed</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -572,14 +572,14 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Desireable</key>
+	<key>Desirable</key>
 	<dict>
 		<key>category</key>
 		<string>Love</string>
 		<key>feelValue</key>
 		<string>6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Desirable</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -594,7 +594,7 @@
 		<key>feelValue</key>
 		<string>6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Desiring</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -609,7 +609,7 @@
 		<key>feelValue</key>
 		<string>-10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Despairing</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -624,7 +624,7 @@
 		<key>feelValue</key>
 		<string>-5</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Disappointed</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -639,7 +639,7 @@
 		<key>feelValue</key>
 		<string>-9</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Disgusted</string>
 		<key>source</key>
 		<string>Plutchik</string>
 		<key>emotionDescription</key>
@@ -1059,7 +1059,7 @@
 		<key>feelValue</key>
 		<string>-2</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Grumpy</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>

@@ -98,25 +98,25 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
         NSUInteger frameheight = [[UIScreen mainScreen] bounds].size.height; // Different sizes for iPhone 4 vs. iPhone 5
         if ([self.chartType isEqualToString:@"Bar"]) {
             self.cellIdentifier = @"chartCellPortrait";
-            cellSize = CGSizeMake(92.0,frameheight - 60);
+            cellSize = CGSizeMake(92.0,frameheight - 65);
             labelLines = frameheight/16;
         }
         else { // Pie
             self.cellIdentifier = @"pieChartCellPortrait";
-            cellSize = CGSizeMake(92.0,frameheight - 60);
+            cellSize = CGSizeMake(92.0,frameheight - 65);
             labelLines = frameheight/16;
         }
     }
     else {
         // landscape
         if ([self.chartType isEqualToString:@"Bar"]) {
-            self.cellIdentifier = @"chartCell";
-            cellSize = CGSizeMake(92.0,260.0);
+            self.cellIdentifier = @"chartCellPortrait";
+            cellSize = CGSizeMake(92.0,255.0);
             labelLines = 17;
         }
         else { // Pie
-            self.cellIdentifier = @"pieChartCell";
-            cellSize = CGSizeMake(92.0,260.0);
+            self.cellIdentifier = @"pieChartCellPortrait";
+            cellSize = CGSizeMake(92.0,255.0);
             labelLines = 17;            
         }
     }
