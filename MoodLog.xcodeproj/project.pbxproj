@@ -123,6 +123,7 @@
 		4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */; };
 		4C7CB5901705437800971849 /* IconNew72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7CB58F1705437800971849 /* IconNew72.png */; };
 		4C7CB5921705439B00971849 /* IconNew72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7CB5911705439B00971849 /* IconNew72@2x.png */; };
+		4C7CB595170561E300971849 /* MlMoodCollectionViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */; };
 		4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */; };
 		4C8F362A16BA0D7900AD101A /* Compassionate.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F361616BA0D7900AD101A /* Compassionate.png */; };
 		4C8F362B16BA0D7900AD101A /* Compassionate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F361716BA0D7900AD101A /* Compassionate@2x.png */; };
@@ -311,6 +312,8 @@
 		4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodDataItem.m; sourceTree = "<group>"; };
 		4C7CB58F1705437800971849 /* IconNew72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconNew72.png; sourceTree = "<group>"; };
 		4C7CB5911705439B00971849 /* IconNew72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconNew72@2x.png"; sourceTree = "<group>"; };
+		4C7CB593170561E300971849 /* MlMoodCollectionViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodCollectionViewHeaderView.h; sourceTree = "<group>"; };
+		4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewHeaderView.m; sourceTree = "<group>"; };
 		4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewController.h; sourceTree = "<group>"; };
 		4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewController.m; sourceTree = "<group>"; };
 		4C8F361616BA0D7900AD101A /* Compassionate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Compassionate.png; sourceTree = "<group>"; };
@@ -569,6 +572,8 @@
 				4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */,
 				4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */,
 				4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */,
+				4C7CB593170561E300971849 /* MlMoodCollectionViewHeaderView.h */,
+				4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */,
 				4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */,
 				4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */,
 				4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */,
@@ -917,6 +922,7 @@
 				4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */,
 				4C52861816D9A654007C878C /* MlChartDrawingView.m in Sources */,
 				4C50A08816DACA16003954E6 /* Emotions.m in Sources */,
+				4C7CB595170561E300971849 /* MlMoodCollectionViewHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

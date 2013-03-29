@@ -34,6 +34,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.segment.selectedSegmentIndex = [defaults integerForKey:@"ChartSegmentState"];
     [self chooseSegment:self];

@@ -86,6 +86,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
 //    [self.tableView reloadData];
 
 //    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
@@ -112,7 +114,7 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMood.date];
     newMood.header = [NSString stringWithFormat:@"%d", ([components year] * 1000) + [components month]];
-    newMood.sortStyle = @"Alphabetical"; // Default sort style
+    newMood.sortStyle = @"Group"; // Default sort style
     newMood.editing = [NSNumber numberWithBool:YES];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     newMood.showFaces = [NSNumber numberWithBool:[defaults boolForKey:@"DefaultFacesState"]];
