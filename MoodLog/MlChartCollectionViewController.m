@@ -59,13 +59,11 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     if (!self.cellIdentifier) {
         self.cellIdentifier = @"chartCellPortrait";
     }
-//    NSLog(@"viewDidLoad, collectionView: %@", self.collectionView);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    NSLog(@"viewWillAppear, collectionView: %@", self.collectionView);
-    UIInterfaceOrientation *orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     [self setCellTypeAndSize:orientation];
 }
 
@@ -74,8 +72,8 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     // On first load, go to the end of the CollectionView (most recent)
     if ([[self.fetchedResultsController sections] count]) { // If there are any records
         NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
-        NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.collectionView numberOfItemsInSection:lastSection] - 1) inSection:lastSection];
-        [self.collectionView scrollToItemAtIndexPath:scrollIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+        NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.chartCollectionView numberOfItemsInSection:lastSection] - 1) inSection:lastSection];
+        [self.chartCollectionView scrollToItemAtIndexPath:scrollIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
     }
 }
 
@@ -86,7 +84,7 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
 }
 
 - (void)viewDidUnload {
-    [self setCollectionView:nil];
+    [self setChartCollectionView:nil];
     [self setManagedObjectContext:nil];
     [self setFetchedResultsController:nil];
     [super viewDidUnload];
@@ -112,15 +110,15 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
         if ([self.chartType isEqualToString:@"Bar"]) {
             self.cellIdentifier = @"chartCellPortrait";
             cellSize = CGSizeMake(92.0,255.0);
-            labelLines = 17;
+            labelLines = 16;
         }
         else { // Pie
             self.cellIdentifier = @"pieChartCellPortrait";
             cellSize = CGSizeMake(92.0,255.0);
-            labelLines = 17;            
+            labelLines = 16;
         }
     }
-    [self.collectionView reloadData];
+    [self.chartCollectionView reloadData];
 }
 
 #pragma mark - Orientation change
@@ -136,8 +134,6 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
-    //    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    //    return [sectionInfo numberOfObjects];
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [sectionInfo numberOfObjects];
 }
@@ -241,13 +237,20 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     if ([self.chartType isEqualToString:@"Bar"]) {
         if (emotionArray) {
             displayString = [displayString stringByAppendingFormat:@"%@", selectedEms];
-        }
+            cell.emotionsLabel.text = displayString;
+            [cell.emotionsLabel addLines];
+       }
     }
     else { // Pie
-        displayString = [categoryCounts description];
+        // displayString = [categoryCounts description];
+        for (id key in categoryCounts) {
+            NSNumber *itemCount = (NSNumber *)[categoryCounts objectForKey:key];
+            if ([itemCount integerValue] > 0) {
+                displayString = [displayString stringByAppendingFormat:@"%@: %@\n",key, [categoryCounts objectForKey:key]];
+            }
+        }
+        cell.emotionsLabel.text = displayString;
     }
-    cell.emotionsLabel.text = displayString;
-    [cell.emotionsLabel addLines];
     unsigned numberOfLines, index, stringLength = [displayString length];
     for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
         index = NSMaxRange([displayString lineRangeForRange:NSMakeRange(index, 0)]);

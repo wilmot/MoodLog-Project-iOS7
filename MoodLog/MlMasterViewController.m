@@ -247,7 +247,7 @@
         MoodLogEvents *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     }
-    else     if ([[segue identifier] isEqualToString:@"chartView"]) {
+    else if ([[segue identifier] isEqualToString:@"chartView"]) {
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
     }
 }

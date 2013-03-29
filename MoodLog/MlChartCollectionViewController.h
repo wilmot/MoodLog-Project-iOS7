@@ -10,7 +10,7 @@
 
 @interface MlChartCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet UICollectionView *chartCollectionView;
 @property (strong, nonatomic) NSString *cellIdentifier;
 @property (strong, nonatomic) NSString *chartType;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;

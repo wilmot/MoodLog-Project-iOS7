@@ -36,6 +36,6 @@
 }
 
 - (IBAction)doneButton:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

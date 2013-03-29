@@ -127,7 +127,7 @@
 - (IBAction)doneButtonPressed:(id)sender {
     self.detailItem.editing = [NSNumber numberWithBool:NO];
     [self saveContext];
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void) saveContext { // Save data to the database

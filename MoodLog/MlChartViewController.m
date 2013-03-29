@@ -53,13 +53,12 @@
 }
 
 - (void)viewDidUnload {
-    [self setDoneButton:nil];
     [self setSegment:nil];
     [self setToolBar:nil];
     [super viewDidUnload];
 }
 - (IBAction)pressDone:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)chooseSegment:(id)sender {

@@ -11,7 +11,6 @@
 
 @interface MlChartViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
-@property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 
 - (IBAction)pressDone:(id)sender;

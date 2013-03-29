@@ -857,7 +857,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <resources>
         <image name="BlackLine.png" width="278" height="2"/>
         <image name="Blank.png" width="80" height="98"/>
-        <image name="CalendarBlank.png" width="257" height="258"/>
+        <image name="CalendarBlank.png" width="128" height="128"/>
         <image name="add.png" width="65" height="80"/>
         <image name="calendar.png" width="22" height="18"/>
         <image name="chart.png" width="22" height="18"/>
