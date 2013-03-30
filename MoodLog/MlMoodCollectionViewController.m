@@ -120,34 +120,34 @@ MoodLogEvents *myLogEntry;
     else if ( [myLogEntry.sortStyle isEqualToString:groupSort]) {
         if (myLogEntry.editing.boolValue == YES) {
             NSPredicate *groupLove = [NSPredicate predicateWithFormat:@"category == %@", @"Love"];
-            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"category == %@", @"Anger"];
-            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"category == %@", @"Fear"];
-            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"category == %@", @"Surprise"];
             NSPredicate *groupJoy = [NSPredicate predicateWithFormat:@"category == %@", @"Joy"];
+            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"category == %@", @"Surprise"];
+            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"category == %@", @"Anger"];
             NSPredicate *groupSadness = [NSPredicate predicateWithFormat:@"category == %@", @"Sadness"];
+            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"category == %@", @"Fear"];
             NSArray *loveArray = [[[emotionsforEntry filteredSetUsingPredicate:groupLove] allObjects] sortedArrayUsingSelector:@selector(compare:)];
-            NSArray *angerArray = [[[emotionsforEntry filteredSetUsingPredicate:groupAnger] allObjects] sortedArrayUsingSelector:@selector(compare:)];
-            NSArray *fearArray = [[[emotionsforEntry filteredSetUsingPredicate:groupFear] allObjects] sortedArrayUsingSelector:@selector(compare:)];
-            NSArray *surpriseArray = [[[emotionsforEntry filteredSetUsingPredicate:groupSurprise] allObjects] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *joyArray = [[[emotionsforEntry filteredSetUsingPredicate:groupJoy] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+            NSArray *surpriseArray = [[[emotionsforEntry filteredSetUsingPredicate:groupSurprise] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+            NSArray *angerArray = [[[emotionsforEntry filteredSetUsingPredicate:groupAnger] allObjects] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *sadnessArray = [[[emotionsforEntry filteredSetUsingPredicate:groupSadness] allObjects] sortedArrayUsingSelector:@selector(compare:)];
-            emotionArray = [NSArray arrayWithObjects:loveArray,angerArray,fearArray,surpriseArray,joyArray, sadnessArray, nil];
+            NSArray *fearArray = [[[emotionsforEntry filteredSetUsingPredicate:groupFear] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+            emotionArray = [NSArray arrayWithObjects:loveArray,joyArray,surpriseArray,angerArray,sadnessArray,fearArray, nil];
 //            emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(categoryCompare:)];
         }
         else {
             NSPredicate *groupLove = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Love", [NSNumber numberWithBool:YES]];
-            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Anger", [NSNumber numberWithBool:YES]];
-            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Fear", [NSNumber numberWithBool:YES]];
-            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Surprise", [NSNumber numberWithBool:YES]];
             NSPredicate *groupJoy = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Joy", [NSNumber numberWithBool:YES]];
+            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Surprise", [NSNumber numberWithBool:YES]];
+            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Anger", [NSNumber numberWithBool:YES]];
             NSPredicate *groupSadness = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Sadness", [NSNumber numberWithBool:YES]];
+            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Fear", [NSNumber numberWithBool:YES]];
             NSArray *loveArray = [[[emotionsforEntry filteredSetUsingPredicate:groupLove] allObjects] sortedArrayUsingSelector:@selector(compare:)];
-            NSArray *angerArray = [[[emotionsforEntry filteredSetUsingPredicate:groupAnger] allObjects] sortedArrayUsingSelector:@selector(compare:)];
-            NSArray *fearArray = [[[emotionsforEntry filteredSetUsingPredicate:groupFear] allObjects] sortedArrayUsingSelector:@selector(compare:)];
-            NSArray *surpriseArray = [[[emotionsforEntry filteredSetUsingPredicate:groupSurprise] allObjects] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *joyArray = [[[emotionsforEntry filteredSetUsingPredicate:groupJoy] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+            NSArray *surpriseArray = [[[emotionsforEntry filteredSetUsingPredicate:groupSurprise] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+            NSArray *angerArray = [[[emotionsforEntry filteredSetUsingPredicate:groupAnger] allObjects] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *sadnessArray = [[[emotionsforEntry filteredSetUsingPredicate:groupSadness] allObjects] sortedArrayUsingSelector:@selector(compare:)];
-            emotionArray = [NSArray arrayWithObjects:loveArray,angerArray,fearArray,surpriseArray,joyArray, sadnessArray, nil];
+            NSArray *fearArray = [[[emotionsforEntry filteredSetUsingPredicate:groupFear] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+            emotionArray = [NSArray arrayWithObjects:loveArray,joyArray,surpriseArray,angerArray,sadnessArray,fearArray, nil];
 //            emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(categoryCompare:)];
         }       
     }

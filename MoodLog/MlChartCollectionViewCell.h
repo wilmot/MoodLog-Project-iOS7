@@ -16,5 +16,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emotionsLabel;
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *chartDrawingView;
+@property (weak, nonatomic) IBOutlet UILabel *loveLabel;
+@property (weak, nonatomic) IBOutlet UILabel *joyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *surpriseLabel;
+@property (weak, nonatomic) IBOutlet UILabel *angerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sadnessLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fearLabel;
 
 @end

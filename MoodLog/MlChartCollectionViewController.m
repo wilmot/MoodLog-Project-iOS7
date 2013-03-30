@@ -242,15 +242,82 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
        }
     }
     else { // Pie
-        // displayString = [categoryCounts description];
-        for (id key in categoryCounts) {
-            NSNumber *itemCount = (NSNumber *)[categoryCounts objectForKey:key];
-            if ([itemCount integerValue] > 0) {
-                displayString = [displayString stringByAppendingFormat:@"%@: %@\n",key, [categoryCounts objectForKey:key]];
-            }
+        NSString *key;
+        NSNumber *itemCount;
+        
+        key = @"Love";
+        itemCount= (NSNumber *)[categoryCounts objectForKey:key];
+        if ([itemCount integerValue] > 0) {
+            cell.loveLabel.font = [UIFont boldSystemFontOfSize:15];
+            cell.loveLabel.textColor = [[UIColor greenColor] darkerColor];
+            cell.loveLabel.text = [NSString stringWithFormat:@"%@ %@\n", key, [categoryCounts objectForKey:key]];
         }
-        cell.emotionsLabel.text = displayString;
-    }
+        else {
+            cell.loveLabel.font = [UIFont systemFontOfSize:15];
+            cell.loveLabel.textColor = [[[UIColor greenColor] darkerColor] colorWithAlphaComponent:0.20];
+            cell.loveLabel.text = [NSString stringWithFormat:@"%@    ", key];
+        }
+        key = @"Joy";
+        itemCount= (NSNumber *)[categoryCounts objectForKey:key];
+        if ([itemCount integerValue] > 0) {
+            cell.joyLabel.font = [UIFont boldSystemFontOfSize:15];
+            cell.joyLabel.textColor = [UIColor orangeColor];
+            cell.joyLabel.text = [NSString stringWithFormat:@"%@ %@\n", key, [categoryCounts objectForKey:key]];
+        }
+        else {
+            cell.joyLabel.font = [UIFont systemFontOfSize:15];
+            cell.joyLabel.textColor = [[[UIColor orangeColor] colorWithAlphaComponent:0.20] darkerColor];
+            cell.joyLabel.text = [NSString stringWithFormat:@"%@    ", key];
+        }
+        key = @"Surprise";
+        itemCount= (NSNumber *)[categoryCounts objectForKey:key];
+        if ([itemCount integerValue] > 0) {
+            cell.surpriseLabel.font = [UIFont boldSystemFontOfSize:15];
+            cell.surpriseLabel.textColor = [UIColor purpleColor];
+            cell.surpriseLabel.text = [NSString stringWithFormat:@"%@ %@\n", key, [categoryCounts objectForKey:key]];
+        }
+        else {
+            cell.surpriseLabel.font = [UIFont systemFontOfSize:15];
+            cell.surpriseLabel.textColor = [[UIColor purpleColor] colorWithAlphaComponent:0.20];
+            cell.surpriseLabel.text = [NSString stringWithFormat:@"%@    ", key];
+        }
+       key = @"Anger";
+        itemCount= (NSNumber *)[categoryCounts objectForKey:key];
+        if ([itemCount integerValue] > 0) {
+            cell.angerLabel.font = [UIFont boldSystemFontOfSize:15];
+            cell.angerLabel.textColor = [UIColor redColor];
+            cell.angerLabel.text = [NSString stringWithFormat:@"%@ %@\n", key, [categoryCounts objectForKey:key]];
+        }
+        else {
+            cell.angerLabel.font = [UIFont systemFontOfSize:15];
+            cell.angerLabel.textColor = [[UIColor redColor] colorWithAlphaComponent:0.20];
+            cell.angerLabel.text = [NSString stringWithFormat:@"%@    ", key];
+        }
+        key = @"Sadness";
+        itemCount= (NSNumber *)[categoryCounts objectForKey:key];
+        if ([itemCount integerValue] > 0) {
+            cell.sadnessLabel.font = [UIFont boldSystemFontOfSize:15];
+            cell.sadnessLabel.textColor = [UIColor blueColor];
+            cell.sadnessLabel.text = [NSString stringWithFormat:@"%@ %@\n", key, [categoryCounts objectForKey:key]];
+        }
+        else {
+            cell.sadnessLabel.font = [UIFont systemFontOfSize:15];
+            cell.sadnessLabel.textColor = [[UIColor blueColor] colorWithAlphaComponent:0.20];
+            cell.sadnessLabel.text = [NSString stringWithFormat:@"%@    ", key];
+        }
+        key = @"Fear";
+        itemCount= (NSNumber *)[categoryCounts objectForKey:key];
+        if ([itemCount integerValue] > 0) {
+            cell.fearLabel.font = [UIFont boldSystemFontOfSize:15];
+            cell.fearLabel.textColor = [[UIColor yellowColor] darkerColor];
+            cell.fearLabel.text = [NSString stringWithFormat:@"%@ %@\n", key, [categoryCounts objectForKey:key]];
+        }
+        else {
+            cell.fearLabel.font = [UIFont systemFontOfSize:15];
+            cell.fearLabel.textColor = [[[UIColor yellowColor] colorWithAlphaComponent:0.20] darkerColor];
+            cell.fearLabel.text = [NSString stringWithFormat:@"%@    ", key];
+        }
+   }
     unsigned numberOfLines, index, stringLength = [displayString length];
     for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
         index = NSMaxRange([displayString lineRangeForRange:NSMakeRange(index, 0)]);

@@ -1860,6 +1860,21 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
+	<key>Startled</key>
+	<dict>
+		<key>category</key>
+		<string>Surprise</string>
+		<key>feelValue</key>
+		<string>-2</string>
+		<key>facePath</key>
+		<string>Blank</string>
+		<key>source</key>
+		<string>Need Source</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>0</string>
+	</dict>
 	<key>Surprised</key>
 	<dict>
 		<key>category</key>

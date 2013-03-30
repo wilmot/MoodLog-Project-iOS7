@@ -22,3 +22,11 @@ FOUNDATION_EXPORT NSString *const sadness;
 @interface Prefs : NSObject
 
 @end
+
+// Category for modifying UIColors
+@interface UIColor (LightAndDark)
+
+- (UIColor *)lighterColor;
+- (UIColor *)darkerColor;
+
+@end

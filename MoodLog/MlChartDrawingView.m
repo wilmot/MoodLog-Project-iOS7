@@ -63,58 +63,58 @@ static NSUInteger numberOfDivisions = 20;
         CGFloat loveCount = [self.categoryCounts[love] floatValue];
         CGFloat joyCount = [self.categoryCounts[joy] floatValue];
         CGFloat surpriseCount = [self.categoryCounts[surprise] floatValue];
-        CGFloat fearCount = [self.categoryCounts[fear] floatValue];
         CGFloat angerCount = [self.categoryCounts[anger] floatValue];
         CGFloat sadnessCount = [self.categoryCounts[sadness] floatValue];
+        CGFloat fearCount = [self.categoryCounts[fear] floatValue];
         CGFloat totalCount = loveCount + joyCount + surpriseCount + fearCount + angerCount + sadnessCount;
-        CGFloat loveStart = 0;
-        CGFloat loveEnd = 2*pi*(loveCount/totalCount);
+        CGFloat loveStart = 3*pi/2.0;
+        CGFloat loveEnd = loveStart + 2*pi*(loveCount/totalCount);
         CGFloat joyStart = loveEnd;
         CGFloat joyEnd = joyStart + 2*pi*(joyCount/totalCount);
         CGFloat surpriseStart = joyEnd;
         CGFloat surpriseEnd = surpriseStart + 2*pi*(surpriseCount/totalCount);
-        CGFloat fearStart = surpriseEnd;
-        CGFloat fearEnd = fearStart + 2*pi*(fearCount/totalCount);
-        CGFloat angerStart = fearEnd;
+        CGFloat angerStart = surpriseEnd;
         CGFloat angerEnd = angerStart + 2*pi*(angerCount/totalCount);
         CGFloat sadnessStart = angerEnd;
         CGFloat sadnessEnd = sadnessStart + 2*pi*(sadnessCount/totalCount);
-        // Love
-        CGContextSetFillColor(context, CGColorGetComponents( [[UIColor redColor] CGColor]));
+        CGFloat fearStart = sadnessEnd;
+        CGFloat fearEnd = fearStart + 2*pi*(fearCount/totalCount);
+        // Love - Green
+        CGContextSetFillColor(context, CGColorGetComponents( [[[UIColor greenColor] darkerColor] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
         CGContextAddArc(context,centerx,centery,circumference,loveEnd,loveStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
-        // Joy
-        CGContextSetFillColor(context, CGColorGetComponents( [[UIColor greenColor] CGColor]));
+        // Joy - Orange
+        CGContextSetFillColor(context, CGColorGetComponents( [[UIColor orangeColor] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
         CGContextAddArc(context,centerx,centery,circumference,joyEnd,joyStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
-        // Anger
-        CGContextSetFillColor(context, CGColorGetComponents( [[UIColor orangeColor] CGColor]));
+        // Surprise - Purple
+        CGContextSetFillColor(context, CGColorGetComponents( [[UIColor purpleColor] CGColor]));
+        CGContextMoveToPoint(context, centerx, centery);
+        CGContextAddArc(context,centerx,centery,circumference,surpriseEnd,surpriseStart,1);
+        CGContextClosePath(context);
+        CGContextFillPath(context);
+        // Anger - Red
+        CGContextSetFillColor(context, CGColorGetComponents( [[UIColor redColor] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
         CGContextAddArc(context,centerx,centery,circumference,angerEnd,angerStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
-        // Fear
-        CGContextSetFillColor(context, CGColorGetComponents( [[UIColor yellowColor] CGColor]));
-        CGContextMoveToPoint(context, centerx, centery);
-        CGContextAddArc(context,centerx,centery,circumference,fearEnd,fearStart,1);
-        CGContextClosePath(context);
-        CGContextFillPath(context);
-        // Sadness
+       // Sadness - Blue
         CGContextSetFillColor(context, CGColorGetComponents( [[UIColor blueColor] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
         CGContextAddArc(context,centerx,centery,circumference,sadnessEnd,sadnessStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
-        // Surprise
-        CGContextSetFillColor(context, CGColorGetComponents( [[UIColor purpleColor] CGColor]));
+        // Fear - Yellow
+        CGContextSetFillColor(context, CGColorGetComponents( [[[UIColor yellowColor] darkerColor] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
-        CGContextAddArc(context,centerx,centery,circumference,surpriseEnd,surpriseStart,1);
+        CGContextAddArc(context,centerx,centery,circumference,fearEnd,fearStart,1);
         CGContextClosePath(context);
-        CGContextFillPath(context);       
+        CGContextFillPath(context);
     }
 }
 

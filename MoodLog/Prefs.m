@@ -19,6 +19,33 @@
  NSString *const anger = @"Anger";
  NSString *const sadness = @"Sadness";
 
+// Category for modifying UIColors
+@implementation UIColor (LightAndDark)
+
+- (UIColor *)lighterColor
+{
+    float h, s, b, a;
+    if ([self getHue:&h saturation:&s brightness:&b alpha:&a])
+        return [UIColor colorWithHue:h
+                          saturation:s
+                          brightness:MIN(b * 1.1, 1.0)
+                               alpha:a];
+    return nil;
+}
+
+- (UIColor *)darkerColor
+{
+    float h, s, b, a;
+    if ([self getHue:&h saturation:&s brightness:&b alpha:&a])
+        return [UIColor colorWithHue:h
+                          saturation:s
+                          brightness:b * 0.9
+                               alpha:a];
+    return nil;
+}
+@end
+
+
 // Notes:
 // When the button image is the wrong size (this looks like a bug), try adding and deleting a title. This seemed to fix it in at least one case
 
