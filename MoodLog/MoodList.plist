@@ -654,7 +654,7 @@
 		<key>feelValue</key>
 		<string>-4</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Disliked</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -669,7 +669,7 @@
 		<key>feelValue</key>
 		<string>-6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Dismayed</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -684,7 +684,7 @@
 		<key>feelValue</key>
 		<string>-3</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Displeased</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -699,7 +699,7 @@
 		<key>feelValue</key>
 		<string>-6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Distressed</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -714,7 +714,7 @@
 		<key>feelValue</key>
 		<string>10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Ecstatic</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -729,7 +729,7 @@
 		<key>feelValue</key>
 		<string>7</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Elated</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -759,7 +759,7 @@
 		<key>feelValue</key>
 		<string>9</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Empathetic</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -770,11 +770,11 @@
 	<key>Enthralled</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>Surprise</string>
 		<key>feelValue</key>
 		<string>8</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Enthralled</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -789,7 +789,7 @@
 		<key>feelValue</key>
 		<string>8</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Enthusiastic</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -804,7 +804,7 @@
 		<key>feelValue</key>
 		<string>-7</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Envious</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1327,7 +1327,7 @@
 		<key>feelValue</key>
 		<string>-10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Jealous</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>

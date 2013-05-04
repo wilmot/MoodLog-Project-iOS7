@@ -125,6 +125,28 @@
 		4C7CB5921705439B00971849 /* IconNew72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7CB5911705439B00971849 /* IconNew72@2x.png */; };
 		4C7CB595170561E300971849 /* MlMoodCollectionViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */; };
 		4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */; };
+		4C8D7BF51734A00700ABCF44 /* Jealous.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BDF1734A00700ABCF44 /* Jealous.png */; };
+		4C8D7BF61734A00700ABCF44 /* Jealous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE01734A00700ABCF44 /* Jealous@2x.png */; };
+		4C8D7BF71734A00700ABCF44 /* Envious.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE11734A00700ABCF44 /* Envious.png */; };
+		4C8D7BF81734A00700ABCF44 /* Envious@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE21734A00700ABCF44 /* Envious@2x.png */; };
+		4C8D7BF91734A00700ABCF44 /* Enthusiastic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE31734A00700ABCF44 /* Enthusiastic.png */; };
+		4C8D7BFA1734A00700ABCF44 /* Enthusiastic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE41734A00700ABCF44 /* Enthusiastic@2x.png */; };
+		4C8D7BFB1734A00700ABCF44 /* Enthralled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE51734A00700ABCF44 /* Enthralled.png */; };
+		4C8D7BFC1734A00700ABCF44 /* Enthralled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE61734A00700ABCF44 /* Enthralled@2x.png */; };
+		4C8D7BFD1734A00700ABCF44 /* Empathetic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE71734A00700ABCF44 /* Empathetic.png */; };
+		4C8D7BFE1734A00700ABCF44 /* Empathetic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE81734A00700ABCF44 /* Empathetic@2x.png */; };
+		4C8D7BFF1734A00700ABCF44 /* Elated.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BE91734A00700ABCF44 /* Elated.png */; };
+		4C8D7C001734A00700ABCF44 /* Elated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BEA1734A00700ABCF44 /* Elated@2x.png */; };
+		4C8D7C011734A00700ABCF44 /* Ecstatic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BEB1734A00700ABCF44 /* Ecstatic.png */; };
+		4C8D7C021734A00700ABCF44 /* Ecstatic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BEC1734A00700ABCF44 /* Ecstatic@2x.png */; };
+		4C8D7C031734A00700ABCF44 /* Distressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BED1734A00700ABCF44 /* Distressed.png */; };
+		4C8D7C041734A00700ABCF44 /* Distressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BEE1734A00700ABCF44 /* Distressed@2x.png */; };
+		4C8D7C051734A00700ABCF44 /* Displeased.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BEF1734A00700ABCF44 /* Displeased.png */; };
+		4C8D7C061734A00700ABCF44 /* Displeased@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BF01734A00700ABCF44 /* Displeased@2x.png */; };
+		4C8D7C071734A00700ABCF44 /* Dismayed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BF11734A00700ABCF44 /* Dismayed.png */; };
+		4C8D7C081734A00700ABCF44 /* Dismayed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BF21734A00700ABCF44 /* Dismayed@2x.png */; };
+		4C8D7C091734A00700ABCF44 /* Disliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BF31734A00700ABCF44 /* Disliked.png */; };
+		4C8D7C0A1734A00700ABCF44 /* Disliked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D7BF41734A00700ABCF44 /* Disliked@2x.png */; };
 		4C8F362A16BA0D7900AD101A /* Compassionate.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F361616BA0D7900AD101A /* Compassionate.png */; };
 		4C8F362B16BA0D7900AD101A /* Compassionate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F361716BA0D7900AD101A /* Compassionate@2x.png */; };
 		4C8F362C16BA0D7900AD101A /* Cheerful.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F361816BA0D7900AD101A /* Cheerful.png */; };
@@ -316,6 +338,28 @@
 		4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewHeaderView.m; sourceTree = "<group>"; };
 		4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewController.h; sourceTree = "<group>"; };
 		4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewController.m; sourceTree = "<group>"; };
+		4C8D7BDF1734A00700ABCF44 /* Jealous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jealous.png; sourceTree = "<group>"; };
+		4C8D7BE01734A00700ABCF44 /* Jealous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jealous@2x.png"; sourceTree = "<group>"; };
+		4C8D7BE11734A00700ABCF44 /* Envious.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Envious.png; sourceTree = "<group>"; };
+		4C8D7BE21734A00700ABCF44 /* Envious@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Envious@2x.png"; sourceTree = "<group>"; };
+		4C8D7BE31734A00700ABCF44 /* Enthusiastic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Enthusiastic.png; sourceTree = "<group>"; };
+		4C8D7BE41734A00700ABCF44 /* Enthusiastic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Enthusiastic@2x.png"; sourceTree = "<group>"; };
+		4C8D7BE51734A00700ABCF44 /* Enthralled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Enthralled.png; sourceTree = "<group>"; };
+		4C8D7BE61734A00700ABCF44 /* Enthralled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Enthralled@2x.png"; sourceTree = "<group>"; };
+		4C8D7BE71734A00700ABCF44 /* Empathetic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Empathetic.png; sourceTree = "<group>"; };
+		4C8D7BE81734A00700ABCF44 /* Empathetic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empathetic@2x.png"; sourceTree = "<group>"; };
+		4C8D7BE91734A00700ABCF44 /* Elated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Elated.png; sourceTree = "<group>"; };
+		4C8D7BEA1734A00700ABCF44 /* Elated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Elated@2x.png"; sourceTree = "<group>"; };
+		4C8D7BEB1734A00700ABCF44 /* Ecstatic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ecstatic.png; sourceTree = "<group>"; };
+		4C8D7BEC1734A00700ABCF44 /* Ecstatic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ecstatic@2x.png"; sourceTree = "<group>"; };
+		4C8D7BED1734A00700ABCF44 /* Distressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Distressed.png; sourceTree = "<group>"; };
+		4C8D7BEE1734A00700ABCF44 /* Distressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Distressed@2x.png"; sourceTree = "<group>"; };
+		4C8D7BEF1734A00700ABCF44 /* Displeased.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Displeased.png; sourceTree = "<group>"; };
+		4C8D7BF01734A00700ABCF44 /* Displeased@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Displeased@2x.png"; sourceTree = "<group>"; };
+		4C8D7BF11734A00700ABCF44 /* Dismayed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dismayed.png; sourceTree = "<group>"; };
+		4C8D7BF21734A00700ABCF44 /* Dismayed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dismayed@2x.png"; sourceTree = "<group>"; };
+		4C8D7BF31734A00700ABCF44 /* Disliked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Disliked.png; sourceTree = "<group>"; };
+		4C8D7BF41734A00700ABCF44 /* Disliked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Disliked@2x.png"; sourceTree = "<group>"; };
 		4C8F361616BA0D7900AD101A /* Compassionate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Compassionate.png; sourceTree = "<group>"; };
 		4C8F361716BA0D7900AD101A /* Compassionate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compassionate@2x.png"; sourceTree = "<group>"; };
 		4C8F361816BA0D7900AD101A /* Cheerful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cheerful.png; sourceTree = "<group>"; };
@@ -411,24 +455,6 @@
 		4C0C7671164AC84000DD372F /* Faces */ = {
 			isa = PBXGroup;
 			children = (
-				4CEFD84216EFD014000BA559 /* Dejected.png */,
-				4CEFD84116EFD014000BA559 /* Dejected@2x.png */,
-				4CEFD83F16EFD014000BA559 /* Delighted.png */,
-				4CEFD84016EFD014000BA559 /* Delighted@2x.png */,
-				4CEFD83D16EFD014000BA559 /* Depressed.png */,
-				4CEFD83E16EFD014000BA559 /* Depressed@2x.png */,
-				4CEFD83916EFD014000BA559 /* Desirable.png */,
-				4CEFD83A16EFD014000BA559 /* Desirable@2x.png */,
-				4CEFD83716EFD014000BA559 /* Desiring.png */,
-				4CEFD83516EFD014000BA559 /* Despairing.png */,
-				4CEFD83616EFD014000BA559 /* Despairing@2x.png */,
-				4CEFD83816EFD014000BA559 /* Desiring@2x.png */,
-				4CEFD83316EFD014000BA559 /* Disappointed.png */,
-				4CEFD83416EFD014000BA559 /* Disappointed@2x.png */,
-				4CEFD83116EFD014000BA559 /* Disgusted.png */,
-				4CEFD83216EFD014000BA559 /* Disgusted@2x.png */,
-				4CEFD82F16EFD014000BA559 /* Grumpy.png */,
-				4CEFD83016EFD014000BA559 /* Grumpy@2x.png */,
 				4CEFD83B16EFD014000BA559 /* Skeptical.png */,
 				4CEFD83C16EFD014000BA559 /* Skeptical@2x.png */,
 				4C4C53F11669ECDB00DDDBA2 /* Adored.png */,
@@ -503,10 +529,50 @@
 				4C4C542E166A920E00DDDBA2 /* Curious@2x.png */,
 				4C4C5431166A92E700DDDBA2 /* Embarrased.png */,
 				4C4C5432166A92E800DDDBA2 /* Embarrased@2x.png */,
+				4CEFD84216EFD014000BA559 /* Dejected.png */,
+				4CEFD84116EFD014000BA559 /* Dejected@2x.png */,
+				4CEFD83F16EFD014000BA559 /* Delighted.png */,
+				4CEFD84016EFD014000BA559 /* Delighted@2x.png */,
+				4CEFD83D16EFD014000BA559 /* Depressed.png */,
+				4CEFD83E16EFD014000BA559 /* Depressed@2x.png */,
+				4CEFD83916EFD014000BA559 /* Desirable.png */,
+				4CEFD83A16EFD014000BA559 /* Desirable@2x.png */,
+				4CEFD83716EFD014000BA559 /* Desiring.png */,
+				4CEFD83816EFD014000BA559 /* Desiring@2x.png */,
+				4CEFD83516EFD014000BA559 /* Despairing.png */,
+				4CEFD83616EFD014000BA559 /* Despairing@2x.png */,
+				4CEFD83316EFD014000BA559 /* Disappointed.png */,
+				4CEFD83416EFD014000BA559 /* Disappointed@2x.png */,
+				4CEFD83116EFD014000BA559 /* Disgusted.png */,
+				4CEFD83216EFD014000BA559 /* Disgusted@2x.png */,
+				4C8D7BF31734A00700ABCF44 /* Disliked.png */,
+				4C8D7BF41734A00700ABCF44 /* Disliked@2x.png */,
+				4C8D7BF11734A00700ABCF44 /* Dismayed.png */,
+				4C8D7BF21734A00700ABCF44 /* Dismayed@2x.png */,
+				4C8D7BEF1734A00700ABCF44 /* Displeased.png */,
+				4C8D7BF01734A00700ABCF44 /* Displeased@2x.png */,
+				4C8D7BED1734A00700ABCF44 /* Distressed.png */,
+				4C8D7BEE1734A00700ABCF44 /* Distressed@2x.png */,
+				4C8D7BEB1734A00700ABCF44 /* Ecstatic.png */,
+				4C8D7BEC1734A00700ABCF44 /* Ecstatic@2x.png */,
+				4C8D7BE91734A00700ABCF44 /* Elated.png */,
+				4C8D7BEA1734A00700ABCF44 /* Elated@2x.png */,
+				4C8D7BE71734A00700ABCF44 /* Empathetic.png */,
+				4C8D7BE81734A00700ABCF44 /* Empathetic@2x.png */,
+				4C8D7BE51734A00700ABCF44 /* Enthralled.png */,
+				4C8D7BE61734A00700ABCF44 /* Enthralled@2x.png */,
+				4C8D7BE31734A00700ABCF44 /* Enthusiastic.png */,
+				4C8D7BE41734A00700ABCF44 /* Enthusiastic@2x.png */,
+				4C8D7BE11734A00700ABCF44 /* Envious.png */,
+				4C8D7BE21734A00700ABCF44 /* Envious@2x.png */,
 				4C4C53E51666ECA400DDDBA2 /* Glad.png */,
 				4C4C53E61666ECA400DDDBA2 /* Glad@2x.png */,
+				4CEFD82F16EFD014000BA559 /* Grumpy.png */,
+				4CEFD83016EFD014000BA559 /* Grumpy@2x.png */,
 				4C4C53F51669EDEB00DDDBA2 /* Happy.png */,
 				4C4C53F61669EDEB00DDDBA2 /* Happy@2x.png */,
+				4C8D7BDF1734A00700ABCF44 /* Jealous.png */,
+				4C8D7BE01734A00700ABCF44 /* Jealous@2x.png */,
 				4C4C53ED16694A5400DDDBA2 /* Sad.png */,
 				4C4C53EE16694A5400DDDBA2 /* Sad@2x.png */,
 				4C4C5435166A936900DDDBA2 /* Skeptical.png */,
@@ -828,6 +894,26 @@
 				4CEFD84816EFD014000BA559 /* Disappointed@2x.png in Resources */,
 				4CEFD84516EFD014000BA559 /* Disgusted.png in Resources */,
 				4CEFD84616EFD014000BA559 /* Disgusted@2x.png in Resources */,
+				4C8D7C091734A00700ABCF44 /* Disliked.png in Resources */,
+				4C8D7C0A1734A00700ABCF44 /* Disliked@2x.png in Resources */,
+				4C8D7C071734A00700ABCF44 /* Dismayed.png in Resources */,
+				4C8D7C081734A00700ABCF44 /* Dismayed@2x.png in Resources */,
+				4C8D7C051734A00700ABCF44 /* Displeased.png in Resources */,
+				4C8D7C061734A00700ABCF44 /* Displeased@2x.png in Resources */,
+				4C8D7C031734A00700ABCF44 /* Distressed.png in Resources */,
+				4C8D7C041734A00700ABCF44 /* Distressed@2x.png in Resources */,
+				4C8D7C011734A00700ABCF44 /* Ecstatic.png in Resources */,
+				4C8D7C021734A00700ABCF44 /* Ecstatic@2x.png in Resources */,
+				4C8D7BFF1734A00700ABCF44 /* Elated.png in Resources */,
+				4C8D7C001734A00700ABCF44 /* Elated@2x.png in Resources */,
+				4C8D7BFD1734A00700ABCF44 /* Empathetic.png in Resources */,
+				4C8D7BFE1734A00700ABCF44 /* Empathetic@2x.png in Resources */,
+				4C8D7BFB1734A00700ABCF44 /* Enthralled.png in Resources */,
+				4C8D7BFC1734A00700ABCF44 /* Enthralled@2x.png in Resources */,
+				4C8D7BF91734A00700ABCF44 /* Enthusiastic.png in Resources */,
+				4C8D7BFA1734A00700ABCF44 /* Enthusiastic@2x.png in Resources */,
+				4C8D7BF71734A00700ABCF44 /* Envious.png in Resources */,
+				4C8D7BF81734A00700ABCF44 /* Envious@2x.png in Resources */,
 				4C4C5433166A92E800DDDBA2 /* Embarrased.png in Resources */,
 				4C4C5434166A92E800DDDBA2 /* Embarrased@2x.png in Resources */,
 				4C4C53EB1666ECA400DDDBA2 /* Glad.png in Resources */,
@@ -835,9 +921,9 @@
 				4CEFD84316EFD014000BA559 /* Grumpy.png in Resources */,
 				4CEFD84416EFD014000BA559 /* Grumpy@2x.png in Resources */,
 				4C4C53F71669EDEB00DDDBA2 /* Happy.png in Resources */,
+				4C4C53F81669EDEB00DDDBA2 /* Happy@2x.png in Resources */,
 				4C2E8B4016F2B86F00912BF1 /* Skeptical.png in Resources */,
 				4C2E8B4116F2B86F00912BF1 /* Skeptical@2x.png in Resources */,
-				4C4C53F81669EDEB00DDDBA2 /* Happy@2x.png in Resources */,
 				4C4C53EF16694A5400DDDBA2 /* Sad.png in Resources */,
 				4C4C53F016694A5400DDDBA2 /* Sad@2x.png in Resources */,
 				4C4C543B166A93C800DDDBA2 /* Worried.png in Resources */,
@@ -846,6 +932,8 @@
 				4CF7696E16D850B2006ECD96 /* BlackLineVertical.png in Resources */,
 				4CF7697016D85A90006ECD96 /* GrayLine.png in Resources */,
 				4C1502F916D88AAA00B9E8BC /* GrayLineVertical.png in Resources */,
+				4C8D7BF51734A00700ABCF44 /* Jealous.png in Resources */,
+				4C8D7BF61734A00700ABCF44 /* Jealous@2x.png in Resources */,
 				4C55EC7B16DC4C9E00F26984 /* paper.jpg in Resources */,
 				4C55EC8016DC5CA900F26984 /* paper320x60.jpg in Resources */,
 				4C55EC8116DC5CA900F26984 /* paper320x60@2x.jpg in Resources */,

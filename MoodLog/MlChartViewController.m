@@ -59,7 +59,7 @@
     [super viewDidUnload];
 }
 - (IBAction)pressDone:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^(void){ NSLog(@"BL-L Test"); }];
 }
 
 - (IBAction)chooseSegment:(id)sender {
