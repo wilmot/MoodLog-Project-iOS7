@@ -20,6 +20,7 @@
 @implementation MlDetailViewController
 
 static MlDatePickerViewController *myDatePickerViewController;
+NSUserDefaults *defaults;
 
 #pragma mark - Managing the detail item
 
@@ -43,6 +44,7 @@ static MlDatePickerViewController *myDatePickerViewController;
 {
     [super viewDidLoad];
     [self configureView];
+    defaults = [NSUserDefaults standardUserDefaults];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -245,7 +247,6 @@ static MlDatePickerViewController *myDatePickerViewController;
 
 - (IBAction)toggleFaces:(id)sender {
     Boolean facesState = ![self.detailItem.showFaces boolValue];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [self setFaces:facesState];
     [defaults setBool:facesState forKey:@"DefaultFacesState"];
     [defaults synchronize];
@@ -320,6 +321,8 @@ static MlDatePickerViewController *myDatePickerViewController;
         [self.sortGroupButton setSelected:NO];
         [self.sortShuffleButton setSelected:YES];
     }
+    [defaults setObject:aButton forKey:@"DefaultSortStyle"];
+    [defaults synchronize];
 }
 
 #pragma mark - Entry Log UITextView delegate methods

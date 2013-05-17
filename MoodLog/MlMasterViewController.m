@@ -114,10 +114,12 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMood.date];
     newMood.header = [NSString stringWithFormat:@"%d", ([components year] * 1000) + [components month]];
-    newMood.sortStyle = @"Group"; // Default sort style
     newMood.editing = [NSNumber numberWithBool:YES];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     newMood.showFaces = [NSNumber numberWithBool:[defaults boolForKey:@"DefaultFacesState"]];
+    newMood.showFacesEditing = [NSNumber numberWithBool:[defaults boolForKey:@"DefaultFacesEditingState"]];
+    newMood.sortStyle = [defaults stringForKey:@"DefaultSortStyle"]; // Default sort style
+    newMood.sortStyleEditing = [defaults stringForKey:@"DefaultSortStyleEditing"]; // Default sort style when editing
     
     // Every record has a full set of moods; only some are selected or arranged
     for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList) {

@@ -15,6 +15,8 @@
 
 @implementation MlFacesViewController
 
+NSUserDefaults *defaults;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,8 +33,9 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    defaults = [NSUserDefaults standardUserDefaults];
     [self selectButton]; // Highlight the correct button
-    [self setFaces:[self.detailItem.showFaces boolValue]];
+    [self setFaces:[self.detailItem.showFacesEditing boolValue]];
     self.detailItem.editing = [NSNumber numberWithBool:YES];
     [self saveContext];
     [self.myMoodCollectionViewController refresh];
@@ -46,35 +49,35 @@
 }
 
 - (IBAction)sortABC:(id)sender {
-    self.detailItem.sortStyle = alphabeticalSort;
+    self.detailItem.sortStyleEditing = alphabeticalSort;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortGroup:(id)sender {
-    self.detailItem.sortStyle = groupSort;
+    self.detailItem.sortStyleEditing = groupSort;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortCBA:(id)sender {
-    self.detailItem.sortStyle = reverseAlphabeticalSort;
+    self.detailItem.sortStyleEditing = reverseAlphabeticalSort;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortShuffle:(id)sender {
-    self.detailItem.sortStyle = shuffleSort;
+    self.detailItem.sortStyleEditing = shuffleSort;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (void) selectButton {
-    NSString *aButton = [self.detailItem valueForKey:@"sortStyle"];
+    NSString *aButton = [self.detailItem valueForKey:@"sortStyleEditing"];
     if ([aButton isEqualToString:alphabeticalSort]) {
         [self.sortABCButton setSelected:YES];
         [self.SortCBAButton setSelected:NO];
@@ -100,13 +103,14 @@
         [self.sortGroupButton setSelected:NO];
         [self.sortShuffleButton setSelected:YES];
     }
+    [defaults setObject:aButton forKey:@"DefaultSortStyleEditing"];
+    [defaults synchronize];
 }
 
 - (IBAction)toggleFaces:(id)sender {
-    Boolean facesState = ![self.detailItem.showFaces boolValue];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    Boolean facesState = ![self.detailItem.showFacesEditing boolValue];
     [self setFaces:facesState];
-    [defaults setBool:facesState forKey:@"DefaultFacesState"];
+    [defaults setBool:facesState forKey:@"DefaultFacesEditingState"];
     [defaults synchronize];
     
 }
@@ -118,7 +122,7 @@
     else {
         self.myMoodCollectionViewController.cellIdentifier = @"moodCell";
     }
-    self.detailItem.showFaces = [NSNumber numberWithBool:facesState]; // Save state in database
+    self.detailItem.showFacesEditing = [NSNumber numberWithBool:facesState]; // Save state in database
     [self.toggleFacesButton setSelected:facesState];
     [self saveContext];
     [self.myMoodCollectionViewController refresh];

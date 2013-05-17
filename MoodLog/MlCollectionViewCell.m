@@ -26,7 +26,7 @@
     if ([self.reuseIdentifier isEqual:@"moodCellFaces"]) {
         CGContextRef context = UIGraphicsGetCurrentContext();
         // Horizontal gray line along bottom
-        CGContextSetRGBStrokeColor(context, 0.2, 0.6, 0.2, 0.45);
+        CGContextSetRGBStrokeColor(context, 0.6, 0.6, 0.6, 0.45); // red, green, blue, alpha
         CGContextMoveToPoint(context, 0.0, rect.size.height); //start at this point
         CGContextAddLineToPoint(context, rect.size.width, rect.size.height); //draw to this point
         CGContextStrokePath(context);

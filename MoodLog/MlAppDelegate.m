@@ -9,6 +9,7 @@
 #import "MlAppDelegate.h"
 
 #import "MlMoodDataItem.h"
+#import "Prefs.h"
 
 @implementation MlAppDelegate
 
@@ -32,7 +33,7 @@
         UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
         _masterViewController = (MlMasterViewController *)navigationController.topViewController;
         _masterViewController.managedObjectContext = self.managedObjectContext;
-        [navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
+//        [navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
     }
 
     
@@ -62,10 +63,13 @@
     
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];;;
-    id testObject = [defaults objectForKey:@"ChartSegmentState"];
+    id testObject = [defaults objectForKey:@"DefaultSortStyleEditing"]; // test the newest default
 	if (testObject == nil) {
         [defaults setInteger:0 forKey:@"ChartSegmentState"];
-        [defaults setBool:YES forKey:@"DefaultFacesState"];
+        [defaults setBool:NO forKey:@"DefaultFacesState"];
+        [defaults setBool:YES forKey:@"DefaultFacesEditingState"];
+        [defaults setObject:groupSort forKey:@"DefaultSortStyle"];
+        [defaults setObject:groupSort forKey:@"DefaultSortStyleEditing"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
     

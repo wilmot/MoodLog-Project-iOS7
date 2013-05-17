@@ -14,6 +14,8 @@
 
 @implementation MlChartViewController
 
+static short BAR_CHART = 1;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,8 +30,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.myChartCollectionViewController.chartType = @"Bar"; // Default chart type
-    [self.segment setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
-    [self.toolBar setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
+//    [self.segment setTintColor:[UIColor colorWithRed:0.08 green:0.08 blue:0.08 alpha:1.0]];
+//    [self.toolBar setTintColor:[UIColor colorWithRed:0.08 green:0.08 blue:0.08 alpha:1.0]];
 
 }
 
@@ -63,7 +65,7 @@
 }
 
 - (IBAction)chooseSegment:(id)sender {
-    if (self.segment.selectedSegmentIndex == 0) { // Bar Chart
+    if (self.segment.selectedSegmentIndex == BAR_CHART) { // Bar Chart
         self.myChartCollectionViewController.chartType = @"Bar";
     }
     else { // Pie Chart

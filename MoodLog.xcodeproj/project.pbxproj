@@ -14,6 +14,7 @@
 		4C0C7681164AD06E00DD372F /* junk.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C7680164AD06E00DD372F /* junk.png */; };
 		4C0C7683164AD3BC00DD372F /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C7682164AD3BC00DD372F /* chart.png */; };
 		4C1502F916D88AAA00B9E8BC /* GrayLineVertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1502F816D88AAA00B9E8BC /* GrayLineVertical.png */; };
+		4C1E10151746BABA00BF703E /* MoodLogEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E10141746BABA00BF703E /* MoodLogEvents.m */; };
 		4C1FE6A516DCA153009FFA8A /* CalendarBlank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1FE6A416DCA153009FFA8A /* CalendarBlank@2x.png */; };
 		4C1FE6A716DCA42A009FFA8A /* pie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C1FE6A616DCA42A009FFA8A /* pie.jpg */; };
 		4C2E8B4016F2B86F00912BF1 /* Skeptical.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD83B16EFD014000BA559 /* Skeptical.png */; };
@@ -173,7 +174,6 @@
 		4C97310E16308E5F00E1D0B9 /* BlackLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C97310D16308E5F00E1D0B9 /* BlackLine.png */; };
 		4CB8FA09170535A3005E184E /* IconPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8FA07170535A3005E184E /* IconPlaceholder.png */; };
 		4CB8FA0A170535A3005E184E /* IconPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8FA08170535A3005E184E /* IconPlaceholder@2x.png */; };
-		4CDAAAD016BDEBC600A79F09 /* MoodLogEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAAACF16BDEBC600A79F09 /* MoodLogEvents.m */; };
 		4CECC214165D4D7400EE3C6B /* Blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CECC212165D4D7400EE3C6B /* Blank.png */; };
 		4CECC215165D4D7400EE3C6B /* Blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CECC213165D4D7400EE3C6B /* Blank@2x.png */; };
 		4CEFD84316EFD014000BA559 /* Grumpy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD82F16EFD014000BA559 /* Grumpy.png */; };
@@ -221,6 +221,9 @@
 		4C0C7680164AD06E00DD372F /* junk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = junk.png; path = Images/junk.png; sourceTree = "<group>"; };
 		4C0C7682164AD3BC00DD372F /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chart.png; path = Images/chart.png; sourceTree = "<group>"; };
 		4C1502F816D88AAA00B9E8BC /* GrayLineVertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayLineVertical.png; sourceTree = "<group>"; };
+		4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MoodLog 6.xcdatamodel"; sourceTree = "<group>"; };
+		4C1E10131746BABA00BF703E /* MoodLogEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodLogEvents.h; sourceTree = "<group>"; };
+		4C1E10141746BABA00BF703E /* MoodLogEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodLogEvents.m; sourceTree = "<group>"; };
 		4C1FE6A416DCA153009FFA8A /* CalendarBlank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarBlank@2x.png"; sourceTree = "<group>"; };
 		4C1FE6A616DCA42A009FFA8A /* pie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pie.jpg; sourceTree = "<group>"; };
 		4C3E0FB51657122100B0E060 /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
@@ -332,8 +335,8 @@
 		4C7C789D162E9192008DC828 /* MlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCell.m; sourceTree = "<group>"; };
 		4C7CA28C1630770800CC5CCA /* MlMoodDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodDataItem.h; sourceTree = "<group>"; };
 		4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodDataItem.m; sourceTree = "<group>"; };
-		4C7CB58F1705437800971849 /* IconNew72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconNew72.png; sourceTree = "<group>"; };
-		4C7CB5911705439B00971849 /* IconNew72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconNew72@2x.png"; sourceTree = "<group>"; };
+		4C7CB58F1705437800971849 /* IconNew72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconNew72.png; path = ../IconNew72.png; sourceTree = "<group>"; };
+		4C7CB5911705439B00971849 /* IconNew72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconNew72@2x.png"; path = "../IconNew72@2x.png"; sourceTree = "<group>"; };
 		4C7CB593170561E300971849 /* MlMoodCollectionViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodCollectionViewHeaderView.h; sourceTree = "<group>"; };
 		4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewHeaderView.m; sourceTree = "<group>"; };
 		4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewController.h; sourceTree = "<group>"; };
@@ -387,11 +390,9 @@
 		4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCollectionViewCell.h; sourceTree = "<group>"; };
 		4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCollectionViewCell.m; sourceTree = "<group>"; };
 		4C97310D16308E5F00E1D0B9 /* BlackLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackLine.png; sourceTree = "<group>"; };
-		4CB8FA07170535A3005E184E /* IconPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconPlaceholder.png; sourceTree = "<group>"; };
-		4CB8FA08170535A3005E184E /* IconPlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconPlaceholder@2x.png"; sourceTree = "<group>"; };
+		4CB8FA07170535A3005E184E /* IconPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconPlaceholder.png; path = ../IconPlaceholder.png; sourceTree = "<group>"; };
+		4CB8FA08170535A3005E184E /* IconPlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IconPlaceholder@2x.png"; path = "../IconPlaceholder@2x.png"; sourceTree = "<group>"; };
 		4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 4.xcdatamodel"; sourceTree = "<group>"; };
-		4CDAAACE16BDEBC600A79F09 /* MoodLogEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodLogEvents.h; sourceTree = "<group>"; };
-		4CDAAACF16BDEBC600A79F09 /* MoodLogEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodLogEvents.m; sourceTree = "<group>"; };
 		4CECC212165D4D7400EE3C6B /* Blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank.png; sourceTree = "<group>"; };
 		4CECC213165D4D7400EE3C6B /* Blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blank@2x.png"; sourceTree = "<group>"; };
 		4CECC217165D50E800EE3C6B /* MoodLog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -587,10 +588,6 @@
 		4C55CBD7162DE67400EAA878 = {
 			isa = PBXGroup;
 			children = (
-				4C7CB5911705439B00971849 /* IconNew72@2x.png */,
-				4C7CB58F1705437800971849 /* IconNew72.png */,
-				4CB8FA07170535A3005E184E /* IconPlaceholder.png */,
-				4CB8FA08170535A3005E184E /* IconPlaceholder@2x.png */,
 				4C55CBEE162DE67400EAA878 /* MoodLog */,
 				4C55CC1C162DE67500EAA878 /* MoodLogTests */,
 				4C55CBE5162DE67400EAA878 /* Frameworks */,
@@ -658,9 +655,9 @@
 				4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */,
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
 				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
-				4CDAAACE16BDEBC600A79F09 /* MoodLogEvents.h */,
-				4CDAAACF16BDEBC600A79F09 /* MoodLogEvents.m */,
 				4C55CC06162DE67500EAA878 /* MoodLog.xcdatamodeld */,
+				4C1E10131746BABA00BF703E /* MoodLogEvents.h */,
+				4C1E10141746BABA00BF703E /* MoodLogEvents.m */,
 				4C50A08616DACA16003954E6 /* Emotions.h */,
 				4C50A08716DACA16003954E6 /* Emotions.m */,
 				4C589C65163200F100428C52 /* Stressors.h */,
@@ -673,6 +670,10 @@
 		4C55CBEF162DE67400EAA878 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C7CB5911705439B00971849 /* IconNew72@2x.png */,
+				4C7CB58F1705437800971849 /* IconNew72.png */,
+				4CB8FA07170535A3005E184E /* IconPlaceholder.png */,
+				4CB8FA08170535A3005E184E /* IconPlaceholder@2x.png */,
 				4CFD9FA4166D85AB00805D6B /* add.png */,
 				4C0C7671164AC84000DD372F /* Faces */,
 				4C0C767A164AC84800DD372F /* shuffle_off.png */,
@@ -1004,13 +1005,13 @@
 				4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */,
 				4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */,
 				4C3E0FB71657122100B0E060 /* Prefs.m in Sources */,
-				4CDAAAD016BDEBC600A79F09 /* MoodLogEvents.m in Sources */,
 				4C5D051216C1F1BD0028C421 /* MlFacesViewController.m in Sources */,
 				4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */,
 				4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */,
 				4C52861816D9A654007C878C /* MlChartDrawingView.m in Sources */,
 				4C50A08816DACA16003954E6 /* Emotions.m in Sources */,
 				4C7CB595170561E300971849 /* MlMoodCollectionViewHeaderView.m in Sources */,
+				4C1E10151746BABA00BF703E /* MoodLogEvents.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1218,9 +1219,10 @@
 				4C4C53D4166569A400DDDBA2 /* MoodLog 3.xcdatamodel */,
 				4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */,
 				4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */,
+				4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */,
 				4C55CC07162DE67500EAA878 /* MoodLog.xcdatamodel */,
 			);
-			currentVersion = 4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */;
+			currentVersion = 4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */;
 			path = MoodLog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
