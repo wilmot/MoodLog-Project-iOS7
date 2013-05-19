@@ -95,6 +95,7 @@ NSUserDefaults *defaults;
         
         [self selectButton]; // Highlight the correct button
         [self setFaces:[self.detailItem.showFaces boolValue]];
+        [self setVisibilityofNoMoodsLabel]; // Should only show if there are no moods selected
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             // iPad
             if (self.detailItem.editing.boolValue == YES) {
@@ -217,29 +218,36 @@ NSUserDefaults *defaults;
     }
 }
 
+- (void) setSortStyle: (NSString *)style {
+    self.detailItem.sortStyle = style;
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        self.detailItem.sortStyleEditing = style;
+    }
+}
+
 - (IBAction)sortABC:(id)sender {
-    self.detailItem.sortStyle = alphabeticalSort;
+    [self setSortStyle:alphabeticalSort];
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortGroup:(id)sender {
-    self.detailItem.sortStyle = groupSort;
+    [self setSortStyle:groupSort];
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];    
 }
 
 - (IBAction)sortCBA:(id)sender {
-    self.detailItem.sortStyle = reverseAlphabeticalSort;
+    [self setSortStyle:reverseAlphabeticalSort];
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortShuffle:(id)sender {
-    self.detailItem.sortStyle = shuffleSort;
+    [self setSortStyle:shuffleSort];
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
@@ -258,7 +266,8 @@ NSUserDefaults *defaults;
     [controller insertNewObject:self];
 }
 
-- (IBAction)pressedExpandButton:(id)sender {
+- (IBAction)pressedExpandButton:(id)sender { // Edit/Done button
+    [self.noMoodsLabel setHidden:YES]; // Hide the label when starting an edit session
     [self pressedDoneButton:self];
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         // iPad
@@ -272,12 +281,29 @@ NSUserDefaults *defaults;
             self.detailItem.editing = [NSNumber numberWithBool:NO];
             [self.myMoodCollectionViewController refresh];
         }
+        [self setVisibilityofNoMoodsLabel];
     }
     else { // iPhone
         // On the iPhone I have a segue to a modal view, so I don't change the button text
     }
     
     [self saveContext];
+}
+
+- (void) setVisibilityofNoMoodsLabel {
+    int sections = self.myMoodCollectionViewController.collectionView.numberOfSections;
+    if ([self.expandButton.titleLabel.text isEqual:@"Edit"]) {
+        [self.noMoodsLabel setHidden:NO];
+        for (int i=0; i < sections; i++) {
+            if ([self.myMoodCollectionViewController.collectionView numberOfItemsInSection:i ] > 0) {
+                [self.noMoodsLabel setHidden:YES]; // Should only show if there are no moods selected
+                break;
+            }
+        }
+    }
+    else {
+        [self.noMoodsLabel setHidden:YES];    
+    }
 }
 
 - (void) setFaces:(BOOL)facesState {
@@ -351,6 +377,7 @@ NSUserDefaults *defaults;
     [self setMoodViewWithHeader:nil];
     [self setExpandButton:nil];
     [self setSortGroupButton:nil];
+    [self setNoMoodsLabel:nil];
     [super viewDidUnload];
 }
 @end

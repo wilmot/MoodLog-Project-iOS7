@@ -95,7 +95,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="August 2012" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULa-tI-YUD">
-                                        <color key="backgroundColor" red="0.032109375840000003" green="0.34510522960000001" blue="0.073189996359999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="126" id="9cl-s4-i9C"/>
                                             <constraint firstAttribute="height" constant="24" id="Xci-QI-RKW"/>
@@ -130,13 +130,13 @@
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEi-qE-v6Q">
-                                        <color key="backgroundColor" red="0.03033679165" green="0.44539222119999999" blue="0.082693211729999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="9Sb-wq-gEB"/>
                                             <constraint firstAttribute="width" constant="100" id="Cjk-Ud-bnW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="A–Z">
+                                        <state key="normal" title="Group">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -144,16 +144,16 @@
                                             <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="sortABC:" destination="4" eventType="touchUpInside" id="Lqc-Gx-ZNq"/>
+                                            <action selector="sortGroup:" destination="4" eventType="touchUpInside" id="8pa-Cg-p5n"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKv-of-L2m">
-                                        <color key="backgroundColor" red="0.03033679165" green="0.44539222119999999" blue="0.082693211729999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Eew-Ox-dZC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Z–A">
+                                        <state key="normal" title="A-Z">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -161,11 +161,11 @@
                                             <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="sortCBA:" destination="4" eventType="touchUpInside" id="1Zd-15-SmO"/>
+                                            <action selector="sortABC:" destination="4" eventType="touchUpInside" id="xDT-Xr-S3e"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQR-W7-eTZ">
-                                        <color key="backgroundColor" red="0.03033679165" green="0.44539222119999999" blue="0.082693211729999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" type="user" id="sNs-FY-ac5"/>
                                         </constraints>
@@ -182,7 +182,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOE-v8-lKd">
-                                        <color key="backgroundColor" red="0.03033679165" green="0.44539222119999999" blue="0.082693211729999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" type="user" id="SzA-lL-XuS"/>
                                         </constraints>
@@ -199,7 +199,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3q-IU-bL8">
-                                        <color key="backgroundColor" red="0.03033679165" green="0.44539222119999999" blue="0.082693211729999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,7 +210,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9c-Ni-RZM">
-                                        <color key="backgroundColor" red="0.03033679165" green="0.44539222119999999" blue="0.082693211729999994" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="103" type="user" id="Wan-Hd-DMG"/>
                                         </constraints>
@@ -377,6 +377,14 @@
                                             <constraint firstAttribute="height" constant="1" id="dEW-uf-DCF"/>
                                         </constraints>
                                     </imageView>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Touch 'Edit' to select moods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSk-9t-Flg">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="515" id="eCr-ZO-SVd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="CYh-Op-Kys" firstAttribute="top" secondItem="TQG-vC-nzX" secondAttribute="top" type="default" id="0bG-S6-OZA"/>
@@ -389,6 +397,7 @@
                                     <constraint firstItem="Xit-N2-uU6" firstAttribute="leading" secondItem="w2P-uB-kxF" secondAttribute="leading" type="default" id="4V5-Hs-PB8"/>
                                     <constraint firstItem="ewZ-QR-qvG" firstAttribute="leading" secondItem="Xit-N2-uU6" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="4dH-g3-NDe"/>
                                     <constraint firstItem="TQG-vC-nzX" firstAttribute="baseline" secondItem="CYh-Op-Kys" secondAttribute="baseline" type="default" id="5MN-Px-bsX"/>
+                                    <constraint firstItem="TSk-9t-Flg" firstAttribute="top" secondItem="jLN-2n-pAY" secondAttribute="top" constant="376" id="5kA-aX-Pui"/>
                                     <constraint firstItem="NKv-of-L2m" firstAttribute="baseline" secondItem="xEi-qE-v6Q" secondAttribute="baseline" type="user" id="5lp-33-lFK"/>
                                     <constraint firstItem="o8f-6n-3Ua" firstAttribute="centerY" secondItem="Ovn-8O-ebs" secondAttribute="centerY" type="default" id="5sM-fb-dIM"/>
                                     <constraint firstItem="q9c-Ni-RZM" firstAttribute="bottom" secondItem="R3q-IU-bL8" secondAttribute="bottom" type="default" id="6SL-wb-c38"/>
@@ -448,6 +457,7 @@
                                     <constraint firstItem="ewZ-QR-qvG" firstAttribute="baseline" secondItem="bCX-FV-QEN" secondAttribute="baseline" type="default" id="jR5-8l-IpD"/>
                                     <constraint firstItem="kHv-9K-1Og" firstAttribute="leading" secondItem="jLN-2n-pAY" secondAttribute="leading" constant="132" id="jof-C5-tr8"/>
                                     <constraint firstItem="NKv-of-L2m" firstAttribute="baseline" secondItem="KOE-v8-lKd" secondAttribute="baseline" type="user" id="k3X-A7-MaP"/>
+                                    <constraint firstItem="TSk-9t-Flg" firstAttribute="centerX" secondItem="QBP-gF-aPB" secondAttribute="centerX" type="default" id="k5W-Vy-Iom"/>
                                     <constraint firstItem="q9c-Ni-RZM" firstAttribute="leading" secondItem="R3q-IU-bL8" secondAttribute="trailing" constant="2" type="user" id="kH5-uT-6Cq"/>
                                     <constraint firstItem="jBP-2q-PIL" firstAttribute="trailing" secondItem="ewZ-QR-qvG" secondAttribute="trailing" type="default" id="koG-Ig-DvJ"/>
                                     <constraint firstItem="NKv-of-L2m" firstAttribute="bottom" secondItem="xEi-qE-v6Q" secondAttribute="bottom" type="default" id="l62-9m-elX"/>
@@ -480,7 +490,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jLN-2n-pAY" firstAttribute="top" secondItem="26" secondAttribute="top" type="default" id="4Zv-7V-Xnx"/>
                             <constraint firstItem="2Rt-yB-yoq" firstAttribute="bottom" secondItem="26" secondAttribute="bottom" type="default" id="6aR-ih-YP7"/>
@@ -505,7 +515,6 @@
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="SortCBAButton" destination="NKv-of-L2m" id="aDA-Ph-vYJ"/>
                         <outlet property="blankCoveringView" destination="2Rt-yB-yoq" id="2Gu-O4-iYy"/>
                         <outlet property="dateLabel" destination="ZvU-KF-zFZ" id="vNc-9g-Ugi"/>
                         <outlet property="detailToolBar" destination="53" id="YKe-Jw-DI0"/>
@@ -516,9 +525,11 @@
                         <outlet property="healthSlider" destination="cfc-uv-klY" id="l9v-Eo-VFp"/>
                         <outlet property="monthLabel" destination="ULa-tI-YUD" id="shw-EM-Una"/>
                         <outlet property="moodContainer" destination="qrA-RA-WQZ" id="dkK-u0-IRI"/>
+                        <outlet property="noMoodsLabel" destination="TSk-9t-Flg" id="N2N-OE-dkT"/>
                         <outlet property="scrollView" destination="jLN-2n-pAY" id="xbi-Dc-yLj"/>
                         <outlet property="sleepSlider" destination="w2P-uB-kxF" id="zWZ-QK-5Zf"/>
-                        <outlet property="sortABCButton" destination="xEi-qE-v6Q" id="QWV-FM-Cl3"/>
+                        <outlet property="sortABCButton" destination="NKv-of-L2m" id="gY9-iN-b0g"/>
+                        <outlet property="sortGroupButton" destination="xEi-qE-v6Q" id="cuX-S9-bOI"/>
                         <outlet property="sortShuffleButton" destination="TQR-W7-eTZ" id="rgD-wI-wNx"/>
                         <outlet property="timeLabel" destination="70N-qG-MbL" id="xPB-Yb-LvF"/>
                         <outlet property="toggleFacesButton" destination="KOE-v8-lKd" id="tZT-LC-wp1"/>
@@ -782,17 +793,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="DZ6-zC-fGy">
                         <rect key="frame" x="0.0" y="0.0" width="623" height="456"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.79260467759999997" green="1" blue="0.78044737710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="igt-kW-2Cv">
                             <size key="itemSize" width="134" height="22"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="22"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCell" id="acJ-2C-ML3" customClass="MlCollectionViewCell">
-                                <rect key="frame" x="0.0" y="46" width="134" height="24"/>
+                                <rect key="frame" x="0.0" y="68" width="134" height="24"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="134" height="24"/>
@@ -817,12 +828,21 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellFaces" id="5Yu-ay-KNG" customClass="MlCollectionViewCell">
-                                <rect key="frame" x="134" y="0.0" width="86" height="116"/>
+                                <rect key="frame" x="134" y="22" width="86" height="116"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="86" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="✅" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsm-4A-hfc">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="29" id="JIF-2r-BEk"/>
+                                                <constraint firstAttribute="width" constant="34" id="hQr-de-gne"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.17000000000000001" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="X6e-aC-Qqf"/>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enthusiastic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-GW-qmE">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -833,19 +853,44 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="Dsm-4A-hfc" firstAttribute="leading" secondItem="VM7-GW-qmE" secondAttribute="leading" type="default" id="56b-AY-sNC"/>
                                     <constraint firstItem="X6e-aC-Qqf" firstAttribute="centerX" secondItem="VM7-GW-qmE" secondAttribute="centerX" type="default" id="86Z-mQ-lyC"/>
                                     <constraint firstAttribute="bottom" secondItem="VM7-GW-qmE" secondAttribute="bottom" constant="2" id="Fa2-n9-w0Q"/>
                                     <constraint firstItem="VM7-GW-qmE" firstAttribute="trailing" secondItem="5Yu-ay-KNG" secondAttribute="trailing" type="default" id="Mf1-DD-Usd"/>
-                                    <constraint firstItem="X6e-aC-Qqf" firstAttribute="top" secondItem="5Yu-ay-KNG" secondAttribute="top" type="default" id="NFs-Qb-DzU"/>
-                                    <constraint firstItem="VM7-GW-qmE" firstAttribute="leading" secondItem="5Yu-ay-KNG" secondAttribute="leading" type="default" id="PSs-DK-tcN"/>
+                                    <constraint firstItem="Dsm-4A-hfc" firstAttribute="top" secondItem="5Yu-ay-KNG" secondAttribute="top" type="default" id="p3v-6d-utO"/>
+                                    <constraint firstItem="Dsm-4A-hfc" firstAttribute="leading" secondItem="5Yu-ay-KNG" secondAttribute="leading" type="default" id="u6o-p0-wHj"/>
+                                    <constraint firstItem="Dsm-4A-hfc" firstAttribute="top" secondItem="X6e-aC-Qqf" secondAttribute="top" type="default" id="uZd-yT-xeo"/>
                                 </constraints>
                                 <size key="customSize" width="86" height="116"/>
                                 <connections>
+                                    <outlet property="checkMark" destination="Dsm-4A-hfc" id="vjF-wu-NoS"/>
                                     <outlet property="face" destination="X6e-aC-Qqf" id="bTU-oC-kar"/>
                                     <outlet property="moodName" destination="VM7-GW-qmE" id="PHP-BN-o8i"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellHeader" id="0en-o2-YTb" customClass="MlMoodCollectionViewHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="623" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Love" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBM-30-gMn">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="604" id="b6a-R0-sEy"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="gBM-30-gMn" firstAttribute="leading" secondItem="0en-o2-YTb" secondAttribute="leading" constant="8" id="iLp-M8-e7M"/>
+                                <constraint firstItem="gBM-30-gMn" firstAttribute="top" secondItem="0en-o2-YTb" secondAttribute="top" type="default" id="xaI-rs-GQa"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="headerLabel" destination="gBM-30-gMn" id="0Am-3J-sfJ"/>
+                            </connections>
+                        </collectionReusableView>
                     </collectionView>
                     <toolbarItems/>
                 </viewController>
@@ -864,6 +909,96 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="shuffle_off.png" width="25" height="21"/>
         <image name="shuffle_on.png" width="25" height="21"/>
     </resources>
+    <classes>
+        <class className="MlCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="checkMark" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="face" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="moodName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlDatePickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDatePickerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="datePicked:"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+            </relationships>
+        </class>
+        <class className="MlDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addEntryFromStartScreen:"/>
+                <relationship kind="action" name="moveEnergySlider:"/>
+                <relationship kind="action" name="moveHealthSlider:"/>
+                <relationship kind="action" name="moveSleepSlider:"/>
+                <relationship kind="action" name="pressedDoneButton:"/>
+                <relationship kind="action" name="pressedExpandButton:"/>
+                <relationship kind="action" name="sortABC:"/>
+                <relationship kind="action" name="sortCBA:"/>
+                <relationship kind="action" name="sortGroup:"/>
+                <relationship kind="action" name="sortShuffle:"/>
+                <relationship kind="action" name="toggleFaces:"/>
+                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="blankCoveringView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailToolBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="energySlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="entryLogTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="expandButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="healthSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="moodContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="moodViewWithHeader" candidateClass="UIView"/>
+                <relationship kind="outlet" name="noMoodsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="sleepSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortGroupButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMasterViewController.h"/>
+        </class>
+        <class className="MlMoodCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewController.h"/>
+        </class>
+        <class className="MlMoodCollectionViewHeaderView" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewHeaderView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

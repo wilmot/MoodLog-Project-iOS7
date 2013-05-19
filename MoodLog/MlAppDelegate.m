@@ -66,7 +66,12 @@
     id testObject = [defaults objectForKey:@"DefaultSortStyleEditing"]; // test the newest default
 	if (testObject == nil) {
         [defaults setInteger:0 forKey:@"ChartSegmentState"];
-        [defaults setBool:NO forKey:@"DefaultFacesState"];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            [defaults setBool:YES forKey:@"DefaultFacesState"];
+        }
+        else {
+            [defaults setBool:NO forKey:@"DefaultFacesState"];
+        }
         [defaults setBool:YES forKey:@"DefaultFacesEditingState"];
         [defaults setObject:groupSort forKey:@"DefaultSortStyle"];
         [defaults setObject:groupSort forKey:@"DefaultSortStyleEditing"];

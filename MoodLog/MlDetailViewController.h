@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIView *blankCoveringView;
 @property (weak, nonatomic) IBOutlet UIButton *expandButton;
 @property (weak, nonatomic) IBOutlet UIView *moodViewWithHeader;
+@property (weak, nonatomic) IBOutlet UILabel *noMoodsLabel;
 
 @property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
