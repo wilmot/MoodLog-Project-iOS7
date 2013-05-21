@@ -6,17 +6,24 @@
 	<integer>0</integer>
 	<key>ApplicationVersion</key>
 	<array>
-		<string>com.omnigroup.OmniGrafflePro</string>
-		<string>139.16.0.171715</string>
+		<string>com.omnigroup.OmniGraffle.MacAppStore</string>
+		<string>139.16</string>
 	</array>
 	<key>AutoAdjust</key>
 	<true/>
 	<key>BackgroundGraphic</key>
 	<dict>
 		<key>Bounds</key>
-		<string>{{0, 0}, {575.99998474121094, 733}}</string>
+		<string>{{0, 0}, {575.99997711181641, 733}}</string>
 		<key>Class</key>
 		<string>SolidGraphic</string>
+		<key>FontInfo</key>
+		<dict>
+			<key>Font</key>
+			<string>Helvetica</string>
+			<key>Size</key>
+			<real>12</real>
+		</dict>
 		<key>ID</key>
 		<integer>2</integer>
 		<key>Style</key>
@@ -53,7 +60,7 @@
 	<array>
 		<dict>
 			<key>Bounds</key>
-			<string>{{7.62939453125e-06, 65}, {221, 0.125}}</string>
+			<string>{{65.25, 85.874999992549419}, {217.5, 0.12500001490116119}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -83,6 +90,8 @@
 				</dict>
 				<key>stroke</key>
 				<dict>
+					<key>Cap</key>
+					<integer>0</integer>
 					<key>Color</key>
 					<dict>
 						<key>b</key>
@@ -92,14 +101,18 @@
 						<key>r</key>
 						<string>0.157683</string>
 					</dict>
+					<key>Join</key>
+					<integer>0</integer>
 					<key>Width</key>
 					<real>4</real>
 				</dict>
 			</dict>
+			<key>VFlip</key>
+			<string>YES</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{7.62939453125e-06, 66}, {221, 12.5}}</string>
+			<string>{{63.5, 87.5}, {221, 12.5}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -149,7 +162,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{7.62939453125e-06, 37}, {221, 27.5}}</string>
+			<string>{{63, 58.5}, {221.5, 27.5}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -163,11 +176,11 @@
 					<key>Color</key>
 					<dict>
 						<key>b</key>
-						<string>0.134182</string>
+						<string>0.453968</string>
 						<key>g</key>
-						<string>0.847656</string>
+						<string>0.437713</string>
 						<key>r</key>
-						<string>0.267856</string>
+						<string>0.99136</string>
 					</dict>
 					<key>FillType</key>
 					<integer>2</integer>
@@ -176,11 +189,11 @@
 					<key>GradientColor</key>
 					<dict>
 						<key>b</key>
-						<string>0.0967494</string>
+						<string>0.0259455</string>
 						<key>g</key>
-						<string>0.621454</string>
+						<string>0.131143</string>
 						<key>r</key>
-						<string>0.237436</string>
+						<string>0.889903</string>
 					</dict>
 					<key>MiddleFraction</key>
 					<real>0.0</real>
@@ -199,7 +212,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{0, 0}, {221, 74}}</string>
+			<string>{{63.499992370605469, 21.5}, {221, 74}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -213,11 +226,11 @@
 					<key>Color</key>
 					<dict>
 						<key>b</key>
-						<string>0.299531</string>
+						<string>0.655336</string>
 						<key>g</key>
-						<string>0.990003</string>
+						<string>0.67742</string>
 						<key>r</key>
-						<string>0.410226</string>
+						<string>0.990003</string>
 					</dict>
 					<key>FillType</key>
 					<integer>2</integer>
@@ -226,14 +239,14 @@
 					<key>GradientColor</key>
 					<dict>
 						<key>b</key>
-						<string>0.0355337</string>
+						<string>0.0433596</string>
 						<key>g</key>
-						<string>0.533338</string>
+						<string>0.0858875</string>
 						<key>r</key>
-						<string>0.251651</string>
+						<string>0.901431</string>
 					</dict>
 					<key>MiddleFraction</key>
-					<real>0.395771324634552</real>
+					<real>0.346230149269104</real>
 				</dict>
 				<key>shadow</key>
 				<dict>
@@ -251,7 +264,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{0, 0}, {221, 222}}</string>
+			<string>{{63.499992370605469, 21.5}, {221, 222}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -349,9 +362,9 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2013-02-26 07:48:17 +0000</string>
+	<string>2013-05-21 06:38:59 +0000</string>
 	<key>Modifier</key>
-	<string>Barry A. Langdon-Lassagne</string>
+	<string>Barry Langdon-Lassagne</string>
 	<key>NotesVisible</key>
 	<string>NO</string>
 	<key>Orientation</key>
@@ -377,15 +390,10 @@
 			<string>float</string>
 			<string>18</string>
 		</array>
-		<key>NSPaperName</key>
-		<array>
-			<string>string</string>
-			<string>na-letter</string>
-		</array>
 		<key>NSPaperSize</key>
 		<array>
 			<string>size</string>
-			<string>{611.99998474121094, 792}</string>
+			<string>{611.99997711181641, 792}</string>
 		</array>
 		<key>NSPrintReverseOrientation</key>
 		<array>
@@ -435,7 +443,7 @@
 			</dict>
 		</array>
 		<key>Frame</key>
-		<string>{{175, 46}, {710, 832}}</string>
+		<string>{{88, 104}, {840, 912}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -449,15 +457,15 @@
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{0, 0}, {287.5, 366.5}}</string>
+		<string>{{0, 32.8125}, {88.125, 96.625}}</string>
 		<key>Zoom</key>
-		<real>2</real>
+		<real>8</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
 				<string>Canvas 1</string>
+				<real>8</real>
 				<real>2</real>
-				<real>1</real>
 			</array>
 		</array>
 	</dict>
