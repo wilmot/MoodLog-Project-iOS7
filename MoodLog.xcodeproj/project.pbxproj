@@ -24,6 +24,7 @@
 		4C2E8B4016F2B86F00912BF1 /* Skeptical.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD83B16EFD014000BA559 /* Skeptical.png */; };
 		4C2E8B4116F2B86F00912BF1 /* Skeptical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD83C16EFD014000BA559 /* Skeptical@2x.png */; };
 		4C3E0FB71657122100B0E060 /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E0FB61657122100B0E060 /* Prefs.m */; };
+		4C47E6A317501E8F0023298F /* Emotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6A217501E8F0023298F /* Emotions.m */; };
 		4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53DF1665F14900DDDBA2 /* MoodList.plist */; };
 		4C4C53E71666ECA400DDDBA2 /* Afraid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53E11666ECA400DDDBA2 /* Afraid.png */; };
 		4C4C53E81666ECA400DDDBA2 /* Afraid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53E21666ECA400DDDBA2 /* Afraid@2x.png */; };
@@ -71,7 +72,6 @@
 		4C4C543C166A93C800DDDBA2 /* Worried@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C543A166A93C700DDDBA2 /* Worried@2x.png */; };
 		4C4C543F166D46FB00DDDBA2 /* Adoring.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C543D166D46F900DDDBA2 /* Adoring.png */; };
 		4C4C5440166D46FB00DDDBA2 /* Adoring@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C543E166D46FA00DDDBA2 /* Adoring@2x.png */; };
-		4C50A08816DACA16003954E6 /* Emotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C50A08716DACA16003954E6 /* Emotions.m */; };
 		4C52861816D9A654007C878C /* MlChartDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C52861716D9A654007C878C /* MlChartDrawingView.m */; };
 		4C55CBE7162DE67400EAA878 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE6162DE67400EAA878 /* UIKit.framework */; };
 		4C55CBE9162DE67400EAA878 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE8162DE67400EAA878 /* Foundation.framework */; };
@@ -240,6 +240,8 @@
 		4C1FE6A616DCA42A009FFA8A /* pie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pie.jpg; sourceTree = "<group>"; };
 		4C3E0FB51657122100B0E060 /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
 		4C3E0FB61657122100B0E060 /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prefs.m; sourceTree = "<group>"; };
+		4C47E6A117501E8F0023298F /* Emotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotions.h; sourceTree = "<group>"; };
+		4C47E6A217501E8F0023298F /* Emotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emotions.m; sourceTree = "<group>"; };
 		4C4C53D4166569A400DDDBA2 /* MoodLog 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 3.xcdatamodel"; sourceTree = "<group>"; };
 		4C4C53DF1665F14900DDDBA2 /* MoodList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoodList.plist; sourceTree = "<group>"; };
 		4C4C53E11666ECA400DDDBA2 /* Afraid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Afraid.png; sourceTree = "<group>"; };
@@ -291,8 +293,6 @@
 		4C4C543D166D46F900DDDBA2 /* Adoring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Adoring.png; sourceTree = "<group>"; };
 		4C4C543E166D46FA00DDDBA2 /* Adoring@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Adoring@2x.png"; sourceTree = "<group>"; };
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
-		4C50A08616DACA16003954E6 /* Emotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotions.h; sourceTree = "<group>"; };
-		4C50A08716DACA16003954E6 /* Emotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emotions.m; sourceTree = "<group>"; };
 		4C52861616D9A654007C878C /* MlChartDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartDrawingView.h; sourceTree = "<group>"; };
 		4C52861716D9A654007C878C /* MlChartDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartDrawingView.m; sourceTree = "<group>"; };
 		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -672,10 +672,10 @@
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
 				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
 				4C55CC06162DE67500EAA878 /* MoodLog.xcdatamodeld */,
+				4C47E6A117501E8F0023298F /* Emotions.h */,
+				4C47E6A217501E8F0023298F /* Emotions.m */,
 				4C1E10131746BABA00BF703E /* MoodLogEvents.h */,
 				4C1E10141746BABA00BF703E /* MoodLogEvents.m */,
-				4C50A08616DACA16003954E6 /* Emotions.h */,
-				4C50A08716DACA16003954E6 /* Emotions.m */,
 				4C589C65163200F100428C52 /* Stressors.h */,
 				4C589C66163200F100428C52 /* Stressors.m */,
 				4C55CBEF162DE67400EAA878 /* Supporting Files */,
@@ -1041,9 +1041,9 @@
 				4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */,
 				4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */,
 				4C52861816D9A654007C878C /* MlChartDrawingView.m in Sources */,
-				4C50A08816DACA16003954E6 /* Emotions.m in Sources */,
 				4C7CB595170561E300971849 /* MlMoodCollectionViewHeaderView.m in Sources */,
 				4C1E10151746BABA00BF703E /* MoodLogEvents.m in Sources */,
+				4C47E6A317501E8F0023298F /* Emotions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

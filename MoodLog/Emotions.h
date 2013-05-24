@@ -2,7 +2,7 @@
 //  Emotions.h
 //  MoodLog
 //
-//  Created by Barry A. Langdon-Lassagne on 2/24/13.
+//  Created by Barry Langdon-Lassagne on 5/24/13.
 //  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
@@ -26,9 +26,5 @@
 @property (nonatomic, retain) NSNumber * x;
 @property (nonatomic, retain) NSNumber * y;
 @property (nonatomic, retain) MoodLogEvents *logParent;
-
-- (NSComparisonResult)compare:(Emotions *)otherObject;
-- (NSComparisonResult)categoryCompare:(Emotions *)otherObject;
-- (NSComparisonResult)reverseCompare:(Emotions *)otherObject;
 
 @end

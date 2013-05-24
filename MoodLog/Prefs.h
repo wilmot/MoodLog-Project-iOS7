@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Emotions.h"
 
 FOUNDATION_EXPORT NSString *const alphabeticalSort;
 FOUNDATION_EXPORT NSString *const groupSort;
@@ -28,5 +29,13 @@ FOUNDATION_EXPORT NSString *const sadness;
 
 - (UIColor *)lighterColor;
 - (UIColor *)darkerColor;
+@end
+
+// Category for modifying Emotions (whose files are automatically generated)
+@interface Emotions (Emotions_Category)
+
+- (NSComparisonResult)compare:(Emotions *)otherObject;
+- (NSComparisonResult)categoryCompare:(Emotions *)otherObject;
+- (NSComparisonResult)reverseCompare:(Emotions *)otherObject;
 
 @end

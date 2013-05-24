@@ -19,6 +19,29 @@
  NSString *const anger = @"Anger";
  NSString *const sadness = @"Sadness";
 
+// Category for extending Emotions class (which is auto-generated)
+@implementation Emotions (Emotions_Category)
+
+- (NSComparisonResult)compare:(Emotions *)otherObject {
+    return [self.name compare:otherObject.name];
+}
+
+- (NSComparisonResult)categoryCompare:(Emotions *)otherObject {
+    NSDictionary *moodCategory = @{love: @0, joy: @1, surprise: @2, fear: @3, anger: @4, sadness: @5};
+    if ([self.category compare:otherObject.category] == NSOrderedSame) {
+        return [self.name compare:otherObject.name]; // Alphabetize within the category
+    }
+    else {
+        return [moodCategory[self.category] compare:moodCategory[otherObject.category]];
+    }
+}
+
+- (NSComparisonResult)reverseCompare:(Emotions *)otherObject {
+    return [otherObject.name compare:self.name];
+}
+
+@end
+
 // Category for modifying UIColors
 @implementation UIColor (LightAndDark)
 

@@ -108,7 +108,8 @@ NSUserDefaults *defaults;
             // iPhone
             if (self.detailItem.editing.boolValue == YES) {
                 // Go to the modal mood list
-                [self performSegueWithIdentifier: @"MoodFullScreenSegue" sender: self];
+                // The delay gives a chance for the original transition to the detail view to complete
+                [self performSelector:@selector(goToEditPanel) withObject:self afterDelay:0.1];
             }
         }
   
@@ -123,6 +124,10 @@ NSUserDefaults *defaults;
         [self.scrollView setHidden:YES];
         [self.detailToolBar setRightBarButtonItem:nil animated:YES];
     }
+}
+
+- (void)goToEditPanel {
+    [self performSegueWithIdentifier: @"MoodFullScreenSegue" sender: self];
 }
 
 - (void)didReceiveMemoryWarning
