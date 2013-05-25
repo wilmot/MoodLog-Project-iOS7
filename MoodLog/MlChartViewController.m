@@ -58,6 +58,7 @@ static short BAR_CHART = 1;
 - (void)viewDidUnload {
     [self setSegment:nil];
     [self setToolBar:nil];
+    [self setMyChartCollectionViewController:nil];
     [super viewDidUnload];
 }
 - (IBAction)pressDone:(id)sender {

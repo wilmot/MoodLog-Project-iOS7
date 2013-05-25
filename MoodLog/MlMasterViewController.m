@@ -72,13 +72,13 @@
     }
     else { // On first load, go to the bottom of the TableView (dates are in ascending order)
         NSUInteger lastSection;
-        if ([[self.fetchedResultsController sections] count]) {
+        if ([[self.fetchedResultsController sections] count] > 0) {
             lastSection = [[self.fetchedResultsController sections] count] - 1;
             NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
             [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
         }
         else {
-            lastSection = 0; // no records yet
+//            lastSection = 0; // no records yet
         }
     }
     
