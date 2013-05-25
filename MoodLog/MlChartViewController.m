@@ -58,11 +58,13 @@ static short BAR_CHART = 1;
 - (void)viewDidUnload {
     [self setSegment:nil];
     [self setToolBar:nil];
+    [[self myChartCollectionViewController] setManagedObjectContext:nil];
     [self setMyChartCollectionViewController:nil];
     [super viewDidUnload];
 }
 - (IBAction)pressDone:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^(void){ NSLog(@"BL-L Test"); }];
+//    [self dismissViewControllerAnimated:YES completion:^(void){ NSLog(@"BL-L Test"); }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)chooseSegment:(id)sender {
