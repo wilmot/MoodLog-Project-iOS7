@@ -49,6 +49,9 @@ NSUserDefaults *defaults;
 
 - (void) viewDidAppear:(BOOL)animated {
     [self configureView];
+    if ((self.detailItem.editing.boolValue == NO) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
+        [self.moodContainer setHidden:NO];
+    }
 }
 
 - (void)configureView
@@ -175,17 +178,22 @@ NSUserDefaults *defaults;
 
 - (void) moveSlider:(NSString *)key sender:(id) sender {
     NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
+    static NSNumber *previousValue;
     
-    UIColor *sliderColor;
-    if ([sliderValue integerValue] >= 0) { // Tint green
-        sliderColor = [UIColor colorWithRed:fabsf(([sliderValue floatValue] - 10.0)/20.0) green:([sliderValue floatValue] + 10.0)/20.0 blue:1.0 - ([sliderValue floatValue] + 10.0)/20.0 alpha:1.0];
+    if (sliderValue.floatValue != previousValue.floatValue) {
+        UIColor *sliderColor;
+        if ([sliderValue integerValue] >= 0) { // Tint green
+            sliderColor = [UIColor colorWithRed:fabsf(([sliderValue floatValue] - 10.0)/20.0) green:([sliderValue floatValue] + 10.0)/20.0 blue:1.0 - ([sliderValue floatValue] + 10.0)/20.0 alpha:1.0];
+        }
+        else { // Tint red
+            sliderColor = [UIColor colorWithRed:fabsf(([sliderValue floatValue] - 10.0)/20.0) green:([sliderValue floatValue] + 10.0)/20.0 blue:1.0 - fabsf(([sliderValue floatValue] - 10.0)/20.0) alpha:1.0];
+        }
+        [sender performSelector:@selector(setMinimumTrackTintColor:) withObject:sliderColor afterDelay:0.1];
+        [sender performSelector:@selector(setMaximumTrackTintColor:) withObject:sliderColor afterDelay:0.1];
+        //[sender setThumbTintColor:sliderColor];
+
     }
-    else { // Tint red
-        sliderColor = [UIColor colorWithRed:fabsf(([sliderValue floatValue] - 10.0)/20.0) green:([sliderValue floatValue] + 10.0)/20.0 blue:1.0 - fabsf(([sliderValue floatValue] - 10.0)/20.0) alpha:1.0];
-    }
-    [sender setMinimumTrackTintColor:sliderColor];
-    [sender setMaximumTrackTintColor:sliderColor];
-    //[sender setThumbTintColor:sliderColor];
+    previousValue = sliderValue;
 }
 
 - (void) setSliderData: (NSString *)key sender:(id) sender {
@@ -209,6 +217,9 @@ NSUserDefaults *defaults;
     if ([segue.identifier isEqualToString:@"MoodCollectionSegue"]) {
         self.myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
         ((MlMoodCollectionViewController *)[segue destinationViewController]).detailItem = self.detailItem;
+        if ((self.detailItem.editing.boolValue == YES) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
+            [self.moodContainer setHidden:YES];
+        }
     }
     else if ([segue.identifier isEqualToString:@"MoodFullScreenSegue"]) {
         [self pressedDoneButton:self]; // Make sure textfield isn't still in edit mode
@@ -290,7 +301,7 @@ NSUserDefaults *defaults;
     }
     else { // iPhone
         // On the iPhone I have a segue to a modal view, so I don't change the button text
-    }
+   }
     
     [self saveContext];
 }

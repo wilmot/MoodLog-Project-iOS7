@@ -68,9 +68,9 @@ MoodLogEvents *myLogEntry;
                                   green:255.0f/255.0f
                                    blue:199.0f/255.0f
                                   alpha:0.0f];
-//    MlFlowLayout *myLayout = [[MlFlowLayout alloc]init];
-//    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
-
+    //    MlFlowLayout *myLayout = [[MlFlowLayout alloc]init];
+    //    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
+    
     if (!self.cellIdentifier) {
         self.cellIdentifier = @"moodCell";
     }
@@ -87,12 +87,12 @@ MoodLogEvents *myLogEntry;
         // iPad
         myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
         emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record
-   }
+    }
     else {
         myLogEntry = self.detailItem;
-        emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record        
+        emotionsforEntry = myLogEntry.relationshipEmotions; // Get all the emotions for this record
     }
-
+    
     // Set the background color for selected items
     if (myLogEntry.editing.boolValue == YES) {
         selectedColor = [UIColor colorWithRed:202.0f/255.0f
@@ -106,20 +106,20 @@ MoodLogEvents *myLogEntry;
                                          blue:202.0f/255.0f
                                         alpha:0.0f];
     }
-   
+    
     NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
-    NSPredicate *groupLove = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Love", [NSNumber numberWithBool:YES]];
-    NSPredicate *groupJoy = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Joy", [NSNumber numberWithBool:YES]];
-    NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Surprise", [NSNumber numberWithBool:YES]];
-    NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Anger", [NSNumber numberWithBool:YES]];
-    NSPredicate *groupSadness = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Sadness", [NSNumber numberWithBool:YES]];
-    NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Fear", [NSNumber numberWithBool:YES]];
     if (myLogEntry.editing.boolValue == YES) { // Editing
         if ( [myLogEntry.sortStyleEditing isEqualToString:alphabeticalSort]) {
             emotionArray = [NSArray arrayWithObjects:[[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(compare:)], nil];
         }
         else if ([myLogEntry.sortStyleEditing isEqualToString:groupSort]) {
             // TODO: Find a more elegant way to accomplish the arrays within arrays
+            NSPredicate *groupLove = [NSPredicate predicateWithFormat:@"category == %@", @"Love"];
+            NSPredicate *groupJoy = [NSPredicate predicateWithFormat:@"category == %@", @"Joy"];
+            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"category == %@", @"Surprise"];
+            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"category == %@", @"Anger"];
+            NSPredicate *groupSadness = [NSPredicate predicateWithFormat:@"category == %@", @"Sadness"];
+            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"category == %@", @"Fear"];
             NSArray *loveArray = [[[emotionsforEntry filteredSetUsingPredicate:groupLove] allObjects] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *joyArray = [[[emotionsforEntry filteredSetUsingPredicate:groupJoy] allObjects] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *surpriseArray = [[[emotionsforEntry filteredSetUsingPredicate:groupSurprise] allObjects] sortedArrayUsingSelector:@selector(compare:)];
@@ -136,13 +136,20 @@ MoodLogEvents *myLogEntry;
             emotionMutableArray = [NSMutableArray arrayWithArray:[emotionsforEntry allObjects]]; // whatever order they happen to be in
             [emotionMutableArray shuffle];
             emotionArray = [NSArray arrayWithObjects:[NSArray arrayWithArray:emotionMutableArray], nil];
-        }        
+        }
     }
     else { // Not Editing
         if ( [myLogEntry.sortStyle isEqualToString:alphabeticalSort]) {
             emotionArray = [NSArray arrayWithObjects:[[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)], nil];
         }
         else if ( [myLogEntry.sortStyle isEqualToString:groupSort]) {
+            // TODO: Find a more elegant way to accomplish the arrays within arrays
+            NSPredicate *groupLove = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Love", [NSNumber numberWithBool:YES]];
+            NSPredicate *groupJoy = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Joy", [NSNumber numberWithBool:YES]];
+            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Surprise", [NSNumber numberWithBool:YES]];
+            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Anger", [NSNumber numberWithBool:YES]];
+            NSPredicate *groupSadness = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Sadness", [NSNumber numberWithBool:YES]];
+            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@", @"Fear", [NSNumber numberWithBool:YES]];
             NSArray *loveArray = [[[emotionsforEntry filteredSetUsingPredicate:groupLove] allObjects] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *joyArray = [[[emotionsforEntry filteredSetUsingPredicate:groupJoy] allObjects] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *surpriseArray = [[[emotionsforEntry filteredSetUsingPredicate:groupSurprise] allObjects] sortedArrayUsingSelector:@selector(compare:)];
@@ -176,15 +183,15 @@ MoodLogEvents *myLogEntry;
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
-//    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-//    return [sectionInfo numberOfObjects];
+    //    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    //    return [sectionInfo numberOfObjects];
     return [[emotionArray objectAtIndex:section] count];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (myLogEntry.editing.boolValue == YES) {
         MlDetailViewController *detailViewController = ((MlDetailViewController *)([self parentViewController]));
-
+        
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             // iPad
             [[detailViewController entryLogTextView] resignFirstResponder];
@@ -204,7 +211,7 @@ MoodLogEvents *myLogEntry;
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-
+        
         [collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
         detailViewController.detailItem.sortStyle = detailViewController.detailItem.sortStyle; // Hack to get the Master list to update
     }
@@ -220,7 +227,7 @@ MoodLogEvents *myLogEntry;
         else {
             return CGSizeZero;
         }
-
+        
     } else {
         if ([[emotionArray objectAtIndex:section] count] > 0 && ([myLogEntry.sortStyle isEqualToString:groupSort])) {
             return CGSizeMake(0, 20);
@@ -272,14 +279,14 @@ MoodLogEvents *myLogEntry;
 {
     // we're going to use a custom UICollectionViewCell, which will hold an image and its label
     MlCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
-        
+    
     // Configure the cell...
     // Emotions *aMood = [self.fetchedResultsController objectAtIndexPath:indexPath];
     Emotions *aMood = [[emotionArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row];
     NSString *facePath = [[NSBundle mainBundle] pathForResource:aMood.facePath ofType:@"png"];
     UIImage *myImage = [UIImage imageWithContentsOfFile:facePath];
     [[cell face] setImage:myImage];
-
+    
     if ([aMood.selected floatValue]) {
         // set the color of the bg to something selected
         [cell setBackgroundColor:selectedColor];
@@ -288,10 +295,10 @@ MoodLogEvents *myLogEntry;
             [[cell checkMark] setHidden:NO];
             [[cell moodName] setFont:[UIFont boldSystemFontOfSize:14.0]];
             if ([self.cellIdentifier isEqual: @"moodCellFaces"]) {
-                 [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];
+                [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];
             }
             else {
-                [[cell moodName] setText:[NSString stringWithFormat:@"%@%@", check, aMood.name]];                
+                [[cell moodName] setText:[NSString stringWithFormat:@"%@%@", check, aMood.name]];
             }
         }
         else { // not editing
@@ -310,7 +317,7 @@ MoodLogEvents *myLogEntry;
             [[cell moodName] setText:[NSString stringWithFormat:@"    %@", aMood.name]];
         }
         else if ([self.cellIdentifier isEqual: @"moodCellFaces"]) {
-            [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];            
+            [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];
         }
     }
     
