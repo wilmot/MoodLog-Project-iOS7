@@ -32,11 +32,11 @@ static short BAR_CHART = 1;
     self.myChartCollectionViewController.chartType = @"Bar"; // Default chart type
 //    [self.segment setTintColor:[UIColor colorWithRed:0.08 green:0.08 blue:0.08 alpha:1.0]];
 //    [self.toolBar setTintColor:[UIColor colorWithRed:0.08 green:0.08 blue:0.08 alpha:1.0]];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.segment.selectedSegmentIndex = [defaults integerForKey:@"ChartSegmentState"];
     [self chooseSegment:self];
@@ -47,6 +47,23 @@ static short BAR_CHART = 1;
         self.myChartCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
         self.myChartCollectionViewController.managedObjectContext = self.managedObjectContext;
     }
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscapeRight;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeRight;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
 
 - (void)didReceiveMemoryWarning
