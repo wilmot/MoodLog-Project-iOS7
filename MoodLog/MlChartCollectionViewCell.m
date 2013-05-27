@@ -7,6 +7,7 @@
 //
 
 #import "MlChartCollectionViewCell.h"
+#import "MlChartCellEntryViewController.h"
 
 @implementation MlChartCollectionViewCell
 
@@ -28,4 +29,12 @@
 }
 */
 
+- (IBAction)pressDetailButton:(id)sender {
+    // TODO: Okay, I don't know what I'm doing here, which is probably why it isn't working :-)
+    // I want to show more information when the button is pressed, but I need to understand the view hierarchy more completely
+   // NSLog(@"Pressed the detail button. Here are some details: %@", [self.detailItem description]);
+//    self.myViewController.aString = [[self.detailItem valueForKey:@"date"] description];
+    self.myViewController.detailItem = self.detailItem;
+    [self.myViewController performSegueWithIdentifier:@"chartCellDetail" sender:self.myViewController];
+}
 @end

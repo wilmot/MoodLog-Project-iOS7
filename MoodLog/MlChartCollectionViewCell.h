@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MlChartDrawingView.h"
+#import "MlChartCollectionViewController.h"
+#import "MoodLogEvents.h"
 
 @interface MlChartCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *chartHeightLabel;
@@ -22,5 +24,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *angerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sadnessLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fearLabel;
+@property (strong, nonatomic) MoodLogEvents *detailItem;
+@property (strong, nonatomic) MlChartCollectionViewController *myViewController;
+
+- (IBAction)pressDetailButton:(id)sender;
 
 @end

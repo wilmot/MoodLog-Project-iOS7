@@ -29,6 +29,7 @@
 		4C47E6A717503F570023298F /* paper320_220@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E6A517503F570023298F /* paper320_220@2x.png */; };
 		4C47E6AB175040A10023298F /* paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E6A9175040A10023298F /* paper@2x.png */; };
 		4C47E6AD175040C80023298F /* paper.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E6AC175040C70023298F /* paper.png */; };
+		4C47E6B41751AC580023298F /* MlChartCellEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */; };
 		4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53DF1665F14900DDDBA2 /* MoodList.plist */; };
 		4C4C53E71666ECA400DDDBA2 /* Afraid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53E11666ECA400DDDBA2 /* Afraid.png */; };
 		4C4C53E81666ECA400DDDBA2 /* Afraid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53E21666ECA400DDDBA2 /* Afraid@2x.png */; };
@@ -246,6 +247,8 @@
 		4C47E6A517503F570023298F /* paper320_220@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper320_220@2x.png"; sourceTree = "<group>"; };
 		4C47E6A9175040A10023298F /* paper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper@2x.png"; sourceTree = "<group>"; };
 		4C47E6AC175040C70023298F /* paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper.png; sourceTree = "<group>"; };
+		4C47E6B21751AC570023298F /* MlChartCellEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCellEntryViewController.h; sourceTree = "<group>"; };
+		4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCellEntryViewController.m; sourceTree = "<group>"; };
 		4C4C53D4166569A400DDDBA2 /* MoodLog 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 3.xcdatamodel"; sourceTree = "<group>"; };
 		4C4C53DF1665F14900DDDBA2 /* MoodList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoodList.plist; sourceTree = "<group>"; };
 		4C4C53E11666ECA400DDDBA2 /* Afraid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Afraid.png; sourceTree = "<group>"; };
@@ -661,6 +664,8 @@
 				4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */,
 				4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */,
 				4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */,
+				4C47E6B21751AC570023298F /* MlChartCellEntryViewController.h */,
+				4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */,
 				4C52861616D9A654007C878C /* MlChartDrawingView.h */,
 				4C52861716D9A654007C878C /* MlChartDrawingView.m */,
 				4C5D051016C1F1BC0028C421 /* MlFacesViewController.h */,
@@ -686,6 +691,7 @@
 		4C55CBEF162DE67400EAA878 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C0C7671164AC84000DD372F /* Faces */,
 				4C7CB5911705439B00971849 /* IconNew72@2x.png */,
 				4C7CB58F1705437800971849 /* IconNew72.png */,
 				4CB8FA07170535A3005E184E /* IconPlaceholder.png */,
@@ -695,7 +701,6 @@
 				4C5ED7BF174951020028217F /* Default-Portrait@2x~ipad.png */,
 				4C5ED7BD174950F70028217F /* Default-Portrait~ipad.png */,
 				4CFD9FA4166D85AB00805D6B /* add.png */,
-				4C0C7671164AC84000DD372F /* Faces */,
 				4C0C767A164AC84800DD372F /* shuffle_off.png */,
 				4C0C7680164AD06E00DD372F /* junk.png */,
 				4C0C767B164AC84800DD372F /* shuffle_on.png */,
@@ -1044,6 +1049,7 @@
 				4C7CB595170561E300971849 /* MlMoodCollectionViewHeaderView.m in Sources */,
 				4C1E10151746BABA00BF703E /* MoodLogEvents.m in Sources */,
 				4C47E6A317501E8F0023298F /* Emotions.m in Sources */,
+				4C47E6B41751AC580023298F /* MlChartCellEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

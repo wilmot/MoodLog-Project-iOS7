@@ -15,6 +15,7 @@
 CGSize cellSize;
 NSUInteger labelLines;
 NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionViewCells (date labels are there)
+Boolean firstLoad;
 
 // Category for UILabel to align text to the bottom by adding newlines
 @interface UILabel (AlignBottom)
@@ -59,6 +60,7 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     if (!self.cellIdentifier) {
         self.cellIdentifier = @"chartCellPortrait";
     }
+    firstLoad = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,10 +72,13 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // On first load, go to the end of the CollectionView (most recent)
-    if ([[self.fetchedResultsController sections] count]) { // If there are any records
-        NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
-        NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.chartCollectionView numberOfItemsInSection:lastSection] - 1) inSection:lastSection];
-        [self.chartCollectionView scrollToItemAtIndexPath:scrollIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
+    if (firstLoad) {
+        if ([[self.fetchedResultsController sections] count]) { // If there are any records
+            NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
+            NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.chartCollectionView numberOfItemsInSection:lastSection] - 1) inSection:lastSection];
+            [self.chartCollectionView scrollToItemAtIndexPath:scrollIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
+        }
+        firstLoad = NO;
     }
 }
 
@@ -96,12 +101,12 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
         NSUInteger frameheight = [[UIScreen mainScreen] bounds].size.height; // Different sizes for iPhone 4 vs. iPhone 5
         if ([self.chartType isEqualToString:@"Bar"]) {
             self.cellIdentifier = @"chartCellPortrait";
-            cellSize = CGSizeMake(92.0,frameheight - 65);
+            cellSize = CGSizeMake(92.0,frameheight - 64);
             labelLines = frameheight/16;
         }
         else { // Pie
             self.cellIdentifier = @"pieChartCellPortrait";
-            cellSize = CGSizeMake(92.0,frameheight - 65);
+            cellSize = CGSizeMake(92.0,frameheight - 64);
             labelLines = frameheight/16;
         }
     }
@@ -109,12 +114,12 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
         // landscape
         if ([self.chartType isEqualToString:@"Bar"]) {
             self.cellIdentifier = @"chartCellPortrait";
-            cellSize = CGSizeMake(92.0,255.0);
+            cellSize = CGSizeMake(92.0,256.0);
             labelLines = 16;
         }
         else { // Pie
             self.cellIdentifier = @"pieChartCellPortrait";
-            cellSize = CGSizeMake(92.0,255.0);
+            cellSize = CGSizeMake(92.0,256.0);
             labelLines = 16;
         }
     }
@@ -193,9 +198,9 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
 
 - (void)configureCell:(MlChartCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    MoodLogEvents *moodLogObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    NSDate *today = [object valueForKey:@"date"];
+    NSDate *today = [moodLogObject valueForKey:@"date"];
     
     static NSArray *dayNames = nil;
     if (!dayNames) {
@@ -210,12 +215,13 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     cell.timeLabel.text = [dateFormatter stringFromDate: today];
     dateFormatter.dateFormat = @"MMMM dd";
     cell.monthLabel.text = [dateFormatter stringFromDate: today];
-
     dateFormatter.dateFormat = @"yyyy";
     cell.dateLabel.text = [dateFormatter stringFromDate: today];
+    cell.detailItem = moodLogObject;
+    cell.myViewController = self;
     
     // Fetch the Mood list for this journal entry
-    NSSet *emotionsforEntry = object.relationshipEmotions; // Get all the emotions for this record
+    NSSet *emotionsforEntry = moodLogObject.relationshipEmotions; // Get all the emotions for this record
     NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
     NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
     NSString *selectedEms = [[NSString alloc] init];
@@ -335,5 +341,13 @@ NSUInteger bottomLabelHeight = 50.0; // Height of view at bottom of CollectionVi
     }
     [cell.chartDrawingView setNeedsDisplay]; // without this, the bars don't match the data
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"chartCellDetail"]) {
+        self.myChartCellEntryViewController = [segue destinationViewController]; // Getting a reference to the collection view
+        self.myChartCellEntryViewController.detailItem = self.detailItem;
+    }
+}
+
 
 @end

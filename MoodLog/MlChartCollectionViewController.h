@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MlChartCellEntryViewController.h"
+#import "MoodLogEvents.h"
 
 @interface MlChartCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate>
 
@@ -15,6 +17,10 @@
 @property (strong, nonatomic) NSString *chartType;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) MoodLogEvents *detailItem;
+
+@property (weak, nonatomic) MlChartCellEntryViewController *myChartCellEntryViewController;
+
 
 - (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation;
 
