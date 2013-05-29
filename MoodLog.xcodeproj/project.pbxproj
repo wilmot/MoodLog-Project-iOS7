@@ -30,6 +30,7 @@
 		4C47E6AB175040A10023298F /* paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E6A9175040A10023298F /* paper@2x.png */; };
 		4C47E6AD175040C80023298F /* paper.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E6AC175040C70023298F /* paper.png */; };
 		4C47E6B41751AC580023298F /* MlChartCellEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */; };
+		4C47E6B71755C5E10023298F /* MlDateRangeDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */; };
 		4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53DF1665F14900DDDBA2 /* MoodList.plist */; };
 		4C4C53E71666ECA400DDDBA2 /* Afraid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53E11666ECA400DDDBA2 /* Afraid.png */; };
 		4C4C53E81666ECA400DDDBA2 /* Afraid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53E21666ECA400DDDBA2 /* Afraid@2x.png */; };
@@ -249,6 +250,8 @@
 		4C47E6AC175040C70023298F /* paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper.png; sourceTree = "<group>"; };
 		4C47E6B21751AC570023298F /* MlChartCellEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCellEntryViewController.h; sourceTree = "<group>"; };
 		4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCellEntryViewController.m; sourceTree = "<group>"; };
+		4C47E6B51755C5E00023298F /* MlDateRangeDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlDateRangeDrawing.h; sourceTree = "<group>"; };
+		4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDateRangeDrawing.m; sourceTree = "<group>"; };
 		4C4C53D4166569A400DDDBA2 /* MoodLog 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 3.xcdatamodel"; sourceTree = "<group>"; };
 		4C4C53DF1665F14900DDDBA2 /* MoodList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoodList.plist; sourceTree = "<group>"; };
 		4C4C53E11666ECA400DDDBA2 /* Afraid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Afraid.png; sourceTree = "<group>"; };
@@ -672,6 +675,8 @@
 				4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */,
 				4CFB21EF164B8C870055CC3D /* MlMailViewController.h */,
 				4CFB21F0164B8C870055CC3D /* MlMailViewController.m */,
+				4C47E6B51755C5E00023298F /* MlDateRangeDrawing.h */,
+				4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */,
 				4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */,
 				4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */,
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
@@ -1050,6 +1055,7 @@
 				4C1E10151746BABA00BF703E /* MoodLogEvents.m in Sources */,
 				4C47E6A317501E8F0023298F /* Emotions.m in Sources */,
 				4C47E6B41751AC580023298F /* MlChartCellEntryViewController.m in Sources */,
+				4C47E6B71755C5E10023298F /* MlDateRangeDrawing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

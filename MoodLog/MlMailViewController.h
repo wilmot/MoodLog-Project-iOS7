@@ -7,8 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MlDateRangeDrawing.h"
 
 @interface MlMailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISlider *startSlider;
+@property (weak, nonatomic) IBOutlet UISlider *endSlider;
+@property (weak, nonatomic) IBOutlet UIButton *allButton;
+@property (weak, nonatomic) IBOutlet UIButton *monthButton;
+@property (weak, nonatomic) IBOutlet UIButton *weekButton;
+@property (weak, nonatomic) IBOutlet UIButton *latestButton;
+@property (weak, nonatomic) IBOutlet MlDateRangeDrawing *dateRangeDrawing;
 
 - (IBAction)doneButton:(id)sender;
+- (IBAction)slideStartSlider:(id)sender;
+- (IBAction)slideEndSlider:(id)sender;
+- (IBAction)pressAllButton:(id)sender;
+- (IBAction)pressMonthButton:(id)sender;
+- (IBAction)pressWeekButton:(id)sender;
+- (IBAction)pressLatestButton:(id)sender;
 @end
