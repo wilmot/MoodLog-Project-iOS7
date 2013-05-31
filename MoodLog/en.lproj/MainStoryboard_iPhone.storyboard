@@ -765,7 +765,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SsT-2h-tGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="427" y="955"/>
+            <point key="canvasLocation" x="635" y="989"/>
         </scene>
         <!--Ml Calendar View Controller-->
         <scene sceneID="OW2-HO-A7d">
@@ -932,7 +932,7 @@
                     <toolbarItems>
                         <barButtonItem systemItem="compose" id="54q-Um-83d">
                             <connections>
-                                <segue destination="rBa-Dg-5ia" kind="modal" id="zUV-D4-22a"/>
+                                <segue destination="rBa-Dg-5ia" kind="modal" identifier="mailView" id="zUV-D4-22a"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem image="chart.png" id="lbe-NL-9Pc" userLabel="Bar Button Item - Chart">
@@ -943,7 +943,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Eyy-m2-Vpx"/>
                         <barButtonItem image="calendar.png" id="YSK-4J-qWd">
                             <connections>
-                                <segue destination="cla-Sg-uCE" kind="modal" id="4ue-py-HFV"/>
+                                <segue destination="cla-Sg-uCE" kind="modal" identifier="calendarView" id="4ue-py-HFV"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -1525,7 +1525,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="FED-j2-6ML" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Wbp-Ub-rp4">
-                        <rect key="frame" x="0.0" y="0.0" width="321" height="220"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XmS-WN-o2f">
@@ -1535,7 +1535,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.70000000000000007" contentMode="scaleToFill" image="paper320_220.png" id="6Ya-TY-Vue">
-                            <rect key="frame" x="0.0" y="0.0" width="321" height="220"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </imageView>
                         <cells>
@@ -1599,7 +1599,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellHeader" id="VjC-BD-N8c" customClass="MlMoodCollectionViewHeaderView">
-                            <rect key="frame" x="0.0" y="0.0" width="321" height="20"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAY-oL-Ifs">

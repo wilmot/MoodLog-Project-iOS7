@@ -232,6 +232,10 @@ NSUserDefaults *defaults;
         myDatePickerViewController.dateToSet = [self.detailItem valueForKey:@"date"];
         myDatePickerViewController.detailViewController = self;
     }
+    else if ([segue.identifier isEqualToString:@"chartView"]) {
+        // iPad Only
+        [[segue destinationViewController] setManagedObjectContext:self.detailItem.managedObjectContext];
+    }
 }
 
 - (void) setSortStyle: (NSString *)style {
