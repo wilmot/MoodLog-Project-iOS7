@@ -112,6 +112,9 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="segment" destination="cnD-3H-c7v" id="B6Q-oT-5FY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckI-6n-d7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
