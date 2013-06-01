@@ -23,6 +23,24 @@
     return self;
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
+                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
+                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
+    // Set the background for any states you plan to use
+    [self.allButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.allButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [self.monthButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.monthButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [self.weekButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.weekButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [self.latestButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.latestButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [self.composeButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.composeButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -48,6 +66,7 @@
     [self setLatestButton:nil];
     [self setDateRangeDrawing:nil];
     [self setDateRangeDrawing:nil];
+    [self setComposeButton:nil];
     [super viewDidUnload];
 }
 - (IBAction)pressAllButton:(id)sender {
@@ -72,6 +91,9 @@
     self.startSlider.value = 1.0;
     self.endSlider.value = 1.0;
     [self updateDateRangeDrawing];
+}
+
+- (IBAction)composeEmail:(id)sender {
 }
 
 - (IBAction)slideStartSlider:(id)sender {
