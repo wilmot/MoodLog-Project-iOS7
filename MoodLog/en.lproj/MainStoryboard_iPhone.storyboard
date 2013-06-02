@@ -324,10 +324,12 @@
                         <outlet property="composeButton" destination="Req-tK-vlI" id="gzR-3P-thU"/>
                         <outlet property="dateRangeDrawing" destination="9m9-Ed-c0t" id="iC5-j1-Wkn"/>
                         <outlet property="dateRangeLabel" destination="CcR-1N-uu3" id="LPG-du-77Z"/>
+                        <outlet property="endDateLabel" destination="lSV-dN-2As" id="IAN-tb-vxx"/>
                         <outlet property="endSlider" destination="tkD-lK-CcT" id="TMa-dE-7YD"/>
                         <outlet property="eventCount" destination="eC7-jI-0pJ" id="h4l-XT-L9l"/>
                         <outlet property="latestButton" destination="REd-7R-5Id" id="g05-WH-kdn"/>
                         <outlet property="monthButton" destination="d4q-y0-mW5" id="Csc-ZR-TUY"/>
+                        <outlet property="startDateLabel" destination="KGj-n9-Ps1" id="uwW-lz-hWh"/>
                         <outlet property="startSlider" destination="82N-vr-bnA" id="9aD-gl-aya"/>
                         <outlet property="weekButton" destination="mgo-Yl-TJr" id="V0a-QL-lwA"/>
                     </connections>

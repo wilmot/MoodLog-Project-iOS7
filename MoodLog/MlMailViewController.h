@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *composeButton;
 @property (weak, nonatomic) IBOutlet UILabel *eventCount;
 @property (weak, nonatomic) IBOutlet UILabel *dateRangeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

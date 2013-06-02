@@ -30,7 +30,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-    [self updateDateRangeDrawing];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -57,6 +56,21 @@
     [self.endSlider setMinimumValue:0];
     [self.endSlider setMaximumValue:events - 1];
 
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSDate *today = [object valueForKey:@"date"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
+    self.startDateLabel.text = [dateFormatter stringFromDate: today];
+
+    indexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
+    object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    today = [object valueForKey:@"date"];
+    dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
+    self.endDateLabel.text = [dateFormatter stringFromDate: today];
+
+    [self updateDateRangeDrawing];
+
 }
 
 
@@ -81,6 +95,8 @@
     [self setComposeButton:nil];
     [self setEventCount:nil];
     [self setDateRangeLabel:nil];
+    [self setStartDateLabel:nil];
+    [self setEndDateLabel:nil];
     [super viewDidUnload];
 }
 - (IBAction)pressAllButton:(id)sender {
