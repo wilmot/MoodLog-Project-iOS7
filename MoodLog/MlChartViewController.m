@@ -7,6 +7,7 @@
 //
 
 #import "MlChartViewController.h"
+#import "MlAppDelegate.h"
 
 @interface MlChartViewController ()
 
@@ -45,7 +46,6 @@ static short BAR_CHART = 1;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ChartCollectionSegue"]) {
         self.myChartCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
-        self.myChartCollectionViewController.managedObjectContext = self.managedObjectContext;
     }
 }
 

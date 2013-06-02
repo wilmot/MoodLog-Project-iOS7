@@ -7,6 +7,8 @@
 //
 
 #import "MlMailViewController.h"
+#import "MlAppDelegate.h"
+#import "MoodLogEvents.h"
 
 @interface MlMailViewController ()
 
@@ -21,6 +23,14 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    [self updateDateRangeDrawing];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -39,14 +49,16 @@
     [self.latestButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     [self.composeButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [self.composeButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
+    float events = [sectionInfo numberOfObjects];
+    [self.startSlider setMinimumValue:0];
+    [self.startSlider setMaximumValue:events - 1];
+    [self.endSlider setMinimumValue:0];
+    [self.endSlider setMaximumValue:events - 1];
+
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [self updateDateRangeDrawing];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -67,29 +79,31 @@
     [self setDateRangeDrawing:nil];
     [self setDateRangeDrawing:nil];
     [self setComposeButton:nil];
+    [self setEventCount:nil];
+    [self setDateRangeLabel:nil];
     [super viewDidUnload];
 }
 - (IBAction)pressAllButton:(id)sender {
     self.startSlider.value = 0.0;
-    self.endSlider.value = 1.0;
+    self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
 }
 
 - (IBAction)pressMonthButton:(id)sender {
-    self.startSlider.value = 0.5;
-    self.endSlider.value = 1.0;
+    self.startSlider.value = [self.endSlider maximumValue] / 2.0 ; // test data
+    self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
 }
 
 - (IBAction)pressWeekButton:(id)sender {
-    self.startSlider.value = 0.9;
-    self.endSlider.value = 1.0;
+    self.startSlider.value = [self.startSlider maximumValue] * 0.9;
+    self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
 }
 
 - (IBAction)pressLatestButton:(id)sender {
-    self.startSlider.value = 1.0;
-    self.endSlider.value = 1.0;
+    self.startSlider.value = [self.startSlider maximumValue];
+    self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
 }
 
@@ -111,9 +125,71 @@
 }
 
 - (void) updateDateRangeDrawing {
-    self.dateRangeDrawing.startValue = [NSNumber numberWithFloat:self.startSlider.value];
-    self.dateRangeDrawing.endValue = [NSNumber numberWithFloat:self.endSlider.value];
+    int startValue = (int)roundl(self.startSlider.value);
+    int endValue = (int)roundl(self.endSlider.value);
+    int records = (endValue - startValue) + 1;
+    NSString *text = @"event";
+    if ((endValue - startValue) > 1) {
+        text = @"events";
+    }
+    self.eventCount.text = [NSString stringWithFormat:@"%d %@",records, text];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:startValue inSection:0];
+    MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSDate *today = [object valueForKey:@"date"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"MMMM dd YYYY";
+    NSString *startDate = [dateFormatter stringFromDate: today];
+    
+    indexPath = [NSIndexPath indexPathForItem:endValue inSection:0];
+    object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    today = [object valueForKey:@"date"];
+    NSString *endDate = [dateFormatter stringFromDate:today];
+    
+    self.dateRangeLabel.text = [NSString stringWithFormat:@"%@ to %@", startDate, endDate];
+
+    
+    self.dateRangeDrawing.startValue = [NSNumber numberWithFloat:self.startSlider.value/self.startSlider.maximumValue];
+    self.dateRangeDrawing.endValue = [NSNumber numberWithFloat:self.endSlider.value/self.endSlider.maximumValue];
     [self.dateRangeDrawing setNeedsDisplay];
 }
+
+#pragma mark - Core Data delegate methods
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"MoodLogEvents" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    return _fetchedResultsController;
+}
+
 
 @end

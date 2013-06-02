@@ -11,6 +11,7 @@
 #import "MoodLogEvents.h"
 #import "Emotions.h"
 #import "Prefs.h"
+#import "MlAppDelegate.h"
 
 CGSize cellSize;
 NSUInteger labelLines;
@@ -60,6 +61,7 @@ Boolean firstLoad;
     if (!self.cellIdentifier) {
         self.cellIdentifier = @"chartCellPortrait";
     }
+    self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     firstLoad = YES;
 }
 
@@ -159,8 +161,7 @@ Boolean firstLoad;
     return cell;
 }
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
+- (NSFetchedResultsController *)fetchedResultsController {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }

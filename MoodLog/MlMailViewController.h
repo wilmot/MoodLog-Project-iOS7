@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MlDateRangeDrawing.h"
 
-@interface MlMailViewController : UIViewController
+@interface MlMailViewController : UIViewController <NSFetchedResultsControllerDelegate>
 @property (weak, nonatomic) IBOutlet UISlider *startSlider;
 @property (weak, nonatomic) IBOutlet UISlider *endSlider;
 @property (weak, nonatomic) IBOutlet UIButton *allButton;
@@ -18,6 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *latestButton;
 @property (weak, nonatomic) IBOutlet MlDateRangeDrawing *dateRangeDrawing;
 @property (weak, nonatomic) IBOutlet UIButton *composeButton;
+@property (weak, nonatomic) IBOutlet UILabel *eventCount;
+@property (weak, nonatomic) IBOutlet UILabel *dateRangeLabel;
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)doneButton:(id)sender;
 - (IBAction)slideStartSlider:(id)sender;

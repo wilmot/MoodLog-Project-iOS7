@@ -253,14 +253,12 @@
     }
     else if ([[segue identifier] isEqualToString:@"chartView"]) {
         [self shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)UIInterfaceOrientationLandscapeRight];
-        [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
     }
 }
 
 #pragma mark - Fetched results controller
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
+- (NSFetchedResultsController *)fetchedResultsController {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }

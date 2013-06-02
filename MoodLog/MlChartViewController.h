@@ -17,6 +17,5 @@
 - (IBAction)chooseSegment:(id)sender;
 
 @property (weak, nonatomic) MlChartCollectionViewController *myChartCollectionViewController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
