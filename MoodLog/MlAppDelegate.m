@@ -62,8 +62,8 @@
     
     
     // See if there are any defaults and register some if not
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];;;
-    id testObject = [defaults objectForKey:@"DefaultSortStyleEditing"]; // test the newest default
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    id testObject = [defaults objectForKey:@"DefaultMailEndValue"]; // always test the newest default
 	if (testObject == nil) {
         [defaults setInteger:0 forKey:@"ChartSegmentState"];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -75,6 +75,8 @@
         [defaults setBool:YES forKey:@"DefaultFacesEditingState"];
         [defaults setObject:groupSort forKey:@"DefaultSortStyle"];
         [defaults setObject:groupSort forKey:@"DefaultSortStyleEditing"];
+        [defaults setFloat:0.0 forKey:@"DefaultMailStartValue"];
+        [defaults setFloat:0.0 forKey:@"DefaultMailEndValue"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
     

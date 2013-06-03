@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MlDateRangeDrawing.h"
+#import "MlEmailEventCountDrawing.h"
 
-@interface MlMailViewController : UIViewController <NSFetchedResultsControllerDelegate>
+@interface MlMailViewController : UIViewController <NSFetchedResultsControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UISlider *startSlider;
 @property (weak, nonatomic) IBOutlet UISlider *endSlider;
 @property (weak, nonatomic) IBOutlet UIButton *allButton;
@@ -22,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateRangeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
+@property (weak, nonatomic) IBOutlet MlEmailEventCountDrawing *eventCountView;
+@property (weak, nonatomic) IBOutlet UITextField *recipientList;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -34,4 +37,5 @@
 - (IBAction)pressWeekButton:(id)sender;
 - (IBAction)pressLatestButton:(id)sender;
 - (IBAction)composeEmail:(id)sender;
+- (IBAction)updatedRecipientList:(id)sender;
 @end

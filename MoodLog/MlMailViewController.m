@@ -9,12 +9,15 @@
 #import "MlMailViewController.h"
 #import "MlAppDelegate.h"
 #import "MoodLogEvents.h"
+#import <QuartzCore/QuartzCore.h> 
 
 @interface MlMailViewController ()
 
 @end
 
 @implementation MlMailViewController
+
+NSUserDefaults *defaults;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -68,6 +71,16 @@
     today = [object valueForKey:@"date"];
     dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
     self.endDateLabel.text = [dateFormatter stringFromDate: today];
+//    self.eventCountView.layer.cornerRadius = 8;
+//    self.eventCountView.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    self.eventCountView.layer.shadowOpacity = 0.4;
+//    self.eventCountView.layer.shadowRadius = 12;
+//    self.eventCountView.layer.shadowOffset = CGSizeMake(4.0f, 4.0f);
+    
+    defaults = [NSUserDefaults standardUserDefaults];
+    self.startSlider.value = [defaults floatForKey:@"DefaultMailStartValue"];
+    self.endSlider.value = [defaults floatForKey:@"DefaultMailEndValue"];
+    self.recipientList.text = [defaults stringForKey:@"DefaultRecipientList"];
 
     [self updateDateRangeDrawing];
 
@@ -97,6 +110,8 @@
     [self setDateRangeLabel:nil];
     [self setStartDateLabel:nil];
     [self setEndDateLabel:nil];
+    [self setEventCountView:nil];
+    [self setRecipientList:nil];
     [super viewDidUnload];
 }
 - (IBAction)pressAllButton:(id)sender {
@@ -126,6 +141,17 @@
 - (IBAction)composeEmail:(id)sender {
 }
 
+- (IBAction)updatedRecipientList:(id)sender {
+    [defaults setValue:self.recipientList.text forKey:@"DefaultRecipientList"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+   
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)aTextfield {
+    [aTextfield resignFirstResponder];
+    return YES;
+}
+
 - (IBAction)slideStartSlider:(id)sender {
     if (self.startSlider.value > self.endSlider.value) {
         [self.endSlider setValue:[self.startSlider value]];
@@ -145,7 +171,9 @@
     int endValue = (int)roundl(self.endSlider.value);
     int records = (endValue - startValue) + 1;
     NSString *text = @"event";
-    if ((endValue - startValue) > 1) {
+    [self.recipientList resignFirstResponder];
+
+    if (records > 1) {
         text = @"events";
     }
     self.eventCount.text = [NSString stringWithFormat:@"%d %@",records, text];
@@ -153,7 +181,7 @@
     MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     NSDate *today = [object valueForKey:@"date"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MMMM dd YYYY";
+    dateFormatter.dateFormat = @"MMMM dd, YYYY";
     NSString *startDate = [dateFormatter stringFromDate: today];
     
     indexPath = [NSIndexPath indexPathForItem:endValue inSection:0];
@@ -161,12 +189,21 @@
     today = [object valueForKey:@"date"];
     NSString *endDate = [dateFormatter stringFromDate:today];
     
-    self.dateRangeLabel.text = [NSString stringWithFormat:@"%@ to %@", startDate, endDate];
+    if ([startDate isEqualToString:endDate]) {
+        self.dateRangeLabel.text = [NSString stringWithFormat:@"%@", startDate];        
+    }
+    else {
+        self.dateRangeLabel.text = [NSString stringWithFormat:@"%@ to %@", startDate, endDate];
+    }
 
     
     self.dateRangeDrawing.startValue = [NSNumber numberWithFloat:self.startSlider.value/self.startSlider.maximumValue];
     self.dateRangeDrawing.endValue = [NSNumber numberWithFloat:self.endSlider.value/self.endSlider.maximumValue];
     [self.dateRangeDrawing setNeedsDisplay];
+    
+    [defaults setFloat:self.startSlider.value forKey:@"DefaultMailStartValue"];
+    [defaults setFloat:self.endSlider.value forKey:@"DefaultMailEndValue"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Core Data delegate methods

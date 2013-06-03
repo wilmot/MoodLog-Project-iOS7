@@ -23,6 +23,7 @@
 		4C1FE6A716DCA42A009FFA8A /* pie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C1FE6A616DCA42A009FFA8A /* pie.jpg */; };
 		4C2E8B4016F2B86F00912BF1 /* Skeptical.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD83B16EFD014000BA559 /* Skeptical.png */; };
 		4C2E8B4116F2B86F00912BF1 /* Skeptical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEFD83C16EFD014000BA559 /* Skeptical@2x.png */; };
+		4C353EE6175BE307000ECE33 /* MlEmailEventCountDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */; };
 		4C3E0FB71657122100B0E060 /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E0FB61657122100B0E060 /* Prefs.m */; };
 		4C47E6A317501E8F0023298F /* Emotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6A217501E8F0023298F /* Emotions.m */; };
 		4C47E6A617503F570023298F /* paper320_220.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E6A417503F570023298F /* paper320_220.png */; };
@@ -249,6 +250,8 @@
 		4C1E10141746BABA00BF703E /* MoodLogEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodLogEvents.m; sourceTree = "<group>"; };
 		4C1FE6A416DCA153009FFA8A /* CalendarBlank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarBlank@2x.png"; sourceTree = "<group>"; };
 		4C1FE6A616DCA42A009FFA8A /* pie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pie.jpg; sourceTree = "<group>"; };
+		4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlEmailEventCountDrawing.h; sourceTree = "<group>"; };
+		4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlEmailEventCountDrawing.m; sourceTree = "<group>"; };
 		4C3E0FB51657122100B0E060 /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
 		4C3E0FB61657122100B0E060 /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prefs.m; sourceTree = "<group>"; };
 		4C47E6A117501E8F0023298F /* Emotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotions.h; sourceTree = "<group>"; };
@@ -426,7 +429,7 @@
 		4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 4.xcdatamodel"; sourceTree = "<group>"; };
 		4CEA9CA0175A77810006C6D8 /* greyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButton.png; sourceTree = "<group>"; };
 		4CEA9CA1175A77810006C6D8 /* greyButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButton@2x.png"; sourceTree = "<group>"; };
-		4CEA9CA2175A77810006C6D8 /* greyButton@2xpng */ = {isa = PBXFileReference; lastKnownFileType = file; path = "greyButton@2xpng"; sourceTree = "<group>"; };
+		4CEA9CA2175A77810006C6D8 /* greyButton@2xpng */ = {isa = PBXFileReference; lastKnownFileType = text; path = "greyButton@2xpng"; sourceTree = "<group>"; };
 		4CEA9CA3175A77810006C6D8 /* greyButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButtonHighlight.png; sourceTree = "<group>"; };
 		4CEA9CA4175A77810006C6D8 /* greyButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButtonHighlight@2x.png"; sourceTree = "<group>"; };
 		4CECC212165D4D7400EE3C6B /* Blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank.png; sourceTree = "<group>"; };
@@ -691,6 +694,8 @@
 				4CFB21F0164B8C870055CC3D /* MlMailViewController.m */,
 				4C47E6B51755C5E00023298F /* MlDateRangeDrawing.h */,
 				4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */,
+				4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */,
+				4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */,
 				4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */,
 				4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */,
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
@@ -1084,6 +1089,7 @@
 				4C47E6A317501E8F0023298F /* Emotions.m in Sources */,
 				4C47E6B41751AC580023298F /* MlChartCellEntryViewController.m in Sources */,
 				4C47E6B71755C5E10023298F /* MlDateRangeDrawing.m in Sources */,
+				4C353EE6175BE307000ECE33 /* MlEmailEventCountDrawing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
