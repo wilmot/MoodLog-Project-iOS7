@@ -406,14 +406,22 @@
         
     }
     NSString *entry = [object valueForKey:@"journalEntry"];
-    NSString *displayString = [[NSString alloc] init];    
+    NSString *displayString = [[NSString alloc] init];
+    int entryEnd = 0;
+    NSMutableAttributedString *as;
     if ([entry length] > 0) {
         displayString = [NSString stringWithFormat:@"%@\n", [object valueForKey:@"journalEntry"]];
+        entryEnd = [displayString length];
     }
     if (emotionArray) {
         displayString = [displayString stringByAppendingFormat:@"I feel %@%@", selectedEms, lastEm];
     }
-    cell.mainLabel.text = displayString;
+    as = [[NSMutableAttributedString alloc] initWithString:displayString];
+    NSRange moodListRange = NSMakeRange(entryEnd, [as length] - entryEnd);
+    [as addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:14] range:NSMakeRange(0,entryEnd)];
+    [as addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:moodListRange];
+    [as addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:moodListRange];
+    cell.mainLabel.attributedText = as;
     
 }
 

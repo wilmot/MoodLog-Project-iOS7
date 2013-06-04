@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MlDateRangeDrawing.h"
 #import "MlEmailEventCountDrawing.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface MlMailViewController : UIViewController <NSFetchedResultsControllerDelegate, UITextFieldDelegate>
+@interface MlMailViewController : UIViewController <NSFetchedResultsControllerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UISlider *startSlider;
 @property (weak, nonatomic) IBOutlet UISlider *endSlider;
 @property (weak, nonatomic) IBOutlet UIButton *allButton;

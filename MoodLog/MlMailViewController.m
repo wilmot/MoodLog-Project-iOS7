@@ -139,12 +139,34 @@ NSUserDefaults *defaults;
 }
 
 - (IBAction)composeEmail:(id)sender {
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setToRecipients:[NSArray arrayWithObject:self.recipientList.text]];
+        [controller setSubject:@"Mood Log entries for (dates)"];
+        [controller setMessageBody:@"Hello there." isHTML:NO];
+        if (controller) [self presentModalViewController:controller animated:YES];
+    }
 }
 
 - (IBAction)updatedRecipientList:(id)sender {
     [defaults setValue:self.recipientList.text forKey:@"DefaultRecipientList"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-   
+    
+}
+
+# pragma mark mail delegate methods
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    else {
+        NSLog(@"Mail composed, but not sent");
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)aTextfield {
