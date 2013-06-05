@@ -9,7 +9,8 @@
 #import "MlMailViewController.h"
 #import "MlAppDelegate.h"
 #import "MoodLogEvents.h"
-#import <QuartzCore/QuartzCore.h> 
+#import "Emotions.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MlMailViewController ()
 
@@ -121,13 +122,44 @@ NSUserDefaults *defaults;
 }
 
 - (IBAction)pressMonthButton:(id)sender {
-    self.startSlider.value = [self.endSlider maximumValue] / 2.0 ; // test data
+    NSIndexPath *indexPath;
+    MoodLogEvents *object;
+    NSDate *today = [NSDate date];
+    today = [today dateByAddingTimeInterval: -60*60*24*31]; // Subtract a month from today, TODO: Make it a real month, not just 31 days
+    int monthOldEntry=0;
+    NSDate *aDay;
+    for (int i=[self.endSlider maximumValue]; i>0; i--) {
+        indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+        object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        aDay = [object valueForKey:@"date"];
+        if ([aDay timeIntervalSince1970] <= [today timeIntervalSince1970]) {
+            monthOldEntry = i;
+            break;
+        }
+    }
+    self.startSlider.value = monthOldEntry;
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
 }
 
 - (IBAction)pressWeekButton:(id)sender {
-    self.startSlider.value = [self.startSlider maximumValue] * 0.9;
+    // Iterate backwards through the records until you get to the first one that's within a week old
+    NSIndexPath *indexPath;
+    MoodLogEvents *object;
+    NSDate *today = [NSDate date];
+    today = [today dateByAddingTimeInterval: -60*60*24*7]; // Subtract a week fro today
+    int weekOldEntry=0;
+    NSDate *aDay;
+    for (int i=[self.endSlider maximumValue]; i>0; i--) {
+        indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+        object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        aDay = [object valueForKey:@"date"];
+        if ([aDay timeIntervalSince1970] <= [today timeIntervalSince1970]) {
+            weekOldEntry = i;
+            break;
+        }
+    }
+    self.startSlider.value = weekOldEntry;
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
 }
@@ -142,9 +174,44 @@ NSUserDefaults *defaults;
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
-        [controller setToRecipients:[NSArray arrayWithObject:self.recipientList.text]];
-        [controller setSubject:@"Mood Log entries for (dates)"];
-        [controller setMessageBody:@"Hello there." isHTML:NO];
+        [controller setToRecipients:[self.recipientList.text componentsSeparatedByString:@","]];
+         //[NSArray arrayWithObject:self.recipientList.text]];
+        [controller setSubject:[NSString stringWithFormat:@"Mood Logs for %@ (%@)",self.dateRangeLabel.text, self.eventCount.text]];
+ 
+        NSMutableString *bodyText = [NSMutableString stringWithFormat:@"<b>%@</b><br>%@<br><br><font size=-2>",self.dateRangeLabel.text, self.eventCount.text];
+        // loop through the records
+        
+        int startValue = (int)roundl(self.startSlider.value);
+        int endValue = (int)roundl(self.endSlider.value);
+        NSIndexPath *indexPath;
+        MoodLogEvents *object;
+        NSString *entry;
+        NSDate *today;
+        NSString *theDate;
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
+        for (int i=startValue; i<=endValue; i++) {
+            indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+            object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            today = [object valueForKey:@"date"];
+            theDate = [dateFormatter stringFromDate: today];
+            [bodyText appendFormat:@"<b>%@:</b><br>", theDate];
+            entry = [object valueForKey:@"journalEntry"];
+            if (entry) {
+                [bodyText appendFormat:@"Journal Entry: %@<br>Emotions:<br>",entry];
+            }
+            NSSet *emotionsforEntry = object.relationshipEmotions; // Get all the emotions for this record
+            NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
+            NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+            NSMutableString *selectedEms = [[NSMutableString alloc] init];
+            for (id emotion in emotionArray) {
+                //[selectedEms appendFormat:@"%@ ", [((Emotions *)emotion).name lowercaseString]];
+                [selectedEms appendFormat:@"%@ ", ((Emotions *)emotion).name ];
+            }
+            [bodyText appendFormat:@"%@<br><br>",selectedEms];
+       }
+
+        [controller setMessageBody:bodyText isHTML:YES];
         if (controller) [self presentModalViewController:controller animated:YES];
     }
 }
@@ -196,7 +263,7 @@ NSUserDefaults *defaults;
     [self.recipientList resignFirstResponder];
 
     if (records > 1) {
-        text = @"events";
+        text = @"entries";
     }
     self.eventCount.text = [NSString stringWithFormat:@"%d %@",records, text];
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:startValue inSection:0];
