@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *entryLogTextView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailToolBar;
 @property (weak, nonatomic) IBOutlet UISlider *sleepSlider;
+@property (weak, nonatomic) IBOutlet UISlider *overallSlider;
 @property (weak, nonatomic) IBOutlet UISlider *energySlider;
 @property (weak, nonatomic) IBOutlet UISlider *healthSlider;
 @property (weak, nonatomic) IBOutlet UIView *moodContainer;
@@ -39,6 +40,7 @@
 
 
 - (IBAction)pressedDoneButton:(id)sender;
+- (IBAction)moveOverallSlider:(id)sender;
 - (IBAction)moveSleepSlider:(id)sender;
 - (IBAction)moveEnergySlider:(id)sender;
 - (IBAction)moveHealthSlider:(id)sender;

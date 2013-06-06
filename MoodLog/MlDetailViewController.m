@@ -88,10 +88,12 @@ NSUserDefaults *defaults;
         self.entryLogTextView.text = [self.detailItem valueForKey:@"journalEntry"];
         
         // Set the sliders
+        [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
         [self.sleepSlider setValue:[[self.detailItem valueForKey:@"sleep"] floatValue]];
         [self.energySlider setValue:[[self.detailItem valueForKey:@"energy"] floatValue]];
         [self.healthSlider setValue:[[self.detailItem valueForKey:@"health"] floatValue]];
         // Set the slider colors
+        [self moveSlider:@"overall" sender:self.overallSlider];
         [self moveSlider:@"sleep" sender:self.sleepSlider];
         [self moveSlider:@"energy" sender:self.energySlider];
         [self moveSlider:@"health" sender:self.healthSlider ];
@@ -161,39 +163,41 @@ NSUserDefaults *defaults;
     [self.detailToolBar setRightBarButtonItem:nil animated:YES];
 }
 
+- (IBAction)moveOverallSlider:(id)sender {
+    [self moveSlider:@"overall" sender:sender];
+}
+
 - (IBAction)moveSleepSlider:(id)sender {
     [self moveSlider:@"sleep" sender:sender];
-    [self setSliderData:@"sleep" sender:sender];
 }
 
 - (IBAction)moveEnergySlider:(id)sender {
     [self moveSlider:@"energy" sender:sender];
-    [self setSliderData:@"energy" sender:sender];
 }
 
 - (IBAction)moveHealthSlider:(id)sender {
     [self moveSlider:@"health" sender:sender];
-    [self setSliderData:@"health" sender:sender];
 }
 
 - (void) moveSlider:(NSString *)key sender:(id) sender {
-    NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
-    static NSNumber *previousValue;
+    float sliderValue = [[NSNumber numberWithFloat:[(UISlider *)sender value]] floatValue];
+    static float previousValue;
     
-    if (sliderValue.floatValue != previousValue.floatValue) {
+    if (abs(sliderValue - previousValue) >= 1) {
         UIColor *sliderColor;
-        if ([sliderValue integerValue] >= 0) { // Tint green
-            sliderColor = [UIColor colorWithRed:fabsf(([sliderValue floatValue] - 10.0)/20.0) green:([sliderValue floatValue] + 10.0)/20.0 blue:1.0 - ([sliderValue floatValue] + 10.0)/20.0 alpha:1.0];
+        if (sliderValue >= 0) { // Tint green
+            sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:1.0];
         }
         else { // Tint red
-            sliderColor = [UIColor colorWithRed:fabsf(([sliderValue floatValue] - 10.0)/20.0) green:([sliderValue floatValue] + 10.0)/20.0 blue:1.0 - fabsf(([sliderValue floatValue] - 10.0)/20.0) alpha:1.0];
+            sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:1.0];
         }
-        [sender performSelector:@selector(setMinimumTrackTintColor:) withObject:sliderColor afterDelay:0.1];
-        [sender performSelector:@selector(setMaximumTrackTintColor:) withObject:sliderColor afterDelay:0.1];
-        //[sender setThumbTintColor:sliderColor];
+        [sender performSelector:@selector(setMinimumTrackTintColor:) withObject:sliderColor];
+        [sender performSelector:@selector(setMaximumTrackTintColor:) withObject:sliderColor];
+        [self setSliderData:key sender:sender];
+       //[sender setThumbTintColor:sliderColor];
 
+        previousValue = sliderValue;
     }
-    previousValue = sliderValue;
 }
 
 - (void) setSliderData: (NSString *)key sender:(id) sender {
@@ -398,6 +402,7 @@ NSUserDefaults *defaults;
     [self setExpandButton:nil];
     [self setSortGroupButton:nil];
     [self setNoMoodsLabel:nil];
+    [self setOverallSlider:nil];
     [super viewDidUnload];
 }
 @end

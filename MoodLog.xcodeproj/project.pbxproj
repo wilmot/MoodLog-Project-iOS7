@@ -188,7 +188,6 @@
 		4CB8FA0A170535A3005E184E /* IconPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8FA08170535A3005E184E /* IconPlaceholder@2x.png */; };
 		4CEA9CA5175A77810006C6D8 /* greyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9CA0175A77810006C6D8 /* greyButton.png */; };
 		4CEA9CA6175A77810006C6D8 /* greyButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9CA1175A77810006C6D8 /* greyButton@2x.png */; };
-		4CEA9CA7175A77810006C6D8 /* greyButton@2xpng in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9CA2175A77810006C6D8 /* greyButton@2xpng */; };
 		4CEA9CA8175A77810006C6D8 /* greyButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9CA3175A77810006C6D8 /* greyButtonHighlight.png */; };
 		4CEA9CA9175A77810006C6D8 /* greyButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9CA4175A77810006C6D8 /* greyButtonHighlight@2x.png */; };
 		4CEA9CAA175A79420006C6D8 /* greyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA9CA0175A77810006C6D8 /* greyButton.png */; };
@@ -254,6 +253,7 @@
 		4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlEmailEventCountDrawing.h; sourceTree = "<group>"; };
 		4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlEmailEventCountDrawing.m; sourceTree = "<group>"; };
 		4C353EE7175DE151000ECE33 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4C353EE917607BAA000ECE33 /* MoodLog 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MoodLog 7.xcdatamodel"; sourceTree = "<group>"; };
 		4C3E0FB51657122100B0E060 /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
 		4C3E0FB61657122100B0E060 /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prefs.m; sourceTree = "<group>"; };
 		4C47E6A117501E8F0023298F /* Emotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotions.h; sourceTree = "<group>"; };
@@ -431,7 +431,6 @@
 		4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 4.xcdatamodel"; sourceTree = "<group>"; };
 		4CEA9CA0175A77810006C6D8 /* greyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButton.png; sourceTree = "<group>"; };
 		4CEA9CA1175A77810006C6D8 /* greyButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButton@2x.png"; sourceTree = "<group>"; };
-		4CEA9CA2175A77810006C6D8 /* greyButton@2xpng */ = {isa = PBXFileReference; lastKnownFileType = text; path = "greyButton@2xpng"; sourceTree = "<group>"; };
 		4CEA9CA3175A77810006C6D8 /* greyButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButtonHighlight.png; sourceTree = "<group>"; };
 		4CEA9CA4175A77810006C6D8 /* greyButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButtonHighlight@2x.png"; sourceTree = "<group>"; };
 		4CECC212165D4D7400EE3C6B /* Blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank.png; sourceTree = "<group>"; };
@@ -730,7 +729,6 @@
 				4C5ED7BD174950F70028217F /* Default-Portrait~ipad.png */,
 				4CEA9CA0175A77810006C6D8 /* greyButton.png */,
 				4CEA9CA1175A77810006C6D8 /* greyButton@2x.png */,
-				4CEA9CA2175A77810006C6D8 /* greyButton@2xpng */,
 				4CEA9CA3175A77810006C6D8 /* greyButtonHighlight.png */,
 				4CEA9CA4175A77810006C6D8 /* greyButtonHighlight@2x.png */,
 				4CFD9FA4166D85AB00805D6B /* add.png */,
@@ -1040,7 +1038,6 @@
 				4C7A485C16B115D50081CEF5 /* Ambivalent@2x.png in Resources */,
 				4CEA9CA5175A77810006C6D8 /* greyButton.png in Resources */,
 				4CEA9CA6175A77810006C6D8 /* greyButton@2x.png in Resources */,
-				4CEA9CA7175A77810006C6D8 /* greyButton@2xpng in Resources */,
 				4CEA9CA8175A77810006C6D8 /* greyButtonHighlight.png in Resources */,
 				4CEA9CA9175A77810006C6D8 /* greyButtonHighlight@2x.png in Resources */,
 			);
@@ -1302,9 +1299,10 @@
 				4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */,
 				4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */,
 				4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */,
+				4C353EE917607BAA000ECE33 /* MoodLog 7.xcdatamodel */,
 				4C55CC07162DE67500EAA878 /* MoodLog.xcdatamodel */,
 			);
-			currentVersion = 4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */;
+			currentVersion = 4C353EE917607BAA000ECE33 /* MoodLog 7.xcdatamodel */;
 			path = MoodLog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

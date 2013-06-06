@@ -125,7 +125,7 @@ NSUserDefaults *defaults;
     NSIndexPath *indexPath;
     MoodLogEvents *object;
     NSDate *today = [NSDate date];
-    today = [today dateByAddingTimeInterval: -60*60*24*31]; // Subtract a month from today, TODO: Make it a real month, not just 31 days
+    today = [today dateByAddingTimeInterval: -60*60*24*30]; // Subtract a month from today
     int monthOldEntry=0;
     NSDate *aDay;
     for (int i=[self.endSlider maximumValue]; i>0; i--) {
