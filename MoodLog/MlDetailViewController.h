@@ -40,10 +40,8 @@
 
 
 - (IBAction)pressedDoneButton:(id)sender;
-- (IBAction)moveOverallSlider:(id)sender;
-- (IBAction)moveSleepSlider:(id)sender;
-- (IBAction)moveEnergySlider:(id)sender;
-- (IBAction)moveHealthSlider:(id)sender;
+- (IBAction)moveSlider:(id) sender;
+- (IBAction)setSliderData:(id)sender;
 - (IBAction)sortABC:(id)sender;
 - (IBAction)sortGroup:(id)sender;
 - (IBAction)sortCBA:(id)sender;

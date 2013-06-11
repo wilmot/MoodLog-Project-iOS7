@@ -202,15 +202,14 @@ Boolean firstLoad;
     MoodLogEvents *moodLogObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     NSDate *today = [moodLogObject valueForKey:@"date"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     
     static NSArray *dayNames = nil;
     if (!dayNames) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setCalendar:[NSCalendar currentCalendar]];
-        dayNames = [formatter weekdaySymbols];
+        [dateFormatter setCalendar:[NSCalendar currentCalendar]];
+        dayNames = [dateFormatter weekdaySymbols];
     }
 
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"h:mm a";
     
     cell.timeLabel.text = [dateFormatter stringFromDate: today];
@@ -232,7 +231,8 @@ Boolean firstLoad;
     NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, fear : @0, anger : @0, sadness : @0} mutableCopy];
     if (emotionArrayCount > 0) {
         for (id emotion in emotionArray) {
-            selectedEms = [selectedEms stringByAppendingFormat:@"%@ (%@)\n", [((Emotions *)emotion).name lowercaseString], ((Emotions *)emotion).feelValue];
+            // selectedEms = [selectedEms stringByAppendingFormat:@"%@ (%@)\n", [((Emotions *)emotion).name lowercaseString], ((Emotions *)emotion).feelValue];
+            selectedEms = [selectedEms stringByAppendingFormat:@"%@\n", [((Emotions *)emotion).name lowercaseString]];
             feelTotal += ((Emotions *)emotion).feelValue.floatValue;
             NSString *thisCategory = ((Emotions *)emotion).category;
             if (categoryCounts[thisCategory]) {
@@ -334,7 +334,8 @@ Boolean firstLoad;
     if ([self.chartType isEqualToString:@"Bar"]) {
         CGFloat height = emotionArrayCount>0 ? feelTotal/emotionArrayCount : 0; // Average (mean)
         cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
-        [cell.chartDrawingView setChartHeight:height];
+        //[cell.chartDrawingView setChartHeight:height];
+        [cell.chartDrawingView setChartHeight:[[moodLogObject valueForKey:@"overall"] floatValue]];
 
     }
     else { // Pie

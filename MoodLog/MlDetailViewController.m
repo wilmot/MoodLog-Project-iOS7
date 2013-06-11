@@ -47,7 +47,7 @@ NSUserDefaults *defaults;
     defaults = [NSUserDefaults standardUserDefaults];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated {
     [self configureView];
     if ((self.detailItem.editing.boolValue == NO) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
         [self.moodContainer setHidden:NO];
@@ -93,10 +93,10 @@ NSUserDefaults *defaults;
         [self.energySlider setValue:[[self.detailItem valueForKey:@"energy"] floatValue]];
         [self.healthSlider setValue:[[self.detailItem valueForKey:@"health"] floatValue]];
         // Set the slider colors
-        [self moveSlider:@"overall" sender:self.overallSlider];
-        [self moveSlider:@"sleep" sender:self.sleepSlider];
-        [self moveSlider:@"energy" sender:self.energySlider];
-        [self moveSlider:@"health" sender:self.healthSlider ];
+        [self moveSlider:self.overallSlider];
+        [self moveSlider:self.sleepSlider];
+        [self moveSlider:self.energySlider];
+        [self moveSlider:self.healthSlider ];
         
         [self selectButton]; // Highlight the correct button
         [self setFaces:[self.detailItem.showFaces boolValue]];
@@ -163,23 +163,7 @@ NSUserDefaults *defaults;
     [self.detailToolBar setRightBarButtonItem:nil animated:YES];
 }
 
-- (IBAction)moveOverallSlider:(id)sender {
-    [self moveSlider:@"overall" sender:sender];
-}
-
-- (IBAction)moveSleepSlider:(id)sender {
-    [self moveSlider:@"sleep" sender:sender];
-}
-
-- (IBAction)moveEnergySlider:(id)sender {
-    [self moveSlider:@"energy" sender:sender];
-}
-
-- (IBAction)moveHealthSlider:(id)sender {
-    [self moveSlider:@"health" sender:sender];
-}
-
-- (void) moveSlider:(NSString *)key sender:(id) sender {
+- (void) moveSlider:(id) sender {
     float sliderValue = [[NSNumber numberWithFloat:[(UISlider *)sender value]] floatValue];
     static float previousValue;
     
@@ -193,14 +177,27 @@ NSUserDefaults *defaults;
         }
         [sender performSelector:@selector(setMinimumTrackTintColor:) withObject:sliderColor];
         [sender performSelector:@selector(setMaximumTrackTintColor:) withObject:sliderColor];
-        [self setSliderData:key sender:sender];
        //[sender setThumbTintColor:sliderColor];
 
         previousValue = sliderValue;
     }
 }
 
-- (void) setSliderData: (NSString *)key sender:(id) sender {
+- (void) setSliderData:(id) sender {
+    NSString *key;
+    if ([self.overallSlider isEqual:sender]) {
+        key = @"overall";
+    }
+    else if ([self.sleepSlider isEqual:sender]) {
+        key = @"sleep";
+    }
+    else if ([self.energySlider isEqual:sender]) {
+        key = @"energy";
+    }
+    else if ([self.healthSlider isEqual:sender]) {
+        key = @"health";
+    }
+    
     NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
     [self.detailItem setValue:sliderValue forKey:key];
     [self saveContext];
