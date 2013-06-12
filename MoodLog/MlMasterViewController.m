@@ -252,7 +252,7 @@
         [[segue destinationViewController] setDetailItem:object];
     }
     else if ([[segue identifier] isEqualToString:@"chartView"]) {
-        [self shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)UIInterfaceOrientationLandscapeRight];
+        [self shouldAutorotate];
     }
 }
 

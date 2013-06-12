@@ -212,7 +212,7 @@ NSUserDefaults *defaults;
        }
 
         [controller setMessageBody:bodyText isHTML:YES];
-        if (controller) [self presentModalViewController:controller animated:YES];
+        if (controller) [self presentViewController:controller animated:YES completion:nil];
     }
 }
 
@@ -233,7 +233,7 @@ NSUserDefaults *defaults;
     else {
         NSLog(@"Mail composed, but not sent");
     }
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)aTextfield {
