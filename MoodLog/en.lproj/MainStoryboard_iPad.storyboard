@@ -178,11 +178,11 @@
             <objects>
                 <viewController title="Detail" id="4" customClass="MlDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26">
-                        <rect key="frame" x="0.0" y="64" width="623" height="1920"/>
+                        <rect key="frame" x="0.0" y="64" width="623" height="2048"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Rt-yB-yoq" userLabel="View - Cover">
-                                <rect key="frame" x="0.0" y="39" width="623" height="1024"/>
+                                <rect key="frame" x="0.0" y="44" width="623" height="1024"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Create a New Entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0s-yK-i5r">
                                         <rect key="frame" x="240" y="407" width="143" height="21"/>
@@ -218,7 +218,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLN-2n-pAY">
-                                <rect key="frame" x="0.0" y="131" width="623" height="984"/>
+                                <rect key="frame" x="0.0" y="149" width="623" height="984"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="CalendarBlank.png" translatesAutoresizingMaskIntoConstraints="NO" id="icS-Sw-krK">
                                         <rect key="frame" x="-3" y="24" width="131" height="131"/>
@@ -703,7 +703,7 @@
                                 </constraints>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXP-Kh-sRr">
-                                <rect key="frame" x="0.0" y="1162" width="623" height="44"/>
+                                <rect key="frame" x="0.0" y="1241" width="623" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="compose" id="PFe-pz-Ft8">
                                         <connections>

@@ -49,10 +49,15 @@ NSUserDefaults *defaults;
 
 - (void) viewWillAppear:(BOOL)animated {
     [self configureView];
-    [self.navigationController setToolbarHidden:YES animated: YES];
+    //[self.navigationController setToolbarHidden:YES animated: YES];
     if ((self.detailItem.editing.boolValue == NO) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
         [self.moodContainer setHidden:NO];
     }
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    NSLog(@"Scroll view content view in viewDidAppear: %@", NSStringFromCGSize([self.scrollView contentSize]));
+    [super viewDidAppear:animated];
 }
 
 - (void)configureView
