@@ -49,6 +49,7 @@ NSUserDefaults *defaults;
 
 - (void) viewWillAppear:(BOOL)animated {
     [self configureView];
+    [self.navigationController setToolbarHidden:YES animated: YES];
     if ((self.detailItem.editing.boolValue == NO) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
         [self.moodContainer setHidden:NO];
     }
@@ -93,10 +94,10 @@ NSUserDefaults *defaults;
         [self.energySlider setValue:[[self.detailItem valueForKey:@"energy"] floatValue]];
         [self.healthSlider setValue:[[self.detailItem valueForKey:@"health"] floatValue]];
         // Set the slider colors
-        [self moveSlider:self.overallSlider];
-        [self moveSlider:self.sleepSlider];
-        [self moveSlider:self.energySlider];
-        [self moveSlider:self.healthSlider ];
+        [self setSliderColor:self.overallSlider];
+        [self setSliderColor:self.sleepSlider];
+        [self setSliderColor:self.energySlider];
+        [self setSliderColor:self.healthSlider ];
         
         [self selectButton]; // Highlight the correct button
         [self setFaces:[self.detailItem.showFaces boolValue]];
@@ -168,19 +169,24 @@ NSUserDefaults *defaults;
     static float previousValue;
     
     if (abs(sliderValue - previousValue) >= 1) {
-        UIColor *sliderColor;
-        if (sliderValue >= 0) { // Tint green
-            sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:1.0];
-        }
-        else { // Tint red
-            sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:1.0];
-        }
-        [sender performSelector:@selector(setMinimumTrackTintColor:) withObject:sliderColor];
-        [sender performSelector:@selector(setMaximumTrackTintColor:) withObject:sliderColor];
-       //[sender setThumbTintColor:sliderColor];
-
+        [self setSliderColor:sender];
         previousValue = sliderValue;
     }
+}
+
+- (void) setSliderColor:(id) sender {
+    float sliderValue = [[NSNumber numberWithFloat:[(UISlider *)sender value]] floatValue];
+    UIColor *sliderColor;
+    if (sliderValue >= 0) { // Tint green
+        sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:1.0];
+    }
+    else { // Tint red
+        sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:1.0];
+    }
+    [sender performSelector:@selector(setMinimumTrackTintColor:) withObject:sliderColor];
+    [sender performSelector:@selector(setMaximumTrackTintColor:) withObject:sliderColor];
+    //[sender setThumbTintColor:sliderColor];
+
 }
 
 - (void) setSliderData:(id) sender {
@@ -375,12 +381,12 @@ NSUserDefaults *defaults;
 #pragma mark - Entry Log UITextView delegate methods
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     [self.detailToolBar setRightBarButtonItem:self.doneButton animated:YES];
-    [textView resignFirstResponder];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
     [self.detailToolBar setRightBarButtonItem:nil animated:YES];
  
+    [textView resignFirstResponder];
     // Save the database record.
     [self.detailItem setValue:[self.entryLogTextView text] forKey:@"journalEntry"];
     [self saveContext];
