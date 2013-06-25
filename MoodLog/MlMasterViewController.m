@@ -373,8 +373,27 @@
         dayNames = [formatter weekdaySymbols];
     }
     
-    cell.dateLabel.text = [NSString stringWithFormat:@"%d", day];
-    cell.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];
+    // TODO: This logic is convoluted; revisit
+    if ([indexPath row] > 0) {
+        NSIndexPath *oldIndexPath = [NSIndexPath indexPathForItem:[indexPath row] - 1 inSection:[indexPath section]];
+        MoodLogEvents *previousObject = [self.fetchedResultsController objectAtIndexPath:oldIndexPath];
+        NSDate *oldToday = [previousObject valueForKey:@"date"];
+        NSDateComponents *oldWeekdayComponents =
+        [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:oldToday];
+        NSInteger oldDay = [oldWeekdayComponents day];
+        if (oldDay != day) {
+            cell.dateLabel.text = [NSString stringWithFormat:@"%d", day];
+            cell.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];            
+        }
+        else {
+            cell.dateLabel.text = @"";
+            cell.weekdayLabel.text = @"";
+        }
+    }
+    else {
+        cell.dateLabel.text = [NSString stringWithFormat:@"%d", day];
+        cell.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];
+    }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"h:mm a";
@@ -406,15 +425,15 @@
         
     }
     NSString *entry = [object valueForKey:@"journalEntry"];
-    NSString *displayString = [[NSString alloc] init];
+    NSMutableString *displayString = [[NSMutableString alloc] init];
     int entryEnd = 0;
     NSMutableAttributedString *as;
     if ([entry length] > 0) {
-        displayString = [NSString stringWithFormat:@"%@\n", [object valueForKey:@"journalEntry"]];
+        [displayString appendFormat:@"%@\n", [object valueForKey:@"journalEntry"]];
         entryEnd = [displayString length];
     }
     if (emotionArray) {
-        displayString = [displayString stringByAppendingFormat:@"I feel %@%@", selectedEms, lastEm];
+        [displayString appendFormat:@"I feel %@%@", selectedEms, lastEm];
     }
     as = [[NSMutableAttributedString alloc] initWithString:displayString];
     NSRange moodListRange = NSMakeRange(entryEnd, [as length] - entryEnd);

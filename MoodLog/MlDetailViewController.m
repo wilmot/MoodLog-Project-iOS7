@@ -55,10 +55,10 @@ NSUserDefaults *defaults;
     }
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    NSLog(@"Scroll view content view in viewDidAppear: %@", NSStringFromCGSize([self.scrollView contentSize]));
-    [super viewDidAppear:animated];
-}
+//- (void) viewDidAppear:(BOOL)animated {
+//    NSLog(@"Scroll view content view in viewDidAppear: %@", NSStringFromCGSize([self.scrollView contentSize]));
+//    [super viewDidAppear:animated];
+//}
 
 - (void)configureView
 {

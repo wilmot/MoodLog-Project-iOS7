@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.6" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="5">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -178,11 +178,11 @@
             <objects>
                 <viewController title="Detail" id="4" customClass="MlDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26">
-                        <rect key="frame" x="0.0" y="64" width="623" height="2048"/>
+                        <rect key="frame" x="0.0" y="64" width="623" height="2304"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Rt-yB-yoq" userLabel="View - Cover">
-                                <rect key="frame" x="0.0" y="44" width="623" height="1024"/>
+                                <rect key="frame" x="0.0" y="54" width="623" height="1024"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Create a New Entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0s-yK-i5r">
                                         <rect key="frame" x="240" y="407" width="143" height="21"/>
@@ -218,7 +218,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLN-2n-pAY">
-                                <rect key="frame" x="0.0" y="149" width="623" height="984"/>
+                                <rect key="frame" x="0.0" y="185" width="623" height="984"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="CalendarBlank.png" translatesAutoresizingMaskIntoConstraints="NO" id="icS-Sw-krK">
                                         <rect key="frame" x="-3" y="24" width="131" height="131"/>
@@ -703,7 +703,7 @@
                                 </constraints>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXP-Kh-sRr">
-                                <rect key="frame" x="0.0" y="1241" width="623" height="44"/>
+                                <rect key="frame" x="0.0" y="1398" width="623" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="compose" id="PFe-pz-Ft8">
                                         <connections>
@@ -1053,10 +1053,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <imageView key="backgroundView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleAspectFill" image="paper320_220.png" id="ckV-34-nRo">
-                            <rect key="frame" x="0.0" y="0.0" width="622" height="426"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </imageView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCell" id="acJ-2C-ML3" customClass="MlCollectionViewCell">
                                 <rect key="frame" x="0.0" y="68" width="134" height="24"/>
@@ -1495,7 +1491,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="add.png" width="65" height="80"/>
         <image name="calendar.png" width="22" height="18"/>
         <image name="chart.png" width="22" height="18"/>
-        <image name="paper320_220.png" width="320" height="220"/>
         <image name="shuffle_off.png" width="25" height="21"/>
         <image name="shuffle_on.png" width="25" height="21"/>
     </resources>

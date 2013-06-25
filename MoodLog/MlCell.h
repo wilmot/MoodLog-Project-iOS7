@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *weekdayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subLabel;
 
 @end

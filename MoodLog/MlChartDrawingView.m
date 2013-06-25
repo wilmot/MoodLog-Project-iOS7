@@ -22,10 +22,10 @@ static NSUInteger numberOfDivisions = 20;
     return self;
 }
 
-- (void)setBounds:(CGRect)bounds {
-    NSLog(@"Chart drawing view: %@", NSStringFromCGRect(bounds));
-    [super setBounds:bounds];
-}
+//- (void)setBounds:(CGRect)bounds {
+//    NSLog(@"Chart drawing view: %@", NSStringFromCGRect(bounds));
+//    [super setBounds:bounds];
+//}
 
 -(void) drawRect:(CGRect)rect{
     [super drawRect:rect];

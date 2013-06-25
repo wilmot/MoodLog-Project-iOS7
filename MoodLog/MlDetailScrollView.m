@@ -10,10 +10,10 @@
 
 @implementation MlDetailScrollView
 
-- (void)setBounds:(CGRect)bounds {
-    NSLog(@"Detail Scroll View bounds: %@", NSStringFromCGRect(bounds));
-    NSLog(@"Scroll enabled? %hhd",self.scrollEnabled);
-    [super setBounds:bounds];
-}
+//- (void)setBounds:(CGRect)bounds {
+//    NSLog(@"Detail Scroll View bounds: %@", NSStringFromCGRect(bounds));
+//    NSLog(@"Scroll enabled? %hhd",self.scrollEnabled);
+//    [super setBounds:bounds];
+//}
 
 @end
