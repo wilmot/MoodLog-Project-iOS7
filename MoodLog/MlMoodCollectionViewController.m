@@ -168,6 +168,21 @@ MoodLogEvents *myLogEntry;
             emotionArray = [NSArray arrayWithObjects:[NSArray arrayWithArray:emotionMutableArray], nil];
         }
     }
+    
+    UICollectionViewFlowLayout *myLayout = [[UICollectionViewFlowLayout alloc]init];
+    if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
+        if (myLogEntry.editing.boolValue == YES) {
+            myLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        }
+        else {
+            myLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        }
+    }
+    else {
+        myLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    }
+    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
+
     [self.collectionView reloadData];
 }
 
@@ -261,16 +276,16 @@ MoodLogEvents *myLogEntry;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size = CGSizeMake(10.0, 10.0);
     
-    if ([self.cellIdentifier isEqual: @"moodCell"]) {
-        size = CGSizeMake(96.0, 18.0);
-    }
-    else if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
+    if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             size = CGSizeMake(86.0, 116.0);
         }
         else { // iPhone
             size = CGSizeMake(80.0, 114.0);
         }
+    }
+    else if ([self.cellIdentifier isEqual: @"moodCell"]) {
+        size = CGSizeMake(150.0, 18.0);
     }
     return size;
 }
@@ -293,17 +308,23 @@ MoodLogEvents *myLogEntry;
         [[cell moodName] setTextColor:[UIColor blackColor]];
         if (myLogEntry.editing.boolValue == YES) {
             [[cell checkMark] setHidden:NO];
-            [[cell moodName] setFont:[UIFont boldSystemFontOfSize:14.0]];
             if ([self.cellIdentifier isEqual: @"moodCellFaces"]) {
                 [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];
-            }
-            else {
+                [[cell moodName] setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:14]];
+           }
+            else { // no faces
                 [[cell moodName] setText:[NSString stringWithFormat:@"%@%@", check, aMood.name]];
-            }
+                [[cell moodName] setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:18]];
+           }
         }
         else { // not editing
             [[cell checkMark] setHidden:YES];
-            [[cell moodName] setFont:[UIFont systemFontOfSize:14.0]];
+            if ([self.cellIdentifier isEqual: @"moodCellFaces"]) {
+                [[cell moodName] setFont:[UIFont fontWithName:@"HelveticaNeue" size:14]];
+            }
+            else {
+                [[cell moodName] setFont:[UIFont fontWithName:@"HelveticaNeue" size:18]];               
+            }
             [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];
         }
     }
@@ -312,12 +333,13 @@ MoodLogEvents *myLogEntry;
         [cell setBackgroundColor:normalColor];
         [[cell moodName] setTextColor:[UIColor blackColor]];
         [[cell checkMark] setHidden:YES];
-        [[cell moodName] setFont:[UIFont systemFontOfSize:14.0]];
-        if ([self.cellIdentifier isEqual: @"moodCell"]) {
-            [[cell moodName] setText:[NSString stringWithFormat:@"    %@", aMood.name]];
-        }
-        else if ([self.cellIdentifier isEqual: @"moodCellFaces"]) {
+         if ([self.cellIdentifier isEqual: @"moodCellFaces"]) {
             [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.name]];
+            [[cell moodName] setFont:[UIFont fontWithName:@"HelveticaNeue" size:14]];
+        }
+        else if ([self.cellIdentifier isEqual: @"moodCell"]) {
+            [[cell moodName] setText:[NSString stringWithFormat:@"    %@", aMood.name]];
+            [[cell moodName] setFont:[UIFont fontWithName:@"HelveticaNeue" size:18]];
         }
     }
     

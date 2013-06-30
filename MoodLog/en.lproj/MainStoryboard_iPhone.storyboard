@@ -889,12 +889,12 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMi-mx-N7N" userLabel="View - Journal">
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fya-UP-j3G">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Some journal entry text" translatesAutoresizingMaskIntoConstraints="NO" id="Fya-UP-j3G">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="147" id="H15-dL-fYG"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Journal:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IT-cd-7VN">
@@ -1106,11 +1106,6 @@
                                                     <action selector="toggleFaces:" destination="21" eventType="touchUpInside" id="ik1-oT-1QI"/>
                                                 </connections>
                                             </button>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="BlackLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="jY8-YX-VaZ">
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="568" id="6Wl-5g-EAY"/>
-                                                </constraints>
-                                            </imageView>
                                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Touch 'Edit' to select moods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-4H-DNv">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="GuP-PV-Xph"/>
@@ -1120,10 +1115,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.79900380289999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="DFc-4Y-x9p" firstAttribute="leading" secondItem="nDr-yQ-mSJ" secondAttribute="leading" type="default" id="0qd-Uh-tpM"/>
                                             <constraint firstItem="kCU-OR-Vdv" firstAttribute="baseline" secondItem="TyT-rz-79Z" secondAttribute="baseline" type="user" id="7hw-84-sKw"/>
                                             <constraint firstItem="TyT-rz-79Z" firstAttribute="leading" secondItem="Ojk-mT-vhY" secondAttribute="trailing" constant="1" type="user" id="89z-kq-ihP"/>
+                                            <constraint firstItem="nZY-KA-KFn" firstAttribute="trailing" secondItem="nDr-yQ-mSJ" secondAttribute="trailing" type="user" id="8H8-7E-SZx"/>
                                             <constraint firstItem="DFc-4Y-x9p" firstAttribute="baseline" secondItem="A1s-Iu-BbV" secondAttribute="baseline" type="user" id="9ED-g2-8bM"/>
                                             <constraint firstItem="DFc-4Y-x9p" firstAttribute="top" secondItem="A1s-Iu-BbV" secondAttribute="top" type="default" id="Ahh-3x-n0s"/>
                                             <constraint firstItem="nZY-KA-KFn" firstAttribute="trailing" secondItem="nDr-yQ-mSJ" secondAttribute="trailing" type="user" id="DIB-gH-Gyj"/>
@@ -1141,20 +1138,19 @@
                                             <constraint firstItem="kCU-OR-Vdv" firstAttribute="bottom" secondItem="Rjx-y4-eZH" secondAttribute="bottom" type="default" id="Uzb-7f-LCp"/>
                                             <constraint firstItem="TyT-rz-79Z" firstAttribute="baseline" secondItem="DFc-4Y-x9p" secondAttribute="baseline" type="user" id="Vl5-83-QyE"/>
                                             <constraint firstItem="Rjx-y4-eZH" firstAttribute="leading" secondItem="nDr-yQ-mSJ" secondAttribute="leading" constant="102" id="W5K-UX-eZX"/>
-                                            <constraint firstItem="jY8-YX-VaZ" firstAttribute="leading" secondItem="nDr-yQ-mSJ" secondAttribute="leading" type="default" id="WqT-bP-Ev3"/>
                                             <constraint firstItem="Rjx-y4-eZH" firstAttribute="top" secondItem="A1s-Iu-BbV" secondAttribute="top" type="default" id="Yzj-gF-X4k"/>
                                             <constraint firstItem="DFc-4Y-x9p" firstAttribute="baseline" secondItem="kCU-OR-Vdv" secondAttribute="baseline" type="user" id="Zhj-N2-9r7"/>
                                             <constraint firstItem="DFc-4Y-x9p" firstAttribute="top" secondItem="nDr-yQ-mSJ" secondAttribute="top" constant="2" id="aoA-ip-vSm"/>
                                             <constraint firstItem="1uT-4H-DNv" firstAttribute="trailing" secondItem="nDr-yQ-mSJ" secondAttribute="trailing" type="default" id="csK-hQ-AgU"/>
                                             <constraint firstItem="A1s-Iu-BbV" firstAttribute="bottom" secondItem="Rjx-y4-eZH" secondAttribute="bottom" type="default" id="gnc-vs-Tqk"/>
-                                            <constraint firstItem="nZY-KA-KFn" firstAttribute="bottom" secondItem="nDr-yQ-mSJ" secondAttribute="bottom" type="default" id="nHd-JH-0wy"/>
+                                            <constraint firstAttribute="height" constant="135" id="gnf-yp-UhU"/>
+                                            <constraint firstItem="nZY-KA-KFn" firstAttribute="bottom" secondItem="nDr-yQ-mSJ" secondAttribute="bottom" type="user" id="nHd-JH-0wy"/>
                                             <constraint firstItem="TyT-rz-79Z" firstAttribute="bottom" secondItem="Ojk-mT-vhY" secondAttribute="bottom" type="default" id="pxT-fS-wQh"/>
-                                            <constraint firstAttribute="height" constant="136" id="s1R-uh-ErS"/>
-                                            <constraint firstItem="jY8-YX-VaZ" firstAttribute="bottom" secondItem="nDr-yQ-mSJ" secondAttribute="bottom" type="default" id="tDY-Su-6dk"/>
                                             <constraint firstItem="A1s-Iu-BbV" firstAttribute="leading" secondItem="nDr-yQ-mSJ" secondAttribute="leading" constant="51" id="uqy-sk-fXa"/>
                                             <constraint firstItem="Rjx-y4-eZH" firstAttribute="top" secondItem="kCU-OR-Vdv" secondAttribute="top" type="default" id="usL-pO-PN7"/>
                                             <constraint firstItem="1uT-4H-DNv" firstAttribute="top" secondItem="nDr-yQ-mSJ" secondAttribute="top" constant="63" id="uxv-IX-nSI"/>
                                             <constraint firstItem="nZY-KA-KFn" firstAttribute="leading" secondItem="nDr-yQ-mSJ" secondAttribute="leading" type="default" id="ybe-r3-THq"/>
+                                            <constraint firstItem="nZY-KA-KFn" firstAttribute="bottom" secondItem="nDr-yQ-mSJ" secondAttribute="bottom" type="user" id="zh0-pH-gJA"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlJ-dc-uQs" userLabel="View - Sliders">
@@ -1304,15 +1300,16 @@
                                 <constraints>
                                     <constraint firstItem="nDr-yQ-mSJ" firstAttribute="trailing" secondItem="RyJ-mV-bed" secondAttribute="trailing" type="default" id="4Qk-Ym-4iI"/>
                                     <constraint firstItem="FlJ-dc-uQs" firstAttribute="centerX" secondItem="RyJ-mV-bed" secondAttribute="centerX" type="user" id="9sW-Yi-3M7"/>
+                                    <constraint firstItem="nDr-yQ-mSJ" firstAttribute="top" secondItem="RyJ-mV-bed" secondAttribute="top" constant="166" id="E9X-XA-1Yk"/>
                                     <constraint firstItem="uMi-mx-N7N" firstAttribute="trailing" secondItem="RyJ-mV-bed" secondAttribute="trailing" type="default" id="EUW-E2-kPd"/>
-                                    <constraint firstItem="FlJ-dc-uQs" firstAttribute="top" secondItem="RyJ-mV-bed" secondAttribute="top" constant="301" id="HiX-YR-lgd"/>
-                                    <constraint firstAttribute="bottom" secondItem="FlJ-dc-uQs" secondAttribute="bottom" constant="179" id="OIc-Dn-Ccn"/>
+                                    <constraint firstAttribute="bottom" secondItem="FlJ-dc-uQs" secondAttribute="bottom" constant="178" id="Gi5-ed-GEU"/>
                                     <constraint firstItem="dKg-B9-nPn" firstAttribute="top" secondItem="RyJ-mV-bed" secondAttribute="top" type="default" id="SAa-33-Wqs"/>
                                     <constraint firstItem="FlJ-dc-uQs" firstAttribute="trailing" secondItem="RyJ-mV-bed" secondAttribute="trailing" type="default" id="SOK-mf-91i"/>
                                     <constraint firstItem="FlJ-dc-uQs" firstAttribute="leading" secondItem="RyJ-mV-bed" secondAttribute="leading" type="user" id="YAt-ZE-1rh"/>
+                                    <constraint firstItem="FlJ-dc-uQs" firstAttribute="top" secondItem="RyJ-mV-bed" secondAttribute="top" constant="302" id="ZZ3-qa-ifv"/>
                                     <constraint firstItem="uMi-mx-N7N" firstAttribute="top" secondItem="RyJ-mV-bed" secondAttribute="top" type="default" id="cvi-W0-SWk"/>
                                     <constraint firstItem="dKg-B9-nPn" firstAttribute="leading" secondItem="RyJ-mV-bed" secondAttribute="leading" type="default" id="e0x-Zk-RVk"/>
-                                    <constraint firstItem="nDr-yQ-mSJ" firstAttribute="top" secondItem="RyJ-mV-bed" secondAttribute="top" constant="166" id="j1E-cZ-UYc"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FlJ-dc-uQs" secondAttribute="bottom" constant="121" type="user" id="ghO-pv-gee"/>
                                     <constraint firstItem="uMi-mx-N7N" firstAttribute="leading" secondItem="RyJ-mV-bed" secondAttribute="leading" type="user" id="qEy-uw-lA1"/>
                                     <constraint firstItem="nDr-yQ-mSJ" firstAttribute="leading" secondItem="RyJ-mV-bed" secondAttribute="leading" type="user" id="vcN-Cz-ox4"/>
                                 </constraints>
@@ -1336,7 +1333,6 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="SortCBAButton" destination="DFc-4Y-x9p" id="XBU-U0-wWt"/>
                         <outlet property="dateLabel" destination="U9w-a4-rG3" id="PYa-Me-xTc"/>
@@ -1345,6 +1341,7 @@
                         <outlet property="energySlider" destination="6pp-eQ-x2v" id="ceC-CP-2a5"/>
                         <outlet property="entryLogTextView" destination="Fya-UP-j3G" id="Kha-oQ-N2n"/>
                         <outlet property="expandButton" destination="TyT-rz-79Z" id="b4D-on-2aS"/>
+                        <outlet property="facesView" destination="nDr-yQ-mSJ" id="Bip-iU-Uts"/>
                         <outlet property="healthSlider" destination="6Fw-V2-4H7" id="LYh-2b-8dt"/>
                         <outlet property="monthLabel" destination="t5S-12-CgZ" id="zW7-Yf-LWD"/>
                         <outlet property="moodContainer" destination="nZY-KA-KFn" id="9Gg-ba-SgN"/>
@@ -1353,6 +1350,7 @@
                         <outlet property="overallSlider" destination="18G-uL-sip" id="Pwo-MB-orP"/>
                         <outlet property="scrollView" destination="RyJ-mV-bed" id="3Th-jy-sme"/>
                         <outlet property="sleepSlider" destination="auN-Lz-hMF" id="cZH-qa-cXl"/>
+                        <outlet property="slidersView" destination="FlJ-dc-uQs" id="Qn2-dx-GlY"/>
                         <outlet property="sortABCButton" destination="A1s-Iu-BbV" id="Xac-SG-z7V"/>
                         <outlet property="sortGroupButton" destination="DFc-4Y-x9p" id="8fc-6F-ZSM"/>
                         <outlet property="sortShuffleButton" destination="Rjx-y4-eZH" id="h7j-qk-XhD"/>
@@ -1363,14 +1361,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="-744"/>
+            <point key="canvasLocation" x="812" y="-772"/>
         </scene>
         <!--Ml Mood Collection View Controller-->
         <scene sceneID="aKD-vW-xva">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="FED-j2-6ML" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Wbp-Ub-rp4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XmS-WN-o2f">
@@ -1381,15 +1379,15 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCell" id="prs-p7-24r" customClass="MlCollectionViewCell">
-                                <rect key="frame" x="70" y="49" width="128" height="18"/>
+                                <rect key="frame" x="70" y="45" width="154" height="24"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="18"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="154" height="24"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Euphoric" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-Bc-yL8">
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1397,17 +1395,18 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="Opd-Bc-yL8" firstAttribute="trailing" secondItem="prs-p7-24r" secondAttribute="trailing" type="default" id="NGN-PV-Vc1"/>
-                                    <constraint firstItem="Opd-Bc-yL8" firstAttribute="centerX" secondItem="prs-p7-24r" secondAttribute="centerX" type="default" id="bke-OD-2e1"/>
-                                    <constraint firstItem="Opd-Bc-yL8" firstAttribute="top" secondItem="prs-p7-24r" secondAttribute="top" type="default" id="h5A-nB-20d"/>
+                                    <constraint firstItem="Opd-Bc-yL8" firstAttribute="top" secondItem="prs-p7-24r" secondAttribute="top" type="default" id="NAX-qm-d5c"/>
+                                    <constraint firstItem="Opd-Bc-yL8" firstAttribute="trailing" secondItem="prs-p7-24r" secondAttribute="trailing" type="default" id="NGk-lC-aTA"/>
+                                    <constraint firstItem="Opd-Bc-yL8" firstAttribute="bottom" secondItem="prs-p7-24r" secondAttribute="bottom" type="default" id="tw4-Au-2Mw"/>
+                                    <constraint firstItem="Opd-Bc-yL8" firstAttribute="leading" secondItem="prs-p7-24r" secondAttribute="leading" type="default" id="xZM-a2-JQ3"/>
                                 </constraints>
-                                <size key="customSize" width="128" height="18"/>
+                                <size key="customSize" width="154" height="24"/>
                                 <connections>
                                     <outlet property="moodName" destination="Opd-Bc-yL8" id="gQA-el-TmW"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellFaces" id="u75-FG-Pvj" customClass="MlCollectionViewCell">
-                                <rect key="frame" x="198" y="1" width="84" height="114"/>
+                                <rect key="frame" x="224" y="0.0" width="84" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="84" height="114"/>
@@ -1440,7 +1439,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellHeader" id="VjC-BD-N8c" customClass="MlMoodCollectionViewHeaderView">
-                            <rect key="frame" x="0.0" y="0.0" width="70" height="116"/>
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="115"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAY-oL-Ifs">
@@ -1455,7 +1454,7 @@
                             </subviews>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="UAY-oL-Ifs" firstAttribute="top" secondItem="VjC-BD-N8c" secondAttribute="top" constant="110" id="Eba-2Y-FIC"/>
+                                <constraint firstItem="UAY-oL-Ifs" firstAttribute="top" secondItem="VjC-BD-N8c" secondAttribute="top" constant="109" id="XDR-IM-XzM"/>
                                 <constraint firstItem="UAY-oL-Ifs" firstAttribute="leading" secondItem="VjC-BD-N8c" secondAttribute="leading" constant="6" id="yRJ-qN-b9r"/>
                             </constraints>
                             <connections>
@@ -1968,6 +1967,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="energySlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="entryLogTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="expandButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="facesView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="healthSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="moodContainer" candidateClass="UIView"/>
@@ -1976,6 +1976,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="overallSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="sleepSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="slidersView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="sortGroupButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
@@ -2057,9 +2058,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

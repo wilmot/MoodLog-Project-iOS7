@@ -56,7 +56,9 @@ NSUserDefaults *defaults;
 }
 
 //- (void) viewDidAppear:(BOOL)animated {
-//    NSLog(@"Scroll view content view in viewDidAppear: %@", NSStringFromCGSize([self.scrollView contentSize]));
+//    [self.facesView setFrame:CGRectMake(self.facesView.frame.origin.x,self.facesView.frame.origin.y,self.facesView.frame.size.width,self.facesView.frame.size.height + 50.0)];
+//    [self.slidersView setFrame:CGRectMake(self.slidersView.frame.origin.x,self.slidersView.frame.origin.y + 50.0,self.slidersView.frame.size.width,self.slidersView.frame.size.height)];
+//
 //    [super viewDidAppear:animated];
 //}
 
