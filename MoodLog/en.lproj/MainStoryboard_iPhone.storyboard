@@ -1136,8 +1136,8 @@
                                                         <constraint firstAttribute="width" constant="146" id="8MN-cg-tZF"/>
                                                     </constraints>
                                                     <connections>
-                                                        <action selector="moveSlider:" destination="JzN-CV-xZQ" eventType="valueChanged" id="Cwv-9e-7YY"/>
-                                                        <action selector="setSliderData:" destination="JzN-CV-xZQ" eventType="valueChanged" id="y7V-RB-uou"/>
+                                                        <action selector="moveSlider:" destination="JzN-CV-xZQ" eventType="valueChanged" id="6gt-M4-1Wy"/>
+                                                        <action selector="setSliderData:" destination="JzN-CV-xZQ" eventType="touchUpInside" id="PVn-c1-Lsl"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Feel Bad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="com-th-Qj9">
@@ -1183,7 +1183,7 @@
                                                     </constraints>
                                                     <connections>
                                                         <action selector="moveSlider:" destination="JzN-CV-xZQ" eventType="valueChanged" id="NjI-I0-7pH"/>
-                                                        <action selector="setSliderData:" destination="JzN-CV-xZQ" eventType="valueChanged" id="vqW-aC-jeP"/>
+                                                        <action selector="setSliderData:" destination="JzN-CV-xZQ" eventType="touchUpInside" id="Zd5-ss-5pA"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Underslept" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4O-y7-QBQ">
@@ -1229,7 +1229,7 @@
                                                     </constraints>
                                                     <connections>
                                                         <action selector="moveSlider:" destination="JzN-CV-xZQ" eventType="valueChanged" id="BSX-PC-3CR"/>
-                                                        <action selector="setSliderData:" destination="JzN-CV-xZQ" eventType="valueChanged" id="oTP-9r-XRh"/>
+                                                        <action selector="setSliderData:" destination="JzN-CV-xZQ" eventType="touchUpInside" id="WCa-8E-Xml"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Low Energy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0k-kH-WEz">
@@ -1275,7 +1275,7 @@
                                                     </constraints>
                                                     <connections>
                                                         <action selector="moveSlider:" destination="JzN-CV-xZQ" eventType="valueChanged" id="5ov-4C-4gO"/>
-                                                        <action selector="setSliderData:" destination="JzN-CV-xZQ" eventType="valueChanged" id="C75-WD-1ca"/>
+                                                        <action selector="setSliderData:" destination="JzN-CV-xZQ" eventType="touchUpInside" id="7Xt-NK-PBf"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sick" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgC-cN-QXu">
