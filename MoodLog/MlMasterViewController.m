@@ -439,8 +439,8 @@
     }
     as = [[NSMutableAttributedString alloc] initWithString:displayString];
     NSRange moodListRange = NSMakeRange(entryEnd, [as length] - entryEnd);
-    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Medium" size:14] range:NSMakeRange(0,entryEnd)];
-    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:14] range:moodListRange];
+    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue" size:14] range:NSMakeRange(0,entryEnd)];
+    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Light" size:14] range:moodListRange];
     [as addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:moodListRange];
     cell.mainLabel.attributedText = as;
     

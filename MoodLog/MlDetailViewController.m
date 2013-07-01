@@ -10,6 +10,7 @@
 #import "MlMasterViewController.h"
 #import "MlAppDelegate.h"
 #import "MlDatePickerViewController.h"
+#import "MlJournalEditorViewController.h"
 #import "Prefs.h"
 
 @interface MlDetailViewController ()
@@ -55,12 +56,10 @@ NSUserDefaults *defaults;
     }
 }
 
-//- (void) viewDidAppear:(BOOL)animated {
-//    [self.facesView setFrame:CGRectMake(self.facesView.frame.origin.x,self.facesView.frame.origin.y,self.facesView.frame.size.width,self.facesView.frame.size.height + 50.0)];
-//    [self.slidersView setFrame:CGRectMake(self.slidersView.frame.origin.x,self.slidersView.frame.origin.y + 50.0,self.slidersView.frame.size.width,self.slidersView.frame.size.height)];
-//
-//    [super viewDidAppear:animated];
-//}
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+}
 
 - (void)configureView
 {
@@ -93,7 +92,7 @@ NSUserDefaults *defaults;
         dateFormatter.dateFormat = @"MMM YYYY";
         self.monthLabel.text = [dateFormatter stringFromDate: today];
         
-        self.entryLogTextView.text = [self.detailItem valueForKey:@"journalEntry"];
+        self.entryLogTextView.text = self.detailItem.journalEntry;
         
         // Set the sliders
         [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
@@ -243,7 +242,13 @@ NSUserDefaults *defaults;
         // do stuff around the date & time
         myDatePickerViewController = [segue destinationViewController];
         myDatePickerViewController.detailItem = self.detailItem;
-        myDatePickerViewController.dateToSet = [self.detailItem valueForKey:@"date"];
+        myDatePickerViewController.dateToSet = self.detailItem.date;
+        myDatePickerViewController.detailViewController = self;
+    }
+    else if ([segue.identifier isEqualToString:@"journalEditor"]) {
+        // edit the journal entry text
+        MlJournalEditorViewController *myJournalEntryViewController = [segue destinationViewController];
+        myJournalEntryViewController.detailItem = self.detailItem;
         myDatePickerViewController.detailViewController = self;
     }
     else if ([segue.identifier isEqualToString:@"chartView"]) {

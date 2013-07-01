@@ -169,19 +169,19 @@ MoodLogEvents *myLogEntry;
         }
     }
     
-    UICollectionViewFlowLayout *myLayout = [[UICollectionViewFlowLayout alloc]init];
-    if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
-        if (myLogEntry.editing.boolValue == YES) {
-            myLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        }
-        else {
-            myLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        }
-    }
-    else {
-        myLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    }
-    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
+//    UICollectionViewFlowLayout *myLayout = [[UICollectionViewFlowLayout alloc]init];
+//    if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
+//        if (myLogEntry.editing.boolValue == YES) {
+//            myLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+//        }
+//        else {
+//            myLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+//        }
+//    }
+//    else {
+//        myLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+//    }
+//    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
 
     [self.collectionView reloadData];
 }
@@ -285,7 +285,7 @@ MoodLogEvents *myLogEntry;
         }
     }
     else if ([self.cellIdentifier isEqual: @"moodCell"]) {
-        size = CGSizeMake(150.0, 18.0);
+        size = CGSizeMake(96.0, 18.0);
     }
     return size;
 }
