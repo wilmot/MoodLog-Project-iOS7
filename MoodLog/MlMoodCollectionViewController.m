@@ -74,6 +74,9 @@ MoodLogEvents *myLogEntry;
     if (!self.cellIdentifier) {
         self.cellIdentifier = @"moodCell";
     }
+    // WWDC 2012 video introduction to UICollectionViews talks about registering the class
+    // But apparently this isn't needed if I use Storyboards; instead I should set the "Prototype Cell" in the Storyboard
+    //[self.collectionView registerClass:[MlCollectionViewCell class] forCellWithReuseIdentifier:@"moodCell"];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

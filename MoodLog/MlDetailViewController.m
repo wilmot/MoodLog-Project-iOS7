@@ -92,7 +92,15 @@ NSUserDefaults *defaults;
         dateFormatter.dateFormat = @"MMM YYYY";
         self.monthLabel.text = [dateFormatter stringFromDate: today];
         
-        self.entryLogTextView.text = self.detailItem.journalEntry;
+        if (self.detailItem.journalEntry.length > 0) {
+            // There's interesting content
+            self.entryLogTextView.textColor = [UIColor blackColor];
+            self.entryLogTextView.text = self.detailItem.journalEntry;
+        }
+        else {
+            self.entryLogTextView.textColor = [UIColor grayColor];
+            self.entryLogTextView.text = @"<Touch to add a journal entry>";
+        }
         
         // Set the sliders
         [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
@@ -129,6 +137,7 @@ NSUserDefaults *defaults;
         [self.blankCoveringView setHidden:YES];
         [self.scrollView setHidden:NO];
         [self.detailToolBar setRightBarButtonItem:nil animated:YES];
+        [self.tableView reloadData]; // Get the cell heights to recalculate
         
     }
     else { // Nothing selected
@@ -344,6 +353,35 @@ NSUserDefaults *defaults;
         [self.noMoodsLabel setHidden:YES];    
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height;
+    CGSize textViewSize;
+    switch (indexPath.section) {
+        case 0: //Calendar
+            height = 90.0;
+            break;
+        case 1: //Moods
+            height = 160.0;
+            break;
+        case 2: //Sliders
+            height = 35.0;
+            break;
+        case 3: //Journal
+            // This isn't working. More text makes the height longer, but not based on the number of lines of text
+            // Research what to do here some more
+            textViewSize = [self.entryLogTextView.text sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:12] constrainedToSize:CGSizeMake(19.0, FLT_MAX)];
+            height = textViewSize.height;
+            height = 120.0; // REMOVE ME
+            break;
+        default:
+            height = 100.0;
+            break;
+    }
+    return height;
+}
+
 
 - (void) setFaces:(BOOL)facesState {
     if (facesState == YES) {

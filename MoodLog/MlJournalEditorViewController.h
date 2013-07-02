@@ -11,8 +11,11 @@
 
 @interface MlJournalEditorViewController : UIViewController <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *journalTextView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (weak, nonatomic) IBOutlet UINavigationItem *journalToolbar;
 
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) MlDetailViewController *detailViewController;
 
+- (IBAction)pressDoneButton:(id)sender;
 @end

@@ -35,6 +35,7 @@ MoodLogEvents *mood;
 - (void)viewWillAppear:(BOOL)animated {
     mood = (MoodLogEvents *) self.detailItem;
     self.journalTextView.text = mood.journalEntry;
+    [self.journalToolbar setRightBarButtonItem:nil animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +47,9 @@ MoodLogEvents *mood;
 - (void)viewWillDisappear:(BOOL)animated {
     mood.journalEntry = self.journalTextView.text;
     [self saveContext];
+}
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    [self.journalToolbar setRightBarButtonItem:self.doneButton animated:YES];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
@@ -64,4 +68,8 @@ MoodLogEvents *mood;
     }
 }
 
+- (IBAction)pressDoneButton:(id)sender {
+    [self.journalTextView resignFirstResponder];
+    [self.journalToolbar setRightBarButtonItem:nil animated:YES];
+}
 @end
