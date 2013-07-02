@@ -8,11 +8,11 @@
 
 #import "MlMasterViewController.h"
 #import "MlDetailViewController.h"
-#import "MlCell.h"
 #import "MlMoodDataItem.h"
 #import "MlAppDelegate.h"
 #import "MoodLogEvents.h"
 #import "Emotions.h"
+#import "MlCell.h"
 
 @interface MlMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -426,24 +426,34 @@
         }
         
     }
-    NSString *entry = [object valueForKey:@"journalEntry"];
     NSMutableString *displayString = [[NSMutableString alloc] init];
     int entryEnd = 0;
     NSMutableAttributedString *as;
-    if ([entry length] > 0) {
-        [displayString appendFormat:@"%@\n", [object valueForKey:@"journalEntry"]];
-        entryEnd = [displayString length];
-    }
     if (emotionArray) {
-        [displayString appendFormat:@"I feel %@%@", selectedEms, lastEm];
+        [displayString appendFormat:@"I feel %@%@\n", selectedEms, lastEm];
+    }
+    entryEnd = [displayString length];
+    NSString *entry = [object valueForKey:@"journalEntry"];
+    if (entry.length > 0) {
+        [displayString appendFormat:@"%@\n", [object valueForKey:@"journalEntry"]];
     }
     as = [[NSMutableAttributedString alloc] initWithString:displayString];
-    NSRange moodListRange = NSMakeRange(entryEnd, [as length] - entryEnd);
-    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue" size:14] range:NSMakeRange(0,entryEnd)];
-    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Light" size:14] range:moodListRange];
-    [as addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:moodListRange];
+    NSRange journalRange = NSMakeRange(entryEnd, [as length] - entryEnd);
+    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Italic" size:14] range:NSMakeRange(0,entryEnd)];
+    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Light" size:14] range:journalRange];
+    [as addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:journalRange];
     cell.mainLabel.attributedText = as;
     
+//    // Color the cells based on overall mood
+//    UIColor *barColor;
+//    CGFloat overallValue = [object.overall floatValue];
+//    if (overallValue >= 0) { // Tint green
+//        barColor = [UIColor colorWithRed:fabsf((overallValue  - 10.0)/20.0) green:(overallValue + 10.0)/20.0 blue:1.0 - (overallValue + 10.0)/20.0 alpha:0.05];
+//    }
+//    else { // Tint red
+//        barColor = [UIColor colorWithRed:fabsf((overallValue - 10.0)/20.0) green:(overallValue + 10.0)/20.0 blue:1.0 - fabsf((overallValue - 10.0)/20.0) alpha:0.05];
+//    }
+//    [cell.cellBackground setBackgroundColor:barColor];
 }
 
 @end

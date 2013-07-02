@@ -756,11 +756,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ct-v5-ee5">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </view>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="CalendarBlank49.png" translatesAutoresizingMaskIntoConstraints="NO" id="gvR-9p-Di7"/>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="wPi-0y-5Ta">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="65" id="2ic-Hk-oNU"/>
-                                                <constraint firstAttribute="width" constant="250" id="9Ax-Yo-6wz"/>
                                             </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="Today I feel: Does the font shrink when I have more text? And what if it goes to three lines?">
@@ -804,20 +806,26 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Kmd-Bi-Sv9" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="50" type="user" id="1p5-9T-Gtu"/>
+                                    <constraint firstItem="gvR-9p-Di7" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" type="default" id="26a-vD-vKB"/>
+                                    <constraint firstItem="Q6G-uq-HNC" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="5" id="4Ug-O3-rd3"/>
                                     <constraint firstItem="Q6G-uq-HNC" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="-1" id="AzK-Vx-VpF"/>
+                                    <constraint firstItem="0ct-v5-ee5" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" type="default" id="DnR-LT-6Yh"/>
                                     <constraint firstItem="khh-RL-Vqb" firstAttribute="centerX" secondItem="Q6G-uq-HNC" secondAttribute="centerX" type="default" id="Eac-al-AI3"/>
                                     <constraint firstItem="Q6G-uq-HNC" firstAttribute="centerY" secondItem="Kmd-Bi-Sv9" secondAttribute="centerY" type="default" id="GZJ-y3-tAj"/>
                                     <constraint firstItem="wPi-0y-5Ta" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="10" id="H0Y-2b-evI"/>
-                                    <constraint firstItem="gvR-9p-Di7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="1" type="user" id="JRE-U2-PDc"/>
-                                    <constraint firstItem="gvR-9p-Di7" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="1" id="Lif-6L-ocC"/>
-                                    <constraint firstItem="Q6G-uq-HNC" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="6" id="OhI-dh-whk"/>
+                                    <constraint firstItem="0ct-v5-ee5" firstAttribute="bottom" secondItem="wPi-0y-5Ta" secondAttribute="bottom" type="default" id="MvL-ol-GQU"/>
+                                    <constraint firstItem="0ct-v5-ee5" firstAttribute="centerX" secondItem="lJ0-d7-vTF" secondAttribute="centerX" type="default" id="O7M-Rn-4eX"/>
+                                    <constraint firstItem="wPi-0y-5Ta" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="50" type="user" id="S7Q-pN-biQ"/>
                                     <constraint firstItem="khh-RL-Vqb" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="16" id="UZR-Dw-nQG"/>
                                     <constraint firstItem="gvR-9p-Di7" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" type="default" id="fKh-pm-Jv2"/>
-                                    <constraint firstItem="wPi-0y-5Ta" firstAttribute="leading" secondItem="Kmd-Bi-Sv9" secondAttribute="leading" type="default" id="pWD-r5-stT"/>
-                                    <constraint firstAttribute="trailing" secondItem="wPi-0y-5Ta" secondAttribute="trailing" constant="20" type="default" id="uOi-2q-CSe"/>
+                                    <constraint firstItem="wPi-0y-5Ta" firstAttribute="leading" secondItem="Kmd-Bi-Sv9" secondAttribute="leading" type="user" id="pWD-r5-stT"/>
+                                    <constraint firstItem="0ct-v5-ee5" firstAttribute="top" secondItem="Q6G-uq-HNC" secondAttribute="top" type="default" id="sKj-Lx-f2B"/>
+                                    <constraint firstAttribute="trailing" secondItem="wPi-0y-5Ta" secondAttribute="trailing" constant="20" type="user" id="uOi-2q-CSe"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="calendarImage" destination="gvR-9p-Di7" id="aIq-Nt-VKl"/>
+                                    <outlet property="cellBackground" destination="0ct-v5-ee5" id="7mL-Oc-v9Y"/>
                                     <outlet property="dateLabel" destination="khh-RL-Vqb" id="wwO-2m-3y3"/>
                                     <outlet property="mainLabel" destination="wPi-0y-5Ta" id="6OZ-Ul-IRU"/>
                                     <outlet property="timeLabel" destination="Kmd-Bi-Sv9" id="Zh1-bt-dl4"/>
@@ -878,7 +886,7 @@
             </objects>
             <point key="canvasLocation" x="83" y="-164"/>
         </scene>
-        <!--Ml Detail View Controller - Journal Entry-->
+        <!--Ml Detail View Controller - Mood Log Entry-->
         <scene sceneID="fO1-RU-NEO">
             <objects>
                 <tableViewController id="JzN-CV-xZQ" customClass="MlDetailViewController" sceneMemberID="viewController">
@@ -1313,7 +1321,7 @@
                             <tableViewSection headerTitle="Journal" id="gCR-M1-aqz">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="211" id="ZCh-Jg-PsL">
-                                        <rect key="frame" x="0.0" y="507" width="320" height="213"/>
+                                        <rect key="frame" x="0.0" y="507" width="320" height="212"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="210"/>
@@ -1347,8 +1355,8 @@
                             <outlet property="delegate" destination="JzN-CV-xZQ" id="NvV-Qc-QIs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Journal Entry" id="P0o-SE-Hfx">
-                        <barButtonItem key="backBarButtonItem" title="Journal Entry" id="ZuG-Wc-HGD"/>
+                    <navigationItem key="navigationItem" title="Mood Log Entry" id="P0o-SE-Hfx">
+                        <barButtonItem key="backBarButtonItem" title="Mood Log Entry" id="ZuG-Wc-HGD"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="iw1-W1-YFy">
                             <connections>
                                 <action selector="pressedDoneButton:" destination="JzN-CV-xZQ" id="QPF-gr-9qJ"/>

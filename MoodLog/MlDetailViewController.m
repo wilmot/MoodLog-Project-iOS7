@@ -358,6 +358,7 @@ NSUserDefaults *defaults;
 {
     CGFloat height;
     CGSize textViewSize;
+    UIInterfaceOrientation orientation;
     switch (indexPath.section) {
         case 0: //Calendar
             height = 90.0;
@@ -369,11 +370,14 @@ NSUserDefaults *defaults;
             height = 35.0;
             break;
         case 3: //Journal
-            // This isn't working. More text makes the height longer, but not based on the number of lines of text
-            // Research what to do here some more
-            textViewSize = [self.entryLogTextView.text sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:12] constrainedToSize:CGSizeMake(19.0, FLT_MAX)];
-            height = textViewSize.height;
-            height = 120.0; // REMOVE ME
+            orientation = [[UIApplication sharedApplication] statusBarOrientation];
+            if (orientation == UIInterfaceOrientationPortrait) {
+                textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(273.0, FLT_MAX)];
+            }
+            else {
+                textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(521.0, FLT_MAX)];
+            }
+            height = textViewSize.height + 20.0;
             break;
         default:
             height = 100.0;
