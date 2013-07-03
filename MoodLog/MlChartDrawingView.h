@@ -11,7 +11,10 @@
 @interface MlChartDrawingView : UIView
 
 @property (nonatomic, assign) CGRect barRect;
-@property (nonatomic, assign) CGFloat chartHeight;
+@property (nonatomic, assign) CGFloat chartHeightOverall;
+@property (nonatomic, assign) CGFloat chartHeightSleep;
+@property (nonatomic, assign) CGFloat chartHeightHealth;
+@property (nonatomic, assign) CGFloat chartHeightEnergy;
 @property (strong, nonatomic) NSString *chartType;
 @property (strong, nonatomic) NSDictionary *categoryCounts;
 

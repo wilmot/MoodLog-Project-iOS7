@@ -42,7 +42,7 @@ static NSUInteger numberOfDivisions = 20;
         NSUInteger interval = rect.size.height/numberOfDivisions;
       
         // Draw the chart bar
-        [self drawChartBar:rect];
+        [self drawChartBars:rect];
 
         // Horizontal stripes
         CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 0.25);
@@ -123,34 +123,72 @@ static NSUInteger numberOfDivisions = 20;
     }
 }
 
--(void) drawChartBar: (CGRect) rect {
+-(void) drawChartBars: (CGRect) rect {
     CGFloat barHeight, barOriginY;
     NSUInteger interval = rect.size.height/numberOfDivisions;
     CGContextRef context = UIGraphicsGetCurrentContext();
    // CGContextSetRGBFillColor(context, 0.25, 0.75, 0.25, 0.25);
     CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0);
     
+    // Overall
     // Bar should start in the middle
     // and draw up for positive, down for negative
     // Range is -10..10
-    barHeight = interval*fabs(round(self.chartHeight));
-    if (self.chartHeight > 0) {
+    barHeight = interval*fabs(round(self.chartHeightOverall));
+    if (self.chartHeightOverall > 0) {
         barOriginY = interval*10.0 - barHeight;
     }
     else {
-        barOriginY = interval*10.0;        
+        barOriginY = interval*10.0;
     }
+    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightOverall] CGColor]);
+    CGContextFillRect(context, CGRectMake(0.0, barOriginY, rect.size.width/4, barHeight));
+
+    // Sleep
+    barHeight = interval*fabs(round(self.chartHeightSleep));
+    if (self.chartHeightSleep > 0) {
+        barOriginY = interval*10.0 - barHeight;
+    }
+    else {
+        barOriginY = interval*10.0;
+    }
+    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightSleep] CGColor]);
+    CGContextFillRect(context, CGRectMake(0.0 + rect.size.width/4, barOriginY, rect.size.width/4, barHeight));
+
+    // Energy
+    barHeight = interval*fabs(round(self.chartHeightEnergy));
+    if (self.chartHeightEnergy > 0) {
+        barOriginY = interval*10.0 - barHeight;
+    }
+    else {
+        barOriginY = interval*10.0;
+    }
+    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightEnergy] CGColor]);
+    CGContextFillRect(context, CGRectMake(0.0 + 2*rect.size.width/4, barOriginY, rect.size.width/4, barHeight));
+
+    // Health
+    barHeight = interval*fabs(round(self.chartHeightHealth));
+    if (self.chartHeightHealth > 0) {
+        barOriginY = interval*10.0 - barHeight;
+    }
+    else {
+        barOriginY = interval*10.0;
+    }
+    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightHealth] CGColor]);
+    CGContextFillRect(context, CGRectMake(0.0 + 3*rect.size.width/4, barOriginY, rect.size.width/4, barHeight));
+}
+
+- (UIColor *) theBarColor: (CGFloat) barHeight {
     UIColor *barColor;
-    if (self.chartHeight >= 0) { // Tint green
-        barColor = [UIColor colorWithRed:fabsf((self.chartHeight  - 10.0)/20.0) green:(self.chartHeight + 10.0)/20.0 blue:1.0 - (self.chartHeight + 10.0)/20.0 alpha:1.0];
+    if (barHeight >= 0) { // Tint green
+        barColor = [UIColor colorWithRed:fabsf((barHeight  - 10.0)/20.0) green:(barHeight + 10.0)/20.0 blue:1.0 - (barHeight + 10.0)/20.0 alpha:1.0];
     }
     else { // Tint red
-        barColor = [UIColor colorWithRed:fabsf((self.chartHeight - 10.0)/20.0) green:(self.chartHeight + 10.0)/20.0 blue:1.0 - fabsf((self.chartHeight - 10.0)/20.0) alpha:1.0];
+        barColor = [UIColor colorWithRed:fabsf((barHeight - 10.0)/20.0) green:(barHeight + 10.0)/20.0 blue:1.0 - fabsf((barHeight - 10.0)/20.0) alpha:1.0];
     }
-
-    CGContextSetRGBFillColor(context, 0.25, 0.75, 0.25, 0.25);
-    CGContextSetFillColorWithColor(context, [barColor CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0, barOriginY, rect.size.width, barHeight));
+    return barColor;
 }
+
+
 
 @end

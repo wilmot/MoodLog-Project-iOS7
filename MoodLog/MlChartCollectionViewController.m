@@ -203,20 +203,52 @@ Boolean firstLoad;
     
     NSDate *today = [moodLogObject valueForKey:@"date"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *weekdayComponents =
+    [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
+    NSInteger day = [weekdayComponents day];
     
     static NSArray *dayNames = nil;
     if (!dayNames) {
         [dateFormatter setCalendar:[NSCalendar currentCalendar]];
         dayNames = [dateFormatter weekdaySymbols];
     }
-
-    dateFormatter.dateFormat = @"h:mm a";
     
-    cell.timeLabel.text = [dateFormatter stringFromDate: today];
-    dateFormatter.dateFormat = @"MMMM dd";
-    cell.monthLabel.text = [dateFormatter stringFromDate: today];
-    dateFormatter.dateFormat = @"yyyy";
-    cell.dateLabel.text = [dateFormatter stringFromDate: today];
+    // TODO: This logic is convoluted; revisit
+    if ([indexPath row] > 0) {
+        NSIndexPath *oldIndexPath = [NSIndexPath indexPathForItem:[indexPath row] - 1 inSection:[indexPath section]];
+        MoodLogEvents *previousObject = [self.fetchedResultsController objectAtIndexPath:oldIndexPath];
+        NSDate *oldToday = [previousObject valueForKey:@"date"];
+        NSDateComponents *oldWeekdayComponents =
+        [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:oldToday];
+        NSInteger oldDay = [oldWeekdayComponents day];
+        if (oldDay != day) {
+            dateFormatter.dateFormat = @"yyyy";
+            cell.dateLabel.text = [dateFormatter stringFromDate: today];
+            dateFormatter.dateFormat = @"MMMM dd";
+            cell.monthLabel.text = [dateFormatter stringFromDate: today];
+            dateFormatter.dateFormat = @"h:mm a";
+            cell.timeLabel.text = [dateFormatter stringFromDate: today];
+        }
+        else {
+            dateFormatter.dateFormat = @"yyyy";
+            cell.dateLabel.text = @"";
+            dateFormatter.dateFormat = @"MMMM dd";
+            cell.monthLabel.text = @"";
+            dateFormatter.dateFormat = @"h:mm a";
+            cell.timeLabel.text = [dateFormatter stringFromDate: today];
+        }
+    }
+    else {
+        dateFormatter.dateFormat = @"yyyy";
+        cell.dateLabel.text = [dateFormatter stringFromDate: today];
+        dateFormatter.dateFormat = @"MMMM dd";
+        cell.monthLabel.text = [dateFormatter stringFromDate: today];
+        dateFormatter.dateFormat = @"h:mm a";
+        cell.timeLabel.text = [dateFormatter stringFromDate: today];
+    }
+
     cell.detailItem = moodLogObject;
     cell.myViewController = self;
     
@@ -335,7 +367,10 @@ Boolean firstLoad;
         CGFloat height = emotionArrayCount>0 ? feelTotal/emotionArrayCount : 0; // Average (mean)
         cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
         //[cell.chartDrawingView setChartHeight:height];
-        [cell.chartDrawingView setChartHeight:[[moodLogObject valueForKey:@"overall"] floatValue]];
+        [cell.chartDrawingView setChartHeightOverall:[moodLogObject.overall floatValue]];
+        [cell.chartDrawingView setChartHeightSleep:[moodLogObject.sleep floatValue]];
+        [cell.chartDrawingView setChartHeightEnergy:[moodLogObject.energy floatValue]];
+        [cell.chartDrawingView setChartHeightHealth:[moodLogObject.health floatValue]];
 
     }
     else { // Pie
