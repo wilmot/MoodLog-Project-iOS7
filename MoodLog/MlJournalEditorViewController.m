@@ -30,12 +30,27 @@ MoodLogEvents *mood;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.journalTextView setDelegate:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     mood = (MoodLogEvents *) self.detailItem;
     self.journalTextView.text = mood.journalEntry;
     [self.journalToolbar setRightBarButtonItem:nil animated:YES];
+}
+
+- (void) keyboardDidShow:(NSNotification *)aNotification {
+    NSLog(@"About to show keyboard");
+    NSDictionary *info = [aNotification userInfo];
+    CGRect keyboardRect = [self.view.window convertRect:[[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue] toView:self.view];
+    [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.journalTextView.bounds.size.height - keyboardRect.size.height)];
+}
+
+- (void) keyboardWillHide:(NSNotification *)aNotification {
+    NSLog(@"About to hide keyboard");
+    CGRect statusBarFrame = [self.view.window convertRect:[UIApplication sharedApplication].statusBarFrame toView:self.view];
+    [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.parentViewController.view.bounds.size.height - self.navigationController.toolbar.frame.size.height - statusBarFrame.size.height)];
 }
 
 - (void)didReceiveMemoryWarning

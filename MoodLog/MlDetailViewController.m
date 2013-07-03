@@ -361,7 +361,7 @@ NSUserDefaults *defaults;
     UIInterfaceOrientation orientation;
     switch (indexPath.section) {
         case 0: //Calendar
-            height = 90.0;
+            height = 65.0;
             break;
         case 1: //Moods
             height = 160.0;
