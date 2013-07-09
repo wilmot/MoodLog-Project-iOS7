@@ -126,17 +126,19 @@ NSUserDefaults *defaults;
         }
         else {
             // iPhone
-            if (self.detailItem.editing.boolValue == YES) {
-                // Go to the modal mood list
-                // The delay gives a chance for the original transition to the detail view to complete
-                [self performSelector:@selector(goToEditPanel) withObject:self afterDelay:0.1];
-            }
+            // TODO: Remove this code as I no longer do a special transition on first load of the view
+//            if (self.detailItem.editing.boolValue == YES) {
+//                // Go to the modal mood list
+//                // The delay gives a chance for the original transition to the detail view to complete
+//                [self performSelector:@selector(goToEditPanel) withObject:self afterDelay:0.1];
+//            }
         }
   
         [self.entryLogTextView setDelegate:self];
         [self.blankCoveringView setHidden:YES];
         [self.scrollView setHidden:NO];
         [self.detailToolBar setRightBarButtonItem:nil animated:YES];
+        [self.myMoodCollectionViewController refresh]; // Make sure the collection view loads (so the heights get calculated correctly when the table gets refreshed)
         [self.tableView reloadData]; // Get the cell heights to recalculate
         
     }
@@ -147,9 +149,9 @@ NSUserDefaults *defaults;
     }
 }
 
-- (void)goToEditPanel {
-    [self performSegueWithIdentifier: @"MoodFullScreenSegue" sender: self];
-}
+//- (void)goToEditPanel {
+//    [self performSegueWithIdentifier: @"MoodFullScreenSegue" sender: self];
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -278,13 +280,15 @@ NSUserDefaults *defaults;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
+    [self.tableView reloadData]; // Get the cell heights to recalculate
 }
 
 - (IBAction)sortGroup:(id)sender {
     [self setSortStyle:groupSort];
     [self saveContext];
     [self selectButton];
-    [self.myMoodCollectionViewController refresh];    
+    [self.myMoodCollectionViewController refresh];
+    [self.tableView reloadData]; // Get the cell heights to recalculate
 }
 
 - (IBAction)sortCBA:(id)sender {
@@ -292,6 +296,7 @@ NSUserDefaults *defaults;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
+    [self.tableView reloadData]; // Get the cell heights to recalculate
 }
 
 - (IBAction)sortShuffle:(id)sender {
@@ -299,6 +304,7 @@ NSUserDefaults *defaults;
     [self saveContext];
     [self selectButton];
     [self.myMoodCollectionViewController refresh];
+    [self.tableView reloadData]; // Get the cell heights to recalculate
 }
 
 - (IBAction)toggleFaces:(id)sender {
@@ -306,7 +312,7 @@ NSUserDefaults *defaults;
     [self setFaces:facesState];
     [defaults setBool:facesState forKey:@"DefaultFacesState"];
     [defaults synchronize];
-
+    [self.tableView reloadData]; // Get the cell heights to recalculate
 }
 
 - (IBAction)addEntryFromStartScreen:(id)sender {
@@ -340,18 +346,14 @@ NSUserDefaults *defaults;
 
 - (void) setVisibilityofNoMoodsLabel {
     int sections = self.myMoodCollectionViewController.collectionView.numberOfSections;
-    if ([self.expandButton.titleLabel.text isEqual:@"Edit"]) {
-        [self.noMoodsLabel setHidden:NO];
-        for (int i=0; i < sections; i++) {
-            if ([self.myMoodCollectionViewController.collectionView numberOfItemsInSection:i ] > 0) {
-                [self.noMoodsLabel setHidden:YES]; // Should only show if there are no moods selected
-                break;
-            }
+    BOOL shouldHideLabel = NO;
+    for (int i=0; i < sections; i++) {
+        if ([self.myMoodCollectionViewController.collectionView numberOfItemsInSection:i ] > 0) {
+            shouldHideLabel = YES; // Should only show if there are no moods selected
+            break;
         }
     }
-    else {
-        [self.noMoodsLabel setHidden:YES];    
-    }
+    [self.noMoodsLabel setHidden:shouldHideLabel];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -364,7 +366,19 @@ NSUserDefaults *defaults;
             height = 65.0;
             break;
         case 1: //Moods
-            height = 160.0;
+            if (indexPath.row == 0) {
+                height = 34.0;
+            }
+            else {
+                CGSize foo = self.myMoodCollectionViewController.collectionView.collectionViewLayout.collectionViewContentSize;
+                NSLog(@"Height: %f",foo.height);
+                if (foo.height == 0) {
+                    height = 240.0;
+                }
+                else {
+                    height = foo.height + 20.0;
+                }
+            }
             break;
         case 2: //Sliders
             height = 35.0;

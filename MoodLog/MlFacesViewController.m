@@ -41,6 +41,11 @@ NSUserDefaults *defaults;
     [self.myMoodCollectionViewController refresh];
 }
 
+- (void) viewWillDisappear:(BOOL)animated {
+    NSLog(@"Dismissing faces view controller");
+    [self doneButtonPressed:self];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"MoodCollectionSegue2"]) {
         self.myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
@@ -132,6 +137,7 @@ NSUserDefaults *defaults;
     self.detailItem.editing = [NSNumber numberWithBool:NO];
     [self saveContext];
     [self dismissViewControllerAnimated:YES completion:nil];
+    // BL-L ***REMIND go back...
 }
 
 - (void) saveContext { // Save data to the database

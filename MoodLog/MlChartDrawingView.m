@@ -31,13 +31,6 @@ static NSUInteger numberOfDivisions = 20;
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    // Vertical gray line at right edge
-    CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
-    CGContextSetLineWidth(context, 1.0);
-    CGContextMoveToPoint(context, rect.size.width, 0.0); //start at this point
-    CGContextAddLineToPoint(context, rect.size.width, rect.size.height); //draw to this point
-    CGContextStrokePath(context);
-
     if ([self.chartType isEqual:@"Bar"]) {
         NSUInteger interval = rect.size.height/numberOfDivisions;
       
@@ -121,6 +114,13 @@ static NSUInteger numberOfDivisions = 20;
         CGContextClosePath(context);
         CGContextFillPath(context);
     }
+    
+    // Vertical gray line at right edge
+    CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
+    CGContextSetLineWidth(context, 1.0);
+    CGContextMoveToPoint(context, rect.size.width, 0.0); //start at this point
+    CGContextAddLineToPoint(context, rect.size.width, rect.size.height); //draw to this point
+    CGContextStrokePath(context);
 }
 
 -(void) drawChartBars: (CGRect) rect {
@@ -141,8 +141,8 @@ static NSUInteger numberOfDivisions = 20;
     else {
         barOriginY = interval*10.0;
     }
-    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightOverall] CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0, barOriginY, rect.size.width/4, barHeight));
+    CGContextSetFillColorWithColor(context, [[[[[[self theBarColor:self.chartHeightOverall] darkerColor] darkerColor] darkerColor] darkerColor] CGColor]);
+    CGContextFillRect(context, CGRectMake(0.0, barOriginY, rect.size.width, barHeight));
 
     // Sleep
     barHeight = interval*fabs(round(self.chartHeightSleep));
@@ -188,7 +188,5 @@ static NSUInteger numberOfDivisions = 20;
     }
     return barColor;
 }
-
-
 
 @end

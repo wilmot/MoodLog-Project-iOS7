@@ -143,7 +143,7 @@
     [self tableView:self.tableView didSelectRowAtIndexPath:scrollIndexPath];
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         // iPad doesn't segue, the detail view is always there
-   }
+    }
     else { // iPhone
         [self performSegueWithIdentifier:@"showDetail" sender:sender];
     }
