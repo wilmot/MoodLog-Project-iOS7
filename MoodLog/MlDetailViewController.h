@@ -35,8 +35,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *noMoodsLabel;
 @property (weak, nonatomic) IBOutlet UITableViewCell *dateCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *moodsCell;
+@property (weak, nonatomic) IBOutlet UIView *moodCollectionContainer;
 
-@property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
+@property (strong, atomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 
 

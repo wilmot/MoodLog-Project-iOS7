@@ -44,21 +44,23 @@ NSUserDefaults *defaults;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureView];
+//    [self configureView];
     defaults = [NSUserDefaults standardUserDefaults];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    [self configureView];
+    [super viewWillAppear:animated];
     //[self.navigationController setToolbarHidden:YES animated: YES];
     if ((self.detailItem.editing.boolValue == NO) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
         [self.moodContainer setHidden:NO];
     }
+    [self configureView];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)configureView
@@ -124,34 +126,18 @@ NSUserDefaults *defaults;
                 [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
             }
         }
-        else {
-            // iPhone
-            // TODO: Remove this code as I no longer do a special transition on first load of the view
-//            if (self.detailItem.editing.boolValue == YES) {
-//                // Go to the modal mood list
-//                // The delay gives a chance for the original transition to the detail view to complete
-//                [self performSelector:@selector(goToEditPanel) withObject:self afterDelay:0.1];
-//            }
-        }
-  
         [self.entryLogTextView setDelegate:self];
         [self.blankCoveringView setHidden:YES];
         [self.scrollView setHidden:NO];
-        [self.detailToolBar setRightBarButtonItem:nil animated:YES];
-        [self.myMoodCollectionViewController refresh]; // Make sure the collection view loads (so the heights get calculated correctly when the table gets refreshed)
-        [self.tableView reloadData]; // Get the cell heights to recalculate
-        
+        [self.detailToolBar setRightBarButtonItem:nil animated:YES];        
     }
     else { // Nothing selected
         [self.blankCoveringView setHidden:NO];
         [self.scrollView setHidden:YES];
         [self.detailToolBar setRightBarButtonItem:nil animated:YES];
     }
-}
 
-//- (void)goToEditPanel {
-//    [self performSegueWithIdentifier: @"MoodFullScreenSegue" sender: self];
-//}
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -365,25 +351,7 @@ NSUserDefaults *defaults;
         case 0: //Calendar
             height = 65.0;
             break;
-        case 1: //Moods
-            if (indexPath.row == 0) {
-                height = 34.0;
-            }
-            else {
-                CGSize foo = self.myMoodCollectionViewController.collectionView.collectionViewLayout.collectionViewContentSize;
-                NSLog(@"Height: %f",foo.height);
-                if (foo.height == 0) {
-                    height = 240.0;
-                }
-                else {
-                    height = foo.height + 20.0;
-                }
-            }
-            break;
-        case 2: //Sliders
-            height = 35.0;
-            break;
-        case 3: //Journal
+        case 1: //Journal
             orientation = [[UIApplication sharedApplication] statusBarOrientation];
             if (orientation == UIInterfaceOrientationPortrait) {
                 textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(273.0, FLT_MAX)];
@@ -392,6 +360,27 @@ NSUserDefaults *defaults;
                 textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(521.0, FLT_MAX)];
             }
             height = textViewSize.height + 20.0;
+            break;
+       case 2: //Moods
+            if (indexPath.row == 0) {
+                height = 34.0;
+            }
+            else if (indexPath.row == 1) {
+                CGSize collectionViewSize = self.myMoodCollectionViewController.collectionView.collectionViewLayout.collectionViewContentSize;
+                NSLog(@"Height: %f",collectionViewSize.height);
+                if (collectionViewSize.height == 0) {
+                    height = 120.0;
+                }
+                else {
+                    height = collectionViewSize.height + 20.0;
+                }
+            }
+            else { // what
+                height = 0.0;
+            }
+           break;
+        case 3: //Sliders
+            height = 35.0;
             break;
         default:
             height = 100.0;

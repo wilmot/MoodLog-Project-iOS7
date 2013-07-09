@@ -976,10 +976,41 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Journal" id="gCR-M1-aqz">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="78" id="ZCh-Jg-PsL">
+                                        <rect key="frame" x="0.0" y="122" width="320" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBd-1W-hJI">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="YBd-1W-hJI" firstAttribute="top" secondItem="ZCh-Jg-PsL" secondAttribute="top" constant="10" type="user" id="GGN-cV-9c3"/>
+                                            <constraint firstAttribute="trailing" secondItem="YBd-1W-hJI" secondAttribute="trailing" constant="30" type="user" id="Sjb-60-W2b"/>
+                                            <constraint firstItem="YBd-1W-hJI" firstAttribute="leading" secondItem="ZCh-Jg-PsL" secondAttribute="leading" constant="17" type="user" id="U7Y-25-nhg"/>
+                                            <constraint firstItem="YBd-1W-hJI" firstAttribute="centerY" secondItem="ZCh-Jg-PsL" secondAttribute="centerY" type="default" id="hoJ-I2-glV"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="i5c-1I-xcB" kind="push" identifier="journalEditor" id="7mr-OJ-uAG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="" id="ovx-Tt-PFC">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="33" id="9WL-hz-i2E">
-                                        <rect key="frame" x="0.0" y="96" width="320" height="34"/>
+                                        <rect key="frame" x="0.0" y="221" width="320" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="32"/>
@@ -1092,7 +1123,6 @@
                                             <constraint firstItem="K6b-KV-czl" firstAttribute="top" secondItem="pBm-te-rLP" secondAttribute="top" type="default" id="FeG-S5-QHn"/>
                                             <constraint firstItem="pBm-te-rLP" firstAttribute="leading" secondItem="9WL-hz-i2E" secondAttribute="leading" constant="13" id="JXy-gN-IwF"/>
                                             <constraint firstItem="K6b-KV-czl" firstAttribute="bottom" secondItem="RNo-Is-nN0" secondAttribute="bottom" type="default" id="OoA-FX-eZ2"/>
-                                            <constraint firstItem="8Q1-xV-3X1" firstAttribute="baseline" secondItem="K6b-KV-czl" secondAttribute="baseline" type="default" id="Pjp-NI-v7P"/>
                                             <constraint firstItem="BLm-WC-mbR" firstAttribute="bottom" secondItem="RNo-Is-nN0" secondAttribute="bottom" type="default" id="X7q-YB-WaF"/>
                                             <constraint firstItem="RNo-Is-nN0" firstAttribute="top" secondItem="K6b-KV-czl" secondAttribute="top" type="default" id="als-EN-rXa"/>
                                             <constraint firstItem="BLm-WC-mbR" firstAttribute="leading" secondItem="RNo-Is-nN0" secondAttribute="trailing" constant="1" type="user" id="bno-Hp-9Ep"/>
@@ -1100,11 +1130,10 @@
                                             <constraint firstItem="pBm-te-rLP" firstAttribute="bottom" secondItem="K6b-KV-czl" secondAttribute="bottom" type="default" id="sZG-i8-VCq"/>
                                             <constraint firstItem="RNo-Is-nN0" firstAttribute="leading" secondItem="9WL-hz-i2E" secondAttribute="leading" constant="115" id="un3-vV-Bwt"/>
                                             <constraint firstItem="pBm-te-rLP" firstAttribute="top" secondItem="9WL-hz-i2E" secondAttribute="top" constant="3" id="zDM-zj-IaG"/>
-                                            <constraint firstItem="8Q1-xV-3X1" firstAttribute="baseline" secondItem="pBm-te-rLP" secondAttribute="baseline" type="default" id="zx9-cw-RwQ"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="175" id="gRi-SK-i7n">
-                                        <rect key="frame" x="0.0" y="130" width="320" height="175"/>
+                                        <rect key="frame" x="0.0" y="255" width="320" height="175"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="174"/>
@@ -1129,16 +1158,43 @@
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="nZY-KA-KFn" secondAttribute="trailing" constant="30" id="208-aQ-cwL"/>
                                             <constraint firstItem="1uT-4H-DNv" firstAttribute="trailing" secondItem="gRi-SK-i7n" secondAttribute="trailing" type="default" id="6Dh-Gb-Tcq"/>
                                             <constraint firstItem="1uT-4H-DNv" firstAttribute="leading" secondItem="gRi-SK-i7n" secondAttribute="leading" type="default" id="AKd-IK-Don"/>
-                                            <constraint firstAttribute="bottom" secondItem="nZY-KA-KFn" secondAttribute="bottom" constant="2" id="Usl-jM-mSu"/>
+                                            <constraint firstItem="nZY-KA-KFn" firstAttribute="centerY" secondItem="gRi-SK-i7n" secondAttribute="centerY" type="default" id="GcJ-In-eaA"/>
                                             <constraint firstItem="nZY-KA-KFn" firstAttribute="top" secondItem="gRi-SK-i7n" secondAttribute="top" type="default" id="WHM-0Z-QEz"/>
                                             <constraint firstItem="1uT-4H-DNv" firstAttribute="centerY" secondItem="gRi-SK-i7n" secondAttribute="centerY" type="default" id="Yrj-lv-aW8"/>
                                             <constraint firstItem="nZY-KA-KFn" firstAttribute="leading" secondItem="gRi-SK-i7n" secondAttribute="leading" constant="10" id="hYX-Gu-Mhr"/>
+                                            <constraint firstAttribute="trailing" secondItem="nZY-KA-KFn" secondAttribute="trailing" constant="8" id="yHf-88-ex2"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="Haq-rW-jQt" kind="push" identifier="MoodFullScreenSegue" id="fzz-FM-e2s"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell hidden="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="175" id="fLk-30-IJW">
+                                        <rect key="frame" x="0.0" y="430" width="320" height="175"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="174"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hide Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPo-In-6VL">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="104" id="JWM-A4-lvN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.92974718639999998" blue="0.1276074297" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="mPo-In-6VL" firstAttribute="centerX" secondItem="fLk-30-IJW" secondAttribute="centerX" type="default" id="AFO-F9-aGR"/>
+                                            <constraint firstItem="mPo-In-6VL" firstAttribute="top" secondItem="fLk-30-IJW" secondAttribute="top" constant="5" id="vdt-qf-qV4"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="Haq-rW-jQt" kind="push" identifier="MoodFullScreenSegue" id="x6j-9v-1EX"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1146,7 +1202,7 @@
                             <tableViewSection headerTitle="" id="V8H-pr-lXg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="35" id="B61-Tv-F1u">
-                                        <rect key="frame" x="0.0" y="325" width="320" height="36"/>
+                                        <rect key="frame" x="0.0" y="625" width="320" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="34"/>
@@ -1192,7 +1248,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="36" id="ABJ-Zb-swn">
-                                        <rect key="frame" x="0.0" y="361" width="320" height="36"/>
+                                        <rect key="frame" x="0.0" y="661" width="320" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="35"/>
@@ -1238,7 +1294,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="36" id="HFT-sX-jMV">
-                                        <rect key="frame" x="0.0" y="397" width="320" height="36"/>
+                                        <rect key="frame" x="0.0" y="697" width="320" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="35"/>
@@ -1284,7 +1340,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="36" id="qzu-go-ATG">
-                                        <rect key="frame" x="0.0" y="433" width="320" height="36"/>
+                                        <rect key="frame" x="0.0" y="733" width="320" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="35"/>
@@ -1330,7 +1386,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="36" id="xfN-la-lID">
-                                        <rect key="frame" x="0.0" y="469" width="320" height="36"/>
+                                        <rect key="frame" x="0.0" y="769" width="320" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="35"/>
@@ -1359,37 +1415,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Journal" id="gCR-M1-aqz">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="211" id="ZCh-Jg-PsL">
-                                        <rect key="frame" x="0.0" y="551" width="320" height="212"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="210"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBd-1W-hJI">
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="YBd-1W-hJI" firstAttribute="centerY" secondItem="ZCh-Jg-PsL" secondAttribute="centerY" type="default" id="CoN-7H-fv7"/>
-                                            <constraint firstItem="YBd-1W-hJI" firstAttribute="top" secondItem="ZCh-Jg-PsL" secondAttribute="top" constant="10" type="user" id="GGN-cV-9c3"/>
-                                            <constraint firstAttribute="trailing" secondItem="YBd-1W-hJI" secondAttribute="trailing" constant="30" type="user" id="Sjb-60-W2b"/>
-                                            <constraint firstItem="YBd-1W-hJI" firstAttribute="leading" secondItem="ZCh-Jg-PsL" secondAttribute="leading" constant="17" type="user" id="U7Y-25-nhg"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="i5c-1I-xcB" kind="push" identifier="journalEditor" id="7mr-OJ-uAG"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="JzN-CV-xZQ" id="Rza-VS-p4E"/>
@@ -1413,6 +1438,7 @@
                         <outlet property="entryLogTextView" destination="YBd-1W-hJI" id="Eus-9h-xCJ"/>
                         <outlet property="healthSlider" destination="7DC-ac-ZiY" id="5YE-jF-ngs"/>
                         <outlet property="monthLabel" destination="2qJ-P8-QMi" id="vog-Pi-xKm"/>
+                        <outlet property="moodCollectionContainer" destination="nZY-KA-KFn" id="vUl-ej-9sO"/>
                         <outlet property="moodContainer" destination="nZY-KA-KFn" id="FW2-9c-Z5A"/>
                         <outlet property="moodsCell" destination="gRi-SK-i7n" id="Pe6-To-ckR"/>
                         <outlet property="noMoodsLabel" destination="1uT-4H-DNv" id="Q7W-wK-exa"/>
@@ -1435,7 +1461,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="FED-j2-6ML" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Wbp-Ub-rp4">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="174"/>
+                        <rect key="frame" x="0.0" y="0.0" width="302" height="174"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XmS-WN-o2f">
@@ -1508,7 +1534,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellHeader" id="VjC-BD-N8c" customClass="MlMoodCollectionViewHeaderView">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="20"/>
+                            <rect key="frame" x="0.0" y="0.0" width="302" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAY-oL-Ifs">
@@ -1847,7 +1873,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Journal" id="ywj-Lm-pbE">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="oA6-74-DN4">
+                        <barButtonItem key="rightBarButtonItem" image="keyboard_down.png" id="oA6-74-DN4">
                             <connections>
                                 <action selector="pressDoneButton:" destination="i5c-1I-xcB" id="YqV-xl-iBK"/>
                             </connections>
@@ -1934,6 +1960,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="CalendarBlank49.png" width="49" height="49"/>
         <image name="CalendarBlank93.png" width="93" height="93"/>
         <image name="chart.png" width="22" height="18"/>
+        <image name="keyboard_down.png" width="22" height="19"/>
         <image name="shuffle_off.png" width="25" height="21"/>
         <image name="shuffle_on.png" width="25" height="21"/>
     </resources>
@@ -1942,4 +1969,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="x6j-9v-1EX"/>
+    </inferredMetricsTieBreakers>
 </document>

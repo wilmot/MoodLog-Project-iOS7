@@ -157,6 +157,10 @@
 		4C47E6A317501E8F0023298F /* Emotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6A217501E8F0023298F /* Emotions.m */; };
 		4C47E6B41751AC580023298F /* MlChartCellEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */; };
 		4C47E6B71755C5E10023298F /* MlDateRangeDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */; };
+		4C47E70A178CA55300325BA7 /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E708178CA55300325BA7 /* keyboard.png */; };
+		4C47E70B178CA55300325BA7 /* keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E709178CA55300325BA7 /* keyboard@2x.png */; };
+		4C47E712178CA75300325BA7 /* keyboard_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E710178CA75300325BA7 /* keyboard_down.png */; };
+		4C47E713178CA75300325BA7 /* keyboard_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E711178CA75300325BA7 /* keyboard_down@2x.png */; };
 		4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53DF1665F14900DDDBA2 /* MoodList.plist */; };
 		4C52861816D9A654007C878C /* MlChartDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C52861716D9A654007C878C /* MlChartDrawingView.m */; };
 		4C55CBE7162DE67400EAA878 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE6162DE67400EAA878 /* UIKit.framework */; };
@@ -364,6 +368,10 @@
 		4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCellEntryViewController.m; sourceTree = "<group>"; };
 		4C47E6B51755C5E00023298F /* MlDateRangeDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlDateRangeDrawing.h; sourceTree = "<group>"; };
 		4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDateRangeDrawing.m; sourceTree = "<group>"; };
+		4C47E708178CA55300325BA7 /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard.png; sourceTree = "<group>"; };
+		4C47E709178CA55300325BA7 /* keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard@2x.png"; sourceTree = "<group>"; };
+		4C47E710178CA75300325BA7 /* keyboard_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard_down.png; sourceTree = "<group>"; };
+		4C47E711178CA75300325BA7 /* keyboard_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_down@2x.png"; sourceTree = "<group>"; };
 		4C4C53D4166569A400DDDBA2 /* MoodLog 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 3.xcdatamodel"; sourceTree = "<group>"; };
 		4C4C53DF1665F14900DDDBA2 /* MoodList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoodList.plist; sourceTree = "<group>"; };
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
@@ -588,6 +596,10 @@
 		4C4043E61783E59F00710F2A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C47E708178CA55300325BA7 /* keyboard.png */,
+				4C47E709178CA55300325BA7 /* keyboard@2x.png */,
+				4C47E710178CA75300325BA7 /* keyboard_down.png */,
+				4C47E711178CA75300325BA7 /* keyboard_down@2x.png */,
 				4C4043FC1783E5FD00710F2A /* greyButton.png */,
 				4C4043FD1783E5FD00710F2A /* greyButton@2x.png */,
 				4C4043FE1783E5FD00710F2A /* greyButtonHighlight.png */,
@@ -941,6 +953,10 @@
 				4C4044011783E5FD00710F2A /* greyButton@2x.png in Resources */,
 				4C4044021783E5FD00710F2A /* greyButtonHighlight.png in Resources */,
 				4C4044031783E5FD00710F2A /* greyButtonHighlight@2x.png in Resources */,
+				4C47E70A178CA55300325BA7 /* keyboard.png in Resources */,
+				4C47E70B178CA55300325BA7 /* keyboard@2x.png in Resources */,
+				4C47E712178CA75300325BA7 /* keyboard_down.png in Resources */,
+				4C47E713178CA75300325BA7 /* keyboard_down@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

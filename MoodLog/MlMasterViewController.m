@@ -114,7 +114,7 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMood.date];
     newMood.header = [NSString stringWithFormat:@"%d", ([components year] * 1000) + [components month]];
-    newMood.editing = [NSNumber numberWithBool:YES];
+    newMood.editing = [NSNumber numberWithBool:NO];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     newMood.showFaces = [NSNumber numberWithBool:[defaults boolForKey:@"DefaultFacesState"]];
     newMood.showFacesEditing = [NSNumber numberWithBool:[defaults boolForKey:@"DefaultFacesEditingState"]];

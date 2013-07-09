@@ -38,6 +38,8 @@ MoodLogEvents *mood;
     mood = (MoodLogEvents *) self.detailItem;
     self.journalTextView.text = mood.journalEntry;
     [self.journalToolbar setRightBarButtonItem:nil animated:YES];
+    [self.journalTextView becomeFirstResponder];
+
 }
 
 - (void) keyboardDidShow:(NSNotification *)aNotification {
