@@ -104,6 +104,29 @@ NSUserDefaults *defaults;
             self.entryLogTextView.text = @"<Touch to add a journal entry>";
         }
         
+        // Set the list of moods
+        // Fetch the Mood list for this journal entry
+        NSSet *emotionsforEntry = self.detailItem.relationshipEmotions; // Get all the emotions for this record
+        NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
+        NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+        NSString *selectedEms = [[NSString alloc] init];
+        NSUInteger emotionArrayCount = [emotionArray count];
+        CGFloat feelTotal = 0;
+        
+        NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, fear : @0, anger : @0, sadness : @0} mutableCopy];
+        if (emotionArrayCount > 0) {
+            for (id emotion in emotionArray) {
+                // selectedEms = [selectedEms stringByAppendingFormat:@"%@ (%@)\n", [((Emotions *)emotion).name lowercaseString], ((Emotions *)emotion).feelValue];
+                selectedEms = [selectedEms stringByAppendingFormat:@"%@\n", [((Emotions *)emotion).name lowercaseString]];
+                feelTotal += ((Emotions *)emotion).feelValue.floatValue;
+                NSString *thisCategory = ((Emotions *)emotion).category;
+                if (categoryCounts[thisCategory]) {
+                    categoryCounts[thisCategory] = @([categoryCounts[thisCategory] integerValue] + [@1 integerValue]); // increment
+                }
+            }
+        }
+        self.moodListTextView.text = selectedEms;
+        
         // Set the sliders
         [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
         [self.sleepSlider setValue:[[self.detailItem valueForKey:@"sleep"] floatValue]];
@@ -114,9 +137,6 @@ NSUserDefaults *defaults;
         [self setSliderColor:self.sleepSlider];
         [self setSliderColor:self.energySlider];
         [self setSliderColor:self.healthSlider ];
-        
-        [self selectButton]; // Highlight the correct button
-        [self setFaces:[self.detailItem.showFaces boolValue]];
         [self setVisibilityofNoMoodsLabel]; // Should only show if there are no moods selected
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             // iPad
@@ -224,14 +244,7 @@ NSUserDefaults *defaults;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"MoodCollectionSegue"]) {
-        self.myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
-        ((MlMoodCollectionViewController *)[segue destinationViewController]).detailItem = self.detailItem;
-        if ((self.detailItem.editing.boolValue == YES) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
-            [self.moodContainer setHidden:YES];
-        }
-    }
-    else if ([segue.identifier isEqualToString:@"MoodFullScreenSegue"]) {
+    if ([segue.identifier isEqualToString:@"MoodFullScreenSegue"]) {
         [self pressedDoneButton:self]; // Make sure textfield isn't still in edit mode
         ((MlMoodCollectionViewController *)[segue destinationViewController]).detailItem = self.detailItem;
     }
@@ -259,46 +272,6 @@ NSUserDefaults *defaults;
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         self.detailItem.sortStyleEditing = style;
     }
-}
-
-- (IBAction)sortABC:(id)sender {
-    [self setSortStyle:alphabeticalSort];
-    [self saveContext];
-    [self selectButton];
-    [self.myMoodCollectionViewController refresh];
-    [self.tableView reloadData]; // Get the cell heights to recalculate
-}
-
-- (IBAction)sortGroup:(id)sender {
-    [self setSortStyle:groupSort];
-    [self saveContext];
-    [self selectButton];
-    [self.myMoodCollectionViewController refresh];
-    [self.tableView reloadData]; // Get the cell heights to recalculate
-}
-
-- (IBAction)sortCBA:(id)sender {
-    [self setSortStyle:reverseAlphabeticalSort];
-    [self saveContext];
-    [self selectButton];
-    [self.myMoodCollectionViewController refresh];
-    [self.tableView reloadData]; // Get the cell heights to recalculate
-}
-
-- (IBAction)sortShuffle:(id)sender {
-    [self setSortStyle:shuffleSort];
-    [self saveContext];
-    [self selectButton];
-    [self.myMoodCollectionViewController refresh];
-    [self.tableView reloadData]; // Get the cell heights to recalculate
-}
-
-- (IBAction)toggleFaces:(id)sender {
-    Boolean facesState = ![self.detailItem.showFaces boolValue];
-    [self setFaces:facesState];
-    [defaults setBool:facesState forKey:@"DefaultFacesState"];
-    [defaults synchronize];
-    [self.tableView reloadData]; // Get the cell heights to recalculate
 }
 
 - (IBAction)addEntryFromStartScreen:(id)sender {
@@ -331,13 +304,9 @@ NSUserDefaults *defaults;
 }
 
 - (void) setVisibilityofNoMoodsLabel {
-    int sections = self.myMoodCollectionViewController.collectionView.numberOfSections;
-    BOOL shouldHideLabel = NO;
-    for (int i=0; i < sections; i++) {
-        if ([self.myMoodCollectionViewController.collectionView numberOfItemsInSection:i ] > 0) {
-            shouldHideLabel = YES; // Should only show if there are no moods selected
-            break;
-        }
+    BOOL shouldHideLabel = YES;
+    if (self.moodListTextView.text.length == 0) {
+            shouldHideLabel = NO; // Should only show if there are no moods selected
     }
     [self.noMoodsLabel setHidden:shouldHideLabel];
 }
@@ -347,12 +316,12 @@ NSUserDefaults *defaults;
     CGFloat height;
     CGSize textViewSize;
     UIInterfaceOrientation orientation;
+    orientation = [[UIApplication sharedApplication] statusBarOrientation];
     switch (indexPath.section) {
         case 0: //Calendar
             height = 65.0;
             break;
         case 1: //Journal
-            orientation = [[UIApplication sharedApplication] statusBarOrientation];
             if (orientation == UIInterfaceOrientationPortrait) {
                 textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(273.0, FLT_MAX)];
             }
@@ -362,23 +331,20 @@ NSUserDefaults *defaults;
             height = textViewSize.height + 20.0;
             break;
        case 2: //Moods
-            if (indexPath.row == 0) {
-                height = 34.0;
+            if (self.moodListTextView.text.length == 0) {
+                height = 64.0;
             }
-            else if (indexPath.row == 1) {
-                CGSize collectionViewSize = self.myMoodCollectionViewController.collectionView.collectionViewLayout.collectionViewContentSize;
-                NSLog(@"Height: %f",collectionViewSize.height);
-                if (collectionViewSize.height == 0) {
-                    height = 120.0;
+            else {
+                if (orientation == UIInterfaceOrientationPortrait) {
+                    textViewSize = [self.moodListTextView sizeThatFits:CGSizeMake(273.0, FLT_MAX)];
                 }
                 else {
-                    height = collectionViewSize.height + 20.0;
+                    textViewSize = [self.moodListTextView sizeThatFits:CGSizeMake(521.0, FLT_MAX)];
                 }
+                height = textViewSize.height - 16.0;
+                NSLog(@"Height: %f", height);
             }
-            else { // what
-                height = 0.0;
-            }
-           break;
+            break;
         case 3: //Sliders
             height = 35.0;
             break;
@@ -387,52 +353,6 @@ NSUserDefaults *defaults;
             break;
     }
     return height;
-}
-
-
-- (void) setFaces:(BOOL)facesState {
-    if (facesState == YES) {
-        self.myMoodCollectionViewController.cellIdentifier = @"moodCellFaces";
-    }
-    else {
-        self.myMoodCollectionViewController.cellIdentifier = @"moodCell";
-    }
-    self.detailItem.showFaces = [NSNumber numberWithBool:facesState]; // Save state in database
-    [self.toggleFacesButton setSelected:facesState];
-    [self saveContext];
-    [self.myMoodCollectionViewController refresh];
-}
-
-- (void) selectButton {
-    NSString *aButton = [self.detailItem valueForKey:@"sortStyle"];
-    if ([aButton isEqualToString:alphabeticalSort]) {
-        [self.sortABCButton setSelected:YES];
-        [self.SortCBAButton setSelected:NO];
-        [self.sortGroupButton setSelected:NO];
-        [self.sortShuffleButton setSelected:NO];
-    }
-    else if ([aButton isEqualToString:reverseAlphabeticalSort]) {
-        [self.sortABCButton setSelected:NO];
-        [self.SortCBAButton setSelected:YES];
-        [self.sortGroupButton setSelected:NO];
-        [self.sortShuffleButton setSelected:NO];
-        
-    }
-    else if ([aButton isEqualToString:groupSort]) {
-        [self.sortABCButton setSelected:NO];
-        [self.SortCBAButton setSelected:NO];
-        [self.sortGroupButton setSelected:YES];
-        [self.sortShuffleButton setSelected:NO];
-        
-    }
-    else if ([aButton isEqualToString:shuffleSort]) {
-        [self.sortABCButton setSelected:NO];
-        [self.SortCBAButton setSelected:NO];
-        [self.sortGroupButton setSelected:NO];
-        [self.sortShuffleButton setSelected:YES];
-    }
-    [defaults setObject:aButton forKey:@"DefaultSortStyle"];
-    [defaults synchronize];
 }
 
 #pragma mark - Entry Log UITextView delegate methods

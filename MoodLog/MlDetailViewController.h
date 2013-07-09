@@ -35,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *noMoodsLabel;
 @property (weak, nonatomic) IBOutlet UITableViewCell *dateCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *moodsCell;
-@property (weak, nonatomic) IBOutlet UIView *moodCollectionContainer;
+@property (weak, nonatomic) IBOutlet UITextView *moodListTextView;
 
 @property (strong, atomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
@@ -44,11 +44,6 @@
 - (IBAction)pressedDoneButton:(id)sender;
 - (IBAction)moveSlider:(id) sender;
 - (IBAction)setSliderData:(id)sender;
-- (IBAction)sortABC:(id)sender;
-- (IBAction)sortGroup:(id)sender;
-- (IBAction)sortCBA:(id)sender;
-- (IBAction)sortShuffle:(id)sender;
-- (IBAction)toggleFaces:(id)sender;
 - (IBAction)pressedExpandButton:(id)sender;
 - (IBAction)addEntryFromStartScreen:(id)sender;
 
