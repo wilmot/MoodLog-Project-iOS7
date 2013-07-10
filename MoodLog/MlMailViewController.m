@@ -259,7 +259,7 @@ NSUserDefaults *defaults;
     int startValue = (int)roundl(self.startSlider.value);
     int endValue = (int)roundl(self.endSlider.value);
     int records = (endValue - startValue) + 1;
-    NSString *text = @"event";
+    NSString *text = @"entry";
     [self.recipientList resignFirstResponder];
 
     if (records > 1) {

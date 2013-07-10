@@ -98,10 +98,12 @@ NSUserDefaults *defaults;
             // There's interesting content
             self.entryLogTextView.textColor = [UIColor blackColor];
             self.entryLogTextView.text = self.detailItem.journalEntry;
+            self.littleKeyboardIcon.hidden = YES;
         }
         else {
             self.entryLogTextView.textColor = [UIColor grayColor];
-            self.entryLogTextView.text = @"<Touch to add a journal entry>";
+            self.entryLogTextView.text = @"\tTouch to add a journal entry";
+            self.littleKeyboardIcon.hidden = NO;
         }
         
         // Set the list of moods
@@ -332,7 +334,7 @@ NSUserDefaults *defaults;
             break;
        case 2: //Moods
             if (self.moodListTextView.text.length == 0) {
-                height = 64.0;
+                height = 100.0;
             }
             else {
                 if (orientation == UIInterfaceOrientationPortrait) {
@@ -342,6 +344,7 @@ NSUserDefaults *defaults;
                     textViewSize = [self.moodListTextView sizeThatFits:CGSizeMake(521.0, FLT_MAX)];
                 }
                 height = textViewSize.height - 16.0;
+                if (height < 100.0) { height = 100.0;}
                 NSLog(@"Height: %f", height);
             }
             break;
