@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MlMoodCollectionViewController.h"
 #import "MoodLogEvents.h"
+#import "MlChartDrawingView.h"
 
 @interface MlDetailViewController : UITableViewController <UISplitViewControllerDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *weekdayLabel;
@@ -37,12 +38,15 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *moodsCell;
 @property (weak, nonatomic) IBOutlet UITextView *moodListTextView;
 @property (weak, nonatomic) IBOutlet UIImageView *littleKeyboardIcon;
+@property (weak, nonatomic) IBOutlet MlChartDrawingView *sliderChartView;
 
 @property (strong, atomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 
 
 - (IBAction)pressedDoneButton:(id)sender;
+- (IBAction)pressedSliderSetButton:(id)sender;
+- (IBAction)pressedSliderAdjustButton:(id)sender;
 - (IBAction)moveSlider:(id) sender;
 - (IBAction)setSliderData:(id)sender;
 - (IBAction)pressedExpandButton:(id)sender;

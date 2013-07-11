@@ -43,14 +43,12 @@ MoodLogEvents *mood;
 }
 
 - (void) keyboardDidShow:(NSNotification *)aNotification {
-    NSLog(@"About to show keyboard");
     NSDictionary *info = [aNotification userInfo];
     CGRect keyboardRect = [self.view.window convertRect:[[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue] toView:self.view];
     [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.journalTextView.bounds.size.height - keyboardRect.size.height)];
 }
 
 - (void) keyboardWillHide:(NSNotification *)aNotification {
-    NSLog(@"About to hide keyboard");
     CGRect statusBarFrame = [self.view.window convertRect:[UIApplication sharedApplication].statusBarFrame toView:self.view];
     [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.parentViewController.view.bounds.size.height - self.navigationController.toolbar.frame.size.height - statusBarFrame.size.height)];
 }

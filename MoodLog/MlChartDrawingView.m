@@ -141,8 +141,8 @@ static NSUInteger numberOfDivisions = 20;
     else {
         barOriginY = interval*10.0;
     }
-    CGContextSetFillColorWithColor(context, [[[[[[self theBarColor:self.chartHeightOverall] darkerColor] darkerColor] darkerColor] darkerColor] CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0, barOriginY, rect.size.width, barHeight));
+    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightOverall] CGColor]);
+    CGContextFillRect(context, CGRectMake(0.0, barOriginY, rect.size.width/4 - 1, barHeight));
 
     // Sleep
     barHeight = interval*fabs(round(self.chartHeightSleep));
@@ -153,7 +153,7 @@ static NSUInteger numberOfDivisions = 20;
         barOriginY = interval*10.0;
     }
     CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightSleep] CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0 + rect.size.width/4, barOriginY, rect.size.width/4, barHeight));
+    CGContextFillRect(context, CGRectMake(0.0 + rect.size.width/4, barOriginY, rect.size.width/4 - 1, barHeight));
 
     // Energy
     barHeight = interval*fabs(round(self.chartHeightEnergy));
@@ -164,7 +164,7 @@ static NSUInteger numberOfDivisions = 20;
         barOriginY = interval*10.0;
     }
     CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightEnergy] CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0 + 2*rect.size.width/4, barOriginY, rect.size.width/4, barHeight));
+    CGContextFillRect(context, CGRectMake(0.0 + 2*rect.size.width/4, barOriginY, rect.size.width/4 - 1, barHeight));
 
     // Health
     barHeight = interval*fabs(round(self.chartHeightHealth));
@@ -175,7 +175,7 @@ static NSUInteger numberOfDivisions = 20;
         barOriginY = interval*10.0;
     }
     CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightHealth] CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0 + 3*rect.size.width/4, barOriginY, rect.size.width/4, barHeight));
+    CGContextFillRect(context, CGRectMake(0.0 + 3*rect.size.width/4, barOriginY, rect.size.width/4 - 1, barHeight));
 }
 
 - (UIColor *) theBarColor: (CGFloat) barHeight {

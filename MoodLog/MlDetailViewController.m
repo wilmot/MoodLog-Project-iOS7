@@ -23,6 +23,15 @@
 static MlDatePickerViewController *myDatePickerViewController;
 NSUserDefaults *defaults;
 
+typedef NS_ENUM(NSInteger, DetailCells) {
+    CALENDAR,
+    JOURNAL,
+    MOODS, 
+    SLIDERS,
+    SLIDERSCHART
+};
+
+
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem
@@ -97,12 +106,16 @@ NSUserDefaults *defaults;
         if (self.detailItem.journalEntry.length > 0) {
             // There's interesting content
             self.entryLogTextView.textColor = [UIColor blackColor];
+            [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            self.entryLogTextView.textAlignment = NSTextAlignmentLeft;
             self.entryLogTextView.text = self.detailItem.journalEntry;
             self.littleKeyboardIcon.hidden = YES;
         }
         else {
             self.entryLogTextView.textColor = [UIColor grayColor];
-            self.entryLogTextView.text = @"\tTouch to add a journal entry";
+            [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18]];
+            self.entryLogTextView.textAlignment = NSTextAlignmentRight;
+            self.entryLogTextView.text = @"Touch to add a journal entry";
             self.littleKeyboardIcon.hidden = NO;
         }
         
@@ -158,7 +171,42 @@ NSUserDefaults *defaults;
         [self.scrollView setHidden:YES];
         [self.detailToolBar setRightBarButtonItem:nil animated:YES];
     }
+    [self setSliderCellVisibility];
+}
 
+- (void) setSliderCellVisibility {
+    NSIndexPath *slidersMoodIndexPath = [NSIndexPath indexPathForRow:0 inSection:SLIDERS];
+    NSIndexPath *slidersSleepIndexPath = [NSIndexPath indexPathForRow:1 inSection:SLIDERS];
+    NSIndexPath *slidersEnergyIndexPath = [NSIndexPath indexPathForRow:2 inSection:SLIDERS];
+    NSIndexPath *slidersHealthIndexPath = [NSIndexPath indexPathForRow:3 inSection:SLIDERS];
+    NSIndexPath *slidersDoneIndexPath = [NSIndexPath indexPathForRow:4 inSection:SLIDERS];
+    NSIndexPath *slidersChartIndexPath = [NSIndexPath indexPathForRow:0 inSection:SLIDERSCHART];
+    NSIndexPath *slidersAdjustIndexPath = [NSIndexPath indexPathForRow:1 inSection:SLIDERSCHART];
+    if (self.detailItem.sliderValuesSet.boolValue) {
+        self.sliderChartView.chartType = @"Bar";
+        [self.sliderChartView setChartHeightOverall:[self.detailItem.overall floatValue]];
+        [self.sliderChartView setChartHeightSleep:[self.detailItem.sleep floatValue]];
+        [self.sliderChartView setChartHeightEnergy:[self.detailItem.energy floatValue]];
+        [self.sliderChartView setChartHeightHealth:[self.detailItem.health floatValue]];
+        [self.sliderChartView setNeedsDisplay];
+
+        [self.tableView cellForRowAtIndexPath:slidersMoodIndexPath].hidden = YES;
+        [self.tableView cellForRowAtIndexPath:slidersSleepIndexPath].hidden = YES;
+        [self.tableView cellForRowAtIndexPath:slidersEnergyIndexPath].hidden = YES;
+        [self.tableView cellForRowAtIndexPath:slidersHealthIndexPath].hidden = YES;
+        [self.tableView cellForRowAtIndexPath:slidersDoneIndexPath].hidden = YES;
+        [self.tableView cellForRowAtIndexPath:slidersChartIndexPath].hidden = NO;
+        [self.tableView cellForRowAtIndexPath:slidersAdjustIndexPath].hidden = NO;
+    }
+    else {
+        [self.tableView cellForRowAtIndexPath:slidersMoodIndexPath].hidden = NO;
+        [self.tableView cellForRowAtIndexPath:slidersSleepIndexPath].hidden = NO;
+        [self.tableView cellForRowAtIndexPath:slidersEnergyIndexPath].hidden = NO;
+        [self.tableView cellForRowAtIndexPath:slidersHealthIndexPath].hidden = NO;
+        [self.tableView cellForRowAtIndexPath:slidersDoneIndexPath].hidden = NO;
+        [self.tableView cellForRowAtIndexPath:slidersChartIndexPath].hidden = YES;
+        [self.tableView cellForRowAtIndexPath:slidersAdjustIndexPath].hidden = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -187,6 +235,24 @@ NSUserDefaults *defaults;
     // is it a Done button or an Edit button?
     [self.entryLogTextView resignFirstResponder];
     [self.detailToolBar setRightBarButtonItem:nil animated:YES];
+}
+
+- (IBAction)pressedSliderSetButton:(id)sender {
+    // hide sliders
+    // show pie
+    self.detailItem.sliderValuesSet=[NSNumber numberWithBool:YES];
+    [self saveContext];
+    [self setSliderCellVisibility];
+    [self.tableView reloadData];
+}
+
+- (IBAction)pressedSliderAdjustButton:(id)sender {
+    // show sliders
+    // hide pie
+    self.detailItem.sliderValuesSet=[NSNumber numberWithBool:NO];
+    [self saveContext];
+    [self setSliderCellVisibility];
+    [self.tableView reloadData];
 }
 
 - (void) moveSlider:(id) sender {
@@ -313,6 +379,29 @@ NSUserDefaults *defaults;
     [self.noMoodsLabel setHidden:shouldHideLabel];
 }
 
+// TODO: Trying to get the gap to disappear when hiding a static table section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    CGFloat height = 0;
+    return height;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    CGFloat height = 0;
+    return height;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return nil;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return nil;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat height;
@@ -320,10 +409,10 @@ NSUserDefaults *defaults;
     UIInterfaceOrientation orientation;
     orientation = [[UIApplication sharedApplication] statusBarOrientation];
     switch (indexPath.section) {
-        case 0: //Calendar
+        case CALENDAR: //Calendar
             height = 65.0;
             break;
-        case 1: //Journal
+        case JOURNAL: //Journal
             if (orientation == UIInterfaceOrientationPortrait) {
                 textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(273.0, FLT_MAX)];
             }
@@ -332,7 +421,7 @@ NSUserDefaults *defaults;
             }
             height = textViewSize.height + 20.0;
             break;
-       case 2: //Moods
+       case MOODS: //Moods
             if (self.moodListTextView.text.length == 0) {
                 height = 100.0;
             }
@@ -345,11 +434,28 @@ NSUserDefaults *defaults;
                 }
                 height = textViewSize.height - 16.0;
                 if (height < 100.0) { height = 100.0;}
-                NSLog(@"Height: %f", height);
             }
             break;
-        case 3: //Sliders
-            height = 35.0;
+        case SLIDERS: //Sliders
+            if (self.detailItem.sliderValuesSet.boolValue) {
+                height = 0.0;
+            }
+            else {
+                height = 35.0;
+                if (indexPath.row == 4) { // Set button
+                    height = 46.0;
+                }
+           }
+            break;
+        case SLIDERSCHART: //Sliders Chart
+            if (self.detailItem.sliderValuesSet.boolValue) {
+                height = 140.0;
+                if (indexPath.row == 1) { // Adjust button
+                    height = 46.0;
+                }
+            } else {
+                height = 0.0;
+            }
             break;
         default:
             height = 100.0;

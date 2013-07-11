@@ -2,7 +2,7 @@
 //  MoodLogEvents.m
 //  MoodLog
 //
-//  Created by Barry Langdon-Lassagne on 7/1/13.
+//  Created by Barry Langdon-Lassagne on 7/11/13.
 //  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
@@ -30,6 +30,7 @@
 @dynamic sortStyleEditing;
 @dynamic userName;
 @dynamic weather;
+@dynamic sliderValuesSet;
 @dynamic relationshipEmotions;
 @dynamic relationshipStressors;
 

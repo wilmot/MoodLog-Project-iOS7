@@ -27,6 +27,4 @@
 - (IBAction)sortShuffle:(id)sender;
 - (IBAction)toggleFaces:(id)sender;
 
-- (IBAction)doneButtonPressed:(id)sender;
-
 @end

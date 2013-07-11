@@ -366,7 +366,6 @@ Boolean firstLoad;
     if ([self.chartType isEqualToString:@"Bar"]) {
         CGFloat height = emotionArrayCount>0 ? feelTotal/emotionArrayCount : 0; // Average (mean)
         cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
-        //[cell.chartDrawingView setChartHeight:height];
         [cell.chartDrawingView setChartHeightOverall:[moodLogObject.overall floatValue]];
         [cell.chartDrawingView setChartHeightSleep:[moodLogObject.sleep floatValue]];
         [cell.chartDrawingView setChartHeightEnergy:[moodLogObject.energy floatValue]];

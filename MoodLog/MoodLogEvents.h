@@ -2,7 +2,7 @@
 //  MoodLogEvents.h
 //  MoodLog
 //
-//  Created by Barry Langdon-Lassagne on 7/1/13.
+//  Created by Barry Langdon-Lassagne on 7/11/13.
 //  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
@@ -30,6 +30,7 @@
 @property (nonatomic, retain) NSString * sortStyleEditing;
 @property (nonatomic, retain) NSString * userName;
 @property (nonatomic, retain) id weather;
+@property (nonatomic, retain) NSNumber * sliderValuesSet;
 @property (nonatomic, retain) NSSet *relationshipEmotions;
 @property (nonatomic, retain) NSSet *relationshipStressors;
 @end

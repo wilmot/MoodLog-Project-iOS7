@@ -42,8 +42,8 @@ NSUserDefaults *defaults;
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-    NSLog(@"Dismissing faces view controller");
-    [self doneButtonPressed:self];
+    self.detailItem.editing = [NSNumber numberWithBool:NO];
+    [self saveContext];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -131,13 +131,6 @@ NSUserDefaults *defaults;
     [self.toggleFacesButton setSelected:facesState];
     [self saveContext];
     [self.myMoodCollectionViewController refresh];
-}
-
-- (IBAction)doneButtonPressed:(id)sender {
-    self.detailItem.editing = [NSNumber numberWithBool:NO];
-    [self saveContext];
-    [self dismissViewControllerAnimated:YES completion:nil];
-    // BL-L ***REMIND go back...
 }
 
 - (void) saveContext { // Save data to the database
