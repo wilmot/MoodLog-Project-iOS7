@@ -39,14 +39,15 @@
 @property (weak, nonatomic) IBOutlet UITextView *moodListTextView;
 @property (weak, nonatomic) IBOutlet UIImageView *littleKeyboardIcon;
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *sliderChartView;
+@property (weak, nonatomic) IBOutlet UIView *slidersView;
+@property (weak, nonatomic) IBOutlet UIButton *slidersSetAdjustButton;
 
 @property (strong, atomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 
 
 - (IBAction)pressedDoneButton:(id)sender;
-- (IBAction)pressedSliderSetButton:(id)sender;
-- (IBAction)pressedSliderAdjustButton:(id)sender;
+- (IBAction)pressedSlidersSetAdjustButton:(id)sender;
 - (IBAction)moveSlider:(id) sender;
 - (IBAction)setSliderData:(id)sender;
 - (IBAction)pressedExpandButton:(id)sender;

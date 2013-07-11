@@ -27,8 +27,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     CALENDAR,
     JOURNAL,
     MOODS, 
-    SLIDERS,
-    SLIDERSCHART
+    SLIDERS
 };
 
 
@@ -175,14 +174,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 }
 
 - (void) setSliderCellVisibility {
-    NSIndexPath *slidersMoodIndexPath = [NSIndexPath indexPathForRow:0 inSection:SLIDERS];
-    NSIndexPath *slidersSleepIndexPath = [NSIndexPath indexPathForRow:1 inSection:SLIDERS];
-    NSIndexPath *slidersEnergyIndexPath = [NSIndexPath indexPathForRow:2 inSection:SLIDERS];
-    NSIndexPath *slidersHealthIndexPath = [NSIndexPath indexPathForRow:3 inSection:SLIDERS];
-    NSIndexPath *slidersDoneIndexPath = [NSIndexPath indexPathForRow:4 inSection:SLIDERS];
-    NSIndexPath *slidersChartIndexPath = [NSIndexPath indexPathForRow:0 inSection:SLIDERSCHART];
-    NSIndexPath *slidersAdjustIndexPath = [NSIndexPath indexPathForRow:1 inSection:SLIDERSCHART];
-    if (self.detailItem.sliderValuesSet.boolValue) {
+    if (self.detailItem.sliderValuesSet.boolValue) { // If the chart is visible
         self.sliderChartView.chartType = @"Bar";
         [self.sliderChartView setChartHeightOverall:[self.detailItem.overall floatValue]];
         [self.sliderChartView setChartHeightSleep:[self.detailItem.sleep floatValue]];
@@ -190,22 +182,15 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self.sliderChartView setChartHeightHealth:[self.detailItem.health floatValue]];
         [self.sliderChartView setNeedsDisplay];
 
-        [self.tableView cellForRowAtIndexPath:slidersMoodIndexPath].hidden = YES;
-        [self.tableView cellForRowAtIndexPath:slidersSleepIndexPath].hidden = YES;
-        [self.tableView cellForRowAtIndexPath:slidersEnergyIndexPath].hidden = YES;
-        [self.tableView cellForRowAtIndexPath:slidersHealthIndexPath].hidden = YES;
-        [self.tableView cellForRowAtIndexPath:slidersDoneIndexPath].hidden = YES;
-        [self.tableView cellForRowAtIndexPath:slidersChartIndexPath].hidden = NO;
-        [self.tableView cellForRowAtIndexPath:slidersAdjustIndexPath].hidden = NO;
+        self.slidersView.hidden = YES;
+        self.sliderChartView.hidden = NO;
+        [self.slidersSetAdjustButton setTitle:@"Adjust" forState:UIControlStateNormal];
+
     }
     else {
-        [self.tableView cellForRowAtIndexPath:slidersMoodIndexPath].hidden = NO;
-        [self.tableView cellForRowAtIndexPath:slidersSleepIndexPath].hidden = NO;
-        [self.tableView cellForRowAtIndexPath:slidersEnergyIndexPath].hidden = NO;
-        [self.tableView cellForRowAtIndexPath:slidersHealthIndexPath].hidden = NO;
-        [self.tableView cellForRowAtIndexPath:slidersDoneIndexPath].hidden = NO;
-        [self.tableView cellForRowAtIndexPath:slidersChartIndexPath].hidden = YES;
-        [self.tableView cellForRowAtIndexPath:slidersAdjustIndexPath].hidden = YES;
+        self.slidersView.hidden = NO;
+        self.sliderChartView.hidden = YES;
+        [self.slidersSetAdjustButton setTitle:@"Set" forState:UIControlStateNormal];
     }
 }
 
@@ -231,28 +216,18 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     self.masterPopoverController = nil;
 }
 
+- (IBAction)pressedSlidersSetAdjustButton:(id)sender {
+    // Toggle the Set/Adjust value
+    self.detailItem.sliderValuesSet=[NSNumber numberWithBool:!self.detailItem.sliderValuesSet.boolValue];
+    [self saveContext];
+    [self setSliderCellVisibility];
+    [self.tableView reloadData];
+}
+
 - (IBAction)pressedDoneButton:(id)sender {
     // is it a Done button or an Edit button?
     [self.entryLogTextView resignFirstResponder];
     [self.detailToolBar setRightBarButtonItem:nil animated:YES];
-}
-
-- (IBAction)pressedSliderSetButton:(id)sender {
-    // hide sliders
-    // show pie
-    self.detailItem.sliderValuesSet=[NSNumber numberWithBool:YES];
-    [self saveContext];
-    [self setSliderCellVisibility];
-    [self.tableView reloadData];
-}
-
-- (IBAction)pressedSliderAdjustButton:(id)sender {
-    // show sliders
-    // hide pie
-    self.detailItem.sliderValuesSet=[NSNumber numberWithBool:NO];
-    [self saveContext];
-    [self setSliderCellVisibility];
-    [self.tableView reloadData];
 }
 
 - (void) moveSlider:(id) sender {
@@ -380,27 +355,27 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 }
 
 // TODO: Trying to get the gap to disappear when hiding a static table section
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    CGFloat height = 0;
-    return height;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    CGFloat height = 0;
-    return height;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return nil;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return nil;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return nil;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    CGFloat height = 0;
+//    return height;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    CGFloat height = 0;
+//    return height;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    return nil;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+//    return nil;
+//}
+//
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    return nil;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -436,26 +411,8 @@ typedef NS_ENUM(NSInteger, DetailCells) {
                 if (height < 100.0) { height = 100.0;}
             }
             break;
-        case SLIDERS: //Sliders
-            if (self.detailItem.sliderValuesSet.boolValue) {
-                height = 0.0;
-            }
-            else {
-                height = 35.0;
-                if (indexPath.row == 4) { // Set button
-                    height = 46.0;
-                }
-           }
-            break;
-        case SLIDERSCHART: //Sliders Chart
-            if (self.detailItem.sliderValuesSet.boolValue) {
-                height = 140.0;
-                if (indexPath.row == 1) { // Adjust button
-                    height = 46.0;
-                }
-            } else {
-                height = 0.0;
-            }
+        case SLIDERS: //Sliders & Slider Chart
+            height = 188.0;
             break;
         default:
             height = 100.0;
