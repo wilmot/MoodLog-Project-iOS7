@@ -186,6 +186,7 @@
 		4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */; };
 		4C7CB595170561E300971849 /* MlMoodCollectionViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */; };
 		4C7F572E178E92550065543C /* MoodLogEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F572D178E92550065543C /* MoodLogEvents.m */; };
+		4C7F5730178FC8170065543C /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7F572F178FC8170065543C /* add.png */; };
 		4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */; };
 		4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */; };
 		4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */; };
@@ -410,9 +411,10 @@
 		4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodDataItem.m; sourceTree = "<group>"; };
 		4C7CB593170561E300971849 /* MlMoodCollectionViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodCollectionViewHeaderView.h; sourceTree = "<group>"; };
 		4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewHeaderView.m; sourceTree = "<group>"; };
-		4C7F572B178E91EB0065543C /* MoodLog 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MoodLog 8.xcdatamodel"; sourceTree = "<group>"; };
+		4C7F572B178E91EB0065543C /* MoodLog 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 8.xcdatamodel"; sourceTree = "<group>"; };
 		4C7F572C178E92550065543C /* MoodLogEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodLogEvents.h; sourceTree = "<group>"; };
 		4C7F572D178E92550065543C /* MoodLogEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodLogEvents.m; sourceTree = "<group>"; };
+		4C7F572F178FC8170065543C /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Images/add.png; sourceTree = "<group>"; };
 		4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewController.h; sourceTree = "<group>"; };
 		4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewController.m; sourceTree = "<group>"; };
 		4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewCell.h; sourceTree = "<group>"; };
@@ -597,6 +599,7 @@
 		4C4043E61783E59F00710F2A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C7F572F178FC8170065543C /* add.png */,
 				4C47E708178CA55300325BA7 /* keyboard.png */,
 				4C47E709178CA55300325BA7 /* keyboard@2x.png */,
 				4C47E710178CA75300325BA7 /* keyboard_down.png */,
@@ -958,6 +961,7 @@
 				4C47E70B178CA55300325BA7 /* keyboard@2x.png in Resources */,
 				4C47E712178CA75300325BA7 /* keyboard_down.png in Resources */,
 				4C47E713178CA75300325BA7 /* keyboard_down@2x.png in Resources */,
+				4C7F5730178FC8170065543C /* add.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

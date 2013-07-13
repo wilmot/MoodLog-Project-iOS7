@@ -210,10 +210,6 @@ MoodLogEvents *myLogEntry;
     if (myLogEntry.editing.boolValue == YES) {
         MlDetailViewController *detailViewController = ((MlDetailViewController *)([self parentViewController]));
         
-        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-            // iPad
-            [[detailViewController entryLogTextView] resignFirstResponder];
-        }
         Emotions *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         if ([aMood.selected floatValue]) { // if it's already selected
             [aMood setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];

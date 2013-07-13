@@ -385,7 +385,11 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     orientation = [[UIApplication sharedApplication] statusBarOrientation];
     switch (indexPath.section) {
         case CALENDAR: //Calendar
-            height = 65.0;
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                height = 128.0;
+            } else {
+                height = 65.0;
+            }
             break;
         case JOURNAL: //Journal
             if (orientation == UIInterfaceOrientationPortrait) {
