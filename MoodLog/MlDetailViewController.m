@@ -306,7 +306,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     }
     else if ([segue.identifier isEqualToString:@"chartView"]) {
         // iPad Only
-        [[segue destinationViewController] setManagedObjectContext:self.detailItem.managedObjectContext];
+       // [[segue destinationViewController] setManagedObjectContext:self.detailItem.managedObjectContext];
     }
 }
 

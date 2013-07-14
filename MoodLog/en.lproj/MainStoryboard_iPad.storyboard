@@ -167,33 +167,10 @@
             <objects>
                 <tableViewController id="fxH-gN-Rch" customClass="MlDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gty-rg-aVE">
-                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="703" height="660"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ht1-ob-Ads">
-                            <rect key="frame" x="0.0" y="804" width="703" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <items>
-                                <barButtonItem title="Item" id="TJG-eg-uUK"/>
-                                <barButtonItem systemItem="compose" id="PFe-pz-Ft8">
-                                    <connections>
-                                        <segue destination="9rC-1s-tB1" kind="modal" identifier="mailView" modalTransitionStyle="coverVertical" id="adt-j7-U7m"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem image="chart.png" id="Zz4-u0-t06">
-                                    <connections>
-                                        <segue destination="p5B-Fj-pk5" kind="modal" identifier="chartView" id="YET-y5-uvJ"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="Dab-ow-wVH"/>
-                                <barButtonItem image="calendar.png" id="mcA-5R-Vyf">
-                                    <connections>
-                                        <segue destination="SuM-Wy-QZN" kind="modal" identifier="calendarView" id="7Dm-t1-ttE"/>
-                                    </connections>
-                                </barButtonItem>
-                            </items>
-                        </toolbar>
                         <sections>
                             <tableViewSection headerTitle="" id="0le-2m-0Hw">
                                 <cells>
@@ -351,13 +328,65 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="UM7-U9-FKJ">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="182" id="wyr-FW-v6m">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="182" id="wyr-FW-v6m">
                                         <rect key="frame" x="0.0" y="610" width="703" height="184"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="43" y="1" width="617" height="181"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6P-G1-Te1" customClass="MlChartDrawingView">
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-Ok-p1z">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="75" id="fTR-Hw-K1q"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Energy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA6-w7-dEH">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="75" id="hrX-s1-bvl"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZF-dp-yaN">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="75" id="e96-Pr-ofL"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGo-Z6-17Y">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="75" id="mhq-zl-tR0"/>
+                                                                <constraint firstAttribute="height" constant="24" id="rAc-pL-MtS"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstItem="iA6-w7-dEH" firstAttribute="bottom" secondItem="d6P-G1-Te1" secondAttribute="bottom" type="default" id="3qy-Vb-etA"/>
+                                                        <constraint firstItem="0ZF-dp-yaN" firstAttribute="bottom" secondItem="d6P-G1-Te1" secondAttribute="bottom" type="default" id="6iO-uA-zsh"/>
+                                                        <constraint firstItem="OGo-Z6-17Y" firstAttribute="bottom" secondItem="d6P-G1-Te1" secondAttribute="bottom" type="default" id="CLf-bx-0ll"/>
+                                                        <constraint firstItem="0ZF-dp-yaN" firstAttribute="leading" secondItem="d6P-G1-Te1" secondAttribute="leading" constant="199" id="Io3-ed-hi1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="iA6-w7-dEH" secondAttribute="trailing" constant="173" id="KWj-NB-R81"/>
+                                                        <constraint firstItem="OGo-Z6-17Y" firstAttribute="leading" secondItem="d6P-G1-Te1" secondAttribute="leading" constant="33" id="QRv-5j-Jee"/>
+                                                        <constraint firstItem="w4k-Ok-p1z" firstAttribute="bottom" secondItem="d6P-G1-Te1" secondAttribute="bottom" type="default" id="SaF-nU-aEF"/>
+                                                        <constraint firstItem="OGo-Z6-17Y" firstAttribute="top" secondItem="0ZF-dp-yaN" secondAttribute="top" type="default" id="TTX-lz-41I"/>
+                                                        <constraint firstItem="iA6-w7-dEH" firstAttribute="top" secondItem="w4k-Ok-p1z" secondAttribute="top" type="default" id="XaB-Uy-Dvm"/>
+                                                        <constraint firstItem="0ZF-dp-yaN" firstAttribute="top" secondItem="iA6-w7-dEH" secondAttribute="top" type="default" id="eYj-yq-Iku"/>
+                                                        <constraint firstAttribute="trailing" secondItem="w4k-Ok-p1z" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ugW-Ag-jGG"/>
+                                                    </constraints>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeG-6D-eg2" userLabel="View - Sliders">
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Low Energy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCX-FV-QEN">
@@ -371,6 +400,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xit-N2-uU6">
+                                                            <gestureRecognizers/>
                                                             <color key="minimumTrackTintColor" red="0.27509230229999998" green="0.66635443240000003" blue="0.23416415160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="maximumTrackTintColor" red="1" green="0.35617614790000002" blue="0.357998859" alpha="1" colorSpace="calibratedRGB"/>
                                                             <connections>
@@ -389,6 +419,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="cfc-uv-klY">
+                                                            <gestureRecognizers/>
                                                             <color key="minimumTrackTintColor" red="0.27509230229999998" green="0.66635443240000003" blue="0.23416415160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="maximumTrackTintColor" red="1" green="0.35617614790000002" blue="0.357998859" alpha="1" colorSpace="calibratedRGB"/>
                                                             <connections>
@@ -402,6 +433,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="w2P-uB-kxF">
+                                                            <gestureRecognizers/>
                                                             <color key="minimumTrackTintColor" red="0.27509230229999998" green="0.66635443240000003" blue="0.23416415160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="maximumTrackTintColor" red="1" green="0.35617614790000002" blue="0.357998859" alpha="1" colorSpace="calibratedRGB"/>
                                                             <connections>
@@ -423,6 +455,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rpt-pf-I8t">
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="313" id="2ft-La-ihj"/>
                                                             </constraints>
@@ -491,61 +524,11 @@
                                                         <action selector="pressedSlidersSetAdjustButton:" destination="fxH-gN-Rch" eventType="touchUpInside" id="vZ2-7M-4GN"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6P-G1-Te1" customClass="MlChartDrawingView">
-                                                    <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-Ok-p1z">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="75" id="fTR-Hw-K1q"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Energy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA6-w7-dEH">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="75" id="hrX-s1-bvl"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZF-dp-yaN">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="75" id="e96-Pr-ofL"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGo-Z6-17Y">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="75" id="mhq-zl-tR0"/>
-                                                                <constraint firstAttribute="height" constant="24" id="rAc-pL-MtS"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="iA6-w7-dEH" firstAttribute="bottom" secondItem="d6P-G1-Te1" secondAttribute="bottom" type="default" id="3qy-Vb-etA"/>
-                                                        <constraint firstItem="0ZF-dp-yaN" firstAttribute="bottom" secondItem="d6P-G1-Te1" secondAttribute="bottom" type="default" id="6iO-uA-zsh"/>
-                                                        <constraint firstItem="OGo-Z6-17Y" firstAttribute="bottom" secondItem="d6P-G1-Te1" secondAttribute="bottom" type="default" id="CLf-bx-0ll"/>
-                                                        <constraint firstItem="0ZF-dp-yaN" firstAttribute="leading" secondItem="d6P-G1-Te1" secondAttribute="leading" constant="199" id="Io3-ed-hi1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="iA6-w7-dEH" secondAttribute="trailing" constant="173" id="KWj-NB-R81"/>
-                                                        <constraint firstItem="OGo-Z6-17Y" firstAttribute="leading" secondItem="d6P-G1-Te1" secondAttribute="leading" constant="33" id="QRv-5j-Jee"/>
-                                                        <constraint firstItem="w4k-Ok-p1z" firstAttribute="bottom" secondItem="d6P-G1-Te1" secondAttribute="bottom" type="default" id="SaF-nU-aEF"/>
-                                                        <constraint firstItem="OGo-Z6-17Y" firstAttribute="top" secondItem="0ZF-dp-yaN" secondAttribute="top" type="default" id="TTX-lz-41I"/>
-                                                        <constraint firstItem="iA6-w7-dEH" firstAttribute="top" secondItem="w4k-Ok-p1z" secondAttribute="top" type="default" id="XaB-Uy-Dvm"/>
-                                                        <constraint firstItem="0ZF-dp-yaN" firstAttribute="top" secondItem="iA6-w7-dEH" secondAttribute="top" type="default" id="eYj-yq-Iku"/>
-                                                        <constraint firstAttribute="trailing" secondItem="w4k-Ok-p1z" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ugW-Ag-jGG"/>
-                                                    </constraints>
-                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="ZeG-6D-eg2" firstAttribute="trailing" secondItem="d6P-G1-Te1" secondAttribute="trailing" type="default" id="5IH-UI-eQf"/>
                                             <constraint firstItem="d6P-G1-Te1" firstAttribute="centerX" secondItem="wyr-FW-v6m" secondAttribute="centerX" type="default" id="6nW-qt-NI0"/>
@@ -567,7 +550,27 @@
                             <outlet property="delegate" destination="fxH-gN-Rch" id="coB-6E-VmS"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="What?" id="hjp-Fv-00T"/>
+                        <barButtonItem systemItem="compose" id="PFe-pz-Ft8">
+                            <connections>
+                                <segue destination="9rC-1s-tB1" kind="modal" identifier="mailView" modalTransitionStyle="coverVertical" id="adt-j7-U7m"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="chart.png" id="Zz4-u0-t06">
+                            <connections>
+                                <segue destination="p5B-Fj-pk5" kind="modal" identifier="chartView" id="YET-y5-uvJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="edy-Q2-OEq"/>
+                        <barButtonItem image="calendar.png" id="mcA-5R-Vyf">
+                            <connections>
+                                <segue destination="SuM-Wy-QZN" kind="modal" identifier="calendarView" id="7Dm-t1-ttE"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="jcJ-DE-Ide"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dateLabel" destination="ZvU-KF-zFZ" id="moS-kl-Fr5"/>
                         <outlet property="energySlider" destination="Xit-N2-uU6" id="dUT-o2-ded"/>
@@ -729,10 +732,16 @@
         <!--Navigation Controller-->
         <scene sceneID="50">
             <objects>
-                <navigationController id="42" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="42" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="43">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dzG-X0-xWA">
+                        <rect key="frame" x="0.0" y="724" width="703" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="fxH-gN-Rch" kind="relationship" relationship="rootViewController" id="ppG-Ja-gC1"/>
                     </connections>
@@ -787,7 +796,7 @@
             <objects>
                 <viewController id="gaI-mF-bRJ" customClass="MlJournalEditorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XbR-FJ-YTf">
-                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="703" height="660"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUb-RZ-udh">
@@ -884,7 +893,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <viewController id="0Nd-Cr-aqY" customClass="MlFacesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MZ1-eg-swv">
-                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="703" height="660"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obx-nb-37N">
@@ -1219,7 +1228,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="KjC-am-i6b" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="HUG-yR-5sI">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="660"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1322,7 +1331,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </connections>
                         </collectionReusableView>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellFooter" id="ued-Vf-3pl">
-                            <rect key="frame" x="0.0" y="0.0" width="703" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </collectionReusableView>
@@ -1346,202 +1354,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="keyboard.png" width="22" height="14"/>
         <image name="keyboard_down.png" width="22" height="19"/>
     </resources>
-    <classes>
-        <class className="MlCalendarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCalendarViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButton:"/>
-            </relationships>
-        </class>
-        <class className="MlCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="calendarImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="cellBackground" candidateClass="UIView"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="subLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlChartCollectionViewCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewCell.h"/>
-            <relationships>
-                <relationship kind="action" name="pressDetailButton:"/>
-                <relationship kind="outlet" name="angerLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="chartDrawingView" candidateClass="MlChartDrawingView"/>
-                <relationship kind="outlet" name="chartHeightLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emotionsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fearLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="joyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loveLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sadnessLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="surpriseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlChartCollectionViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="chartCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="MlChartDrawingView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartDrawingView.h"/>
-        </class>
-        <class className="MlChartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="chooseSegment:"/>
-                <relationship kind="action" name="pressDone:"/>
-                <relationship kind="outlet" name="segment" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="MlCollectionViewCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCollectionViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="checkMark" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="face" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="moodName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlDatePickerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDatePickerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="datePicked:"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="MlDateRangeDrawing" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDateRangeDrawing.h"/>
-        </class>
-        <class className="MlDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addEntryFromStartScreen:"/>
-                <relationship kind="action" name="moveSlider:"/>
-                <relationship kind="action" name="pressedDoneButton:"/>
-                <relationship kind="action" name="pressedExpandButton:"/>
-                <relationship kind="action" name="pressedSlidersSetAdjustButton:"/>
-                <relationship kind="action" name="setSliderData:"/>
-                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="blankCoveringView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="dateCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="detailToolBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="energySlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="entryLogTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="expandButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="healthSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="littleKeyboardIcon" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="moodContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="moodListTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="moodViewWithHeader" candidateClass="UIView"/>
-                <relationship kind="outlet" name="moodsCell" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="noMoodsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="overallSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sleepSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sliderChartView" candidateClass="MlChartDrawingView"/>
-                <relationship kind="outlet" name="slidersSetAdjustButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="slidersView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortGroupButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MlEmailEventCountDrawing" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlEmailEventCountDrawing.h"/>
-        </class>
-        <class className="MlFacesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlFacesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sortABC:"/>
-                <relationship kind="action" name="sortCBA:"/>
-                <relationship kind="action" name="sortGroup:"/>
-                <relationship kind="action" name="sortShuffle:"/>
-                <relationship kind="action" name="toggleFaces:"/>
-                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortGroupButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MlJournalEditorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlJournalEditorViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressDoneButton:"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="journalTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="journalToolbar" candidateClass="UINavigationItem"/>
-            </relationships>
-        </class>
-        <class className="MlMailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="composeEmail:"/>
-                <relationship kind="action" name="doneButton:"/>
-                <relationship kind="action" name="pressAllButton:"/>
-                <relationship kind="action" name="pressLatestButton:"/>
-                <relationship kind="action" name="pressMonthButton:"/>
-                <relationship kind="action" name="pressWeekButton:"/>
-                <relationship kind="action" name="slideEndSlider:"/>
-                <relationship kind="action" name="slideStartSlider:"/>
-                <relationship kind="action" name="updatedRecipientList:"/>
-                <relationship kind="outlet" name="allButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="composeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="dateRangeDrawing" candidateClass="MlDateRangeDrawing"/>
-                <relationship kind="outlet" name="dateRangeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="endDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="endSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="eventCount" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="eventCountView" candidateClass="MlEmailEventCountDrawing"/>
-                <relationship kind="outlet" name="latestButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="monthButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="recipientList" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="startDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="weekButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MlMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMasterViewController.h"/>
-        </class>
-        <class className="MlMoodCollectionViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewController.h"/>
-        </class>
-        <class className="MlMoodCollectionViewHeaderView" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewHeaderView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
