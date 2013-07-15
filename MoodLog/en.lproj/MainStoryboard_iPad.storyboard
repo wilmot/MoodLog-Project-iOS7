@@ -165,7 +165,7 @@
         <!--Ml Detail View Controller-->
         <scene sceneID="yHU-IN-XBP">
             <objects>
-                <tableViewController id="fxH-gN-Rch" customClass="MlDetailViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="" id="fxH-gN-Rch" customClass="MlDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gty-rg-aVE">
                         <rect key="frame" x="0.0" y="64" width="703" height="660"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -406,6 +406,7 @@
                                                             <connections>
                                                                 <action selector="moveSlider:" destination="fxH-gN-Rch" eventType="valueChanged" id="ttf-CF-vGb"/>
                                                                 <action selector="setSliderData:" destination="fxH-gN-Rch" eventType="touchUpInside" id="xQZ-gh-KQ0"/>
+                                                                <outletCollection property="gestureRecognizers" destination="uU2-0p-pwz" appends="YES" id="D4k-ep-NDj"/>
                                                             </connections>
                                                         </slider>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Healthy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBP-2q-PIL">
@@ -425,6 +426,7 @@
                                                             <connections>
                                                                 <action selector="moveSlider:" destination="fxH-gN-Rch" eventType="valueChanged" id="vPy-l6-PB5"/>
                                                                 <action selector="setSliderData:" destination="fxH-gN-Rch" eventType="touchUpInside" id="HsW-u1-hVd"/>
+                                                                <outletCollection property="gestureRecognizers" destination="uU2-0p-pwz" appends="YES" id="YJ1-7c-0NC"/>
                                                             </connections>
                                                         </slider>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Underslept" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYh-Op-Kys">
@@ -439,6 +441,7 @@
                                                             <connections>
                                                                 <action selector="moveSlider:" destination="fxH-gN-Rch" eventType="valueChanged" id="j4M-c1-gdT"/>
                                                                 <action selector="setSliderData:" destination="fxH-gN-Rch" eventType="touchUpInside" id="wJn-Wz-00r"/>
+                                                                <outletCollection property="gestureRecognizers" destination="uU2-0p-pwz" appends="YES" id="AUg-og-CCQ"/>
                                                             </connections>
                                                         </slider>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Feel Good" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dH-Ly-Cxr">
@@ -464,6 +467,7 @@
                                                             <connections>
                                                                 <action selector="moveSlider:" destination="fxH-gN-Rch" eventType="valueChanged" id="la3-J7-MZQ"/>
                                                                 <action selector="setSliderData:" destination="fxH-gN-Rch" eventType="touchUpInside" id="SYj-e4-3Rq"/>
+                                                                <outletCollection property="gestureRecognizers" destination="uU2-0p-pwz" appends="YES" id="Coe-pu-gAf"/>
                                                             </connections>
                                                         </slider>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sick" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ee-Il-p2N">
@@ -479,7 +483,7 @@
                                                         <constraint firstItem="4dH-Ly-Cxr" firstAttribute="leading" secondItem="Rpt-pf-I8t" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="3vf-9F-QxQ"/>
                                                         <constraint firstItem="ewZ-QR-qvG" firstAttribute="leading" secondItem="jBP-2q-PIL" secondAttribute="leading" type="default" id="5FR-7a-F2u"/>
                                                         <constraint firstItem="jBP-2q-PIL" firstAttribute="trailing" secondItem="ewZ-QR-qvG" secondAttribute="trailing" type="default" id="7AL-G2-sW8"/>
-                                                        <constraint firstItem="9vy-zY-KvU" firstAttribute="top" secondItem="ZeG-6D-eg2" secondAttribute="top" constant="15" id="8cW-tM-LWE"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Xit-N2-uU6" secondAttribute="bottom" constant="40" id="889-5T-YnF"/>
                                                         <constraint firstItem="Rpt-pf-I8t" firstAttribute="leading" secondItem="ZeG-6D-eg2" secondAttribute="leading" constant="148" id="8fb-KG-CTg"/>
                                                         <constraint firstAttribute="bottom" secondItem="cfc-uv-klY" secondAttribute="bottom" constant="12" id="AHS-DU-WZI"/>
                                                         <constraint firstItem="cfc-uv-klY" firstAttribute="leading" secondItem="Xit-N2-uU6" secondAttribute="leading" type="default" id="AaR-Yz-SiB"/>
@@ -488,11 +492,11 @@
                                                         <constraint firstItem="ewZ-QR-qvG" firstAttribute="leading" secondItem="Xit-N2-uU6" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Bq4-28-uJJ"/>
                                                         <constraint firstItem="9vy-zY-KvU" firstAttribute="leading" secondItem="CYh-Op-Kys" secondAttribute="leading" type="default" id="FQd-dw-sU2"/>
                                                         <constraint firstItem="Rpt-pf-I8t" firstAttribute="leading" secondItem="w2P-uB-kxF" secondAttribute="leading" type="default" id="GMN-za-acW"/>
+                                                        <constraint firstItem="Rpt-pf-I8t" firstAttribute="bottom" secondItem="9vy-zY-KvU" secondAttribute="bottom" type="default" id="J4V-wm-g3e"/>
                                                         <constraint firstItem="9vy-zY-KvU" firstAttribute="leading" secondItem="ZeG-6D-eg2" secondAttribute="leading" constant="53" id="Knw-e7-pkf"/>
                                                         <constraint firstItem="4dH-Ly-Cxr" firstAttribute="baseline" secondItem="9vy-zY-KvU" secondAttribute="baseline" type="default" id="Nyo-cX-Dj1"/>
                                                         <constraint firstItem="4dH-Ly-Cxr" firstAttribute="trailing" secondItem="zqO-SU-Nnu" secondAttribute="trailing" type="default" id="OnN-nb-odF"/>
                                                         <constraint firstItem="Xit-N2-uU6" firstAttribute="leading" secondItem="w2P-uB-kxF" secondAttribute="leading" type="default" id="PKU-X6-eXL"/>
-                                                        <constraint firstItem="9vy-zY-KvU" firstAttribute="top" secondItem="Rpt-pf-I8t" secondAttribute="top" type="default" id="Qfs-Ux-1NY"/>
                                                         <constraint firstItem="w2P-uB-kxF" firstAttribute="top" secondItem="ZeG-6D-eg2" secondAttribute="top" constant="42" id="UZd-O8-0Rg"/>
                                                         <constraint firstItem="4dH-Ly-Cxr" firstAttribute="leading" secondItem="zqO-SU-Nnu" secondAttribute="leading" type="default" id="Ues-t4-qbd"/>
                                                         <constraint firstItem="ewZ-QR-qvG" firstAttribute="leading" secondItem="zqO-SU-Nnu" secondAttribute="leading" type="default" id="VJJ-Hk-Hdv"/>
@@ -501,7 +505,7 @@
                                                         <constraint firstItem="CYh-Op-Kys" firstAttribute="bottom" secondItem="w2P-uB-kxF" secondAttribute="bottom" type="default" id="dVP-sA-oLf"/>
                                                         <constraint firstItem="8ee-Il-p2N" firstAttribute="baseline" secondItem="jBP-2q-PIL" secondAttribute="baseline" type="default" id="f4s-q2-EHX"/>
                                                         <constraint firstItem="CYh-Op-Kys" firstAttribute="baseline" secondItem="zqO-SU-Nnu" secondAttribute="baseline" type="default" id="fTP-DN-RII"/>
-                                                        <constraint firstItem="Xit-N2-uU6" firstAttribute="bottom" secondItem="bCX-FV-QEN" secondAttribute="bottom" type="default" id="ljf-1n-sI1"/>
+                                                        <constraint firstItem="Rpt-pf-I8t" firstAttribute="top" secondItem="ZeG-6D-eg2" secondAttribute="top" constant="14" id="m6l-dJ-Ukq"/>
                                                         <constraint firstItem="9vy-zY-KvU" firstAttribute="trailing" secondItem="CYh-Op-Kys" secondAttribute="trailing" type="default" id="t0O-p2-mco"/>
                                                         <constraint firstItem="ewZ-QR-qvG" firstAttribute="trailing" secondItem="zqO-SU-Nnu" secondAttribute="trailing" type="default" id="xBk-IU-nWs"/>
                                                         <constraint firstItem="jBP-2q-PIL" firstAttribute="leading" secondItem="cfc-uv-klY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zSg-8j-fOQ"/>
@@ -590,6 +594,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AuM-QH-k0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="uU2-0p-pwz"/>
             </objects>
             <point key="canvasLocation" x="160" y="242"/>
         </scene>
@@ -1354,6 +1359,205 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="keyboard.png" width="22" height="14"/>
         <image name="keyboard_down.png" width="22" height="19"/>
     </resources>
+    <classes>
+        <class className="MlCalendarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCalendarViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButton:"/>
+            </relationships>
+        </class>
+        <class className="MlCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="calendarImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cellBackground" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlChartCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="action" name="pressDetailButton:"/>
+                <relationship kind="outlet" name="angerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="chartDrawingView" candidateClass="MlChartDrawingView"/>
+                <relationship kind="outlet" name="chartHeightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emotionsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="joyLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loveLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sadnessLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="surpriseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlChartCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="chartCollectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="MlChartDrawingView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartDrawingView.h"/>
+        </class>
+        <class className="MlChartViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="chooseSegment:"/>
+                <relationship kind="action" name="pressDone:"/>
+                <relationship kind="outlet" name="segment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="MlCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="checkMark" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="face" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="moodName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlDatePickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDatePickerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="datePicked:"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+            </relationships>
+        </class>
+        <class className="MlDateRangeDrawing" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDateRangeDrawing.h"/>
+        </class>
+        <class className="MlDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addEntryFromStartScreen:"/>
+                <relationship kind="action" name="moveSlider:"/>
+                <relationship kind="action" name="pressedDoneButton:"/>
+                <relationship kind="action" name="pressedExpandButton:"/>
+                <relationship kind="action" name="pressedSlidersSetAdjustButton:"/>
+                <relationship kind="action" name="setSliderData:"/>
+                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="blankCoveringView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dateCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailToolBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="energySlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="entryLogTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="expandButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="healthSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="littleKeyboardIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="moodContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="moodListTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="moodViewWithHeader" candidateClass="UIView"/>
+                <relationship kind="outlet" name="moodsCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="noMoodsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="overallSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="sleepSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderChartView" candidateClass="MlChartDrawingView"/>
+                <relationship kind="outlet" name="slidersSetAdjustButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="slidersView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortGroupButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlEmailEventCountDrawing" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlEmailEventCountDrawing.h"/>
+        </class>
+        <class className="MlFacesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlFacesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sortABC:"/>
+                <relationship kind="action" name="sortCBA:"/>
+                <relationship kind="action" name="sortGroup:"/>
+                <relationship kind="action" name="sortShuffle:"/>
+                <relationship kind="action" name="toggleFaces:"/>
+                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortGroupButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MlJournalEditorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlJournalEditorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressDoneButton:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="journalTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="journalToolbar" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="MlMailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="composeEmail:"/>
+                <relationship kind="action" name="doneButton:"/>
+                <relationship kind="action" name="pressAllButton:"/>
+                <relationship kind="action" name="pressLatestButton:"/>
+                <relationship kind="action" name="pressMonthButton:"/>
+                <relationship kind="action" name="pressWeekButton:"/>
+                <relationship kind="action" name="slideEndSlider:"/>
+                <relationship kind="action" name="slideStartSlider:"/>
+                <relationship kind="action" name="updatedRecipientList:"/>
+                <relationship kind="outlet" name="allButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="composeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dateRangeDrawing" candidateClass="MlDateRangeDrawing"/>
+                <relationship kind="outlet" name="dateRangeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="endDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="endSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="eventCount" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="eventCountView" candidateClass="MlEmailEventCountDrawing"/>
+                <relationship kind="outlet" name="latestButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="monthButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="recipientList" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="weekButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MlMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMasterViewController.h"/>
+        </class>
+        <class className="MlMoodCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewController.h"/>
+        </class>
+        <class className="MlMoodCollectionViewHeaderView" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewHeaderView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
