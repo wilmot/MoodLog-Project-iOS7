@@ -141,8 +141,8 @@
 		4C4043EF1783E5CB00710F2A /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043E71783E5CB00710F2A /* calendar.png */; };
 		4C4043F01783E5CB00710F2A /* CalendarBlank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043E81783E5CB00710F2A /* CalendarBlank.png */; };
 		4C4043F11783E5CB00710F2A /* CalendarBlank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043E91783E5CB00710F2A /* CalendarBlank@2x.png */; };
-		4C4043F21783E5CB00710F2A /* CalendarBlank49.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043EA1783E5CB00710F2A /* CalendarBlank49.png */; };
-		4C4043F31783E5CB00710F2A /* CalendarBlank49@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043EB1783E5CB00710F2A /* CalendarBlank49@2x.png */; };
+		4C4043F21783E5CB00710F2A /* CalendarBlank48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043EA1783E5CB00710F2A /* CalendarBlank48.png */; };
+		4C4043F31783E5CB00710F2A /* CalendarBlank48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043EB1783E5CB00710F2A /* CalendarBlank48@2x.png */; };
 		4C4043F41783E5CB00710F2A /* CalendarBlank93.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043EC1783E5CB00710F2A /* CalendarBlank93.png */; };
 		4C4043F51783E5CB00710F2A /* CalendarBlank93@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043ED1783E5CB00710F2A /* CalendarBlank93@2x.png */; };
 		4C4043F61783E5CB00710F2A /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043EE1783E5CB00710F2A /* chart.png */; };
@@ -351,8 +351,8 @@
 		4C4043E71783E5CB00710F2A /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		4C4043E81783E5CB00710F2A /* CalendarBlank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarBlank.png; sourceTree = "<group>"; };
 		4C4043E91783E5CB00710F2A /* CalendarBlank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarBlank@2x.png"; sourceTree = "<group>"; };
-		4C4043EA1783E5CB00710F2A /* CalendarBlank49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarBlank49.png; sourceTree = "<group>"; };
-		4C4043EB1783E5CB00710F2A /* CalendarBlank49@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarBlank49@2x.png"; sourceTree = "<group>"; };
+		4C4043EA1783E5CB00710F2A /* CalendarBlank48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarBlank48.png; sourceTree = "<group>"; };
+		4C4043EB1783E5CB00710F2A /* CalendarBlank48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarBlank48@2x.png"; sourceTree = "<group>"; };
 		4C4043EC1783E5CB00710F2A /* CalendarBlank93.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarBlank93.png; sourceTree = "<group>"; };
 		4C4043ED1783E5CB00710F2A /* CalendarBlank93@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarBlank93@2x.png"; sourceTree = "<group>"; };
 		4C4043EE1783E5CB00710F2A /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart.png; sourceTree = "<group>"; };
@@ -616,8 +616,8 @@
 				4C4043E71783E5CB00710F2A /* calendar.png */,
 				4C4043E81783E5CB00710F2A /* CalendarBlank.png */,
 				4C4043E91783E5CB00710F2A /* CalendarBlank@2x.png */,
-				4C4043EA1783E5CB00710F2A /* CalendarBlank49.png */,
-				4C4043EB1783E5CB00710F2A /* CalendarBlank49@2x.png */,
+				4C4043EA1783E5CB00710F2A /* CalendarBlank48.png */,
+				4C4043EB1783E5CB00710F2A /* CalendarBlank48@2x.png */,
 				4C4043EC1783E5CB00710F2A /* CalendarBlank93.png */,
 				4C4043ED1783E5CB00710F2A /* CalendarBlank93@2x.png */,
 				4C4043EE1783E5CB00710F2A /* chart.png */,
@@ -951,8 +951,8 @@
 				4C4043EF1783E5CB00710F2A /* calendar.png in Resources */,
 				4C4043F01783E5CB00710F2A /* CalendarBlank.png in Resources */,
 				4C4043F11783E5CB00710F2A /* CalendarBlank@2x.png in Resources */,
-				4C4043F21783E5CB00710F2A /* CalendarBlank49.png in Resources */,
-				4C4043F31783E5CB00710F2A /* CalendarBlank49@2x.png in Resources */,
+				4C4043F21783E5CB00710F2A /* CalendarBlank48.png in Resources */,
+				4C4043F31783E5CB00710F2A /* CalendarBlank48@2x.png in Resources */,
 				4C4043F41783E5CB00710F2A /* CalendarBlank93.png in Resources */,
 				4C4043F51783E5CB00710F2A /* CalendarBlank93@2x.png in Resources */,
 				4C4043F61783E5CB00710F2A /* chart.png in Resources */,
