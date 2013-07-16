@@ -228,12 +228,16 @@ NSUserDefaults *defaults;
                         error:(NSError*)error;
 {
     if (result == MFMailComposeResultSent) {
-        NSLog(@"It's away!");
+        // NSLog(@"It's away!");
+        [controller dismissViewControllerAnimated:YES completion:^(void) {
+            [self dismissViewControllerAnimated:YES completion:nil]; // Also dismiss the Mail settings view controller
+        }];
+        
     }
     else {
-        NSLog(@"Mail composed, but not sent");
+        // NSLog(@"Mail composed, but not sent");
+        [controller dismissViewControllerAnimated:YES completion:nil];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)aTextfield {

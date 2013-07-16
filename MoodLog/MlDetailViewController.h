@@ -41,6 +41,8 @@
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *sliderChartView;
 @property (weak, nonatomic) IBOutlet UIView *slidersView;
 @property (weak, nonatomic) IBOutlet UIButton *slidersSetAdjustButton;
+@property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *tableViewCellCollection;
+@property (weak, nonatomic) IBOutlet UITableViewCell *addEntryTableViewCell;
 
 @property (strong, atomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 @property (strong, nonatomic) MoodLogEvents *detailItem;

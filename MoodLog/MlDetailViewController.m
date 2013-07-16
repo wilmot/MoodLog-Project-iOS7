@@ -27,7 +27,8 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     CALENDAR,
     JOURNAL,
     MOODS, 
-    SLIDERS
+    SLIDERS,
+    ADDENTRYBUTTON
 };
 
 
@@ -59,9 +60,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //[self.navigationController setToolbarHidden:YES animated: YES];
-    if ((self.detailItem.editing.boolValue == NO) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
-        [self.moodContainer setHidden:NO];
-    }
     [self configureView];
 }
 
@@ -75,6 +73,11 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 {
     // Update the user interface for the detail item.
     if (self.detailItem) {
+        for (id object in self.tableViewCellCollection) {
+            ((UITableViewCell *)object).hidden = NO;
+        }
+        self.addEntryTableViewCell.hidden = YES;
+
         NSDate *today = [self.detailItem valueForKey:@"date"];
         
         NSCalendar *gregorian = [[NSCalendar alloc]
@@ -169,6 +172,16 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self.blankCoveringView setHidden:NO];
         [self.scrollView setHidden:YES];
         [self.detailToolBar setRightBarButtonItem:nil animated:YES];
+        
+        for (id object in self.tableViewCellCollection) {
+            ((UITableViewCell *)object).hidden = YES;
+        }
+        self.addEntryTableViewCell.hidden = NO;
+       
+        if ((self.detailItem.editing.boolValue == NO) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
+            [self.moodContainer setHidden:NO];
+        }
+
     }
     [self setSliderCellVisibility];
 }
@@ -417,6 +430,14 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             break;
         case SLIDERS: //Sliders & Slider Chart
             height = 188.0;
+            break;
+        case ADDENTRYBUTTON:
+            if (self.detailItem == nil) {
+                height = 100.0;
+            }
+            else {
+                height = 0.0;
+            }
             break;
         default:
             height = 100.0;

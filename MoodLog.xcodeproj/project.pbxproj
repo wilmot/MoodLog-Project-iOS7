@@ -160,6 +160,7 @@
 		4C47E70B178CA55300325BA7 /* keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E709178CA55300325BA7 /* keyboard@2x.png */; };
 		4C47E712178CA75300325BA7 /* keyboard_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E710178CA75300325BA7 /* keyboard_down.png */; };
 		4C47E713178CA75300325BA7 /* keyboard_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E711178CA75300325BA7 /* keyboard_down@2x.png */; };
+		4C4AC9411794B3AE004DA98E /* MlNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AC9401794B3AE004DA98E /* MlNotificationsViewController.m */; };
 		4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53DF1665F14900DDDBA2 /* MoodList.plist */; };
 		4C52861816D9A654007C878C /* MlChartDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C52861716D9A654007C878C /* MlChartDrawingView.m */; };
 		4C55CBE7162DE67400EAA878 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE6162DE67400EAA878 /* UIKit.framework */; };
@@ -371,6 +372,8 @@
 		4C47E709178CA55300325BA7 /* keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard@2x.png"; sourceTree = "<group>"; };
 		4C47E710178CA75300325BA7 /* keyboard_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard_down.png; sourceTree = "<group>"; };
 		4C47E711178CA75300325BA7 /* keyboard_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_down@2x.png"; sourceTree = "<group>"; };
+		4C4AC93F1794B3AE004DA98E /* MlNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlNotificationsViewController.h; sourceTree = "<group>"; };
+		4C4AC9401794B3AE004DA98E /* MlNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlNotificationsViewController.m; sourceTree = "<group>"; };
 		4C4C53D4166569A400DDDBA2 /* MoodLog 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 3.xcdatamodel"; sourceTree = "<group>"; };
 		4C4C53DF1665F14900DDDBA2 /* MoodList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoodList.plist; sourceTree = "<group>"; };
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
@@ -696,6 +699,8 @@
 				4C52861716D9A654007C878C /* MlChartDrawingView.m */,
 				4C03FEFF176837B9001BA22B /* MlChartView.h */,
 				4C03FF00176837B9001BA22B /* MlChartView.m */,
+				4C4AC93F1794B3AE004DA98E /* MlNotificationsViewController.h */,
+				4C4AC9401794B3AE004DA98E /* MlNotificationsViewController.m */,
 				4C5D051016C1F1BC0028C421 /* MlFacesViewController.h */,
 				4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */,
 				4CFB21EF164B8C870055CC3D /* MlMailViewController.h */,
@@ -1024,6 +1029,7 @@
 				4C03FF0117683843001BA22B /* MlChartView.m in Sources */,
 				4C61F1851780F9990032B200 /* MlJournalEditorViewController.m in Sources */,
 				4C7F572E178E92550065543C /* MoodLogEvents.m in Sources */,
+				4C4AC9411794B3AE004DA98E /* MlNotificationsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -277,14 +277,14 @@ MoodLogEvents *myLogEntry;
     
     if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-            size = CGSizeMake(86.0, 116.0);
+            size = CGSizeMake(110.0, 133.0);
         }
         else { // iPhone
             size = CGSizeMake(80.0, 114.0);
         }
     }
     else if ([self.cellIdentifier isEqual: @"moodCell"]) {
-        size = CGSizeMake(96.0, 18.0);
+        size = CGSizeMake(96.0, 32.0);
     }
     return size;
 }
