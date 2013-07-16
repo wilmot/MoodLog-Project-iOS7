@@ -1,18 +1,18 @@
 //
-//  MlNotificationsViewController.m
+//  MlRemindersViewController.m
 //  MoodLog
 //
-//  Created by Barry Langdon-Lassagne on 7/15/13.
+//  Created by Barry Langdon-Lassagne on 7/16/13.
 //  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
-#import "MlNotificationsViewController.h"
+#import "MlRemindersViewController.h"
 
-@interface MlNotificationsViewController ()
+@interface MlRemindersViewController ()
 
 @end
 
-@implementation MlNotificationsViewController
+@implementation MlRemindersViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,10 +37,5 @@
 
 - (IBAction)pressDoneButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)incrementReminders:(id)sender {
-    NSLog(@"Increment reminders");
-    self.reminderCount.text = [NSString stringWithFormat:@"%d",(int)round(self.reminderStepper.value)];
 }
 @end

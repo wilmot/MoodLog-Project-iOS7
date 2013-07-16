@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-453" y="-188"/>
+            <point key="canvasLocation" x="-785" y="-228"/>
         </scene>
         <!--Ml Mail View Controller-->
         <scene sceneID="0Fh-D0-TzF">
@@ -359,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIT-fV-EUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="488"/>
+            <point key="canvasLocation" x="704" y="561"/>
         </scene>
         <!--Ml Chart Cell Entry View Controller-->
         <scene sceneID="w5v-v6-prI">
@@ -769,12 +769,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ct-v5-ee5">
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </view>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="CalendarBlank49.png" translatesAutoresizingMaskIntoConstraints="NO" id="gvR-9p-Di7">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="48" id="jBd-pH-Mgx"/>
-                                                <constraint firstAttribute="height" constant="48" id="mSf-bM-g2h"/>
-                                            </constraints>
-                                        </imageView>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="CalendarBlank48.png" translatesAutoresizingMaskIntoConstraints="NO" id="gvR-9p-Di7"/>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="wPi-0y-5Ta">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="65" id="2ic-Hk-oNU"/>
@@ -887,7 +882,7 @@
                         </barButtonItem>
                         <barButtonItem title="🕓" id="4vh-hx-h3P">
                             <connections>
-                                <segue destination="r1W-H6-NzK" kind="modal" identifier="notifications" id="Cch-rt-iCP"/>
+                                <segue destination="jVq-qp-tuX" kind="modal" identifier="notifications" id="eR0-6a-ePs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Eyy-m2-Vpx"/>
@@ -897,213 +892,222 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="36">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Mood Log" id="36">
                         <barButtonItem key="backBarButtonItem" title="List" id="HQq-ol-faq"/>
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="wWj-Ce-WRI"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="RWr-Ct-jf7">
-                            <rect key="frame" x="93" y="6" width="133" height="32"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="List"/>
-                                <segment title="Calendar"/>
-                            </segments>
-                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uA0-33-2bj"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="-164"/>
+            <point key="canvasLocation" x="-241" y="-228"/>
         </scene>
-        <!--Ml Notifications View Controller-->
-        <scene sceneID="iU3-mM-mc1">
+        <!--Ml Reminders View Controller-->
+        <scene sceneID="dJg-NB-ftS">
             <objects>
-                <viewController id="r1W-H6-NzK" customClass="MlNotificationsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xqq-8j-1lr">
+                <viewController id="jVq-qp-tuX" customClass="MlRemindersViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DR3-iL-IY3">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE0-Nk-nnJ">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="VDz-ss-2mC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L7-TC-F5r">
+                                <items>
+                                    <navigationItem title="Reminders" id="9zJ-Yz-gAm">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="Jf0-4Z-Gy0">
+                                            <connections>
+                                                <action selector="pressDoneButton:" destination="jVq-qp-tuX" id="wE5-fc-cvt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldc-sO-OMb">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="pressDoneButton:" destination="r1W-H6-NzK" eventType="touchUpInside" id="8bd-WM-Gy3"/>
+                                    <segue destination="eWD-k6-ZJq" kind="embed" id="ruv-mn-5eK"/>
                                 </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scheduled Reminders:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUo-n0-d2y">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="213" id="GbD-gf-Iwf"/>
-                                    <constraint firstAttribute="height" constant="21" id="j7c-9D-9tw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unscheduled Reminders:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXB-tk-cgZ">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-AS-bEc"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quiet Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQU-7d-uLW">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="RJT-yN-SLe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="9pm—11am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w14-UH-nYR">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="4xm-Ff-X81"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9wx-V1-GyS"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10:30am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-xj-WOf">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="atM-FY-woL"/>
-                                    <constraint firstAttribute="height" constant="21" id="wwd-l3-7lF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Phf-8A-7fF"/>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c3m-1A-ldb"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="When I Arrive at Work" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNv-ZN-ijv">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="152" id="aQ8-tf-2XU"/>
-                                    <constraint firstAttribute="height" constant="22" id="laW-kv-fuC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="15 Minutes After I leave Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QU3-Gg-fl0">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="229" id="WQM-di-beD"/>
-                                    <constraint firstAttribute="height" constant="22" id="e1b-Fu-RmQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UUl-p0-FvC"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Every 30 Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9C-ol-x7X">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="FB9-m5-B0A"/>
-                                    <constraint firstAttribute="width" constant="132" id="fSF-n1-qxq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Times/Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qq3-v6-soP">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="82" id="wal-7G-lc0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="13" minimumValue="1" maximumValue="256" translatesAutoresizingMaskIntoConstraints="NO" id="Nk8-bh-Nkv">
-                                <connections>
-                                    <action selector="incrementReminders:" destination="r1W-H6-NzK" eventType="valueChanged" id="wiP-Cs-0Mc"/>
-                                </connections>
-                            </stepper>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pND-Zv-jQX">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="BYz-I4-MlR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ask me about my mood at a random time" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="191" translatesAutoresizingMaskIntoConstraints="NO" id="7cg-5d-cwM">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="191" id="J6m-gM-VO1"/>
-                                    <constraint firstAttribute="height" constant="51" id="P7K-7i-SLp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Except during quiet time" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="191" translatesAutoresizingMaskIntoConstraints="NO" id="ono-3y-CX3">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="C7o-9e-3Yq"/>
-                                    <constraint firstAttribute="width" constant="191" id="TvQ-2k-9gm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9wx-V1-GyS" firstAttribute="top" secondItem="XUo-n0-d2y" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0gx-EA-mXT"/>
-                            <constraint firstItem="aXB-tk-cgZ" firstAttribute="centerX" secondItem="XUo-n0-d2y" secondAttribute="centerX" type="default" id="2lz-P5-Nm0"/>
-                            <constraint firstAttribute="bottom" secondItem="ono-3y-CX3" secondAttribute="bottom" constant="151" id="3ZV-Wa-K6H"/>
-                            <constraint firstItem="Oea-xj-WOf" firstAttribute="leading" secondItem="9wx-V1-GyS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="4e6-Ii-xwR"/>
-                            <constraint firstAttribute="bottom" secondItem="qE0-Nk-nnJ" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="5CZ-lS-8lO"/>
-                            <constraint firstItem="XUo-n0-d2y" firstAttribute="leading" secondItem="xqq-8j-1lr" secondAttribute="leading" constant="10" id="5rR-gB-chm"/>
-                            <constraint firstItem="9wx-V1-GyS" firstAttribute="leading" secondItem="xqq-8j-1lr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7Dw-MS-6ml"/>
-                            <constraint firstItem="oNv-ZN-ijv" firstAttribute="leading" secondItem="Phf-8A-7fF" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="7KH-U5-fGz"/>
-                            <constraint firstItem="w14-UH-nYR" firstAttribute="leading" secondItem="sQU-7d-uLW" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="7k4-uP-T5t"/>
-                            <constraint firstItem="Nk8-bh-Nkv" firstAttribute="centerX" secondItem="UUl-p0-FvC" secondAttribute="centerX" type="default" id="7wY-wg-tWC"/>
-                            <constraint firstItem="Phf-8A-7fF" firstAttribute="top" secondItem="xqq-8j-1lr" secondAttribute="top" constant="81" id="8Ok-La-LmK"/>
-                            <constraint firstItem="pND-Zv-jQX" firstAttribute="top" secondItem="7cg-5d-cwM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="96A-In-acN"/>
-                            <constraint firstItem="c3m-1A-ldb" firstAttribute="leading" secondItem="xqq-8j-1lr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BPv-oQ-20P"/>
-                            <constraint firstItem="UUl-p0-FvC" firstAttribute="top" secondItem="e9C-ol-x7X" secondAttribute="top" type="default" id="BRC-XN-0Y5"/>
-                            <constraint firstAttribute="bottom" secondItem="sQU-7d-uLW" secondAttribute="bottom" constant="134" id="J8j-Jc-zbl"/>
-                            <constraint firstItem="w14-UH-nYR" firstAttribute="baseline" secondItem="sQU-7d-uLW" secondAttribute="baseline" type="default" id="JSw-e0-sP2"/>
-                            <constraint firstItem="QU3-Gg-fl0" firstAttribute="top" secondItem="oNv-ZN-ijv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JjA-98-0aM"/>
-                            <constraint firstItem="e9C-ol-x7X" firstAttribute="leading" secondItem="UUl-p0-FvC" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Jyy-Ds-ZAb"/>
-                            <constraint firstItem="NMA-AS-bEc" firstAttribute="top" secondItem="xqq-8j-1lr" secondAttribute="top" constant="263" id="MBA-cG-05G"/>
-                            <constraint firstItem="sQU-7d-uLW" firstAttribute="top" secondItem="w14-UH-nYR" secondAttribute="top" type="default" id="Mow-bu-AfH"/>
-                            <constraint firstItem="UUl-p0-FvC" firstAttribute="leading" secondItem="xqq-8j-1lr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MyU-5t-zKB"/>
-                            <constraint firstAttribute="bottom" secondItem="pND-Zv-jQX" secondAttribute="bottom" constant="203" id="Pcx-iB-awJ"/>
-                            <constraint firstItem="qq3-v6-soP" firstAttribute="leading" secondItem="pND-Zv-jQX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Xp0-yZ-w8D"/>
-                            <constraint firstItem="oNv-ZN-ijv" firstAttribute="top" secondItem="xqq-8j-1lr" secondAttribute="top" constant="85" id="ZiA-pa-SHM"/>
-                            <constraint firstAttribute="bottom" secondItem="qq3-v6-soP" secondAttribute="bottom" constant="208" id="Zrx-cu-ear"/>
-                            <constraint firstItem="7cg-5d-cwM" firstAttribute="leading" secondItem="NMA-AS-bEc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="chW-yg-1Pc"/>
-                            <constraint firstItem="7cg-5d-cwM" firstAttribute="top" secondItem="aXB-tk-cgZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ehz-0e-rrn"/>
-                            <constraint firstItem="e9C-ol-x7X" firstAttribute="top" secondItem="QU3-Gg-fl0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iEr-uo-agl"/>
-                            <constraint firstItem="QU3-Gg-fl0" firstAttribute="centerX" secondItem="w14-UH-nYR" secondAttribute="centerX" type="default" id="laX-JD-V4e"/>
-                            <constraint firstItem="XUo-n0-d2y" firstAttribute="top" secondItem="xqq-8j-1lr" secondAttribute="top" constant="20" symbolic="YES" type="default" id="m0P-aV-Vly"/>
-                            <constraint firstItem="qq3-v6-soP" firstAttribute="centerY" secondItem="Nk8-bh-Nkv" secondAttribute="centerY" type="default" id="msi-SY-rjJ"/>
-                            <constraint firstItem="pND-Zv-jQX" firstAttribute="leading" secondItem="Nk8-bh-Nkv" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nYX-f2-JqO"/>
-                            <constraint firstItem="Nk8-bh-Nkv" firstAttribute="leading" secondItem="NMA-AS-bEc" secondAttribute="leading" type="default" id="nnz-E8-wdb"/>
-                            <constraint firstItem="Phf-8A-7fF" firstAttribute="leading" secondItem="xqq-8j-1lr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pnX-lD-tMU"/>
-                            <constraint firstItem="QU3-Gg-fl0" firstAttribute="leading" secondItem="c3m-1A-ldb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="qLb-fs-O8E"/>
-                            <constraint firstItem="ono-3y-CX3" firstAttribute="trailing" secondItem="aXB-tk-cgZ" secondAttribute="trailing" type="default" id="rET-ul-KyG"/>
-                            <constraint firstItem="Oea-xj-WOf" firstAttribute="centerY" secondItem="9wx-V1-GyS" secondAttribute="centerY" type="default" id="v9l-Vs-Qkm"/>
-                            <constraint firstItem="c3m-1A-ldb" firstAttribute="top" secondItem="xqq-8j-1lr" secondAttribute="top" constant="114" id="vRg-9c-fCp"/>
-                            <constraint firstItem="pND-Zv-jQX" firstAttribute="baseline" secondItem="qq3-v6-soP" secondAttribute="baseline" type="default" id="xLN-af-bns"/>
-                            <constraint firstAttribute="trailing" secondItem="qq3-v6-soP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="yDe-yI-DHg"/>
-                            <constraint firstAttribute="trailing" secondItem="qE0-Nk-nnJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ySd-u3-go2"/>
+                            <constraint firstItem="5L7-TC-F5r" firstAttribute="leading" secondItem="DR3-iL-IY3" secondAttribute="leading" type="default" id="39V-dM-Zxi"/>
+                            <constraint firstItem="5L7-TC-F5r" firstAttribute="top" secondItem="DR3-iL-IY3" secondAttribute="top" type="default" id="9DQ-YT-riB"/>
+                            <constraint firstItem="Ldc-sO-OMb" firstAttribute="leading" secondItem="DR3-iL-IY3" secondAttribute="leading" type="default" id="PfQ-nl-mPk"/>
+                            <constraint firstItem="Ldc-sO-OMb" firstAttribute="trailing" secondItem="DR3-iL-IY3" secondAttribute="trailing" type="default" id="T1O-HC-kfK"/>
+                            <constraint firstItem="Ldc-sO-OMb" firstAttribute="top" secondItem="5L7-TC-F5r" secondAttribute="bottom" type="default" id="T91-qX-bbt"/>
+                            <constraint firstItem="Ldc-sO-OMb" firstAttribute="bottom" secondItem="DR3-iL-IY3" secondAttribute="bottom" type="default" id="ZUS-Uk-IM9"/>
+                            <constraint firstItem="5L7-TC-F5r" firstAttribute="trailing" secondItem="DR3-iL-IY3" secondAttribute="trailing" type="default" id="nuH-ap-N4g"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="reminderCount" destination="pND-Zv-jQX" id="6Me-p7-ZPR"/>
-                        <outlet property="reminderStepper" destination="Nk8-bh-Nkv" id="JF9-y1-ptN"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c6E-gc-T9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Zr-Qk-fsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="557" y="-188"/>
+            <point key="canvasLocation" x="305" y="-278"/>
+        </scene>
+        <!--Ml Notifications Table View Controller-->
+        <scene sceneID="NSp-kd-EXY">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BOw-Wb-W10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="eWD-k6-ZJq" customClass="MlNotificationsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="TTa-5a-pqM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="" id="beL-Cm-y3e">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="254" id="8ao-Wa-sNR">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="256"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="253"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-AS-bEc"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quiet Hours:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQU-7d-uLW">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="9pm—11am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w14-UH-nYR">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="133" id="4xm-Ff-X81"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Times/Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qq3-v6-soP">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="1" maximumValue="256" translatesAutoresizingMaskIntoConstraints="NO" id="Nk8-bh-Nkv">
+                                                    <connections>
+                                                        <action selector="incrementReminders:" destination="eWD-k6-ZJq" eventType="valueChanged" id="i8d-fb-B3e"/>
+                                                    </connections>
+                                                </stepper>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pND-Zv-jQX">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="97" id="7Wr-dC-ZRh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ask me about my mood at a random time" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7cg-5d-cwM">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="280" id="4TR-Df-Crt"/>
+                                                        <constraint firstAttribute="height" constant="51" id="P7K-7i-SLp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Except during quiet hours:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="272" translatesAutoresizingMaskIntoConstraints="NO" id="ono-3y-CX3">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="272" id="8dz-zz-aVT"/>
+                                                        <constraint firstAttribute="height" constant="30" id="jkf-v6-i44"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="qq3-v6-soP" firstAttribute="leading" secondItem="pND-Zv-jQX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="9pl-R2-Awy"/>
+                                            <constraint firstItem="NMA-AS-bEc" firstAttribute="leading" secondItem="7cg-5d-cwM" secondAttribute="leading" type="default" id="DZC-jJ-YXw"/>
+                                            <constraint firstItem="qq3-v6-soP" firstAttribute="top" secondItem="8ao-Wa-sNR" secondAttribute="top" constant="99" id="IB8-wN-Bu2"/>
+                                            <constraint firstItem="7cg-5d-cwM" firstAttribute="top" secondItem="8ao-Wa-sNR" secondAttribute="top" constant="46" id="SG5-WB-yk6"/>
+                                            <constraint firstItem="w14-UH-nYR" firstAttribute="leading" secondItem="sQU-7d-uLW" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="SyC-6e-vHO"/>
+                                            <constraint firstItem="pND-Zv-jQX" firstAttribute="leading" secondItem="8ao-Wa-sNR" secondAttribute="leading" constant="29" id="W5m-36-Bc8"/>
+                                            <constraint firstAttribute="bottom" secondItem="sQU-7d-uLW" secondAttribute="bottom" constant="24" id="Xsd-VV-px4"/>
+                                            <constraint firstItem="Nk8-bh-Nkv" firstAttribute="top" secondItem="pND-Zv-jQX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fBL-Vk-hGd"/>
+                                            <constraint firstItem="7cg-5d-cwM" firstAttribute="leading" secondItem="Nk8-bh-Nkv" secondAttribute="leading" type="default" id="kcv-jT-Iah"/>
+                                            <constraint firstAttribute="bottom" secondItem="w14-UH-nYR" secondAttribute="bottom" constant="22" id="lcu-a3-wB2"/>
+                                            <constraint firstItem="pND-Zv-jQX" firstAttribute="top" secondItem="8ao-Wa-sNR" secondAttribute="top" constant="95" id="nEE-2h-XDP"/>
+                                            <constraint firstItem="ono-3y-CX3" firstAttribute="leading" secondItem="8ao-Wa-sNR" secondAttribute="leading" constant="33" id="oEA-mr-Jzy"/>
+                                            <constraint firstItem="NMA-AS-bEc" firstAttribute="top" secondItem="8ao-Wa-sNR" secondAttribute="top" constant="13" id="rCd-Sf-e6b"/>
+                                            <constraint firstAttribute="bottom" secondItem="ono-3y-CX3" secondAttribute="bottom" constant="47" id="uR2-sn-b9J"/>
+                                            <constraint firstItem="pND-Zv-jQX" firstAttribute="centerX" secondItem="Nk8-bh-Nkv" secondAttribute="centerX" type="default" id="vEo-g1-ocV"/>
+                                            <constraint firstItem="sQU-7d-uLW" firstAttribute="leading" secondItem="8ao-Wa-sNR" secondAttribute="leading" constant="56" id="vNt-2o-TMm"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="lPc-bO-vAE">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="171" id="pQ0-SH-h2v">
+                                        <rect key="frame" x="0.0" y="286" width="320" height="173"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uC-da-44c">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="1" maximumValue="256" translatesAutoresizingMaskIntoConstraints="NO" id="CVa-Mx-UOy">
+                                                    <connections>
+                                                        <action selector="incrementMinuteStepper:" destination="eWD-k6-ZJq" eventType="valueChanged" id="W0U-WU-fkb"/>
+                                                    </connections>
+                                                </stepper>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeO-tn-C9R">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="97" id="zfB-Ds-jy9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Y51-g4-dGN"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ask me about my mood in" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="215" translatesAutoresizingMaskIntoConstraints="NO" id="enq-wF-dtt">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="5BC-jv-zN5"/>
+                                                        <constraint firstAttribute="width" constant="215" id="6VB-xn-ZQS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="XeO-tn-C9R" firstAttribute="leading" secondItem="CVa-Mx-UOy" secondAttribute="leading" type="default" id="7rO-0V-rG0"/>
+                                            <constraint firstItem="CVa-Mx-UOy" firstAttribute="top" secondItem="XeO-tn-C9R" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="B8J-e0-vCy"/>
+                                            <constraint firstItem="enq-wF-dtt" firstAttribute="leading" secondItem="Y51-g4-dGN" secondAttribute="leading" type="default" id="Cec-Km-A0l"/>
+                                            <constraint firstItem="XeO-tn-C9R" firstAttribute="baseline" secondItem="7uC-da-44c" secondAttribute="baseline" type="default" id="DQV-C9-n79"/>
+                                            <constraint firstItem="XeO-tn-C9R" firstAttribute="leading" secondItem="pQ0-SH-h2v" secondAttribute="leading" constant="30" id="EPy-Hw-kj3"/>
+                                            <constraint firstItem="XeO-tn-C9R" firstAttribute="leading" secondItem="enq-wF-dtt" secondAttribute="leading" type="default" id="GuE-q0-YCV"/>
+                                            <constraint firstItem="enq-wF-dtt" firstAttribute="top" secondItem="pQ0-SH-h2v" secondAttribute="top" constant="50" id="T4S-4u-EtB"/>
+                                            <constraint firstItem="XeO-tn-C9R" firstAttribute="top" secondItem="pQ0-SH-h2v" secondAttribute="top" constant="81" id="bg0-Fv-BhM"/>
+                                            <constraint firstItem="Y51-g4-dGN" firstAttribute="top" secondItem="pQ0-SH-h2v" secondAttribute="top" constant="21" id="iuY-8Q-PbA"/>
+                                            <constraint firstItem="7uC-da-44c" firstAttribute="leading" secondItem="XeO-tn-C9R" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="yNX-sJ-2H0"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="eWD-k6-ZJq" id="fkw-jd-07A"/>
+                            <outlet property="delegate" destination="eWD-k6-ZJq" id="udD-9c-pVt"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="V3H-ek-Uwi"/>
+                    <connections>
+                        <outlet property="reminderCount" destination="pND-Zv-jQX" id="AKF-jR-Npw"/>
+                        <outlet property="reminderMinutesCount" destination="XeO-tn-C9R" id="il7-JU-Eao"/>
+                        <outlet property="reminderMinutesStepper" destination="CVa-Mx-UOy" id="cT6-ZE-xsd"/>
+                        <outlet property="reminderStepper" destination="Nk8-bh-Nkv" id="U6Y-sh-ei0"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="987" y="-144"/>
         </scene>
         <!--Ml Detail View Controller - Mood Log Entry-->
         <scene sceneID="fO1-RU-NEO">
@@ -1528,7 +1532,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inV-jS-EZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="511" y="-922"/>
+            <point key="canvasLocation" x="183" y="-950"/>
         </scene>
         <!--Ml Mood Collection View Controller-->
         <scene sceneID="KOl-cU-igS">
@@ -1661,7 +1665,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1596" y="-1616"/>
+            <point key="canvasLocation" x="1536" y="-1764"/>
         </scene>
         <!--Ml Faces View Controller-->
         <scene sceneID="5TO-ZN-6VG">
@@ -1819,7 +1823,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIW-Mo-Sqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="-1320"/>
+            <point key="canvasLocation" x="1013" y="-1544"/>
         </scene>
         <!--Ml Journal Editor View Controller - Journal-->
         <scene sceneID="Zxf-Ze-SAW">
@@ -1858,7 +1862,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9D-ck-nO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="-553"/>
+            <point key="canvasLocation" x="1022" y="-805"/>
         </scene>
         <!--Ml Date Picker View Controller-->
         <scene sceneID="yyF-4Y-Xyf">
@@ -1923,12 +1927,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9K-lO-lEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543" y="-958"/>
+            <point key="canvasLocation" x="1555" y="-1234"/>
         </scene>
     </scenes>
     <resources>
         <image name="Blank.png" width="80" height="98"/>
-        <image name="CalendarBlank49.png" width="16" height="16"/>
+        <image name="CalendarBlank48.png" width="48" height="48"/>
         <image name="CalendarBlank93.png" width="93" height="93"/>
         <image name="chart.png" width="22" height="18"/>
         <image name="keyboard.png" width="22" height="14"/>
@@ -1936,6 +1940,228 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="shuffle_off.png" width="25" height="21"/>
         <image name="shuffle_on.png" width="25" height="21"/>
     </resources>
+    <classes>
+        <class className="MlCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="calendarImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cellBackground" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlChartCellEntryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCellEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButton:"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="infoTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MlChartCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="action" name="pressDetailButton:"/>
+                <relationship kind="outlet" name="angerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="chartDrawingView" candidateClass="MlChartDrawingView"/>
+                <relationship kind="outlet" name="chartHeightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emotionsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fearLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="joyLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loveLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sadnessLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="surpriseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlChartCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartCollectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="chartCollectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="MlChartDrawingView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartDrawingView.h"/>
+        </class>
+        <class className="MlChartViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlChartViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="chooseSegment:"/>
+                <relationship kind="action" name="pressDone:"/>
+                <relationship kind="outlet" name="segment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="MlCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="checkMark" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="face" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="moodName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlDatePickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDatePickerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="datePicked:"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+            </relationships>
+        </class>
+        <class className="MlDateRangeDrawing" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDateRangeDrawing.h"/>
+        </class>
+        <class className="MlDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addEntryFromStartScreen:"/>
+                <relationship kind="action" name="moveSlider:"/>
+                <relationship kind="action" name="pressedDoneButton:"/>
+                <relationship kind="action" name="pressedExpandButton:"/>
+                <relationship kind="action" name="pressedSlidersSetAdjustButton:"/>
+                <relationship kind="action" name="setSliderData:"/>
+                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="addEntryTableViewCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="blankCoveringView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dateCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailToolBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="energySlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="entryLogTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="expandButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="healthSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="littleKeyboardIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="monthLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="moodContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="moodListTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="moodViewWithHeader" candidateClass="UIView"/>
+                <relationship kind="outlet" name="moodsCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="moodsDrawingView" candidateClass="MlChartDrawingView"/>
+                <relationship kind="outlet" name="noMoodsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="overallSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="sleepSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderChartView" candidateClass="MlChartDrawingView"/>
+                <relationship kind="outlet" name="slidersSetAdjustButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="slidersView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortGroupButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="weekdayLabel" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="tableViewCellCollection" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="MlEmailEventCountDrawing" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlEmailEventCountDrawing.h"/>
+        </class>
+        <class className="MlFacesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlFacesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sortABC:"/>
+                <relationship kind="action" name="sortCBA:"/>
+                <relationship kind="action" name="sortGroup:"/>
+                <relationship kind="action" name="sortShuffle:"/>
+                <relationship kind="action" name="toggleFaces:"/>
+                <relationship kind="outlet" name="SortCBAButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortABCButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortGroupButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sortShuffleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="toggleFacesButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MlJournalEditorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlJournalEditorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressDoneButton:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="journalTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="journalToolbar" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="MlMailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="composeEmail:"/>
+                <relationship kind="action" name="doneButton:"/>
+                <relationship kind="action" name="pressAllButton:"/>
+                <relationship kind="action" name="pressLatestButton:"/>
+                <relationship kind="action" name="pressMonthButton:"/>
+                <relationship kind="action" name="pressWeekButton:"/>
+                <relationship kind="action" name="slideEndSlider:"/>
+                <relationship kind="action" name="slideStartSlider:"/>
+                <relationship kind="action" name="updatedRecipientList:"/>
+                <relationship kind="outlet" name="allButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="composeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dateRangeDrawing" candidateClass="MlDateRangeDrawing"/>
+                <relationship kind="outlet" name="dateRangeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="endDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="endSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="eventCount" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="eventCountView" candidateClass="MlEmailEventCountDrawing"/>
+                <relationship kind="outlet" name="latestButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="monthButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="recipientList" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="weekButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MlMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMasterViewController.h"/>
+        </class>
+        <class className="MlMoodCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="longPress:"/>
+            </relationships>
+        </class>
+        <class className="MlMoodCollectionViewHeaderView" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlMoodCollectionViewHeaderView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MlNotificationsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlNotificationsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="incrementMinuteStepper:"/>
+                <relationship kind="action" name="incrementReminders:"/>
+                <relationship kind="action" name="pressDoneButton:"/>
+                <relationship kind="outlet" name="reminderCount" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="reminderMinutesCount" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="reminderMinutesStepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="reminderStepper" candidateClass="UIStepper"/>
+            </relationships>
+        </class>
+        <class className="MlRemindersViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MlRemindersViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressDoneButton:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
