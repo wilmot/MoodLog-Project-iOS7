@@ -262,11 +262,11 @@ Boolean firstLoad;
     
     NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, fear : @0, anger : @0, sadness : @0} mutableCopy];
     if (emotionArrayCount > 0) {
-        for (id emotion in emotionArray) {
+        for (Emotions *emotion in emotionArray) {
             // selectedEms = [selectedEms stringByAppendingFormat:@"%@ (%@)\n", [((Emotions *)emotion).name lowercaseString], ((Emotions *)emotion).feelValue];
-            selectedEms = [selectedEms stringByAppendingFormat:@"%@\n", [((Emotions *)emotion).name lowercaseString]];
-            feelTotal += ((Emotions *)emotion).feelValue.floatValue;
-            NSString *thisCategory = ((Emotions *)emotion).category;
+            selectedEms = [selectedEms stringByAppendingFormat:@"%@\n", [emotion.name lowercaseString]];
+            feelTotal += emotion.feelValue.floatValue;
+            NSString *thisCategory = emotion.category;
             if (categoryCounts[thisCategory]) {
                 categoryCounts[thisCategory] = @([categoryCounts[thisCategory] integerValue] + [@1 integerValue]); // increment
             }

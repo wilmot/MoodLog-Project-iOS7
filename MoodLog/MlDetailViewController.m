@@ -121,7 +121,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             self.littleKeyboardIcon.hidden = NO;
         }
         
-        // Set the list of moods
+        // Set the Pie Chart and list of moods
         // Fetch the Mood list for this journal entry
         NSSet *emotionsforEntry = self.detailItem.relationshipEmotions; // Get all the emotions for this record
         NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
@@ -132,23 +132,21 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         
         NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, fear : @0, anger : @0, sadness : @0} mutableCopy];
         if (emotionArrayCount > 0) {
-            for (id emotion in emotionArray) {
-                // selectedEms = [selectedEms stringByAppendingFormat:@"%@ (%@)\n", [((Emotions *)emotion).name lowercaseString], ((Emotions *)emotion).feelValue];
-                selectedEms = [selectedEms stringByAppendingFormat:@"%@\n", [((Emotions *)emotion).name lowercaseString]];
-                feelTotal += ((Emotions *)emotion).feelValue.floatValue;
-                NSString *thisCategory = ((Emotions *)emotion).category;
+            NSString *thisCategory;
+            for (Emotions *emotion in emotionArray) {
+                selectedEms = [selectedEms stringByAppendingFormat:@"%@: %@\n", emotion.category, [emotion.name lowercaseString]];
+                feelTotal += emotion.feelValue.floatValue;
+                thisCategory = emotion.category;
                 if (categoryCounts[thisCategory]) {
                     categoryCounts[thisCategory] = @([categoryCounts[thisCategory] integerValue] + [@1 integerValue]); // increment
                 }
             }
         }
-        self.moodListTextView.text = selectedEms;
-
-        // Set the Pie Chart
         self.moodsDrawingView.chartType = @"Pie";
         self.moodsDrawingView.categoryCounts = categoryCounts;
-        self.sliderChartView.dividerLine = NO;
-        [self.sliderChartView setNeedsDisplay];
+        self.moodsDrawingView.dividerLine = NO;
+        [self.moodsDrawingView setNeedsDisplay];
+        self.moodListTextView.text = selectedEms;
         
         // Set the sliders
         [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
