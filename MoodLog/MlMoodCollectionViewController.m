@@ -195,6 +195,19 @@ MoodLogEvents *myLogEntry;
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)longPress:(id)sender {
+    CGPoint touchPoint = [sender locationInView:self.collectionView];
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:touchPoint];
+    Emotions *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    if ([UIReferenceLibraryViewController dictionaryHasDefinitionForTerm:aMood.name]) {
+        UIReferenceLibraryViewController *referenceLibraryVC = [[UIReferenceLibraryViewController alloc] initWithTerm:aMood.name];
+        [self presentViewController:referenceLibraryVC animated:YES completion:nil];
+
+    }
+}
+
+# pragma mark - UICollectionView Delegate Methods
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return [emotionArray count];
 }
@@ -230,8 +243,6 @@ MoodLogEvents *myLogEntry;
         detailViewController.detailItem.sortStyle = detailViewController.detailItem.sortStyle; // Hack to get the Master list to update
     }
 }
-
-#pragma mark - Delegate methods
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     if (myLogEntry.editing.boolValue == YES) {

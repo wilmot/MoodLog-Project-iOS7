@@ -16,5 +16,6 @@
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 
 - (void) refresh;
+- (IBAction)longPress:(id)sender;
 
 @end

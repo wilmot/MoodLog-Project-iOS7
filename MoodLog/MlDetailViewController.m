@@ -143,6 +143,12 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             }
         }
         self.moodListTextView.text = selectedEms;
+
+        // Set the Pie Chart
+        self.moodsDrawingView.chartType = @"Pie";
+        self.moodsDrawingView.categoryCounts = categoryCounts;
+        self.sliderChartView.dividerLine = NO;
+        [self.sliderChartView setNeedsDisplay];
         
         // Set the sliders
         [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
@@ -184,6 +190,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 
     }
     [self setSliderCellVisibility];
+    [self.tableView reloadData];
 }
 
 - (void) setSliderCellVisibility {
@@ -193,6 +200,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self.sliderChartView setChartHeightSleep:[self.detailItem.sleep floatValue]];
         [self.sliderChartView setChartHeightEnergy:[self.detailItem.energy floatValue]];
         [self.sliderChartView setChartHeightHealth:[self.detailItem.health floatValue]];
+        self.sliderChartView.dividerLine = NO;
         [self.sliderChartView setNeedsDisplay];
 
         self.slidersView.hidden = YES;
@@ -429,7 +437,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             }
             break;
         case SLIDERS: //Sliders & Slider Chart
-            height = 188.0;
+            height = 192.0;
             break;
         case ADDENTRYBUTTON:
             if (self.detailItem == nil) {

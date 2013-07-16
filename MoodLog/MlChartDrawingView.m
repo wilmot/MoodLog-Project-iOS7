@@ -19,6 +19,7 @@ static NSUInteger numberOfDivisions = 20;
     if (self) {
         // Initialization code
     }
+    self.dividerLine = YES; // default state for divider line
     return self;
 }
 
@@ -55,7 +56,7 @@ static NSUInteger numberOfDivisions = 20;
         CGFloat pi = 3.1415926535897932384626433832795;
         CGFloat circumference = 40.0;
         CGFloat centerx = rect.size.width/2.0;
-        CGFloat centery = rect.size.height/4.0;
+        CGFloat centery = rect.size.height/2.0;
         CGContextAddArc(context,centerx, centery,circumference,0,2*pi,1);
         CGContextDrawPath(context,kCGPathStroke);
         CGFloat loveCount = [self.categoryCounts[love] floatValue];
@@ -116,11 +117,13 @@ static NSUInteger numberOfDivisions = 20;
     }
     
     // Vertical gray line at right edge
-    CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
-    CGContextSetLineWidth(context, 1.0);
-    CGContextMoveToPoint(context, rect.size.width, 0.0); //start at this point
-    CGContextAddLineToPoint(context, rect.size.width, rect.size.height); //draw to this point
-    CGContextStrokePath(context);
+    if (self.dividerLine) {
+        CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
+        CGContextSetLineWidth(context, 1.0);
+        CGContextMoveToPoint(context, rect.size.width, 0.0); //start at this point
+        CGContextAddLineToPoint(context, rect.size.width, rect.size.height); //draw to this point
+        CGContextStrokePath(context);
+    }
 }
 
 -(void) drawChartBars: (CGRect) rect {

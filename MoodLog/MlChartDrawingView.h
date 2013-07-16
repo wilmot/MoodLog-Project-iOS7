@@ -16,6 +16,7 @@
 @property (nonatomic, assign) CGFloat chartHeightHealth;
 @property (nonatomic, assign) CGFloat chartHeightEnergy;
 @property (strong, nonatomic) NSString *chartType;
+@property (nonatomic, assign) BOOL dividerLine;
 @property (strong, nonatomic) NSDictionary *categoryCounts;
 
 @end

@@ -39,6 +39,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *moodListTextView;
 @property (weak, nonatomic) IBOutlet UIImageView *littleKeyboardIcon;
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *sliderChartView;
+@property (weak, nonatomic) IBOutlet MlChartDrawingView *moodsDrawingView;
 @property (weak, nonatomic) IBOutlet UIView *slidersView;
 @property (weak, nonatomic) IBOutlet UIButton *slidersSetAdjustButton;
 @property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *tableViewCellCollection;
