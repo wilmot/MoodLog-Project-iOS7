@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MlRemindersViewController : UIViewController
+@interface MlRemindersViewController : UINavigationController
 - (IBAction)pressDoneButton:(id)sender;
 
 @end

@@ -1396,7 +1396,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="Blank.png" width="80" height="98"/>
         <image name="CalendarBlank.png" width="128" height="128"/>
         <image name="calendar.png" width="22" height="18"/>
-        <image name="chart.png" width="22" height="18"/>
+        <image name="chart.png" width="20" height="16"/>
         <image name="keyboard.png" width="22" height="14"/>
         <image name="keyboard_down.png" width="22" height="19"/>
     </resources>

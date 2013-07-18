@@ -55,6 +55,14 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [super viewDidLoad];
 //    [self configureView];
     defaults = [NSUserDefaults standardUserDefaults];
+    UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
+                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
+                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
+    // Set the background for any states you plan to use
+    [self.slidersSetAdjustButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.slidersSetAdjustButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+
 }
 
 - (void) viewWillAppear:(BOOL)animated {

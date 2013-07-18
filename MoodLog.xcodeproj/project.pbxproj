@@ -191,6 +191,13 @@
 		4C7F5730178FC8170065543C /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7F572F178FC8170065543C /* add.png */; };
 		4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */; };
 		4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */; };
+		4C92BDFE17976053005DEEC2 /* guitar_sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BDFD17976053005DEEC2 /* guitar_sound.caf */; };
+		4C92BDFF17976284005DEEC2 /* guitar_sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BDFD17976053005DEEC2 /* guitar_sound.caf */; };
+		4C92BE021797CCAA005DEEC2 /* TimerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE001797CCAA005DEEC2 /* TimerIcon.png */; };
+		4C92BE031797CCAA005DEEC2 /* TimerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE011797CCAA005DEEC2 /* TimerIcon@2x.png */; };
+		4C92BE051797D40D005DEEC2 /* chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE041797D40D005DEEC2 /* chart@2x.png */; };
+		4C92BE0817985BFD005DEEC2 /* TriangleRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0617985BFD005DEEC2 /* TriangleRight.png */; };
+		4C92BE0917985BFD005DEEC2 /* TriangleRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */; };
 		4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */; };
 		4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */; };
 		4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */; };
@@ -425,6 +432,12 @@
 		4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewController.m; sourceTree = "<group>"; };
 		4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewCell.h; sourceTree = "<group>"; };
 		4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewCell.m; sourceTree = "<group>"; };
+		4C92BDFD17976053005DEEC2 /* guitar_sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitar_sound.caf; sourceTree = "<group>"; };
+		4C92BE001797CCAA005DEEC2 /* TimerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimerIcon.png; sourceTree = "<group>"; };
+		4C92BE011797CCAA005DEEC2 /* TimerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TimerIcon@2x.png"; sourceTree = "<group>"; };
+		4C92BE041797D40D005DEEC2 /* chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart@2x.png"; sourceTree = "<group>"; };
+		4C92BE0617985BFD005DEEC2 /* TriangleRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TriangleRight.png; sourceTree = "<group>"; };
+		4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TriangleRight@2x.png"; sourceTree = "<group>"; };
 		4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodCollectionViewController.h; sourceTree = "<group>"; };
 		4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewController.m; sourceTree = "<group>"; };
 		4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCollectionViewCell.h; sourceTree = "<group>"; };
@@ -605,6 +618,8 @@
 		4C4043E61783E59F00710F2A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C92BE0617985BFD005DEEC2 /* TriangleRight.png */,
+				4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */,
 				4C7F572F178FC8170065543C /* add.png */,
 				4C47E708178CA55300325BA7 /* keyboard.png */,
 				4C47E709178CA55300325BA7 /* keyboard@2x.png */,
@@ -616,6 +631,8 @@
 				4C4043FF1783E5FD00710F2A /* greyButtonHighlight@2x.png */,
 				4C4043F81783E5EB00710F2A /* shuffle_off.png */,
 				4C4043F91783E5EB00710F2A /* shuffle_on.png */,
+				4C92BE001797CCAA005DEEC2 /* TimerIcon.png */,
+				4C92BE011797CCAA005DEEC2 /* TimerIcon@2x.png */,
 				4C4043E71783E5CB00710F2A /* calendar.png */,
 				4C4043E81783E5CB00710F2A /* CalendarBlank.png */,
 				4C4043E91783E5CB00710F2A /* CalendarBlank@2x.png */,
@@ -624,6 +641,7 @@
 				4C4043EC1783E5CB00710F2A /* CalendarBlank93.png */,
 				4C4043ED1783E5CB00710F2A /* CalendarBlank93@2x.png */,
 				4C4043EE1783E5CB00710F2A /* chart.png */,
+				4C92BE041797D40D005DEEC2 /* chart@2x.png */,
 				4C4042E61783E27600710F2A /* Default-568h@2x.png */,
 			);
 			name = Images;
@@ -730,6 +748,7 @@
 		4C55CBEF162DE67400EAA878 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C92BDFD17976053005DEEC2 /* guitar_sound.caf */,
 				4C4043E61783E59F00710F2A /* Images */,
 				4C0C7671164AC84000DD372F /* Faces */,
 				4C7F572C178E92550065543C /* MoodLogEvents.h */,
@@ -947,6 +966,7 @@
 				4C4043DD1783E51400710F2A /* Attracted@2x.png in Resources */,
 				4C4043DE1783E51400710F2A /* Attractive.png in Resources */,
 				4C4043DF1783E51400710F2A /* Attractive@2x.png in Resources */,
+				4C92BDFF17976284005DEEC2 /* guitar_sound.caf in Resources */,
 				4C4043E01783E51400710F2A /* Awed.png in Resources */,
 				4C4043E11783E51400710F2A /* Awed@2x.png in Resources */,
 				4C4043E21783E51400710F2A /* Skeptical_orig.png in Resources */,
@@ -972,6 +992,11 @@
 				4C47E712178CA75300325BA7 /* keyboard_down.png in Resources */,
 				4C47E713178CA75300325BA7 /* keyboard_down@2x.png in Resources */,
 				4C7F5730178FC8170065543C /* add.png in Resources */,
+				4C92BE021797CCAA005DEEC2 /* TimerIcon.png in Resources */,
+				4C92BE031797CCAA005DEEC2 /* TimerIcon@2x.png in Resources */,
+				4C92BE051797D40D005DEEC2 /* chart@2x.png in Resources */,
+				4C92BE0817985BFD005DEEC2 /* TriangleRight.png in Resources */,
+				4C92BE0917985BFD005DEEC2 /* TriangleRight@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,6 +1004,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C92BDFE17976053005DEEC2 /* guitar_sound.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

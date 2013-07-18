@@ -18,8 +18,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize masterViewController = _masterViewController;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -80,6 +79,18 @@
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
     
+    // Handle launching via a local notification
+    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (notification) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"MyAlertView"
+                                                            message:@"App was launched via a local notification."
+                                                           delegate:self cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    }
+    
     return YES;
 }
 							
@@ -109,6 +120,18 @@
 {
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    NSLog(@"I received a local notification: %@",notification);
+    notification.applicationIconBadgeNumber = 0; // Reset badge
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"MyAlertView"
+                                                        message:@"Local notification was received"
+                                                       delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)saveContext

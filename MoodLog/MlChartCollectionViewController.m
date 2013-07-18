@@ -363,6 +363,7 @@ Boolean firstLoad;
 
     cell.chartDrawingView.chartType = self.chartType;
     cell.chartDrawingView.categoryCounts = categoryCounts;
+    cell.chartDrawingView.dividerLine = YES;
     if ([self.chartType isEqualToString:@"Bar"]) {
         CGFloat height = emotionArrayCount>0 ? feelTotal/emotionArrayCount : 0; // Average (mean)
         cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
