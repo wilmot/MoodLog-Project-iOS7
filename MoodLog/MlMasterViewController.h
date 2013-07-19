@@ -19,5 +19,6 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (void)insertNewObject:(id)sender;
+- (IBAction)showWelcomeScreen:(id)sender;
 
 @end

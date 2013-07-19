@@ -198,6 +198,7 @@
 		4C92BE051797D40D005DEEC2 /* chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE041797D40D005DEEC2 /* chart@2x.png */; };
 		4C92BE0817985BFD005DEEC2 /* TriangleRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0617985BFD005DEEC2 /* TriangleRight.png */; };
 		4C92BE0917985BFD005DEEC2 /* TriangleRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */; };
+		4C92BE0C1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */; };
 		4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */; };
 		4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */; };
 		4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */; };
@@ -438,6 +439,8 @@
 		4C92BE041797D40D005DEEC2 /* chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart@2x.png"; sourceTree = "<group>"; };
 		4C92BE0617985BFD005DEEC2 /* TriangleRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TriangleRight.png; sourceTree = "<group>"; };
 		4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TriangleRight@2x.png"; sourceTree = "<group>"; };
+		4C92BE0A1798EA7C005DEEC2 /* MlWelcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlWelcomeScreenViewController.h; sourceTree = "<group>"; };
+		4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlWelcomeScreenViewController.m; sourceTree = "<group>"; };
 		4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodCollectionViewController.h; sourceTree = "<group>"; };
 		4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewController.m; sourceTree = "<group>"; };
 		4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCollectionViewCell.h; sourceTree = "<group>"; };
@@ -736,6 +739,8 @@
 				4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */,
 				4CA980E71767E0E2001BF7A8 /* MlChartCellFooterView.h */,
 				4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */,
+				4C92BE0A1798EA7C005DEEC2 /* MlWelcomeScreenViewController.h */,
+				4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */,
 				4C47E6A117501E8F0023298F /* Emotions.h */,
 				4C47E6A217501E8F0023298F /* Emotions.m */,
 				4C589C65163200F100428C52 /* Stressors.h */,
@@ -1062,6 +1067,7 @@
 				4C7F572E178E92550065543C /* MoodLogEvents.m in Sources */,
 				4C4AC9411794B3AE004DA98E /* MlNotificationsTableViewController.m in Sources */,
 				4C4AC9471795F2FA004DA98E /* MlRemindersViewController.m in Sources */,
+				4C92BE0C1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

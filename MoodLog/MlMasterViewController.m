@@ -39,6 +39,10 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     //[self updateOldRecords];
+//    UIViewController *welcomeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"welcomeScreen"];
+//    [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
+//    [self presentViewController:welcomeViewController animated:YES completion:NULL];
+
 }
 
 - (void) updateOldRecords {
@@ -149,6 +153,12 @@
         [self performSegueWithIdentifier:@"showDetail" sender:sender];
     }
 
+}
+
+- (IBAction)showWelcomeScreen:(id)sender {
+    UIViewController *welcomeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"welcomeScreen"];
+    [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [self presentViewController:welcomeViewController animated:YES completion:NULL];
 }
 
 #pragma mark - Table View
