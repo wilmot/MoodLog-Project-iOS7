@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
 @property (weak, nonatomic) IBOutlet MlEmailEventCountDrawing *eventCountView;
 @property (weak, nonatomic) IBOutlet UITextField *recipientList;
+@property (strong, nonatomic) IBOutletCollection(id) NSArray *itemsToDisableTogether;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

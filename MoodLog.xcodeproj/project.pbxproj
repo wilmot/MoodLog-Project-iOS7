@@ -199,6 +199,10 @@
 		4C92BE0817985BFD005DEEC2 /* TriangleRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0617985BFD005DEEC2 /* TriangleRight.png */; };
 		4C92BE0917985BFD005DEEC2 /* TriangleRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */; };
 		4C92BE0C1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */; };
+		4C92BE0E1799E0AC005DEEC2 /* Icon Test.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0D1799E0AC005DEEC2 /* Icon Test.png */; };
+		4C92BE101799E368005DEEC2 /* Icon Test@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0F1799E368005DEEC2 /* Icon Test@2x.png */; };
+		4C92BE121799EA97005DEEC2 /* IconFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE111799EA96005DEEC2 /* IconFace@2x.png */; };
+		4C92BE141799EA9D005DEEC2 /* IconFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE131799EA9D005DEEC2 /* IconFace.png */; };
 		4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */; };
 		4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */; };
 		4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */; };
@@ -390,7 +394,7 @@
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
 		4C52861616D9A654007C878C /* MlChartDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartDrawingView.h; sourceTree = "<group>"; };
 		4C52861716D9A654007C878C /* MlChartDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartDrawingView.m; sourceTree = "<group>"; };
-		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55CBE2162DE67400EAA878 /* MoodLog IconFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoodLog IconFace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -441,6 +445,10 @@
 		4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TriangleRight@2x.png"; sourceTree = "<group>"; };
 		4C92BE0A1798EA7C005DEEC2 /* MlWelcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlWelcomeScreenViewController.h; sourceTree = "<group>"; };
 		4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlWelcomeScreenViewController.m; sourceTree = "<group>"; };
+		4C92BE0D1799E0AC005DEEC2 /* Icon Test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Test.png"; sourceTree = "<group>"; };
+		4C92BE0F1799E368005DEEC2 /* Icon Test@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Test@2x.png"; sourceTree = "<group>"; };
+		4C92BE111799EA96005DEEC2 /* IconFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconFace@2x.png"; sourceTree = "<group>"; };
+		4C92BE131799EA9D005DEEC2 /* IconFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconFace.png; sourceTree = "<group>"; };
 		4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodCollectionViewController.h; sourceTree = "<group>"; };
 		4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewController.m; sourceTree = "<group>"; };
 		4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCollectionViewCell.h; sourceTree = "<group>"; };
@@ -653,6 +661,10 @@
 		4C55CBD7162DE67400EAA878 = {
 			isa = PBXGroup;
 			children = (
+				4C92BE131799EA9D005DEEC2 /* IconFace.png */,
+				4C92BE111799EA96005DEEC2 /* IconFace@2x.png */,
+				4C92BE0F1799E368005DEEC2 /* Icon Test@2x.png */,
+				4C92BE0D1799E0AC005DEEC2 /* Icon Test.png */,
 				4C55CBEE162DE67400EAA878 /* MoodLog */,
 				4C55CBE5162DE67400EAA878 /* Frameworks */,
 				4C55CBE3162DE67400EAA878 /* Products */,
@@ -662,7 +674,7 @@
 		4C55CBE3162DE67400EAA878 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C55CBE2162DE67400EAA878 /* MoodLog.app */,
+				4C55CBE2162DE67400EAA878 /* MoodLog IconFace.app */,
 				4C55CC14162DE67500EAA878 /* MoodLogTests.octest */,
 			);
 			name = Products;
@@ -786,7 +798,7 @@
 			);
 			name = MoodLog;
 			productName = MoodLog;
-			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog.app */;
+			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog IconFace.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4C55CC13162DE67500EAA878 /* MoodLogTests */ = {
@@ -1002,6 +1014,10 @@
 				4C92BE051797D40D005DEEC2 /* chart@2x.png in Resources */,
 				4C92BE0817985BFD005DEEC2 /* TriangleRight.png in Resources */,
 				4C92BE0917985BFD005DEEC2 /* TriangleRight@2x.png in Resources */,
+				4C92BE0E1799E0AC005DEEC2 /* Icon Test.png in Resources */,
+				4C92BE101799E368005DEEC2 /* Icon Test@2x.png in Resources */,
+				4C92BE121799EA97005DEEC2 /* IconFace@2x.png in Resources */,
+				4C92BE141799EA9D005DEEC2 /* IconFace.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1175,7 +1191,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) IconFace";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1187,7 +1203,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) IconFace";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -59,32 +59,42 @@ NSUserDefaults *defaults;
     [self.startSlider setMaximumValue:events - 1];
     [self.endSlider setMinimumValue:0];
     [self.endSlider setMaximumValue:events - 1];
+        
+    if (events > 0) {
+        for (id item in self.itemsToDisableTogether) {
+            ((UIControl *)item).enabled = YES;
+            
+        }
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+        MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSDate *today = [object valueForKey:@"date"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
+        self.startDateLabel.text = [dateFormatter stringFromDate: today];
+        
+        indexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
+        object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        today = [object valueForKey:@"date"];
+        dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
+        self.endDateLabel.text = [dateFormatter stringFromDate: today];
+        //    self.eventCountView.layer.cornerRadius = 8;
+        //    self.eventCountView.layer.shadowColor = [[UIColor blackColor] CGColor];
+        //    self.eventCountView.layer.shadowOpacity = 0.4;
+        //    self.eventCountView.layer.shadowRadius = 12;
+        //    self.eventCountView.layer.shadowOffset = CGSizeMake(4.0f, 4.0f);
+        
+    }
+    else {
+        for (id item in self.itemsToDisableTogether) {
+            ((UIControl *)item).enabled = NO;
 
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
-    MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    NSDate *today = [object valueForKey:@"date"];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
-    self.startDateLabel.text = [dateFormatter stringFromDate: today];
-
-    indexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
-    object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    today = [object valueForKey:@"date"];
-    dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
-    self.endDateLabel.text = [dateFormatter stringFromDate: today];
-//    self.eventCountView.layer.cornerRadius = 8;
-//    self.eventCountView.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    self.eventCountView.layer.shadowOpacity = 0.4;
-//    self.eventCountView.layer.shadowRadius = 12;
-//    self.eventCountView.layer.shadowOffset = CGSizeMake(4.0f, 4.0f);
-    
+        }
+    }
     defaults = [NSUserDefaults standardUserDefaults];
     self.startSlider.value = [defaults floatForKey:@"DefaultMailStartValue"];
     self.endSlider.value = [defaults floatForKey:@"DefaultMailEndValue"];
     self.recipientList.text = [defaults stringForKey:@"DefaultRecipientList"];
-
     [self updateDateRangeDrawing];
-
 }
 
 
@@ -262,40 +272,50 @@ NSUserDefaults *defaults;
 - (void) updateDateRangeDrawing {
     int startValue = (int)roundl(self.startSlider.value);
     int endValue = (int)roundl(self.endSlider.value);
-    int records = (endValue - startValue) + 1;
-    NSString *text = @"entry";
+    int events = (endValue - startValue) + 1;
     [self.recipientList resignFirstResponder];
+    if (startValue > -1) {
+        NSString *text;
+        switch (events) {
+            case 0:
+                text = @"No entries";
+                break;
+            case 1:
+                text = @"entry";
+                break;
+            default:
+                text = @"entries";
+                break;
+        }
+        self.eventCount.text = [NSString stringWithFormat:@"%d %@",events, text];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:startValue inSection:0];
+        MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSDate *today = [object valueForKey:@"date"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        dateFormatter.dateFormat = @"MMMM dd, YYYY";
+        NSString *startDate = [dateFormatter stringFromDate: today];
+        
+        indexPath = [NSIndexPath indexPathForItem:endValue inSection:0];
+        object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        today = [object valueForKey:@"date"];
+        NSString *endDate = [dateFormatter stringFromDate:today];
+        
+        if ([startDate isEqualToString:endDate]) {
+            self.dateRangeLabel.text = [NSString stringWithFormat:@"%@", startDate];
+        }
+        else {
+            self.dateRangeLabel.text = [NSString stringWithFormat:@"%@ to %@", startDate, endDate];
+        }
+        
+        
+        self.dateRangeDrawing.startValue = [NSNumber numberWithFloat:self.startSlider.value/self.startSlider.maximumValue];
+        self.dateRangeDrawing.endValue = [NSNumber numberWithFloat:self.endSlider.value/self.endSlider.maximumValue];
+        [self.dateRangeDrawing setNeedsDisplay];
+        
+        [defaults setFloat:self.startSlider.value forKey:@"DefaultMailStartValue"];
+        [defaults setFloat:self.endSlider.value forKey:@"DefaultMailEndValue"];
 
-    if (records > 1) {
-        text = @"entries";
     }
-    self.eventCount.text = [NSString stringWithFormat:@"%d %@",records, text];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:startValue inSection:0];
-    MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    NSDate *today = [object valueForKey:@"date"];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MMMM dd, YYYY";
-    NSString *startDate = [dateFormatter stringFromDate: today];
-    
-    indexPath = [NSIndexPath indexPathForItem:endValue inSection:0];
-    object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    today = [object valueForKey:@"date"];
-    NSString *endDate = [dateFormatter stringFromDate:today];
-    
-    if ([startDate isEqualToString:endDate]) {
-        self.dateRangeLabel.text = [NSString stringWithFormat:@"%@", startDate];        
-    }
-    else {
-        self.dateRangeLabel.text = [NSString stringWithFormat:@"%@ to %@", startDate, endDate];
-    }
-
-    
-    self.dateRangeDrawing.startValue = [NSNumber numberWithFloat:self.startSlider.value/self.startSlider.maximumValue];
-    self.dateRangeDrawing.endValue = [NSNumber numberWithFloat:self.endSlider.value/self.endSlider.maximumValue];
-    [self.dateRangeDrawing setNeedsDisplay];
-    
-    [defaults setFloat:self.startSlider.value forKey:@"DefaultMailStartValue"];
-    [defaults setFloat:self.endSlider.value forKey:@"DefaultMailEndValue"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
