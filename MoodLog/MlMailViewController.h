@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MlDateRangeDrawing.h"
+#import "MlMasterViewController.h"
 #import "MlEmailEventCountDrawing.h"
 #import <MessageUI/MFMailComposeViewController.h>
 
@@ -30,6 +31,7 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) MlMasterViewController *masterViewController;
 
 - (IBAction)doneButton:(id)sender;
 - (IBAction)slideStartSlider:(id)sender;
@@ -40,4 +42,5 @@
 - (IBAction)pressLatestButton:(id)sender;
 - (IBAction)composeEmail:(id)sender;
 - (IBAction)updatedRecipientList:(id)sender;
+- (IBAction)testCreateNewRecord:(id)sender;
 @end

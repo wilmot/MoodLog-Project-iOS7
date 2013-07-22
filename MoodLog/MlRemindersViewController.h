@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
+#import "MlMasterViewController.h"
 #import <UIKit/UIKit.h>
 
 @interface MlRemindersViewController : UINavigationController
-- (IBAction)pressDoneButton:(id)sender;
 
 @end

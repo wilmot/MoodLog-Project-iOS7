@@ -7,6 +7,7 @@
 //
 
 #import "MlNotificationsTableViewController.h"
+#import "MlAppDelegate.h"
 
 @interface MlNotificationsTableViewController ()
 
@@ -91,7 +92,8 @@
     myLocalNotification.alertBody = @"How are you feeling in this moment?";
     myLocalNotification.alertAction = @"New Mood Log Entry";
     myLocalNotification.soundName = @"guitar_sound.caf";
-    myLocalNotification.applicationIconBadgeNumber = 1;
+    NSLog(@"Badge Count: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
+    myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
     [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
 }
 
@@ -108,7 +110,8 @@
     myLocalNotification.alertBody = @"How are you feeling in this moment?";
     myLocalNotification.alertAction = @"New Mood Log Entry";
     myLocalNotification.soundName = @"guitar_sound.caf";
-    myLocalNotification.applicationIconBadgeNumber = 1;
+    NSLog(@"Badge Count: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
+    myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
     [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
 }
 

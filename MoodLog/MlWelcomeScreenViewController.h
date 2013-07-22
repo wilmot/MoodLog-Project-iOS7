@@ -10,6 +10,8 @@
 
 @interface MlWelcomeScreenViewController : UIViewController
 
+@property (nonatomic) NSNumber *pageNumber;
+
 - (IBAction)pressDoneButton:(id)sender;
 
 

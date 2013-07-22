@@ -13,6 +13,7 @@
 #import "MoodLogEvents.h"
 #import "Emotions.h"
 #import "MlCell.h"
+#import "MlMailViewController.h"
 
 @interface MlMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -152,7 +153,6 @@
     else { // iPhone
         [self performSegueWithIdentifier:@"showDetail" sender:sender];
     }
-
 }
 
 - (IBAction)showWelcomeScreen:(id)sender {
@@ -264,6 +264,9 @@
     }
     else if ([[segue identifier] isEqualToString:@"chartView"]) {
         [self shouldAutorotate];
+    }
+    else if ([[segue identifier] isEqualToString:@"mailView"]) {
+        [(MlMailViewController *)[segue destinationViewController] setMasterViewController:self];
     }
 }
 

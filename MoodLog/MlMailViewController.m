@@ -232,6 +232,11 @@ NSUserDefaults *defaults;
     
 }
 
+- (IBAction)testCreateNewRecord:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.masterViewController insertNewObject:self];
+}
+
 # pragma mark mail delegate methods
 - (void)mailComposeController:(MFMailComposeViewController*)controller
           didFinishWithResult:(MFMailComposeResult)result

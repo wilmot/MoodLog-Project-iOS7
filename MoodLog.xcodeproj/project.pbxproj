@@ -203,6 +203,8 @@
 		4C92BE101799E368005DEEC2 /* Icon Test@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0F1799E368005DEEC2 /* Icon Test@2x.png */; };
 		4C92BE121799EA97005DEEC2 /* IconFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE111799EA96005DEEC2 /* IconFace@2x.png */; };
 		4C92BE141799EA9D005DEEC2 /* IconFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE131799EA9D005DEEC2 /* IconFace.png */; };
+		4C92BE16179A0B69005DEEC2 /* TestArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE15179A0B68005DEEC2 /* TestArrow.png */; };
+		4C92BE69179B3FDA005DEEC2 /* MlWelcomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C92BE68179B3FD9005DEEC2 /* MlWelcomePageViewController.m */; };
 		4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */; };
 		4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */; };
 		4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */; };
@@ -394,7 +396,7 @@
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
 		4C52861616D9A654007C878C /* MlChartDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartDrawingView.h; sourceTree = "<group>"; };
 		4C52861716D9A654007C878C /* MlChartDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartDrawingView.m; sourceTree = "<group>"; };
-		4C55CBE2162DE67400EAA878 /* MoodLog IconFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoodLog IconFace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -449,6 +451,9 @@
 		4C92BE0F1799E368005DEEC2 /* Icon Test@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Test@2x.png"; sourceTree = "<group>"; };
 		4C92BE111799EA96005DEEC2 /* IconFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconFace@2x.png"; sourceTree = "<group>"; };
 		4C92BE131799EA9D005DEEC2 /* IconFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconFace.png; sourceTree = "<group>"; };
+		4C92BE15179A0B68005DEEC2 /* TestArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestArrow.png; sourceTree = "<group>"; };
+		4C92BE67179B3FD8005DEEC2 /* MlWelcomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlWelcomePageViewController.h; sourceTree = "<group>"; };
+		4C92BE68179B3FD9005DEEC2 /* MlWelcomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlWelcomePageViewController.m; sourceTree = "<group>"; };
 		4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodCollectionViewController.h; sourceTree = "<group>"; };
 		4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewController.m; sourceTree = "<group>"; };
 		4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCollectionViewCell.h; sourceTree = "<group>"; };
@@ -629,6 +634,7 @@
 		4C4043E61783E59F00710F2A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C92BE15179A0B68005DEEC2 /* TestArrow.png */,
 				4C92BE0617985BFD005DEEC2 /* TriangleRight.png */,
 				4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */,
 				4C7F572F178FC8170065543C /* add.png */,
@@ -674,7 +680,7 @@
 		4C55CBE3162DE67400EAA878 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C55CBE2162DE67400EAA878 /* MoodLog IconFace.app */,
+				4C55CBE2162DE67400EAA878 /* MoodLog.app */,
 				4C55CC14162DE67500EAA878 /* MoodLogTests.octest */,
 			);
 			name = Products;
@@ -707,6 +713,8 @@
 				4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */,
 				4C55CC09162DE67500EAA878 /* MlMasterViewController.h */,
 				4C55CC0A162DE67500EAA878 /* MlMasterViewController.m */,
+				4C92BE67179B3FD8005DEEC2 /* MlWelcomePageViewController.h */,
+				4C92BE68179B3FD9005DEEC2 /* MlWelcomePageViewController.m */,
 				4C55CC0C162DE67500EAA878 /* MlDetailViewController.h */,
 				4C55CC0D162DE67500EAA878 /* MlDetailViewController.m */,
 				4C7BF7CE176A482000DC8088 /* MlDetailScrollView.h */,
@@ -757,6 +765,8 @@
 				4C47E6A217501E8F0023298F /* Emotions.m */,
 				4C589C65163200F100428C52 /* Stressors.h */,
 				4C589C66163200F100428C52 /* Stressors.m */,
+				4C7F572C178E92550065543C /* MoodLogEvents.h */,
+				4C7F572D178E92550065543C /* MoodLogEvents.m */,
 				4C55CBEF162DE67400EAA878 /* Supporting Files */,
 			);
 			path = MoodLog;
@@ -768,8 +778,6 @@
 				4C92BDFD17976053005DEEC2 /* guitar_sound.caf */,
 				4C4043E61783E59F00710F2A /* Images */,
 				4C0C7671164AC84000DD372F /* Faces */,
-				4C7F572C178E92550065543C /* MoodLogEvents.h */,
-				4C7F572D178E92550065543C /* MoodLogEvents.m */,
 				4C55CC06162DE67500EAA878 /* MoodLog.xcdatamodeld */,
 				4C4C53DF1665F14900DDDBA2 /* MoodList.plist */,
 				4C1FE6A616DCA42A009FFA8A /* pie.jpg */,
@@ -798,7 +806,7 @@
 			);
 			name = MoodLog;
 			productName = MoodLog;
-			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog IconFace.app */;
+			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4C55CC13162DE67500EAA878 /* MoodLogTests */ = {
@@ -1018,6 +1026,7 @@
 				4C92BE101799E368005DEEC2 /* Icon Test@2x.png in Resources */,
 				4C92BE121799EA97005DEEC2 /* IconFace@2x.png in Resources */,
 				4C92BE141799EA9D005DEEC2 /* IconFace.png in Resources */,
+				4C92BE16179A0B69005DEEC2 /* TestArrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1084,6 +1093,7 @@
 				4C4AC9411794B3AE004DA98E /* MlNotificationsTableViewController.m in Sources */,
 				4C4AC9471795F2FA004DA98E /* MlRemindersViewController.m in Sources */,
 				4C92BE0C1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m in Sources */,
+				4C92BE69179B3FDA005DEEC2 /* MlWelcomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1191,7 +1201,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME) IconFace";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1203,7 +1213,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME) IconFace";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

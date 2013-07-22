@@ -20,6 +20,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) MlMasterViewController *masterViewController;
+@property (nonatomic, assign) NSInteger badgeCount;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

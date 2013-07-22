@@ -17,9 +17,9 @@
  NSString *const surprise = @"Surprise";
  NSString *const fear = @"Fear";
  NSString *const anger = @"Anger";
- NSString *const sadness = @"Sadness";
+NSString *const sadness = @"Sadness";
 
-// Category for extending Emotions class (which is auto-generated)
+# pragma mark - Category for extending Emotions class (which is auto-generated)
 @implementation Emotions (Emotions_Category)
 
 - (NSComparisonResult)compare:(Emotions *)otherObject {
@@ -42,7 +42,7 @@
 
 @end
 
-// Category for modifying UIColors
+# pragma mark - Category for modifying UIColors
 @implementation UIColor (LightAndDark)
 
 - (UIColor *)lighterColor
@@ -68,8 +68,24 @@
 }
 @end
 
+//# pragma mark - Category for getting a ViewController from a UIView
+//// http://stackoverflow.com/questions/1340434/get-to-uiviewcontroller-from-uiview-on-iphone
+//@interface UIView (APIFix)
+//- (UIViewController *)viewController;
+//@end
+//
+//@implementation UIView (APIFix)
+//
+//- (UIViewController *)viewController {
+//    if ([self.nextResponder isKindOfClass:UIViewController.class])
+//        return (UIViewController *)self.nextResponder;
+//    else
+//        return nil;
+//}
+//@end
 
-// Notes:
+
+// TODO: Notes:
 // When the button image is the wrong size (this looks like a bug), try adding and deleting a title. This seemed to fix it in at least one case
 
 @implementation Prefs
