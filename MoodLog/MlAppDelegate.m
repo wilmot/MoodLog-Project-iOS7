@@ -106,7 +106,7 @@
 //                                                           delegate:self cancelButtonTitle:@"OK"
 //                                                  otherButtonTitles:nil];
 //        [alertView show];
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+       // [[UIApplication sharedApplication] cancelAllLocalNotifications];
         [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     }
     
@@ -156,7 +156,7 @@
         [alertView show];
     }
     notification.applicationIconBadgeNumber = 0; // Reset badge
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    //[[UIApplication sharedApplication] cancelAllLocalNotifications];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 0;
 }

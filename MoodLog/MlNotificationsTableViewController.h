@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIStepper *reminderStepper;
 @property (weak, nonatomic) IBOutlet UILabel *reminderQuietHoursText1;
 @property (weak, nonatomic) IBOutlet UILabel *reminderQuietHoursText2;
-@property (weak, nonatomic) IBOutlet UITextField *reminderQuietHoursTextField;
 @property (weak, nonatomic) IBOutlet UITextField *reminderMinutesCount;
 @property (weak, nonatomic) IBOutlet UIStepper *reminderMinutesStepper;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -24,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timesPerDayText;
 @property (weak, nonatomic) IBOutlet UIButton *minutesSetButton;
 @property (weak, nonatomic) IBOutlet UIButton *buttonOfDoom;
+@property (strong, nonatomic) NSDate *quietStart;
+@property (strong, nonatomic) NSDate *quietEnd;
 
 - (IBAction)changeReminderSwitchState:(id)sender;
 - (IBAction)incrementReminders:(id)sender;

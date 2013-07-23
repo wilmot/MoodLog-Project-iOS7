@@ -8,6 +8,7 @@
 
 #import "MlNotificationsTableViewController.h"
 #import "MlAppDelegate.h"
+#import "MlQuietHoursTableViewController.h"
 
 @interface MlNotificationsTableViewController ()
 
@@ -35,37 +36,43 @@
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
     UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [self.reminderSwitch setOn:[defaults boolForKey:@"DefaultRandomRemindersOn"]];
-    
-    NSDate *quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
-    NSDateComponents *components = [gregorian components: NSUIntegerMax fromDate: quietStart];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"h:mm a";
-    NSString *quietStartString = [dateFormatter stringFromDate: quietStart];
-
-    NSDate *quietEnd = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietEndTime"];
-    components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
-    NSString *quietEndString = [dateFormatter stringFromDate: quietEnd];
-    
-    self.reminderQuietHoursTextField.text = [NSString stringWithFormat:@"%@ to %@",quietStartString, quietEndString];
-    
-    // Set Random Reminder Times/Day
-    self.reminderCount.text = [NSString stringWithFormat:@"%d",[defaults integerForKey:@"DefaultRandomTimesPerDay"]];
-    self.reminderStepper.value = [defaults integerForKey:@"DefaultRandomTimesPerDay"];
-    
-    // Set Minutes Delay #Times
-    self.reminderMinutesCount.text = [NSString stringWithFormat:@"%d",[defaults integerForKey:@"DefaultDelayMinutes"]];
-    self.reminderMinutesStepper.value = [defaults integerForKey:@"DefaultDelayMinutes"];
-    
-    // Set the background for any states you plan to use
     [self.minutesSetButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [self.minutesSetButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     [self.buttonOfDoom setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [self.buttonOfDoom setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [self.reminderSwitch setOn:[defaults boolForKey:@"DefaultRandomRemindersOn"]];
+    
+    self.quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
+    NSDateComponents *components = [gregorian components: NSUIntegerMax fromDate: self.quietStart];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"h:mm a";
+    NSString *quietStartString = [dateFormatter stringFromDate: self.quietStart];
+    
+    self.quietEnd = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietEndTime"];
+    components = [gregorian components: NSUIntegerMax fromDate: self.quietEnd];
+    NSString *quietEndString = [dateFormatter stringFromDate: self.quietEnd];
+    
+    self.reminderQuietHoursText2.text = [NSString stringWithFormat:@"Quiet Hours: %@ to %@",quietStartString, quietEndString];
+    
+    // Set Random Reminder Times/Day
+    self.reminderCount.text = [NSString stringWithFormat:@"%d",[defaults integerForKey:@"DefaultRandomTimesPerDay"]];
+    self.reminderStepper.value = [defaults integerForKey:@"DefaultRandomTimesPerDay"];
+    [self setReminderTimesPerDayLabelText];
+    
+    // Set Minutes Delay #Times
+    self.reminderMinutesCount.text = [NSString stringWithFormat:@"%d",[defaults integerForKey:@"DefaultDelayMinutes"]];
+    self.reminderMinutesStepper.value = [defaults integerForKey:@"DefaultDelayMinutes"];
+    [self setReminderMinutesLabelText];
+    
+    // Set the background for any states you plan to use
     [self setStateOfRemindersUI:self.reminderSwitch.on];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,33 +96,40 @@
     self.reminderStepper.enabled = state;
     self.reminderQuietHoursText1.enabled = state;
     self.reminderQuietHoursText2.enabled = state;
-
 }
 
 - (IBAction)incrementReminders:(id)sender {
     self.reminderCount.text = [NSString stringWithFormat:@"%d",(int)round(self.reminderStepper.value)];
+    [self setReminderTimesPerDayLabelText];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:self.reminderStepper.value forKey:@"DefaultRandomTimesPerDay"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setReminderTimesPerDayLabelText {
     if (self.reminderStepper.value == 1) {
         self.timesPerDayText.text = @"Time/Day";
     }
     else {
         self.timesPerDayText.text = @"Times/Day";
     }
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:self.reminderStepper.value forKey:@"DefaultRandomTimesPerDay"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (IBAction)incrementMinuteStepper:(id)sender {
     self.reminderMinutesCount.text = [NSString stringWithFormat:@"%d",(int)round(self.reminderMinutesStepper.value)];
+    [self setReminderMinutesLabelText];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:self.reminderMinutesStepper.value forKey:@"DefaultDelayMinutes"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setReminderMinutesLabelText {
     if (self.reminderMinutesStepper.value == 1) {
         self.minutesTimerText.text = @"Minute";
     }
     else {
         self.minutesTimerText.text = @"Minutes";
     }
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:self.reminderMinutesStepper.value forKey:@"DefaultDelayMinutes"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (IBAction)setMinutesTimerButton:(id)sender {
@@ -147,6 +161,14 @@
     NSLog(@"Badge Count: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
     myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
     [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"quietHoursSegue"]) {
+        MlQuietHoursTableViewController *myQuietHoursController = [segue destinationViewController];
+        myQuietHoursController.detailItem = self;
+    }
 }
 
 @end
