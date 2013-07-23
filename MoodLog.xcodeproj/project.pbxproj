@@ -709,8 +709,6 @@
 				4C3E0FB61657122100B0E060 /* Prefs.m */,
 				4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */,
 				4C55CBF8162DE67500EAA878 /* MlAppDelegate.m */,
-				4C7CA28C1630770800CC5CCA /* MlMoodDataItem.h */,
-				4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */,
 				4C55CC09162DE67500EAA878 /* MlMasterViewController.h */,
 				4C55CC0A162DE67500EAA878 /* MlMasterViewController.m */,
 				4C92BE67179B3FD8005DEEC2 /* MlWelcomePageViewController.h */,
@@ -767,6 +765,8 @@
 				4C589C66163200F100428C52 /* Stressors.m */,
 				4C7F572C178E92550065543C /* MoodLogEvents.h */,
 				4C7F572D178E92550065543C /* MoodLogEvents.m */,
+				4C7CA28C1630770800CC5CCA /* MlMoodDataItem.h */,
+				4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */,
 				4C55CBEF162DE67400EAA878 /* Supporting Files */,
 			);
 			path = MoodLog;

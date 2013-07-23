@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIStepper *reminderStepper;
 @property (weak, nonatomic) IBOutlet UILabel *reminderQuietHoursText1;
 @property (weak, nonatomic) IBOutlet UILabel *reminderQuietHoursText2;
-@property (weak, nonatomic) IBOutlet UILabel *reminderQuietHoursText3;
+@property (weak, nonatomic) IBOutlet UITextField *reminderQuietHoursTextField;
 @property (weak, nonatomic) IBOutlet UITextField *reminderMinutesCount;
 @property (weak, nonatomic) IBOutlet UIStepper *reminderMinutesStepper;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;

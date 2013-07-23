@@ -63,7 +63,7 @@
     
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    id testObject = [defaults objectForKey:@"DefaultMailEndValue"]; // always test the newest default
+    id testObject = [defaults objectForKey:@"DefaultDelayMinutes"]; // always test the newest default
 	if (testObject == nil) {
         [defaults setInteger:0 forKey:@"ChartSegmentState"];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -77,6 +77,24 @@
         [defaults setObject:groupSort forKey:@"DefaultSortStyleEditing"];
         [defaults setFloat:0.0 forKey:@"DefaultMailStartValue"];
         [defaults setFloat:0.0 forKey:@"DefaultMailEndValue"];
+        // Defaults for Reminders
+        [defaults setBool:NO forKey:@"DefaultRandomRemindersOn"];
+        [defaults setInteger:3 forKey:@"DefaultRandomTimesPerDay"];
+        NSDate *quietStart = [NSDate date];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
+        NSDateComponents *components = [gregorian components: NSUIntegerMax fromDate: quietStart];
+        components.hour = 21;
+        components.minute = 30;
+        quietStart = [gregorian dateFromComponents: components];
+        [[NSUserDefaults standardUserDefaults] setObject:quietStart forKey:@"DefaultRandomQuietStartTime"];
+        NSDate *quietEnd = [NSDate date];
+        components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
+        components.hour = 9;
+        components.minute = 00;
+        quietEnd = [gregorian dateFromComponents: components];
+        [[NSUserDefaults standardUserDefaults] setObject:quietEnd forKey:@"DefaultRandomQuietEndTime"];
+        [defaults setInteger:20 forKey:@"DefaultDelayMinutes"];
+
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
     

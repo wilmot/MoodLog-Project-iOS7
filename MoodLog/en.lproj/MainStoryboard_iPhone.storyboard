@@ -1291,6 +1291,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                         <outlet property="reminderMinutesStepper" destination="CVa-Mx-UOy" id="cT6-ZE-xsd"/>
                         <outlet property="reminderQuietHoursText1" destination="ono-3y-CX3" id="rXj-tL-Xx7"/>
                         <outlet property="reminderQuietHoursText2" destination="sQU-7d-uLW" id="eOZ-UA-k2r"/>
+                        <outlet property="reminderQuietHoursTextField" destination="qos-rI-bF3" id="6TY-PP-5tv"/>
                         <outlet property="reminderStepper" destination="Nk8-bh-Nkv" id="U6Y-sh-ei0"/>
                         <outlet property="reminderSwitch" destination="NMA-AS-bEc" id="g0l-Dn-U8J"/>
                         <outlet property="timesPerDayText" destination="qq3-v6-soP" id="TGM-QQ-jSL"/>
