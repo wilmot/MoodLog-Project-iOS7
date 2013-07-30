@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *expandButton; // edit button
 @property (weak, nonatomic) IBOutlet UIView *moodViewWithHeader;
 @property (weak, nonatomic) IBOutlet UILabel *noMoodsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *noMoodsLabel2;
 @property (weak, nonatomic) IBOutlet UITableViewCell *dateCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *moodsCell;
 @property (weak, nonatomic) IBOutlet UITextView *moodListTextView;

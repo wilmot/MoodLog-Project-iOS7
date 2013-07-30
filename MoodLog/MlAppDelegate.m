@@ -141,6 +141,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self setUpRandomLocalNotifications];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -153,7 +154,7 @@
     NSLog(@"App received a didReceiveLocalNotification. Badge #=%ld, badgeCount=%ld. Setting them to zero.",(long)[UIApplication sharedApplication].applicationIconBadgeNumber,(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
 //    if (((long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount) > 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Mood Log"
-                                                            message:@"How are you feeling in this moment?"
+                                                            message:@"Create a new entry to record your current mood."
                                                            delegate:self cancelButtonTitle:@"Close"
                                                   otherButtonTitles:nil];
         [alertView show];
@@ -162,6 +163,21 @@
     //[[UIApplication sharedApplication] cancelAllLocalNotifications];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 0;
+}
+
+- (void) setUpRandomLocalNotifications {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL randomRemindersOn = [defaults boolForKey:@"DefaultRandomRemindersOn"];
+    if (randomRemindersOn) {
+        NSDate *quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
+        NSDate *quietEnd = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietEndTime"];
+        NSInteger timesPerDay = [defaults integerForKey:@"DefaultRandomTimesPerDay"];
+        NSLog(@"Times/Day: %ld, Quiet Time Starts: %@, Ends: %@",(long)timesPerDay, quietStart, quietEnd);
+    }
+    else {
+        NSLog(@"Random reminders are off");
+    }
+
 }
 
 - (void)saveContext

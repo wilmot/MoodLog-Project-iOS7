@@ -138,30 +138,25 @@
     }
 }
 
-- (IBAction)setMinutesTimerButton:(id)sender {
-    UILocalNotification *myLocalNotification = [[UILocalNotification alloc] init];
-    if (myLocalNotification == nil) return;
-    NSDate *fireTime = [[NSDate date] addTimeInterval:[self.reminderMinutesCount.text integerValue]*60];
-    myLocalNotification.fireDate = fireTime;
-    myLocalNotification.timeZone = [NSTimeZone localTimeZone];
-    myLocalNotification.alertBody = @"How are you feeling in this moment?";
-    myLocalNotification.alertAction = @"New Mood Log Entry";
-    myLocalNotification.soundName = @"guitar_sound.caf";
-    myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
-    NSLog(@"Setting Badge #=%ld, badgeCount: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount, (long)myLocalNotification.applicationIconBadgeNumber);
-    [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
-    [self listScheduledNotifications];
-}
-
 - (IBAction)pressDoneButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
+- (IBAction)setMinutesTimerButton:(id)sender {
+    [self setNotificationSeconds:[self.reminderMinutesCount.text integerValue]*60];
+}
+
 - (IBAction)pressButtonOfDoom:(id)sender {
     UILocalNotification *myLocalNotification = [[UILocalNotification alloc] init];
     if (myLocalNotification == nil) return;
-    NSDate *fireTime = [[NSDate date] addTimeInterval:5]; // adds 5 secs
+    [self setNotificationSeconds:5]; // 5 seconds from now
+}
+
+- (void) setNotificationSeconds: (NSTimeInterval)seconds {
+    UILocalNotification *myLocalNotification = [[UILocalNotification alloc] init];
+    if (myLocalNotification == nil) return;
+    NSDate *fireTime = [[NSDate date] dateByAddingTimeInterval:seconds];
     myLocalNotification.fireDate = fireTime;
     myLocalNotification.timeZone = [NSTimeZone localTimeZone];
     myLocalNotification.alertBody = @"How are you feeling in this moment?";
@@ -185,7 +180,7 @@
 -(void)listScheduledNotifications {
     NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MMMM dd, YYYY h:mm a V";
+    dateFormatter.dateFormat = @"MMMM dd, YYYY h:mm:ss a V";
     if (notifications.count > 0) {
         NSMutableString *scheduledItemsString = [[NSMutableString alloc] init];
         for (UILocalNotification *item in notifications) {

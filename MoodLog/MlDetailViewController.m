@@ -351,6 +351,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 
 - (IBAction)pressedExpandButton:(id)sender { // Edit/Done button
     [self.noMoodsLabel setHidden:YES]; // Hide the label when starting an edit session
+    [self.noMoodsLabel2 setHidden:YES]; // Hide the label when starting an edit session
     [self pressedDoneButton:self];
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         // iPad
@@ -379,6 +380,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             shouldHideLabel = NO; // Should only show if there are no moods selected
     }
     [self.noMoodsLabel setHidden:shouldHideLabel];
+    [self.noMoodsLabel2 setHidden:shouldHideLabel];
 }
 
 // TODO: Trying to get the gap to disappear when hiding a static table section
@@ -487,6 +489,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self setExpandButton:nil];
     [self setSortGroupButton:nil];
     [self setNoMoodsLabel:nil];
+    [self setNoMoodsLabel2:nil];
     [self setOverallSlider:nil];
     [super viewDidUnload];
 }
