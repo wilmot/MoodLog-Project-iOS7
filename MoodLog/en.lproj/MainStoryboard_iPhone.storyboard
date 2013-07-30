@@ -1221,13 +1221,13 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="n4o-dN-1H7">
+                            <tableViewSection headerTitle="Debugging" id="n4o-dN-1H7">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="j6a-rB-mQy">
-                                        <rect key="frame" x="0.0" y="467" width="320" height="77"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="265" id="j6a-rB-mQy">
+                                        <rect key="frame" x="0.0" y="493" width="320" height="267"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="74"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="264"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR3-7I-1hS">
@@ -1246,13 +1246,61 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                                         <action selector="pressButtonOfDoom:" destination="eWD-k6-ZJq" eventType="touchUpInside" id="Vxw-RW-kIS"/>
                                                     </connections>
                                                 </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="A list of scheduled notifications" translatesAutoresizingMaskIntoConstraints="NO" id="l0o-4z-ycs">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="139" id="KFv-Bm-nud"/>
+                                                        <constraint firstAttribute="width" constant="300" id="g48-jb-nbB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfL-Tl-0Ak">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" type="user" id="I7i-NY-Qwd"/>
+                                                        <constraint firstAttribute="width" constant="108" id="feX-XL-DUR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Update List">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pressNotificationListButton:" destination="eWD-k6-ZJq" eventType="touchUpInside" id="21u-7b-mOj"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr6-Ca-UGc">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" type="user" id="bZA-jg-09w"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Clear All Notifications">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pressClearAllNotificationsButton:" destination="eWD-k6-ZJq" eventType="touchUpInside" id="zdB-gO-cMf"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="IR3-7I-1hS" firstAttribute="centerX" secondItem="j6a-rB-mQy" secondAttribute="centerX" type="default" id="Agm-fe-KE3"/>
-                                            <constraint firstItem="IR3-7I-1hS" firstAttribute="top" secondItem="j6a-rB-mQy" secondAttribute="top" constant="16" id="u8B-hC-PF8"/>
+                                            <constraint firstItem="kr6-Ca-UGc" firstAttribute="leading" secondItem="j6a-rB-mQy" secondAttribute="leading" constant="110" id="Kqa-ub-p1k"/>
+                                            <constraint firstItem="IR3-7I-1hS" firstAttribute="leading" secondItem="j6a-rB-mQy" secondAttribute="leading" constant="30" id="Q1n-HT-Ued"/>
+                                            <constraint firstItem="YfL-Tl-0Ak" firstAttribute="baseline" secondItem="IR3-7I-1hS" secondAttribute="baseline" type="default" id="T93-Kk-MdS"/>
+                                            <constraint firstItem="l0o-4z-ycs" firstAttribute="centerX" secondItem="j6a-rB-mQy" secondAttribute="centerX" type="default" id="cQK-h2-Ot2"/>
+                                            <constraint firstItem="l0o-4z-ycs" firstAttribute="top" secondItem="j6a-rB-mQy" secondAttribute="top" constant="67" id="eWz-VN-G57"/>
+                                            <constraint firstItem="kr6-Ca-UGc" firstAttribute="top" secondItem="l0o-4z-ycs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gMf-Ea-J0K"/>
+                                            <constraint firstItem="IR3-7I-1hS" firstAttribute="top" secondItem="j6a-rB-mQy" secondAttribute="top" constant="11" id="oDS-32-i7p"/>
+                                            <constraint firstItem="kr6-Ca-UGc" firstAttribute="trailing" secondItem="YfL-Tl-0Ak" secondAttribute="trailing" type="default" id="xku-Fj-IpL"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1273,8 +1321,10 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                     </navigationItem>
                     <connections>
                         <outlet property="buttonOfDoom" destination="IR3-7I-1hS" id="knu-G0-7ox"/>
+                        <outlet property="clearAllNotificationsButton" destination="kr6-Ca-UGc" id="Ayf-eb-hBQ"/>
                         <outlet property="minutesSetButton" destination="ho8-Xp-zh3" id="gE5-fu-eOj"/>
                         <outlet property="minutesTimerText" destination="7uC-da-44c" id="Skk-1V-p0G"/>
+                        <outlet property="notificationListButton" destination="YfL-Tl-0Ak" id="scG-DA-9Bf"/>
                         <outlet property="reminderCount" destination="pND-Zv-jQX" id="AKF-jR-Npw"/>
                         <outlet property="reminderInitialText" destination="7cg-5d-cwM" id="zV8-T8-g5c"/>
                         <outlet property="reminderMinutesCount" destination="XeO-tn-C9R" id="il7-JU-Eao"/>
@@ -1283,6 +1333,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                         <outlet property="reminderQuietHoursText2" destination="sQU-7d-uLW" id="eOZ-UA-k2r"/>
                         <outlet property="reminderStepper" destination="Nk8-bh-Nkv" id="U6Y-sh-ei0"/>
                         <outlet property="reminderSwitch" destination="NMA-AS-bEc" id="g0l-Dn-U8J"/>
+                        <outlet property="scheduledNotificationsList" destination="l0o-4z-ycs" id="aNy-Ag-sdE"/>
                         <outlet property="timesPerDayText" destination="qq3-v6-soP" id="TGM-QQ-jSL"/>
                     </connections>
                 </tableViewController>
@@ -1370,7 +1421,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                                         <!--2013-07-19 05:30:00 +0000-->
                                                     </date>
                                                     <timeZone key="timeZone" name="America/Los_Angeles">
-                                                        <mutableData key="data">
+                                                        <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -1388,7 +1439,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                                     </timeZone>
                                                     <connections>
                                                         <action selector="setTime:" destination="2vX-gw-xTS" eventType="valueChanged" id="otR-P8-e5S"/>
@@ -1452,7 +1503,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection headerTitle="" id="sPT-LP-oOT">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="XML-kh-WyT">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="66"/>
+                                        <rect key="frame" x="0.0" y="10" width="320" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="64"/>
@@ -1523,7 +1574,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection headerTitle="" id="gCR-M1-aqz">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="78" id="ZCh-Jg-PsL">
-                                        <rect key="frame" x="0.0" y="96" width="320" height="79"/>
+                                        <rect key="frame" x="0.0" y="96" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="77"/>
@@ -1557,7 +1608,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection headerTitle="" id="ovx-Tt-PFC">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="179" id="gRi-SK-i7n">
-                                        <rect key="frame" x="0.0" y="195" width="320" height="180"/>
+                                        <rect key="frame" x="0.0" y="195" width="320" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="178"/>
@@ -1607,7 +1658,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection headerTitle="" id="V8H-pr-lXg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="192" id="xfN-la-lID">
-                                        <rect key="frame" x="0.0" y="395" width="320" height="193"/>
+                                        <rect key="frame" x="0.0" y="395" width="320" height="194"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="191"/>

@@ -40,6 +40,10 @@
     [self.minutesSetButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     [self.buttonOfDoom setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [self.buttonOfDoom setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [self.notificationListButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.notificationListButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [self.clearAllNotificationsButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [self.clearAllNotificationsButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     
 }
 
@@ -72,6 +76,8 @@
     
     // Set the background for any states you plan to use
     [self setStateOfRemindersUI:self.reminderSwitch.on];
+    
+    [self listScheduledNotifications];
     [self.tableView reloadData];
 }
 
@@ -137,12 +143,14 @@
     if (myLocalNotification == nil) return;
     NSDate *fireTime = [[NSDate date] addTimeInterval:[self.reminderMinutesCount.text integerValue]*60];
     myLocalNotification.fireDate = fireTime;
+    myLocalNotification.timeZone = [NSTimeZone localTimeZone];
     myLocalNotification.alertBody = @"How are you feeling in this moment?";
     myLocalNotification.alertAction = @"New Mood Log Entry";
     myLocalNotification.soundName = @"guitar_sound.caf";
-    NSLog(@"Badge Count: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
     myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
+    NSLog(@"Setting Badge #=%ld, badgeCount: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount, (long)myLocalNotification.applicationIconBadgeNumber);
     [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
+    [self listScheduledNotifications];
 }
 
 - (IBAction)pressDoneButton:(id)sender {
@@ -155,12 +163,39 @@
     if (myLocalNotification == nil) return;
     NSDate *fireTime = [[NSDate date] addTimeInterval:5]; // adds 5 secs
     myLocalNotification.fireDate = fireTime;
+    myLocalNotification.timeZone = [NSTimeZone localTimeZone];
     myLocalNotification.alertBody = @"How are you feeling in this moment?";
     myLocalNotification.alertAction = @"New Mood Log Entry";
     myLocalNotification.soundName = @"guitar_sound.caf";
-    NSLog(@"Badge Count: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
     myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
+    NSLog(@"Setting Badge #=%ld, badgeCount: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount, (long)myLocalNotification.applicationIconBadgeNumber);
     [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
+    [self listScheduledNotifications];
+}
+
+- (IBAction)pressNotificationListButton:(id)sender {
+    [self listScheduledNotifications];
+}
+
+- (IBAction)pressClearAllNotificationsButton:(id)sender {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [self listScheduledNotifications];
+}
+
+-(void)listScheduledNotifications {
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"MMMM dd, YYYY h:mm a V";
+    if (notifications.count > 0) {
+        NSMutableString *scheduledItemsString = [[NSMutableString alloc] init];
+        for (UILocalNotification *item in notifications) {
+            [scheduledItemsString appendFormat:@"%@\n",[dateFormatter stringFromDate:[item fireDate]]];
+        }
+        self.scheduledNotificationsList.text = scheduledItemsString;
+    }
+    else {
+        self.scheduledNotificationsList.text = @"No reminders scheduled.";
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

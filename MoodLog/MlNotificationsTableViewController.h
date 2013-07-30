@@ -23,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *timesPerDayText;
 @property (weak, nonatomic) IBOutlet UIButton *minutesSetButton;
 @property (weak, nonatomic) IBOutlet UIButton *buttonOfDoom;
+@property (weak, nonatomic) IBOutlet UIButton *notificationListButton;
+@property (weak, nonatomic) IBOutlet UITextView *scheduledNotificationsList;
+@property (weak, nonatomic) IBOutlet UIButton *clearAllNotificationsButton;
 @property (strong, nonatomic) NSDate *quietStart;
 @property (strong, nonatomic) NSDate *quietEnd;
 
@@ -30,6 +33,8 @@
 - (IBAction)incrementReminders:(id)sender;
 - (IBAction)incrementMinuteStepper:(id)sender;
 - (IBAction)pressButtonOfDoom:(id)sender;
+- (IBAction)pressNotificationListButton:(id)sender;
+- (IBAction)pressClearAllNotificationsButton:(id)sender;
 - (IBAction)setMinutesTimerButton:(id)sender;
 - (IBAction)pressDoneButton:(id)sender;
 @end

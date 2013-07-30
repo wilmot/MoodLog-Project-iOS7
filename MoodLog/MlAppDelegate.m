@@ -125,6 +125,7 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSLog(@"App has been backgrounded. Badge #=%ld, badgeCount=%ld, will be set to zero",(long)[UIApplication sharedApplication].applicationIconBadgeNumber, (long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 0;
 }
@@ -132,7 +133,9 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    NSLog(@"App will enter foreground. Badge #=%ld",(long)[UIApplication sharedApplication].applicationIconBadgeNumber);
+    NSLog(@"App will enter foreground. Badge #=%ld, badgeCount=%ld, will be set to zero",(long)[UIApplication sharedApplication].applicationIconBadgeNumber, (long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 0;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -147,14 +150,14 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    NSLog(@"App received a didReceiveLocalNotification. Badge #=%ld",(long)[UIApplication sharedApplication].applicationIconBadgeNumber);
-    if (((long)[UIApplication sharedApplication].applicationIconBadgeNumber) == 0) {
+    NSLog(@"App received a didReceiveLocalNotification. Badge #=%ld, badgeCount=%ld. Setting them to zero.",(long)[UIApplication sharedApplication].applicationIconBadgeNumber,(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
+//    if (((long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount) > 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Mood Log"
                                                             message:@"How are you feeling in this moment?"
                                                            delegate:self cancelButtonTitle:@"Close"
                                                   otherButtonTitles:nil];
         [alertView show];
-    }
+//    }
     notification.applicationIconBadgeNumber = 0; // Reset badge
     //[[UIApplication sharedApplication] cancelAllLocalNotifications];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
