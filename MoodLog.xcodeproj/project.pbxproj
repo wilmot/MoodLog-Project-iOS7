@@ -209,6 +209,8 @@
 		4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */; };
 		4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */; };
 		4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */; };
+		4CB8E8EE17C8642F00E26857 /* StartupScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8E8ED17C8642F00E26857 /* StartupScreen.png */; };
+		4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8E8EF17C8647700E26857 /* Images.xcassets */; };
 		4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */; };
 		4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F0164B8C870055CC3D /* MlMailViewController.m */; };
 		4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */; };
@@ -463,6 +465,8 @@
 		4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCollectionViewCell.m; sourceTree = "<group>"; };
 		4CA980E71767E0E2001BF7A8 /* MlChartCellFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MlChartCellFooterView.h; sourceTree = "<group>"; };
 		4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MlChartCellFooterView.m; sourceTree = "<group>"; };
+		4CB8E8ED17C8642F00E26857 /* StartupScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartupScreen.png; sourceTree = "<group>"; };
+		4CB8E8EF17C8647700E26857 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 4.xcdatamodel"; sourceTree = "<group>"; };
 		4CECC217165D50E800EE3C6B /* MoodLog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 2.xcdatamodel"; sourceTree = "<group>"; };
 		4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartViewController.h; sourceTree = "<group>"; };
@@ -708,6 +712,7 @@
 			children = (
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
 				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
+				4CB8E8ED17C8642F00E26857 /* StartupScreen.png */,
 				4C3E0FB51657122100B0E060 /* Prefs.h */,
 				4C3E0FB61657122100B0E060 /* Prefs.m */,
 				4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */,
@@ -772,6 +777,7 @@
 				4C7F572D178E92550065543C /* MoodLogEvents.m */,
 				4C7CA28C1630770800CC5CCA /* MlMoodDataItem.h */,
 				4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */,
+				4CB8E8EF17C8647700E26857 /* Images.xcassets */,
 				4C55CBEF162DE67400EAA878 /* Supporting Files */,
 			);
 			path = MoodLog;
@@ -842,11 +848,6 @@
 				CLASSPREFIX = Ml;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Barry A. Langdon-Lassagne";
-				TargetAttributes = {
-					4C7BF7BA176A39F200DC8088 = {
-						TestTargetID = 4C55CBE1162DE67400EAA878;
-					};
-				};
 			};
 			buildConfigurationList = 4C55CBDC162DE67400EAA878 /* Build configuration list for PBXProject "MoodLog" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -926,6 +927,7 @@
 				4C4043971783E51400710F2A /* Ecstatic@2x.png in Resources */,
 				4C4043981783E51400710F2A /* Elated.png in Resources */,
 				4C4043991783E51400710F2A /* Elated@2x.png in Resources */,
+				4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */,
 				4C40439A1783E51400710F2A /* Embarrased.png in Resources */,
 				4C40439B1783E51400710F2A /* Embarrased@2x.png in Resources */,
 				4C40439C1783E51400710F2A /* Empathetic.png in Resources */,
@@ -982,6 +984,7 @@
 				4C4043CF1783E51400710F2A /* Anticipating@2x.png in Resources */,
 				4C4043D01783E51400710F2A /* Anxious.png in Resources */,
 				4C4043D11783E51400710F2A /* Anxious@2x.png in Resources */,
+				4CB8E8EE17C8642F00E26857 /* StartupScreen.png in Resources */,
 				4C4043D21783E51400710F2A /* Apologetic.png in Resources */,
 				4C4043D31783E51400710F2A /* Apologetic@2x.png in Resources */,
 				4C4043D41783E51400710F2A /* Apprehensive.png in Resources */,
@@ -1203,6 +1206,8 @@
 		4C55CC28162DE67500EAA878 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
@@ -1215,6 +1220,8 @@
 		4C55CC29162DE67500EAA878 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
