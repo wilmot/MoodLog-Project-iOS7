@@ -1993,7 +1993,7 @@ Here</string>
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Knz-FF-nJJ" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="7dO-VT-1GK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="522"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="462"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KDk-cp-qb5">
@@ -2127,7 +2127,7 @@ Here</string>
             </objects>
             <point key="canvasLocation" x="1148" y="-779"/>
         </scene>
-        <!--Ml Faces View Controller-->
+        <!--Ml Faces View Controller - Mood Picker-->
         <scene sceneID="5TO-ZN-6VG">
             <objects>
                 <viewController id="Haq-rW-jQt" customClass="MlFacesViewController" sceneMemberID="viewController">
@@ -2143,14 +2143,14 @@ Here</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7h5-hV-VH6">
-                                        <rect key="frame" x="0.0" y="47" width="320" height="522"/>
+                                        <rect key="frame" x="0.0" y="107" width="320" height="462"/>
                                         <color key="backgroundColor" red="0.2196078598" green="0.58823531870000001" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <segue destination="Knz-FF-nJJ" kind="embed" identifier="MoodCollectionSegue2" id="IAH-aZ-MU7"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmx-b0-GWE">
-                                        <rect key="frame" x="163" y="2" width="88" height="44"/>
+                                        <rect key="frame" x="163" y="64" width="88" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
@@ -2162,10 +2162,10 @@ Here</string>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVJ-nb-dmb">
-                                        <rect key="frame" x="61" y="2" width="50" height="44"/>
+                                        <rect key="frame" x="61" y="64" width="50" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="gii-xS-tga"/>
+                                            <constraint firstAttribute="width" constant="50" id="8eS-2i-OkQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="A–Z">
@@ -2183,11 +2183,11 @@ Here</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojS-bA-6gC">
-                                        <rect key="frame" x="0.0" y="2" width="60" height="44"/>
+                                        <rect key="frame" x="0.0" y="64" width="60" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="P37-Dv-J3d"/>
-                                            <constraint firstAttribute="width" constant="60" id="pgg-QV-GNf"/>
+                                            <constraint firstAttribute="width" constant="60" id="WzV-Ua-d0R"/>
+                                            <constraint firstAttribute="height" constant="44" id="YEv-sU-nXw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Group">
@@ -2205,10 +2205,10 @@ Here</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-hi-2mp">
-                                        <rect key="frame" x="112" y="2" width="50" height="44"/>
+                                        <rect key="frame" x="112" y="64" width="50" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="1wx-Hw-TzK"/>
+                                            <constraint firstAttribute="width" constant="50" id="08s-iq-7zC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="shuffle_off.png">
@@ -2226,10 +2226,10 @@ Here</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="um1-sR-pJW">
-                                        <rect key="frame" x="252" y="2" width="68" height="44"/>
+                                        <rect key="frame" x="252" y="64" width="68" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="68" id="cAf-Za-gqd"/>
+                                            <constraint firstAttribute="width" constant="68" id="yB1-nR-9Bb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Faces">
@@ -2249,29 +2249,25 @@ Here</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.70266747470000002" green="1" blue="0.7013978958" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="bottom" secondItem="um1-sR-pJW" secondAttribute="bottom" id="15h-2e-3J1"/>
-                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" constant="112" id="37D-T5-I4n"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="top" secondItem="zNy-py-5fw" secondAttribute="top" constant="2" id="3UI-Du-0qb"/>
-                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="trailing" secondItem="zNy-py-5fw" secondAttribute="trailing" id="6qA-6c-BsV"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="baseline" secondItem="um1-sR-pJW" secondAttribute="baseline" id="8RT-VN-8ao"/>
-                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="top" secondItem="zNy-py-5fw" secondAttribute="top" constant="47" id="AWn-QJ-nk0"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="leading" secondItem="lmx-b0-GWE" secondAttribute="trailing" constant="1" id="C0x-xm-sTb"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="baseline" secondItem="um1-sR-pJW" secondAttribute="baseline" id="Fr7-R7-xRf"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" id="MSx-uc-v7m"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" constant="61" id="VtS-fm-ZrQ"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="top" secondItem="pLd-hi-2mp" secondAttribute="top" id="WFU-nu-dEM"/>
-                                    <constraint firstAttribute="trailing" secondItem="lmx-b0-GWE" secondAttribute="trailing" constant="69" id="ZeE-co-POA"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="trailing" secondItem="zNy-py-5fw" secondAttribute="trailing" id="bJe-JI-Y8z"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="bottom" secondItem="ZVJ-nb-dmb" secondAttribute="bottom" id="cPd-SS-vrF"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="baseline" secondItem="ZVJ-nb-dmb" secondAttribute="baseline" id="cxc-mQ-qwJ"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="bottom" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="dQB-cO-eeR"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="bottom" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="e27-aI-PZo"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="top" secondItem="um1-sR-pJW" secondAttribute="top" id="gQP-Ax-Y70"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="leading" secondItem="pLd-hi-2mp" secondAttribute="trailing" constant="1" id="hEb-0g-lnJ"/>
-                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" id="hvw-Z7-KnM"/>
-                                    <constraint firstAttribute="bottom" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="-1" id="nuc-cy-KiQ"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="top" secondItem="ojS-bA-6gC" secondAttribute="top" id="ppB-Kp-NA7"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="top" secondItem="pLd-hi-2mp" secondAttribute="top" id="yLm-Pz-Ps3"/>
+                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="top" secondItem="zNy-py-5fw" secondAttribute="top" constant="107" id="2NK-Hk-kxV"/>
+                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="top" secondItem="pLd-hi-2mp" secondAttribute="top" id="3jl-X6-vXz"/>
+                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="leading" secondItem="ZVJ-nb-dmb" secondAttribute="trailing" constant="1" id="8vU-Hh-XaR"/>
+                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="top" secondItem="ZVJ-nb-dmb" secondAttribute="top" id="Azc-S7-pMB"/>
+                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="top" secondItem="zNy-py-5fw" secondAttribute="top" constant="64" id="DL4-Qc-IZO"/>
+                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="leading" secondItem="ojS-bA-6gC" secondAttribute="trailing" constant="1" id="DaV-Dx-fBT"/>
+                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="bottom" secondItem="ZVJ-nb-dmb" secondAttribute="bottom" id="NVP-04-qHP"/>
+                                    <constraint firstAttribute="bottom" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="-1" id="Ofb-SJ-yXd"/>
+                                    <constraint firstItem="um1-sR-pJW" firstAttribute="leading" secondItem="lmx-b0-GWE" secondAttribute="trailing" constant="1" id="Qou-A9-wHE"/>
+                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" id="Slz-PA-bOe"/>
+                                    <constraint firstItem="um1-sR-pJW" firstAttribute="bottom" secondItem="lmx-b0-GWE" secondAttribute="bottom" id="buL-qA-8ke"/>
+                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="top" secondItem="um1-sR-pJW" secondAttribute="top" id="dLV-OO-xbo"/>
+                                    <constraint firstAttribute="trailing" secondItem="7h5-hV-VH6" secondAttribute="trailing" id="edJ-pj-lP6"/>
+                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="bottom" secondItem="lmx-b0-GWE" secondAttribute="bottom" id="fZ3-iH-9fH"/>
+                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="leading" secondItem="ojS-bA-6gC" secondAttribute="leading" id="mbX-jO-yKk"/>
+                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="bottom" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="sWS-e8-Xjx"/>
+                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="leading" secondItem="pLd-hi-2mp" secondAttribute="trailing" constant="1" id="uum-Lk-j3y"/>
+                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="top" secondItem="ZVJ-nb-dmb" secondAttribute="top" id="xbh-p4-efm"/>
+                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="trailing" secondItem="um1-sR-pJW" secondAttribute="trailing" id="y12-Sv-tNv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2283,7 +2279,7 @@ Here</string>
                             <constraint firstItem="zNy-py-5fw" firstAttribute="bottom" secondItem="A6Z-Y0-OgJ" secondAttribute="bottom" id="gfJ-tb-T3w"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BVm-7v-Wj1"/>
+                    <navigationItem key="navigationItem" title="Mood Picker" id="BVm-7v-Wj1"/>
                     <connections>
                         <outlet property="SortCBAButton" destination="ojS-bA-6gC" id="iuc-EJ-HYF"/>
                         <outlet property="sortABCButton" destination="ZVJ-nb-dmb" id="XCi-lN-Rve"/>
