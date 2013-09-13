@@ -11,6 +11,7 @@
 #import "MoodLogEvents.h"
 #import "Emotions.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Prefs.h"
 
 @interface MlMailViewController ()
 
@@ -42,16 +43,18 @@ NSUserDefaults *defaults;
     UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
     // Set the background for any states you plan to use
-    [self.allButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.allButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    [self.monthButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.monthButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    [self.weekButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.weekButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    [self.latestButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.latestButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    [self.composeButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.composeButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        [self.allButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.allButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [self.monthButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.monthButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [self.weekButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.weekButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [self.latestButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.latestButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [self.composeButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.composeButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    }
     
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
     float events = [sectionInfo numberOfObjects];

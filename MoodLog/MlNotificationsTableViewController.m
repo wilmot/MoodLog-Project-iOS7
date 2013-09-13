@@ -9,6 +9,7 @@
 #import "MlNotificationsTableViewController.h"
 #import "MlAppDelegate.h"
 #import "MlQuietHoursTableViewController.h"
+#import "Prefs.h"
 
 @interface MlNotificationsTableViewController ()
 
@@ -36,14 +37,16 @@
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
     UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
-    [self.minutesSetButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.minutesSetButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    [self.buttonOfDoom setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.buttonOfDoom setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    [self.notificationListButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.notificationListButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    [self.clearAllNotificationsButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.clearAllNotificationsButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        [self.minutesSetButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.minutesSetButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [self.buttonOfDoom setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.buttonOfDoom setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [self.notificationListButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.notificationListButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [self.clearAllNotificationsButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.clearAllNotificationsButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    }
     
 }
 

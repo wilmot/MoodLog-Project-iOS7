@@ -60,8 +60,10 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
     // Set the background for any states you plan to use
-    [self.slidersSetAdjustButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.slidersSetAdjustButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        [self.slidersSetAdjustButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.slidersSetAdjustButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    }
 
 }
 
