@@ -1627,7 +1627,7 @@
 		<key>feelValue</key>
 		<string>-3</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Pitying</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1642,7 +1642,7 @@
 		<key>feelValue</key>
 		<string>7</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Pleased</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1657,7 +1657,7 @@
 		<key>feelValue</key>
 		<string>6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Proud</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1672,7 +1672,7 @@
 		<key>feelValue</key>
 		<string>10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Rapturous</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1687,7 +1687,7 @@
 		<key>feelValue</key>
 		<string>-6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Regretful</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1702,7 +1702,7 @@
 		<key>feelValue</key>
 		<string>-10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Rejected</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1717,7 +1717,7 @@
 		<key>feelValue</key>
 		<string>4</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Relieved</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1732,7 +1732,7 @@
 		<key>feelValue</key>
 		<string>-8</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Remorseful</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1747,7 +1747,7 @@
 		<key>feelValue</key>
 		<string>-6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Resenting</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1762,7 +1762,7 @@
 		<key>feelValue</key>
 		<string>-8</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Revulsed</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1792,7 +1792,7 @@
 		<key>feelValue</key>
 		<string>5</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Satisfied</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1807,7 +1807,7 @@
 		<key>feelValue</key>
 		<string>6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Sentimental</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1822,7 +1822,7 @@
 		<key>feelValue</key>
 		<string>-6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Shocked</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1837,7 +1837,7 @@
 		<key>feelValue</key>
 		<string>-10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Suffering</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1897,7 +1897,7 @@
 		<key>feelValue</key>
 		<string>4</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Sympathetic</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1912,7 +1912,7 @@
 		<key>feelValue</key>
 		<string>6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Tender</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1927,7 +1927,7 @@
 		<key>feelValue</key>
 		<string>-10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Terrified</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1942,7 +1942,7 @@
 		<key>feelValue</key>
 		<string>8</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Thrilled</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1957,7 +1957,7 @@
 		<key>feelValue</key>
 		<string>-10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Tormented</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1972,7 +1972,7 @@
 		<key>feelValue</key>
 		<string>10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Triumphant</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -1987,7 +1987,7 @@
 		<key>feelValue</key>
 		<string>8</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Trusting</string>
 		<key>source</key>
 		<string>Plutchik</string>
 		<key>emotionDescription</key>
@@ -2002,7 +2002,7 @@
 		<key>feelValue</key>
 		<string>-2</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Uneasy</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -2017,7 +2017,7 @@
 		<key>feelValue</key>
 		<string>-6</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Unhappy</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -2032,7 +2032,7 @@
 		<key>feelValue</key>
 		<string>-4</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Unlovable</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -2047,7 +2047,7 @@
 		<key>feelValue</key>
 		<string>-10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Vengeful</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>
@@ -2070,21 +2070,6 @@
 		<key>parrotLevel</key>
 		<string>0</string>
 	</dict>
-	<key>Worthy</key>
-	<dict>
-		<key>category</key>
-		<string>Joy</string>
-		<key>feelValue</key>
-		<string>8</string>
-		<key>facePath</key>
-		<string>Blank</string>
-		<key>source</key>
-		<string>Need Source</string>
-		<key>emotionDescription</key>
-		<string></string>
-		<key>parrotLevel</key>
-		<string>0</string>
-	</dict>
 	<key>Worthless</key>
 	<dict>
 		<key>category</key>
@@ -2092,7 +2077,22 @@
 		<key>feelValue</key>
 		<string>-10</string>
 		<key>facePath</key>
-		<string>Blank</string>
+		<string>Worthless</string>
+		<key>source</key>
+		<string>Need Source</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>0</string>
+	</dict>
+	<key>Worthy</key>
+	<dict>
+		<key>category</key>
+		<string>Joy</string>
+		<key>feelValue</key>
+		<string>8</string>
+		<key>facePath</key>
+		<string>Worthy</string>
 		<key>source</key>
 		<string>Need Source</string>
 		<key>emotionDescription</key>

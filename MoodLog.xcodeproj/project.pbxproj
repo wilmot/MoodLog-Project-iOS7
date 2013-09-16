@@ -106,6 +106,60 @@
 		4C06396417E45A6E00563FE6 /* Exasperated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06390217E45A6E00563FE6 /* Exasperated@2x.png */; };
 		4C06396517E45A6E00563FE6 /* Euphoric.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06390317E45A6E00563FE6 /* Euphoric.png */; };
 		4C06396617E45A6E00563FE6 /* Euphoric@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06390417E45A6E00563FE6 /* Euphoric@2x.png */; };
+		4C06399D17E69DA200563FE6 /* Worthy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06396717E69DA200563FE6 /* Worthy.png */; };
+		4C06399E17E69DA200563FE6 /* Worthy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06396817E69DA200563FE6 /* Worthy@2x.png */; };
+		4C06399F17E69DA200563FE6 /* Worthless.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06396917E69DA200563FE6 /* Worthless.png */; };
+		4C0639A017E69DA200563FE6 /* Worthless@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06396A17E69DA200563FE6 /* Worthless@2x.png */; };
+		4C0639A117E69DA200563FE6 /* Vengeful.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06396B17E69DA200563FE6 /* Vengeful.png */; };
+		4C0639A217E69DA200563FE6 /* Vengeful@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06396C17E69DA200563FE6 /* Vengeful@2x.png */; };
+		4C0639A317E69DA200563FE6 /* Unlovable.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06396D17E69DA200563FE6 /* Unlovable.png */; };
+		4C0639A417E69DA200563FE6 /* Unlovable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06396E17E69DA200563FE6 /* Unlovable@2x.png */; };
+		4C0639A517E69DA200563FE6 /* Unhappy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06396F17E69DA200563FE6 /* Unhappy.png */; };
+		4C0639A617E69DA200563FE6 /* Unhappy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397017E69DA200563FE6 /* Unhappy@2x.png */; };
+		4C0639A717E69DA200563FE6 /* Uneasy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397117E69DA200563FE6 /* Uneasy.png */; };
+		4C0639A817E69DA200563FE6 /* Uneasy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397217E69DA200563FE6 /* Uneasy@2x.png */; };
+		4C0639A917E69DA200563FE6 /* Trusting.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397317E69DA200563FE6 /* Trusting.png */; };
+		4C0639AA17E69DA200563FE6 /* Trusting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397417E69DA200563FE6 /* Trusting@2x.png */; };
+		4C0639AB17E69DA200563FE6 /* Triumphant.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397517E69DA200563FE6 /* Triumphant.png */; };
+		4C0639AC17E69DA200563FE6 /* Triumphant@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397617E69DA200563FE6 /* Triumphant@2x.png */; };
+		4C0639AD17E69DA200563FE6 /* Tormented.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397717E69DA200563FE6 /* Tormented.png */; };
+		4C0639AE17E69DA200563FE6 /* Tormented@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397817E69DA200563FE6 /* Tormented@2x.png */; };
+		4C0639AF17E69DA200563FE6 /* Thrilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397917E69DA200563FE6 /* Thrilled.png */; };
+		4C0639B017E69DA200563FE6 /* Thrilled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397A17E69DA200563FE6 /* Thrilled@2x.png */; };
+		4C0639B117E69DA200563FE6 /* Terrified.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397B17E69DA200563FE6 /* Terrified.png */; };
+		4C0639B217E69DA200563FE6 /* Terrified@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397C17E69DA200563FE6 /* Terrified@2x.png */; };
+		4C0639B317E69DA200563FE6 /* Tender.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397D17E69DA200563FE6 /* Tender.png */; };
+		4C0639B417E69DA200563FE6 /* Tender@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397E17E69DA200563FE6 /* Tender@2x.png */; };
+		4C0639B517E69DA200563FE6 /* Sympathetic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06397F17E69DA200563FE6 /* Sympathetic.png */; };
+		4C0639B617E69DA200563FE6 /* Sympathetic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398017E69DA200563FE6 /* Sympathetic@2x.png */; };
+		4C0639B717E69DA200563FE6 /* Suffering.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398117E69DA200563FE6 /* Suffering.png */; };
+		4C0639B817E69DA200563FE6 /* Suffering@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398217E69DA200563FE6 /* Suffering@2x.png */; };
+		4C0639B917E69DA200563FE6 /* Shocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398317E69DA200563FE6 /* Shocked.png */; };
+		4C0639BA17E69DA200563FE6 /* Shocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398417E69DA200563FE6 /* Shocked@2x.png */; };
+		4C0639BB17E69DA200563FE6 /* Sentimental.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398517E69DA200563FE6 /* Sentimental.png */; };
+		4C0639BC17E69DA200563FE6 /* Sentimental@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398617E69DA200563FE6 /* Sentimental@2x.png */; };
+		4C0639BD17E69DA200563FE6 /* Satisfied.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398717E69DA200563FE6 /* Satisfied.png */; };
+		4C0639BE17E69DA200563FE6 /* Satisfied@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398817E69DA200563FE6 /* Satisfied@2x.png */; };
+		4C0639BF17E69DA200563FE6 /* Revulsed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398917E69DA200563FE6 /* Revulsed.png */; };
+		4C0639C017E69DA200563FE6 /* Revulsed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398A17E69DA200563FE6 /* Revulsed@2x.png */; };
+		4C0639C117E69DA200563FE6 /* Resenting.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398B17E69DA200563FE6 /* Resenting.png */; };
+		4C0639C217E69DA200563FE6 /* Resenting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398C17E69DA200563FE6 /* Resenting@2x.png */; };
+		4C0639C317E69DA200563FE6 /* Remorseful.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398D17E69DA200563FE6 /* Remorseful.png */; };
+		4C0639C417E69DA200563FE6 /* Remorseful@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398E17E69DA200563FE6 /* Remorseful@2x.png */; };
+		4C0639C517E69DA200563FE6 /* Relieved.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06398F17E69DA200563FE6 /* Relieved.png */; };
+		4C0639C617E69DA200563FE6 /* Relieved@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399017E69DA200563FE6 /* Relieved@2x.png */; };
+		4C0639C717E69DA200563FE6 /* Rejected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399117E69DA200563FE6 /* Rejected.png */; };
+		4C0639C817E69DA200563FE6 /* Rejected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399217E69DA200563FE6 /* Rejected@2x.png */; };
+		4C0639C917E69DA200563FE6 /* Regretful.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399317E69DA200563FE6 /* Regretful.png */; };
+		4C0639CA17E69DA200563FE6 /* Regretful@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399417E69DA200563FE6 /* Regretful@2x.png */; };
+		4C0639CB17E69DA200563FE6 /* Rapturous.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399517E69DA200563FE6 /* Rapturous.png */; };
+		4C0639CC17E69DA200563FE6 /* Rapturous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399617E69DA200563FE6 /* Rapturous@2x.png */; };
+		4C0639CD17E69DA200563FE6 /* Proud.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399717E69DA200563FE6 /* Proud.png */; };
+		4C0639CE17E69DA200563FE6 /* Proud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399817E69DA200563FE6 /* Proud@2x.png */; };
+		4C0639CF17E69DA200563FE6 /* Pleased.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399917E69DA200563FE6 /* Pleased.png */; };
+		4C0639D017E69DA200563FE6 /* Pleased@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399A17E69DA200563FE6 /* Pleased@2x.png */; };
+		4C0639D117E69DA200563FE6 /* Pitying.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399B17E69DA200563FE6 /* Pitying.png */; };
+		4C0639D217E69DA200563FE6 /* Pitying@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399C17E69DA200563FE6 /* Pitying@2x.png */; };
 		4C0C766C1649F95100DD372F /* MlDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */; };
 		4C353EE6175BE307000ECE33 /* MlEmailEventCountDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */; };
 		4C353EE8175DE151000ECE33 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C353EE7175DE151000ECE33 /* MessageUI.framework */; };
@@ -424,6 +478,60 @@
 		4C06390217E45A6E00563FE6 /* Exasperated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exasperated@2x.png"; sourceTree = "<group>"; };
 		4C06390317E45A6E00563FE6 /* Euphoric.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Euphoric.png; sourceTree = "<group>"; };
 		4C06390417E45A6E00563FE6 /* Euphoric@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Euphoric@2x.png"; sourceTree = "<group>"; };
+		4C06396717E69DA200563FE6 /* Worthy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Worthy.png; sourceTree = "<group>"; };
+		4C06396817E69DA200563FE6 /* Worthy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Worthy@2x.png"; sourceTree = "<group>"; };
+		4C06396917E69DA200563FE6 /* Worthless.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Worthless.png; sourceTree = "<group>"; };
+		4C06396A17E69DA200563FE6 /* Worthless@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Worthless@2x.png"; sourceTree = "<group>"; };
+		4C06396B17E69DA200563FE6 /* Vengeful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vengeful.png; sourceTree = "<group>"; };
+		4C06396C17E69DA200563FE6 /* Vengeful@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vengeful@2x.png"; sourceTree = "<group>"; };
+		4C06396D17E69DA200563FE6 /* Unlovable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unlovable.png; sourceTree = "<group>"; };
+		4C06396E17E69DA200563FE6 /* Unlovable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unlovable@2x.png"; sourceTree = "<group>"; };
+		4C06396F17E69DA200563FE6 /* Unhappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unhappy.png; sourceTree = "<group>"; };
+		4C06397017E69DA200563FE6 /* Unhappy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unhappy@2x.png"; sourceTree = "<group>"; };
+		4C06397117E69DA200563FE6 /* Uneasy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uneasy.png; sourceTree = "<group>"; };
+		4C06397217E69DA200563FE6 /* Uneasy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Uneasy@2x.png"; sourceTree = "<group>"; };
+		4C06397317E69DA200563FE6 /* Trusting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trusting.png; sourceTree = "<group>"; };
+		4C06397417E69DA200563FE6 /* Trusting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trusting@2x.png"; sourceTree = "<group>"; };
+		4C06397517E69DA200563FE6 /* Triumphant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Triumphant.png; sourceTree = "<group>"; };
+		4C06397617E69DA200563FE6 /* Triumphant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Triumphant@2x.png"; sourceTree = "<group>"; };
+		4C06397717E69DA200563FE6 /* Tormented.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tormented.png; sourceTree = "<group>"; };
+		4C06397817E69DA200563FE6 /* Tormented@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tormented@2x.png"; sourceTree = "<group>"; };
+		4C06397917E69DA200563FE6 /* Thrilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thrilled.png; sourceTree = "<group>"; };
+		4C06397A17E69DA200563FE6 /* Thrilled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thrilled@2x.png"; sourceTree = "<group>"; };
+		4C06397B17E69DA200563FE6 /* Terrified.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Terrified.png; sourceTree = "<group>"; };
+		4C06397C17E69DA200563FE6 /* Terrified@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Terrified@2x.png"; sourceTree = "<group>"; };
+		4C06397D17E69DA200563FE6 /* Tender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tender.png; sourceTree = "<group>"; };
+		4C06397E17E69DA200563FE6 /* Tender@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tender@2x.png"; sourceTree = "<group>"; };
+		4C06397F17E69DA200563FE6 /* Sympathetic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sympathetic.png; sourceTree = "<group>"; };
+		4C06398017E69DA200563FE6 /* Sympathetic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sympathetic@2x.png"; sourceTree = "<group>"; };
+		4C06398117E69DA200563FE6 /* Suffering.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Suffering.png; sourceTree = "<group>"; };
+		4C06398217E69DA200563FE6 /* Suffering@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Suffering@2x.png"; sourceTree = "<group>"; };
+		4C06398317E69DA200563FE6 /* Shocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shocked.png; sourceTree = "<group>"; };
+		4C06398417E69DA200563FE6 /* Shocked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shocked@2x.png"; sourceTree = "<group>"; };
+		4C06398517E69DA200563FE6 /* Sentimental.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sentimental.png; sourceTree = "<group>"; };
+		4C06398617E69DA200563FE6 /* Sentimental@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sentimental@2x.png"; sourceTree = "<group>"; };
+		4C06398717E69DA200563FE6 /* Satisfied.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Satisfied.png; sourceTree = "<group>"; };
+		4C06398817E69DA200563FE6 /* Satisfied@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Satisfied@2x.png"; sourceTree = "<group>"; };
+		4C06398917E69DA200563FE6 /* Revulsed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Revulsed.png; sourceTree = "<group>"; };
+		4C06398A17E69DA200563FE6 /* Revulsed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Revulsed@2x.png"; sourceTree = "<group>"; };
+		4C06398B17E69DA200563FE6 /* Resenting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Resenting.png; sourceTree = "<group>"; };
+		4C06398C17E69DA200563FE6 /* Resenting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resenting@2x.png"; sourceTree = "<group>"; };
+		4C06398D17E69DA200563FE6 /* Remorseful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Remorseful.png; sourceTree = "<group>"; };
+		4C06398E17E69DA200563FE6 /* Remorseful@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Remorseful@2x.png"; sourceTree = "<group>"; };
+		4C06398F17E69DA200563FE6 /* Relieved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Relieved.png; sourceTree = "<group>"; };
+		4C06399017E69DA200563FE6 /* Relieved@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Relieved@2x.png"; sourceTree = "<group>"; };
+		4C06399117E69DA200563FE6 /* Rejected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rejected.png; sourceTree = "<group>"; };
+		4C06399217E69DA200563FE6 /* Rejected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rejected@2x.png"; sourceTree = "<group>"; };
+		4C06399317E69DA200563FE6 /* Regretful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regretful.png; sourceTree = "<group>"; };
+		4C06399417E69DA200563FE6 /* Regretful@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Regretful@2x.png"; sourceTree = "<group>"; };
+		4C06399517E69DA200563FE6 /* Rapturous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rapturous.png; sourceTree = "<group>"; };
+		4C06399617E69DA200563FE6 /* Rapturous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rapturous@2x.png"; sourceTree = "<group>"; };
+		4C06399717E69DA200563FE6 /* Proud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Proud.png; sourceTree = "<group>"; };
+		4C06399817E69DA200563FE6 /* Proud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Proud@2x.png"; sourceTree = "<group>"; };
+		4C06399917E69DA200563FE6 /* Pleased.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pleased.png; sourceTree = "<group>"; };
+		4C06399A17E69DA200563FE6 /* Pleased@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pleased@2x.png"; sourceTree = "<group>"; };
+		4C06399B17E69DA200563FE6 /* Pitying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitying.png; sourceTree = "<group>"; };
+		4C06399C17E69DA200563FE6 /* Pitying@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pitying@2x.png"; sourceTree = "<group>"; };
 		4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlDatePickerViewController.h; sourceTree = "<group>"; };
 		4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDatePickerViewController.m; sourceTree = "<group>"; };
 		4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 6.xcdatamodel"; sourceTree = "<group>"; };
@@ -701,6 +809,60 @@
 		4C0C7671164AC84000DD372F /* Faces */ = {
 			isa = PBXGroup;
 			children = (
+				4C06396717E69DA200563FE6 /* Worthy.png */,
+				4C06396817E69DA200563FE6 /* Worthy@2x.png */,
+				4C06396917E69DA200563FE6 /* Worthless.png */,
+				4C06396A17E69DA200563FE6 /* Worthless@2x.png */,
+				4C06396B17E69DA200563FE6 /* Vengeful.png */,
+				4C06396C17E69DA200563FE6 /* Vengeful@2x.png */,
+				4C06396D17E69DA200563FE6 /* Unlovable.png */,
+				4C06396E17E69DA200563FE6 /* Unlovable@2x.png */,
+				4C06396F17E69DA200563FE6 /* Unhappy.png */,
+				4C06397017E69DA200563FE6 /* Unhappy@2x.png */,
+				4C06397117E69DA200563FE6 /* Uneasy.png */,
+				4C06397217E69DA200563FE6 /* Uneasy@2x.png */,
+				4C06397317E69DA200563FE6 /* Trusting.png */,
+				4C06397417E69DA200563FE6 /* Trusting@2x.png */,
+				4C06397517E69DA200563FE6 /* Triumphant.png */,
+				4C06397617E69DA200563FE6 /* Triumphant@2x.png */,
+				4C06397717E69DA200563FE6 /* Tormented.png */,
+				4C06397817E69DA200563FE6 /* Tormented@2x.png */,
+				4C06397917E69DA200563FE6 /* Thrilled.png */,
+				4C06397A17E69DA200563FE6 /* Thrilled@2x.png */,
+				4C06397B17E69DA200563FE6 /* Terrified.png */,
+				4C06397C17E69DA200563FE6 /* Terrified@2x.png */,
+				4C06397D17E69DA200563FE6 /* Tender.png */,
+				4C06397E17E69DA200563FE6 /* Tender@2x.png */,
+				4C06397F17E69DA200563FE6 /* Sympathetic.png */,
+				4C06398017E69DA200563FE6 /* Sympathetic@2x.png */,
+				4C06398117E69DA200563FE6 /* Suffering.png */,
+				4C06398217E69DA200563FE6 /* Suffering@2x.png */,
+				4C06398317E69DA200563FE6 /* Shocked.png */,
+				4C06398417E69DA200563FE6 /* Shocked@2x.png */,
+				4C06398517E69DA200563FE6 /* Sentimental.png */,
+				4C06398617E69DA200563FE6 /* Sentimental@2x.png */,
+				4C06398717E69DA200563FE6 /* Satisfied.png */,
+				4C06398817E69DA200563FE6 /* Satisfied@2x.png */,
+				4C06398917E69DA200563FE6 /* Revulsed.png */,
+				4C06398A17E69DA200563FE6 /* Revulsed@2x.png */,
+				4C06398B17E69DA200563FE6 /* Resenting.png */,
+				4C06398C17E69DA200563FE6 /* Resenting@2x.png */,
+				4C06398D17E69DA200563FE6 /* Remorseful.png */,
+				4C06398E17E69DA200563FE6 /* Remorseful@2x.png */,
+				4C06398F17E69DA200563FE6 /* Relieved.png */,
+				4C06399017E69DA200563FE6 /* Relieved@2x.png */,
+				4C06399117E69DA200563FE6 /* Rejected.png */,
+				4C06399217E69DA200563FE6 /* Rejected@2x.png */,
+				4C06399317E69DA200563FE6 /* Regretful.png */,
+				4C06399417E69DA200563FE6 /* Regretful@2x.png */,
+				4C06399517E69DA200563FE6 /* Rapturous.png */,
+				4C06399617E69DA200563FE6 /* Rapturous@2x.png */,
+				4C06399717E69DA200563FE6 /* Proud.png */,
+				4C06399817E69DA200563FE6 /* Proud@2x.png */,
+				4C06399917E69DA200563FE6 /* Pleased.png */,
+				4C06399A17E69DA200563FE6 /* Pleased@2x.png */,
+				4C06399B17E69DA200563FE6 /* Pitying.png */,
+				4C06399C17E69DA200563FE6 /* Pitying@2x.png */,
 				4C0638A317E45A6D00563FE6 /* Pessimistic.png */,
 				4C0638A417E45A6D00563FE6 /* Pessimistic@2x.png */,
 				4C0638A517E45A6D00563FE6 /* Passionate.png */,
@@ -1163,15 +1325,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0639CD17E69DA200563FE6 /* Proud.png in Resources */,
 				4C55CBF3162DE67400EAA878 /* InfoPlist.strings in Resources */,
 				4C55CC02162DE67500EAA878 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4C06390F17E45A6E00563FE6 /* Neglected.png in Resources */,
 				4C55CC05162DE67500EAA878 /* MainStoryboard_iPad.storyboard in Resources */,
 				4C4043F71783E5D300710F2A /* Default-568h@2x.png in Resources */,
 				4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */,
+				4C0639BA17E69DA200563FE6 /* Shocked@2x.png in Resources */,
 				4C4043681783E51400710F2A /* Affectionate.png in Resources */,
 				4C4043691783E51400710F2A /* Affectionate@2x.png in Resources */,
 				4C06396017E45A6E00563FE6 /* Exhilarated@2x.png in Resources */,
+				4C0639B917E69DA200563FE6 /* Shocked.png in Resources */,
 				4C06393D17E45A6E00563FE6 /* Hopeful.png in Resources */,
 				4C06394317E45A6E00563FE6 /* Guilty.png in Resources */,
 				4C06393017E45A6E00563FE6 /* Insulted@2x.png in Resources */,
@@ -1182,10 +1347,16 @@
 				4C06394117E45A6E00563FE6 /* Hating.png in Resources */,
 				4C40436D1783E51400710F2A /* Alienated@2x.png in Resources */,
 				4C06393117E45A6E00563FE6 /* Insecure.png in Resources */,
+				4C06399D17E69DA200563FE6 /* Worthy.png in Resources */,
+				4C0639A317E69DA200563FE6 /* Unlovable.png in Resources */,
 				4C40436E1783E51400710F2A /* Amazed.png in Resources */,
+				4C0639C617E69DA200563FE6 /* Relieved@2x.png in Resources */,
 				4C40436F1783E51400710F2A /* Amazed@2x.png in Resources */,
 				4C4043701783E51400710F2A /* Ambivalent.png in Resources */,
 				4C4043711783E51400710F2A /* Ambivalent@2x.png in Resources */,
+				4C0639B217E69DA200563FE6 /* Terrified@2x.png in Resources */,
+				4C0639C217E69DA200563FE6 /* Resenting@2x.png in Resources */,
+				4C0639A917E69DA200563FE6 /* Trusting.png in Resources */,
 				4C4043721783E51400710F2A /* Skeptical.png in Resources */,
 				4C4043731783E51400710F2A /* Skeptical@2x.png in Resources */,
 				4C4043741783E51400710F2A /* Worried.png in Resources */,
@@ -1195,6 +1366,7 @@
 				4C4043781783E51400710F2A /* Grumpy.png in Resources */,
 				4C06392017E45A6E00563FE6 /* Lonely@2x.png in Resources */,
 				4C06396117E45A6E00563FE6 /* Excited.png in Resources */,
+				4C0639D017E69DA200563FE6 /* Pleased@2x.png in Resources */,
 				4C06390917E45A6E00563FE6 /* Panicked.png in Resources */,
 				4C06394E17E45A6E00563FE6 /* Startled@2x.png in Resources */,
 				4C4043791783E51400710F2A /* Grumpy@2x.png in Resources */,
@@ -1203,6 +1375,8 @@
 				4C40437A1783E51400710F2A /* Happy.png in Resources */,
 				4C40437B1783E51400710F2A /* Happy@2x.png in Resources */,
 				4C40437C1783E51400710F2A /* Jealous.png in Resources */,
+				4C0639A117E69DA200563FE6 /* Vengeful.png in Resources */,
+				4C0639BE17E69DA200563FE6 /* Satisfied@2x.png in Resources */,
 				4C06395017E45A6E00563FE6 /* Surprised@2x.png in Resources */,
 				4C06395517E45A6E00563FE6 /* Frustrated.png in Resources */,
 				4C06393E17E45A6E00563FE6 /* Hopeful@2x.png in Resources */,
@@ -1219,6 +1393,9 @@
 				4C06392617E45A6E00563FE6 /* Likable@2x.png in Resources */,
 				4C4043841783E51400710F2A /* Desirable.png in Resources */,
 				4C06390A17E45A6E00563FE6 /* Panicked@2x.png in Resources */,
+				4C0639CC17E69DA200563FE6 /* Rapturous@2x.png in Resources */,
+				4C0639C817E69DA200563FE6 /* Rejected@2x.png in Resources */,
+				4C0639C517E69DA200563FE6 /* Relieved.png in Resources */,
 				4C4043851783E51400710F2A /* Desirable@2x.png in Resources */,
 				4C4043861783E51400710F2A /* Desiring.png in Resources */,
 				4C4043871783E51400710F2A /* Desiring@2x.png in Resources */,
@@ -1227,9 +1404,11 @@
 				4C40438A1783E51400710F2A /* Disappointed.png in Resources */,
 				4C40438B1783E51400710F2A /* Disappointed@2x.png in Resources */,
 				4C40438C1783E51400710F2A /* Disgusted.png in Resources */,
+				4C0639BD17E69DA200563FE6 /* Satisfied.png in Resources */,
 				4C40438D1783E51400710F2A /* Disgusted@2x.png in Resources */,
 				4C40438E1783E51400710F2A /* Disliked.png in Resources */,
 				4C40438F1783E51400710F2A /* Disliked@2x.png in Resources */,
+				4C0639AE17E69DA200563FE6 /* Tormented@2x.png in Resources */,
 				4C4043901783E51400710F2A /* Dismayed.png in Resources */,
 				4C4043911783E51400710F2A /* Dismayed@2x.png in Resources */,
 				4C4043921783E51400710F2A /* Displeased.png in Resources */,
@@ -1244,19 +1423,24 @@
 				4C06390817E45A6E00563FE6 /* Passionate@2x.png in Resources */,
 				4C4043981783E51400710F2A /* Elated.png in Resources */,
 				4C4043991783E51400710F2A /* Elated@2x.png in Resources */,
+				4C0639BB17E69DA200563FE6 /* Sentimental.png in Resources */,
 				4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */,
 				4C06392E17E45A6E00563FE6 /* Irritable@2x.png in Resources */,
 				4C40439A1783E51400710F2A /* Embarrased.png in Resources */,
 				4C40439B1783E51400710F2A /* Embarrased@2x.png in Resources */,
 				4C06393B17E45A6E00563FE6 /* Horrified.png in Resources */,
+				4C0639CA17E69DA200563FE6 /* Regretful@2x.png in Resources */,
 				4C40439C1783E51400710F2A /* Empathetic.png in Resources */,
 				4C40439D1783E51400710F2A /* Empathetic@2x.png in Resources */,
 				4C06393C17E45A6E00563FE6 /* Horrified@2x.png in Resources */,
+				4C0639A617E69DA200563FE6 /* Unhappy@2x.png in Resources */,
+				4C0639C717E69DA200563FE6 /* Rejected.png in Resources */,
 				4C06395717E45A6E00563FE6 /* Frightful.png in Resources */,
 				4C40439E1783E51400710F2A /* Enthralled.png in Resources */,
 				4C06393A17E45A6E00563FE6 /* Hostile@2x.png in Resources */,
 				4C06390517E45A6E00563FE6 /* Pessimistic.png in Resources */,
 				4C06393917E45A6E00563FE6 /* Hostile.png in Resources */,
+				4C0639CB17E69DA200563FE6 /* Rapturous.png in Resources */,
 				4C40439F1783E51400710F2A /* Enthralled@2x.png in Resources */,
 				4C4043A01783E51400710F2A /* Enthusiastic.png in Resources */,
 				4C4043A11783E51400710F2A /* Enthusiastic@2x.png in Resources */,
@@ -1264,18 +1448,25 @@
 				4C4043A31783E51400710F2A /* Envious@2x.png in Resources */,
 				4C4043A41783E51400710F2A /* Glad.png in Resources */,
 				4C06391617E45A6E00563FE6 /* Melancholy@2x.png in Resources */,
+				4C0639AD17E69DA200563FE6 /* Tormented.png in Resources */,
 				4C06393417E45A6E00563FE6 /* Infatuated@2x.png in Resources */,
 				4C06390617E45A6E00563FE6 /* Pessimistic@2x.png in Resources */,
 				4C4043A51783E51400710F2A /* Glad@2x.png in Resources */,
 				4C4043A61783E51400710F2A /* Caring.png in Resources */,
 				4C06392917E45A6E00563FE6 /* Isolated.png in Resources */,
+				4C06399E17E69DA200563FE6 /* Worthy@2x.png in Resources */,
 				4C4043A71783E51400710F2A /* Caring@2x.png in Resources */,
 				4C06394717E45A6E00563FE6 /* Grieving.png in Resources */,
 				4C4043A81783E51400710F2A /* Cautious.png in Resources */,
+				4C0639B817E69DA200563FE6 /* Suffering@2x.png in Resources */,
+				4C0639A417E69DA200563FE6 /* Unlovable@2x.png in Resources */,
 				4C4043A91783E51400710F2A /* Cautious@2x.png in Resources */,
+				4C0639C017E69DA200563FE6 /* Revulsed@2x.png in Resources */,
+				4C0639AF17E69DA200563FE6 /* Thrilled.png in Resources */,
 				4C06391A17E45A6E00563FE6 /* Loving@2x.png in Resources */,
 				4C4043AA1783E51400710F2A /* Cheerful.png in Resources */,
 				4C4043AB1783E51400710F2A /* Cheerful@2x.png in Resources */,
+				4C0639C917E69DA200563FE6 /* Regretful.png in Resources */,
 				4C06394217E45A6E00563FE6 /* Hating@2x.png in Resources */,
 				4C06394917E45A6E00563FE6 /* Glum.png in Resources */,
 				4C4043AC1783E51400710F2A /* Compassionate.png in Resources */,
@@ -1291,17 +1482,24 @@
 				4C4043B31783E51400710F2A /* Curious@2x.png in Resources */,
 				4C06390C17E45A6E00563FE6 /* Outraged@2x.png in Resources */,
 				4C4043B41783E51400710F2A /* Blank.png in Resources */,
+				4C0639BF17E69DA200563FE6 /* Revulsed.png in Resources */,
+				4C0639A717E69DA200563FE6 /* Uneasy.png in Resources */,
 				4C4043B51783E51400710F2A /* Blank@2x.png in Resources */,
 				4C4043B61783E51400710F2A /* Blessed.png in Resources */,
 				4C06395917E45A6E00563FE6 /* Fond.png in Resources */,
 				4C4043B71783E51400710F2A /* Blessed@2x.png in Resources */,
+				4C0639B417E69DA200563FE6 /* Tender@2x.png in Resources */,
 				4C4043B81783E51400710F2A /* Blissful.png in Resources */,
+				4C0639D217E69DA200563FE6 /* Pitying@2x.png in Resources */,
 				4C06391517E45A6E00563FE6 /* Melancholy.png in Resources */,
 				4C06395E17E45A6E00563FE6 /* Fearful@2x.png in Resources */,
 				4C06393F17E45A6E00563FE6 /* Homesick.png in Resources */,
 				4C4043B91783E51400710F2A /* Blissful@2x.png in Resources */,
+				4C0639B117E69DA200563FE6 /* Terrified.png in Resources */,
 				4C06395217E45A6E00563FE6 /* Gleeful@2x.png in Resources */,
 				4C06391017E45A6E00563FE6 /* Neglected@2x.png in Resources */,
+				4C0639B517E69DA200563FE6 /* Sympathetic.png in Resources */,
+				4C0639B317E69DA200563FE6 /* Tender.png in Resources */,
 				4C4043BA1783E51400710F2A /* Bored.png in Resources */,
 				4C06394F17E45A6E00563FE6 /* Surprised.png in Resources */,
 				4C4043BB1783E51400710F2A /* Bored@2x.png in Resources */,
@@ -1309,6 +1507,7 @@
 				4C06390E17E45A6E00563FE6 /* Nervous@2x.png in Resources */,
 				4C4043BC1783E51400710F2A /* Bothered.png in Resources */,
 				4C06391117E45A6E00563FE6 /* Mortified.png in Resources */,
+				4C0639B617E69DA200563FE6 /* Sympathetic@2x.png in Resources */,
 				4C06392A17E45A6E00563FE6 /* Isolated@2x.png in Resources */,
 				4C4043BD1783E51400710F2A /* Bothered@2x.png in Resources */,
 				4C4043BE1783E51400710F2A /* Broken.png in Resources */,
@@ -1333,9 +1532,13 @@
 				4C4043C91783E51400710F2A /* Amused@2x.png in Resources */,
 				4C4043CA1783E51400710F2A /* Angry.png in Resources */,
 				4C06395D17E45A6E00563FE6 /* Fearful.png in Resources */,
+				4C0639AB17E69DA200563FE6 /* Triumphant.png in Resources */,
 				4C4043CB1783E51400710F2A /* Angry@2x.png in Resources */,
+				4C0639C417E69DA200563FE6 /* Remorseful@2x.png in Resources */,
 				4C4043CC1783E51400710F2A /* Annoyed.png in Resources */,
 				4C06393717E45A6E00563FE6 /* Humiliated.png in Resources */,
+				4C0639AC17E69DA200563FE6 /* Triumphant@2x.png in Resources */,
+				4C06399F17E69DA200563FE6 /* Worthless.png in Resources */,
 				4C06391717E45A6E00563FE6 /* Lustful.png in Resources */,
 				4C4043CD1783E51400710F2A /* Annoyed@2x.png in Resources */,
 				4C06390717E45A6E00563FE6 /* Passionate.png in Resources */,
@@ -1354,13 +1557,17 @@
 				4C4043D81783E51400710F2A /* Ashamed.png in Resources */,
 				4C06392717E45A6E00563FE6 /* Jubilant.png in Resources */,
 				4C4043D91783E51400710F2A /* Ashamed@2x.png in Resources */,
+				4C0639D117E69DA200563FE6 /* Pitying.png in Resources */,
 				4C4043DA1783E51400710F2A /* Astonished.png in Resources */,
 				4C4043DB1783E51400710F2A /* Astonished@2x.png in Resources */,
 				4C06392317E45A6E00563FE6 /* Optimistic.png in Resources */,
+				4C0639CE17E69DA200563FE6 /* Proud@2x.png in Resources */,
 				4C06394A17E45A6E00563FE6 /* Glum@2x.png in Resources */,
+				4C0639BC17E69DA200563FE6 /* Sentimental@2x.png in Resources */,
 				4C06394517E45A6E00563FE6 /* Grouchy.png in Resources */,
 				4C4043DC1783E51400710F2A /* Attracted.png in Resources */,
 				4C4043DD1783E51400710F2A /* Attracted@2x.png in Resources */,
+				4C0639C117E69DA200563FE6 /* Resenting.png in Resources */,
 				4C4043DE1783E51400710F2A /* Attractive.png in Resources */,
 				4C4043DF1783E51400710F2A /* Attractive@2x.png in Resources */,
 				4C06394817E45A6E00563FE6 /* Grieving@2x.png in Resources */,
@@ -1375,6 +1582,7 @@
 				4C4043EF1783E5CB00710F2A /* calendar.png in Resources */,
 				4C4043F01783E5CB00710F2A /* CalendarBlank.png in Resources */,
 				4C06392D17E45A6E00563FE6 /* Irritable.png in Resources */,
+				4C0639A217E69DA200563FE6 /* Vengeful@2x.png in Resources */,
 				4C4043F11783E5CB00710F2A /* CalendarBlank@2x.png in Resources */,
 				4C4043F21783E5CB00710F2A /* CalendarBlank48.png in Resources */,
 				4C4043F31783E5CB00710F2A /* CalendarBlank48@2x.png in Resources */,
@@ -1384,6 +1592,7 @@
 				4C4043F51783E5CB00710F2A /* CalendarBlank93@2x.png in Resources */,
 				4C06394C17E45A6E00563FE6 /* Gloomy@2x.png in Resources */,
 				4C06395117E45A6E00563FE6 /* Gleeful.png in Resources */,
+				4C0639B017E69DA200563FE6 /* Thrilled@2x.png in Resources */,
 				4C4043F61783E5CB00710F2A /* chart.png in Resources */,
 				4C4043FA1783E5EB00710F2A /* shuffle_off.png in Resources */,
 				4C4043FB1783E5EB00710F2A /* shuffle_on.png in Resources */,
@@ -1397,9 +1606,12 @@
 				4C47E70A178CA55300325BA7 /* keyboard.png in Resources */,
 				4C47E70B178CA55300325BA7 /* keyboard@2x.png in Resources */,
 				4C06394417E45A6E00563FE6 /* Guilty@2x.png in Resources */,
+				4C0639AA17E69DA200563FE6 /* Trusting@2x.png in Resources */,
 				4C06393817E45A6E00563FE6 /* Humiliated@2x.png in Resources */,
+				4C0639CF17E69DA200563FE6 /* Pleased.png in Resources */,
 				4C06395F17E45A6E00563FE6 /* Exhilarated.png in Resources */,
 				4C06393217E45A6E00563FE6 /* Insecure@2x.png in Resources */,
+				4C0639A017E69DA200563FE6 /* Worthless@2x.png in Resources */,
 				4C47E712178CA75300325BA7 /* keyboard_down.png in Resources */,
 				4C47E713178CA75300325BA7 /* keyboard_down@2x.png in Resources */,
 				4C06392B17E45A6E00563FE6 /* Irritated.png in Resources */,
@@ -1408,9 +1620,13 @@
 				4C92BE031797CCAA005DEEC2 /* TimerIcon@2x.png in Resources */,
 				4C92BE051797D40D005DEEC2 /* chart@2x.png in Resources */,
 				4C06391D17E45A6E00563FE6 /* Longing.png in Resources */,
+				4C0639A817E69DA200563FE6 /* Uneasy@2x.png in Resources */,
 				4C06392417E45A6E00563FE6 /* Optimistic@2x.png in Resources */,
+				4C0639B717E69DA200563FE6 /* Suffering.png in Resources */,
 				4C92BE0817985BFD005DEEC2 /* TriangleRight.png in Resources */,
 				4C06391917E45A6E00563FE6 /* Loving.png in Resources */,
+				4C0639A517E69DA200563FE6 /* Unhappy.png in Resources */,
+				4C0639C317E69DA200563FE6 /* Remorseful.png in Resources */,
 				4C06391B17E45A6E00563FE6 /* Lovable.png in Resources */,
 				4C06391E17E45A6E00563FE6 /* Longing@2x.png in Resources */,
 				4C06392C17E45A6E00563FE6 /* Irritated@2x.png in Resources */,
