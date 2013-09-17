@@ -310,6 +310,7 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
+    NSLog(@"Called beginUpdates");
     [self.tableView beginUpdates];
 }
 
@@ -355,6 +356,7 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
+    NSLog(@"Called endUpdates.");
     [self.tableView endUpdates];
 }
 

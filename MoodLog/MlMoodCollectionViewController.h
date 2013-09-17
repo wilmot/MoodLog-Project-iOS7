@@ -14,6 +14,9 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSString *cellIdentifier;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
+@property (strong, nonatomic) UIReferenceLibraryViewController *referenceLibraryVC;
+@property(nonatomic, assign) BOOL isShowingDefinition;
+
 
 - (void) refresh;
 - (IBAction)longPress:(id)sender;

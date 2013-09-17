@@ -19,6 +19,19 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        UIView *bgView = [[UIView alloc] initWithFrame:self.backgroundView.frame];
+        bgView.backgroundColor = [UIColor colorWithRed:0.8f green:0.8f blue:0.8f alpha:0.3f];
+        bgView.layer.borderColor = [[UIColor whiteColor] CGColor];
+        //bgView.layer.borderWidth = 4;
+        bgView.layer.cornerRadius = 8.0f;
+        self.selectedBackgroundView = bgView;
+    }
+    return self;
+}
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect

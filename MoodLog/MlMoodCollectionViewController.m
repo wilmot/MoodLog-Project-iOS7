@@ -196,13 +196,20 @@ MoodLogEvents *myLogEntry;
 }
 
 - (IBAction)longPress:(id)sender {
-    CGPoint touchPoint = [sender locationInView:self.collectionView];
-    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:touchPoint];
-    Emotions *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    if ([UIReferenceLibraryViewController dictionaryHasDefinitionForTerm:aMood.name]) {
-        UIReferenceLibraryViewController *referenceLibraryVC = [[UIReferenceLibraryViewController alloc] initWithTerm:aMood.name];
-        [self presentViewController:referenceLibraryVC animated:YES completion:nil];
+    if (!self.isShowingDefinition) {
+        self.isShowingDefinition = YES;
+        CGPoint touchPoint = [sender locationInView:self.collectionView];
+        NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:touchPoint];
+        Emotions *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        [self showDefinition:aMood.name];
+        // [self performSelector:@selector(showDefinition:) withObject:aMood.name afterDelay:0.2 ];
+   }
+}
 
+- (void)showDefinition:(NSString *)name {
+    if ([UIReferenceLibraryViewController dictionaryHasDefinitionForTerm:name]) {
+        self.referenceLibraryVC = [[UIReferenceLibraryViewController alloc] initWithTerm:name];
+        [self presentViewController:self.referenceLibraryVC animated:YES completion:^{self.isShowingDefinition = NO;}];
     }
 }
 
@@ -300,10 +307,10 @@ MoodLogEvents *myLogEntry;
     return size;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     // we're going to use a custom UICollectionViewCell, which will hold an image and its label
-    MlCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    MlCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     // Emotions *aMood = [self.fetchedResultsController objectAtIndexPath:indexPath];
