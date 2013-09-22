@@ -55,25 +55,22 @@
     [self.reminderSwitch setOn:[defaults boolForKey:@"DefaultRandomRemindersOn"]];
     
     self.quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
-    NSDateComponents *components = [gregorian components: NSUIntegerMax fromDate: self.quietStart];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"h:mm a";
     NSString *quietStartString = [dateFormatter stringFromDate: self.quietStart];
     
     self.quietEnd = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietEndTime"];
-    components = [gregorian components: NSUIntegerMax fromDate: self.quietEnd];
     NSString *quietEndString = [dateFormatter stringFromDate: self.quietEnd];
     
     self.reminderQuietHoursText2.text = [NSString stringWithFormat:@"Quiet Hours: %@ to %@",quietStartString, quietEndString];
     
     // Set Random Reminder Times/Day
-    self.reminderCount.text = [NSString stringWithFormat:@"%d",[defaults integerForKey:@"DefaultRandomTimesPerDay"]];
+    self.reminderCount.text = [NSString stringWithFormat:@"%ld",(long)[defaults integerForKey:@"DefaultRandomTimesPerDay"]];
     self.reminderStepper.value = [defaults integerForKey:@"DefaultRandomTimesPerDay"];
     [self setReminderTimesPerDayLabelText];
     
     // Set Minutes Delay #Times
-    self.reminderMinutesCount.text = [NSString stringWithFormat:@"%d",[defaults integerForKey:@"DefaultDelayMinutes"]];
+    self.reminderMinutesCount.text = [NSString stringWithFormat:@"%ld",(long)[defaults integerForKey:@"DefaultDelayMinutes"]];
     self.reminderMinutesStepper.value = [defaults integerForKey:@"DefaultDelayMinutes"];
     [self setReminderMinutesLabelText];
     

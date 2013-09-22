@@ -37,7 +37,7 @@ NSUserDefaults *defaults;
     [self selectButton]; // Highlight the correct button
     [self setFaces:[self.detailItem.showFacesEditing boolValue]];
     self.detailItem.editing = [NSNumber numberWithBool:YES];
-    [self saveContext];
+    // [self saveContext];
     [self.myMoodCollectionViewController refresh];
 }
 
@@ -129,7 +129,7 @@ NSUserDefaults *defaults;
     }
     self.detailItem.showFacesEditing = [NSNumber numberWithBool:facesState]; // Save state in database
     [self.toggleFacesButton setSelected:facesState];
-    [self saveContext];
+   // [self saveContext];
     [self.myMoodCollectionViewController refresh];
 }
 

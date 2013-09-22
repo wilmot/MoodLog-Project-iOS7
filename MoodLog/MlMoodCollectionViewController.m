@@ -228,7 +228,6 @@ MoodLogEvents *myLogEntry;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (myLogEntry.editing.boolValue == YES) {
-        MlDetailViewController *detailViewController = ((MlDetailViewController *)([self parentViewController]));
         
         Emotions *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         if ([aMood.selected floatValue]) { // if it's already selected
@@ -237,17 +236,7 @@ MoodLogEvents *myLogEntry;
         else {
             [aMood setValue:[NSNumber numberWithBool:YES] forKey:@"selected"];
         }
-        // Save the context.
-        NSError *error = nil;
-        if (![[detailViewController.detailItem managedObjectContext] save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-        
         [collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
-        detailViewController.detailItem.sortStyle = detailViewController.detailItem.sortStyle; // Hack to get the Master list to update
     }
 }
 

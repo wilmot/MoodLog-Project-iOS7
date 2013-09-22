@@ -11,6 +11,7 @@
 @class MlDetailViewController;
 
 #import <CoreData/CoreData.h>
+#import "MoodLogEvents.h"
 
 @interface MlMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
@@ -19,6 +20,8 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (void)insertNewObject:(id)sender;
+- (MoodLogEvents *) insertNewObjectAndReturnReference: (id) sender;
+
 - (IBAction)showWelcomeScreen:(id)sender;
 
 @end

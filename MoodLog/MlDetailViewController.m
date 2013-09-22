@@ -104,7 +104,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             dayNames = [formatter weekdaySymbols];
         }
         
-        self.dateLabel.text = [NSString stringWithFormat:@"%d", day];
+        self.dateLabel.text = [NSString stringWithFormat:@"%ld", (long)day];
         self.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];

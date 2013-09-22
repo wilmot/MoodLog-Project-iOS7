@@ -10,7 +10,6 @@
 #import "MlDetailViewController.h"
 #import "MlMoodDataItem.h"
 #import "MlAppDelegate.h"
-#import "MoodLogEvents.h"
 #import "Emotions.h"
 #import "MlCell.h"
 #import "MlMailViewController.h"
@@ -25,7 +24,7 @@
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.clearsSelectionOnViewWillAppear = NO;
-        self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+        self.preferredContentSize = CGSizeMake(320.0, 600.0);
     }
     [super awakeFromNib];
 }
@@ -106,8 +105,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
+- (void)insertNewObject:(id)sender {
+    [self insertNewObjectAndReturnReference:self];
+}
+
+- (MoodLogEvents *) insertNewObjectAndReturnReference: (id) sender {
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     MoodLogEvents *newMood = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:self.managedObjectContext];
     
@@ -118,7 +120,7 @@
     // ((year * 1000) + month) -- store the header in a language-agnostic way
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMood.date];
-    newMood.header = [NSString stringWithFormat:@"%d", ([components year] * 1000) + [components month]];
+    newMood.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
     newMood.editing = [NSNumber numberWithBool:NO];
     newMood.sliderValuesSet = [NSNumber numberWithBool:NO];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -153,6 +155,7 @@
     else { // iPhone
         [self performSegueWithIdentifier:@"showDetail" sender:sender];
     }
+    return newMood;
 }
 
 - (IBAction)showWelcomeScreen:(id)sender {
@@ -247,7 +250,7 @@
 	NSInteger year = numericSection / 1000;
 	NSInteger month = numericSection - (year * 1000);
 	
-	NSString *headerTitle = [NSString stringWithFormat:@"%@ %d", [monthSymbols objectAtIndex:month-1], year];
+	NSString *headerTitle = [NSString stringWithFormat:@"%@ %ld", [monthSymbols objectAtIndex:month-1], (long)year];
 
     
     [label setText:headerTitle];
@@ -399,7 +402,7 @@
         NSInteger oldDay = [oldWeekdayComponents day];
         if (oldDay != day) {
             cell.calendarImage.hidden = NO;
-            cell.dateLabel.text = [NSString stringWithFormat:@"%d", day];
+            cell.dateLabel.text = [NSString stringWithFormat:@"%ld", (long)day];
             cell.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];            
         }
         else {
@@ -409,7 +412,7 @@
         }
     }
     else {
-        cell.dateLabel.text = [NSString stringWithFormat:@"%d", day];
+        cell.dateLabel.text = [NSString stringWithFormat:@"%ld", (long)day];
         cell.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];
     }
     
@@ -443,7 +446,7 @@
         
     }
     NSMutableString *displayString = [[NSMutableString alloc] init];
-    int entryEnd = 0;
+    NSUInteger entryEnd = 0;
     NSMutableAttributedString *as;
     if (emotionArray) {
         [displayString appendFormat:@"I feel %@%@\n", selectedEms, lastEm];

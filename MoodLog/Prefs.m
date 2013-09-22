@@ -47,7 +47,7 @@ NSString *const sadness = @"Sadness";
 
 - (UIColor *)lighterColor
 {
-    float h, s, b, a;
+    CGFloat h, s, b, a;
     if ([self getHue:&h saturation:&s brightness:&b alpha:&a])
         return [UIColor colorWithHue:h
                           saturation:s
@@ -58,7 +58,7 @@ NSString *const sadness = @"Sadness";
 
 - (UIColor *)darkerColor
 {
-    float h, s, b, a;
+    CGFloat h, s, b, a;
     if ([self getHue:&h saturation:&s brightness:&b alpha:&a])
         return [UIColor colorWithHue:h
                           saturation:s

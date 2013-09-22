@@ -103,6 +103,8 @@
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
 
 	CGContextDrawPath(context, kCGPathFillStroke);
+    CFRelease(gradient);
+    CFRelease(baseSpace);
  
 //    CGContextSetLineWidth(context, 0.5);
 //	CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5);

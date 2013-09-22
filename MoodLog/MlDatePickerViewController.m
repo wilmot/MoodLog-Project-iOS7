@@ -49,7 +49,7 @@
     // ((year * 1000) + month) -- store the header in a language-agnostic way
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:mood.date];
-    mood.header = [NSString stringWithFormat:@"%d", ([components year] * 1000) + [components month]];
+    mood.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
     
     // Save the context.
     NSError *error = nil;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tMr-YW-brU">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -144,7 +144,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                         <viewControllerLayoutGuide type="bottom" id="kQ7-sP-xze"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Obd-sT-em8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmp-5z-fTo">
@@ -160,7 +160,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTV-Kb-CP3">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Recipients:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYW-sa-8zt">
                                         <rect key="frame" x="8" y="14" width="169" height="21"/>
@@ -435,18 +435,18 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                         <viewControllerLayoutGuide type="bottom" id="guS-PX-EBI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jOE-sb-OK0">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="re3-L5-PZf">
-                                <rect key="frame" x="0.0" y="66" width="568" height="254"/>
+                                <rect key="frame" x="0.0" y="66" width="480" height="254"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="lEH-i2-zcv" kind="embed" identifier="ChartCollectionSegue" id="hDl-t2-Yuc"/>
                                 </connections>
                             </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDt-Qo-gnl">
-                                <rect key="frame" x="0.0" y="22" width="568" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="480" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="6nz-t3-IHJ">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="2hI-Wx-Nvq">
@@ -502,11 +502,11 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                         <viewControllerLayoutGuide type="bottom" id="ilC-nr-Zdh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VwM-M2-UPU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Some text" translatesAutoresizingMaskIntoConstraints="NO" id="NY9-IE-UKH">
-                                <rect key="frame" x="0.0" y="88" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="88" width="320" height="392"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -584,7 +584,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="lEH-i2-zcv" customClass="MlChartCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="BW3-jc-NZD">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="254"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="254"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -916,7 +916,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
             <objects>
                 <tableViewController title="Master" id="12" customClass="MlMasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1087,7 +1087,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
             <objects>
                 <tableViewController id="eWD-k6-ZJq" customClass="MlNotificationsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="TTa-5a-pqM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1383,7 +1383,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
             <objects>
                 <tableViewController id="2vX-gw-xTS" customClass="MlQuietHoursTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="FSL-M8-mDC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1530,7 +1530,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <tableViewController storyboardIdentifier="moodLogDetailView" hidesBottomBarWhenPushed="YES" id="JzN-CV-xZQ" customClass="MlDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ieg-Wg-0JP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1990,13 +1990,13 @@ Here</string>
         <!--Ml Mood Collection View Controller-->
         <scene sceneID="KOl-cU-igS">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Knz-FF-nJJ" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController id="Knz-FF-nJJ" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="7dO-VT-1GK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="422"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="392"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KDk-cp-qb5">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="80" height="98"/>
                             <size key="headerReferenceSize" width="50" height="20"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2050,11 +2050,16 @@ Here</string>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="bFo-9G-4hF">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="98"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="98" id="TBn-sh-fYV"/>
+                                                <constraint firstAttribute="width" constant="80" id="j5O-uP-XXS"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ecstatic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="ovC-he-pql">
                                             <rect key="frame" x="0.0" y="93" width="80" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="iUp-GT-je6"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="u4X-ne-CDz"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2066,11 +2071,9 @@ Here</string>
                                 <constraints>
                                     <constraint firstItem="ovC-he-pql" firstAttribute="trailing" secondItem="i34-Tj-Gee" secondAttribute="trailing" id="BEt-CY-aqf"/>
                                     <constraint firstItem="In9-D0-lr4" firstAttribute="top" secondItem="i34-Tj-Gee" secondAttribute="top" constant="-5" id="H8t-7E-rfE"/>
-                                    <constraint firstItem="bFo-9G-4hF" firstAttribute="trailing" secondItem="ovC-he-pql" secondAttribute="trailing" id="Jif-aZ-sa5"/>
                                     <constraint firstItem="ovC-he-pql" firstAttribute="bottom" secondItem="i34-Tj-Gee" secondAttribute="bottom" id="L72-nT-R2D"/>
                                     <constraint firstItem="bFo-9G-4hF" firstAttribute="top" secondItem="i34-Tj-Gee" secondAttribute="top" id="Xpe-sC-QWG"/>
                                     <constraint firstItem="In9-D0-lr4" firstAttribute="leading" secondItem="i34-Tj-Gee" secondAttribute="leading" constant="-6" id="ds4-vy-ya1"/>
-                                    <constraint firstItem="bFo-9G-4hF" firstAttribute="leading" secondItem="ovC-he-pql" secondAttribute="leading" id="mZ5-gl-PGn"/>
                                     <constraint firstItem="ovC-he-pql" firstAttribute="leading" secondItem="i34-Tj-Gee" secondAttribute="leading" id="pHo-Iq-e2Q"/>
                                     <constraint firstItem="bFo-9G-4hF" firstAttribute="leading" secondItem="i34-Tj-Gee" secondAttribute="leading" id="y2g-Ij-bHh"/>
                                 </constraints>
@@ -2112,6 +2115,10 @@ Here</string>
                             <outletCollection property="gestureRecognizers" destination="Q0V-ZE-Ero" appends="YES" id="pzN-C5-CYY"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V6o-03-NAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Q0V-ZE-Ero">
@@ -2120,32 +2127,32 @@ Here</string>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1148" y="-779"/>
+            <point key="canvasLocation" x="1120" y="-701"/>
         </scene>
         <!--Ml Faces View Controller - Mood Picker-->
         <scene sceneID="5TO-ZN-6VG">
             <objects>
-                <viewController id="Haq-rW-jQt" customClass="MlFacesViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="Haq-rW-jQt" customClass="MlFacesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pMT-ux-Bvr"/>
                         <viewControllerLayoutGuide type="bottom" id="rWX-S1-rBz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="A6Z-Y0-OgJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNy-py-5fw" userLabel="View - Faces">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7h5-hV-VH6">
-                                        <rect key="frame" x="0.0" y="82" width="320" height="422"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="392"/>
                                         <color key="backgroundColor" red="0.2196078598" green="0.58823531870000001" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <segue destination="Knz-FF-nJJ" kind="embed" identifier="MoodCollectionSegue2" id="IAH-aZ-MU7"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmx-b0-GWE">
-                                        <rect key="frame" x="163" y="38" width="88" height="44"/>
+                                        <rect key="frame" x="163" y="436" width="87" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
@@ -2157,10 +2164,10 @@ Here</string>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVJ-nb-dmb">
-                                        <rect key="frame" x="61" y="38" width="50" height="44"/>
+                                        <rect key="frame" x="61" y="436" width="50" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="B7G-Sk-oyk"/>
+                                            <constraint firstAttribute="width" constant="50" id="4Jj-Om-nqb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="A–Z">
@@ -2178,11 +2185,10 @@ Here</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojS-bA-6gC">
-                                        <rect key="frame" x="0.0" y="38" width="60" height="44"/>
+                                        <rect key="frame" x="0.0" y="436" width="60" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="SGx-Xd-5Mo"/>
-                                            <constraint firstAttribute="width" constant="60" id="YdY-YI-O5P"/>
+                                            <constraint firstAttribute="width" constant="60" id="kGW-EY-eJH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Group">
@@ -2200,10 +2206,10 @@ Here</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-hi-2mp">
-                                        <rect key="frame" x="112" y="38" width="50" height="44"/>
+                                        <rect key="frame" x="112" y="436" width="50" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="P1C-8R-W7l"/>
+                                            <constraint firstAttribute="width" constant="50" id="AFV-XR-87b"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="shuffle_off.png">
@@ -2221,10 +2227,10 @@ Here</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="um1-sR-pJW">
-                                        <rect key="frame" x="252" y="38" width="68" height="44"/>
+                                        <rect key="frame" x="251" y="436" width="69" height="44"/>
                                         <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="68" id="eaE-gA-vgG"/>
+                                            <constraint firstAttribute="width" constant="69" id="nfe-JS-AyO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Faces">
@@ -2241,65 +2247,71 @@ Here</string>
                                             <action selector="toggleFaces:" destination="Haq-rW-jQt" eventType="touchUpInside" id="Tt5-P0-nEo"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
-                                        <rect key="frame" x="66" y="4" width="194" height="34"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4B-iw-Grz" userLabel="View - Fewer-More Slider">
+                                        <rect key="frame" x="0.0" y="392" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </slider>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fewer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSA-FT-Mle">
-                                        <rect key="frame" x="7" y="11" width="47" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHv-1c-1Ip">
-                                        <rect key="frame" x="266" y="10" width="40" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fewer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSA-FT-Mle">
+                                                <rect key="frame" x="10" y="12" width="47" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
+                                                <rect key="frame" x="63" y="6" width="194" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </slider>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="More" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHv-1c-1Ip">
+                                                <rect key="frame" x="268" y="12" width="40" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="4fO-Ep-crr"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.70266747470000002" green="1" blue="0.7013978958" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="dHv-1c-1Ip" firstAttribute="leading" secondItem="hmq-MX-tQA" secondAttribute="trailing" constant="8" symbolic="YES" id="3zh-2Z-ayx"/>
-                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" id="6EE-cb-OEd"/>
-                                    <constraint firstAttribute="bottom" secondItem="7h5-hV-VH6" secondAttribute="bottom" id="8cD-qF-n5L"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="top" secondItem="lmx-b0-GWE" secondAttribute="top" id="9Fl-p8-YXD"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="leading" secondItem="7h5-hV-VH6" secondAttribute="leading" id="9N9-wT-F1d"/>
-                                    <constraint firstAttribute="trailing" secondItem="7h5-hV-VH6" secondAttribute="trailing" id="BEc-bg-sfL"/>
-                                    <constraint firstItem="hmq-MX-tQA" firstAttribute="leading" secondItem="DSA-FT-Mle" secondAttribute="trailing" constant="14" id="DHh-EZ-cmv"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="top" secondItem="pLd-hi-2mp" secondAttribute="top" id="ITw-lv-dmk"/>
-                                    <constraint firstItem="DSA-FT-Mle" firstAttribute="centerX" secondItem="ojS-bA-6gC" secondAttribute="centerX" id="J1Q-on-14O"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="leading" secondItem="ojS-bA-6gC" secondAttribute="trailing" constant="1" id="J7c-HE-HOr"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="leading" secondItem="pLd-hi-2mp" secondAttribute="trailing" constant="1" id="MHu-GF-vNE"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="top" secondItem="ojS-bA-6gC" secondAttribute="top" id="MaM-aQ-cl5"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="leading" secondItem="lmx-b0-GWE" secondAttribute="trailing" constant="1" id="PbC-Pm-58L"/>
-                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="top" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="QgT-IK-qMM"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="top" secondItem="hmq-MX-tQA" secondAttribute="bottom" constant="1" id="Zsk-sN-07U"/>
-                                    <constraint firstItem="dHv-1c-1Ip" firstAttribute="centerX" secondItem="um1-sR-pJW" secondAttribute="centerX" id="faa-KM-g2m"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="top" secondItem="DSA-FT-Mle" secondAttribute="bottom" constant="6" id="fc1-RL-QXz"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="bottom" secondItem="ZVJ-nb-dmb" secondAttribute="bottom" id="gLU-Lh-vpC"/>
-                                    <constraint firstItem="hmq-MX-tQA" firstAttribute="centerY" secondItem="dHv-1c-1Ip" secondAttribute="centerY" id="hMh-Yv-NsA"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="top" secondItem="pLd-hi-2mp" secondAttribute="top" id="iJP-Gd-N5s"/>
-                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="top" secondItem="zNy-py-5fw" secondAttribute="top" constant="82" id="jog-q0-ldY"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="bottom" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="kLW-lG-3vJ"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="bottom" secondItem="lmx-b0-GWE" secondAttribute="bottom" id="nPn-7L-yvL"/>
-                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="leading" secondItem="ZVJ-nb-dmb" secondAttribute="trailing" constant="1" id="sQP-G7-CPj"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="trailing" secondItem="7h5-hV-VH6" secondAttribute="trailing" id="tSu-Ad-9I7"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="bottom" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="yps-D1-RK2"/>
+                                    <constraint firstAttribute="trailing" secondItem="7h5-hV-VH6" secondAttribute="trailing" id="3kN-e5-3ZE"/>
+                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="bottom" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="48v-NZ-dah"/>
+                                    <constraint firstItem="um1-sR-pJW" firstAttribute="trailing" secondItem="7h5-hV-VH6" secondAttribute="trailing" id="5yI-aG-50W"/>
+                                    <constraint firstItem="um1-sR-pJW" firstAttribute="trailing" secondItem="b4B-iw-Grz" secondAttribute="trailing" id="94p-Za-abK"/>
+                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="top" secondItem="zNy-py-5fw" secondAttribute="top" id="CXM-SO-Jc3"/>
+                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="leading" secondItem="ZVJ-nb-dmb" secondAttribute="trailing" constant="1" id="Csl-Sc-Hj1"/>
+                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="top" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="44" id="Em5-uj-3L0"/>
+                                    <constraint firstAttribute="bottom" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="88" id="FyK-W1-Oq5"/>
+                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="top" secondItem="ZVJ-nb-dmb" secondAttribute="top" id="IoJ-XS-q6k"/>
+                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="bottom" secondItem="um1-sR-pJW" secondAttribute="bottom" id="L8A-5n-Ht1"/>
+                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="top" secondItem="um1-sR-pJW" secondAttribute="top" id="N9r-E7-R2o"/>
+                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="bottom" secondItem="ojS-bA-6gC" secondAttribute="bottom" id="QGS-NI-PUL"/>
+                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="leading" secondItem="7h5-hV-VH6" secondAttribute="leading" id="SiJ-z0-H4K"/>
+                                    <constraint firstItem="um1-sR-pJW" firstAttribute="leading" secondItem="lmx-b0-GWE" secondAttribute="trailing" constant="1" id="TA3-hs-G18"/>
+                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="bottom" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="Ygl-1q-udn"/>
+                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="leading" secondItem="b4B-iw-Grz" secondAttribute="leading" id="cAq-bw-Ytf"/>
+                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="leading" secondItem="pLd-hi-2mp" secondAttribute="trailing" constant="1" id="clr-3v-qAQ"/>
+                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="leading" secondItem="ojS-bA-6gC" secondAttribute="trailing" constant="1" id="fLa-Ak-qia"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZVJ-nb-dmb" secondAttribute="bottom" id="fgo-4f-EN2"/>
+                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" id="g52-8a-KZh"/>
+                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="top" secondItem="ZVJ-nb-dmb" secondAttribute="top" id="hTD-0d-HxL"/>
+                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="top" secondItem="lmx-b0-GWE" secondAttribute="top" id="o0q-qX-NgL"/>
+                                    <constraint firstAttribute="bottom" secondItem="b4B-iw-Grz" secondAttribute="bottom" constant="42" id="ruT-Do-3My"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zNy-py-5fw" firstAttribute="top" secondItem="A6Z-Y0-OgJ" secondAttribute="top" constant="64" id="2L9-th-M0s"/>
+                            <constraint firstItem="zNy-py-5fw" firstAttribute="top" secondItem="A6Z-Y0-OgJ" secondAttribute="top" id="2L9-th-M0s"/>
                             <constraint firstItem="zNy-py-5fw" firstAttribute="trailing" secondItem="A6Z-Y0-OgJ" secondAttribute="trailing" id="NaO-OJ-iUZ"/>
                             <constraint firstItem="zNy-py-5fw" firstAttribute="leading" secondItem="A6Z-Y0-OgJ" secondAttribute="leading" id="Xrb-ks-pTc"/>
                             <constraint firstItem="zNy-py-5fw" firstAttribute="bottom" secondItem="A6Z-Y0-OgJ" secondAttribute="bottom" id="gfJ-tb-T3w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mood Picker" id="BVm-7v-Wj1"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="SortCBAButton" destination="ojS-bA-6gC" id="iuc-EJ-HYF"/>
                         <outlet property="sortABCButton" destination="ZVJ-nb-dmb" id="XCi-lN-Rve"/>
@@ -2321,11 +2333,11 @@ Here</string>
                         <viewControllerLayoutGuide type="bottom" id="Rhr-8W-a9b"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="46o-Tb-crl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qU-QT-udi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2365,7 +2377,7 @@ Here</string>
                         <viewControllerLayoutGuide type="bottom" id="u1e-4v-Ke5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pOy-w1-VWZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CDS-YE-AKi">
@@ -2624,6 +2636,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

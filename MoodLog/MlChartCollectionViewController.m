@@ -28,11 +28,11 @@ Boolean firstLoad;
 - (void)addLines {
     [self setNumberOfLines:labelLines];
     
-    unsigned numberOfLines, index, stringLength = [self.text length];
+    NSUInteger numberOfLines, index, stringLength = [self.text length];
     for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
         index = NSMaxRange([self.text lineRangeForRange:NSMakeRange(index, 0)]);
 
-    int newLinesToAdd = labelLines - numberOfLines;
+    NSUInteger newLinesToAdd = labelLines - numberOfLines;
     for(int i=0; i<newLinesToAdd; i++)
         self.text = [NSString stringWithFormat:@" \n%@",self.text];
 }
@@ -357,7 +357,7 @@ Boolean firstLoad;
             cell.fearLabel.text = [NSString stringWithFormat:@"%@    ", key];
         }
    }
-    unsigned numberOfLines, index, stringLength = [displayString length];
+    NSUInteger numberOfLines, index, stringLength = [displayString length];
     for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
         index = NSMaxRange([displayString lineRangeForRange:NSMakeRange(index, 0)]);
 
