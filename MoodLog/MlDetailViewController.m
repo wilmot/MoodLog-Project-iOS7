@@ -156,7 +156,10 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         self.moodsDrawingView.categoryCounts = categoryCounts;
         self.moodsDrawingView.dividerLine = NO;
         [self.moodsDrawingView setNeedsDisplay];
-        self.moodListTextView.text = selectedEms;
+        NSMutableAttributedString *selectedEmotions = [[NSMutableAttributedString alloc] initWithString:selectedEms];
+        [selectedEmotions addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0,[selectedEmotions length])];
+        self.moodListTextView.attributedText = selectedEmotions;
+
         
         // Set the sliders
         [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
@@ -248,8 +251,8 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 - (IBAction)pressedSlidersSetAdjustButton:(id)sender {
     // Toggle the Set/Adjust value
     self.detailItem.sliderValuesSet=[NSNumber numberWithBool:!self.detailItem.sliderValuesSet.boolValue];
-    [self saveContext];
     [self setSliderCellVisibility];
+    [self saveContext];
     [self.tableView reloadData];
 }
 
@@ -301,7 +304,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     
     NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
     [self.detailItem setValue:sliderValue forKey:key];
-    [self saveContext];
 }
 
 - (void) saveContext { // Save data to the database

@@ -47,9 +47,23 @@
     Emotions *aMood;
     int randomEmotionIndex;
     int randomNumberOfEmotions;
-    
-    for (int i =0; i < 100; i++) {
+    NSDate *theDate = [NSDate date]; // start with today
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components;
+   
+    int MAXRECORDS = 800;
+    for (int i =0; i < MAXRECORDS; i++) {
         newMoodLogEntry = [[delegate masterViewController] insertNewObjectAndReturnReference:self];
+        // Skip back in time after a few records
+        if (i%(arc4random()%4 + 1) == 0){
+            theDate = [theDate dateByAddingTimeInterval:-86400];
+            NSLog(@"Going back in time...");
+        }
+        newMoodLogEntry.dateCreated = theDate;
+        newMoodLogEntry.date = theDate;
+        components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMoodLogEntry.date];
+        newMoodLogEntry.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
+        
         // NSLog(@"New Mood: %@",newMoodLogEntry);
         [newMoodLogEntry setJournalEntry:[NSString stringWithFormat:@"TEST %d, test data generated automatically", i]];
         [newMoodLogEntry setOverall:[NSNumber numberWithInt:10]];
@@ -64,7 +78,13 @@
             aMood = [[emotionArray objectAtIndex:0] objectAtIndex:randomEmotionIndex];
             [aMood setValue:[NSNumber numberWithBool:YES] forKey:@"selected"];
         }
+        if (i%20 == 0) {
+            NSLog(@"Saving (%d of %d)...",i,MAXRECORDS);
+            [delegate saveContext];
+
+        }
     }
+    NSLog(@"Finishing testCreatingLotsOfRecords.");
     [delegate saveContext];
 }
 

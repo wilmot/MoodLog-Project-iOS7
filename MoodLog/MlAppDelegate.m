@@ -128,6 +128,7 @@
     NSLog(@"App has been backgrounded. Badge #=%ld, badgeCount=%ld, will be set to zero",(long)[UIApplication sharedApplication].applicationIconBadgeNumber, (long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 0;
+    [self saveContext]; // Save data
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

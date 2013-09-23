@@ -13,12 +13,15 @@
 #import "Emotions.h"
 #import "MlCell.h"
 #import "MlMailViewController.h"
+#import "Prefs.h"
 
 @interface MlMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation MlMasterViewController
+
+static CGFloat CELL_HEIGHT;
 
 - (void)awakeFromNib
 {
@@ -42,13 +45,17 @@
 //    UIViewController *welcomeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"welcomeScreen"];
 //    [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
 //    [self presentViewController:welcomeViewController animated:YES completion:NULL];
+    CELL_HEIGHT = [[self.tableView dequeueReusableCellWithIdentifier:@"Cell"] bounds].size.height;
 
 }
 
 - (void) updateOldRecords {
     NSArray *moodDataList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList;
+    NSDateComponents *components;
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSLog(@"Running the updateOldRecords method. Turn this off after you've run it on your data.");
+    int i = 0;
     for (MoodLogEvents *object in [[self fetchedResultsController] fetchedObjects]) {
-        NSLog(@"Stuff: %@", object);
         NSSet *emotions = object.relationshipEmotions;
         for(Emotions *emotion in emotions) {
             for (MlMoodDataItem *mood in moodDataList) {
@@ -61,9 +68,16 @@
             }
             
         }
+        // Make sure the header reflects the current date
+        components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:object.date];
+        object.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
+        if (i++%10 == 0) {
+            NSLog(@"Saving records...");
+            [self saveContext];
+        }
     }
-    
     [self saveContext];
+    NSLog(@"Updated all records.");
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -107,6 +121,17 @@
 
 - (void)insertNewObject:(id)sender {
     [self insertNewObjectAndReturnReference:self];
+    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
+    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
+    [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    [self.tableView selectRowAtIndexPath:scrollIndexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
+    [self tableView:self.tableView didSelectRowAtIndexPath:scrollIndexPath];
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        // iPad doesn't segue, the detail view is always there
+    }
+    else { // iPhone
+        [self performSegueWithIdentifier:@"showDetail" sender:sender];
+    }
 }
 
 - (MoodLogEvents *) insertNewObjectAndReturnReference: (id) sender {
@@ -144,17 +169,6 @@
     // Save the context
     [self saveContext];
     
-    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
-    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
-    [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-    [self.tableView selectRowAtIndexPath:scrollIndexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
-    [self tableView:self.tableView didSelectRowAtIndexPath:scrollIndexPath];
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-        // iPad doesn't segue, the detail view is always there
-    }
-    else { // iPhone
-        [self performSegueWithIdentifier:@"showDetail" sender:sender];
-    }
     return newMood;
 }
 
@@ -179,8 +193,8 @@
 
 // Setting the cell height in the Storyboard doesn't set it in the running app, so I override heightForRowAtIndexPath
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    return cell.bounds.size.height;
+    //cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    return CELL_HEIGHT; // cell.bounds.size.height;
 }
 
 
@@ -313,7 +327,7 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    NSLog(@"Called beginUpdates");
+//    NSLog(@"Called beginUpdates");
     [self.tableView beginUpdates];
 }
 
@@ -359,7 +373,7 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    NSLog(@"Called endUpdates.");
+//    NSLog(@"Called endUpdates.");
     [self.tableView endUpdates];
 }
 

@@ -702,7 +702,7 @@
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
 		4C52861616D9A654007C878C /* MlChartDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartDrawingView.h; sourceTree = "<group>"; };
 		4C52861716D9A654007C878C /* MlChartDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartDrawingView.m; sourceTree = "<group>"; };
-		4C55CBE2162DE67400EAA878 /* MoodLog TEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoodLog TEST.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -742,7 +742,7 @@
 		4C7F572F178FC8170065543C /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Images/add.png; sourceTree = "<group>"; };
 		4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewController.h; sourceTree = "<group>"; };
 		4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewController.m; sourceTree = "<group>"; };
-		4C8BB41317ECEC2000754252 /* MoodLog Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoodLog Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C8BB41317ECEC2000754252 /* MoodLog_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodLog_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8BB41917ECEC2000754252 /* MoodLog Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoodLog Tests-Info.plist"; sourceTree = "<group>"; };
 		4C8BB41B17ECEC2000754252 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C8BB41D17ECEC2000754252 /* MoodLog_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodLog_Tests.m; sourceTree = "<group>"; };
@@ -1145,8 +1145,8 @@
 		4C55CBE3162DE67400EAA878 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C55CBE2162DE67400EAA878 /* MoodLog TEST.app */,
-				4C8BB41317ECEC2000754252 /* MoodLog Tests.xctest */,
+				4C55CBE2162DE67400EAA878 /* MoodLog.app */,
+				4C8BB41317ECEC2000754252 /* MoodLog_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1206,6 +1206,8 @@
 				4C52861716D9A654007C878C /* MlChartDrawingView.m */,
 				4C03FEFF176837B9001BA22B /* MlChartView.h */,
 				4C03FF00176837B9001BA22B /* MlChartView.m */,
+				4CA980E71767E0E2001BF7A8 /* MlChartCellFooterView.h */,
+				4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */,
 				4C4AC9451795F2FA004DA98E /* MlRemindersViewController.h */,
 				4C4AC9461795F2FA004DA98E /* MlRemindersViewController.m */,
 				4C4AC93F1794B3AE004DA98E /* MlNotificationsTableViewController.h */,
@@ -1222,8 +1224,6 @@
 				4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */,
 				4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */,
 				4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */,
-				4CA980E71767E0E2001BF7A8 /* MlChartCellFooterView.h */,
-				4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */,
 				4C92BE0A1798EA7C005DEEC2 /* MlWelcomeScreenViewController.h */,
 				4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */,
 				4C47E6A117501E8F0023298F /* Emotions.h */,
@@ -1294,7 +1294,7 @@
 			);
 			name = MoodLog;
 			productName = MoodLog;
-			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog TEST.app */;
+			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4C8BB41217ECEC2000754252 /* MoodLog_Tests */ = {
@@ -1312,7 +1312,7 @@
 			);
 			name = MoodLog_Tests;
 			productName = "MoodLog Tests";
-			productReference = 4C8BB41317ECEC2000754252 /* MoodLog Tests.xctest */;
+			productReference = 4C8BB41317ECEC2000754252 /* MoodLog_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1842,7 +1842,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME) TEST";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1861,7 +1861,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME) TEST";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1870,7 +1870,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodLog TEST.app/MoodLog TEST";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodLog.app/MoodLog";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1905,7 +1905,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodLog TEST.app/MoodLog TEST";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodLog.app/MoodLog";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;

@@ -914,7 +914,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
         <!--Ml Master View Controller - Master-->
         <scene sceneID="18">
             <objects>
-                <tableViewController title="Master" id="12" customClass="MlMasterViewController" sceneMemberID="viewController">
+                <tableViewController title="Master" extendedLayoutIncludesOpaqueBars="YES" id="12" customClass="MlMasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -933,6 +933,10 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                         </view>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="CalendarBlank48.png" translatesAutoresizingMaskIntoConstraints="NO" id="gvR-9p-Di7">
                                             <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="byj-fl-A0M"/>
+                                                <constraint firstAttribute="height" constant="48" id="xy3-0y-Ysv"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="wPi-0y-5Ta">
                                             <rect key="frame" x="50" y="10" width="250" height="64"/>
@@ -940,7 +944,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                                 <fragment content="Today I feel: Does the font shrink when I have more text? And what if it goes to three lines?">
                                                     <attributes>
                                                         <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
+                                                        <font key="NSFont" size="15" name="HelveticaNeue-Light"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
                                                     </attributes>
                                                 </fragment>
@@ -948,15 +952,19 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Wednesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="Q6G-uq-HNC">
-                                            <rect key="frame" x="5" y="-1" width="40" height="21"/>
+                                            <rect key="frame" x="4" y="-1" width="40" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="RbV-U3-4tu"/>
+                                                <constraint firstAttribute="width" constant="40" id="a8F-aD-QyE"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="9"/>
                                             <color key="textColor" red="0.79900380289999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12:25 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmd-Bi-Sv9">
-                                            <rect key="frame" x="50" y="3" width="73" height="14"/>
+                                            <rect key="frame" x="50" y="3" width="127" height="14"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="73" id="QQU-ac-4Ff"/>
+                                                <constraint firstAttribute="height" constant="14" id="zRv-NM-R7x"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -965,33 +973,31 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khh-RL-Vqb">
                                             <rect key="frame" x="4" y="17" width="38" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="38" id="vVK-l1-CyT"/>
+                                                <constraint firstAttribute="height" constant="30" id="DKz-Fe-hw6"/>
+                                                <constraint firstAttribute="width" constant="38" id="sOI-Rn-0Gv"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="29"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="gvR-9p-Di7" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" id="AIe-mG-X8F"/>
-                                        <constraint firstItem="gvR-9p-Di7" firstAttribute="leading" secondItem="0ct-v5-ee5" secondAttribute="leading" id="CxX-sQ-xyM"/>
-                                        <constraint firstAttribute="bottom" secondItem="0ct-v5-ee5" secondAttribute="bottom" id="FRP-dD-VrT"/>
-                                        <constraint firstItem="Kmd-Bi-Sv9" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="3" id="HcB-8H-ezQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="wPi-0y-5Ta" secondAttribute="trailing" constant="-13" id="HyN-iC-0T0"/>
-                                        <constraint firstAttribute="bottom" secondItem="khh-RL-Vqb" secondAttribute="bottom" constant="28" id="IJK-fH-wwo"/>
-                                        <constraint firstAttribute="bottom" secondItem="Kmd-Bi-Sv9" secondAttribute="bottom" constant="58" id="JMZ-hy-Iwm"/>
-                                        <constraint firstItem="0ct-v5-ee5" firstAttribute="top" secondItem="Q6G-uq-HNC" secondAttribute="top" id="JU3-7N-ojG"/>
-                                        <constraint firstItem="Q6G-uq-HNC" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" constant="5" id="OlN-M2-G2k"/>
-                                        <constraint firstItem="wPi-0y-5Ta" firstAttribute="leading" secondItem="khh-RL-Vqb" secondAttribute="trailing" constant="8" symbolic="YES" id="UMG-lq-XRS"/>
-                                        <constraint firstAttribute="trailing" secondItem="0ct-v5-ee5" secondAttribute="trailing" id="aU6-pn-V4x"/>
-                                        <constraint firstItem="Kmd-Bi-Sv9" firstAttribute="leading" secondItem="Q6G-uq-HNC" secondAttribute="trailing" constant="5" id="d8y-B4-klk"/>
-                                        <constraint firstItem="khh-RL-Vqb" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="17" id="hiB-Ng-jen"/>
-                                        <constraint firstItem="wPi-0y-5Ta" firstAttribute="leading" secondItem="Kmd-Bi-Sv9" secondAttribute="leading" id="ijE-EQ-Uad"/>
-                                        <constraint firstItem="wPi-0y-5Ta" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="10" id="jiK-W3-hYj"/>
-                                        <constraint firstItem="khh-RL-Vqb" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" constant="4" id="nlu-3V-uqv"/>
-                                        <constraint firstItem="gvR-9p-Di7" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" id="oVq-Rx-iFu"/>
-                                        <constraint firstAttribute="bottom" secondItem="wPi-0y-5Ta" secondAttribute="bottom" constant="1" id="pos-OH-k63"/>
-                                        <constraint firstItem="0ct-v5-ee5" firstAttribute="centerY" secondItem="bnR-2o-2Ia" secondAttribute="centerY" id="r2I-0S-9Ei"/>
-                                        <constraint firstAttribute="bottom" secondItem="Q6G-uq-HNC" secondAttribute="bottom" constant="55" id="tKn-xc-MCs"/>
+                                        <constraint firstItem="gvR-9p-Di7" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" id="3ap-ho-pfN"/>
+                                        <constraint firstItem="gvR-9p-Di7" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" id="6PN-N3-lHb"/>
+                                        <constraint firstItem="wPi-0y-5Ta" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="10" id="FJE-Gl-JuX"/>
+                                        <constraint firstItem="wPi-0y-5Ta" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" constant="50" id="FfS-px-Vz1"/>
+                                        <constraint firstItem="0ct-v5-ee5" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" id="RKj-5i-Rvl"/>
+                                        <constraint firstAttribute="bottom" secondItem="0ct-v5-ee5" secondAttribute="bottom" id="V5F-eA-aVD"/>
+                                        <constraint firstItem="0ct-v5-ee5" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="-1" id="XNQ-Ui-PjC"/>
+                                        <constraint firstItem="Q6G-uq-HNC" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" constant="4" id="a4B-pF-RA0"/>
+                                        <constraint firstAttribute="bottom" secondItem="wPi-0y-5Ta" secondAttribute="bottom" constant="1" id="aZU-Ie-6BX"/>
+                                        <constraint firstItem="Kmd-Bi-Sv9" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="3" id="aqf-Yb-tD4"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kmd-Bi-Sv9" secondAttribute="trailing" constant="110" id="hFf-Hu-SUo"/>
+                                        <constraint firstAttribute="trailing" secondItem="0ct-v5-ee5" secondAttribute="trailing" id="hhn-ig-JWR"/>
+                                        <constraint firstItem="khh-RL-Vqb" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" constant="4" id="lx8-MD-7gv"/>
+                                        <constraint firstItem="khh-RL-Vqb" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="17" id="njt-0I-q1x"/>
+                                        <constraint firstItem="Q6G-uq-HNC" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="-1" id="p2F-4q-Sam"/>
+                                        <constraint firstItem="Kmd-Bi-Sv9" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" constant="50" id="sBI-Pm-fKi"/>
+                                        <constraint firstAttribute="trailing" secondItem="wPi-0y-5Ta" secondAttribute="trailing" constant="-13" id="xn4-Fs-xan"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1654,13 +1660,19 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="179"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="03V-cM-9lN">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03V-cM-9lN">
                                                     <rect key="frame" x="129" y="1" width="148" height="176"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="148" id="ILV-SJ-chS"/>
                                                     </constraints>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n</string>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Moods">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioU-7X-bBA" customClass="MlChartDrawingView">
