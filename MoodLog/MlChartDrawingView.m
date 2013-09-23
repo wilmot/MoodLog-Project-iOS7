@@ -56,7 +56,13 @@ static NSUInteger numberOfDivisions = 20;
         CGFloat pi = 3.1415926535897932384626433832795;
         CGFloat circumference = 40.0;
         CGFloat centerx = rect.size.width/2.0;
-        CGFloat centery = rect.size.height/2.0;
+        CGFloat centery;
+        if (self.dividerLine) { // hacky way of telling that I'm on the chart page
+             centery = rect.size.height/4.0;
+        }
+        else { // I'm on the detailView
+             centery = rect.size.height/2.0;
+        }
         CGContextAddArc(context,centerx, centery,circumference,0,2*pi,1);
         CGContextDrawPath(context,kCGPathStroke);
         CGFloat loveCount = [self.categoryCounts[love] floatValue];

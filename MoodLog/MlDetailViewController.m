@@ -140,11 +140,19 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         NSUInteger emotionArrayCount = [emotionArray count];
         CGFloat feelTotal = 0;
         
-        NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, fear : @0, anger : @0, sadness : @0} mutableCopy];
+        NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
+        NSDictionary *emotionColors = @{love : [[UIColor greenColor] darkerColor], joy : [UIColor orangeColor], surprise : [UIColor purpleColor], anger : [UIColor redColor], sadness : [UIColor blueColor], fear : [[[UIColor yellowColor] darkerColor] darkerColor]};
+        NSMutableAttributedString *selectedEmotions = [[NSMutableAttributedString alloc] init];
         if (emotionArrayCount > 0) {
             NSString *thisCategory;
-            for (Emotions *emotion in emotionArray) {
+            UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:12];
+            NSDictionary *attrsDictionary;
+            NSAttributedString *currentEmotion;
+           for (Emotions *emotion in emotionArray) {
+               attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [emotionColors objectForKey:emotion.category], NSForegroundColorAttributeName, nil];
+                currentEmotion = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n",[emotion.name lowercaseString]] attributes:attrsDictionary];
                 selectedEms = [selectedEms stringByAppendingFormat:@"%@: %@\n", emotion.category, [emotion.name lowercaseString]];
+                [selectedEmotions appendAttributedString:currentEmotion];
                 feelTotal += emotion.feelValue.floatValue;
                 thisCategory = emotion.category;
                 if (categoryCounts[thisCategory]) {
@@ -156,8 +164,8 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         self.moodsDrawingView.categoryCounts = categoryCounts;
         self.moodsDrawingView.dividerLine = NO;
         [self.moodsDrawingView setNeedsDisplay];
-        NSMutableAttributedString *selectedEmotions = [[NSMutableAttributedString alloc] initWithString:selectedEms];
-        [selectedEmotions addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0,[selectedEmotions length])];
+ //       NSMutableAttributedString *selectedEmotions = [[NSMutableAttributedString alloc] initWithString:selectedEms];
+ //       [selectedEmotions addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0,[selectedEmotions length])];
         self.moodListTextView.attributedText = selectedEmotions;
 
         

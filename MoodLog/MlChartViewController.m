@@ -16,6 +16,7 @@
 @implementation MlChartViewController
 
 static short BAR_CHART = 1;
+static short PIE_CHART = 0;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -87,10 +88,18 @@ static short BAR_CHART = 1;
 
 - (IBAction)chooseSegment:(id)sender {
     if (self.segment.selectedSegmentIndex == BAR_CHART) { // Bar Chart
+        self.summaryView.hidden = YES;
+        self.chartContainer.hidden = NO;
         self.myChartCollectionViewController.chartType = @"Bar";
     }
-    else { // Pie Chart
-        self.myChartCollectionViewController.chartType = @"Pie";        
+    else if (self.segment.selectedSegmentIndex == PIE_CHART) {
+        self.summaryView.hidden = YES;
+        self.chartContainer.hidden = NO;
+        self.myChartCollectionViewController.chartType = @"Pie";
+    }
+    else { // Summary
+        self.summaryView.hidden = NO;
+        self.chartContainer.hidden = YES;
     }
     UIInterfaceOrientation *orientation = [[UIApplication sharedApplication] statusBarOrientation];
     [self.myChartCollectionViewController setCellTypeAndSize:orientation];
