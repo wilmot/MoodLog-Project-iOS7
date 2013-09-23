@@ -308,10 +308,6 @@
 		4C47E6A317501E8F0023298F /* Emotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6A217501E8F0023298F /* Emotions.m */; };
 		4C47E6B41751AC580023298F /* MlChartCellEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */; };
 		4C47E6B71755C5E10023298F /* MlDateRangeDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */; };
-		4C47E70A178CA55300325BA7 /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E708178CA55300325BA7 /* keyboard.png */; };
-		4C47E70B178CA55300325BA7 /* keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E709178CA55300325BA7 /* keyboard@2x.png */; };
-		4C47E712178CA75300325BA7 /* keyboard_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E710178CA75300325BA7 /* keyboard_down.png */; };
-		4C47E713178CA75300325BA7 /* keyboard_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C47E711178CA75300325BA7 /* keyboard_down@2x.png */; };
 		4C4AC9411794B3AE004DA98E /* MlNotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AC9401794B3AE004DA98E /* MlNotificationsTableViewController.m */; };
 		4C4AC9471795F2FA004DA98E /* MlRemindersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AC9461795F2FA004DA98E /* MlRemindersViewController.m */; };
 		4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C53DF1665F14900DDDBA2 /* MoodList.plist */; };
@@ -343,6 +339,10 @@
 		4C8BB41617ECEC2000754252 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C55CBE6162DE67400EAA878 /* UIKit.framework */; };
 		4C8BB41C17ECEC2000754252 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BB41A17ECEC2000754252 /* InfoPlist.strings */; };
 		4C8BB41E17ECEC2000754252 /* MoodLog_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BB41D17ECEC2000754252 /* MoodLog_Tests.m */; };
+		4C8BB42717F0EE1C00754252 /* keyboard_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BB42517F0EE1C00754252 /* keyboard_down.png */; };
+		4C8BB42817F0EE1C00754252 /* keyboard_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BB42617F0EE1C00754252 /* keyboard_down@2x.png */; };
+		4C8BB42B17F0F0E000754252 /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BB42917F0F0E000754252 /* keyboard.png */; };
+		4C8BB42C17F0F0E000754252 /* keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BB42A17F0F0E000754252 /* keyboard@2x.png */; };
 		4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */; };
 		4C92BDFF17976284005DEEC2 /* guitar_sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BDFD17976053005DEEC2 /* guitar_sound.caf */; };
 		4C92BE021797CCAA005DEEC2 /* TimerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE001797CCAA005DEEC2 /* TimerIcon.png */; };
@@ -689,10 +689,6 @@
 		4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCellEntryViewController.m; sourceTree = "<group>"; };
 		4C47E6B51755C5E00023298F /* MlDateRangeDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlDateRangeDrawing.h; sourceTree = "<group>"; };
 		4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDateRangeDrawing.m; sourceTree = "<group>"; };
-		4C47E708178CA55300325BA7 /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard.png; sourceTree = "<group>"; };
-		4C47E709178CA55300325BA7 /* keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard@2x.png"; sourceTree = "<group>"; };
-		4C47E710178CA75300325BA7 /* keyboard_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard_down.png; sourceTree = "<group>"; };
-		4C47E711178CA75300325BA7 /* keyboard_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_down@2x.png"; sourceTree = "<group>"; };
 		4C4AC93F1794B3AE004DA98E /* MlNotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlNotificationsTableViewController.h; sourceTree = "<group>"; };
 		4C4AC9401794B3AE004DA98E /* MlNotificationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlNotificationsTableViewController.m; sourceTree = "<group>"; };
 		4C4AC9451795F2FA004DA98E /* MlRemindersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlRemindersViewController.h; sourceTree = "<group>"; };
@@ -747,6 +743,10 @@
 		4C8BB41B17ECEC2000754252 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C8BB41D17ECEC2000754252 /* MoodLog_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodLog_Tests.m; sourceTree = "<group>"; };
 		4C8BB41F17ECEC2000754252 /* MoodLog Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoodLog Tests-Prefix.pch"; sourceTree = "<group>"; };
+		4C8BB42517F0EE1C00754252 /* keyboard_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyboard_down.png; path = Images/keyboard_down.png; sourceTree = "<group>"; };
+		4C8BB42617F0EE1C00754252 /* keyboard_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keyboard_down@2x.png"; path = "Images/keyboard_down@2x.png"; sourceTree = "<group>"; };
+		4C8BB42917F0F0E000754252 /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyboard.png; path = Images/keyboard.png; sourceTree = "<group>"; };
+		4C8BB42A17F0F0E000754252 /* keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keyboard@2x.png"; path = "Images/keyboard@2x.png"; sourceTree = "<group>"; };
 		4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewCell.h; sourceTree = "<group>"; };
 		4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewCell.m; sourceTree = "<group>"; };
 		4C92BDFD17976053005DEEC2 /* guitar_sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitar_sound.caf; sourceTree = "<group>"; };
@@ -1098,14 +1098,14 @@
 		4C4043E61783E59F00710F2A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C8BB42517F0EE1C00754252 /* keyboard_down.png */,
+				4C8BB42617F0EE1C00754252 /* keyboard_down@2x.png */,
+				4C8BB42917F0F0E000754252 /* keyboard.png */,
+				4C8BB42A17F0F0E000754252 /* keyboard@2x.png */,
 				4C92BE15179A0B68005DEEC2 /* TestArrow.png */,
 				4C92BE0617985BFD005DEEC2 /* TriangleRight.png */,
 				4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */,
 				4C7F572F178FC8170065543C /* add.png */,
-				4C47E708178CA55300325BA7 /* keyboard.png */,
-				4C47E709178CA55300325BA7 /* keyboard@2x.png */,
-				4C47E710178CA75300325BA7 /* keyboard_down.png */,
-				4C47E711178CA75300325BA7 /* keyboard_down@2x.png */,
 				4C4043FC1783E5FD00710F2A /* greyButton.png */,
 				4C4043FD1783E5FD00710F2A /* greyButton@2x.png */,
 				4C4043FE1783E5FD00710F2A /* greyButtonHighlight.png */,
@@ -1528,6 +1528,7 @@
 				4C06391017E45A6E00563FE6 /* Neglected@2x.png in Resources */,
 				4C0639B517E69DA200563FE6 /* Sympathetic.png in Resources */,
 				4C0639B317E69DA200563FE6 /* Tender.png in Resources */,
+				4C8BB42C17F0F0E000754252 /* keyboard@2x.png in Resources */,
 				4C4043BA1783E51400710F2A /* Bored.png in Resources */,
 				4C06394F17E45A6E00563FE6 /* Surprised.png in Resources */,
 				4C4043BB1783E51400710F2A /* Bored@2x.png in Resources */,
@@ -1543,11 +1544,13 @@
 				4C06391817E45A6E00563FE6 /* Lustful@2x.png in Resources */,
 				4C06395317E45A6E00563FE6 /* Furious.png in Resources */,
 				4C06390B17E45A6E00563FE6 /* Outraged.png in Resources */,
+				4C8BB42B17F0F0E000754252 /* keyboard.png in Resources */,
 				4C4043C01783E51400710F2A /* Adored.png in Resources */,
 				4C4043C11783E51400710F2A /* Adored@2x.png in Resources */,
 				4C06394B17E45A6E00563FE6 /* Gloomy.png in Resources */,
 				4C06395617E45A6E00563FE6 /* Frustrated@2x.png in Resources */,
 				4C4043C21783E51400710F2A /* Adoring.png in Resources */,
+				4C8BB42717F0EE1C00754252 /* keyboard_down.png in Resources */,
 				4C4043C31783E51400710F2A /* Adoring@2x.png in Resources */,
 				4C4043C41783E51400710F2A /* Afraid.png in Resources */,
 				4C06393617E45A6E00563FE6 /* Hurting@2x.png in Resources */,
@@ -1631,17 +1634,14 @@
 				4C4044021783E5FD00710F2A /* greyButtonHighlight.png in Resources */,
 				4C4044031783E5FD00710F2A /* greyButtonHighlight@2x.png in Resources */,
 				4C06391C17E45A6E00563FE6 /* Lovable@2x.png in Resources */,
-				4C47E70A178CA55300325BA7 /* keyboard.png in Resources */,
-				4C47E70B178CA55300325BA7 /* keyboard@2x.png in Resources */,
 				4C06394417E45A6E00563FE6 /* Guilty@2x.png in Resources */,
 				4C0639AA17E69DA200563FE6 /* Trusting@2x.png in Resources */,
 				4C06393817E45A6E00563FE6 /* Humiliated@2x.png in Resources */,
+				4C8BB42817F0EE1C00754252 /* keyboard_down@2x.png in Resources */,
 				4C0639CF17E69DA200563FE6 /* Pleased.png in Resources */,
 				4C06395F17E45A6E00563FE6 /* Exhilarated.png in Resources */,
 				4C06393217E45A6E00563FE6 /* Insecure@2x.png in Resources */,
 				4C0639A017E69DA200563FE6 /* Worthless@2x.png in Resources */,
-				4C47E712178CA75300325BA7 /* keyboard_down.png in Resources */,
-				4C47E713178CA75300325BA7 /* keyboard_down@2x.png in Resources */,
 				4C06392B17E45A6E00563FE6 /* Irritated.png in Resources */,
 				4C7F5730178FC8170065543C /* add.png in Resources */,
 				4C92BE021797CCAA005DEEC2 /* TimerIcon.png in Resources */,

@@ -38,19 +38,23 @@ MoodLogEvents *mood;
     mood = (MoodLogEvents *) self.detailItem;
     self.journalTextView.text = mood.journalEntry;
     [self.journalToolbar setRightBarButtonItem:nil animated:YES];
-    [self.journalTextView becomeFirstResponder];
+}
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self.journalTextView becomeFirstResponder]; // Show the keyboard after the view appears
 }
 
 - (void) keyboardDidShow:(NSNotification *)aNotification {
     NSDictionary *info = [aNotification userInfo];
-    CGRect keyboardRect = [self.view.window convertRect:[[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue] toView:self.view];
-    [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.journalTextView.bounds.size.height - keyboardRect.size.height)];
+    CGRect keyboardRect = [self.view.window convertRect:[[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue] toView:self.view];
+    CGRect textViewNewRect = CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.parentViewController.view.bounds.size.height - keyboardRect.size.height);
+    [self.journalTextView setFrame:textViewNewRect];
 }
 
 - (void) keyboardWillHide:(NSNotification *)aNotification {
-    CGRect statusBarFrame = [self.view.window convertRect:[UIApplication sharedApplication].statusBarFrame toView:self.view];
-    [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.parentViewController.view.bounds.size.height - self.navigationController.toolbar.frame.size.height - statusBarFrame.size.height)];
+    // CGRect statusBarFrame = [self.view.window convertRect:[UIApplication sharedApplication].statusBarFrame toView:self.view];
+    // Might need this for iOS 6: [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.parentViewController.view.bounds.size.height - self.navigationController.toolbar.frame.size.height - statusBarFrame.size.height)];
+    [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.parentViewController.view.bounds.size.height)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,4 +91,5 @@ MoodLogEvents *mood;
     [self.journalTextView resignFirstResponder];
     [self.journalToolbar setRightBarButtonItem:nil animated:YES];
 }
+
 @end

@@ -202,7 +202,7 @@ MoodLogEvents *myLogEntry;
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:touchPoint];
         Emotions *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         [self showDefinition:aMood.name];
-        // [self performSelector:@selector(showDefinition:) withObject:aMood.name afterDelay:0.2 ];
+        [self performSelector:@selector(showDefinition:) withObject:aMood.name afterDelay:0.2 ];
    }
 }
 

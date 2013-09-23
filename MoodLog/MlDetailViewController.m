@@ -118,7 +118,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         if (self.detailItem.journalEntry.length > 0) {
             // There's interesting content
             self.entryLogTextView.textColor = [UIColor blackColor];
-            [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12]];
+            [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue" size:11]];
             self.entryLogTextView.textAlignment = NSTextAlignmentLeft;
             self.entryLogTextView.text = self.detailItem.journalEntry;
             self.littleKeyboardIcon.hidden = YES;
