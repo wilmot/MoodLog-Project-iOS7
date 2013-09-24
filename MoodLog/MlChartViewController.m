@@ -88,17 +88,17 @@ static short PIE_CHART = 0;
 
 - (IBAction)chooseSegment:(id)sender {
     if (self.segment.selectedSegmentIndex == BAR_CHART) { // Bar Chart
-        self.summaryView.hidden = YES;
+        self.summaryViewController.hidden = YES;
         self.chartContainer.hidden = NO;
         self.myChartCollectionViewController.chartType = @"Bar";
     }
     else if (self.segment.selectedSegmentIndex == PIE_CHART) {
-        self.summaryView.hidden = YES;
+        self.summaryViewController.hidden = YES;
         self.chartContainer.hidden = NO;
         self.myChartCollectionViewController.chartType = @"Pie";
     }
     else { // Summary
-        self.summaryView.hidden = NO;
+        self.summaryViewController.hidden = NO;
         self.chartContainer.hidden = YES;
     }
     UIInterfaceOrientation *orientation = [[UIApplication sharedApplication] statusBarOrientation];

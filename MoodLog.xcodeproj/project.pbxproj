@@ -343,6 +343,8 @@
 		4C8BB42817F0EE1C00754252 /* keyboard_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BB42617F0EE1C00754252 /* keyboard_down@2x.png */; };
 		4C8BB42B17F0F0E000754252 /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BB42917F0F0E000754252 /* keyboard.png */; };
 		4C8BB42C17F0F0E000754252 /* keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BB42A17F0F0E000754252 /* keyboard@2x.png */; };
+		4C8BB42E17F17FF200754252 /* Plutchik-wheel.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BB42D17F17FF200754252 /* Plutchik-wheel.svg.png */; };
+		4C8BB43117F23C4600754252 /* MlSummaryInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BB43017F23C4600754252 /* MlSummaryInfoViewController.m */; };
 		4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */; };
 		4C92BDFF17976284005DEEC2 /* guitar_sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BDFD17976053005DEEC2 /* guitar_sound.caf */; };
 		4C92BE021797CCAA005DEEC2 /* TimerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE001797CCAA005DEEC2 /* TimerIcon.png */; };
@@ -747,6 +749,9 @@
 		4C8BB42617F0EE1C00754252 /* keyboard_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keyboard_down@2x.png"; path = "Images/keyboard_down@2x.png"; sourceTree = "<group>"; };
 		4C8BB42917F0F0E000754252 /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyboard.png; path = Images/keyboard.png; sourceTree = "<group>"; };
 		4C8BB42A17F0F0E000754252 /* keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keyboard@2x.png"; path = "Images/keyboard@2x.png"; sourceTree = "<group>"; };
+		4C8BB42D17F17FF200754252 /* Plutchik-wheel.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Plutchik-wheel.svg.png"; path = "Images/Plutchik-wheel.svg.png"; sourceTree = "<group>"; };
+		4C8BB42F17F23C4600754252 /* MlSummaryInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlSummaryInfoViewController.h; sourceTree = "<group>"; };
+		4C8BB43017F23C4600754252 /* MlSummaryInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlSummaryInfoViewController.m; sourceTree = "<group>"; };
 		4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewCell.h; sourceTree = "<group>"; };
 		4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewCell.m; sourceTree = "<group>"; };
 		4C92BDFD17976053005DEEC2 /* guitar_sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitar_sound.caf; sourceTree = "<group>"; };
@@ -1098,6 +1103,7 @@
 		4C4043E61783E59F00710F2A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C8BB42D17F17FF200754252 /* Plutchik-wheel.svg.png */,
 				4C8BB42517F0EE1C00754252 /* keyboard_down.png */,
 				4C8BB42617F0EE1C00754252 /* keyboard_down@2x.png */,
 				4C8BB42917F0F0E000754252 /* keyboard.png */,
@@ -1218,6 +1224,8 @@
 				4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */,
 				4CFB21EF164B8C870055CC3D /* MlMailViewController.h */,
 				4CFB21F0164B8C870055CC3D /* MlMailViewController.m */,
+				4C8BB42F17F23C4600754252 /* MlSummaryInfoViewController.h */,
+				4C8BB43017F23C4600754252 /* MlSummaryInfoViewController.m */,
 				4C47E6B51755C5E00023298F /* MlDateRangeDrawing.h */,
 				4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */,
 				4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */,
@@ -1407,6 +1415,7 @@
 				4C0639BE17E69DA200563FE6 /* Satisfied@2x.png in Resources */,
 				4C06395017E45A6E00563FE6 /* Surprised@2x.png in Resources */,
 				4C06395517E45A6E00563FE6 /* Frustrated.png in Resources */,
+				4C8BB42E17F17FF200754252 /* Plutchik-wheel.svg.png in Resources */,
 				4C06393E17E45A6E00563FE6 /* Hopeful@2x.png in Resources */,
 				4C40437D1783E51400710F2A /* Jealous@2x.png in Resources */,
 				4C06391417E45A6E00563FE6 /* Miserable@2x.png in Resources */,
@@ -1686,6 +1695,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C55CBF5162DE67500EAA878 /* main.m in Sources */,
+				4C8BB43117F23C4600754252 /* MlSummaryInfoViewController.m in Sources */,
 				4C55CBF9162DE67500EAA878 /* MlAppDelegate.m in Sources */,
 				4C55CC08162DE67500EAA878 /* MoodLog.xcdatamodeld in Sources */,
 				4C55CC0B162DE67500EAA878 /* MlMasterViewController.m in Sources */,

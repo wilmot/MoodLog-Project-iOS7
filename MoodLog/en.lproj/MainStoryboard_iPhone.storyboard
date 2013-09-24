@@ -36,30 +36,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-Mz-C41">
-                                <rect key="frame" x="0.0" y="756" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Mood Log" id="6Yc-Eh-3OH">
-                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="sGB-OJ-fMm"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eKU-hA-6RE"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AIw-xO-CcS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VbV-OR-sMc">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VbV-OR-sMc">
                                         <rect key="frame" x="12" y="51" width="296" height="454"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="454" id="9RG-CM-VTK"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <string key="content">This app is designed to help you keep track of your moods as they change throughout the day and from day to day. You do this by creating Mood Log Entries recording any emotions you are currently experiencing, your overall mood, energy, level of sleep and health, and any other information you want to record. 
+                                                <string key="content">This app is designed to help you keep track of your moods as they change throughout the day and from day to day. You do this by creating Mood Log Entries recording any emotions you are currently experiencing, your overall mood, energy, level of sleep and health, and any other information you want to record. You can use it as a journal to record your thoughts and events in your life and watch for connections between your daily life and the moods you experience.
 
-You can pick the moods that best suit you in the moment by choosing from a list of moods. The mood list picker shows faces representing each mood.
+You can pick the moods that best suit you in the moment by choosing from a list of moods. The mood list picker shows faces representing each mood, or you can turn off the faces and just see the mood names. A slider lets you reduce or increase the set of moods displayed.
 
-Mood Log can help you increase your emotional awareness by getting you into the habit of identifying your moods at any time night or day. You can even set reminders to prompt you to create a Mood Log entry at random times throughout the day.</string>
+Mood Log can help you increase your emotional awareness by getting you into the habit of identifying your moods at any time night or day. You can even set reminders to prompt you to create a Mood Log entry at random times throughout the day.
+
+I hope you enjoy this app and find it useful in your life -- please leave feedback on the App Store, or send email to student@voyageropen.org.</string>
                                                 <attributes>
                                                     <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -68,19 +61,27 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to Mood Log" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="Xvb-hj-nZh">
-                                        <rect key="frame" x="12" y="20" width="238" height="31"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to Mood Log" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="233" translatesAutoresizingMaskIntoConstraints="NO" id="Xvb-hj-nZh">
+                                        <rect key="frame" x="12" y="20" width="233" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="233" id="2ZT-rb-FZb"/>
+                                            <constraint firstAttribute="height" constant="31" id="b8v-EV-DCY"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="249" image="Cheerful.png" translatesAutoresizingMaskIntoConstraints="NO" id="2cG-Pe-0rF">
                                         <rect key="frame" x="80" y="513" width="160" height="196"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="196" id="ZXL-qx-wX0"/>
+                                        </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-Hl-adX">
                                         <rect key="frame" x="258" y="20" width="58" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="58" id="Yn6-nj-HTc"/>
+                                            <constraint firstAttribute="height" constant="30" id="BOx-AU-tiQ"/>
+                                            <constraint firstAttribute="width" constant="58" id="gBH-2h-muX"/>
                                         </constraints>
                                         <state key="normal" title="Done">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,18 +94,16 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VbV-OR-sMc" firstAttribute="top" secondItem="AIw-xO-CcS" secondAttribute="top" constant="51" id="3sV-2F-2ki"/>
+                                    <constraint firstAttribute="bottom" secondItem="2cG-Pe-0rF" secondAttribute="bottom" constant="91" id="7mQ-f6-rEu"/>
                                     <constraint firstItem="Xvb-hj-nZh" firstAttribute="top" secondItem="AIw-xO-CcS" secondAttribute="top" constant="20" symbolic="YES" id="9Mh-El-VWb"/>
-                                    <constraint firstItem="2cG-Pe-0rF" firstAttribute="top" secondItem="VbV-OR-sMc" secondAttribute="bottom" constant="8" symbolic="YES" id="B8g-0c-1CS"/>
-                                    <constraint firstAttribute="bottom" secondItem="2cG-Pe-0rF" secondAttribute="bottom" constant="91" id="BNe-Vz-ozS"/>
-                                    <constraint firstItem="2cG-Pe-0rF" firstAttribute="centerX" secondItem="AIw-xO-CcS" secondAttribute="centerX" id="LJD-kg-TrR"/>
+                                    <constraint firstAttribute="trailing" secondItem="2cG-Pe-0rF" secondAttribute="trailing" constant="80" id="Bsa-qb-YOG"/>
+                                    <constraint firstItem="2cG-Pe-0rF" firstAttribute="top" secondItem="VbV-OR-sMc" secondAttribute="bottom" constant="8" symbolic="YES" id="G9H-XV-H4f"/>
+                                    <constraint firstItem="2cG-Pe-0rF" firstAttribute="leading" secondItem="AIw-xO-CcS" secondAttribute="leading" constant="80" id="S9c-VU-Nja"/>
                                     <constraint firstItem="Xvb-hj-nZh" firstAttribute="leading" secondItem="VbV-OR-sMc" secondAttribute="leading" id="TSg-sT-xtf"/>
-                                    <constraint firstItem="Xvb-hj-nZh" firstAttribute="centerY" secondItem="p6R-Hl-adX" secondAttribute="centerY" id="gmp-Gx-iZr"/>
-                                    <constraint firstItem="p6R-Hl-adX" firstAttribute="leading" secondItem="Xvb-hj-nZh" secondAttribute="trailing" constant="8" symbolic="YES" id="nlU-KA-H9p"/>
-                                    <constraint firstItem="2cG-Pe-0rF" firstAttribute="leading" secondItem="AIw-xO-CcS" secondAttribute="leading" constant="80" id="oCw-Az-mg9"/>
-                                    <constraint firstItem="Xvb-hj-nZh" firstAttribute="top" secondItem="p6R-Hl-adX" secondAttribute="top" id="obs-wo-dto"/>
-                                    <constraint firstItem="2cG-Pe-0rF" firstAttribute="centerX" secondItem="VbV-OR-sMc" secondAttribute="centerX" id="pEg-Q1-Ax1"/>
-                                    <constraint firstItem="p6R-Hl-adX" firstAttribute="leading" secondItem="AIw-xO-CcS" secondAttribute="leading" constant="258" id="wIP-Gd-PvO"/>
-                                    <constraint firstAttribute="trailing" secondItem="p6R-Hl-adX" secondAttribute="trailing" constant="4" id="wVh-g5-cL5"/>
+                                    <constraint firstItem="p6R-Hl-adX" firstAttribute="top" secondItem="AIw-xO-CcS" secondAttribute="top" constant="20" id="Zvs-Hx-WjR"/>
+                                    <constraint firstAttribute="trailing" secondItem="p6R-Hl-adX" secondAttribute="trailing" constant="4" id="gh8-Qa-yeG"/>
+                                    <constraint firstItem="2cG-Pe-0rF" firstAttribute="centerX" secondItem="AIw-xO-CcS" secondAttribute="centerX" id="pCV-gg-juv"/>
+                                    <constraint firstItem="2cG-Pe-0rF" firstAttribute="centerX" secondItem="VbV-OR-sMc" secondAttribute="centerX" id="sRx-SP-7lO"/>
                                     <constraint firstItem="VbV-OR-sMc" firstAttribute="leading" secondItem="AIw-xO-CcS" secondAttribute="leading" constant="12" id="wmm-fu-3qy"/>
                                     <constraint firstAttribute="bottom" secondItem="Xvb-hj-nZh" secondAttribute="bottom" constant="749" id="xqf-6F-dcg"/>
                                 </constraints>
@@ -112,13 +111,10 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="fZV-Mz-C41" secondAttribute="bottom" id="1OT-le-nnw"/>
+                            <constraint firstAttribute="bottom" secondItem="AIw-xO-CcS" secondAttribute="bottom" id="HGn-rG-4Em"/>
                             <constraint firstItem="AIw-xO-CcS" firstAttribute="top" secondItem="LSP-uy-ega" secondAttribute="top" id="KHb-iF-zft"/>
-                            <constraint firstItem="AIw-xO-CcS" firstAttribute="bottom" secondItem="fZV-Mz-C41" secondAttribute="bottom" id="dDL-qL-ZqU"/>
-                            <constraint firstAttribute="trailing" secondItem="fZV-Mz-C41" secondAttribute="trailing" id="iml-8q-WZv"/>
-                            <constraint firstItem="AIw-xO-CcS" firstAttribute="trailing" secondItem="fZV-Mz-C41" secondAttribute="trailing" id="me0-Je-lAO"/>
+                            <constraint firstAttribute="trailing" secondItem="AIw-xO-CcS" secondAttribute="trailing" id="jiH-MV-scT"/>
                             <constraint firstItem="AIw-xO-CcS" firstAttribute="leading" secondItem="LSP-uy-ega" secondAttribute="leading" id="y4V-tK-1NV"/>
-                            <constraint firstItem="AIw-xO-CcS" firstAttribute="leading" secondItem="fZV-Mz-C41" secondAttribute="leading" id="yPj-cC-jj5"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -438,21 +434,7 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mR-uH-AIo">
-                                <rect key="frame" x="0.0" y="66" width="480" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Summary Information" translatesAutoresizingMaskIntoConstraints="NO" id="BhL-Fc-odj">
-                                        <rect key="frame" x="0.0" y="0.0" width="480" height="254"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.94901967050000002" green="0.37254902719999999" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="re3-L5-PZf">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="re3-L5-PZf" userLabel="Container View - Charts">
                                 <rect key="frame" x="0.0" y="66" width="480" height="254"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -484,6 +466,14 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3s-Po-LcQ" userLabel="Container View - Summary">
+                                <rect key="frame" x="0.0" y="66" width="480" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="EB4-6d-qhX" kind="embed" id="Hgc-d7-sX7"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -502,13 +492,13 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                     <connections>
                         <outlet property="chartContainer" destination="re3-L5-PZf" id="kQR-Ro-wia"/>
                         <outlet property="segment" destination="2hI-Wx-Nvq" id="gyp-Qn-wqC"/>
-                        <outlet property="summaryView" destination="5mR-uH-AIo" id="QWB-N2-c5w"/>
+                        <outlet property="summaryViewController" destination="V3s-Po-LcQ" id="4qM-kY-Ypo"/>
                         <outlet property="toolBar" destination="RDt-Qo-gnl" id="oL1-WJ-pyh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIT-fV-EUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="549"/>
+            <point key="canvasLocation" x="308" y="510"/>
         </scene>
         <!--Ml Chart Cell Entry View Controller-->
         <scene sceneID="w5v-v6-prI">
@@ -595,6 +585,37 @@ Mood Log can help you increase your emotional awareness by getting you into the 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WC2-Sk-QnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1317" y="826"/>
+        </scene>
+        <!--Ml Summary Info View Controller-->
+        <scene sceneID="U3y-xV-fHS">
+            <objects>
+                <viewController id="EB4-6d-qhX" customClass="MlSummaryInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ye6-h3-ZdS"/>
+                        <viewControllerLayoutGuide type="bottom" id="zcY-um-btC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hAB-gi-bxn">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="254"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Summary Info View" translatesAutoresizingMaskIntoConstraints="NO" id="qrf-my-nAO">
+                                <rect key="frame" x="0.0" y="-5" width="480" height="254"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="summaryText" destination="qrf-my-nAO" id="QaX-Mb-LQd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QeJ-He-Uz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="698"/>
         </scene>
         <!--Ml Chart Collection View Controller-->
         <scene sceneID="3IO-mb-5za">
@@ -2477,29 +2498,36 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="q0g-W0-f4J"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ydr-9A-im6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1100"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vut-Nb-xNn">
-                                <rect key="frame" x="0.0" y="756" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Mood Log" id="eWz-mL-G56">
-                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="1k4-eQ-UXx"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ff6-C9-iFk"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kg-6g-Sss">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1100"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QE5-rs-4Hl">
-                                        <rect key="frame" x="12" y="51" width="296" height="454"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QE5-rs-4Hl">
+                                        <rect key="frame" x="12" y="51" width="296" height="676"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="296" id="Jdh-36-X8S"/>
-                                            <constraint firstAttribute="height" constant="454" id="gxE-fr-d1L"/>
+                                            <constraint firstAttribute="height" constant="676" id="7Qb-1v-cmZ"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="Page 2 Text">
+                                            <fragment>
+                                                <string key="content">Classification of Emotions
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+Emotions have been organized and classified in many different ways by many different specialists. There is no recognized definitive set of emotions, so any list or classification is bound to leave someone feeling dissatisfied. I attempted to collect a set of emotions that would appeal to most people, although I'm sure there are ones I'm missing, and there are likely some on this list that may not appeal to every user.
+
+Two popular ways of classifying emotions are W. Gerrod Parrott's tree-structured list of emotions, and Robert Plutchik's Wheel of Emotions. These two categorizations influenced the list of emotions found in this app, although many other sources were also consulted.
+
+Parrott's tree structure starts with five basic emotions: Love, Joy, Surprise, Anger, Sadness and Fear, and then describes more nuanced emotions as sub-categories of each of these. The Group organization of MoodLog is loosely based on Parrott's tree structure, and when you slide the "Fewer--More" slider on the Mood Picker, you will see more or fewer moods under each of these groups.
+
+Below is a diagram of Plutchik's Wheel of Emotions, showing related emotions radiating from a central point on a "wheel."  Plutchik describes eight basic emotions (four emotions and four opposites) and eight advanced emotions with other emotions being composed of pairs of these.</string>
                                                 <attributes>
                                                     <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -2508,16 +2536,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Curious.png" translatesAutoresizingMaskIntoConstraints="NO" id="7my-dv-Zn3">
-                                        <rect key="frame" x="80" y="513" width="160" height="196"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="196" id="7zn-D1-VQf"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBq-5t-8fS">
                                         <rect key="frame" x="250" y="20" width="58" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="58" id="H83-4q-Ow3"/>
+                                            <constraint firstAttribute="width" constant="58" id="bIV-w4-Gjo"/>
                                         </constraints>
                                         <state key="normal" title="Done">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2527,18 +2549,37 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <action selector="pressDoneButton:" destination="A1p-eO-SiI" eventType="touchUpInside" id="ai4-Jk-Qel"/>
                                         </connections>
                                     </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Plutchik-wheel.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="F3L-bM-CWS">
+                                        <rect key="frame" x="0.0" y="675" width="317" height="424"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plutchik's Wheel of Emotions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqf-DL-bYo">
+                                        <rect key="frame" x="48" y="1040" width="225" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="2gW-n5-50D"/>
+                                            <constraint firstAttribute="height" constant="21" id="KC1-l1-Pdt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="RBq-5t-8fS" firstAttribute="top" secondItem="4kg-6g-Sss" secondAttribute="top" constant="20" symbolic="YES" id="5gq-yU-Cg3"/>
-                                    <constraint firstItem="7my-dv-Zn3" firstAttribute="centerX" secondItem="QE5-rs-4Hl" secondAttribute="centerX" id="6nr-8o-gP9"/>
-                                    <constraint firstItem="7my-dv-Zn3" firstAttribute="centerX" secondItem="4kg-6g-Sss" secondAttribute="centerX" id="Gv8-Rs-UHg"/>
-                                    <constraint firstItem="7my-dv-Zn3" firstAttribute="leading" secondItem="4kg-6g-Sss" secondAttribute="leading" constant="80" id="Ixt-HG-32S"/>
-                                    <constraint firstItem="RBq-5t-8fS" firstAttribute="trailing" secondItem="QE5-rs-4Hl" secondAttribute="trailing" id="L6c-OR-yAH"/>
-                                    <constraint firstAttribute="bottom" secondItem="7my-dv-Zn3" secondAttribute="bottom" constant="91" id="Tz7-Ty-5dO"/>
-                                    <constraint firstAttribute="trailing" secondItem="7my-dv-Zn3" secondAttribute="trailing" constant="80" id="cmT-GE-ukS"/>
-                                    <constraint firstItem="7my-dv-Zn3" firstAttribute="top" secondItem="4kg-6g-Sss" secondAttribute="top" constant="513" id="n0J-gd-Few"/>
-                                    <constraint firstItem="7my-dv-Zn3" firstAttribute="top" secondItem="QE5-rs-4Hl" secondAttribute="bottom" constant="8" symbolic="YES" id="yS2-pA-PFc"/>
+                                    <constraint firstAttribute="bottom" secondItem="QE5-rs-4Hl" secondAttribute="bottom" constant="373" id="2dL-cN-dc9"/>
+                                    <constraint firstItem="RBq-5t-8fS" firstAttribute="top" secondItem="4kg-6g-Sss" secondAttribute="top" constant="20" symbolic="YES" id="3D3-9m-kG1"/>
+                                    <constraint firstItem="QE5-rs-4Hl" firstAttribute="top" secondItem="RBq-5t-8fS" secondAttribute="bottom" constant="1" id="4bj-60-Mvg"/>
+                                    <constraint firstItem="F3L-bM-CWS" firstAttribute="leading" secondItem="4kg-6g-Sss" secondAttribute="leading" id="4jX-9F-ysA"/>
+                                    <constraint firstItem="mqf-DL-bYo" firstAttribute="top" secondItem="F3L-bM-CWS" secondAttribute="bottom" constant="-59" id="AEX-KA-Y7n"/>
+                                    <constraint firstAttribute="bottom" secondItem="mqf-DL-bYo" secondAttribute="bottom" constant="39" id="PBZ-Jy-DUq"/>
+                                    <constraint firstItem="F3L-bM-CWS" firstAttribute="top" secondItem="QE5-rs-4Hl" secondAttribute="bottom" constant="-52" id="RQc-ac-F0S"/>
+                                    <constraint firstAttribute="trailing" secondItem="RBq-5t-8fS" secondAttribute="trailing" constant="12" id="VCR-b0-gch"/>
+                                    <constraint firstItem="QE5-rs-4Hl" firstAttribute="leading" secondItem="4kg-6g-Sss" secondAttribute="leading" constant="12" id="WsK-lS-UCu"/>
+                                    <constraint firstItem="mqf-DL-bYo" firstAttribute="centerX" secondItem="4kg-6g-Sss" secondAttribute="centerX" id="gZI-Hs-1u8"/>
+                                    <constraint firstItem="F3L-bM-CWS" firstAttribute="centerX" secondItem="mqf-DL-bYo" secondAttribute="centerX" constant="-2" id="hPP-iQ-idG"/>
+                                    <constraint firstItem="QE5-rs-4Hl" firstAttribute="centerX" secondItem="mqf-DL-bYo" secondAttribute="centerX" id="oYL-8P-X8s"/>
+                                    <constraint firstItem="QE5-rs-4Hl" firstAttribute="trailing" secondItem="RBq-5t-8fS" secondAttribute="trailing" id="si5-Nn-78E"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -2546,10 +2587,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <constraints>
                             <constraint firstItem="4kg-6g-Sss" firstAttribute="leading" secondItem="ydr-9A-im6" secondAttribute="leading" id="7Kz-im-ZLa"/>
                             <constraint firstAttribute="trailing" secondItem="4kg-6g-Sss" secondAttribute="trailing" id="Cum-5A-FI6"/>
-                            <constraint firstAttribute="bottom" secondItem="Vut-Nb-xNn" secondAttribute="bottom" id="N7b-Pk-Lak"/>
-                            <constraint firstItem="4kg-6g-Sss" firstAttribute="leading" secondItem="Vut-Nb-xNn" secondAttribute="leading" id="YYH-6I-1qF"/>
-                            <constraint firstItem="4kg-6g-Sss" firstAttribute="trailing" secondItem="Vut-Nb-xNn" secondAttribute="trailing" id="hgg-57-nTS"/>
-                            <constraint firstItem="4kg-6g-Sss" firstAttribute="bottom" secondItem="Vut-Nb-xNn" secondAttribute="bottom" id="rUz-Xa-Rre"/>
+                            <constraint firstAttribute="bottom" secondItem="4kg-6g-Sss" secondAttribute="bottom" id="Qbm-nN-Wtx"/>
                             <constraint firstItem="4kg-6g-Sss" firstAttribute="top" secondItem="ydr-9A-im6" secondAttribute="top" id="sPs-E6-vNz"/>
                         </constraints>
                     </view>
@@ -2557,7 +2595,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixQ-Et-O42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1595" y="1090"/>
+            <point key="canvasLocation" x="-1595" y="1096"/>
         </scene>
         <!--Ml Welcome Screen View Controller-->
         <scene sceneID="Zvh-gJ-RHZ">
@@ -2571,22 +2609,21 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcZ-VH-Bgr">
-                                <rect key="frame" x="0.0" y="756" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Mood Log" id="xeF-Pw-2fu">
-                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="mkh-KF-Zdy"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="n1H-q3-Ocv"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="snC-ca-l0Q">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXf-Nk-mez">
                                         <rect key="frame" x="12" y="51" width="296" height="454"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="454" id="959-2R-JYt"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="Page 3 This is just test text for now">
+                                            <fragment>
+                                                <string key="content">Acknowledgements and Disclaimer
+
+MoodLog App by Barry Langdon-Lassagne
+
+MoodLog is designed to help you identify your emotions and is meant for educational purposes only. This app is not intended as a substitute for proper health care. Consult a professional such as a counselor or psychologist if you have any concerns.</string>
                                                 <attributes>
                                                     <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -2596,15 +2633,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Elated.png" translatesAutoresizingMaskIntoConstraints="NO" id="js4-CE-P6K">
-                                        <rect key="frame" x="80" y="513" width="160" height="196"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="196" id="g68-kM-zTZ"/>
-                                        </constraints>
+                                        <rect key="frame" x="80" y="513" width="80" height="196"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3H-q5-TvE">
                                         <rect key="frame" x="250" y="20" width="58" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="58" id="jzn-cJ-gNk"/>
+                                            <constraint firstAttribute="width" constant="58" id="bdx-Mh-b0H"/>
                                         </constraints>
                                         <state key="normal" title="Done">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2616,29 +2650,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="js4-CE-P6K" secondAttribute="trailing" constant="80" id="5T4-Bd-AfP"/>
-                                    <constraint firstItem="dXf-Nk-mez" firstAttribute="centerX" secondItem="js4-CE-P6K" secondAttribute="centerX" id="FCn-Bp-r8d"/>
-                                    <constraint firstItem="js4-CE-P6K" firstAttribute="leading" secondItem="snC-ca-l0Q" secondAttribute="leading" constant="80" id="RLy-E2-8AY"/>
-                                    <constraint firstItem="dXf-Nk-mez" firstAttribute="leading" secondItem="snC-ca-l0Q" secondAttribute="leading" constant="12" id="Sb6-VT-P2h"/>
-                                    <constraint firstItem="js4-CE-P6K" firstAttribute="top" secondItem="dXf-Nk-mez" secondAttribute="bottom" constant="8" symbolic="YES" id="TyI-Cv-JPs"/>
-                                    <constraint firstAttribute="bottom" secondItem="js4-CE-P6K" secondAttribute="bottom" constant="91" id="UEx-2W-jt7"/>
-                                    <constraint firstItem="b3H-q5-TvE" firstAttribute="top" secondItem="snC-ca-l0Q" secondAttribute="top" constant="20" symbolic="YES" id="emU-fw-4BH"/>
-                                    <constraint firstItem="b3H-q5-TvE" firstAttribute="trailing" secondItem="dXf-Nk-mez" secondAttribute="trailing" id="gDN-5I-AbD"/>
-                                    <constraint firstItem="dXf-Nk-mez" firstAttribute="top" secondItem="snC-ca-l0Q" secondAttribute="top" constant="51" id="njQ-DB-a4v"/>
-                                    <constraint firstItem="js4-CE-P6K" firstAttribute="centerX" secondItem="snC-ca-l0Q" secondAttribute="centerX" id="qsZ-TN-8WE"/>
-                                    <constraint firstItem="js4-CE-P6K" firstAttribute="top" secondItem="snC-ca-l0Q" secondAttribute="top" constant="513" id="zaP-Nd-Rcv"/>
+                                    <constraint firstItem="dXf-Nk-mez" firstAttribute="trailing" secondItem="b3H-q5-TvE" secondAttribute="trailing" id="3EJ-fN-tIc"/>
+                                    <constraint firstItem="js4-CE-P6K" firstAttribute="top" secondItem="dXf-Nk-mez" secondAttribute="bottom" constant="8" symbolic="YES" id="AVd-pz-bHo"/>
+                                    <constraint firstItem="dXf-Nk-mez" firstAttribute="top" secondItem="b3H-q5-TvE" secondAttribute="bottom" constant="1" id="Es8-AF-GfO"/>
+                                    <constraint firstItem="dXf-Nk-mez" firstAttribute="centerX" secondItem="snC-ca-l0Q" secondAttribute="centerX" id="KoD-mG-DVR"/>
+                                    <constraint firstItem="dXf-Nk-mez" firstAttribute="leading" secondItem="snC-ca-l0Q" secondAttribute="leading" constant="12" id="Uo3-gW-aub"/>
+                                    <constraint firstAttribute="trailing" secondItem="dXf-Nk-mez" secondAttribute="trailing" constant="12" id="ZP6-Y5-nVq"/>
+                                    <constraint firstItem="js4-CE-P6K" firstAttribute="leading" secondItem="snC-ca-l0Q" secondAttribute="leading" constant="80" id="df3-us-BOF"/>
+                                    <constraint firstItem="dXf-Nk-mez" firstAttribute="top" secondItem="snC-ca-l0Q" secondAttribute="top" constant="51" id="hlZ-wt-uET"/>
+                                    <constraint firstAttribute="bottom" secondItem="js4-CE-P6K" secondAttribute="bottom" constant="91" id="xd3-wI-7vE"/>
+                                    <constraint firstAttribute="bottom" secondItem="dXf-Nk-mez" secondAttribute="bottom" constant="295" id="zrG-Hl-W0S"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gcZ-VH-Bgr" firstAttribute="trailing" secondItem="snC-ca-l0Q" secondAttribute="trailing" id="8LH-6v-Tsz"/>
-                            <constraint firstItem="gcZ-VH-Bgr" firstAttribute="leading" secondItem="snC-ca-l0Q" secondAttribute="leading" id="8xG-bj-30l"/>
-                            <constraint firstAttribute="bottom" secondItem="snC-ca-l0Q" secondAttribute="bottom" id="BNT-JD-uO2"/>
-                            <constraint firstItem="snC-ca-l0Q" firstAttribute="bottom" secondItem="gcZ-VH-Bgr" secondAttribute="bottom" id="LjT-7G-LPa"/>
-                            <constraint firstItem="gcZ-VH-Bgr" firstAttribute="leading" secondItem="S7x-re-oJA" secondAttribute="leading" id="N5F-PN-Xwr"/>
-                            <constraint firstAttribute="trailing" secondItem="snC-ca-l0Q" secondAttribute="trailing" id="ZiJ-iZ-PH2"/>
-                            <constraint firstItem="snC-ca-l0Q" firstAttribute="top" secondItem="S7x-re-oJA" secondAttribute="top" id="gMv-jc-W26"/>
+                            <constraint firstAttribute="bottom" secondItem="snC-ca-l0Q" secondAttribute="bottom" id="Vhk-ON-V8n"/>
+                            <constraint firstAttribute="trailing" secondItem="snC-ca-l0Q" secondAttribute="trailing" id="jhW-Dw-ldb"/>
+                            <constraint firstItem="snC-ca-l0Q" firstAttribute="top" secondItem="S7x-re-oJA" secondAttribute="top" id="l9u-bk-gzq"/>
+                            <constraint firstItem="snC-ca-l0Q" firstAttribute="leading" secondItem="S7x-re-oJA" secondAttribute="leading" id="mIf-pm-duU"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -2653,8 +2683,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="CalendarBlank48.png" width="48" height="48"/>
         <image name="CalendarBlank93.png" width="93" height="93"/>
         <image name="Cheerful.png" width="80" height="98"/>
-        <image name="Curious.png" width="80" height="98"/>
         <image name="Elated.png" width="80" height="98"/>
+        <image name="Plutchik-wheel.svg.png" width="512" height="519"/>
         <image name="TimerIcon.png" width="20" height="20"/>
         <image name="chart.png" width="20" height="16"/>
         <image name="keyboard.png" width="22" height="14"/>
