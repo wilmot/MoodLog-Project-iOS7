@@ -26,5 +26,6 @@
 - (IBAction)sortCBA:(id)sender;
 - (IBAction)sortShuffle:(id)sender;
 - (IBAction)toggleFaces:(id)sender;
+- (IBAction)slideFewerMoreSlider:(id)sender;
 
 @end

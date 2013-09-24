@@ -120,6 +120,10 @@ NSUserDefaults *defaults;
     
 }
 
+- (IBAction)slideFewerMoreSlider:(id)sender {
+    NSLog(@"Slide that slider");
+}
+
 - (void) setFaces:(BOOL)facesState {
     if (facesState == YES) {
         self.myMoodCollectionViewController.cellIdentifier = @"moodCellFaces";
