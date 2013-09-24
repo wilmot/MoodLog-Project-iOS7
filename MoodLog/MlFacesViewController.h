@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *sortShuffleButton;
 @property (weak, nonatomic) IBOutlet UIButton *toggleFacesButton;
 @property (weak, nonatomic) IBOutlet UISlider *fewerMoreSlider;
+@property (weak, nonatomic) IBOutlet UIButton *fewerButton;
+@property (weak, nonatomic) IBOutlet UIButton *moreButton;
 
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 @property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
@@ -29,5 +31,7 @@
 - (IBAction)toggleFaces:(id)sender;
 - (IBAction)slideFewerMoreSlider:(id)sender;
 - (IBAction)finishedSlidingFewerMoreSlider:(id)sender;
+- (IBAction)setFewer:(id)sender;
+- (IBAction)setMore:(id)sender;
 
 @end

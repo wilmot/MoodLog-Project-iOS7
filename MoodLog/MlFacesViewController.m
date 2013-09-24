@@ -39,6 +39,7 @@ NSUserDefaults *defaults;
     self.detailItem.editing = [NSNumber numberWithBool:YES];
     // [self saveContext];
     self.fewerMoreSlider.value = (CGFloat)[defaults integerForKey:@"DefaultParrotLevel"];
+    [self adjustUIToNewParrotLevel:[defaults integerForKey:@"DefaultParrotLevel"]];
     [self.myMoodCollectionViewController refresh];
 }
 
@@ -128,15 +129,45 @@ NSUserDefaults *defaults;
     if (discreteValue != lastValue) {
         NSLog(@"Slide that slider %f (%d)", self.fewerMoreSlider.value, discreteValue);
         lastValue = discreteValue;
-        self.myMoodCollectionViewController.currentParrotLevel = discreteValue;
-        [self.myMoodCollectionViewController refresh];
+        [self adjustUIToNewParrotLevel: discreteValue];
    }
 }
 
 - (IBAction)finishedSlidingFewerMoreSlider:(id)sender {
     int discreteValue = roundl([self.fewerMoreSlider value]);
     [self.fewerMoreSlider setValue:(float)discreteValue];
-    [defaults setInteger:discreteValue forKey:@"DefaultParrotLevel"];
+}
+
+- (IBAction)setFewer:(id)sender {
+    if (self.fewerMoreSlider.value > 1.0f) {
+        [self.fewerMoreSlider setValue:(self.fewerMoreSlider.value - 1.0f)];
+    }
+    [self adjustUIToNewParrotLevel: roundl(self.fewerMoreSlider.value)];
+}
+
+- (IBAction)setMore:(id)sender {
+    if (self.fewerMoreSlider.value < 4.0f) {
+        [self.fewerMoreSlider setValue:(self.fewerMoreSlider.value + 1.0f)];
+    }
+    [self adjustUIToNewParrotLevel: roundl(self.fewerMoreSlider.value)];
+}
+
+- (void)adjustUIToNewParrotLevel: (int) parrotLevel {
+    [defaults setInteger:parrotLevel forKey:@"DefaultParrotLevel"];
+    self.myMoodCollectionViewController.currentParrotLevel = parrotLevel;
+    [self.myMoodCollectionViewController refresh];
+    if (self.fewerMoreSlider.value == 1.0f) {
+        [self.fewerButton setEnabled:NO];
+        [self.moreButton setEnabled:YES];
+    }
+    else if (self.fewerMoreSlider.value == 4.0f) {
+        [self.fewerButton setEnabled:YES];
+        [self.moreButton setEnabled:NO];
+    }
+    else {
+        [self.fewerButton setEnabled:YES];
+        [self.moreButton setEnabled:YES];
+    }
 }
 
 - (void) setFaces:(BOOL)facesState {
