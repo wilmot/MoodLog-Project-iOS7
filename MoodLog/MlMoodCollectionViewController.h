@@ -16,6 +16,7 @@
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 @property (strong, nonatomic) UIReferenceLibraryViewController *referenceLibraryVC;
 @property(nonatomic, assign) BOOL isShowingDefinition;
+@property(nonatomic, assign) int currentParrotLevel;
 
 
 - (void) refresh;

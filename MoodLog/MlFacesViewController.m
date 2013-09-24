@@ -38,6 +38,7 @@ NSUserDefaults *defaults;
     [self setFaces:[self.detailItem.showFacesEditing boolValue]];
     self.detailItem.editing = [NSNumber numberWithBool:YES];
     // [self saveContext];
+    self.fewerMoreSlider.value = (CGFloat)[defaults integerForKey:@"DefaultParrotLevel"];
     [self.myMoodCollectionViewController refresh];
 }
 
@@ -121,7 +122,21 @@ NSUserDefaults *defaults;
 }
 
 - (IBAction)slideFewerMoreSlider:(id)sender {
-    NSLog(@"Slide that slider");
+    static float lastValue = 2.0f;
+    int discreteValue = roundl([self.fewerMoreSlider value]);
+    [self.fewerMoreSlider setValue:(float)discreteValue];
+    if (discreteValue != lastValue) {
+        NSLog(@"Slide that slider %f (%d)", self.fewerMoreSlider.value, discreteValue);
+        lastValue = discreteValue;
+        self.myMoodCollectionViewController.currentParrotLevel = discreteValue;
+        [self.myMoodCollectionViewController refresh];
+   }
+}
+
+- (IBAction)finishedSlidingFewerMoreSlider:(id)sender {
+    int discreteValue = roundl([self.fewerMoreSlider value]);
+    [self.fewerMoreSlider setValue:(float)discreteValue];
+    [defaults setInteger:discreteValue forKey:@"DefaultParrotLevel"];
 }
 
 - (void) setFaces:(BOOL)facesState {

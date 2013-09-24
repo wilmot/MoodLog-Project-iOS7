@@ -2270,10 +2270,11 @@ Here</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
                                                 <rect key="frame" x="63" y="6" width="194" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
+                                                    <action selector="finishedSlidingFewerMoreSlider:" destination="Haq-rW-jQt" eventType="touchUpInside" id="uk1-Vb-Wh3"/>
                                                     <action selector="slideFewerMoreSlider:" destination="Haq-rW-jQt" eventType="valueChanged" id="sWb-kF-qRh"/>
                                                 </connections>
                                             </slider>
@@ -2284,7 +2285,7 @@ Here</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="4fO-Ep-crr"/>
                                         </constraints>
@@ -2330,6 +2331,7 @@ Here</string>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="SortCBAButton" destination="ojS-bA-6gC" id="iuc-EJ-HYF"/>
+                        <outlet property="fewerMoreSlider" destination="hmq-MX-tQA" id="oce-dq-CM6"/>
                         <outlet property="sortABCButton" destination="ZVJ-nb-dmb" id="XCi-lN-Rve"/>
                         <outlet property="sortGroupButton" destination="ojS-bA-6gC" id="yJJ-ud-Dc7"/>
                         <outlet property="sortShuffleButton" destination="pLd-hi-2mp" id="Lbd-zr-0bv"/>
