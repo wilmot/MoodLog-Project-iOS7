@@ -173,7 +173,8 @@ static CGFloat CELL_HEIGHT;
 }
 
 - (IBAction)showWelcomeScreen:(id)sender {
-    UIViewController *welcomeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"welcomeScreen"];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AboutBox" bundle:nil];
+    UIViewController *welcomeViewController = [sb instantiateViewControllerWithIdentifier:@"welcomeNavigationController"];
     [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
     [self presentViewController:welcomeViewController animated:YES completion:NULL];
 }

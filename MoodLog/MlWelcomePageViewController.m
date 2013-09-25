@@ -35,14 +35,21 @@ int numberOfPages = 3;
     [self createPages];
     self.dataSource = self;
     [self setViewControllers:[NSArray arrayWithObject:[self.pages objectAtIndex:0]] direction:UIPageViewControllerNavigationDirectionForward animated:true completion:nil];
+    self.currentPage = 0;
+    [self setDelegate:self];
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor grayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
 }
 
 -(void) createPages{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AboutBox" bundle:nil];
     self.pages = [[NSMutableArray alloc]initWithCapacity:3];
     
     MlWelcomeScreenViewController *controller;
     for (int i = 0; i < numberOfPages; i++) {
-        controller = [self.storyboard instantiateViewControllerWithIdentifier:[NSString stringWithFormat:@"welcomeScreenPage%d",i]];
+        controller = [sb instantiateViewControllerWithIdentifier:[NSString stringWithFormat:@"welcomeScreenPage%d",i]];
         controller.pageNumber = [NSNumber numberWithInt:i];
         [self.pages addObject:controller];
     }
@@ -59,6 +66,7 @@ int numberOfPages = 3;
             }
         }
     }
+    self.currentPage++;
     return view;
 }
 
@@ -74,6 +82,7 @@ int numberOfPages = 3;
             }
         }
     }
+    self.currentPage--;
     return view;
 }
 
@@ -85,11 +94,19 @@ int numberOfPages = 3;
     return 0;
 }
 
+//- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
+//    NSLog(@"Transition completed? %d",completed);
+//}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)pressDoneButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

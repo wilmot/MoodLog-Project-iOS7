@@ -203,21 +203,40 @@ MoodLogEvents *myLogEntry;
 }
 
 - (IBAction)longPress:(id)sender {
-    if (!self.isShowingDefinition) {
-        self.isShowingDefinition = YES;
+    UILongPressGestureRecognizer *gestureRecognizer = (UILongPressGestureRecognizer *)sender;
+    if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
+        CGPoint location = [gestureRecognizer locationInView:[gestureRecognizer view]];
+        UIMenuController *menuController = [UIMenuController sharedMenuController];
+        UIMenuItem *resetMenuItem = [[UIMenuItem alloc] initWithTitle:@"Define" action:@selector(showDefinition:)];
+        
         CGPoint touchPoint = [sender locationInView:self.collectionView];
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:touchPoint];
         Emotions *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-        [self showDefinition:aMood.name];
-        [self performSelector:@selector(showDefinition:) withObject:aMood.name afterDelay:0.2 ];
-   }
+        self.wordToDefine = aMood.name;
+
+        NSAssert([self becomeFirstResponder], @"Sorry, UIMenuController will not work with %@ since it cannot become first responder", self);
+        [menuController setMenuItems:[NSArray arrayWithObject:resetMenuItem]];
+        [menuController setTargetRect:CGRectMake(location.x, location.y, 0.0f, 0.0f) inView:[gestureRecognizer view]];
+        [menuController setMenuVisible:YES animated:YES];
+    }
 }
 
-- (void)showDefinition:(NSString *)name {
-    if ([UIReferenceLibraryViewController dictionaryHasDefinitionForTerm:name]) {
-        self.referenceLibraryVC = [[UIReferenceLibraryViewController alloc] initWithTerm:name];
+- (void)showDefinition:(id) sender {
+    if ([UIReferenceLibraryViewController dictionaryHasDefinitionForTerm:self.wordToDefine]) {
+        self.referenceLibraryVC = [[UIReferenceLibraryViewController alloc] initWithTerm:self.wordToDefine];
         [self presentViewController:self.referenceLibraryVC animated:YES completion:^{self.isShowingDefinition = NO;}];
     }
+}
+
+- (BOOL) canPerformAction:(SEL)selector withSender:(id) sender {
+    if (selector == @selector(showDefinition:)) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL) canBecomeFirstResponder {
+    return YES;
 }
 
 # pragma mark - UICollectionView Delegate Methods

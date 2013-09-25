@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UIReferenceLibraryViewController *referenceLibraryVC;
 @property(nonatomic, assign) BOOL isShowingDefinition;
 @property(nonatomic, assign) int currentParrotLevel;
+@property (strong, nonatomic) NSString *wordToDefine;
 
 
 - (void) refresh;

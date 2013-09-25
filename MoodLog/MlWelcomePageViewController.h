@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MlWelcomePageViewController : UIPageViewController <UIPageViewControllerDataSource>
+@interface MlWelcomePageViewController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
+@property(nonatomic, assign) int currentPage;
+
+- (IBAction)pressDoneButton:(id)sender;
 @end
