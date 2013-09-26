@@ -31,9 +31,27 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    [self summaryInformation];
+}
+
+- (void)summaryInformation {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
     int events = [sectionInfo numberOfObjects];
-    self.summaryText.text = [NSString stringWithFormat:@"Number of MoodLog Entries: %d\n\nThanks!",events];
+
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSDate *today = [object valueForKey:@"date"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
+    NSString *startDate = [dateFormatter stringFromDate: today];
+    
+    indexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
+    object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    today = [object valueForKey:@"date"];
+    dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
+    NSString *endDate = [dateFormatter stringFromDate: today];
+
+    self.summaryText.text = [NSString stringWithFormat:@"Number of MoodLog Entries: %d from %@ to %@",events,startDate, endDate];
 }
 
 - (void)didReceiveMemoryWarning {

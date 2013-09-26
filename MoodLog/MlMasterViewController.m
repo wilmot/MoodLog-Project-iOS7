@@ -120,15 +120,24 @@ static CGFloat CELL_HEIGHT;
     [lowerRight setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.firstTimeView addSubview:lowerRight];
     
-    UITextView *firstTimeTextView = [[UITextView alloc] init];
-    [firstTimeTextView setBackgroundColor:[UIColor clearColor]];
-    [firstTimeTextView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18]];
-    [firstTimeTextView setEditable:NO];
-    [firstTimeTextView setFrame:CGRectMake(0, 0, 200, 200)];
-    [firstTimeTextView setCenter:CGPointMake(svb.size.width/2.0, svb.size.height/2.0)];
-    firstTimeTextView.text = @"Create a new MoodLog entry by touching the “+” button.\n\n\n\n\nTouch the Info button to find out more.";
-    [self.firstTimeView addSubview:firstTimeTextView];
+    UITextView *firstTimeTextViewTop = [[UITextView alloc] init];
+    [firstTimeTextViewTop setBackgroundColor:[UIColor clearColor]];
+    [firstTimeTextViewTop setFont:[UIFont fontWithName:@"HelveticaNeue" size:18]];
+    [firstTimeTextViewTop setEditable:NO];
+    [firstTimeTextViewTop setFrame:CGRectMake(0, 0, 200, 100)];
+    [firstTimeTextViewTop setCenter:CGPointMake(upperRight.center.x - 100, upperRight.center.y + 80)];
+    firstTimeTextViewTop.text = @"Create a new MoodLog entry by touching the “+” button.";
+    [self.firstTimeView addSubview:firstTimeTextViewTop];
     
+    UITextView *firstTimeTextViewBottom = [[UITextView alloc] init];
+    [firstTimeTextViewBottom setBackgroundColor:[UIColor clearColor]];
+    [firstTimeTextViewBottom setFont:[UIFont fontWithName:@"HelveticaNeue" size:18]];
+    [firstTimeTextViewBottom setEditable:NO];
+    [firstTimeTextViewBottom setFrame:CGRectMake(0, 0, 200, 100)];
+    [firstTimeTextViewBottom setCenter:CGPointMake(lowerRight.center.x - 100, lowerRight.center.y - 40)];
+    firstTimeTextViewBottom.text = @"Touch the Info button to find out more.";
+    [self.firstTimeView addSubview:firstTimeTextViewBottom];
+
     [delegate.window addSubview:self.firstTimeView];
 
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]

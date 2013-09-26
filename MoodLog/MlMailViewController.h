@@ -36,6 +36,8 @@
 - (IBAction)doneButton:(id)sender;
 - (IBAction)slideStartSlider:(id)sender;
 - (IBAction)slideEndSlider:(id)sender;
+- (IBAction)finishedSlidingStartSlider:(id)sender;
+- (IBAction)finishedSlidingEndSlider:(id)sender;
 - (IBAction)pressAllButton:(id)sender;
 - (IBAction)pressMonthButton:(id)sender;
 - (IBAction)pressWeekButton:(id)sender;

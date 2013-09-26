@@ -25,6 +25,12 @@
 
     CGContextRef context = UIGraphicsGetCurrentContext();
 
+    // Outline of whole rect
+    CGContextSetRGBFillColor(context, 232/255.0, 139/255.0, 140/255.0, 1.0);
+    CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
+    CGContextStrokeRect(context, rect );
+
+    // Dates rect
     CGContextSetRGBFillColor(context, 232/255.0, 139/255.0, 140/255.0, 1.0);
     CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0);
     CGRect datesRect = CGRectMake(0.0 + start, 0.7, end - start, rect.size.height);

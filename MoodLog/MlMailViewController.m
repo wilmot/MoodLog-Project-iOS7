@@ -66,7 +66,6 @@ NSUserDefaults *defaults;
     if (events > 0) {
         for (id item in self.itemsToDisableTogether) {
             ((UIControl *)item).enabled = YES;
-            
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
         MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -146,7 +145,7 @@ NSUserDefaults *defaults;
         object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         aDay = [object valueForKey:@"date"];
         if ([aDay timeIntervalSince1970] <= [today timeIntervalSince1970]) {
-            monthOldEntry = i;
+            monthOldEntry = MIN(i+1,[self.endSlider maximumValue]);
             break;
         }
     }
@@ -160,15 +159,16 @@ NSUserDefaults *defaults;
     NSIndexPath *indexPath;
     MoodLogEvents *object;
     NSDate *today = [NSDate date];
-    today = [today dateByAddingTimeInterval: -60*60*24*7]; // Subtract a week fro today
+    today = [today dateByAddingTimeInterval: -60*60*24*7]; // Subtract a week from today
     int weekOldEntry=0;
     NSDate *aDay;
     for (int i=[self.endSlider maximumValue]; i>0; i--) {
         indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         aDay = [object valueForKey:@"date"];
-        if ([aDay timeIntervalSince1970] <= [today timeIntervalSince1970]) {
-            weekOldEntry = i;
+        if ([aDay timeIntervalSince1970] < [today timeIntervalSince1970]) {
+            NSLog(@"%d, %f",i+1,[self.endSlider maximumValue]);
+            weekOldEntry = MIN(i+1,[self.endSlider maximumValue]);
             break;
         }
     }
@@ -271,8 +271,26 @@ NSUserDefaults *defaults;
 }
 
 - (IBAction)slideEndSlider:(id)sender {
+   if (self.endSlider.value < self.startSlider.value) {
+       [self.startSlider setValue:[self.endSlider value]];
+    }
+    [self updateDateRangeDrawing];
+}
+
+- (IBAction)finishedSlidingStartSlider:(id)sender {
+    int discreteEndValue = roundl([self.startSlider value]);
+    [self.startSlider setValue:(float)discreteEndValue];
+    if (self.startSlider.value > self.endSlider.value) {
+        [self.endSlider setValue:(float)discreteEndValue];
+    }
+    [self updateDateRangeDrawing];
+}
+
+- (IBAction)finishedSlidingEndSlider:(id)sender {
+    int discreteEndValue = roundl([self.endSlider value]);
+    [self.endSlider setValue:(float)discreteEndValue];
     if (self.endSlider.value < self.startSlider.value) {
-        [self.startSlider setValue:[self.endSlider value]];
+        [self.startSlider setValue:(float)discreteEndValue];
     }
     [self updateDateRangeDrawing];
 }
