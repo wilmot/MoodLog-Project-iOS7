@@ -315,9 +315,13 @@ NSUserDefaults *defaults;
             self.dateRangeLabel.text = [NSString stringWithFormat:@"%@ to %@", startDate, endDate];
         }
         
-        
-        self.dateRangeDrawing.startValue = [NSNumber numberWithFloat:self.startSlider.value/self.startSlider.maximumValue];
-        self.dateRangeDrawing.endValue = [NSNumber numberWithFloat:self.endSlider.value/self.endSlider.maximumValue];
+        if (self.startSlider.maximumValue > 0) {
+            self.dateRangeDrawing.startValue = [NSNumber numberWithFloat:self.startSlider.value/self.startSlider.maximumValue];
+            self.dateRangeDrawing.endValue = [NSNumber numberWithFloat:self.endSlider.value/self.endSlider.maximumValue];
+        } else {
+            self.dateRangeDrawing.startValue = [NSNumber numberWithFloat:self.startSlider.value/1.0];
+            self.dateRangeDrawing.endValue = [NSNumber numberWithFloat:self.endSlider.value/1.0];
+        }
         [self.dateRangeDrawing setNeedsDisplay];
         
         [defaults setFloat:self.startSlider.value forKey:@"DefaultMailStartValue"];
