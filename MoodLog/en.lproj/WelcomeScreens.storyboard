@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ydB-QR-mAB">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Ml Welcome Screen View Controller-->
+        <scene sceneID="YaP-PB-wvY">
+            <objects>
+                <viewController storyboardIdentifier="welcomeScreenPage2" id="66R-Hy-eCD" customClass="MlWelcomeScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Tj-8F-f8T"/>
+                        <viewControllerLayoutGuide type="bottom" id="n7z-WB-6nm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="us9-ir-hKQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Fq-j2-E5U">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Plutchik-wheel.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Quo-Cr-jNY">
+                                        <rect key="frame" x="2" y="67" width="317" height="424"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="424" id="myB-Ib-UeV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plutchik's Wheel of Emotions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBD-7M-0ul">
+                                        <rect key="frame" x="2" y="97" width="317" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Ydj-Mp-ZX8"/>
+                                            <constraint firstAttribute="width" constant="317" id="meR-Y6-dOk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: Wikimedia Commons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ce-d3-dok">
+                                        <rect key="frame" x="20" y="452" width="272" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7Ce-d3-dok" secondAttribute="trailing" constant="28" id="0DT-GZ-J7R"/>
+                                    <constraint firstItem="Quo-Cr-jNY" firstAttribute="trailing" secondItem="yBD-7M-0ul" secondAttribute="trailing" id="0gp-df-FDb"/>
+                                    <constraint firstItem="Quo-Cr-jNY" firstAttribute="top" secondItem="6Fq-j2-E5U" secondAttribute="top" constant="67" id="5Je-XK-oOz"/>
+                                    <constraint firstAttribute="trailing" secondItem="yBD-7M-0ul" secondAttribute="trailing" constant="1" id="fTb-fQ-zRa"/>
+                                    <constraint firstItem="Quo-Cr-jNY" firstAttribute="leading" secondItem="yBD-7M-0ul" secondAttribute="leading" id="iEj-XV-S44"/>
+                                    <constraint firstAttribute="bottom" secondItem="yBD-7M-0ul" secondAttribute="bottom" constant="450" id="nWr-As-v0q"/>
+                                    <constraint firstItem="7Ce-d3-dok" firstAttribute="bottom" secondItem="Quo-Cr-jNY" secondAttribute="bottom" constant="-25" id="qDx-8C-M1Z"/>
+                                    <constraint firstItem="yBD-7M-0ul" firstAttribute="top" secondItem="6Fq-j2-E5U" secondAttribute="top" constant="97" id="qqf-pD-k1c"/>
+                                    <constraint firstItem="7Ce-d3-dok" firstAttribute="leading" secondItem="Quo-Cr-jNY" secondAttribute="leading" constant="18" id="sMJ-Oj-Rcn"/>
+                                    <constraint firstItem="yBD-7M-0ul" firstAttribute="centerX" secondItem="6Fq-j2-E5U" secondAttribute="centerX" id="yl8-s5-BBk"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Fq-j2-E5U" firstAttribute="leading" secondItem="us9-ir-hKQ" secondAttribute="leading" id="Bld-K9-Wog"/>
+                            <constraint firstAttribute="bottom" secondItem="6Fq-j2-E5U" secondAttribute="bottom" id="ng1-OT-ca7"/>
+                            <constraint firstItem="6Fq-j2-E5U" firstAttribute="top" secondItem="us9-ir-hKQ" secondAttribute="top" id="rby-6t-e0l"/>
+                            <constraint firstAttribute="trailing" secondItem="6Fq-j2-E5U" secondAttribute="trailing" id="vex-4o-V8L"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vR7-ab-3cu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-527" y="1110"/>
+        </scene>
+        <!--Ml Welcome Screen View Controller-->
+        <scene sceneID="4u0-zI-ynr">
+            <objects>
+                <viewController storyboardIdentifier="welcomeScreenPage3" id="JCj-Q4-l6Z" customClass="MlWelcomeScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zPi-2e-i9K"/>
+                        <viewControllerLayoutGuide type="bottom" id="dR3-yn-VCy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Bu-oD-dPf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="830"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KoV-xG-DMx">
+                                <rect key="frame" x="0.0" y="93" width="320" height="737"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parrott's Emotions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1Z-k6-upw">
+                                        <rect key="frame" x="0.0" y="56" width="318" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="Gre-fZ-i9X"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: Wikipedia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ea-2h-IT2">
+                                        <rect key="frame" x="24" y="720" width="272" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="272" id="b2Y-dF-yc7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="ParrotsEmotions.png" translatesAutoresizingMaskIntoConstraints="NO" id="JCQ-Qd-7AB">
+                                        <rect key="frame" x="-5" y="86" width="330" height="630"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="630" id="4ld-9S-X0B"/>
+                                            <constraint firstAttribute="width" constant="330" id="n65-b7-0F6"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="B1Z-k6-upw" firstAttribute="top" secondItem="KoV-xG-DMx" secondAttribute="top" constant="56" id="3ac-yi-FWf"/>
+                                    <constraint firstItem="B1Z-k6-upw" firstAttribute="leading" secondItem="KoV-xG-DMx" secondAttribute="leading" id="6e5-eh-DCi"/>
+                                    <constraint firstItem="7ea-2h-IT2" firstAttribute="centerX" secondItem="KoV-xG-DMx" secondAttribute="centerX" id="M28-Bk-5bg"/>
+                                    <constraint firstItem="JCQ-Qd-7AB" firstAttribute="centerX" secondItem="7ea-2h-IT2" secondAttribute="centerX" id="SpV-rN-4Re"/>
+                                    <constraint firstAttribute="trailing" secondItem="B1Z-k6-upw" secondAttribute="trailing" constant="3" id="Suo-KE-YUb"/>
+                                    <constraint firstItem="7ea-2h-IT2" firstAttribute="top" secondItem="JCQ-Qd-7AB" secondAttribute="bottom" constant="4" id="aXF-em-vhs"/>
+                                    <constraint firstItem="JCQ-Qd-7AB" firstAttribute="top" secondItem="B1Z-k6-upw" secondAttribute="bottom" constant="8" symbolic="YES" id="e2p-1w-7Te"/>
+                                    <constraint firstItem="JCQ-Qd-7AB" firstAttribute="top" secondItem="KoV-xG-DMx" secondAttribute="top" constant="86" id="oj9-ae-S2e"/>
+                                    <constraint firstAttribute="centerX" secondItem="B1Z-k6-upw" secondAttribute="centerX" constant="1.5" id="xDy-iv-iHM"/>
+                                    <constraint firstAttribute="bottom" secondItem="JCQ-Qd-7AB" secondAttribute="bottom" constant="21" id="xHx-GU-d8k"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KoV-xG-DMx" firstAttribute="top" secondItem="zPi-2e-i9K" secondAttribute="bottom" constant="-1" id="BVc-uX-dS3"/>
+                            <constraint firstAttribute="trailing" secondItem="KoV-xG-DMx" secondAttribute="trailing" id="Kg4-Yk-d1z"/>
+                            <constraint firstAttribute="bottom" secondItem="KoV-xG-DMx" secondAttribute="bottom" id="adG-pS-mFr"/>
+                            <constraint firstItem="KoV-xG-DMx" firstAttribute="leading" secondItem="5Bu-oD-dPf" secondAttribute="leading" id="fva-M1-WGo"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VvP-mv-AoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-179" y="1110"/>
+        </scene>
+        <!--Ml Welcome Screen View Controller-->
+        <scene sceneID="Uj4-FN-5Lp">
+            <objects>
+                <viewController storyboardIdentifier="welcomeScreenPage0" id="Mxm-cb-gZc" customClass="MlWelcomeScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0zo-sN-nBp"/>
+                        <viewControllerLayoutGuide type="bottom" id="a1O-ee-izJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Wu-59-mj8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-TP-kmL">
+                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+CgoKA
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Welcome to MoodLog
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+This app is designed to help you keep track of your moods as they change throughout the day and from day to day. You do this by creating Mood Log Entries, recording any emotions you are currently experiencing, your overall mood, levels of energy, sleep and health and any other information you want to record. You can use it as a journal to keep track of events in your life and watch for connections between your daily life and the moods you experience. Charts and a summary page show you what’s happening over time.
+
+When you create a new journal entry, you pick the moods that best suit you in the moment by choosing emotions from a list of moods. The mood list picker shows faces representing each mood, or you can turn off the faces and just see the names. The moods are displayed organized by group, alphabetically or in random order. A slider lets you reduce or increase the number of moods displayed.
+
+Describing and recording your moods in MoodLog can help you increase your emotional awareness by getting you into the habit of identifying how you are feeling at any time. You can even set reminders to prompt you to create a Mood Log entry at random times throughout the day.
+
+My purpose in creating Mood Log was to increase my own awareness and mindfulness around emotions. I wanted a tool that was convenient, easy to use, and didn’t attempt to influence how I was feeling. MoodLog isn’t designed to make you feel one way or another; its purpose is to help you understand how you are actually feeling. I have found MoodLog helpful for me in these ways.
+
+I hope you enjoy MoodLog and find it useful in your life -- please leave feedback in Apple’s App Store, or send email to</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="student@voyageropen.org">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <url key="NSLink" string="mailto:student@voyageropen.org"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=".">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">~ Barry Langdon-Lassagne
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-LightItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Disclaimer
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+MoodLog is meant for educational purposes only. This app is not intended as a substitute for, nor does it replace, professional health care or advice. Please consult a professional such as a medical doctor, counselor, psychologist or psychiatrist if you have any concerns or questions.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a1O-ee-izJ" firstAttribute="top" secondItem="Ret-TP-kmL" secondAttribute="bottom" id="INw-s8-nNF"/>
+                            <constraint firstAttribute="trailing" secondItem="Ret-TP-kmL" secondAttribute="trailing" id="nOF-1L-AHV"/>
+                            <constraint firstItem="Ret-TP-kmL" firstAttribute="top" secondItem="0zo-sN-nBp" secondAttribute="bottom" constant="2" id="nwK-P7-LM2"/>
+                            <constraint firstItem="Ret-TP-kmL" firstAttribute="leading" secondItem="0Wu-59-mj8" secondAttribute="leading" id="qJe-Th-iSV"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMe-HS-mux" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1232" y="1110"/>
+        </scene>
+        <!--Ml Welcome Page View Controller-->
+        <scene sceneID="TVu-Gn-fbO">
+            <objects>
+                <pageViewController storyboardIdentifier="welcomeScreen" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XlR-Gm-ZBL" customClass="MlWelcomePageViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zeh-iH-Arf">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="zZs-op-1Sm">
+                            <connections>
+                                <action selector="pressDoneButton:" destination="XlR-Gm-ZBL" id="TDN-5P-eLX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8Z-cT-fey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1609" y="715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2JA-78-p0h">
+            <objects>
+                <navigationController storyboardIdentifier="welcomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ydB-QR-mAB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FKK-6b-dGm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XlR-Gm-ZBL" kind="relationship" relationship="rootViewController" id="1EX-jK-m38"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FME-7B-aXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2135" y="715"/>
+        </scene>
+        <!--Ml Welcome Screen View Controller-->
+        <scene sceneID="g5I-dR-bzW">
+            <objects>
+                <viewController storyboardIdentifier="welcomeScreenPage1" id="dK3-pl-slR" customClass="MlWelcomeScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RLt-fF-AtH"/>
+                        <viewControllerLayoutGuide type="bottom" id="gfp-AQ-bg6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qlP-cD-JMX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeX-Xd-VwB">
+                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+CgoKA
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Classifying Emotions
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Emotions have been organized and classified in many different ways by many different specialists. There is no agreed-upon definitive set of emotions, so any list or classification is bound to please some people while leaving others dissatisfied. For the MoodLog app, I gathered lists of emotions from many sources, organized them and then created simple faces to capture the essence of each one. I’m sure there are emotions I’m missing, and there are likely some on this list that may not appeal to every user, but I am hopeful that the list presented here is rich enough to help you identify your own distinct, personal feelings.
+
+Two popular ways of classifying emotions are W. Gerrod Parrott’s tree-structured list of emotions, and Robert Plutchik’s Wheel of Emotions. These two categorizations influenced the list of emotions found in this app and the way those emotions are organized here.
+
+Parrott’s tree structure starts with five basic emotions: Love, Joy, Surprise, Anger, Sadness and Fear. He then describes more nuanced emotions as sub-categories of each of these. The Group organization of MoodLog is loosely based on Parrott’s tree structure, and when you slide the “Fewer—More” slider on the Mood Picker, you will see fewer or more moods under each of these groups.
+
+Plutchik’s Wheel of Emotions shows related emotions radiating from a central point on a “wheel.”  Plutchik describes eight basic emotions (four emotions and four opposites) and eight advanced emotions with other emotions being composed of pairs of these.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jeX-Xd-VwB" firstAttribute="top" secondItem="RLt-fF-AtH" secondAttribute="bottom" constant="2" id="Hmh-d2-F87"/>
+                            <constraint firstAttribute="trailing" secondItem="jeX-Xd-VwB" secondAttribute="trailing" id="Ref-6E-CXa"/>
+                            <constraint firstItem="jeX-Xd-VwB" firstAttribute="leading" secondItem="qlP-cD-JMX" secondAttribute="leading" id="f9T-cS-GfB"/>
+                            <constraint firstItem="gfp-AQ-bg6" firstAttribute="top" secondItem="jeX-Xd-VwB" secondAttribute="bottom" id="m6v-1V-WkI"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dt9-s4-Fad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-876" y="1110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ParrotsEmotions.png" width="850" height="1684"/>
+        <image name="Plutchik-wheel.svg.png" width="512" height="519"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

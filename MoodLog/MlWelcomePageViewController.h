@@ -10,7 +10,7 @@
 
 @interface MlWelcomePageViewController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
-@property(nonatomic, assign) int currentPage;
+@property (strong, nonatomic) UIPageControl *pageControl;
 
 - (IBAction)pressDoneButton:(id)sender;
 @end

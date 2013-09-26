@@ -13,11 +13,14 @@
 #import <CoreData/CoreData.h>
 #import "MoodLogEvents.h"
 
-@interface MlMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface MlMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) MlDetailViewController *detailViewController;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *aNewEntryButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *infoButton;
+@property (strong, nonatomic) UIView *firstTimeView;
 
 - (void)insertNewObject:(id)sender;
 - (MoodLogEvents *) insertNewObjectAndReturnReference: (id) sender;

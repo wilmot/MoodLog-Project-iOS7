@@ -327,7 +327,14 @@
 		4C589C67163200F100428C52 /* Stressors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C589C66163200F100428C52 /* Stressors.m */; };
 		4C5D051216C1F1BD0028C421 /* MlFacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */; };
 		4C61F1851780F9990032B200 /* MlJournalEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C61F1841780F9990032B200 /* MlJournalEditorViewController.m */; };
-		4C65612817F280AD00F03470 /* AboutBox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612617F280AD00F03470 /* AboutBox.storyboard */; };
+		4C65612817F280AD00F03470 /* WelcomeScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612617F280AD00F03470 /* WelcomeScreens.storyboard */; };
+		4C65612A17F3936900F03470 /* ParrottsEmotionsOLD.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612917F3936900F03470 /* ParrottsEmotionsOLD.png */; };
+		4C65612C17F39E5000F03470 /* ParrottsEmotions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612B17F39E5000F03470 /* ParrottsEmotions.pdf */; };
+		4C65612E17F39F0200F03470 /* ParrotsEmotions.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612D17F39F0200F03470 /* ParrotsEmotions.png */; };
+		4C65613117F3FAAE00F03470 /* LowerRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612F17F3FAAE00F03470 /* LowerRight@2x.png */; };
+		4C65613217F3FAAE00F03470 /* UpperRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65613017F3FAAE00F03470 /* UpperRight@2x.png */; };
+		4C65613517F418B900F03470 /* LowerRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65613317F418B900F03470 /* LowerRight.png */; };
+		4C65613617F418B900F03470 /* UpperRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65613417F418B900F03470 /* UpperRight.png */; };
 		4C7BF7D0176A482000DC8088 /* MlDetailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BF7CF176A482000DC8088 /* MlDetailScrollView.m */; };
 		4C7C789E162E9192008DC828 /* MlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C789D162E9192008DC828 /* MlCell.m */; };
 		4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */; };
@@ -538,7 +545,6 @@
 		4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlDatePickerViewController.h; sourceTree = "<group>"; };
 		4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDatePickerViewController.m; sourceTree = "<group>"; };
 		4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 6.xcdatamodel"; sourceTree = "<group>"; };
-		4C1FE6A616DCA42A009FFA8A /* pie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pie.jpg; sourceTree = "<group>"; };
 		4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlEmailEventCountDrawing.h; sourceTree = "<group>"; };
 		4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlEmailEventCountDrawing.m; sourceTree = "<group>"; };
 		4C353EE7175DE151000ECE33 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -701,7 +707,7 @@
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
 		4C52861616D9A654007C878C /* MlChartDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartDrawingView.h; sourceTree = "<group>"; };
 		4C52861716D9A654007C878C /* MlChartDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartDrawingView.m; sourceTree = "<group>"; };
-		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55CBE2162DE67400EAA878 /* MoodLog NORECORDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoodLog NORECORDS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -726,7 +732,14 @@
 		4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlFacesViewController.m; sourceTree = "<group>"; };
 		4C61F1831780F9990032B200 /* MlJournalEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlJournalEditorViewController.h; sourceTree = "<group>"; };
 		4C61F1841780F9990032B200 /* MlJournalEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlJournalEditorViewController.m; sourceTree = "<group>"; };
-		4C65612717F280AD00F03470 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/AboutBox.storyboard; sourceTree = "<group>"; };
+		4C65612717F280AD00F03470 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/WelcomeScreens.storyboard; sourceTree = "<group>"; };
+		4C65612917F3936900F03470 /* ParrottsEmotionsOLD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ParrottsEmotionsOLD.png; path = ../ParrottsEmotionsOLD.png; sourceTree = "<group>"; };
+		4C65612B17F39E5000F03470 /* ParrottsEmotions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ParrottsEmotions.pdf; sourceTree = "<group>"; };
+		4C65612D17F39F0200F03470 /* ParrotsEmotions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ParrotsEmotions.png; path = Images/ParrotsEmotions.png; sourceTree = "<group>"; };
+		4C65612F17F3FAAE00F03470 /* LowerRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LowerRight@2x.png"; path = "Images/LowerRight@2x.png"; sourceTree = "<group>"; };
+		4C65613017F3FAAE00F03470 /* UpperRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UpperRight@2x.png"; path = "Images/UpperRight@2x.png"; sourceTree = "<group>"; };
+		4C65613317F418B900F03470 /* LowerRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LowerRight.png; path = Images/LowerRight.png; sourceTree = "<group>"; };
+		4C65613417F418B900F03470 /* UpperRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpperRight.png; path = Images/UpperRight.png; sourceTree = "<group>"; };
 		4C7BF7BC176A39F200DC8088 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4C7BF7CE176A482000DC8088 /* MlDetailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlDetailScrollView.h; sourceTree = "<group>"; };
 		4C7BF7CF176A482000DC8088 /* MlDetailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDetailScrollView.m; sourceTree = "<group>"; };
@@ -1105,7 +1118,13 @@
 		4C4043E61783E59F00710F2A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C65613317F418B900F03470 /* LowerRight.png */,
+				4C65612F17F3FAAE00F03470 /* LowerRight@2x.png */,
+				4C65613417F418B900F03470 /* UpperRight.png */,
+				4C65613017F3FAAE00F03470 /* UpperRight@2x.png */,
 				4C8BB42D17F17FF200754252 /* Plutchik-wheel.svg.png */,
+				4C65612D17F39F0200F03470 /* ParrotsEmotions.png */,
+				4C65612917F3936900F03470 /* ParrottsEmotionsOLD.png */,
 				4C8BB42517F0EE1C00754252 /* keyboard_down.png */,
 				4C8BB42617F0EE1C00754252 /* keyboard_down@2x.png */,
 				4C8BB42917F0F0E000754252 /* keyboard.png */,
@@ -1153,7 +1172,7 @@
 		4C55CBE3162DE67400EAA878 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C55CBE2162DE67400EAA878 /* MoodLog.app */,
+				4C55CBE2162DE67400EAA878 /* MoodLog NORECORDS.app */,
 				4C8BB41317ECEC2000754252 /* MoodLog_Tests.xctest */,
 			);
 			name = Products;
@@ -1177,7 +1196,7 @@
 			isa = PBXGroup;
 			children = (
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
-				4C65612617F280AD00F03470 /* AboutBox.storyboard */,
+				4C65612617F280AD00F03470 /* WelcomeScreens.storyboard */,
 				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
 				4C3E0FB51657122100B0E060 /* Prefs.h */,
 				4C3E0FB61657122100B0E060 /* Prefs.m */,
@@ -1255,11 +1274,11 @@
 			isa = PBXGroup;
 			children = (
 				4C92BDFD17976053005DEEC2 /* guitar_sound.caf */,
+				4C65612B17F39E5000F03470 /* ParrottsEmotions.pdf */,
 				4C4043E61783E59F00710F2A /* Images */,
 				4C0C7671164AC84000DD372F /* Faces */,
 				4C55CC06162DE67500EAA878 /* MoodLog.xcdatamodeld */,
 				4C4C53DF1665F14900DDDBA2 /* MoodList.plist */,
-				4C1FE6A616DCA42A009FFA8A /* pie.jpg */,
 				4C55CBF0162DE67400EAA878 /* MoodLog-Info.plist */,
 				4C55CBF1162DE67400EAA878 /* InfoPlist.strings */,
 				4C55CBF4162DE67500EAA878 /* main.m */,
@@ -1305,7 +1324,7 @@
 			);
 			name = MoodLog;
 			productName = MoodLog;
-			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog.app */;
+			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog NORECORDS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4C8BB41217ECEC2000754252 /* MoodLog_Tests */ = {
@@ -1333,7 +1352,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Ml;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Barry A. Langdon-Lassagne";
 				TargetAttributes = {
 					4C8BB41217ECEC2000754252 = {
@@ -1380,6 +1399,7 @@
 				4C06394317E45A6E00563FE6 /* Guilty.png in Resources */,
 				4C06393017E45A6E00563FE6 /* Insulted@2x.png in Resources */,
 				4C40436A1783E51400710F2A /* Aggravated.png in Resources */,
+				4C65613617F418B900F03470 /* UpperRight.png in Resources */,
 				4C40436B1783E51400710F2A /* Aggravated@2x.png in Resources */,
 				4C40436C1783E51400710F2A /* Alienated.png in Resources */,
 				4C06392817E45A6E00563FE6 /* Jubilant@2x.png in Resources */,
@@ -1431,6 +1451,7 @@
 				4C4043831783E51400710F2A /* Depressed@2x.png in Resources */,
 				4C06390D17E45A6E00563FE6 /* Nervous.png in Resources */,
 				4C06392617E45A6E00563FE6 /* Likable@2x.png in Resources */,
+				4C65612A17F3936900F03470 /* ParrottsEmotionsOLD.png in Resources */,
 				4C4043841783E51400710F2A /* Desirable.png in Resources */,
 				4C06390A17E45A6E00563FE6 /* Panicked@2x.png in Resources */,
 				4C0639CC17E69DA200563FE6 /* Rapturous@2x.png in Resources */,
@@ -1530,6 +1551,7 @@
 				4C4043B71783E51400710F2A /* Blessed@2x.png in Resources */,
 				4C0639B417E69DA200563FE6 /* Tender@2x.png in Resources */,
 				4C4043B81783E51400710F2A /* Blissful.png in Resources */,
+				4C65612E17F39F0200F03470 /* ParrotsEmotions.png in Resources */,
 				4C0639D217E69DA200563FE6 /* Pitying@2x.png in Resources */,
 				4C06391517E45A6E00563FE6 /* Melancholy.png in Resources */,
 				4C06395E17E45A6E00563FE6 /* Fearful@2x.png in Resources */,
@@ -1596,6 +1618,8 @@
 				4C4043D41783E51400710F2A /* Apprehensive.png in Resources */,
 				4C4043D51783E51400710F2A /* Apprehensive@2x.png in Resources */,
 				4C4043D61783E51400710F2A /* Aroused.png in Resources */,
+				4C65613517F418B900F03470 /* LowerRight.png in Resources */,
+				4C65613217F3FAAE00F03470 /* UpperRight@2x.png in Resources */,
 				4C4043D71783E51400710F2A /* Aroused@2x.png in Resources */,
 				4C4043D81783E51400710F2A /* Ashamed.png in Resources */,
 				4C06392717E45A6E00563FE6 /* Jubilant.png in Resources */,
@@ -1607,6 +1631,7 @@
 				4C0639CE17E69DA200563FE6 /* Proud@2x.png in Resources */,
 				4C06394A17E45A6E00563FE6 /* Glum@2x.png in Resources */,
 				4C0639BC17E69DA200563FE6 /* Sentimental@2x.png in Resources */,
+				4C65613117F3FAAE00F03470 /* LowerRight@2x.png in Resources */,
 				4C06394517E45A6E00563FE6 /* Grouchy.png in Resources */,
 				4C4043DC1783E51400710F2A /* Attracted.png in Resources */,
 				4C4043DD1783E51400710F2A /* Attracted@2x.png in Resources */,
@@ -1618,7 +1643,7 @@
 				4C4043E01783E51400710F2A /* Awed.png in Resources */,
 				4C4043E11783E51400710F2A /* Awed@2x.png in Resources */,
 				4C4043E21783E51400710F2A /* Skeptical_orig.png in Resources */,
-				4C65612817F280AD00F03470 /* AboutBox.storyboard in Resources */,
+				4C65612817F280AD00F03470 /* WelcomeScreens.storyboard in Resources */,
 				4C06395B17E45A6E00563FE6 /* Ferocious.png in Resources */,
 				4C4043E31783E51400710F2A /* Skeptical_orig@2x.png in Resources */,
 				4C4043E41783E51400710F2A /* Amused_old.png in Resources */,
@@ -1674,6 +1699,7 @@
 				4C92BE0917985BFD005DEEC2 /* TriangleRight@2x.png in Resources */,
 				4C06393317E45A6E00563FE6 /* Infatuated.png in Resources */,
 				4C92BE0E1799E0AC005DEEC2 /* Icon Test.png in Resources */,
+				4C65612C17F39E5000F03470 /* ParrottsEmotions.pdf in Resources */,
 				4C06392F17E45A6E00563FE6 /* Insulted.png in Resources */,
 				4C92BE101799E368005DEEC2 /* Icon Test@2x.png in Resources */,
 				4C92BE121799EA97005DEEC2 /* IconFace@2x.png in Resources */,
@@ -1779,12 +1805,12 @@
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
-		4C65612617F280AD00F03470 /* AboutBox.storyboard */ = {
+		4C65612617F280AD00F03470 /* WelcomeScreens.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4C65612717F280AD00F03470 /* en */,
 			);
-			name = AboutBox.storyboard;
+			name = WelcomeScreens.storyboard;
 			sourceTree = "<group>";
 		};
 		4C8BB41A17ECEC2000754252 /* InfoPlist.strings */ = {
@@ -1853,7 +1879,6 @@
 		4C55CC28162DE67500EAA878 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1864,7 +1889,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) NORECORDS";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1872,7 +1897,6 @@
 		4C55CC29162DE67500EAA878 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1883,7 +1907,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) NORECORDS";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1891,7 +1915,6 @@
 		4C8BB42317ECEC2000754252 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodLog.app/MoodLog";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1926,7 +1949,6 @@
 		4C8BB42417ECEC2000754252 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodLog.app/MoodLog";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;

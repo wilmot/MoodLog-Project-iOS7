@@ -96,11 +96,53 @@ static CGFloat CELL_HEIGHT;
             [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
         }
         else {
-//            lastSection = 0; // no records yet
+            // lastSection = 0; // no records yet
+            [self showFirstTimeScreen];
         }
     }
-    
     [super viewWillAppear:animated];
+}
+
+- (void)showFirstTimeScreen {
+    //Initial screen when no records
+    MlAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    self.firstTimeView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    [self.firstTimeView setBackgroundColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.7]];
+    
+    CGRect svb = self.view.bounds;
+    UIImageView *upperRight = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"UpperRight.png"]];
+    [upperRight setCenter:CGPointMake(0 + svb.size.width - 75, 0 + 90)];
+    [upperRight setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.firstTimeView addSubview:upperRight];
+    
+    UIImageView *lowerRight = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LowerRight.png"]];
+    [lowerRight setCenter:CGPointMake(0 + svb.size.width - 75, 0 + svb.size.height - 70)];
+    [lowerRight setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.firstTimeView addSubview:lowerRight];
+    
+    UITextView *firstTimeTextView = [[UITextView alloc] init];
+    [firstTimeTextView setBackgroundColor:[UIColor clearColor]];
+    [firstTimeTextView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18]];
+    [firstTimeTextView setEditable:NO];
+    [firstTimeTextView setFrame:CGRectMake(0, 0, 200, 200)];
+    [firstTimeTextView setCenter:CGPointMake(svb.size.width/2.0, svb.size.height/2.0)];
+    firstTimeTextView.text = @"Create a new MoodLog entry by touching the “+” button.\n\n\n\n\nTouch the Info button to find out more.";
+    [self.firstTimeView addSubview:firstTimeTextView];
+    
+    [delegate.window addSubview:self.firstTimeView];
+
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+                                             initWithTarget:self action:@selector(touchedFirstTimeScreen:)];
+    [tapRecognizer setNumberOfTouchesRequired:1];
+    [tapRecognizer setDelegate:self];
+    //Don't forget to set the userInteractionEnabled to YES, by default It's NO.
+    self.firstTimeView.userInteractionEnabled = YES;
+    [self.firstTimeView addGestureRecognizer:tapRecognizer];
+}
+
+- (void)touchedFirstTimeScreen: (id)sender {
+    NSLog(@"We did it!");
+    self.firstTimeView.hidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -173,7 +215,7 @@ static CGFloat CELL_HEIGHT;
 }
 
 - (IBAction)showWelcomeScreen:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AboutBox" bundle:nil];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WelcomeScreens" bundle:nil];
     UIViewController *welcomeViewController = [sb instantiateViewControllerWithIdentifier:@"welcomeNavigationController"];
     [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
     [self presentViewController:welcomeViewController animated:YES completion:NULL];

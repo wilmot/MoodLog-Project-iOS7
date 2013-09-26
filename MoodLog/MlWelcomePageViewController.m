@@ -17,7 +17,7 @@
 
 @implementation MlWelcomePageViewController
 
-int numberOfPages = 3;
+int numberOfPages = 4;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,16 +35,16 @@ int numberOfPages = 3;
     [self createPages];
     self.dataSource = self;
     [self setViewControllers:[NSArray arrayWithObject:[self.pages objectAtIndex:0]] direction:UIPageViewControllerNavigationDirectionForward animated:true completion:nil];
-    self.currentPage = 0;
     [self setDelegate:self];
-    UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor grayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-    pageControl.backgroundColor = [UIColor whiteColor];
+    self.pageControl = [UIPageControl appearance];
+    self.pageControl.pageIndicatorTintColor = [UIColor grayColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    self.pageControl.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor whiteColor]; // Eliminates the black bar that shows up when rotating the Welcome screen
 }
 
 -(void) createPages{
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AboutBox" bundle:nil];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WelcomeScreens" bundle:nil];
     self.pages = [[NSMutableArray alloc]initWithCapacity:3];
     
     MlWelcomeScreenViewController *controller;
@@ -66,7 +66,6 @@ int numberOfPages = 3;
             }
         }
     }
-    self.currentPage++;
     return view;
 }
 
@@ -82,7 +81,6 @@ int numberOfPages = 3;
             }
         }
     }
-    self.currentPage--;
     return view;
 }
 

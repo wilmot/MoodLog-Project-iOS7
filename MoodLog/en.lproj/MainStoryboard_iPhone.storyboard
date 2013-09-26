@@ -998,6 +998,10 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uA0-33-2bj"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="aNewEntryButton" destination="uA0-33-2bj" id="thm-pm-QC0"/>
+                        <outlet property="infoButton" destination="RCy-EY-dUL" id="sX7-Oh-FrD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
