@@ -500,17 +500,29 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MV1-vg-RYp" customClass="MlChartDrawingView">
+                                <rect key="frame" x="299" y="76" width="180" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="TjN-Is-wzv"/>
+                                    <constraint firstAttribute="height" constant="180" id="rG5-Gd-wf7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qrf-my-nAO" firstAttribute="top" secondItem="hAB-gi-bxn" secondAttribute="top" id="4kB-d5-I9f"/>
-                            <constraint firstAttribute="bottom" secondItem="qrf-my-nAO" secondAttribute="bottom" id="V2H-UN-bYc"/>
-                            <constraint firstAttribute="trailing" secondItem="qrf-my-nAO" secondAttribute="trailing" id="nT6-3q-WnD"/>
-                            <constraint firstItem="qrf-my-nAO" firstAttribute="leading" secondItem="hAB-gi-bxn" secondAttribute="leading" id="rGN-UZ-VKV"/>
+                            <constraint firstItem="qrf-my-nAO" firstAttribute="bottom" secondItem="MV1-vg-RYp" secondAttribute="bottom" id="Crl-6g-yNC"/>
+                            <constraint firstAttribute="trailing" secondItem="qrf-my-nAO" secondAttribute="trailing" id="D2d-44-1MH"/>
+                            <constraint firstItem="qrf-my-nAO" firstAttribute="leading" secondItem="hAB-gi-bxn" secondAttribute="leading" id="FQj-A9-92P"/>
+                            <constraint firstItem="zcY-um-btC" firstAttribute="top" secondItem="MV1-vg-RYp" secondAttribute="bottom" id="VQU-vY-izs"/>
+                            <constraint firstAttribute="trailing" secondItem="MV1-vg-RYp" secondAttribute="trailing" constant="1" id="cTW-fl-kZO"/>
+                            <constraint firstItem="qrf-my-nAO" firstAttribute="top" secondItem="hAB-gi-bxn" secondAttribute="top" id="k7k-hV-4RY"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
+                        <outlet property="pieChartForSummary" destination="MV1-vg-RYp" id="8sO-41-ytg"/>
                         <outlet property="summaryText" destination="qrf-my-nAO" id="QaX-Mb-LQd"/>
                     </connections>
                 </viewController>

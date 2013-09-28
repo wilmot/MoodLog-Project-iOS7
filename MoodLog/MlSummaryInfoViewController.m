@@ -86,17 +86,17 @@ BOOL hasShownSlowSummary = NO;
         summaryLine = [[NSAttributedString alloc] initWithString:@"\n\nCategories" attributes:attrsDictionary];
         [summaryAttributedString appendAttributedString:summaryLine];
         
-        NSMutableDictionary *emotionCategoryAccumulation = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
         NSDictionary *emotionColors = @{love : [[UIColor greenColor] darkerColor], joy : [UIColor orangeColor], surprise : [UIColor purpleColor], anger : [UIColor redColor], sadness : [UIColor blueColor], fear : [[[UIColor yellowColor] darkerColor] darkerColor]};
         
         int numberOfSections = [[self.fetchedResultsController2 sections] count];
         for (int i=0; i<numberOfSections; i++) {
             id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController2 sections][i];
-            [emotionCategoryAccumulation setObject:[NSNumber numberWithLong:[sectionInfo numberOfObjects]] forKey:sectionInfo.name];
+            [categoryCounts setObject:[NSNumber numberWithLong:[sectionInfo numberOfObjects]] forKey:sectionInfo.name];
         }
         
         for (NSString *category in @[@"Love", @"Joy",@"Surprise",@"Anger",@"Sadness", @"Fear"]) {
-            NSNumber *countForCategory =[emotionCategoryAccumulation objectForKey:category];
+            NSNumber *countForCategory =[categoryCounts objectForKey:category];
             font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [emotionColors objectForKey:category], NSForegroundColorAttributeName, nil];
             summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", category, [countForCategory integerValue]] attributes:attrsDictionary];
@@ -105,6 +105,13 @@ BOOL hasShownSlowSummary = NO;
         }
         
         self.summaryText.attributedText = summaryAttributedString;
+        
+        
+        self.pieChartForSummary.chartType = @"Pie";
+        self.pieChartForSummary.categoryCounts = categoryCounts;
+        self.pieChartForSummary.dividerLine = NO;
+        [self.pieChartForSummary setNeedsDisplay];
+
         self.showSummary = NO;
     }
 }
