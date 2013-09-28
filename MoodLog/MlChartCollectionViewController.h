@@ -22,6 +22,7 @@
 @property (weak, nonatomic) MlChartCellEntryViewController *myChartCellEntryViewController;
 
 
+- (void) setCellType: (id)sender;
 - (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation;
 
 @end

@@ -63,13 +63,14 @@ Boolean firstLoad;
     }
     self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     firstLoad = YES;
+
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    [self setCellTypeAndSize:orientation];
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -82,6 +83,9 @@ Boolean firstLoad;
         }
         firstLoad = NO;
     }
+    [self.chartCollectionView.collectionViewLayout invalidateLayout];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    [self setCellTypeAndSize:orientation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,37 +95,51 @@ Boolean firstLoad;
 }
 
 - (void)viewDidUnload {
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
     [self setChartCollectionView:nil];
     [self setManagedObjectContext:nil];
     [self setFetchedResultsController:nil];
     [super viewDidUnload];
 }
 
-- (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation {
-    if (toInterfaceOrientation == UIDeviceOrientationPortrait || toInterfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
-        // portrait
-        NSUInteger frameheight = [[UIScreen mainScreen] bounds].size.height; // Different sizes for iPhone 4 vs. iPhone 5
+- (void) setCellType: (id)sender {
         if ([self.chartType isEqualToString:@"Bar"]) {
             self.cellIdentifier = @"chartCellPortrait";
-            cellSize = CGSizeMake(92.0,frameheight - 64);
-            labelLines = frameheight/16;
         }
         else { // Pie
             self.cellIdentifier = @"pieChartCellPortrait";
-            cellSize = CGSizeMake(92.0,frameheight - 64);
-            labelLines = frameheight/16;
+        }
+    [self.chartCollectionView reloadData];
+}
+
+- (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation {
+    NSUInteger collectionViewHeight;
+    if (toInterfaceOrientation == UIDeviceOrientationPortrait || toInterfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
+        // portrait
+       // NSUInteger frameheight = [[UIScreen mainScreen] bounds].size.height; // Different sizes for iPhone 4 vs. iPhone 5
+        collectionViewHeight = self.chartCollectionView.bounds.size.height;
+        if ([self.chartType isEqualToString:@"Bar"]) {
+            self.cellIdentifier = @"chartCellPortrait";
+            cellSize = CGSizeMake(92.0,collectionViewHeight);
+            labelLines = collectionViewHeight/16;
+        }
+        else { // Pie
+            self.cellIdentifier = @"pieChartCellPortrait";
+            cellSize = CGSizeMake(92.0,collectionViewHeight);
+            labelLines = collectionViewHeight/16;
         }
     }
     else {
-        // landscape
+        collectionViewHeight = self.chartCollectionView.bounds.size.height;
+       // landscape
         if ([self.chartType isEqualToString:@"Bar"]) {
             self.cellIdentifier = @"chartCellPortrait";
-            cellSize = CGSizeMake(92.0,256.0);
+            cellSize = CGSizeMake(92.0,collectionViewHeight);
             labelLines = 16;
         }
         else { // Pie
             self.cellIdentifier = @"pieChartCellPortrait";
-            cellSize = CGSizeMake(92.0,256.0);
+            cellSize = CGSizeMake(92.0,collectionViewHeight);
             labelLines = 16;
         }
     }
@@ -130,7 +148,12 @@ Boolean firstLoad;
 
 #pragma mark - Orientation change
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    [self setCellTypeAndSize:toInterfaceOrientation];
+}
+
+- (void)deviceOrientationDidChange:(NSNotification *)notification {
+    [self.chartCollectionView.collectionViewLayout invalidateLayout];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    [self setCellTypeAndSize:orientation];
 }
 
 #pragma mark - Delegate methods

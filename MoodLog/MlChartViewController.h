@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MlChartCollectionViewController.h"
+#import "MlSummaryInfoViewController.h"
 
 @interface MlChartViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
@@ -19,5 +20,6 @@
 - (IBAction)chooseSegment:(id)sender;
 
 @property (weak, nonatomic) MlChartCollectionViewController *myChartCollectionViewController;
+@property (weak, nonatomic) MlSummaryInfoViewController *mySummaryCollectionViewController;
 
 @end

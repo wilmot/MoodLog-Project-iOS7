@@ -48,6 +48,9 @@ static short PIE_CHART = 0;
     if ([segue.identifier isEqualToString:@"ChartCollectionSegue"]) {
         self.myChartCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
     }
+    else if ([segue.identifier isEqualToString:@"SummarySegue"]) {
+        self.mySummaryCollectionViewController = [segue destinationViewController]; // Getting a reference to the Summary view
+    }
 }
 
 - (BOOL)shouldAutorotate {
@@ -89,20 +92,24 @@ static short PIE_CHART = 0;
 - (IBAction)chooseSegment:(id)sender {
     if (self.segment.selectedSegmentIndex == BAR_CHART) { // Bar Chart
         self.summaryViewController.hidden = YES;
+        self.mySummaryCollectionViewController.showSummary = NO;
         self.chartContainer.hidden = NO;
         self.myChartCollectionViewController.chartType = @"Bar";
     }
     else if (self.segment.selectedSegmentIndex == PIE_CHART) {
         self.summaryViewController.hidden = YES;
+        self.mySummaryCollectionViewController.showSummary = NO;
         self.chartContainer.hidden = NO;
         self.myChartCollectionViewController.chartType = @"Pie";
     }
     else { // Summary
         self.summaryViewController.hidden = NO;
+        self.mySummaryCollectionViewController.showSummary = YES;
+        [self.mySummaryCollectionViewController summaryInformationQuick:self];
+        [self.mySummaryCollectionViewController performSelector:@selector(summaryInformationSlow:) withObject:self afterDelay:1.0 ];
         self.chartContainer.hidden = YES;
     }
-    UIInterfaceOrientation *orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    [self.myChartCollectionViewController setCellTypeAndSize:orientation];
+    [self.myChartCollectionViewController setCellType:self];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.segment.selectedSegmentIndex forKey:@"ChartSegmentState"];
     [defaults synchronize];

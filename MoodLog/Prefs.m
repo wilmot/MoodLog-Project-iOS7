@@ -15,9 +15,9 @@
  NSString *const love = @"Love";
  NSString *const joy = @"Joy";
  NSString *const surprise = @"Surprise";
- NSString *const fear = @"Fear";
  NSString *const anger = @"Anger";
-NSString *const sadness = @"Sadness";
+ NSString *const sadness = @"Sadness";
+ NSString *const fear = @"Fear";
 
 # pragma mark - Category for extending Emotions class (which is auto-generated)
 @implementation Emotions (Emotions_Category)
