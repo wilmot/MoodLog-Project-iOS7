@@ -141,32 +141,47 @@ NSUserDefaults *defaults;
     if (self.fewerMoreSlider.value > 1.0f) {
         [self.fewerMoreSlider setValue:(self.fewerMoreSlider.value - 1.0f)];
     }
-    [self adjustUIToNewParrotLevel: roundl(self.fewerMoreSlider.value)];
+    // Calling workaroundAdjustUIToNewParrotLevel with a delay works around a bug in iOS 6 where the buttons aren't going gray/disabled after being clicked
+    // I don't need to use a delay in iOS 7; I can just call adjustUIToNewParrotLevel:parrotLevel directly
+    [self performSelector:@selector(workaroundAdjustUIToNewParrotLevel:) withObject:self afterDelay:0.1 ];
 }
 
 - (IBAction)setMore:(id)sender {
     if (self.fewerMoreSlider.value < 4.0f) {
         [self.fewerMoreSlider setValue:(self.fewerMoreSlider.value + 1.0f)];
     }
-    [self adjustUIToNewParrotLevel: roundl(self.fewerMoreSlider.value)];
+    // Calling workaroundAdjustUIToNewParrotLevel with a delay works around a bug in iOS 6 where the buttons aren't going gray/disabled after being clicked
+    // I don't need to use a delay in iOS 7; I can just call adjustUIToNewParrotLevel:parrotLevel directly
+    [self performSelector:@selector(workaroundAdjustUIToNewParrotLevel:) withObject:self afterDelay:0.1 ];
+}
+
+- (void)workaroundAdjustUIToNewParrotLevel: (id) sender {
+    [self adjustUIToNewParrotLevel:roundl(self.fewerMoreSlider.value)];
 }
 
 - (void)adjustUIToNewParrotLevel: (int) parrotLevel {
     [defaults setInteger:parrotLevel forKey:@"DefaultParrotLevel"];
     self.myMoodCollectionViewController.currentParrotLevel = parrotLevel;
-    [self.myMoodCollectionViewController refresh];
-    if (self.fewerMoreSlider.value == 1.0f) {
+    NSLog(@"Button colors: %@, %@", self.fewerButton.titleLabel.textColor, self.moreButton.titleLabel.textColor);
+    if (parrotLevel == 1) {
         [self.fewerButton setEnabled:NO];
+        self.fewerButton.titleLabel.textColor = [UIColor grayColor];
         [self.moreButton setEnabled:YES];
+        self.moreButton.titleLabel.textColor = [UIColor blackColor];
     }
-    else if (self.fewerMoreSlider.value == 4.0f) {
+    else if (parrotLevel == 4) {
         [self.fewerButton setEnabled:YES];
+        self.fewerButton.titleLabel.textColor = [UIColor blackColor];
         [self.moreButton setEnabled:NO];
+        self.moreButton.titleLabel.textColor = [UIColor grayColor];
     }
     else {
         [self.fewerButton setEnabled:YES];
-        [self.moreButton setEnabled:YES];
+        self.fewerButton.titleLabel.textColor = [UIColor blackColor];
+       [self.moreButton setEnabled:YES];
+        self.moreButton.titleLabel.textColor = [UIColor blackColor];
     }
+    [self.myMoodCollectionViewController refresh];
 }
 
 - (void) setFaces:(BOOL)facesState {
