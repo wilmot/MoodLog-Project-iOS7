@@ -421,7 +421,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7H-XU-8c1">
                                 <rect key="frame" x="0.0" y="67" width="320" height="21"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ct-CM-44Z">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="11/11/11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ct-CM-44Z">
                                         <rect key="frame" x="67" y="0.0" width="253" height="21"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1961,7 +1961,7 @@ Here</string>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Euphoric" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBw-a9-hbP">
                                             <rect key="frame" x="0.0" y="0.0" width="96" height="32"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2201,7 +2201,7 @@ Here</string>
                                         <rect key="frame" x="0.0" y="392" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
                                                 <rect key="frame" x="63" y="6" width="194" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
@@ -2209,20 +2209,32 @@ Here</string>
                                                     <action selector="slideFewerMoreSlider:" destination="Haq-rW-jQt" eventType="valueChanged" id="sWb-kF-qRh"/>
                                                 </connections>
                                             </slider>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqg-kz-crn">
-                                                <rect key="frame" x="7" y="8" width="50" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqg-kz-crn">
+                                                <rect key="frame" x="7" y="0.0" width="50" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="TWQ-0X-jU8"/>
+                                                    <constraint firstAttribute="height" constant="44" id="y7h-au-3GN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Fewer">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="setFewer:" destination="Haq-rW-jQt" eventType="touchUpInside" id="xQO-oP-qYn"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZO-kC-Yn3">
-                                                <rect key="frame" x="263" y="9" width="50" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZO-kC-Yn3">
+                                                <rect key="frame" x="263" y="1" width="50" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="FDS-Q7-a7S"/>
+                                                    <constraint firstAttribute="height" constant="44" id="yE2-cH-lZM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="More">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -2233,6 +2245,14 @@ Here</string>
                                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="4fO-Ep-crr"/>
+                                            <constraint firstItem="hmq-MX-tQA" firstAttribute="bottom" secondItem="wZO-kC-Yn3" secondAttribute="bottom" constant="-6" id="9RZ-tG-Q0v"/>
+                                            <constraint firstItem="hmq-MX-tQA" firstAttribute="leading" secondItem="hqg-kz-crn" secondAttribute="trailing" constant="8" symbolic="YES" id="MkT-CZ-7R5"/>
+                                            <constraint firstAttribute="trailing" secondItem="wZO-kC-Yn3" secondAttribute="trailing" constant="7" id="YqS-bt-QOm"/>
+                                            <constraint firstItem="wZO-kC-Yn3" firstAttribute="leading" secondItem="hmq-MX-tQA" secondAttribute="trailing" constant="8" id="edj-FY-W5d"/>
+                                            <constraint firstItem="hqg-kz-crn" firstAttribute="leading" secondItem="b4B-iw-Grz" secondAttribute="leading" constant="7" id="mUp-sk-2wZ"/>
+                                            <constraint firstItem="hmq-MX-tQA" firstAttribute="centerX" secondItem="b4B-iw-Grz" secondAttribute="centerX" id="n3W-1m-35t"/>
+                                            <constraint firstItem="hqg-kz-crn" firstAttribute="centerY" secondItem="b4B-iw-Grz" secondAttribute="centerY" constant="-1" id="qAF-tn-IIE"/>
+                                            <constraint firstItem="wZO-kC-Yn3" firstAttribute="top" secondItem="b4B-iw-Grz" secondAttribute="top" constant="1" id="zP0-mo-RQa"/>
                                         </constraints>
                                     </view>
                                 </subviews>

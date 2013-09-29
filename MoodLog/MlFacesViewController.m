@@ -127,7 +127,6 @@ NSUserDefaults *defaults;
     int discreteValue = roundl([self.fewerMoreSlider value]);
     [self.fewerMoreSlider setValue:(float)discreteValue];
     if (discreteValue != lastValue) {
-        NSLog(@"Slide that slider %f (%d)", self.fewerMoreSlider.value, discreteValue);
         lastValue = discreteValue;
         [self adjustUIToNewParrotLevel: discreteValue];
    }

@@ -80,10 +80,17 @@ MoodLogEvents *myLogEntry;
     // WWDC 2012 video introduction to UICollectionViews talks about registering the class
     // But apparently this isn't needed if I use Storyboards; instead I should set the "Prototype Cell" in the Storyboard
     //[self.collectionView registerClass:[MlCollectionViewCell class] forCellWithReuseIdentifier:@"moodCell"];
+
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [self refresh];
+}
+
+- (void) viewDidUnload {
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 
 - (void) refresh {
@@ -307,6 +314,8 @@ MoodLogEvents *myLogEntry;
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size = CGSizeMake(10.0, 10.0);
+    UIInterfaceOrientation orientation;
+    orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
     if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
@@ -317,10 +326,21 @@ MoodLogEvents *myLogEntry;
         }
     }
     else if ([self.cellIdentifier isEqual: @"moodCell"]) {
-        size = CGSizeMake(96.0, 32.0);
+        //
+        if ((orientation == UIDeviceOrientationPortrait) || ( orientation == UIDeviceOrientationPortraitUpsideDown)) {
+            size = CGSizeMake(106.0, 32.0); // Portrait
+        }
+        else {
+            size = CGSizeMake(120.0, 32.0); // Landscape
+        }
     }
     return size;
 }
+
+- (void)deviceOrientationDidChange:(NSNotification *)notification {
+    [self.collectionView reloadData];
+}
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
