@@ -1,5 +1,5 @@
 //
-//  MyMoodDataItem.h
+//  MlMoodDataItem.h
 //  MoodTracker
 //
 //  Created by Barry A. Langdon-Lassagne on 9/29/12.

@@ -1253,6 +1253,8 @@
 		<string>Anger</string>
 		<key>facePath</key>
 		<string>Insulted</string>
+		<key>feelValue</key>
+		<string>-6</string>
 		<key>source</key>
 		<string>Parrott</string>
 		<key>emotionDescription</key>

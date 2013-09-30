@@ -42,6 +42,7 @@ static CGFloat CELL_HEIGHT;
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     //[self updateOldRecords];
+    //[self deleteUnselectedEmotionsFromOldRecords];
 //    UIViewController *welcomeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"welcomeScreen"];
 //    [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
 //    [self presentViewController:welcomeViewController animated:YES completion:NULL];
@@ -79,6 +80,35 @@ static CGFloat CELL_HEIGHT;
     [self saveContext];
     NSLog(@"Updated all records.");
 }
+
+- (void) deleteUnselectedEmotionsFromOldRecords {
+    NSArray *moodDataList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataList;
+    NSLog(@"Running the deleteUnselectedEmotionsFromOldRecords method. Turn this off after you've run it on your data.");
+    int i = 0;
+    for (MoodLogEvents *object in [[self fetchedResultsController] fetchedObjects]) {
+        NSSet *originalEmotions = object.relationshipEmotions;
+        NSMutableSet *newEmotions = [[NSMutableSet alloc] init];
+        for(Emotions *emotion in originalEmotions) {
+            for (MlMoodDataItem *mood in moodDataList) {
+                if ([emotion.name isEqualToString:[mood valueForKey:@"mood"]]) {
+                    if ([emotion.selected boolValue]) {
+                        [newEmotions addObject:emotion];
+                    }
+                }
+            }
+        }
+        [object removeRelationshipEmotions:originalEmotions]; // Clear out the big set
+        [object addRelationshipEmotions:newEmotions]; // Install the little set
+        if (i++%10 == 0) {
+            NSLog(@"Saving records...");
+            [self saveContext];
+        }
+    }
+    [self saveContext];
+    NSLog(@"Removed unselected emotions from all records.");
+}
+
+
 
 - (void)viewWillAppear:(BOOL)animated {
     NSIndexPath *selection = [self.tableView indexPathForSelectedRow];

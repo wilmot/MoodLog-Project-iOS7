@@ -26,16 +26,16 @@
     [super tearDown];
 }
 
-- (void)testMoodListDictionary {
+- (void)testmoodListDictionaryFromPList {
     UIApplication *sharedApplication = [UIApplication sharedApplication];
     MlAppDelegate *delegate =(MlAppDelegate *)sharedApplication.delegate;
     NSLog(@"BadgeCount: %ld", (long)delegate.badgeCount);
-    NSLog(@"Dictionary count: %lu", (unsigned long)delegate.moodListDictionary.count);
-    if ([delegate.moodListDictionary count] == 0) {
+    NSLog(@"Dictionary count: %lu", (unsigned long)delegate.moodListDictionaryFromPList.count);
+    if ([delegate.moodListDictionaryFromPList count] == 0) {
         XCTFail(@"The Mood List Dictionary is empty.");
     }
-    if ([delegate.moodListDictionary count] < 140) {
-        XCTFail(@"The Mood List Dictionary seems to be missing entries. Dictionary: \n%@", delegate.moodListDictionary);
+    if ([delegate.moodListDictionaryFromPList count] < 140) {
+        XCTFail(@"The Mood List Dictionary seems to be missing entries. Dictionary: \n%@", delegate.moodListDictionaryFromPList);
     }
 }
 
