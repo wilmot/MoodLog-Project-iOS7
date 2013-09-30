@@ -36,19 +36,9 @@
 //        [navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
     }
 
-    
-//    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];
-//    self.moodList = [NSArray arrayWithContentsOfFile:plistPath];
-//    self.moodDataList = [[NSArray alloc] init];
-//    for (id mood in self.moodList) {
-//        MlMoodDataItem  *aMoodDataItem = [[MlMoodDataItem alloc] init];
-//        aMoodDataItem.mood = mood;
-//        aMoodDataItem.selected = FALSE;
-//        self.moodDataList = [self.moodDataList arrayByAddingObject:aMoodDataItem];
-//    }
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];
     self.moodListDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    self.moodDataList = [[NSArray alloc] init];
+    self.moodDataListFromPList = [[NSArray alloc] init];
     for (id mood in self.moodListDictionary) {
         MlMoodDataItem  *aMoodDataItem = [[MlMoodDataItem alloc] init];
         aMoodDataItem.mood = mood;
@@ -57,9 +47,8 @@
         aMoodDataItem.parrotLevel = [[self.moodListDictionary valueForKey:mood] valueForKey:@"parrotLevel"];
         aMoodDataItem.category = [[self.moodListDictionary valueForKey:mood] valueForKey:@"category"];
         aMoodDataItem.selected = FALSE;
-        self.moodDataList = [self.moodDataList arrayByAddingObject:aMoodDataItem];
+        self.moodDataListFromPList = [self.moodDataListFromPList arrayByAddingObject:aMoodDataItem];
     }
-    
     
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
