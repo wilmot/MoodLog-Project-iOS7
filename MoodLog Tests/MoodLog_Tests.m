@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "MlAppDelegate.h"
+#import "MlMoodDataItem.h"
 #import "Emotions.h"
 
 @interface MoodLog_Tests : XCTestCase
@@ -26,16 +27,28 @@
     [super tearDown];
 }
 
-- (void)testmoodListDictionaryFromPList {
+- (void)testmoodListDictionary {
     UIApplication *sharedApplication = [UIApplication sharedApplication];
     MlAppDelegate *delegate =(MlAppDelegate *)sharedApplication.delegate;
     NSLog(@"BadgeCount: %ld", (long)delegate.badgeCount);
-    NSLog(@"Dictionary count: %lu", (unsigned long)delegate.moodListDictionaryFromPList.count);
-    if ([delegate.moodListDictionaryFromPList count] == 0) {
+    NSLog(@"Dictionary count: %lu", (unsigned long)delegate.moodListDictionary.count);
+    if ([delegate.moodListDictionary count] == 0) {
         XCTFail(@"The Mood List Dictionary is empty.");
     }
-    if ([delegate.moodListDictionaryFromPList count] < 140) {
-        XCTFail(@"The Mood List Dictionary seems to be missing entries. Dictionary: \n%@", delegate.moodListDictionaryFromPList);
+    if ([delegate.moodListDictionary count] < 140) {
+        XCTFail(@"The Mood List Dictionary seems to be missing entries. Dictionary: \n%@", delegate.moodListDictionary);
+    }
+}
+
+- (void)testEmotionsFromPList {
+    UIApplication *sharedApplication = [UIApplication sharedApplication];
+    MlAppDelegate *delegate =(MlAppDelegate *)sharedApplication.delegate;
+    NSLog(@"Dictionary count: %lu", (unsigned long)delegate.emotionsFromPList.count);
+    if ([delegate.emotionsFromPList count] == 0) {
+        XCTFail(@"The Mood List Dictionary is empty.");
+    }
+    if ([delegate.emotionsFromPList count] < 140) {
+        XCTFail(@"The list of emotions generated from the property list seems to be missing entries. Dictionary: \n%@", delegate.emotionsFromPList);
     }
 }
 
@@ -44,7 +57,7 @@
     MlAppDelegate *delegate =(MlAppDelegate *)sharedApplication.delegate;
     MoodLogEvents *newMoodLogEntry;
     NSArray *emotionArray;
-    Emotions *aMood;
+    MlMoodDataItem *aMood;
     int randomEmotionIndex;
     int randomNumberOfEmotions;
     NSDate *theDate = [NSDate date]; // start with today
@@ -70,13 +83,22 @@
         [newMoodLogEntry setSleep:[NSNumber numberWithInt:8]];
         [newMoodLogEntry setEnergy:[NSNumber numberWithInt:6]];
         [newMoodLogEntry setHealth:[NSNumber numberWithInt:4]];
-        emotionArray = [NSArray arrayWithObjects:[[[newMoodLogEntry relationshipEmotions] allObjects] sortedArrayUsingSelector:@selector(compare:)], nil];
-
+        emotionArray = [delegate.emotionsFromPList copy];
         randomNumberOfEmotions = (arc4random()%100);
         for (int j=0; j < randomNumberOfEmotions; j++) {
-            randomEmotionIndex = (arc4random()%([[emotionArray objectAtIndex:0] count] - 1));
-            aMood = [[emotionArray objectAtIndex:0] objectAtIndex:randomEmotionIndex];
+            randomEmotionIndex = (arc4random()%([emotionArray count] - 1));
+            aMood = [emotionArray objectAtIndex:randomEmotionIndex];
             [aMood setValue:[NSNumber numberWithBool:YES] forKey:@"selected"];
+            // Add emotion to the record
+            Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:[delegate managedObjectContext]];
+            emotion.name = aMood.mood;
+            emotion.category = aMood.category;
+            emotion.parrotLevel = [NSNumber numberWithInt:[aMood.parrotLevel integerValue]];
+            emotion.feelValue = [NSNumber numberWithInt:[aMood.feelValue integerValue]];
+            emotion.facePath = aMood.facePath;
+            emotion.selected = [NSNumber numberWithBool:YES];
+            emotion.logParent = newMoodLogEntry; // current record
+
         }
         if (i%20 == 0) {
             NSLog(@"Saving (%d of %d)...",i,MAXRECORDS);
