@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *pieChartForSummary;
 @property (weak, nonatomic) IBOutlet UITextView *summaryText;
 @property(nonatomic, assign) BOOL showSummary;
+@property (strong, atomic) NSDictionary *emotionColors;
 
 
 - (void)summaryInformationQuick: (id)sender;

@@ -65,6 +65,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self.slidersSetAdjustButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     }
 
+    self.emotionColors = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionColors;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -141,7 +142,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         CGFloat feelTotal = 0;
         
         NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
-        NSDictionary *emotionColors = @{love : [[UIColor greenColor] darkerColor], joy : [UIColor orangeColor], surprise : [UIColor purpleColor], anger : [UIColor redColor], sadness : [UIColor blueColor], fear : [[[UIColor yellowColor] darkerColor] darkerColor]};
         NSMutableAttributedString *selectedEmotions = [[NSMutableAttributedString alloc] init];
         if (emotionArrayCount > 0) {
             NSString *thisCategory;
@@ -149,7 +149,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             NSDictionary *attrsDictionary;
             NSAttributedString *currentEmotion;
            for (Emotions *emotion in emotionArray) {
-               attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [emotionColors objectForKey:emotion.category], NSForegroundColorAttributeName, nil];
+               attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [self.emotionColors objectForKey:emotion.category], NSForegroundColorAttributeName, nil];
                 currentEmotion = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n",[emotion.name lowercaseString]] attributes:attrsDictionary];
                 selectedEms = [selectedEms stringByAppendingFormat:@"%@: %@\n", emotion.category, [emotion.name lowercaseString]];
                 [selectedEmotions appendAttributedString:currentEmotion];

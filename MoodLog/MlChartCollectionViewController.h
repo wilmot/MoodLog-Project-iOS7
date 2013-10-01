@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
+@property (strong, nonatomic) NSDictionary *emotionColors;
 
 @property (weak, nonatomic) MlChartCellEntryViewController *myChartCellEntryViewController;
 

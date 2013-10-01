@@ -10,6 +10,7 @@
 #import "MlMoodCollectionViewController.h"
 #import "MoodLogEvents.h"
 #import "MlChartDrawingView.h"
+#import "MlAppDelegate.h"
 
 @interface MlDetailViewController : UITableViewController <UISplitViewControllerDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *weekdayLabel;
@@ -48,6 +49,7 @@
 
 @property (strong, atomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
+@property (strong, atomic) NSDictionary *emotionColors;
 
 
 - (IBAction)pressedDoneButton:(id)sender;

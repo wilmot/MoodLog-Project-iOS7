@@ -31,6 +31,7 @@ BOOL hasShownSlowSummary = NO;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    self.emotionColors = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionColors;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -87,7 +88,6 @@ BOOL hasShownSlowSummary = NO;
         [summaryAttributedString appendAttributedString:summaryLine];
         
         NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
-        NSDictionary *emotionColors = @{love : [[UIColor greenColor] darkerColor], joy : [UIColor orangeColor], surprise : [UIColor purpleColor], anger : [UIColor redColor], sadness : [UIColor blueColor], fear : [[[UIColor yellowColor] darkerColor] darkerColor]};
         
         int numberOfSections = [[self.fetchedResultsController2 sections] count];
         for (int i=0; i<numberOfSections; i++) {
@@ -98,7 +98,7 @@ BOOL hasShownSlowSummary = NO;
         for (NSString *category in @[@"Love", @"Joy",@"Surprise",@"Anger",@"Sadness", @"Fear"]) {
             NSNumber *countForCategory =[categoryCounts objectForKey:category];
             font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-            attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [emotionColors objectForKey:category], NSForegroundColorAttributeName, nil];
+            attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [self.emotionColors objectForKey:category], NSForegroundColorAttributeName, nil];
             summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", category, [countForCategory integerValue]] attributes:attrsDictionary];
             [summaryAttributedString appendAttributedString:summaryLine];
             
@@ -183,7 +183,7 @@ BOOL hasShownSlowSummary = NO;
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"category" cacheName:@"EmotionsCache"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"category" cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController2 = aFetchedResultsController;
     

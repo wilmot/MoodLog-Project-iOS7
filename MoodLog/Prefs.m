@@ -19,6 +19,7 @@
  NSString *const sadness = @"Sadness";
  NSString *const fear = @"Fear";
 
+
 # pragma mark - Category for extending Emotions class (which is auto-generated)
 @implementation Emotions (Emotions_Category)
 
