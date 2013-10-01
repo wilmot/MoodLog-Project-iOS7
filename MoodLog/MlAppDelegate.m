@@ -7,7 +7,6 @@
 //
 
 #import "MlAppDelegate.h"
-
 #import "MlMoodDataItem.h"
 #import "MoodLogEvents.h"
 #import "Prefs.h"
@@ -51,6 +50,15 @@
     }
     NSLog(@"Mood Data list as gathered from PList: %@, count %d", self.moodDataListFromPList, [self.moodDataListFromPList count]);
     NSLog(@"Item 0: %@", ((MlMoodDataItem *)self.moodDataListFromPList[0]).mood);
+    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(category beginswith[c] %@)", @"joy"];
+    NSArray *newie = [self.moodDataListFromPList filteredArrayUsingPredicate:myPredicate];
+    NSLog(@"Newie: %@", newie);
+    NSPredicate *myPredicate2 = [NSPredicate predicateWithFormat:@"parrotLevel.intValue <= %d", 2];
+    NSArray *newie2 = [self.moodDataListFromPList filteredArrayUsingPredicate:myPredicate2];
+    NSLog(@"Newie2: %@", newie2);
+    for (MlMoodDataItem *foo in newie2) {
+        NSLog(@"parrotLevel = %@",foo.parrotLevel);
+    }
     
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
