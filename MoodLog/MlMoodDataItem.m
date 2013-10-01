@@ -7,6 +7,7 @@
 //
 
 #import "MlMoodDataItem.h"
+#import "Prefs.h"
 
 @implementation MlMoodDataItem
 
@@ -20,5 +21,24 @@
     copy.selected = NO;
     return copy;
 }
+
+- (NSComparisonResult)compare:(MlMoodDataItem *)otherObject {
+    return [self.mood compare:otherObject.mood];
+}
+
+- (NSComparisonResult)categoryCompare:(MlMoodDataItem *)otherObject {
+    NSDictionary *moodCategory = @{love: @0, joy: @1, surprise: @2, fear: @3, anger: @4, sadness: @5};
+    if ([self.category compare:otherObject.category] == NSOrderedSame) {
+        return [self.mood compare:otherObject.mood]; // Alphabetize within the category
+    }
+    else {
+        return [moodCategory[self.category] compare:moodCategory[otherObject.category]];
+    }
+}
+
+- (NSComparisonResult)reverseCompare:(MlMoodDataItem *)otherObject {
+    return [otherObject.mood compare:self.mood];
+}
+
 
 @end

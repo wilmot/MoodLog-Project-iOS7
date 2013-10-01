@@ -18,5 +18,8 @@
 @property (nonatomic, assign) BOOL selected;
 
 -(id)copyWithZone:(NSZone *)zone;
+- (NSComparisonResult)compare:(MlMoodDataItem *)otherObject;
+- (NSComparisonResult)categoryCompare:(MlMoodDataItem *)otherObject;
+- (NSComparisonResult)reverseCompare:(MlMoodDataItem *)otherObject;
 
 @end
