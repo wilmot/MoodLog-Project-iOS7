@@ -37,7 +37,7 @@
 
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];
     self.moodListDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    self.moodDataListFromPList = [[NSArray alloc] init];
+    self.emotionsFromPList = [[NSArray alloc] init];
     for (id mood in self.moodListDictionary) {
         MlMoodDataItem  *aMoodDataItem = [[MlMoodDataItem alloc] init];
         aMoodDataItem.mood = mood;
@@ -46,15 +46,15 @@
         aMoodDataItem.parrotLevel = [[self.moodListDictionary valueForKey:mood] valueForKey:@"parrotLevel"];
         aMoodDataItem.category = [[self.moodListDictionary valueForKey:mood] valueForKey:@"category"];
         aMoodDataItem.selected = FALSE;
-        self.moodDataListFromPList = [self.moodDataListFromPList arrayByAddingObject:aMoodDataItem];
+        self.emotionsFromPList = [self.emotionsFromPList arrayByAddingObject:aMoodDataItem];
     }
-    NSLog(@"Mood Data list as gathered from PList: %@, count %d", self.moodDataListFromPList, [self.moodDataListFromPList count]);
-    NSLog(@"Item 0: %@", ((MlMoodDataItem *)self.moodDataListFromPList[0]).mood);
+    NSLog(@"Mood Data list as gathered from PList: %@, count %d", self.emotionsFromPList, [self.emotionsFromPList count]);
+    NSLog(@"Item 0: %@", ((MlMoodDataItem *)self.emotionsFromPList[0]).mood);
     NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(category beginswith[c] %@)", @"joy"];
-    NSArray *newie = [self.moodDataListFromPList filteredArrayUsingPredicate:myPredicate];
+    NSArray *newie = [self.emotionsFromPList filteredArrayUsingPredicate:myPredicate];
     NSLog(@"Newie: %@", newie);
     NSPredicate *myPredicate2 = [NSPredicate predicateWithFormat:@"parrotLevel.intValue <= %d", 2];
-    NSArray *newie2 = [self.moodDataListFromPList filteredArrayUsingPredicate:myPredicate2];
+    NSArray *newie2 = [self.emotionsFromPList filteredArrayUsingPredicate:myPredicate2];
     NSLog(@"Newie2: %@", newie2);
     for (MlMoodDataItem *foo in newie2) {
         NSLog(@"parrotLevel = %@",foo.parrotLevel);

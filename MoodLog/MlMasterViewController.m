@@ -51,7 +51,7 @@ static CGFloat CELL_HEIGHT;
 }
 
 - (void) updateOldRecords {
-    NSArray *moodDataListFromPList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataListFromPList;
+    NSArray *emotionsFromPList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionsFromPList;
     NSDateComponents *components;
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSLog(@"Running the updateOldRecords method. Turn this off after you've run it on your data.");
@@ -59,7 +59,7 @@ static CGFloat CELL_HEIGHT;
     for (MoodLogEvents *object in [[self fetchedResultsController] fetchedObjects]) {
         NSSet *emotions = object.relationshipEmotions;
         for(Emotions *emotion in emotions) {
-            for (MlMoodDataItem *mood in moodDataListFromPList) {
+            for (MlMoodDataItem *mood in emotionsFromPList) {
                 if ([emotion.name isEqualToString:mood.mood]) {
                     emotion.category = mood.category;
                     emotion.parrotLevel = [NSNumber numberWithInt:[mood.parrotLevel integerValue]];
@@ -82,14 +82,14 @@ static CGFloat CELL_HEIGHT;
 }
 
 - (void) deleteUnselectedEmotionsFromOldRecords {
-    NSArray *moodDataListFromPList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataListFromPList;
+    NSArray *emotionsFromPList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionsFromPList;
     NSLog(@"Running the deleteUnselectedEmotionsFromOldRecords method. Turn this off after you've run it on your data.");
     int i = 0;
     for (MoodLogEvents *object in [[self fetchedResultsController] fetchedObjects]) {
         NSSet *originalEmotions = object.relationshipEmotions;
         NSMutableSet *newEmotions = [[NSMutableSet alloc] init];
         for(Emotions *emotion in originalEmotions) {
-            for (MlMoodDataItem *mood in moodDataListFromPList) {
+            for (MlMoodDataItem *mood in emotionsFromPList) {
                 if ([emotion.name isEqualToString:[mood valueForKey:@"mood"]]) {
                     if ([emotion.selected boolValue]) {
                         [newEmotions addObject:emotion];
@@ -236,7 +236,7 @@ static CGFloat CELL_HEIGHT;
     newMood.sortStyleEditing = [defaults stringForKey:@"DefaultSortStyleEditing"]; // Default sort style when editing
     
     // Every record has a full set of moods; only some are selected or arranged
-    for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).moodDataListFromPList) {
+    for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionsFromPList) {
         Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:self.managedObjectContext];
         emotion.name = mood.mood;
         emotion.category = mood.category;

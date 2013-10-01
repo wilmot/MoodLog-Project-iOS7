@@ -18,6 +18,7 @@
 @property(nonatomic, assign) BOOL isShowingDefinition;
 @property(nonatomic, assign) int currentParrotLevel;
 @property (strong, nonatomic) NSString *wordToDefine;
+@property (strong, nonatomic) NSMutableArray *mutableEmotionsFromPList;
 
 
 - (void) refresh;
