@@ -36,35 +36,24 @@
     }
 
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];
-    self.moodListDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    NSString *faceFullPath;
+    NSMutableDictionary *faceImageMutableDictionary = [[NSMutableDictionary alloc] init];
+   self.moodListDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     self.emotionsFromPList = [[NSArray alloc] init];
     for (id mood in self.moodListDictionary) {
         MlMoodDataItem  *aMoodDataItem = [[MlMoodDataItem alloc] init];
         aMoodDataItem.mood = mood;
         aMoodDataItem.facePath = [[self.moodListDictionary valueForKey:mood] valueForKey:@"facePath"];
-        aMoodDataItem.feelValue = [[self.moodListDictionary valueForKey:mood] valueForKey:@"feelValue"];
+        faceFullPath = [[NSBundle mainBundle] pathForResource:aMoodDataItem.facePath ofType:@"png"];
+        [faceImageMutableDictionary setObject:[UIImage imageWithContentsOfFile:faceFullPath] forKey:mood];
+       aMoodDataItem.feelValue = [[self.moodListDictionary valueForKey:mood] valueForKey:@"feelValue"];
         aMoodDataItem.parrotLevel = [[self.moodListDictionary valueForKey:mood] valueForKey:@"parrotLevel"];
         aMoodDataItem.category = [[self.moodListDictionary valueForKey:mood] valueForKey:@"category"];
         aMoodDataItem.selected = FALSE;
         self.emotionsFromPList = [self.emotionsFromPList arrayByAddingObject:aMoodDataItem];
     }
-    NSLog(@"Mood Data list as gathered from PList: %@, count %d", self.emotionsFromPList, [self.emotionsFromPList count]);
-    NSLog(@"Item 0: %@", ((MlMoodDataItem *)self.emotionsFromPList[0]).mood);
-    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(category matches[c] %@)", @"joy"];
-    NSArray *newie = [self.emotionsFromPList filteredArrayUsingPredicate:myPredicate];
-    NSLog(@"Newie: %@", newie);
-    NSPredicate *myPredicate2 = [NSPredicate predicateWithFormat:@"parrotLevel.intValue <= %d", 2];
-    NSArray *newie2 = [self.emotionsFromPList filteredArrayUsingPredicate:myPredicate2];
-    NSLog(@"Newie2: %@", newie2);
-    for (MlMoodDataItem *foo in newie2) {
-        NSLog(@"parrotLevel = %@",foo.parrotLevel);
-    }
-    NSPredicate *myPredicate3 = [NSPredicate predicateWithFormat:@"category matches[c] %@ AND parrotLevel.intValue <= %d", @"Joy", 2];
-    NSArray *newie3 = [self.emotionsFromPList filteredArrayUsingPredicate:myPredicate3];
-    for (MlMoodDataItem *foo in newie3) {
-        NSLog(@"Category: %@, parrotLevel: %@",foo.category, foo.parrotLevel);
-    }
-    
+    self.faceImageDictionary = [faceImageMutableDictionary copy]; // For performance, I load all the faces into memory at the beginning, so when scrolling through the faces CollectionView it doesn't have to load them all the time
+   
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     id testObject = [defaults objectForKey:@"DefaultParrotLevel"]; // always test the newest default

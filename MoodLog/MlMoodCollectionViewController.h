@@ -18,6 +18,7 @@
 @property(nonatomic, assign) BOOL isShowingDefinition;
 @property(nonatomic, assign) int currentParrotLevel;
 @property (strong, nonatomic) NSString *wordToDefine;
+@property (strong, nonatomic) NSDictionary *faceImageDictionary; //reference to the delegate's dictionary of faces
 
 
 - (void) refresh;

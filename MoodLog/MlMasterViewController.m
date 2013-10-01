@@ -41,8 +41,10 @@ static CGFloat CELL_HEIGHT;
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+
     //[self updateOldRecords];
     //[self deleteUnselectedEmotionsFromOldRecords];
+    
 //    UIViewController *welcomeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"welcomeScreen"];
 //    [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
 //    [self presentViewController:welcomeViewController animated:YES completion:NULL];
@@ -234,18 +236,6 @@ static CGFloat CELL_HEIGHT;
     newMood.showFacesEditing = [NSNumber numberWithBool:[defaults boolForKey:@"DefaultFacesEditingState"]];
     newMood.sortStyle = [defaults stringForKey:@"DefaultSortStyle"]; // Default sort style
     newMood.sortStyleEditing = [defaults stringForKey:@"DefaultSortStyleEditing"]; // Default sort style when editing
-    
-//    // Every record has a full set of moods; only some are selected or arranged .. but I'm changing this BL-L ***REMOVE
-//    for (MlMoodDataItem *mood in ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionsFromPList) {
-//        Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:self.managedObjectContext];
-//        emotion.name = mood.mood;
-//        emotion.category = mood.category;
-//        emotion.parrotLevel = [NSNumber numberWithInt:[mood.parrotLevel integerValue]];
-//        emotion.feelValue = [NSNumber numberWithInt:[mood.feelValue integerValue]];
-//        emotion.facePath = mood.facePath;
-//        emotion.selected = [NSNumber numberWithBool:mood.selected];
-//        emotion.logParent = newMood;
-//    }
     
     // Save the context
     [self saveContext];
@@ -519,8 +509,7 @@ static CGFloat CELL_HEIGHT;
     
     // Fetch the Mood list for this journal entry
     NSSet *emotionsforEntry = object.relationshipEmotions; // Get all the emotions for this record
-    NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
-    NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
+    NSArray *emotionArray = [[emotionsforEntry allObjects] sortedArrayUsingSelector:@selector(compare:)];
     NSString *selectedEms = [[NSString alloc] init];
     NSString *lastEm = [[NSString alloc] init];
     if ([emotionArray count] > 0) {
