@@ -10,11 +10,11 @@
 
 @interface MlMoodDataItem : NSObject
 
-@property (strong, nonatomic) NSString *mood;
-@property (strong, nonatomic) NSString *category;
-@property (strong, nonatomic) NSNumber *feelValue;
-@property (strong, nonatomic) NSNumber *parrotLevel;
-@property (strong, nonatomic) NSString *facePath;
+@property (nonatomic, retain) NSString *mood;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, retain) NSNumber *feelValue;
+@property (nonatomic, retain) NSNumber *parrotLevel;
+@property (nonatomic, retain) NSString *facePath;
 @property (nonatomic, assign) BOOL selected;
 
 @end

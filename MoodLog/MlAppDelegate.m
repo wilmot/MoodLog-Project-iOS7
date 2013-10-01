@@ -49,6 +49,8 @@
         aMoodDataItem.selected = FALSE;
         self.moodDataListFromPList = [self.moodDataListFromPList arrayByAddingObject:aMoodDataItem];
     }
+    NSLog(@"Mood Data list as gathered from PList: %@, count %d", self.moodDataListFromPList, [self.moodDataListFromPList count]);
+    NSLog(@"Item 0: %@", ((MlMoodDataItem *)self.moodDataListFromPList[0]).mood);
     
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

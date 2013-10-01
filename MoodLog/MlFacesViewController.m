@@ -162,7 +162,6 @@ NSUserDefaults *defaults;
 - (void)adjustUIToNewParrotLevel: (int) parrotLevel {
     [defaults setInteger:parrotLevel forKey:@"DefaultParrotLevel"];
     self.myMoodCollectionViewController.currentParrotLevel = parrotLevel;
-    NSLog(@"Button colors: %@, %@", self.fewerButton.titleLabel.textColor, self.moreButton.titleLabel.textColor);
     if (parrotLevel == 1) {
         [self.fewerButton setEnabled:NO];
         self.fewerButton.titleLabel.textColor = [UIColor grayColor];
