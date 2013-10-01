@@ -15,6 +15,7 @@
 #import "Prefs.h"
 #import "MlMoodCollectionViewHeaderView.h"
 #import "MlMoodDataItem.h"
+#import "MlColorChoices.h"
 
 // From http://stackoverflow.com/questions/56648/whats-the-best-way-to-shuffle-an-nsmutablearray
 // This category enhances NSMutableArray by providing
@@ -80,7 +81,6 @@ MoodLogEvents *myLogEntry;
     self.currentParrotLevel = [defaults integerForKey:@"DefaultParrotLevel"];
     
     self.faceImageDictionary = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).faceImageDictionary;
-    self.emotionColors = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionColors;
 
     // WWDC 2012 video introduction to UICollectionViews talks about registering the class
     // But apparently this isn't needed if I use Storyboards; instead I should set the "Prototype Cell" in the Storyboard
@@ -336,7 +336,7 @@ MoodLogEvents *myLogEntry;
          if ([[emotionArray objectAtIndex:indexPath.section] count] > 0) {
             MlMoodDataItem *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
             headerView.headerLabel.text = aMood.category;
-            headerView.backgroundColor = [self.emotionColors objectForKey:aMood.category];
+            headerView.backgroundColor = [[MlColorChoices basicColors] objectForKey:aMood.category];
        }
         
         reusableview = headerView;

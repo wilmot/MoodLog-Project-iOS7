@@ -19,6 +19,5 @@
 @property (strong, nonatomic) NSString *chartType;
 @property (nonatomic, assign) BOOL dividerLine;
 @property (strong, nonatomic) NSDictionary *categoryCounts;
-@property (strong, atomic) NSDictionary *emotionColors;
 
 @end

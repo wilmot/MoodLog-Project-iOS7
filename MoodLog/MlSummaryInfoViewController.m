@@ -9,6 +9,7 @@
 #import "MlSummaryInfoViewController.h"
 #import "MlAppDelegate.h"
 #import "Prefs.h"
+#import "MlColorChoices.h"
 
 @interface MlSummaryInfoViewController ()
 
@@ -31,7 +32,6 @@ BOOL hasShownSlowSummary = NO;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-    self.emotionColors = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionColors;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -98,7 +98,7 @@ BOOL hasShownSlowSummary = NO;
         for (NSString *category in @[@"Love", @"Joy",@"Surprise",@"Anger",@"Sadness", @"Fear"]) {
             NSNumber *countForCategory =[categoryCounts objectForKey:category];
             font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-            attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [self.emotionColors objectForKey:category], NSForegroundColorAttributeName, nil];
+            attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices basicColors] objectForKey:category], NSForegroundColorAttributeName, nil];
             summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", category, [countForCategory integerValue]] attributes:attrsDictionary];
             [summaryAttributedString appendAttributedString:summaryLine];
             

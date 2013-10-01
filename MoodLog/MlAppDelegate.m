@@ -54,9 +54,6 @@
     }
     self.faceImageDictionary = [faceImageMutableDictionary copy]; // For performance, I load all the faces into memory at the beginning, so when scrolling through the faces CollectionView it doesn't have to load them all the time
     
-    self.emotionColors = @{love : [[UIColor greenColor] darkerColor], joy : [UIColor orangeColor], surprise : [UIColor purpleColor], anger : [UIColor redColor], sadness : [UIColor blueColor], fear : [[[UIColor yellowColor] darkerColor] darkerColor]};
-
-   
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     id testObject = [defaults objectForKey:@"DefaultParrotLevel"]; // always test the newest default

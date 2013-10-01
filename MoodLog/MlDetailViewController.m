@@ -12,6 +12,7 @@
 #import "MlDatePickerViewController.h"
 #import "MlJournalEditorViewController.h"
 #import "Prefs.h"
+#import "MlColorChoices.h"
 
 @interface MlDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -64,8 +65,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self.slidersSetAdjustButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.slidersSetAdjustButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     }
-
-    self.emotionColors = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionColors;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -149,7 +148,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             NSDictionary *attrsDictionary;
             NSAttributedString *currentEmotion;
            for (Emotions *emotion in emotionArray) {
-               attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [self.emotionColors objectForKey:emotion.category], NSForegroundColorAttributeName, nil];
+               attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices basicColors] objectForKey:emotion.category], NSForegroundColorAttributeName, nil];
                 currentEmotion = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n",[emotion.name lowercaseString]] attributes:attrsDictionary];
                 selectedEms = [selectedEms stringByAppendingFormat:@"%@: %@\n", emotion.category, [emotion.name lowercaseString]];
                 [selectedEmotions appendAttributedString:currentEmotion];

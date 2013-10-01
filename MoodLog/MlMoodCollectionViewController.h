@@ -19,7 +19,6 @@
 @property(nonatomic, assign) int currentParrotLevel;
 @property (strong, nonatomic) NSString *wordToDefine;
 @property (strong, nonatomic) NSDictionary *faceImageDictionary; //reference to the delegate's dictionary of faces
-@property (strong, nonatomic) NSDictionary *emotionColors; //reference to the delegate's dictionary of colors
 
 
 - (void) refresh;

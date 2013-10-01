@@ -16,7 +16,6 @@
 @property (strong, nonatomic) NSDictionary *moodListDictionary;
 @property (strong, nonatomic) NSArray *emotionsFromPList;
 @property (strong, nonatomic) NSDictionary *faceImageDictionary;
-@property (strong, nonatomic) NSDictionary *emotionColors;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

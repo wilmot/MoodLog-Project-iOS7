@@ -49,7 +49,6 @@
 
 @property (strong, atomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
-@property (strong, atomic) NSDictionary *emotionColors;
 
 
 - (IBAction)pressedDoneButton:(id)sender;
