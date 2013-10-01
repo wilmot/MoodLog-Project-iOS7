@@ -50,7 +50,7 @@
     }
     NSLog(@"Mood Data list as gathered from PList: %@, count %d", self.emotionsFromPList, [self.emotionsFromPList count]);
     NSLog(@"Item 0: %@", ((MlMoodDataItem *)self.emotionsFromPList[0]).mood);
-    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(category beginswith[c] %@)", @"joy"];
+    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(category matches[c] %@)", @"joy"];
     NSArray *newie = [self.emotionsFromPList filteredArrayUsingPredicate:myPredicate];
     NSLog(@"Newie: %@", newie);
     NSPredicate *myPredicate2 = [NSPredicate predicateWithFormat:@"parrotLevel.intValue <= %d", 2];
@@ -58,6 +58,11 @@
     NSLog(@"Newie2: %@", newie2);
     for (MlMoodDataItem *foo in newie2) {
         NSLog(@"parrotLevel = %@",foo.parrotLevel);
+    }
+    NSPredicate *myPredicate3 = [NSPredicate predicateWithFormat:@"category matches[c] %@ AND parrotLevel.intValue <= %d", @"Joy", 2];
+    NSArray *newie3 = [self.emotionsFromPList filteredArrayUsingPredicate:myPredicate3];
+    for (MlMoodDataItem *foo in newie3) {
+        NSLog(@"Category: %@, parrotLevel: %@",foo.category, foo.parrotLevel);
     }
     
     // See if there are any defaults and register some if not

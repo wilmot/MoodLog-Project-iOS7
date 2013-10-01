@@ -10,4 +10,15 @@
 
 @implementation MlMoodDataItem
 
+-(id)copyWithZone:(NSZone *)zone {
+    MlMoodDataItem *copy = [[[self class] allocWithZone:zone] init];
+    copy.mood = [self.mood copy];
+    copy.category = [self.category copy];
+    copy.feelValue = [self.feelValue copy];
+    copy.parrotLevel = [self.parrotLevel copy];
+    copy.facePath = [self.facePath copy];
+    copy.selected = NO;
+    return copy;
+}
+
 @end

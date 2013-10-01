@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MlMoodDataItem : NSObject
+@interface MlMoodDataItem : NSObject <NSCopying>
 
 @property (nonatomic, retain) NSString *mood;
 @property (nonatomic, retain) NSString *category;
@@ -16,5 +16,7 @@
 @property (nonatomic, retain) NSNumber *parrotLevel;
 @property (nonatomic, retain) NSString *facePath;
 @property (nonatomic, assign) BOOL selected;
+
+-(id)copyWithZone:(NSZone *)zone;
 
 @end
