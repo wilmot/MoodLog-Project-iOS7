@@ -377,7 +377,7 @@ MoodLogEvents *myLogEntry;
             size = CGSizeMake(106.0, 32.0); // Portrait
         }
         else {
-            size = CGSizeMake(120.0, 32.0); // Landscape
+            size = CGSizeMake(112.0, 32.0); // Landscape
         }
     }
     return size;

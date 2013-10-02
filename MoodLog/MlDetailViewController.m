@@ -118,7 +118,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         if (self.detailItem.journalEntry.length > 0) {
             // There's interesting content
             self.entryLogTextView.textColor = [UIColor blackColor];
-            [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue" size:11]];
+            [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:14]];
             self.entryLogTextView.textAlignment = NSTextAlignmentLeft;
             self.entryLogTextView.text = self.detailItem.journalEntry;
             self.littleKeyboardIcon.hidden = YES;
@@ -144,7 +144,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         NSMutableAttributedString *selectedEmotions = [[NSMutableAttributedString alloc] init];
         if (emotionArrayCount > 0) {
             NSString *thisCategory;
-            UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:12];
+            UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
             NSDictionary *attrsDictionary;
             NSAttributedString *currentEmotion;
            for (Emotions *emotion in emotionArray) {
