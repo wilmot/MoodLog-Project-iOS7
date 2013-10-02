@@ -56,7 +56,7 @@
     
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    id testObject = [defaults objectForKey:@"DefaultParrotLevel"]; // always test the newest default
+    id testObject = [defaults objectForKey:@"DefaultFacesColorState"]; // always test the newest default
 	if (testObject == nil) {
         [defaults setInteger:0 forKey:@"ChartSegmentState"];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -88,6 +88,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:quietEnd forKey:@"DefaultRandomQuietEndTime"];
         [defaults setInteger:20 forKey:@"DefaultDelayMinutes"];
         [defaults setInteger:2 forKey:@"DefaultParrotLevel"];
+        [defaults setBool:YES forKey:@"DefaultFacesColorState"];
 
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}

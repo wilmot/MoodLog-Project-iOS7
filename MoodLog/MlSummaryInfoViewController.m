@@ -101,7 +101,6 @@ BOOL hasShownSlowSummary = NO;
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices basicColors] objectForKey:category], NSForegroundColorAttributeName, nil];
             summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", category, [countForCategory integerValue]] attributes:attrsDictionary];
             [summaryAttributedString appendAttributedString:summaryLine];
-            
         }
         
         self.summaryText.attributedText = summaryAttributedString;

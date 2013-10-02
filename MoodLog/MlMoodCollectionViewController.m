@@ -79,6 +79,7 @@ MoodLogEvents *myLogEntry;
     }
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.currentParrotLevel = [defaults integerForKey:@"DefaultParrotLevel"];
+    self.showColorsOnEmotions = [defaults boolForKey:@"DefaultFacesColorState"];
     
     self.faceImageDictionary = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).faceImageDictionary;
 
@@ -136,6 +137,9 @@ MoodLogEvents *myLogEntry;
                                          blue:202.0f/255.0f
                                         alpha:0.0f];
     }
+    
+    // Set colors on or off for emotions
+    NSLog(@"colors on?: %hhd",self.showColorsOnEmotions);
     
     NSPredicate *myFilter;
     NSNumber *parrotLevel =[NSNumber numberWithInt:self.currentParrotLevel];
@@ -336,7 +340,12 @@ MoodLogEvents *myLogEntry;
          if ([[emotionArray objectAtIndex:indexPath.section] count] > 0) {
             MlMoodDataItem *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
             headerView.headerLabel.text = aMood.category;
-            headerView.backgroundColor = [[MlColorChoices basicColors] objectForKey:aMood.category];
+             if (self.showColorsOnEmotions) {
+                 headerView.backgroundColor = [[MlColorChoices basicColors] objectForKey:aMood.category];
+             }
+             else {
+                 headerView.backgroundColor = [UIColor grayColor];
+             }
        }
         
         reusableview = headerView;
@@ -389,7 +398,12 @@ MoodLogEvents *myLogEntry;
     
     if (aMood.selected) {
         // set the color of the bg to something selected
-        [cell setBackgroundColor:selectedColor];
+        if (self.showColorsOnEmotions) {
+            [cell setBackgroundColor:[[MlColorChoices translucentColors: 0.4f] objectForKey:aMood.category]];
+        }
+        else {
+            [cell setBackgroundColor:selectedColor];
+        }
         [[cell moodName] setTextColor:[UIColor blackColor]];
         if (myLogEntry.editing.boolValue == YES) {
             [[cell checkMark] setHidden:NO];
@@ -417,7 +431,12 @@ MoodLogEvents *myLogEntry;
     }
     else { // not selected
         // set the color to normal boring
-        [cell setBackgroundColor:normalColor];
+        if (self.showColorsOnEmotions) {
+            [cell setBackgroundColor:[[MlColorChoices translucentColors: 0.2f] objectForKey:aMood.category]];
+        }
+        else {
+            [cell setBackgroundColor:normalColor];
+        }
         [[cell moodName] setTextColor:[UIColor blackColor]];
         [[cell checkMark] setHidden:YES];
          if ([self.cellIdentifier isEqual: @"moodCellFaces"]) {

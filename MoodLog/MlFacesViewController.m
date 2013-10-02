@@ -36,6 +36,7 @@ NSUserDefaults *defaults;
     defaults = [NSUserDefaults standardUserDefaults];
     [self selectButton]; // Highlight the correct button
     [self setFaces:[self.detailItem.showFacesEditing boolValue]];
+    [self setFacesColors:self.myMoodCollectionViewController.showColorsOnEmotions];
     self.detailItem.editing = [NSNumber numberWithBool:YES];
     // [self saveContext];
     self.fewerMoreSlider.value = (CGFloat)[defaults integerForKey:@"DefaultParrotLevel"];
@@ -122,6 +123,13 @@ NSUserDefaults *defaults;
     
 }
 
+- (IBAction)toggleColors:(id)sender {
+    self.myMoodCollectionViewController.showColorsOnEmotions =!self.myMoodCollectionViewController.showColorsOnEmotions;
+    [self setFacesColors:self.myMoodCollectionViewController.showColorsOnEmotions];
+    [defaults setBool:self.myMoodCollectionViewController.showColorsOnEmotions forKey:@"DefaultFacesColorState"];
+    [defaults synchronize];
+}
+
 - (IBAction)slideFewerMoreSlider:(id)sender {
     static float lastValue = 2.0f;
     int discreteValue = roundl([self.fewerMoreSlider value]);
@@ -192,7 +200,12 @@ NSUserDefaults *defaults;
     }
     self.detailItem.showFacesEditing = [NSNumber numberWithBool:facesState]; // Save state in database
     [self.toggleFacesButton setSelected:facesState];
-   // [self saveContext];
+    // [self saveContext];
+    [self.myMoodCollectionViewController refresh];
+}
+
+- (void) setFacesColors:(BOOL)faceColorsState {
+    [self.toggleColorsButton setSelected:faceColorsState];
     [self.myMoodCollectionViewController refresh];
 }
 

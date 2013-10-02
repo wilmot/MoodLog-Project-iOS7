@@ -16,6 +16,7 @@
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 @property (strong, nonatomic) UIReferenceLibraryViewController *referenceLibraryVC;
 @property(nonatomic, assign) BOOL isShowingDefinition;
+@property(nonatomic, assign) BOOL showColorsOnEmotions;
 @property(nonatomic, assign) int currentParrotLevel;
 @property (strong, nonatomic) NSString *wordToDefine;
 @property (strong, nonatomic) NSDictionary *faceImageDictionary; //reference to the delegate's dictionary of faces
