@@ -89,10 +89,26 @@ MoodLogEvents *myLogEntry;
 
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
+
+    // Get a reference to this Log Entry
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) { // iPad
+        myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
+    }
+    else { // iPhone
+        myLogEntry = self.detailItem;
+    }
+
+    // Get the data from the database
+    [self getMoodRecordsFromCoreData];
+
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [self refresh];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [self updateMoodRecordsForLogEntry];
 }
 
 - (void) viewDidUnload {
@@ -100,47 +116,7 @@ MoodLogEvents *myLogEntry;
 }
 
 - (void) refresh {
-    NSSet *emotionsFromRecord;
-    // Fetch the Mood list for this journal entry
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) { // iPad
-        myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
-    }
-    else { // iPhone
-        myLogEntry = self.detailItem;
-    }
-    emotionsFromRecord = myLogEntry.relationshipEmotions; // Get all the emotions for this record
-    NSArray *tempCopyOfEmotionsFromPList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionsFromPList;
-    mutableEmotionsFromPList = [[NSMutableArray alloc] initWithArray:tempCopyOfEmotionsFromPList copyItems:YES];
-    NSPredicate *selectedPredicate = [NSPredicate predicateWithFormat:@"selected == YES"];
-    NSSet *selectedEmotionsFromRecord = [emotionsFromRecord filteredSetUsingPredicate:selectedPredicate];
-    for (Emotions *aMood in selectedEmotionsFromRecord) {
-        NSPredicate *aPredicate = [NSPredicate predicateWithFormat:@"mood = %@",aMood.name];
-        NSArray *result = [mutableEmotionsFromPList filteredArrayUsingPredicate:aPredicate];
-        if ([result count] == 1) {
-            MlMoodDataItem *thisMood = (MlMoodDataItem *)result[0];
-            thisMood.selected = YES;
-       } else {
-            abort();
-        }
-    }
 
-    // Set the background color for selected items
-    if (myLogEntry.editing.boolValue == YES) {
-        selectedColor = [UIColor colorWithRed:202.0f/255.0f
-                                        green:202.0f/255.0f
-                                         blue:202.0f/255.0f
-                                        alpha:0.5f];
-    }
-    else {
-        selectedColor = [UIColor colorWithRed:202.0f/255.0f
-                                        green:202.0f/255.0f
-                                         blue:202.0f/255.0f
-                                        alpha:0.0f];
-    }
-    
-    // Set colors on or off for emotions
-    NSLog(@"colors on?: %hhd",self.showColorsOnEmotions);
-    
     NSPredicate *myFilter;
     NSNumber *parrotLevel =[NSNumber numberWithInt:self.currentParrotLevel];
     if (myLogEntry.editing.boolValue == YES) { // Editing
@@ -208,20 +184,6 @@ MoodLogEvents *myLogEntry;
         }
     }
     
-//    UICollectionViewFlowLayout *myLayout = [[UICollectionViewFlowLayout alloc]init];
-//    if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
-//        if (myLogEntry.editing.boolValue == YES) {
-//            myLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-//        }
-//        else {
-//            myLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//        }
-//    }
-//    else {
-//        myLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-//    }
-//    [self.collectionView setCollectionViewLayout:myLayout animated:YES];
-
     [self.collectionView reloadData];
 }
 
@@ -281,34 +243,20 @@ MoodLogEvents *myLogEntry;
     return [[emotionArray objectAtIndex:section] count];
 }
 
+// TODO: get rid of myLogEntry.editing.boolValue
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (myLogEntry.editing.boolValue == YES) {
-        
+        // get the mood from the active array of arrays
         MlMoodDataItem *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-        if (aMood.selected) { // if it's already selected
-            [aMood setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
-            // Delete emotion from the record
-            NSPredicate *findTheEmotionPredicate = [NSPredicate predicateWithFormat:@"name = %@",aMood.mood];
-            NSSet *matchingEmotions = [myLogEntry.relationshipEmotions filteredSetUsingPredicate:findTheEmotionPredicate];
-            for (Emotions *emo in matchingEmotions) {
-                [myLogEntry removeRelationshipEmotionsObject:emo];
-            }
-       }
-        else {
-            [aMood setValue:[NSNumber numberWithBool:YES] forKey:@"selected"];
-            // Add emotion to the record
-            Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:[self.detailItem managedObjectContext]];
-            emotion.name = aMood.mood;
-            emotion.category = aMood.category;
-            emotion.parrotLevel = [NSNumber numberWithInt:[aMood.parrotLevel integerValue]];
-            emotion.feelValue = [NSNumber numberWithInt:[aMood.feelValue integerValue]];
-            emotion.facePath = aMood.facePath;
-            emotion.selected = [NSNumber numberWithBool:aMood.selected];
-            emotion.logParent = myLogEntry; // current record
-            //[myLogEntry addRelationshipEmotionsObject:emotion];
-
+        Boolean startingState = aMood.selected;
+       // save the mood in the master array
+        NSArray *matchingMoodsFromMaster = [mutableEmotionsFromPList filteredArrayUsingPredicate:[NSPredicate
+                                              predicateWithFormat:@"self == %@", @"New"]];
+        for (MlMoodDataItem *theMood in matchingMoodsFromMaster) { // generally there should only be one
+            [theMood setValue:[NSNumber numberWithBool:!startingState] forKey:@"selected"];
         }
-        [self saveContext];
+        [aMood setValue:[NSNumber numberWithBool:!startingState] forKey:@"selected"];
         [collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
     }
 }
@@ -377,7 +325,7 @@ MoodLogEvents *myLogEntry;
             size = CGSizeMake(106.0, 32.0); // Portrait
         }
         else {
-            size = CGSizeMake(112.0, 32.0); // Landscape
+            size = CGSizeMake(112.0, 32.0); // Landscape iPhone5
         }
     }
     return size;
@@ -386,7 +334,6 @@ MoodLogEvents *myLogEntry;
 - (void)deviceOrientationDidChange:(NSNotification *)notification {
     [self.collectionView reloadData];
 }
-
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
@@ -453,6 +400,68 @@ MoodLogEvents *myLogEntry;
     return cell;
 }
 
+# pragma mark CoreData-related methods
+
+- (void) getMoodRecordsFromCoreData {
+    NSSet *emotionsFromRecord;
+
+    emotionsFromRecord = myLogEntry.relationshipEmotions; // Get all the emotions for this record
+    NSArray *tempCopyOfEmotionsFromPList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionsFromPList;
+    mutableEmotionsFromPList = [[NSMutableArray alloc] initWithArray:tempCopyOfEmotionsFromPList copyItems:YES];
+    NSPredicate *selectedPredicate = [NSPredicate predicateWithFormat:@"selected == YES"];
+    NSSet *selectedEmotionsFromRecord = [emotionsFromRecord filteredSetUsingPredicate:selectedPredicate];
+    for (Emotions *aMood in selectedEmotionsFromRecord) {
+        NSPredicate *aPredicate = [NSPredicate predicateWithFormat:@"mood = %@",aMood.name];
+        NSArray *result = [mutableEmotionsFromPList filteredArrayUsingPredicate:aPredicate];
+        if ([result count] == 1) {
+            MlMoodDataItem *thisMood = (MlMoodDataItem *)result[0];
+            thisMood.selected = YES;
+        } else {
+            abort();
+        }
+    }
+}
+
+- (void) updateMoodRecordsForLogEntry {
+    for (MlMoodDataItem *aMood in mutableEmotionsFromPList) {
+        if (aMood.selected) {
+            [self saveMoodRecord:aMood];
+        }
+        else {
+            [self deleteMoodRecord:aMood];
+        }
+    }
+    [self saveContext];
+}
+
+- (void) saveMoodRecord: (MlMoodDataItem *)aMood {
+    NSPredicate *findTheEmotionPredicate = [NSPredicate predicateWithFormat:@"name = %@",aMood.mood];
+    NSSet *matchingEmotions = [myLogEntry.relationshipEmotions filteredSetUsingPredicate:findTheEmotionPredicate];
+    if ([matchingEmotions count] > 0) { // Clear out any existing records (winnowing duplicates)
+        for (Emotions *emo in matchingEmotions) {
+            [myLogEntry removeRelationshipEmotionsObject:emo];
+        }
+    }
+    // Add emotion to the record
+    Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:[self.detailItem managedObjectContext]];
+    emotion.name = aMood.mood;
+    emotion.category = aMood.category;
+    emotion.parrotLevel = [NSNumber numberWithInt:[aMood.parrotLevel integerValue]];
+    emotion.feelValue = [NSNumber numberWithInt:[aMood.feelValue integerValue]];
+    emotion.facePath = aMood.facePath;
+    emotion.selected = [NSNumber numberWithBool:aMood.selected];
+    emotion.logParent = myLogEntry; // current record
+    [myLogEntry addRelationshipEmotionsObject:emotion];
+}
+
+- (void) deleteMoodRecord: (MlMoodDataItem *)aMood {
+    // Delete emotion from the record
+    NSPredicate *findTheEmotionPredicate = [NSPredicate predicateWithFormat:@"name = %@",aMood.mood];
+    NSSet *matchingEmotions = [myLogEntry.relationshipEmotions filteredSetUsingPredicate:findTheEmotionPredicate];
+    for (Emotions *emo in matchingEmotions) {
+        [myLogEntry removeRelationshipEmotionsObject:emo];
+    }
+}
 - (void) saveContext { // Save data to the database
     // Save the context.
     NSError *error = nil;
