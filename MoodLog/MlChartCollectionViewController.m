@@ -85,8 +85,6 @@ Boolean firstLoad;
         firstLoad = NO;
     }
     [self.chartCollectionView.collectionViewLayout invalidateLayout];
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    [self setCellTypeAndSize:orientation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,39 +111,6 @@ Boolean firstLoad;
     [self.chartCollectionView reloadData];
 }
 
-- (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation {
-    NSUInteger collectionViewHeight;
-    if (toInterfaceOrientation == UIDeviceOrientationPortrait || toInterfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
-        // portrait
-       // NSUInteger frameheight = [[UIScreen mainScreen] bounds].size.height; // Different sizes for iPhone 4 vs. iPhone 5
-        collectionViewHeight = self.chartCollectionView.bounds.size.height;
-        if ([self.chartType isEqualToString:@"Bar"]) {
-            self.cellIdentifier = @"chartCellPortrait";
-            cellSize = CGSizeMake(92.0,collectionViewHeight);
-            labelLines = collectionViewHeight/16;
-        }
-        else { // Pie
-            self.cellIdentifier = @"pieChartCellPortrait";
-            cellSize = CGSizeMake(92.0,collectionViewHeight);
-            labelLines = collectionViewHeight/16;
-        }
-    }
-    else {
-        collectionViewHeight = self.chartCollectionView.bounds.size.height;
-       // landscape
-        if ([self.chartType isEqualToString:@"Bar"]) {
-            self.cellIdentifier = @"chartCellPortrait";
-            cellSize = CGSizeMake(92.0,collectionViewHeight);
-            labelLines = 16;
-        }
-        else { // Pie
-            self.cellIdentifier = @"pieChartCellPortrait";
-            cellSize = CGSizeMake(92.0,collectionViewHeight);
-            labelLines = 16;
-        }
-    }
-    [self.chartCollectionView reloadData];
-}
 
 #pragma mark - Orientation change
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -153,8 +118,7 @@ Boolean firstLoad;
 
 - (void)deviceOrientationDidChange:(NSNotification *)notification {
     [self.chartCollectionView.collectionViewLayout invalidateLayout];
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    [self setCellTypeAndSize:orientation];
+    [self.chartCollectionView reloadData];
 }
 
 #pragma mark - Delegate methods
@@ -170,6 +134,10 @@ Boolean firstLoad;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger collectionViewHeight = self.chartCollectionView.bounds.size.height;
+    cellSize = CGSizeMake(92.0,collectionViewHeight);
+    labelLines = 16/collectionViewHeight;
+
     return cellSize; // set when orientation changes
 }
 

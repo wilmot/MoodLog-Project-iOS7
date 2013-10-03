@@ -23,6 +23,5 @@
 
 
 - (void) setCellType: (id)sender;
-- (void) setCellTypeAndSize: (UIInterfaceOrientation)toInterfaceOrientation;
 
 @end

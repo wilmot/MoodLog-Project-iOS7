@@ -361,10 +361,6 @@
 		4C92BE0817985BFD005DEEC2 /* TriangleRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0617985BFD005DEEC2 /* TriangleRight.png */; };
 		4C92BE0917985BFD005DEEC2 /* TriangleRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */; };
 		4C92BE0C1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */; };
-		4C92BE0E1799E0AC005DEEC2 /* Icon Test.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0D1799E0AC005DEEC2 /* Icon Test.png */; };
-		4C92BE101799E368005DEEC2 /* Icon Test@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE0F1799E368005DEEC2 /* Icon Test@2x.png */; };
-		4C92BE121799EA97005DEEC2 /* IconFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE111799EA96005DEEC2 /* IconFace@2x.png */; };
-		4C92BE141799EA9D005DEEC2 /* IconFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE131799EA9D005DEEC2 /* IconFace.png */; };
 		4C92BE16179A0B69005DEEC2 /* TestArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C92BE15179A0B68005DEEC2 /* TestArrow.png */; };
 		4C92BE69179B3FDA005DEEC2 /* MlWelcomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C92BE68179B3FD9005DEEC2 /* MlWelcomePageViewController.m */; };
 		4C92BE6C179E5D6E005DEEC2 /* MlQuietHoursTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C92BE6B179E5D6C005DEEC2 /* MlQuietHoursTableViewController.m */; };
@@ -780,10 +776,6 @@
 		4C92BE0717985BFD005DEEC2 /* TriangleRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TriangleRight@2x.png"; sourceTree = "<group>"; };
 		4C92BE0A1798EA7C005DEEC2 /* MlWelcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlWelcomeScreenViewController.h; sourceTree = "<group>"; };
 		4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlWelcomeScreenViewController.m; sourceTree = "<group>"; };
-		4C92BE0D1799E0AC005DEEC2 /* Icon Test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Test.png"; sourceTree = "<group>"; };
-		4C92BE0F1799E368005DEEC2 /* Icon Test@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Test@2x.png"; sourceTree = "<group>"; };
-		4C92BE111799EA96005DEEC2 /* IconFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconFace@2x.png"; sourceTree = "<group>"; };
-		4C92BE131799EA9D005DEEC2 /* IconFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconFace.png; sourceTree = "<group>"; };
 		4C92BE15179A0B68005DEEC2 /* TestArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestArrow.png; sourceTree = "<group>"; };
 		4C92BE67179B3FD8005DEEC2 /* MlWelcomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlWelcomePageViewController.h; sourceTree = "<group>"; };
 		4C92BE68179B3FD9005DEEC2 /* MlWelcomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlWelcomePageViewController.m; sourceTree = "<group>"; };
@@ -1166,10 +1158,6 @@
 		4C55CBD7162DE67400EAA878 = {
 			isa = PBXGroup;
 			children = (
-				4C92BE131799EA9D005DEEC2 /* IconFace.png */,
-				4C92BE111799EA96005DEEC2 /* IconFace@2x.png */,
-				4C92BE0F1799E368005DEEC2 /* Icon Test@2x.png */,
-				4C92BE0D1799E0AC005DEEC2 /* Icon Test.png */,
 				4C55CBEE162DE67400EAA878 /* MoodLog */,
 				4C8BB41717ECEC2000754252 /* MoodLog_Tests */,
 				4C55CBE5162DE67400EAA878 /* Frameworks */,
@@ -1714,13 +1702,9 @@
 				4C06392C17E45A6E00563FE6 /* Irritated@2x.png in Resources */,
 				4C92BE0917985BFD005DEEC2 /* TriangleRight@2x.png in Resources */,
 				4C06393317E45A6E00563FE6 /* Infatuated.png in Resources */,
-				4C92BE0E1799E0AC005DEEC2 /* Icon Test.png in Resources */,
 				4C65612C17F39E5000F03470 /* ParrottsEmotions.pdf in Resources */,
 				4C06392F17E45A6E00563FE6 /* Insulted.png in Resources */,
-				4C92BE101799E368005DEEC2 /* Icon Test@2x.png in Resources */,
-				4C92BE121799EA97005DEEC2 /* IconFace@2x.png in Resources */,
 				4C06394017E45A6E00563FE6 /* Homesick@2x.png in Resources */,
-				4C92BE141799EA9D005DEEC2 /* IconFace.png in Resources */,
 				4C92BE16179A0B69005DEEC2 /* TestArrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
