@@ -373,6 +373,7 @@
 		4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */; };
 		4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8E8EF17C8647700E26857 /* Images.xcassets */; };
 		4CEEF60017FB628E00C29507 /* MlColorChoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */; };
+		4CEEF60317FCF48D00C29507 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60117FCF48D00C29507 /* WelcomeView.xib */; };
 		4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */; };
 		4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F0164B8C870055CC3D /* MlMailViewController.m */; };
 		4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */; };
@@ -708,7 +709,7 @@
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
 		4C52861616D9A654007C878C /* MlChartDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartDrawingView.h; sourceTree = "<group>"; };
 		4C52861716D9A654007C878C /* MlChartDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartDrawingView.m; sourceTree = "<group>"; };
-		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55CBE2162DE67400EAA878 /* MoodLog T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoodLog T.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -798,6 +799,7 @@
 		4CECC217165D50E800EE3C6B /* MoodLog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 2.xcdatamodel"; sourceTree = "<group>"; };
 		4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlColorChoices.h; sourceTree = "<group>"; };
 		4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlColorChoices.m; sourceTree = "<group>"; };
+		4CEEF60217FCF48D00C29507 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WelcomeView.xib; sourceTree = "<group>"; };
 		4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartViewController.h; sourceTree = "<group>"; };
 		4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartViewController.m; sourceTree = "<group>"; };
 		4CFB21EF164B8C870055CC3D /* MlMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMailViewController.h; sourceTree = "<group>"; };
@@ -1175,7 +1177,7 @@
 		4C55CBE3162DE67400EAA878 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C55CBE2162DE67400EAA878 /* MoodLog.app */,
+				4C55CBE2162DE67400EAA878 /* MoodLog T.app */,
 				4C8BB41317ECEC2000754252 /* MoodLog_Tests.xctest */,
 			);
 			name = Products;
@@ -1200,6 +1202,7 @@
 			children = (
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
 				4C65612617F280AD00F03470 /* WelcomeScreens.storyboard */,
+				4CEEF60117FCF48D00C29507 /* WelcomeView.xib */,
 				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
 				4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */,
 				4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */,
@@ -1329,7 +1332,7 @@
 			);
 			name = MoodLog;
 			productName = MoodLog;
-			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog.app */;
+			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog T.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4C8BB41217ECEC2000754252 /* MoodLog_Tests */ = {
@@ -1482,6 +1485,7 @@
 				4C4043911783E51400710F2A /* Dismayed@2x.png in Resources */,
 				4C4043921783E51400710F2A /* Displeased.png in Resources */,
 				4C4043931783E51400710F2A /* Displeased@2x.png in Resources */,
+				4CEEF60317FCF48D00C29507 /* WelcomeView.xib in Resources */,
 				4C06396617E45A6E00563FE6 /* Euphoric@2x.png in Resources */,
 				4C4043941783E51400710F2A /* Distressed.png in Resources */,
 				4C4043951783E51400710F2A /* Distressed@2x.png in Resources */,
@@ -1830,6 +1834,14 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		4CEEF60117FCF48D00C29507 /* WelcomeView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CEEF60217FCF48D00C29507 /* en */,
+			);
+			name = WelcomeView.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1900,7 +1912,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) T";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1921,7 +1933,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) T";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
