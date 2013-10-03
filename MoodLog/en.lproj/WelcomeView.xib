@@ -11,10 +11,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" image="SixColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="GzX-XZ-Eq5">
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.29999999999999999" contentMode="scaleToFill" image="SixColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="GzX-XZ-Eq5">
                     <rect key="frame" x="0.0" y="240" width="320" height="90"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <color key="backgroundColor" red="0.9918937087059021" green="0.80355274677276611" blue="0.03739069402217865" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="7oz-YO-8cx"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="yUk-wf-li4">
                     <rect key="frame" x="0.0" y="240" width="320" height="90"/>
@@ -73,12 +76,15 @@ Tap anywhere to begin</string>
                 <constraint firstAttribute="centerY" secondItem="yUk-wf-li4" secondAttribute="centerY" constant="-1" id="Poa-EZ-Sg6"/>
                 <constraint firstAttribute="bottom" secondItem="aD4-MT-C2H" secondAttribute="bottom" constant="51" id="RNO-re-MF3"/>
                 <constraint firstAttribute="centerX" secondItem="yUk-wf-li4" secondAttribute="centerX" id="Xzx-bG-1GC"/>
+                <constraint firstItem="GzX-XZ-Eq5" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="bZA-iY-enz"/>
                 <constraint firstItem="rwB-Mf-LWP" firstAttribute="top" secondItem="1" secondAttribute="top" constant="43" id="eHz-bV-q60"/>
                 <constraint firstAttribute="trailing" secondItem="yUk-wf-li4" secondAttribute="trailing" id="fyH-5u-ARB"/>
+                <constraint firstItem="GzX-XZ-Eq5" firstAttribute="top" secondItem="yUk-wf-li4" secondAttribute="top" id="g5Y-0l-snu"/>
                 <constraint firstItem="yUk-wf-li4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ivb-OO-EDd"/>
                 <constraint firstAttribute="trailing" secondItem="xwP-jM-Jvv" secondAttribute="trailing" constant="32" id="iyE-C7-Kt9"/>
                 <constraint firstItem="ORR-7G-lRR" firstAttribute="leading" secondItem="aD4-MT-C2H" secondAttribute="trailing" constant="2" id="u5u-gx-Wok"/>
                 <constraint firstAttribute="trailing" secondItem="ORR-7G-lRR" secondAttribute="trailing" constant="35" id="uYH-bl-ivW"/>
+                <constraint firstAttribute="trailing" secondItem="GzX-XZ-Eq5" secondAttribute="trailing" id="wIP-rD-b6t"/>
                 <constraint firstAttribute="trailing" secondItem="rwB-Mf-LWP" secondAttribute="trailing" constant="77" id="zkA-0I-BoC"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
