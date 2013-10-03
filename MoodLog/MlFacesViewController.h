@@ -26,10 +26,6 @@
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 @property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
 
-- (IBAction)sortABC:(id)sender;
-- (IBAction)sortGroup:(id)sender;
-- (IBAction)sortCBA:(id)sender;
-- (IBAction)sortShuffle:(id)sender;
 - (IBAction)toggleFaces:(id)sender;
 - (IBAction)toggleColors:(id)sender;
 - (IBAction)slideFewerMoreSlider:(id)sender;

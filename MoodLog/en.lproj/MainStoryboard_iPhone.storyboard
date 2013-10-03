@@ -2100,7 +2100,7 @@ Here</string>
                                         </connections>
                                     </containerView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gXX-wU-3v7">
-                                        <rect key="frame" x="11" y="446" width="160" height="29"/>
+                                        <rect key="frame" x="11" y="446" width="182" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="Group"/>
@@ -2112,10 +2112,10 @@ Here</string>
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obW-v0-UPO">
-                                        <rect key="frame" x="183" y="444" width="60" height="30"/>
+                                        <rect key="frame" x="206" y="444" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="IPF-cL-peE"/>
+                                            <constraint firstAttribute="width" constant="50" id="IPF-cL-peE"/>
                                             <constraint firstAttribute="height" constant="30" id="PVL-eT-pwk"/>
                                         </constraints>
                                         <state key="normal" title="Colors">
@@ -2126,10 +2126,10 @@ Here</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-Hq-Uqu">
-                                        <rect key="frame" x="251" y="444" width="60" height="30"/>
+                                        <rect key="frame" x="261" y="444" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="9ct-nt-VcQ"/>
+                                            <constraint firstAttribute="width" constant="50" id="9ct-nt-VcQ"/>
                                             <constraint firstAttribute="height" constant="30" id="b9b-2h-MyN"/>
                                         </constraints>
                                         <state key="normal" title="Faces">
@@ -2140,7 +2140,7 @@ Here</string>
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
-                                        <rect key="frame" x="67" y="409" width="194" height="34"/>
+                                        <rect key="frame" x="67" y="401" width="194" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="finishedSlidingFewerMoreSlider:" destination="Haq-rW-jQt" eventType="touchUpInside" id="uk1-Vb-Wh3"/>
@@ -2148,26 +2148,24 @@ Here</string>
                                         </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZO-kC-Yn3">
-                                        <rect key="frame" x="261" y="404" width="50" height="44"/>
+                                        <rect key="frame" x="261" y="400" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="FDS-Q7-a7S"/>
-                                            <constraint firstAttribute="height" constant="44" id="yE2-cH-lZM"/>
+                                            <constraint firstAttribute="height" constant="30" id="yE2-cH-lZM"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="More"/>
                                         <connections>
                                             <action selector="setMore:" destination="Haq-rW-jQt" eventType="touchUpInside" id="k15-pB-RBj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqg-kz-crn">
-                                        <rect key="frame" x="11" y="404" width="50" height="44"/>
+                                        <rect key="frame" x="11" y="400" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="KAX-XF-mOY"/>
-                                            <constraint firstAttribute="height" constant="44" id="qhb-bD-QEo"/>
+                                            <constraint firstAttribute="height" constant="30" id="qhb-bD-QEo"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Fewer"/>
                                         <connections>
                                             <action selector="setFewer:" destination="Haq-rW-jQt" eventType="touchUpInside" id="xQO-oP-qYn"/>
@@ -2177,23 +2175,23 @@ Here</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7h5-hV-VH6" secondAttribute="trailing" id="3kN-e5-3ZE"/>
-                                    <constraint firstAttribute="bottom" secondItem="hmq-MX-tQA" secondAttribute="bottom" constant="38" id="5jl-bv-3o6"/>
-                                    <constraint firstItem="QMN-Hq-Uqu" firstAttribute="leading" secondItem="obW-v0-UPO" secondAttribute="trailing" constant="8" id="79L-Rc-PO9"/>
+                                    <constraint firstItem="QMN-Hq-Uqu" firstAttribute="leading" secondItem="obW-v0-UPO" secondAttribute="trailing" constant="5" id="79L-Rc-PO9"/>
                                     <constraint firstAttribute="bottom" secondItem="gXX-wU-3v7" secondAttribute="bottom" constant="6" id="8bd-vD-TAz"/>
                                     <constraint firstItem="7h5-hV-VH6" firstAttribute="top" secondItem="zNy-py-5fw" secondAttribute="top" id="CXM-SO-Jc3"/>
                                     <constraint firstAttribute="bottom" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="84" id="FyK-W1-Oq5"/>
-                                    <constraint firstAttribute="bottom" secondItem="QMN-Hq-Uqu" secondAttribute="bottom" constant="6" id="Ibv-M9-Nbk"/>
                                     <constraint firstAttribute="trailing" secondItem="QMN-Hq-Uqu" secondAttribute="trailing" constant="9" id="LOg-mf-piK"/>
                                     <constraint firstItem="hmq-MX-tQA" firstAttribute="leading" secondItem="hqg-kz-crn" secondAttribute="trailing" constant="8" id="LyO-9i-FkC"/>
                                     <constraint firstAttribute="trailing" secondItem="wZO-kC-Yn3" secondAttribute="trailing" constant="9" id="NyW-BY-xdM"/>
                                     <constraint firstItem="wZO-kC-Yn3" firstAttribute="leading" secondItem="hmq-MX-tQA" secondAttribute="trailing" constant="2" id="QV7-Kt-ydI"/>
+                                    <constraint firstItem="QMN-Hq-Uqu" firstAttribute="centerY" secondItem="obW-v0-UPO" secondAttribute="centerY" id="U0N-Ly-NaC"/>
+                                    <constraint firstItem="obW-v0-UPO" firstAttribute="centerY" secondItem="gXX-wU-3v7" secondAttribute="centerY" constant="-1" id="aky-Nm-b79"/>
                                     <constraint firstItem="hqg-kz-crn" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" constant="11" id="bCB-eX-yQ5"/>
-                                    <constraint firstAttribute="bottom" secondItem="wZO-kC-Yn3" secondAttribute="bottom" constant="32" id="dgV-qw-boJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="wZO-kC-Yn3" secondAttribute="bottom" constant="50" id="dgV-qw-boJ"/>
+                                    <constraint firstItem="hmq-MX-tQA" firstAttribute="top" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="5" id="dtg-NI-m3U"/>
                                     <constraint firstItem="7h5-hV-VH6" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" id="r2b-oF-vj7"/>
-                                    <constraint firstItem="obW-v0-UPO" firstAttribute="leading" secondItem="gXX-wU-3v7" secondAttribute="trailing" constant="12" id="ukj-gy-x8X"/>
-                                    <constraint firstAttribute="bottom" secondItem="hqg-kz-crn" secondAttribute="bottom" constant="32" id="umw-jm-KnP"/>
+                                    <constraint firstItem="obW-v0-UPO" firstAttribute="leading" secondItem="gXX-wU-3v7" secondAttribute="trailing" constant="13" id="ukj-gy-x8X"/>
+                                    <constraint firstAttribute="bottom" secondItem="hqg-kz-crn" secondAttribute="bottom" constant="50" id="umw-jm-KnP"/>
                                     <constraint firstItem="gXX-wU-3v7" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" constant="11" id="wfY-bN-zrR"/>
-                                    <constraint firstAttribute="bottom" secondItem="obW-v0-UPO" secondAttribute="bottom" constant="6" id="yzL-R4-G9f"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -61,33 +61,6 @@ NSUserDefaults *defaults;
     }
 }
 
-- (IBAction)sortABC:(id)sender {
-    self.detailItem.sortStyleEditing = alphabeticalSort;
-    [self saveContext];
-    [self setSelectedSortStyleSegment];
-    [self.myMoodCollectionViewController refresh];
-}
-
-- (IBAction)sortGroup:(id)sender {
-    self.detailItem.sortStyleEditing = groupSort;
-    [self saveContext];
-    [self setSelectedSortStyleSegment];
-    [self.myMoodCollectionViewController refresh];
-}
-
-- (IBAction)sortCBA:(id)sender {
-    self.detailItem.sortStyleEditing = reverseAlphabeticalSort;
-    [self saveContext];
-    [self setSelectedSortStyleSegment];
-    [self.myMoodCollectionViewController refresh];
-}
-
-- (IBAction)sortShuffle:(id)sender {
-    self.detailItem.sortStyleEditing = shuffleSort;
-    [self saveContext];
-    [self setSelectedSortStyleSegment];
-    [self.myMoodCollectionViewController refresh];
-}
 
 - (void) setSelectedSortStyleSegment {
     NSString *sortStyle = self.detailItem.sortStyleEditing;
@@ -183,21 +156,21 @@ NSUserDefaults *defaults;
     self.myMoodCollectionViewController.currentParrotLevel = parrotLevel;
     if (parrotLevel == 1) {
         [self.fewerButton setEnabled:NO];
-        self.fewerButton.titleLabel.textColor = [UIColor grayColor];
+      //  self.fewerButton.titleLabel.textColor = [UIColor grayColor];
         [self.moreButton setEnabled:YES];
-        self.moreButton.titleLabel.textColor = [UIColor blackColor];
+    ///    self.moreButton.titleLabel.textColor = [UIColor blackColor];
     }
     else if (parrotLevel == 4) {
         [self.fewerButton setEnabled:YES];
-        self.fewerButton.titleLabel.textColor = [UIColor blackColor];
+     ///   self.fewerButton.titleLabel.textColor = [UIColor blackColor];
         [self.moreButton setEnabled:NO];
-        self.moreButton.titleLabel.textColor = [UIColor grayColor];
+     ///   self.moreButton.titleLabel.textColor = [UIColor grayColor];
     }
     else {
         [self.fewerButton setEnabled:YES];
-        self.fewerButton.titleLabel.textColor = [UIColor blackColor];
+   //     self.fewerButton.titleLabel.textColor = [UIColor blackColor];
        [self.moreButton setEnabled:YES];
-        self.moreButton.titleLabel.textColor = [UIColor blackColor];
+   //     self.moreButton.titleLabel.textColor = [UIColor blackColor];
     }
     [self.myMoodCollectionViewController refresh];
 }
