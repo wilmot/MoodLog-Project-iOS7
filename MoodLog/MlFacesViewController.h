@@ -12,6 +12,7 @@
 
 @interface MlFacesViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sortStyleSegmentedControl;
 @property (weak, nonatomic) IBOutlet UIButton *sortABCButton;
 @property (weak, nonatomic) IBOutlet UIButton *sortGroupButton;
 @property (weak, nonatomic) IBOutlet UIButton *SortCBAButton;
@@ -35,5 +36,6 @@
 - (IBAction)finishedSlidingFewerMoreSlider:(id)sender;
 - (IBAction)setFewer:(id)sender;
 - (IBAction)setMore:(id)sender;
+- (IBAction)selectSegmentForSortStyle:(id)sender;
 
 @end

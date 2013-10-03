@@ -15,6 +15,11 @@
 
 @implementation MlFacesViewController
 
+
+static short GROUP_SORT = 0;
+static short AZ_SORT = 1;
+static short SHUFFLE_SORT = 2;
+
 NSUserDefaults *defaults;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,7 +39,7 @@ NSUserDefaults *defaults;
 
 - (void) viewWillAppear:(BOOL)animated {
     defaults = [NSUserDefaults standardUserDefaults];
-    [self selectButton]; // Highlight the correct button
+    [self setSelectedSortStyleSegment]; // Highlight the segment to show the current sort style
     [self setFaces:[self.detailItem.showFacesEditing boolValue]];
     [self setFacesColors:self.myMoodCollectionViewController.showColorsOnEmotions];
     self.detailItem.editing = [NSNumber numberWithBool:YES];
@@ -59,60 +64,66 @@ NSUserDefaults *defaults;
 - (IBAction)sortABC:(id)sender {
     self.detailItem.sortStyleEditing = alphabeticalSort;
     [self saveContext];
-    [self selectButton];
+    [self setSelectedSortStyleSegment];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortGroup:(id)sender {
     self.detailItem.sortStyleEditing = groupSort;
     [self saveContext];
-    [self selectButton];
+    [self setSelectedSortStyleSegment];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortCBA:(id)sender {
     self.detailItem.sortStyleEditing = reverseAlphabeticalSort;
     [self saveContext];
-    [self selectButton];
+    [self setSelectedSortStyleSegment];
     [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)sortShuffle:(id)sender {
     self.detailItem.sortStyleEditing = shuffleSort;
     [self saveContext];
-    [self selectButton];
+    [self setSelectedSortStyleSegment];
     [self.myMoodCollectionViewController refresh];
 }
 
-- (void) selectButton {
-    NSString *aButton = [self.detailItem valueForKey:@"sortStyleEditing"];
-    if ([aButton isEqualToString:alphabeticalSort]) {
-        [self.sortABCButton setSelected:YES];
-        [self.SortCBAButton setSelected:NO];
-        [self.sortGroupButton setSelected:NO];
-        [self.sortShuffleButton setSelected:NO];
+- (void) setSelectedSortStyleSegment {
+    NSString *sortStyle = self.detailItem.sortStyleEditing;
+    if ([sortStyle isEqualToString:groupSort]) {
+        [self.sortStyleSegmentedControl setSelectedSegmentIndex:GROUP_SORT];
     }
-    else if ([aButton isEqualToString:reverseAlphabeticalSort]) {
-        [self.sortABCButton setSelected:NO];
-        [self.SortCBAButton setSelected:YES];
-        [self.sortGroupButton setSelected:NO];
-        [self.sortShuffleButton setSelected:NO];
-        
+    else if ([sortStyle isEqualToString:alphabeticalSort]) {
+        [self.sortStyleSegmentedControl setSelectedSegmentIndex:AZ_SORT];
     }
-    else if ([aButton isEqualToString:groupSort]) {
-        [self.sortABCButton setSelected:NO];
-        [self.SortCBAButton setSelected:NO];
-        [self.sortGroupButton setSelected:YES];
-        [self.sortShuffleButton setSelected:NO];
+    else if ([sortStyle isEqualToString:reverseAlphabeticalSort]) {
+        [self.sortStyleSegmentedControl setSelectedSegmentIndex:AZ_SORT];
     }
-    else if ([aButton isEqualToString:shuffleSort]) {
-        [self.sortABCButton setSelected:NO];
-        [self.SortCBAButton setSelected:NO];
-        [self.sortGroupButton setSelected:NO];
-        [self.sortShuffleButton setSelected:YES];
+    else if ([sortStyle isEqualToString:shuffleSort]) {
+        [self.sortStyleSegmentedControl setSelectedSegmentIndex:SHUFFLE_SORT];
     }
-    [defaults setObject:aButton forKey:@"DefaultSortStyleEditing"];
+    [defaults setObject:sortStyle forKey:@"DefaultSortStyleEditing"];
     [defaults synchronize];
+}
+
+- (IBAction)selectSegmentForSortStyle:(id)sender {
+    NSString *sortStyle;
+    if(self.sortStyleSegmentedControl.selectedSegmentIndex == GROUP_SORT) {
+        sortStyle = groupSort;
+    }
+    else if (self.sortStyleSegmentedControl.selectedSegmentIndex == AZ_SORT) {        sortStyle = alphabeticalSort;
+    }
+    else if (self.sortStyleSegmentedControl.selectedSegmentIndex == SHUFFLE_SORT) {
+        sortStyle = shuffleSort;
+    }
+    else {
+        // there is no fourth option
+    }
+    self.detailItem.sortStyleEditing = sortStyle;
+    [defaults setObject:sortStyle forKey:@"DefaultSortStyleEditing"];
+    [defaults synchronize];
+    [self.myMoodCollectionViewController refresh];
 }
 
 - (IBAction)toggleFaces:(id)sender {
@@ -133,7 +144,7 @@ NSUserDefaults *defaults;
 - (IBAction)slideFewerMoreSlider:(id)sender {
     static float lastValue = 2.0f;
     int discreteValue = roundl([self.fewerMoreSlider value]);
-    [self.fewerMoreSlider setValue:(float)discreteValue];
+    // [self.fewerMoreSlider setValue:(float)discreteValue]; // Set this if you want the slider to jump between discrete values
     if (discreteValue != lastValue) {
         lastValue = discreteValue;
         [self adjustUIToNewParrotLevel: discreteValue];

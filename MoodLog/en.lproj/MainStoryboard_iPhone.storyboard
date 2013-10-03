@@ -1941,7 +1941,7 @@ Here</string>
             <objects>
                 <collectionViewController id="Knz-FF-nJJ" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="7dO-VT-1GK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="392"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KDk-cp-qb5">
@@ -2093,212 +2093,107 @@ Here</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7h5-hV-VH6">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="392"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                                         <color key="backgroundColor" red="0.2196078598" green="0.58823531870000001" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <segue destination="Knz-FF-nJJ" kind="embed" identifier="MoodCollectionSegue2" id="IAH-aZ-MU7"/>
                                         </connections>
                                     </containerView>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmx-b0-GWE">
-                                        <rect key="frame" x="163" y="436" width="17" height="44"/>
-                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVJ-nb-dmb">
-                                        <rect key="frame" x="61" y="436" width="50" height="44"/>
-                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="4Jj-Om-nqb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="A–Z">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected">
-                                            <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sortABC:" destination="Haq-rW-jQt" eventType="touchUpInside" id="Eos-bL-1qM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojS-bA-6gC">
-                                        <rect key="frame" x="0.0" y="436" width="60" height="44"/>
-                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="kGW-EY-eJH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Group">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected">
-                                            <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sortGroup:" destination="Haq-rW-jQt" eventType="touchUpInside" id="usb-z0-wdb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-hi-2mp">
-                                        <rect key="frame" x="112" y="436" width="50" height="44"/>
-                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="AFV-XR-87b"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" image="shuffle_off.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" image="shuffle_on.png">
-                                            <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sortShuffle:" destination="Haq-rW-jQt" eventType="touchUpInside" id="Ud6-g7-dMA"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="um1-sR-pJW">
-                                        <rect key="frame" x="251" y="436" width="69" height="44"/>
-                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="69" id="nfe-JS-AyO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Faces">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected">
-                                            <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toggleFaces:" destination="Haq-rW-jQt" eventType="touchUpInside" id="Tt5-P0-nEo"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HC6-0w-YZf">
-                                        <rect key="frame" x="181" y="436" width="69" height="44"/>
-                                        <color key="backgroundColor" red="0.36200747280000001" green="0.36200747280000001" blue="0.36200747280000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="Boe-E8-sVO"/>
-                                            <constraint firstAttribute="width" constant="69" id="ch4-e5-RyW"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Colors">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected">
-                                            <color key="titleColor" red="0.31215881020000003" green="0.57257792740000002" blue="0.87680029869999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toggleColors:" destination="Haq-rW-jQt" eventType="touchUpInside" id="Ut1-W3-GAz"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4B-iw-Grz" userLabel="View - Fewer-More Slider">
-                                        <rect key="frame" x="0.0" y="392" width="320" height="46"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gXX-wU-3v7">
+                                        <rect key="frame" x="11" y="446" width="160" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
-                                                <rect key="frame" x="63" y="5" width="194" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <connections>
-                                                    <action selector="finishedSlidingFewerMoreSlider:" destination="Haq-rW-jQt" eventType="touchUpInside" id="uk1-Vb-Wh3"/>
-                                                    <action selector="slideFewerMoreSlider:" destination="Haq-rW-jQt" eventType="valueChanged" id="sWb-kF-qRh"/>
-                                                </connections>
-                                            </slider>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqg-kz-crn">
-                                                <rect key="frame" x="7" y="0.0" width="50" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="KAX-XF-mOY"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Fewer"/>
-                                                <connections>
-                                                    <action selector="setFewer:" destination="Haq-rW-jQt" eventType="touchUpInside" id="xQO-oP-qYn"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZO-kC-Yn3">
-                                                <rect key="frame" x="263" y="1" width="50" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="FDS-Q7-a7S"/>
-                                                    <constraint firstAttribute="height" constant="44" id="yE2-cH-lZM"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="More"/>
-                                                <connections>
-                                                    <action selector="setMore:" destination="Haq-rW-jQt" eventType="touchUpInside" id="k15-pB-RBj"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="Group"/>
+                                            <segment title="A-Z"/>
+                                            <segment title="" image="shuffle_off.png"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="selectSegmentForSortStyle:" destination="Haq-rW-jQt" eventType="valueChanged" id="Lzi-EW-aOK"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obW-v0-UPO">
+                                        <rect key="frame" x="183" y="444" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="4fO-Ep-crr"/>
-                                            <constraint firstItem="hqg-kz-crn" firstAttribute="leading" secondItem="b4B-iw-Grz" secondAttribute="leading" constant="7" id="5g9-Is-i0y"/>
-                                            <constraint firstItem="hmq-MX-tQA" firstAttribute="leading" secondItem="hqg-kz-crn" secondAttribute="trailing" constant="8" symbolic="YES" id="H2g-vR-ZCX"/>
-                                            <constraint firstItem="hqg-kz-crn" firstAttribute="top" secondItem="b4B-iw-Grz" secondAttribute="top" id="O5f-cP-pTf"/>
-                                            <constraint firstAttribute="bottom" secondItem="hqg-kz-crn" secondAttribute="bottom" constant="2" id="VnR-8h-Blt"/>
-                                            <constraint firstAttribute="trailing" secondItem="wZO-kC-Yn3" secondAttribute="trailing" constant="7" id="YqS-bt-QOm"/>
-                                            <constraint firstItem="hmq-MX-tQA" firstAttribute="top" secondItem="b4B-iw-Grz" secondAttribute="top" constant="5" id="bfb-8r-Eih"/>
-                                            <constraint firstItem="wZO-kC-Yn3" firstAttribute="leading" secondItem="hmq-MX-tQA" secondAttribute="trailing" constant="8" symbolic="YES" id="fwt-uf-6C8"/>
-                                            <constraint firstItem="wZO-kC-Yn3" firstAttribute="top" secondItem="b4B-iw-Grz" secondAttribute="top" constant="1" id="zP0-mo-RQa"/>
+                                            <constraint firstAttribute="width" constant="60" id="IPF-cL-peE"/>
+                                            <constraint firstAttribute="height" constant="30" id="PVL-eT-pwk"/>
                                         </constraints>
-                                    </view>
+                                        <state key="normal" title="Colors">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleColors:" destination="Haq-rW-jQt" eventType="touchUpInside" id="s9A-UJ-K5K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-Hq-Uqu">
+                                        <rect key="frame" x="251" y="444" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="9ct-nt-VcQ"/>
+                                            <constraint firstAttribute="height" constant="30" id="b9b-2h-MyN"/>
+                                        </constraints>
+                                        <state key="normal" title="Faces">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleFaces:" destination="Haq-rW-jQt" eventType="touchUpInside" id="r4M-1S-bZJ"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
+                                        <rect key="frame" x="67" y="409" width="194" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="finishedSlidingFewerMoreSlider:" destination="Haq-rW-jQt" eventType="touchUpInside" id="uk1-Vb-Wh3"/>
+                                            <action selector="slideFewerMoreSlider:" destination="Haq-rW-jQt" eventType="valueChanged" id="sWb-kF-qRh"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZO-kC-Yn3">
+                                        <rect key="frame" x="261" y="404" width="50" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="FDS-Q7-a7S"/>
+                                            <constraint firstAttribute="height" constant="44" id="yE2-cH-lZM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="More"/>
+                                        <connections>
+                                            <action selector="setMore:" destination="Haq-rW-jQt" eventType="touchUpInside" id="k15-pB-RBj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqg-kz-crn">
+                                        <rect key="frame" x="11" y="404" width="50" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="KAX-XF-mOY"/>
+                                            <constraint firstAttribute="height" constant="44" id="qhb-bD-QEo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Fewer"/>
+                                        <connections>
+                                            <action selector="setFewer:" destination="Haq-rW-jQt" eventType="touchUpInside" id="xQO-oP-qYn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7h5-hV-VH6" secondAttribute="trailing" id="3kN-e5-3ZE"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="bottom" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="48v-NZ-dah"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="trailing" secondItem="7h5-hV-VH6" secondAttribute="trailing" id="5yI-aG-50W"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="trailing" secondItem="b4B-iw-Grz" secondAttribute="trailing" id="94p-Za-abK"/>
+                                    <constraint firstAttribute="bottom" secondItem="hmq-MX-tQA" secondAttribute="bottom" constant="38" id="5jl-bv-3o6"/>
+                                    <constraint firstItem="QMN-Hq-Uqu" firstAttribute="leading" secondItem="obW-v0-UPO" secondAttribute="trailing" constant="8" id="79L-Rc-PO9"/>
+                                    <constraint firstAttribute="bottom" secondItem="gXX-wU-3v7" secondAttribute="bottom" constant="6" id="8bd-vD-TAz"/>
                                     <constraint firstItem="7h5-hV-VH6" firstAttribute="top" secondItem="zNy-py-5fw" secondAttribute="top" id="CXM-SO-Jc3"/>
-                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="leading" secondItem="ZVJ-nb-dmb" secondAttribute="trailing" constant="1" id="Csl-Sc-Hj1"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="top" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="44" id="Em5-uj-3L0"/>
-                                    <constraint firstAttribute="bottom" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="88" id="FyK-W1-Oq5"/>
-                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="top" secondItem="ZVJ-nb-dmb" secondAttribute="top" id="IoJ-XS-q6k"/>
-                                    <constraint firstItem="HC6-0w-YZf" firstAttribute="bottom" secondItem="lmx-b0-GWE" secondAttribute="bottom" id="K85-XO-12e"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="bottom" secondItem="um1-sR-pJW" secondAttribute="bottom" id="L8A-5n-Ht1"/>
-                                    <constraint firstItem="HC6-0w-YZf" firstAttribute="leading" secondItem="lmx-b0-GWE" secondAttribute="trailing" constant="1" id="M21-NA-12Y"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="top" secondItem="um1-sR-pJW" secondAttribute="top" id="N9r-E7-R2o"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="bottom" secondItem="ojS-bA-6gC" secondAttribute="bottom" id="QGS-NI-PUL"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="leading" secondItem="HC6-0w-YZf" secondAttribute="trailing" constant="1" id="Qvf-8J-Xda"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="leading" secondItem="7h5-hV-VH6" secondAttribute="leading" id="SiJ-z0-H4K"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="leading" secondItem="lmx-b0-GWE" secondAttribute="trailing" constant="71" id="TA3-hs-G18"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="bottom" secondItem="pLd-hi-2mp" secondAttribute="bottom" id="Ygl-1q-udn"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="leading" secondItem="b4B-iw-Grz" secondAttribute="leading" id="cAq-bw-Ytf"/>
-                                    <constraint firstItem="lmx-b0-GWE" firstAttribute="leading" secondItem="pLd-hi-2mp" secondAttribute="trailing" constant="1" id="clr-3v-qAQ"/>
-                                    <constraint firstItem="ZVJ-nb-dmb" firstAttribute="leading" secondItem="ojS-bA-6gC" secondAttribute="trailing" constant="1" id="fLa-Ak-qia"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZVJ-nb-dmb" secondAttribute="bottom" id="fgo-4f-EN2"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" id="g52-8a-KZh"/>
-                                    <constraint firstItem="ojS-bA-6gC" firstAttribute="top" secondItem="ZVJ-nb-dmb" secondAttribute="top" id="hTD-0d-HxL"/>
-                                    <constraint firstItem="um1-sR-pJW" firstAttribute="leading" secondItem="HC6-0w-YZf" secondAttribute="trailing" constant="1" id="meq-H3-HOu"/>
-                                    <constraint firstItem="pLd-hi-2mp" firstAttribute="top" secondItem="lmx-b0-GWE" secondAttribute="top" id="o0q-qX-NgL"/>
-                                    <constraint firstAttribute="bottom" secondItem="b4B-iw-Grz" secondAttribute="bottom" constant="42" id="ruT-Do-3My"/>
-                                    <constraint firstItem="HC6-0w-YZf" firstAttribute="top" secondItem="lmx-b0-GWE" secondAttribute="top" id="vDp-tT-1h8"/>
+                                    <constraint firstAttribute="bottom" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="84" id="FyK-W1-Oq5"/>
+                                    <constraint firstAttribute="bottom" secondItem="QMN-Hq-Uqu" secondAttribute="bottom" constant="6" id="Ibv-M9-Nbk"/>
+                                    <constraint firstAttribute="trailing" secondItem="QMN-Hq-Uqu" secondAttribute="trailing" constant="9" id="LOg-mf-piK"/>
+                                    <constraint firstItem="hmq-MX-tQA" firstAttribute="leading" secondItem="hqg-kz-crn" secondAttribute="trailing" constant="8" id="LyO-9i-FkC"/>
+                                    <constraint firstAttribute="trailing" secondItem="wZO-kC-Yn3" secondAttribute="trailing" constant="9" id="NyW-BY-xdM"/>
+                                    <constraint firstItem="wZO-kC-Yn3" firstAttribute="leading" secondItem="hmq-MX-tQA" secondAttribute="trailing" constant="2" id="QV7-Kt-ydI"/>
+                                    <constraint firstItem="hqg-kz-crn" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" constant="11" id="bCB-eX-yQ5"/>
+                                    <constraint firstAttribute="bottom" secondItem="wZO-kC-Yn3" secondAttribute="bottom" constant="32" id="dgV-qw-boJ"/>
+                                    <constraint firstItem="7h5-hV-VH6" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" id="r2b-oF-vj7"/>
+                                    <constraint firstItem="obW-v0-UPO" firstAttribute="leading" secondItem="gXX-wU-3v7" secondAttribute="trailing" constant="12" id="ukj-gy-x8X"/>
+                                    <constraint firstAttribute="bottom" secondItem="hqg-kz-crn" secondAttribute="bottom" constant="32" id="umw-jm-KnP"/>
+                                    <constraint firstItem="gXX-wU-3v7" firstAttribute="leading" secondItem="zNy-py-5fw" secondAttribute="leading" constant="11" id="wfY-bN-zrR"/>
+                                    <constraint firstAttribute="bottom" secondItem="obW-v0-UPO" secondAttribute="bottom" constant="6" id="yzL-R4-G9f"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2313,15 +2208,12 @@ Here</string>
                     <navigationItem key="navigationItem" title="Mood Picker" id="BVm-7v-Wj1"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="SortCBAButton" destination="ojS-bA-6gC" id="iuc-EJ-HYF"/>
                         <outlet property="fewerButton" destination="hqg-kz-crn" id="tmH-Hx-f2e"/>
                         <outlet property="fewerMoreSlider" destination="hmq-MX-tQA" id="oce-dq-CM6"/>
                         <outlet property="moreButton" destination="wZO-kC-Yn3" id="bPB-ws-aDU"/>
-                        <outlet property="sortABCButton" destination="ZVJ-nb-dmb" id="XCi-lN-Rve"/>
-                        <outlet property="sortGroupButton" destination="ojS-bA-6gC" id="yJJ-ud-Dc7"/>
-                        <outlet property="sortShuffleButton" destination="pLd-hi-2mp" id="Lbd-zr-0bv"/>
-                        <outlet property="toggleColorsButton" destination="HC6-0w-YZf" id="DlR-5d-nlA"/>
-                        <outlet property="toggleFacesButton" destination="um1-sR-pJW" id="aoi-Zb-1cg"/>
+                        <outlet property="sortStyleSegmentedControl" destination="gXX-wU-3v7" id="Zqh-d3-IlU"/>
+                        <outlet property="toggleColorsButton" destination="obW-v0-UPO" id="pfV-Lb-8aG"/>
+                        <outlet property="toggleFacesButton" destination="QMN-Hq-Uqu" id="9IR-n1-ten"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIW-Mo-Sqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2454,7 +2346,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="keyboard.png" width="22" height="14"/>
         <image name="keyboard_down.png" width="22" height="19"/>
         <image name="shuffle_off.png" width="25" height="21"/>
-        <image name="shuffle_on.png" width="25" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
