@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
     // Set the background for any states you plan to use
-    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // iOS 6 and lower
         [self.slidersSetAdjustButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.slidersSetAdjustButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     }
@@ -229,7 +229,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     else {
         self.slidersView.hidden = NO;
         self.sliderChartView.hidden = YES;
-        [self.slidersSetAdjustButton setTitle:@"Set" forState:UIControlStateNormal];
+        [self.slidersSetAdjustButton setTitle:@"Lock" forState:UIControlStateNormal];
     }
 }
 
