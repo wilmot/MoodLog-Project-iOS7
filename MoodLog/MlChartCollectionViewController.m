@@ -114,10 +114,10 @@ Boolean firstLoad;
 
 #pragma mark - Orientation change
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self.chartCollectionView.collectionViewLayout invalidateLayout];
 }
 
 - (void)deviceOrientationDidChange:(NSNotification *)notification {
-    [self.chartCollectionView.collectionViewLayout invalidateLayout];
     [self.chartCollectionView reloadData];
 }
 

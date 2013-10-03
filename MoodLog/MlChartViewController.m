@@ -15,8 +15,9 @@
 
 @implementation MlChartViewController
 
-static short BAR_CHART = 1;
-static short PIE_CHART = 0;
+static short SUMMARY_CHART = 0;
+static short PIE_CHART = 1;
+static short BAR_CHART = 2;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -90,7 +91,14 @@ static short PIE_CHART = 0;
 }
 
 - (IBAction)chooseSegment:(id)sender {
-    if (self.segment.selectedSegmentIndex == BAR_CHART) { // Bar Chart
+    if(self.segment.selectedSegmentIndex == SUMMARY_CHART) { // Summary
+        self.summaryViewController.hidden = NO;
+        self.mySummaryCollectionViewController.showSummary = YES;
+        [self.mySummaryCollectionViewController summaryInformationQuick:self];
+        [self.mySummaryCollectionViewController performSelector:@selector(summaryInformationSlow:) withObject:self afterDelay:1.0 ];
+        self.chartContainer.hidden = YES;
+    }
+    else if (self.segment.selectedSegmentIndex == BAR_CHART) { // Bar Chart
         self.summaryViewController.hidden = YES;
         self.mySummaryCollectionViewController.showSummary = NO;
         self.chartContainer.hidden = NO;
@@ -102,12 +110,8 @@ static short PIE_CHART = 0;
         self.chartContainer.hidden = NO;
         self.myChartCollectionViewController.chartType = @"Pie";
     }
-    else { // Summary
-        self.summaryViewController.hidden = NO;
-        self.mySummaryCollectionViewController.showSummary = YES;
-        [self.mySummaryCollectionViewController summaryInformationQuick:self];
-        [self.mySummaryCollectionViewController performSelector:@selector(summaryInformationSlow:) withObject:self afterDelay:1.0 ];
-        self.chartContainer.hidden = YES;
+    else {
+        // there is no fourth option
     }
     [self.myChartCollectionViewController setCellType:self];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
