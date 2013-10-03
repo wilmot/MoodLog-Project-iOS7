@@ -138,48 +138,6 @@ static CGFloat CELL_HEIGHT;
 - (void)showFirstTimeScreen {
     //Initial screen when no records
     MlAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-//    self.firstTimeView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-//    [self.firstTimeView setBackgroundColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.7]];
-//    
-//    CGRect svb = self.view.bounds;
-//    UIImageView *upperRight = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"UpperRight.png"]];
-//    [upperRight setCenter:CGPointMake(0 + svb.size.width - 75, 0 + 90)];
-//    [upperRight setTranslatesAutoresizingMaskIntoConstraints:NO];
-//    [self.firstTimeView addSubview:upperRight];
-//    
-//    UIImageView *lowerRight = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LowerRight.png"]];
-//    [lowerRight setCenter:CGPointMake(0 + svb.size.width - 75, 0 + svb.size.height - 70)];
-//    [lowerRight setTranslatesAutoresizingMaskIntoConstraints:NO];
-//    [self.firstTimeView addSubview:lowerRight];
-//    
-//    UITextView *firstTimeTextViewWelcome = [[UITextView alloc] init];
-//    [firstTimeTextViewWelcome setBackgroundColor:[UIColor colorWithRed:69/255.0f green:113/255.0f blue:220/255.0f alpha:0.4]];
-//    [firstTimeTextViewWelcome setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:36]];
-//    firstTimeTextViewWelcome.textAlignment=NSTextAlignmentCenter;
-//    [firstTimeTextViewWelcome setEditable:NO];
-//    [firstTimeTextViewWelcome setFrame:CGRectMake(0, 0, svb.size.width, 110)];
-//    [firstTimeTextViewWelcome setCenter:CGPointMake(svb.origin.x + svb.size.width/2.0, svb.origin.y + svb.size.height/2.0 + 70.0)];
-//    firstTimeTextViewWelcome.text = @"Welcome to\n Mood Log";
-//    [self.firstTimeView addSubview:firstTimeTextViewWelcome];
-//
-//    UITextView *firstTimeTextViewTop = [[UITextView alloc] init];
-//    [firstTimeTextViewTop setBackgroundColor:[UIColor clearColor]];
-//    [firstTimeTextViewTop setFont:[UIFont fontWithName:@"HelveticaNeue" size:18]];
-//    [firstTimeTextViewTop setEditable:NO];
-//    [firstTimeTextViewTop setFrame:CGRectMake(0, 0, 200, 100)];
-//    [firstTimeTextViewTop setCenter:CGPointMake(upperRight.center.x - 100 + 20, upperRight.center.y + 80)];
-//    firstTimeTextViewTop.text = @"Create a new Mood Log entry by touching the “+” button.";
-//    [self.firstTimeView addSubview:firstTimeTextViewTop];
-//    
-//    UITextView *firstTimeTextViewBottom = [[UITextView alloc] init];
-//    [firstTimeTextViewBottom setBackgroundColor:[UIColor clearColor]];
-//    [firstTimeTextViewBottom setFont:[UIFont fontWithName:@"HelveticaNeue" size:18]];
-//    [firstTimeTextViewBottom setEditable:NO];
-//    [firstTimeTextViewBottom setFrame:CGRectMake(0, 0, 200, 100)];
-//    [firstTimeTextViewBottom setCenter:CGPointMake(lowerRight.center.x - 100 + 20, lowerRight.center.y - 40)];
-//    firstTimeTextViewBottom.text = @"Touch the Info button to find out more.";
-//    [self.firstTimeView addSubview:firstTimeTextViewBottom];
-    
     self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] lastObject];
  
     [delegate.window addSubview:self.firstTimeView];

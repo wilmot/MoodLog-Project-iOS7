@@ -374,6 +374,7 @@
 		4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8E8EF17C8647700E26857 /* Images.xcassets */; };
 		4CEEF60017FB628E00C29507 /* MlColorChoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */; };
 		4CEEF60317FCF48D00C29507 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60117FCF48D00C29507 /* WelcomeView.xib */; };
+		4CEEF60517FD034C00C29507 /* SixColors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60417FD034C00C29507 /* SixColors.png */; };
 		4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */; };
 		4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F0164B8C870055CC3D /* MlMailViewController.m */; };
 		4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */; };
@@ -800,6 +801,7 @@
 		4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlColorChoices.h; sourceTree = "<group>"; };
 		4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlColorChoices.m; sourceTree = "<group>"; };
 		4CEEF60217FCF48D00C29507 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WelcomeView.xib; sourceTree = "<group>"; };
+		4CEEF60417FD034C00C29507 /* SixColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SixColors.png; path = Images/SixColors.png; sourceTree = "<group>"; };
 		4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartViewController.h; sourceTree = "<group>"; };
 		4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartViewController.m; sourceTree = "<group>"; };
 		4CFB21EF164B8C870055CC3D /* MlMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMailViewController.h; sourceTree = "<group>"; };
@@ -1123,6 +1125,7 @@
 		4C4043E61783E59F00710F2A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4CEEF60417FD034C00C29507 /* SixColors.png */,
 				4C65613317F418B900F03470 /* LowerRight.png */,
 				4C65612F17F3FAAE00F03470 /* LowerRight@2x.png */,
 				4C65613417F418B900F03470 /* UpperRight.png */,
@@ -1549,6 +1552,7 @@
 				4C06396417E45A6E00563FE6 /* Exasperated@2x.png in Resources */,
 				4C4043AF1783E51400710F2A /* Confident@2x.png in Resources */,
 				4C4043B01783E51400710F2A /* Content.png in Resources */,
+				4CEEF60517FD034C00C29507 /* SixColors.png in Resources */,
 				4C06394D17E45A6E00563FE6 /* Startled.png in Resources */,
 				4C4043B11783E51400710F2A /* Content@2x.png in Resources */,
 				4C4043B21783E51400710F2A /* Curious.png in Resources */,

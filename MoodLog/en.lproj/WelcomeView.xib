@@ -11,19 +11,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" image="SixColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="GzX-XZ-Eq5">
+                    <rect key="frame" x="0.0" y="240" width="320" height="90"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="backgroundColor" red="0.9918937087059021" green="0.80355274677276611" blue="0.03739069402217865" alpha="0.0" colorSpace="calibratedRGB"/>
+                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="yUk-wf-li4">
-                    <rect key="frame" x="0.0" y="241" width="320" height="85"/>
+                    <rect key="frame" x="0.0" y="240" width="320" height="90"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="85" id="kY9-gp-Rur"/>
+                        <constraint firstAttribute="height" constant="90" id="kY9-gp-Rur"/>
                     </constraints>
-                    <string key="text">Welcome to
- Mood Log!</string>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
+                    <string key="text">Welcome to Mood Log.
+Tap anywhere to begin</string>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new Mood Log entry by touching the “+” button." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="rwB-Mf-LWP">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new Mood Log entry by tapping the “+” button." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="rwB-Mf-LWP">
                     <rect key="frame" x="0.0" y="43" width="243" height="97"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -43,14 +47,14 @@
                     </constraints>
                 </imageView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="LowerRight.png" translatesAutoresizingMaskIntoConstraints="NO" id="ORR-7G-lRR">
-                    <rect key="frame" x="245" y="492" width="40" height="40"/>
+                    <rect key="frame" x="245" y="496" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="cNO-hO-7wS"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch the Info button to find out more." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="192" translatesAutoresizingMaskIntoConstraints="NO" id="aD4-MT-C2H">
-                    <rect key="frame" x="51" y="446" width="192" height="77"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the Info button to find out more." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="192" translatesAutoresizingMaskIntoConstraints="NO" id="aD4-MT-C2H">
+                    <rect key="frame" x="51" y="440" width="192" height="77"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="77" id="Dde-vs-G9E"/>
@@ -61,13 +65,13 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="0.70000000000000007" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ORR-7G-lRR" secondAttribute="bottom" constant="36" id="0iR-Yv-4bf"/>
+                <constraint firstAttribute="bottom" secondItem="ORR-7G-lRR" secondAttribute="bottom" constant="32" id="0iR-Yv-4bf"/>
                 <constraint firstAttribute="trailing" secondItem="aD4-MT-C2H" secondAttribute="trailing" constant="77" id="HOY-92-Zti"/>
                 <constraint firstItem="xwP-jM-Jvv" firstAttribute="top" secondItem="1" secondAttribute="top" constant="49" id="IFb-km-FG6"/>
-                <constraint firstAttribute="centerY" secondItem="yUk-wf-li4" secondAttribute="centerY" constant="0.5" id="Poa-EZ-Sg6"/>
-                <constraint firstAttribute="bottom" secondItem="aD4-MT-C2H" secondAttribute="bottom" constant="45" id="RNO-re-MF3"/>
+                <constraint firstAttribute="centerY" secondItem="yUk-wf-li4" secondAttribute="centerY" constant="-1" id="Poa-EZ-Sg6"/>
+                <constraint firstAttribute="bottom" secondItem="aD4-MT-C2H" secondAttribute="bottom" constant="51" id="RNO-re-MF3"/>
                 <constraint firstAttribute="centerX" secondItem="yUk-wf-li4" secondAttribute="centerX" id="Xzx-bG-1GC"/>
                 <constraint firstItem="rwB-Mf-LWP" firstAttribute="top" secondItem="1" secondAttribute="top" constant="43" id="eHz-bV-q60"/>
                 <constraint firstAttribute="trailing" secondItem="yUk-wf-li4" secondAttribute="trailing" id="fyH-5u-ARB"/>
@@ -83,6 +87,7 @@
     </objects>
     <resources>
         <image name="LowerRight.png" width="64" height="70"/>
+        <image name="SixColors.png" width="276" height="68"/>
         <image name="UpperRight.png" width="64" height="70"/>
     </resources>
 </document>

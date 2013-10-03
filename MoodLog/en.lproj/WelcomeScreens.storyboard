@@ -177,7 +177,7 @@ CgoKA
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">Welcome to MoodLog
+                                        <string key="content">Welcome to Mood Log
 </string>
                                         <attributes>
                                             <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
@@ -190,11 +190,11 @@ This app is designed to help you keep track of your moods as they change through
 
 When you create a new journal entry, you pick the moods that best suit you in the moment by choosing emotions from a list of moods. The mood list picker shows faces representing each mood, or you can turn off the faces and just see the names. The moods are displayed organized by group, alphabetically or in random order. A slider lets you reduce or increase the number of moods displayed.
 
-Describing and recording your moods in MoodLog can help you increase your emotional awareness by getting you into the habit of identifying how you are feeling at any time. You can even set reminders to prompt you to create a Mood Log entry at random times throughout the day.
+Describing and recording your moods in Mood Log can help you increase your emotional awareness by getting you into the habit of identifying how you are feeling at any time. You can even set reminders to prompt you to create a Mood Log entry at random times throughout the day.
 
-My purpose in creating Mood Log was to increase my own awareness and mindfulness around emotions. I wanted a tool that was convenient, easy to use, and didn’t attempt to influence how I was feeling. MoodLog isn’t designed to make you feel one way or another; its purpose is to help you understand how you are actually feeling. I have found MoodLog helpful for me in these ways.
+My purpose in creating Mood Log was to increase my own awareness and mindfulness around emotions. I wanted a tool that was convenient, easy to use, and didn’t attempt to influence how I was feeling. Mood Log isn’t designed to make you feel one way or another; its purpose is to help you understand how you are actually feeling. I have found Mood Log helpful for me in these ways.
 
-I hope you enjoy MoodLog and find it useful in your life -- please leave feedback in Apple’s App Store, or send email to</string>
+I hope you enjoy Mood Log and find it useful in your life -- please leave feedback in Apple’s App Store, or send email to</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -246,7 +246,9 @@ Cgo
                                     </fragment>
                                     <fragment>
                                         <string key="content">
-MoodLog is meant for educational purposes only. This app is not intended as a substitute for, nor does it replace, professional health care or advice. Please consult a professional such as a medical doctor, counselor, psychologist or psychiatrist if you have any concerns or questions.
+Mood Log is meant for educational purposes only. This app is not intended as a substitute for, nor does it replace, professional health care or advice. Please consult a professional such as a medical doctor, counselor, psychologist or psychiatrist if you have any concerns or questions.
+
+-------- Swipe for more information -------->
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>

@@ -41,77 +41,82 @@ BOOL hasShownSlowSummary = NO;
 - (void)summaryInformationQuick: (id)sender {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
     int events = [sectionInfo numberOfObjects];
-    
-    NSIndexPath *firstItemIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
-    MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:firstItemIndexPath];
-    NSDate *today = [object valueForKey:@"date"];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
-    NSString *startDate = [dateFormatter stringFromDate: today];
-    
-    NSIndexPath *lastItemIndexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
-    object = [self.fetchedResultsController objectAtIndexPath:lastItemIndexPath];
-    today = [object valueForKey:@"date"];
-    dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
-    NSString *endDate = [dateFormatter stringFromDate: today];
-    
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
-    NSAttributedString *summaryLine;
-    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor blueColor], NSForegroundColorAttributeName, nil];
-    NSAttributedString *titleString = [[NSAttributedString alloc] initWithString:@"Summary Information" attributes:attrsDictionary];
-    NSMutableAttributedString *summaryAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:titleString];
-    
-    
-    // Summary of records and dates
-    font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:14];
-    attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-    summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\nYou have created %d MoodLog Entries, dating from %@ to %@.", events, startDate, endDate] attributes:attrsDictionary];
-    [summaryAttributedString appendAttributedString:summaryLine];
-    
-    // Most common emotion (same format as above)
-    summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\nThe most common emotion you've picked is “%@”", @"Pickle"] attributes:attrsDictionary];
-    [summaryAttributedString appendAttributedString:summaryLine];
-    
-    self.summaryText.attributedText = summaryAttributedString;
+    if (events > 0) {
+        NSIndexPath *firstItemIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+        MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:firstItemIndexPath];
+        NSDate *today = [object valueForKey:@"date"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
+        NSString *startDate = [dateFormatter stringFromDate: today];
+        
+        NSIndexPath *lastItemIndexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
+        object = [self.fetchedResultsController objectAtIndexPath:lastItemIndexPath];
+        today = [object valueForKey:@"date"];
+        dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
+        NSString *endDate = [dateFormatter stringFromDate: today];
+        
+        UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
+        NSAttributedString *summaryLine;
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor blueColor], NSForegroundColorAttributeName, nil];
+        NSAttributedString *titleString = [[NSAttributedString alloc] initWithString:@"Summary Information" attributes:attrsDictionary];
+        NSMutableAttributedString *summaryAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:titleString];
+        
+        
+        // Summary of records and dates
+        font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:14];
+        attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
+        summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\nYou have created %d MoodLog Entries, dating from %@ to %@.", events, startDate, endDate] attributes:attrsDictionary];
+        [summaryAttributedString appendAttributedString:summaryLine];
+        
+        // Most common emotion (same format as above)
+        summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\nThe most common emotion you've picked is “%@”", @"Pickle"] attributes:attrsDictionary];
+        [summaryAttributedString appendAttributedString:summaryLine];
+        
+        self.summaryText.attributedText = summaryAttributedString;
+    }
 }
 - (void)summaryInformationSlow: (id)sender {
     if (self.showSummary) {
-        UIFont *font;
-        NSAttributedString *summaryLine;
-        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor blueColor], NSForegroundColorAttributeName, nil];
-        NSMutableAttributedString *summaryAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.summaryText.attributedText];
-        
-        // Categories
-        font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
-        attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-        summaryLine = [[NSAttributedString alloc] initWithString:@"\n\nCategories" attributes:attrsDictionary];
-        [summaryAttributedString appendAttributedString:summaryLine];
-        
-        NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
-        
-        int numberOfSections = [[self.fetchedResultsController2 sections] count];
-        for (int i=0; i<numberOfSections; i++) {
-            id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController2 sections][i];
-            [categoryCounts setObject:[NSNumber numberWithLong:[sectionInfo numberOfObjects]] forKey:sectionInfo.name];
-        }
-        
-        for (NSString *category in @[@"Love", @"Joy",@"Surprise",@"Anger",@"Sadness", @"Fear"]) {
-            NSNumber *countForCategory =[categoryCounts objectForKey:category];
-            font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-            attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices basicColors] objectForKey:category], NSForegroundColorAttributeName, nil];
-            summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", category, [countForCategory integerValue]] attributes:attrsDictionary];
+        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
+        int events = [sectionInfo numberOfObjects];
+        if (events > 0) {
+            UIFont *font;
+            NSAttributedString *summaryLine;
+            NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor blueColor], NSForegroundColorAttributeName, nil];
+            NSMutableAttributedString *summaryAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.summaryText.attributedText];
+            
+            // Categories
+            font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
+            attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
+            summaryLine = [[NSAttributedString alloc] initWithString:@"\n\nCategories" attributes:attrsDictionary];
             [summaryAttributedString appendAttributedString:summaryLine];
-        }
-        
-        self.summaryText.attributedText = summaryAttributedString;
-        
-        
-        self.pieChartForSummary.chartType = @"Pie";
-        self.pieChartForSummary.categoryCounts = categoryCounts;
-        self.pieChartForSummary.dividerLine = NO;
-        [self.pieChartForSummary setNeedsDisplay];
-
-        self.showSummary = NO;
+            
+            NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
+            
+            int numberOfSections = [[self.fetchedResultsController2 sections] count];
+            for (int i=0; i<numberOfSections; i++) {
+                id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController2 sections][i];
+                [categoryCounts setObject:[NSNumber numberWithLong:[sectionInfo numberOfObjects]] forKey:sectionInfo.name];
+            }
+            
+            for (NSString *category in @[@"Love", @"Joy",@"Surprise",@"Anger",@"Sadness", @"Fear"]) {
+                NSNumber *countForCategory =[categoryCounts objectForKey:category];
+                font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+                attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices basicColors] objectForKey:category], NSForegroundColorAttributeName, nil];
+                summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", category, [countForCategory integerValue]] attributes:attrsDictionary];
+                [summaryAttributedString appendAttributedString:summaryLine];
+            }
+            
+            self.summaryText.attributedText = summaryAttributedString;
+            
+            
+            self.pieChartForSummary.chartType = @"Pie";
+            self.pieChartForSummary.categoryCounts = categoryCounts;
+            self.pieChartForSummary.dividerLine = NO;
+            [self.pieChartForSummary setNeedsDisplay];
+            
+            self.showSummary = NO;
+       }
     }
 }
 
