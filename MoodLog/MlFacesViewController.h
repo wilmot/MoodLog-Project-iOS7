@@ -13,10 +13,6 @@
 @interface MlFacesViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sortStyleSegmentedControl;
-@property (weak, nonatomic) IBOutlet UIButton *sortABCButton;
-@property (weak, nonatomic) IBOutlet UIButton *sortGroupButton;
-@property (weak, nonatomic) IBOutlet UIButton *SortCBAButton;
-@property (weak, nonatomic) IBOutlet UIButton *sortShuffleButton;
 @property (weak, nonatomic) IBOutlet UIButton *toggleFacesButton;
 @property (weak, nonatomic) IBOutlet UIButton *toggleColorsButton;
 @property (weak, nonatomic) IBOutlet UISlider *fewerMoreSlider;

@@ -21,6 +21,8 @@ static short AZ_SORT = 1;
 static short SHUFFLE_SORT = 2;
 
 NSUserDefaults *defaults;
+UIImage *buttonImage;
+UIImage *buttonImageHighlight;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +37,25 @@ NSUserDefaults *defaults;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    // Set the background for any states you plan to use
+    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // iOS 6 and lower
+        buttonImage = [[UIImage imageNamed:@"greyButton.png"]
+                       resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
+        buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
+                                resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
+        [self.fewerButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.fewerButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+
+        [self.moreButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.moreButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+
+        [self.toggleColorsButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.toggleColorsButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+
+        [self.toggleFacesButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.toggleFacesButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+}
+
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -156,21 +177,27 @@ NSUserDefaults *defaults;
     self.myMoodCollectionViewController.currentParrotLevel = parrotLevel;
     if (parrotLevel == 1) {
         [self.fewerButton setEnabled:NO];
-      //  self.fewerButton.titleLabel.textColor = [UIColor grayColor];
         [self.moreButton setEnabled:YES];
-    ///    self.moreButton.titleLabel.textColor = [UIColor blackColor];
+        if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // iOS 6 and lower
+            self.fewerButton.titleLabel.textColor = [UIColor grayColor];
+            self.moreButton.titleLabel.textColor = [UIColor blackColor];
+        }
     }
     else if (parrotLevel == 4) {
         [self.fewerButton setEnabled:YES];
-     ///   self.fewerButton.titleLabel.textColor = [UIColor blackColor];
         [self.moreButton setEnabled:NO];
-     ///   self.moreButton.titleLabel.textColor = [UIColor grayColor];
+        if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // iOS 6 and lower
+            self.fewerButton.titleLabel.textColor = [UIColor blackColor];
+            self.moreButton.titleLabel.textColor = [UIColor grayColor];
+        }
     }
     else {
         [self.fewerButton setEnabled:YES];
-   //     self.fewerButton.titleLabel.textColor = [UIColor blackColor];
        [self.moreButton setEnabled:YES];
-   //     self.moreButton.titleLabel.textColor = [UIColor blackColor];
+        if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // iOS 6 and lower
+            self.fewerButton.titleLabel.textColor = [UIColor blackColor];
+            self.moreButton.titleLabel.textColor = [UIColor blackColor];
+        }
     }
     [self.myMoodCollectionViewController refresh];
 }
@@ -211,7 +238,6 @@ NSUserDefaults *defaults;
 }
 
 - (void)viewDidUnload {
-    [self setSortGroupButton:nil];
     [super viewDidUnload];
 }
 @end
