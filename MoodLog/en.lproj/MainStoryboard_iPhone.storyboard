@@ -2140,7 +2140,7 @@ Here</string>
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
-                                        <rect key="frame" x="67" y="401" width="194" height="34"/>
+                                        <rect key="frame" x="62" y="401" width="199" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="finishedSlidingFewerMoreSlider:" destination="Haq-rW-jQt" eventType="touchUpInside" id="uk1-Vb-Wh3"/>
@@ -2180,7 +2180,7 @@ Here</string>
                                     <constraint firstItem="7h5-hV-VH6" firstAttribute="top" secondItem="zNy-py-5fw" secondAttribute="top" id="CXM-SO-Jc3"/>
                                     <constraint firstAttribute="bottom" secondItem="7h5-hV-VH6" secondAttribute="bottom" constant="84" id="FyK-W1-Oq5"/>
                                     <constraint firstAttribute="trailing" secondItem="QMN-Hq-Uqu" secondAttribute="trailing" constant="9" id="LOg-mf-piK"/>
-                                    <constraint firstItem="hmq-MX-tQA" firstAttribute="leading" secondItem="hqg-kz-crn" secondAttribute="trailing" constant="8" id="LyO-9i-FkC"/>
+                                    <constraint firstItem="hmq-MX-tQA" firstAttribute="leading" secondItem="hqg-kz-crn" secondAttribute="trailing" constant="3" id="LyO-9i-FkC"/>
                                     <constraint firstAttribute="trailing" secondItem="wZO-kC-Yn3" secondAttribute="trailing" constant="9" id="NyW-BY-xdM"/>
                                     <constraint firstItem="wZO-kC-Yn3" firstAttribute="leading" secondItem="hmq-MX-tQA" secondAttribute="trailing" constant="2" id="QV7-Kt-ydI"/>
                                     <constraint firstItem="QMN-Hq-Uqu" firstAttribute="centerY" secondItem="obW-v0-UPO" secondAttribute="centerY" id="U0N-Ly-NaC"/>

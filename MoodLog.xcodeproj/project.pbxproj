@@ -371,6 +371,8 @@
 		4CEEF60017FB628E00C29507 /* MlColorChoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */; };
 		4CEEF60317FCF48D00C29507 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60117FCF48D00C29507 /* WelcomeView.xib */; };
 		4CEEF60517FD034C00C29507 /* SixColors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60417FD034C00C29507 /* SixColors.png */; };
+		4CEEF60817FE388900C29507 /* shuffle_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60617FE388900C29507 /* shuffle_off@2x.png */; };
+		4CEEF60917FE388900C29507 /* shuffle_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60717FE388900C29507 /* shuffle_on@2x.png */; };
 		4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */; };
 		4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F0164B8C870055CC3D /* MlMailViewController.m */; };
 		4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */; };
@@ -794,6 +796,8 @@
 		4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlColorChoices.m; sourceTree = "<group>"; };
 		4CEEF60217FCF48D00C29507 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WelcomeView.xib; sourceTree = "<group>"; };
 		4CEEF60417FD034C00C29507 /* SixColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SixColors.png; path = Images/SixColors.png; sourceTree = "<group>"; };
+		4CEEF60617FE388900C29507 /* shuffle_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuffle_off@2x.png"; sourceTree = "<group>"; };
+		4CEEF60717FE388900C29507 /* shuffle_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuffle_on@2x.png"; sourceTree = "<group>"; };
 		4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartViewController.h; sourceTree = "<group>"; };
 		4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartViewController.m; sourceTree = "<group>"; };
 		4CFB21EF164B8C870055CC3D /* MlMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMailViewController.h; sourceTree = "<group>"; };
@@ -1139,6 +1143,8 @@
 				4C4043FF1783E5FD00710F2A /* greyButtonHighlight@2x.png */,
 				4C4043F81783E5EB00710F2A /* shuffle_off.png */,
 				4C4043F91783E5EB00710F2A /* shuffle_on.png */,
+				4CEEF60617FE388900C29507 /* shuffle_off@2x.png */,
+				4CEEF60717FE388900C29507 /* shuffle_on@2x.png */,
 				4C92BE001797CCAA005DEEC2 /* TimerIcon.png */,
 				4C92BE011797CCAA005DEEC2 /* TimerIcon@2x.png */,
 				4C4043E71783E5CB00710F2A /* calendar.png */,
@@ -1395,6 +1401,7 @@
 				4C0639BA17E69DA200563FE6 /* Shocked@2x.png in Resources */,
 				4C4043681783E51400710F2A /* Affectionate.png in Resources */,
 				4C4043691783E51400710F2A /* Affectionate@2x.png in Resources */,
+				4CEEF60817FE388900C29507 /* shuffle_off@2x.png in Resources */,
 				4C06396017E45A6E00563FE6 /* Exhilarated@2x.png in Resources */,
 				4C0639B917E69DA200563FE6 /* Shocked.png in Resources */,
 				4C06393D17E45A6E00563FE6 /* Hopeful.png in Resources */,
@@ -1685,6 +1692,7 @@
 				4C06393217E45A6E00563FE6 /* Insecure@2x.png in Resources */,
 				4C0639A017E69DA200563FE6 /* Worthless@2x.png in Resources */,
 				4C06392B17E45A6E00563FE6 /* Irritated.png in Resources */,
+				4CEEF60917FE388900C29507 /* shuffle_on@2x.png in Resources */,
 				4C7F5730178FC8170065543C /* add.png in Resources */,
 				4C92BE021797CCAA005DEEC2 /* TimerIcon.png in Resources */,
 				4C92BE031797CCAA005DEEC2 /* TimerIcon@2x.png in Resources */,
