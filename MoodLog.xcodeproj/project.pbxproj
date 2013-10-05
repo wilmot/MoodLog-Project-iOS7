@@ -327,7 +327,7 @@
 		4C589C67163200F100428C52 /* Stressors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C589C66163200F100428C52 /* Stressors.m */; };
 		4C5D051216C1F1BD0028C421 /* MlFacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */; };
 		4C61F1851780F9990032B200 /* MlJournalEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C61F1841780F9990032B200 /* MlJournalEditorViewController.m */; };
-		4C65612817F280AD00F03470 /* WelcomeScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612617F280AD00F03470 /* WelcomeScreens.storyboard */; };
+		4C65612817F280AD00F03470 /* AdditionalStoryboards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612617F280AD00F03470 /* AdditionalStoryboards.storyboard */; };
 		4C65612A17F3936900F03470 /* ParrottsEmotionsOLD.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612917F3936900F03470 /* ParrottsEmotionsOLD.png */; };
 		4C65612C17F39E5000F03470 /* ParrottsEmotions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612B17F39E5000F03470 /* ParrottsEmotions.pdf */; };
 		4C65612E17F39F0200F03470 /* ParrotsEmotions.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612D17F39F0200F03470 /* ParrotsEmotions.png */; };
@@ -733,7 +733,7 @@
 		4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlFacesViewController.m; sourceTree = "<group>"; };
 		4C61F1831780F9990032B200 /* MlJournalEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlJournalEditorViewController.h; sourceTree = "<group>"; };
 		4C61F1841780F9990032B200 /* MlJournalEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlJournalEditorViewController.m; sourceTree = "<group>"; };
-		4C65612717F280AD00F03470 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/WelcomeScreens.storyboard; sourceTree = "<group>"; };
+		4C65612717F280AD00F03470 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/AdditionalStoryboards.storyboard; sourceTree = "<group>"; };
 		4C65612917F3936900F03470 /* ParrottsEmotionsOLD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ParrottsEmotionsOLD.png; path = ../ParrottsEmotionsOLD.png; sourceTree = "<group>"; };
 		4C65612B17F39E5000F03470 /* ParrottsEmotions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ParrottsEmotions.pdf; sourceTree = "<group>"; };
 		4C65612D17F39F0200F03470 /* ParrotsEmotions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ParrotsEmotions.png; path = Images/ParrotsEmotions.png; sourceTree = "<group>"; };
@@ -1198,7 +1198,7 @@
 			isa = PBXGroup;
 			children = (
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
-				4C65612617F280AD00F03470 /* WelcomeScreens.storyboard */,
+				4C65612617F280AD00F03470 /* AdditionalStoryboards.storyboard */,
 				4CEEF60117FCF48D00C29507 /* WelcomeView.xib */,
 				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
 				4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */,
@@ -1654,7 +1654,7 @@
 				4C4043E01783E51400710F2A /* Awed.png in Resources */,
 				4C4043E11783E51400710F2A /* Awed@2x.png in Resources */,
 				4C4043E21783E51400710F2A /* Skeptical_orig.png in Resources */,
-				4C65612817F280AD00F03470 /* WelcomeScreens.storyboard in Resources */,
+				4C65612817F280AD00F03470 /* AdditionalStoryboards.storyboard in Resources */,
 				4C06395B17E45A6E00563FE6 /* Ferocious.png in Resources */,
 				4C4043E31783E51400710F2A /* Skeptical_orig@2x.png in Resources */,
 				4C4043E41783E51400710F2A /* Amused_old.png in Resources */,
@@ -1814,12 +1814,12 @@
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
-		4C65612617F280AD00F03470 /* WelcomeScreens.storyboard */ = {
+		4C65612617F280AD00F03470 /* AdditionalStoryboards.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4C65612717F280AD00F03470 /* en */,
 			);
-			name = WelcomeScreens.storyboard;
+			name = AdditionalStoryboards.storyboard;
 			sourceTree = "<group>";
 		};
 		4C8BB41A17ECEC2000754252 /* InfoPlist.strings */ = {

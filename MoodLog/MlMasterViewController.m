@@ -213,14 +213,14 @@ static CGFloat CELL_HEIGHT;
 }
 
 - (IBAction)showWelcomeScreen:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WelcomeScreens" bundle:nil];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AdditionalStoryboards" bundle:nil];
     UIViewController *welcomeViewController = [sb instantiateViewControllerWithIdentifier:@"welcomeNavigationController"];
     [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
     [self presentViewController:welcomeViewController animated:YES completion:NULL];
 }
 
 - (IBAction)showCharts:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WelcomeScreens" bundle:nil];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AdditionalStoryboards" bundle:nil];
     UIViewController *chartViewController = [sb instantiateViewControllerWithIdentifier:@"chartViewController"];
     [chartViewController setModalPresentationStyle:UIModalPresentationFormSheet];
     [self presentViewController:chartViewController animated:YES completion:NULL];

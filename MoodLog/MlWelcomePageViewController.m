@@ -44,7 +44,7 @@ int numberOfPages = 4;
 }
 
 -(void) createPages{
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WelcomeScreens" bundle:nil];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AdditionalStoryboards" bundle:nil];
     self.pages = [[NSMutableArray alloc]initWithCapacity:3];
     
     MlWelcomeScreenViewController *controller;
