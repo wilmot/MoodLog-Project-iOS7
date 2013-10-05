@@ -19,6 +19,7 @@ static short SUMMARY_CHART = 0;
 static short PIE_CHART = 1;
 static short BAR_CHART = 2;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -50,7 +51,7 @@ static short BAR_CHART = 2;
         self.myChartCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
     }
     else if ([segue.identifier isEqualToString:@"SummarySegue"]) {
-        self.mySummaryCollectionViewController = [segue destinationViewController]; // Getting a reference to the Summary view
+        self.mySummaryInfoViewController = [segue destinationViewController]; // Getting a reference to the Summary view
     }
 }
 
@@ -92,21 +93,21 @@ static short BAR_CHART = 2;
 
 - (IBAction)chooseSegment:(id)sender {
     if(self.segment.selectedSegmentIndex == SUMMARY_CHART) { // Summary
-        self.summaryViewController.hidden = NO;
-        self.mySummaryCollectionViewController.showSummary = YES;
-        [self.mySummaryCollectionViewController summaryInformationQuick:self];
-        [self.mySummaryCollectionViewController performSelector:@selector(summaryInformationSlow:) withObject:self afterDelay:1.0 ];
+        self.summaryView.hidden = NO;
+        self.mySummaryInfoViewController.showSummary = YES;
+        [self.mySummaryInfoViewController summaryInformationQuick:self];
+        [self.mySummaryInfoViewController performSelector:@selector(summaryInformationSlow:) withObject:self afterDelay:1.0 ];
         self.chartContainer.hidden = YES;
     }
     else if (self.segment.selectedSegmentIndex == BAR_CHART) { // Bar Chart
-        self.summaryViewController.hidden = YES;
-        self.mySummaryCollectionViewController.showSummary = NO;
+        self.summaryView.hidden = YES;
+        self.mySummaryInfoViewController.showSummary = NO;
         self.chartContainer.hidden = NO;
         self.myChartCollectionViewController.chartType = @"Bar";
     }
     else if (self.segment.selectedSegmentIndex == PIE_CHART) {
-        self.summaryViewController.hidden = YES;
-        self.mySummaryCollectionViewController.showSummary = NO;
+        self.summaryView.hidden = YES;
+        self.mySummaryInfoViewController.showSummary = NO;
         self.chartContainer.hidden = NO;
         self.myChartCollectionViewController.chartType = @"Pie";
     }

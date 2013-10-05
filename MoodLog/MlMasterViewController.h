@@ -20,11 +20,13 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aNewEntryButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *infoButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *chartButton;
 @property (strong, nonatomic) UIView *firstTimeView;
 
 - (void)insertNewObject:(id)sender;
 - (MoodLogEvents *) insertNewObjectAndReturnReference: (id) sender;
 
 - (IBAction)showWelcomeScreen:(id)sender;
+- (IBAction)showCharts:(id)sender;
 
 @end

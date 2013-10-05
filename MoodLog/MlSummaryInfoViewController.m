@@ -32,6 +32,7 @@ BOOL hasShownSlowSummary = NO;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {

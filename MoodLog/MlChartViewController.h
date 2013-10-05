@@ -14,12 +14,12 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 @property (weak, nonatomic) IBOutlet UIView *chartContainer;
-@property (weak, nonatomic) IBOutlet UIView *summaryViewController;
+@property (weak, nonatomic) IBOutlet UIView *summaryView;
 
 - (IBAction)pressDone:(id)sender;
 - (IBAction)chooseSegment:(id)sender;
 
 @property (weak, nonatomic) MlChartCollectionViewController *myChartCollectionViewController;
-@property (weak, nonatomic) MlSummaryInfoViewController *mySummaryCollectionViewController;
+@property (weak, nonatomic) MlSummaryInfoViewController *mySummaryInfoViewController;
 
 @end

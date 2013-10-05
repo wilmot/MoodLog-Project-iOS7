@@ -219,6 +219,13 @@ static CGFloat CELL_HEIGHT;
     [self presentViewController:welcomeViewController animated:YES completion:NULL];
 }
 
+- (IBAction)showCharts:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WelcomeScreens" bundle:nil];
+    UIViewController *chartViewController = [sb instantiateViewControllerWithIdentifier:@"chartViewController"];
+    [chartViewController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [self presentViewController:chartViewController animated:YES completion:NULL];
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -319,9 +326,6 @@ static CGFloat CELL_HEIGHT;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         MoodLogEvents *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
-    }
-    else if ([[segue identifier] isEqualToString:@"chartView"]) {
-        [self shouldAutorotate];
     }
     else if ([[segue identifier] isEqualToString:@"mailView"]) {
         [(MlMailViewController *)[segue destinationViewController] setMasterViewController:self];
