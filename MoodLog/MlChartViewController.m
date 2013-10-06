@@ -97,7 +97,6 @@ static short BAR_CHART = 2;
         self.mySummaryInfoViewController.showSummary = YES;
         [self.mySummaryInfoViewController summaryInformationQuick:self];
         [self.mySummaryInfoViewController performSelector:@selector(summaryInformationSlow:) withObject:self afterDelay:0.2 ];
-        [self.mySummaryInfoViewController performSelector:@selector(summaryInformationSlow2:) withObject:self afterDelay:0.2 ];
         self.chartContainer.hidden = YES;
     }
     else if (self.segment.selectedSegmentIndex == BAR_CHART) { // Bar Chart

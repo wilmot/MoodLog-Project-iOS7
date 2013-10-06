@@ -12,8 +12,10 @@
 
 @interface MlSummaryInfoViewController : UIViewController <NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController2;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerByDate;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerByCategory;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerByEmotion;
+
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) MlMasterViewController *masterViewController;
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *pieChartForSummary;

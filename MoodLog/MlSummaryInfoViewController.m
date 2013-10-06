@@ -18,6 +18,7 @@
 @implementation MlSummaryInfoViewController
 
 BOOL hasShownSlowSummary = NO;
+NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,31 +37,21 @@ BOOL hasShownSlowSummary = NO;
 
 - (void) viewWillAppear:(BOOL)animated {
     [self summaryInformationQuick: self];
-//    Pass UILayoutConstraintAxisHorizontal for the constraints affecting [self center].x and CGRectGetWidth([self bounds]), and UILayoutConstraintAxisVertical for the constraints affecting[self center].y and CGRectGetHeight([self bounds]).
-
-    NSLog(@"Constraints affecting [self center].x and width: %@",[self.view constraintsAffectingLayoutForAxis:UILayoutConstraintAxisHorizontal]);
-    NSLog(@"Constraints affecting [self center].y and height: %@",[self.view constraintsAffectingLayoutForAxis:UILayoutConstraintAxisVertical]);
-    NSLog(@"Has ambiguous layout? %hhd",[self.view hasAmbiguousLayout]);
-    
-    // Release notes for iOS 6 say to do this
-    [self.summaryText setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.pieChartForSummary setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.viewInsideScrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
 }
 
 - (void)summaryInformationQuick: (id)sender {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
-    int events = [sectionInfo numberOfObjects];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByDate sections][0];
+    NSUInteger events = [sectionInfo numberOfObjects];
     if (events > 0) {
         NSIndexPath *firstItemIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
-        MoodLogEvents *moodLogRecord = [self.fetchedResultsController objectAtIndexPath:firstItemIndexPath];
+        MoodLogEvents *moodLogRecord = [self.fetchedResultsControllerByDate objectAtIndexPath:firstItemIndexPath];
         NSDate *today = [moodLogRecord valueForKey:@"date"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
         dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
         NSString *startDate = [dateFormatter stringFromDate: today];
         
         NSIndexPath *lastItemIndexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
-        moodLogRecord = [self.fetchedResultsController objectAtIndexPath:lastItemIndexPath];
+        moodLogRecord = [self.fetchedResultsControllerByDate objectAtIndexPath:lastItemIndexPath];
         today = [moodLogRecord valueForKey:@"date"];
         dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
         NSString *endDate = [dateFormatter stringFromDate: today];
@@ -75,7 +66,13 @@ BOOL hasShownSlowSummary = NO;
         // Summary of records and dates
         font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:14];
         attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-        summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\nYou have created %d MoodLog Entries, dating from %@ to %@.", events, startDate, endDate] attributes:attrsDictionary];
+        NSString *textToDisplay;
+        if (events > 1) {
+            textToDisplay = [NSString stringWithFormat:@"\n\nYou have created %d Mood Log entries, dating from %@ to %@.", events, startDate, endDate];
+        } else {
+            textToDisplay = [NSString stringWithFormat:@"\n\nYou have created %d Mood Log entry, dating from %@ to %@.", events, startDate, endDate];
+        }
+        summaryLine = [[NSAttributedString alloc] initWithString:textToDisplay attributes:attrsDictionary];
         [summaryAttributedString appendAttributedString:summaryLine];
         
         // Most common emotion (same format as above)
@@ -87,8 +84,8 @@ BOOL hasShownSlowSummary = NO;
 }
 - (void)summaryInformationSlow: (id)sender {
     if (self.showSummary) {
-        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
-        int events = [sectionInfo numberOfObjects];
+        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByDate sections][0];
+        NSUInteger events = [sectionInfo numberOfObjects];
         if (events > 0) {
             UIFont *font;
             NSAttributedString *summaryLine;
@@ -103,10 +100,11 @@ BOOL hasShownSlowSummary = NO;
             
             NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
             
-            int numberOfSections = [[self.fetchedResultsController2 sections] count];
+            NSUInteger numberOfSections = [[self.fetchedResultsControllerByCategory sections] count];
             for (int i=0; i<numberOfSections; i++) {
-                id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController2 sections][i];
-                [categoryCounts setObject:[NSNumber numberWithLong:[sectionInfo numberOfObjects]] forKey:sectionInfo.name];
+                id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByCategory sections][i];
+                NSUInteger objectsInSection = [sectionInfo numberOfObjects];
+                [categoryCounts setObject:[NSNumber numberWithLong:objectsInSection] forKey:sectionInfo.name];
             }
             
             for (NSString *category in @[@"Love", @"Joy",@"Surprise",@"Anger",@"Sadness", @"Fear"]) {
@@ -125,16 +123,16 @@ BOOL hasShownSlowSummary = NO;
             self.pieChartForSummary.dividerLine = NO;
             [self.pieChartForSummary setNeedsDisplay];
             
+            [self summaryInformationSlow2:self];
+            [self summaryInformationSlowEmotions:self];
             self.showSummary = NO;
        }
     }
 }
 
 - (void)summaryInformationSlow2: (id)sender {
-    NSLog(@"summaryInformationSlow2");
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
-    int events = [sectionInfo numberOfObjects];
-    float overall = 0, sleep = 0, energy =0, health = 0;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByDate sections][0];
+    NSUInteger events = [sectionInfo numberOfObjects];
     if (events > 0) {
         UIFont *font;
         NSAttributedString *summaryLine;
@@ -149,24 +147,66 @@ BOOL hasShownSlowSummary = NO;
 
         NSIndexPath *itemIndexPath;
         MoodLogEvents *moodLogRecord;
-        for (int i =0; i<events; i++) {
+        NSMutableDictionary *barTotals = [@{@"overall" : @0, @"sleep" : @0, @"energy" : @0, @"health" : @0} mutableCopy];
+       for (int i =0; i<events; i++) {
             itemIndexPath = [NSIndexPath indexPathForItem:i inSection:0];
-            moodLogRecord = [self.fetchedResultsController objectAtIndexPath:itemIndexPath];
-            overall += [moodLogRecord.overall floatValue];
-            sleep += [moodLogRecord.sleep floatValue];
-            energy += [moodLogRecord.energy floatValue];
-            health += [moodLogRecord.health floatValue];
-        }
+            moodLogRecord = [self.fetchedResultsControllerByDate objectAtIndexPath:itemIndexPath];
+           [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"overall"] floatValue] + [moodLogRecord.overall floatValue]] forKey:@"overall"];
+           [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"sleep"] floatValue] + [moodLogRecord.sleep floatValue]] forKey:@"sleep"];
+           [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"energy"] floatValue] + [moodLogRecord.energy floatValue]] forKey:@"energy"];
+           [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"health"] floatValue] + [moodLogRecord.health floatValue]] forKey:@"health"];
+       }
         self.barChartForSummary.chartType = @"Bar";
-        self.barChartForSummary.chartHeightOverall = overall/events;
-        self.barChartForSummary.chartHeightSleep = sleep/events;
-        self.barChartForSummary.chartHeightEnergy = energy/events;
-        self.barChartForSummary.chartHeightHealth = health/events;
+        self.barChartForSummary.chartHeightOverall = [[barTotals objectForKey:@"overall"] floatValue]/events;
+        self.barChartForSummary.chartHeightSleep = [[barTotals objectForKey:@"sleep"] floatValue]/events;
+        self.barChartForSummary.chartHeightEnergy = [[barTotals objectForKey:@"energy"] floatValue]/events;
+        self.barChartForSummary.chartHeightHealth = [[barTotals objectForKey:@"health"] floatValue]/events;
         [self.barChartForSummary setNeedsDisplay]; // without this, the bars don't match the data
 
         self.summaryText.attributedText = summaryAttributedString;
     }
 }
+
+- (void)summaryInformationSlowEmotions: (id)sender {
+    if (self.showSummary) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByDate sections][0];
+        NSUInteger events = [sectionInfo numberOfObjects];
+        if (events > 0) {
+            UIFont *font;
+            NSAttributedString *summaryLine;
+            NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor blueColor], NSForegroundColorAttributeName, nil];
+            NSMutableAttributedString *summaryAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.summaryText.attributedText];
+            
+            // Categories
+            font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
+            attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
+            summaryLine = [[NSAttributedString alloc] initWithString:@"\n\n\n\n\n\n\n\n\nMost Common Emotions" attributes:attrsDictionary];
+            [summaryAttributedString appendAttributedString:summaryLine];
+            
+            // Set up font for body text
+            font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+
+            Emotions *emotionRecord;
+            NSIndexPath *itemIndexPath;
+            NSUInteger numberOfSections = [[self.fetchedResultsControllerByEmotion sections] count];
+            for (int i=0; i<MIN(numberOfSections, MAX_EMOTIONS_TO_DISPLAY); i++) {
+                id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByEmotion sections][i];
+                NSUInteger objectsInSection = [sectionInfo numberOfObjects];
+                itemIndexPath = [NSIndexPath indexPathForItem:0 inSection:i];
+                emotionRecord = [self.fetchedResultsControllerByEmotion objectAtIndexPath:itemIndexPath];
+            
+                attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices basicColors] objectForKey:emotionRecord.category], NSForegroundColorAttributeName, nil];
+                summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", emotionRecord.name, objectsInSection] attributes:attrsDictionary];
+                [summaryAttributedString appendAttributedString:summaryLine];
+            }
+            
+            self.summaryText.attributedText = summaryAttributedString;
+            
+            self.showSummary = NO;
+        }
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -175,9 +215,9 @@ BOOL hasShownSlowSummary = NO;
 
 #pragma mark - Core Data delegate methods
 
-- (NSFetchedResultsController *)fetchedResultsController {
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
+- (NSFetchedResultsController *)fetchedResultsControllerByDate {
+    if (_fetchedResultsControllerByDate != nil) {
+        return _fetchedResultsControllerByDate;
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -196,34 +236,35 @@ BOOL hasShownSlowSummary = NO;
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil]; // @"MoodLogsCache"
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
+    NSFetchedResultsController *afetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil]; // @"MoodLogsCache"
+    afetchedResultsController.delegate = self;
+    self.fetchedResultsControllerByDate = afetchedResultsController;
     
 	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
+	if (![self.fetchedResultsControllerByDate performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
 	}
     
-    return _fetchedResultsController;
+    return _fetchedResultsControllerByDate;
 }
 
-- (NSFetchedResultsController *)fetchedResultsController2 {
-    if (_fetchedResultsController2 != nil) {
-        return _fetchedResultsController2;
+- (NSFetchedResultsController *)fetchedResultsControllerByCategory {
+    if (_fetchedResultsControllerByCategory != nil) {
+        return _fetchedResultsControllerByCategory;
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
     // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Emotions" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     NSPredicate *requestPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]]];
     [fetchRequest setPredicate:requestPredicate];
-
+    
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
@@ -237,17 +278,57 @@ BOOL hasShownSlowSummary = NO;
     // nil for section name key path means "no sections".
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"category" cacheName:nil]; // @"EmotionsCache"
     aFetchedResultsController.delegate = self;
-    self.fetchedResultsController2 = aFetchedResultsController;
+    self.fetchedResultsControllerByCategory = aFetchedResultsController;
     
 	NSError *error = nil;
-	if (![self.fetchedResultsController2 performFetch:&error]) {
+	if (![self.fetchedResultsControllerByCategory performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
 	}
     
-    return _fetchedResultsController2;
+    return _fetchedResultsControllerByCategory;
+}
+
+- (NSFetchedResultsController *)fetchedResultsControllerByEmotion {
+    if (_fetchedResultsControllerByEmotion != nil) {
+        return _fetchedResultsControllerByEmotion;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Emotions" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *requestPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]]];
+    [fetchRequest setPredicate:requestPredicate];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"name" cacheName:nil]; // @"EmotionsCache"
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsControllerByEmotion = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsControllerByEmotion performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    return _fetchedResultsControllerByEmotion;
 }
 
 @end
