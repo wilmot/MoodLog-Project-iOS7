@@ -296,7 +296,10 @@ static CGFloat CELL_HEIGHT;
 
 -(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Header"];
-    UILabel *label = (UILabel *)[cell viewWithTag:100];
+    UIView *view = [[UIView alloc] initWithFrame:[cell frame]]; // Wrapping the cell in a UIView to avoid the "no index path for table cell being reused" message
+    [view addSubview:cell];
+
+    UILabel *label = (UILabel *)[view viewWithTag:100];
     NSString *header = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
     
     static NSArray *monthSymbols = nil;
@@ -316,7 +319,7 @@ static CGFloat CELL_HEIGHT;
 
     
     [label setText:headerTitle];
-    return (UIView *)cell;
+    return view;
 }
 
 
