@@ -887,7 +887,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiQ-57-ra9">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" red="0.79900380289999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -903,13 +903,13 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX2-Rv-GM5" customClass="MlChartDrawingView">
                                                 <rect key="frame" x="20" y="335" width="280" height="151"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="0.40000000596046448" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="151" id="ckR-Hq-Jbd"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.40000000596046448" green="1" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="xDe-Pb-RHF" firstAttribute="leading" secondItem="WMN-qS-0pk" secondAttribute="leading" constant="129" id="02J-mf-8a1"/>
                                             <constraint firstAttribute="trailing" secondItem="KiQ-57-ra9" secondAttribute="trailing" id="Mz5-ob-zh9"/>
@@ -924,6 +924,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="WMN-qS-0pk" secondAttribute="bottom" id="80R-dn-xMf"/>
                                     <constraint firstItem="WMN-qS-0pk" firstAttribute="leading" secondItem="xPT-D9-DqJ" secondAttribute="leading" id="8Sb-yE-wyD"/>
