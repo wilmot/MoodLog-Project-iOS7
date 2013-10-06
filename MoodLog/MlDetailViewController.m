@@ -79,6 +79,11 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self.tableView reloadData];
 }
 
+- (void) viewWillDisappear:(BOOL)animated {
+    [self saveContext];
+}
+
+
 - (void)configureView
 {
     // Update the user interface for the detail item.
@@ -148,7 +153,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             NSDictionary *attrsDictionary;
             NSAttributedString *currentEmotion;
            for (Emotions *emotion in emotionArray) {
-               attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices basicColors] objectForKey:emotion.category], NSForegroundColorAttributeName, nil];
+               attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices textColors] objectForKey:emotion.category], NSForegroundColorAttributeName, nil];
                 currentEmotion = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n",[emotion.name lowercaseString]] attributes:attrsDictionary];
                 selectedEms = [selectedEms stringByAppendingFormat:@"%@: %@\n", emotion.category, [emotion.name lowercaseString]];
                 [selectedEmotions appendAttributedString:currentEmotion];

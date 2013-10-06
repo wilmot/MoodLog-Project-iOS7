@@ -11,11 +11,13 @@
 @interface MlColorChoices : NSObject
 
 @property (strong, nonatomic) NSDictionary *basicColors;
+@property (strong, nonatomic) NSDictionary *textColors;
 @property (strong, nonatomic) NSDictionary *mutedColors;
 @property (strong, nonatomic) NSDictionary *translucentColors;
 
 
 + (NSDictionary *) basicColors;
++ (NSDictionary *) textColors;
 + (NSDictionary *) mutedColors;
 + (NSDictionary *) translucentColors: (float) translucency;
 
