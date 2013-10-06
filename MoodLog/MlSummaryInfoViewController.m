@@ -10,6 +10,7 @@
 #import "MlAppDelegate.h"
 #import "Prefs.h"
 #import "MlColorChoices.h"
+#import "MlMoodDataItem.h"
 
 @interface MlSummaryInfoViewController ()
 
@@ -74,11 +75,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
         }
         summaryLine = [[NSAttributedString alloc] initWithString:textToDisplay attributes:attrsDictionary];
         [summaryAttributedString appendAttributedString:summaryLine];
-        
-        // Most common emotion (same format as above)
-        summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\nThe most common emotion you've picked is “%@”", @"Pickle"] attributes:attrsDictionary];
-        [summaryAttributedString appendAttributedString:summaryLine];
-        
+                
         self.summaryText.attributedText = summaryAttributedString;
     }
 }
@@ -142,7 +139,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
         // Categories
         font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
         attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-        summaryLine = [[NSAttributedString alloc] initWithString:@"\n\nBars:" attributes:attrsDictionary];
+        summaryLine = [[NSAttributedString alloc] initWithString:@"\nBars:" attributes:attrsDictionary];
         [summaryAttributedString appendAttributedString:summaryLine];
 
         NSIndexPath *itemIndexPath;
@@ -180,7 +177,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             // Categories
             font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-            summaryLine = [[NSAttributedString alloc] initWithString:@"\n\n\n\n\n\n\n\n\nMost Common Emotions" attributes:attrsDictionary];
+            summaryLine = [[NSAttributedString alloc] initWithString:@"\n\n\n\n\n\nMost Common Emotions" attributes:attrsDictionary];
             [summaryAttributedString appendAttributedString:summaryLine];
             
             // Set up font for body text
@@ -189,17 +186,23 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             Emotions *emotionRecord;
             NSIndexPath *itemIndexPath;
             NSUInteger numberOfSections = [[self.fetchedResultsControllerByEmotion sections] count];
+            NSMutableArray *summaryMoodArray = [[NSMutableArray alloc] init];
             for (int i=0; i<MIN(numberOfSections, MAX_EMOTIONS_TO_DISPLAY); i++) {
                 id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByEmotion sections][i];
                 NSUInteger objectsInSection = [sectionInfo numberOfObjects];
                 itemIndexPath = [NSIndexPath indexPathForItem:0 inSection:i];
-                emotionRecord = [self.fetchedResultsControllerByEmotion objectAtIndexPath:itemIndexPath];
-            
-                attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices basicColors] objectForKey:emotionRecord.category], NSForegroundColorAttributeName, nil];
-                summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", emotionRecord.name, objectsInSection] attributes:attrsDictionary];
-                [summaryAttributedString appendAttributedString:summaryLine];
+                emotionRecord = [self.fetchedResultsControllerByEmotion objectAtIndexPath:itemIndexPath]; 
+                MlMoodDataItem *thisMood = [[MlMoodDataItem alloc] init];
+                thisMood.mood = emotionRecord.name;
+                thisMood.category = emotionRecord.category;
+                thisMood.itemCount =[NSNumber numberWithInt:objectsInSection];
+                [summaryMoodArray addObject:thisMood];
             }
-            
+            for (MlMoodDataItem *anElement in [summaryMoodArray sortedArrayUsingSelector:@selector(itemCountReverseCompare:)]) {
+                attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices basicColors] objectForKey:anElement.category], NSForegroundColorAttributeName, nil];
+                summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %@ ", anElement.mood, anElement.itemCount] attributes:attrsDictionary];
+                [summaryAttributedString appendAttributedString:summaryLine];
+           }
             self.summaryText.attributedText = summaryAttributedString;
             
             self.showSummary = NO;

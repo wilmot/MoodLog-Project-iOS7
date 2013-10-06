@@ -40,5 +40,13 @@
     return [otherObject.mood compare:self.mood];
 }
 
+- (NSComparisonResult)itemCountCompare:(MlMoodDataItem *)otherObject {
+    return [self.itemCount compare:otherObject.itemCount];
+}
+
+- (NSComparisonResult)itemCountReverseCompare:(MlMoodDataItem *)otherObject {
+    return [otherObject.itemCount compare:self.itemCount];
+}
+
 
 @end

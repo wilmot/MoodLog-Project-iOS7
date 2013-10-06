@@ -16,10 +16,13 @@
 @property (nonatomic, retain) NSNumber *parrotLevel;
 @property (nonatomic, retain) NSString *facePath;
 @property (nonatomic, assign) BOOL selected;
+@property (nonatomic, retain) NSNumber *itemCount; // Used when gathering summary information
 
 -(id)copyWithZone:(NSZone *)zone;
 - (NSComparisonResult)compare:(MlMoodDataItem *)otherObject;
 - (NSComparisonResult)categoryCompare:(MlMoodDataItem *)otherObject;
 - (NSComparisonResult)reverseCompare:(MlMoodDataItem *)otherObject;
+- (NSComparisonResult)itemCountCompare:(MlMoodDataItem *)otherObject;
+- (NSComparisonResult)itemCountReverseCompare:(MlMoodDataItem *)otherObject;
 
 @end
