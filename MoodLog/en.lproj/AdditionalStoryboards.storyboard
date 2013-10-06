@@ -89,9 +89,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KoV-xG-DMx">
-                                <rect key="frame" x="0.0" y="93" width="320" height="737"/>
+                                <rect key="frame" x="0.0" y="94" width="320" height="736"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parrott's Emotions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1Z-k6-upw">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Parrott's Emotions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1Z-k6-upw">
                                         <rect key="frame" x="0.0" y="56" width="318" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -124,11 +124,15 @@
                                 <constraints>
                                     <constraint firstItem="B1Z-k6-upw" firstAttribute="top" secondItem="KoV-xG-DMx" secondAttribute="top" constant="56" id="3ac-yi-FWf"/>
                                     <constraint firstItem="B1Z-k6-upw" firstAttribute="leading" secondItem="KoV-xG-DMx" secondAttribute="leading" id="6e5-eh-DCi"/>
+                                    <constraint firstItem="JCQ-Qd-7AB" firstAttribute="leading" secondItem="KoV-xG-DMx" secondAttribute="leading" constant="-5" id="CFP-GI-Ve6"/>
                                     <constraint firstItem="7ea-2h-IT2" firstAttribute="centerX" secondItem="KoV-xG-DMx" secondAttribute="centerX" id="M28-Bk-5bg"/>
                                     <constraint firstItem="JCQ-Qd-7AB" firstAttribute="centerX" secondItem="7ea-2h-IT2" secondAttribute="centerX" id="SpV-rN-4Re"/>
                                     <constraint firstAttribute="trailing" secondItem="B1Z-k6-upw" secondAttribute="trailing" constant="3" id="Suo-KE-YUb"/>
                                     <constraint firstItem="7ea-2h-IT2" firstAttribute="top" secondItem="JCQ-Qd-7AB" secondAttribute="bottom" constant="4" id="aXF-em-vhs"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JCQ-Qd-7AB" secondAttribute="bottom" constant="20" id="avF-hg-ILj"/>
                                     <constraint firstItem="JCQ-Qd-7AB" firstAttribute="top" secondItem="B1Z-k6-upw" secondAttribute="bottom" constant="8" symbolic="YES" id="e2p-1w-7Te"/>
+                                    <constraint firstAttribute="trailing" secondItem="JCQ-Qd-7AB" secondAttribute="trailing" constant="-5" id="nXD-XS-LmX"/>
+                                    <constraint firstItem="JCQ-Qd-7AB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KoV-xG-DMx" secondAttribute="top" constant="86" id="nk7-qU-nvJ"/>
                                     <constraint firstItem="JCQ-Qd-7AB" firstAttribute="top" secondItem="KoV-xG-DMx" secondAttribute="top" constant="86" id="oj9-ae-S2e"/>
                                     <constraint firstAttribute="centerX" secondItem="B1Z-k6-upw" secondAttribute="centerX" constant="1.5" id="xDy-iv-iHM"/>
                                     <constraint firstAttribute="bottom" secondItem="JCQ-Qd-7AB" secondAttribute="bottom" constant="21" id="xHx-GU-d8k"/>
@@ -137,7 +141,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KoV-xG-DMx" firstAttribute="top" secondItem="zPi-2e-i9K" secondAttribute="bottom" constant="-1" id="BVc-uX-dS3"/>
+                            <constraint firstItem="KoV-xG-DMx" firstAttribute="top" secondItem="zPi-2e-i9K" secondAttribute="bottom" id="BVc-uX-dS3"/>
                             <constraint firstAttribute="trailing" secondItem="KoV-xG-DMx" secondAttribute="trailing" id="Kg4-Yk-d1z"/>
                             <constraint firstAttribute="bottom" secondItem="KoV-xG-DMx" secondAttribute="bottom" id="adG-pS-mFr"/>
                             <constraint firstItem="KoV-xG-DMx" firstAttribute="leading" secondItem="5Bu-oD-dPf" secondAttribute="leading" id="fva-M1-WGo"/>
@@ -544,7 +548,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4p8-dg-i5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1980" y="1895"/>
+            <point key="canvasLocation" x="-1857" y="1913"/>
         </scene>
         <!--Ml Chart Collection View Controller-->
         <scene sceneID="qxT-Wa-Wbh">
@@ -873,43 +877,58 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BXu-vP-lwB">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiQ-57-ra9">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMN-qS-0pk">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDe-Pb-RHF" customClass="MlChartDrawingView">
-                                        <rect key="frame" x="112" y="151" width="162" height="151"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiQ-57-ra9">
+                                                <rect key="frame" x="20" y="28" width="280" height="338"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" red="0.79900380289999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDe-Pb-RHF" customClass="MlChartDrawingView">
+                                                <rect key="frame" x="119" y="374" width="162" height="151"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="151" id="kg3-Oq-IKC"/>
+                                                    <constraint firstAttribute="width" constant="162" id="s1U-2F-LvD"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.40000000596046448" green="1" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="151" id="GEV-T4-2iT"/>
-                                            <constraint firstAttribute="width" constant="162" id="UBE-0m-NEM"/>
+                                            <constraint firstAttribute="trailing" secondItem="KiQ-57-ra9" secondAttribute="trailing" constant="20" id="Mz5-ob-zh9"/>
+                                            <constraint firstItem="KiQ-57-ra9" firstAttribute="top" secondItem="WMN-qS-0pk" secondAttribute="top" constant="28" id="ORr-T2-4KB"/>
+                                            <constraint firstAttribute="bottom" secondItem="KiQ-57-ra9" secondAttribute="bottom" constant="234" id="PWQ-yv-cOS"/>
+                                            <constraint firstItem="KiQ-57-ra9" firstAttribute="leading" secondItem="WMN-qS-0pk" secondAttribute="leading" constant="20" id="XMB-Qt-qU7"/>
+                                            <constraint firstAttribute="trailing" secondItem="xDe-Pb-RHF" secondAttribute="trailing" constant="39" id="bQR-7U-PNB"/>
+                                            <constraint firstAttribute="height" constant="600" id="m5T-IA-rIl"/>
+                                            <constraint firstAttribute="bottom" secondItem="xDe-Pb-RHF" secondAttribute="bottom" constant="75" id="mQF-91-JJT"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="KiQ-57-ra9" secondAttribute="bottom" id="TOR-Tb-GF1"/>
-                                    <constraint firstItem="KiQ-57-ra9" firstAttribute="top" secondItem="BXu-vP-lwB" secondAttribute="top" id="XXX-JH-rNK"/>
-                                    <constraint firstAttribute="height" constant="600" id="b8j-uN-gxS"/>
-                                    <constraint firstItem="KiQ-57-ra9" firstAttribute="leading" secondItem="BXu-vP-lwB" secondAttribute="leading" id="iNF-o5-2nh"/>
-                                    <constraint firstItem="xDe-Pb-RHF" firstAttribute="leading" secondItem="BXu-vP-lwB" secondAttribute="leading" constant="112" id="j9l-xX-SSI"/>
-                                    <constraint firstItem="xDe-Pb-RHF" firstAttribute="top" secondItem="BXu-vP-lwB" secondAttribute="top" constant="151" id="jMd-1g-ejH"/>
-                                    <constraint firstAttribute="trailing" secondItem="KiQ-57-ra9" secondAttribute="trailing" id="usP-yZ-QcV"/>
+                                    <constraint firstAttribute="bottom" secondItem="WMN-qS-0pk" secondAttribute="bottom" id="80R-dn-xMf"/>
+                                    <constraint firstItem="WMN-qS-0pk" firstAttribute="leading" secondItem="xPT-D9-DqJ" secondAttribute="leading" id="8Sb-yE-wyD"/>
+                                    <constraint firstItem="WMN-qS-0pk" firstAttribute="top" secondItem="xPT-D9-DqJ" secondAttribute="top" id="Muw-GX-65e"/>
+                                    <constraint firstItem="WMN-qS-0pk" firstAttribute="centerX" secondItem="xPT-D9-DqJ" secondAttribute="centerX" id="tNi-Ik-VN4"/>
+                                    <constraint firstAttribute="trailing" secondItem="WMN-qS-0pk" secondAttribute="trailing" id="uFK-E7-mB7"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="BXu-vP-lwB" secondAttribute="trailing" id="8D6-jA-q41"/>
-                            <constraint firstItem="BXu-vP-lwB" firstAttribute="top" secondItem="Qac-52-9Kq" secondAttribute="top" id="JTS-B2-Qrh"/>
-                            <constraint firstItem="BXu-vP-lwB" firstAttribute="leading" secondItem="Qac-52-9Kq" secondAttribute="leading" id="z7E-kJ-svw"/>
+                            <constraint firstItem="xPT-D9-DqJ" firstAttribute="top" secondItem="Qac-52-9Kq" secondAttribute="top" id="Ebz-fo-lcb"/>
+                            <constraint firstAttribute="trailing" secondItem="xPT-D9-DqJ" secondAttribute="trailing" id="KXw-bU-sfI"/>
+                            <constraint firstItem="xEW-4O-uYu" firstAttribute="top" secondItem="xPT-D9-DqJ" secondAttribute="bottom" id="bqi-aL-xaL"/>
+                            <constraint firstItem="xPT-D9-DqJ" firstAttribute="leading" secondItem="Qac-52-9Kq" secondAttribute="leading" id="feX-DV-6UW"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -918,11 +937,12 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                     <connections>
                         <outlet property="pieChartForSummary" destination="xDe-Pb-RHF" id="xSA-Fh-5is"/>
                         <outlet property="summaryText" destination="KiQ-57-ra9" id="sVp-Xo-f3b"/>
+                        <outlet property="viewInsideScrollView" destination="WMN-qS-0pk" id="Nlu-Gh-Yhy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49A-yD-9Rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1520" y="1302"/>
+            <point key="canvasLocation" x="-1680" y="1165"/>
         </scene>
     </scenes>
     <resources>

@@ -32,11 +32,20 @@ BOOL hasShownSlowSummary = NO;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [self summaryInformationQuick: self];
+//    Pass UILayoutConstraintAxisHorizontal for the constraints affecting [self center].x and CGRectGetWidth([self bounds]), and UILayoutConstraintAxisVertical for the constraints affecting[self center].y and CGRectGetHeight([self bounds]).
+
+    NSLog(@"Constraints affecting [self center].x and width: %@",[self.view constraintsAffectingLayoutForAxis:UILayoutConstraintAxisHorizontal]);
+    NSLog(@"Constraints affecting [self center].y and height: %@",[self.view constraintsAffectingLayoutForAxis:UILayoutConstraintAxisVertical]);
+    NSLog(@"Has ambiguous layout? %hhd",[self.view hasAmbiguousLayout]);
+    
+    // Release notes for iOS 6 say to do this
+    [self.summaryText setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.pieChartForSummary setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.viewInsideScrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
 }
 
 - (void)summaryInformationQuick: (id)sender {
