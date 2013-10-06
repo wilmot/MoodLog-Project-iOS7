@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) MlMasterViewController *masterViewController;
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *pieChartForSummary;
+@property (weak, nonatomic) IBOutlet MlChartDrawingView *barChartForSummary;
 @property (weak, nonatomic) IBOutlet UITextView *summaryText;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *viewInsideScrollView;

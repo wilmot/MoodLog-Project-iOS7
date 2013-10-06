@@ -53,15 +53,15 @@ BOOL hasShownSlowSummary = NO;
     int events = [sectionInfo numberOfObjects];
     if (events > 0) {
         NSIndexPath *firstItemIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
-        MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:firstItemIndexPath];
-        NSDate *today = [object valueForKey:@"date"];
+        MoodLogEvents *moodLogRecord = [self.fetchedResultsController objectAtIndexPath:firstItemIndexPath];
+        NSDate *today = [moodLogRecord valueForKey:@"date"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
         dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
         NSString *startDate = [dateFormatter stringFromDate: today];
         
         NSIndexPath *lastItemIndexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
-        object = [self.fetchedResultsController objectAtIndexPath:lastItemIndexPath];
-        today = [object valueForKey:@"date"];
+        moodLogRecord = [self.fetchedResultsController objectAtIndexPath:lastItemIndexPath];
+        today = [moodLogRecord valueForKey:@"date"];
         dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
         NSString *endDate = [dateFormatter stringFromDate: today];
         
@@ -128,6 +128,33 @@ BOOL hasShownSlowSummary = NO;
             self.showSummary = NO;
        }
     }
+}
+
+- (void)summaryInformationSlow2: (id)sender {
+    NSLog(@"summaryInformationSlow2");
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
+    int events = [sectionInfo numberOfObjects];
+    float overall = 0, sleep = 0, energy =0, health = 0;
+    if (events > 0) {
+        NSIndexPath *itemIndexPath;
+        MoodLogEvents *moodLogRecord;
+        for (int i =0; i<events; i++) {
+            itemIndexPath = [NSIndexPath indexPathForItem:i inSection:0];
+            moodLogRecord = [self.fetchedResultsController objectAtIndexPath:itemIndexPath];
+            overall += [moodLogRecord.overall floatValue];
+            sleep += [moodLogRecord.sleep floatValue];
+            energy += [moodLogRecord.energy floatValue];
+            health += [moodLogRecord.health floatValue];
+        }
+
+    }
+    self.barChartForSummary.chartType = @"Bar";
+    self.barChartForSummary.chartHeightOverall = overall/events;
+    self.barChartForSummary.chartHeightSleep = sleep/events;
+    self.barChartForSummary.chartHeightEnergy = energy/events;
+    self.barChartForSummary.chartHeightHealth = health/events;
+    [self.barChartForSummary setNeedsDisplay]; // without this, the bars don't match the data
+
 }
 
 - (void)didReceiveMemoryWarning {
