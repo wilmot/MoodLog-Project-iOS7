@@ -64,8 +64,8 @@ static NSUInteger numberOfDivisions = 20;
         else { // I'm on the detailView
              centery = rect.size.height/2.0;
         }
-        CGContextAddArc(context,centerx, centery,circumference,0,2*pi,1);
-        CGContextDrawPath(context,kCGPathStroke);
+//        CGContextAddArc(context,centerx, centery,circumference,0,2*pi,1);
+//        CGContextDrawPath(context,kCGPathStroke);
         CGFloat loveCount = [self.categoryCounts[love] floatValue];
         CGFloat joyCount = [self.categoryCounts[joy] floatValue];
         CGFloat surpriseCount = [self.categoryCounts[surprise] floatValue];

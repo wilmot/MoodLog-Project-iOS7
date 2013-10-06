@@ -136,6 +136,17 @@ BOOL hasShownSlowSummary = NO;
     int events = [sectionInfo numberOfObjects];
     float overall = 0, sleep = 0, energy =0, health = 0;
     if (events > 0) {
+        UIFont *font;
+        NSAttributedString *summaryLine;
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor blueColor], NSForegroundColorAttributeName, nil];
+        NSMutableAttributedString *summaryAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.summaryText.attributedText];
+        
+        // Categories
+        font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
+        attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
+        summaryLine = [[NSAttributedString alloc] initWithString:@"\n\nBars:" attributes:attrsDictionary];
+        [summaryAttributedString appendAttributedString:summaryLine];
+
         NSIndexPath *itemIndexPath;
         MoodLogEvents *moodLogRecord;
         for (int i =0; i<events; i++) {
@@ -146,15 +157,15 @@ BOOL hasShownSlowSummary = NO;
             energy += [moodLogRecord.energy floatValue];
             health += [moodLogRecord.health floatValue];
         }
+        self.barChartForSummary.chartType = @"Bar";
+        self.barChartForSummary.chartHeightOverall = overall/events;
+        self.barChartForSummary.chartHeightSleep = sleep/events;
+        self.barChartForSummary.chartHeightEnergy = energy/events;
+        self.barChartForSummary.chartHeightHealth = health/events;
+        [self.barChartForSummary setNeedsDisplay]; // without this, the bars don't match the data
 
+        self.summaryText.attributedText = summaryAttributedString;
     }
-    self.barChartForSummary.chartType = @"Bar";
-    self.barChartForSummary.chartHeightOverall = overall/events;
-    self.barChartForSummary.chartHeightSleep = sleep/events;
-    self.barChartForSummary.chartHeightEnergy = energy/events;
-    self.barChartForSummary.chartHeightHealth = health/events;
-    [self.barChartForSummary setNeedsDisplay]; // without this, the bars don't match the data
-
 }
 
 - (void)didReceiveMemoryWarning {
