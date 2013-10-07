@@ -44,8 +44,7 @@ static CGFloat CELL_HEIGHT;
 
     //[self updateOldRecords];
     //[self deleteUnselectedEmotionsFromOldRecords];
-    // TODO: Remove this if I understand deleting and I don't think this will be a problem in the shipping product
-    [self deleteEmotionsWithNullParent];
+    //[self deleteEmotionsWithNullParent];
     
     CELL_HEIGHT = [[self.tableView dequeueReusableCellWithIdentifier:@"Cell"] bounds].size.height;
 

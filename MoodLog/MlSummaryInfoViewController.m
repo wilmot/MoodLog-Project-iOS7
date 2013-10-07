@@ -110,8 +110,14 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             
             for (NSString *category in @[@"Love", @"Joy",@"Surprise",@"Anger",@"Sadness", @"Fear"]) {
                 NSNumber *countForCategory =[categoryCounts objectForKey:category];
-                font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-                attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices textColors] objectForKey:category], NSForegroundColorAttributeName, nil];
+                if ([countForCategory integerValue] > 0) {
+                    font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+                    attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices textColors] objectForKey:category], NSForegroundColorAttributeName, nil];
+                }
+                else {
+                    font = [UIFont fontWithName:@"HelveticaNeue" size:14];
+                    attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices textDesaturatedColors] objectForKey:category], NSForegroundColorAttributeName, nil];
+                }
                 summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", category, [countForCategory integerValue]] attributes:attrsDictionary];
                 [summaryAttributedString appendAttributedString:summaryLine];
             }

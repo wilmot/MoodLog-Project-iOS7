@@ -440,7 +440,8 @@ MoodLogEvents *myLogEntry;
     if ([matchingEmotions count] > 0) { // Clear out any existing records (winnowing duplicates)
         for (Emotions *emo in matchingEmotions) {
             [myLogEntry removeRelationshipEmotionsObject:emo];
-        }
+            [[((MlAppDelegate *)[UIApplication sharedApplication].delegate) managedObjectContext] deleteObject:emo];
+       }
     }
     // Add emotion to the record
     Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:[self.detailItem managedObjectContext]];
@@ -460,6 +461,7 @@ MoodLogEvents *myLogEntry;
     NSSet *matchingEmotions = [myLogEntry.relationshipEmotions filteredSetUsingPredicate:findTheEmotionPredicate];
     for (Emotions *emo in matchingEmotions) {
         [myLogEntry removeRelationshipEmotionsObject:emo];
+        [[((MlAppDelegate *)[UIApplication sharedApplication].delegate) managedObjectContext] deleteObject:emo];
     }
 }
 - (void) saveContext { // Save data to the database

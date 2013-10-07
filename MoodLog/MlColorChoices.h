@@ -12,12 +12,14 @@
 
 @property (strong, nonatomic) NSDictionary *basicColors;
 @property (strong, nonatomic) NSDictionary *textColors;
+@property (strong, nonatomic) NSDictionary *textDesaturatedColors;
 @property (strong, nonatomic) NSDictionary *mutedColors;
 @property (strong, nonatomic) NSDictionary *translucentColors;
 
 
 + (NSDictionary *) basicColors;
 + (NSDictionary *) textColors;
++ (NSDictionary *) textDesaturatedColors;
 + (NSDictionary *) mutedColors;
 + (NSDictionary *) translucentColors: (float) translucency;
 
