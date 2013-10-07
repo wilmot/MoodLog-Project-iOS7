@@ -45,9 +45,6 @@ static CGFloat CELL_HEIGHT;
     //[self updateOldRecords];
     //[self deleteUnselectedEmotionsFromOldRecords];
     
-//    UIViewController *welcomeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"welcomeScreen"];
-//    [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
-//    [self presentViewController:welcomeViewController animated:YES completion:NULL];
     CELL_HEIGHT = [[self.tableView dequeueReusableCellWithIdentifier:@"Cell"] bounds].size.height;
 
 }
@@ -189,7 +186,7 @@ static CGFloat CELL_HEIGHT;
 - (MoodLogEvents *) insertNewObjectAndReturnReference: (id) sender {
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     MoodLogEvents *newMood = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:self.managedObjectContext];
-    
+
     // If appropriate, configure the new managed object.
     newMood.dateCreated = [NSDate date];
     newMood.date = newMood.dateCreated;

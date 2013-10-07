@@ -57,7 +57,7 @@ NSUserDefaults *defaults;
     }
     
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
-    float events = [sectionInfo numberOfObjects];
+    NSUInteger events = [sectionInfo numberOfObjects];
     [self.startSlider setMinimumValue:0];
     [self.startSlider setMaximumValue:events - 1];
     [self.endSlider setMinimumValue:0];
