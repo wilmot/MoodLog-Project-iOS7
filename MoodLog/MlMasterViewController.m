@@ -44,6 +44,8 @@ static CGFloat CELL_HEIGHT;
 
     //[self updateOldRecords];
     //[self deleteUnselectedEmotionsFromOldRecords];
+    // TODO: Remove this if I understand deleting and I don't think this will be a problem in the shipping product
+    [self deleteEmotionsWithNullParent];
     
     CELL_HEIGHT = [[self.tableView dequeueReusableCellWithIdentifier:@"Cell"] bounds].size.height;
 
@@ -100,6 +102,29 @@ static CGFloat CELL_HEIGHT;
         [object addRelationshipEmotions:newEmotions]; // Install the little set
         if (i++%10 == 0) {
             NSLog(@"Saving records...");
+            [self saveContext];
+        }
+    }
+    [self saveContext];
+    NSLog(@"Removed unselected emotions from all records.");
+}
+
+- (void) deleteEmotionsWithNullParent {
+    MlAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    int i = 0;
+    NSArray *allTheEmotions = [[self fetchedResultsControllerForEmotions] fetchedObjects];
+    NSLog(@"Running the deleteEmotionsWithNullParent method. Processing %d records", [allTheEmotions count]);
+    for (Emotions *anEmotion in allTheEmotions) {
+        if (anEmotion.logParent == NULL) {
+          //  NSLog(@"About to delete %@, because logParent = %@",anEmotion,anEmotion.logParent);
+          [[delegate managedObjectContext] deleteObject:anEmotion];
+
+        }
+        else {
+            NSLog(@"Found a fine emotion to keep: %@",anEmotion);
+        }
+        if (i++%20 == 0) {
+            //NSLog(@"Saving records...");
             [self saveContext];
         }
     }
@@ -368,7 +393,7 @@ static CGFloat CELL_HEIGHT;
 	}
     
     return _fetchedResultsController;
-}    
+}
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
@@ -422,6 +447,47 @@ static CGFloat CELL_HEIGHT;
     [self.tableView endUpdates];
 }
 
+- (NSFetchedResultsController *)fetchedResultsControllerForEmotions {
+    if (_fetchedResultsControllerForEmotions != nil) {
+        return _fetchedResultsControllerForEmotions;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Emotions" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+//    NSPredicate *requestPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]]];
+//    [fetchRequest setPredicate:requestPredicate];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"name" cacheName:nil]; // @"EmotionsCache"
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsControllerForEmotions = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsControllerForEmotions performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    return _fetchedResultsControllerForEmotions;
+}
+
+
 /*
 // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
  
@@ -431,6 +497,8 @@ static CGFloat CELL_HEIGHT;
     [self.tableView reloadData];
 }
  */
+
+#pragma mark cell configuration
 
 - (void)configureCell:(MlCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {

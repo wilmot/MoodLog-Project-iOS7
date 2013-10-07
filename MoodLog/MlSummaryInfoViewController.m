@@ -101,6 +101,10 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             for (int i=0; i<numberOfSections; i++) {
                 id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByCategory sections][i];
                 NSUInteger objectsInSection = [sectionInfo numberOfObjects];
+                id ob = [sectionInfo objects];
+                for (Emotions *aRecord in ob) {
+                    NSLog(@"parent = %@, name=%@, category=%@", aRecord.logParent, aRecord.name, aRecord.category);
+                }
                 [categoryCounts setObject:[NSNumber numberWithLong:objectsInSection] forKey:sectionInfo.name];
             }
             

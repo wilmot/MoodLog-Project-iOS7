@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) MlDetailViewController *detailViewController;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerForEmotions;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aNewEntryButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *infoButton;
