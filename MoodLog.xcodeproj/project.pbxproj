@@ -367,6 +367,10 @@
 		4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */; };
 		4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */; };
 		4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */; };
+		4CB012C61803785800343D43 /* IconFace40.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C41803785800343D43 /* IconFace40.png */; };
+		4CB012C71803785800343D43 /* IconFace40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C51803785800343D43 /* IconFace40@2x.png */; };
+		4CB012CA18037AE700343D43 /* RoundMoodLog.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C818037AE700343D43 /* RoundMoodLog.png */; };
+		4CB012CB18037AE700343D43 /* RoundMoodLog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C918037AE700343D43 /* RoundMoodLog@2x.png */; };
 		4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8E8EF17C8647700E26857 /* Images.xcassets */; };
 		4CEEF60017FB628E00C29507 /* MlColorChoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */; };
 		4CEEF60317FCF48D00C29507 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60117FCF48D00C29507 /* WelcomeView.xib */; };
@@ -789,6 +793,10 @@
 		4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCollectionViewCell.m; sourceTree = "<group>"; };
 		4CA980E71767E0E2001BF7A8 /* MlChartCellFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MlChartCellFooterView.h; sourceTree = "<group>"; };
 		4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MlChartCellFooterView.m; sourceTree = "<group>"; };
+		4CB012C41803785800343D43 /* IconFace40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconFace40.png; sourceTree = "<group>"; };
+		4CB012C51803785800343D43 /* IconFace40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconFace40@2x.png"; sourceTree = "<group>"; };
+		4CB012C818037AE700343D43 /* RoundMoodLog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoundMoodLog.png; sourceTree = "<group>"; };
+		4CB012C918037AE700343D43 /* RoundMoodLog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RoundMoodLog@2x.png"; sourceTree = "<group>"; };
 		4CB8E8EF17C8647700E26857 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 4.xcdatamodel"; sourceTree = "<group>"; };
 		4CECC217165D50E800EE3C6B /* MoodLog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -1122,6 +1130,10 @@
 			isa = PBXGroup;
 			children = (
 				4CEEF60417FD034C00C29507 /* SixColors.png */,
+				4CB012C41803785800343D43 /* IconFace40.png */,
+				4CB012C51803785800343D43 /* IconFace40@2x.png */,
+				4CB012C818037AE700343D43 /* RoundMoodLog.png */,
+				4CB012C918037AE700343D43 /* RoundMoodLog@2x.png */,
 				4C65613317F418B900F03470 /* LowerRight.png */,
 				4C65612F17F3FAAE00F03470 /* LowerRight@2x.png */,
 				4C65613417F418B900F03470 /* UpperRight.png */,
@@ -1447,6 +1459,7 @@
 				4C0639BE17E69DA200563FE6 /* Satisfied@2x.png in Resources */,
 				4C06395017E45A6E00563FE6 /* Surprised@2x.png in Resources */,
 				4C06395517E45A6E00563FE6 /* Frustrated.png in Resources */,
+				4CB012CB18037AE700343D43 /* RoundMoodLog@2x.png in Resources */,
 				4C8BB42E17F17FF200754252 /* Plutchik-wheel.svg.png in Resources */,
 				4C06393E17E45A6E00563FE6 /* Hopeful@2x.png in Resources */,
 				4C40437D1783E51400710F2A /* Jealous@2x.png in Resources */,
@@ -1581,6 +1594,7 @@
 				4C06390E17E45A6E00563FE6 /* Nervous@2x.png in Resources */,
 				4C4043BC1783E51400710F2A /* Bothered.png in Resources */,
 				4C06391117E45A6E00563FE6 /* Mortified.png in Resources */,
+				4CB012CA18037AE700343D43 /* RoundMoodLog.png in Resources */,
 				4C0639B617E69DA200563FE6 /* Sympathetic@2x.png in Resources */,
 				4C06392A17E45A6E00563FE6 /* Isolated@2x.png in Resources */,
 				4C4043BD1783E51400710F2A /* Bothered@2x.png in Resources */,
@@ -1620,6 +1634,7 @@
 				4C06390717E45A6E00563FE6 /* Passionate.png in Resources */,
 				4C4043CE1783E51400710F2A /* Anticipating.png in Resources */,
 				4C06391317E45A6E00563FE6 /* Miserable.png in Resources */,
+				4CB012C61803785800343D43 /* IconFace40.png in Resources */,
 				4C4043CF1783E51400710F2A /* Anticipating@2x.png in Resources */,
 				4C06395417E45A6E00563FE6 /* Furious@2x.png in Resources */,
 				4C4043D01783E51400710F2A /* Anxious.png in Resources */,
@@ -1699,6 +1714,7 @@
 				4C92BE051797D40D005DEEC2 /* chart@2x.png in Resources */,
 				4C06391D17E45A6E00563FE6 /* Longing.png in Resources */,
 				4C0639A817E69DA200563FE6 /* Uneasy@2x.png in Resources */,
+				4CB012C71803785800343D43 /* IconFace40@2x.png in Resources */,
 				4C06392417E45A6E00563FE6 /* Optimistic@2x.png in Resources */,
 				4C0639B717E69DA200563FE6 /* Suffering.png in Resources */,
 				4C92BE0817985BFD005DEEC2 /* TriangleRight.png in Resources */,
