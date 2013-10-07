@@ -873,26 +873,26 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <viewControllerLayoutGuide type="bottom" id="xEW-4O-uYu"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qac-52-9Kq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="1192"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMN-qS-0pk">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                        <rect key="frame" x="0.0" y="1" width="320" height="1191"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiQ-57-ra9">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="1191"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDe-Pb-RHF" customClass="MlChartDrawingView">
-                                                <rect key="frame" x="129" y="145" width="162" height="151"/>
+                                                <rect key="frame" x="129" y="111" width="162" height="151"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -901,7 +901,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX2-Rv-GM5" customClass="MlChartDrawingView">
-                                                <rect key="frame" x="20" y="335" width="280" height="151"/>
+                                                <rect key="frame" x="20" y="290" width="280" height="151"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -918,9 +918,9 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             <constraint firstAttribute="trailing" secondItem="LX2-Rv-GM5" secondAttribute="trailing" constant="20" id="USX-5s-Xi2"/>
                                             <constraint firstItem="KiQ-57-ra9" firstAttribute="leading" secondItem="WMN-qS-0pk" secondAttribute="leading" id="XMB-Qt-qU7"/>
                                             <constraint firstItem="LX2-Rv-GM5" firstAttribute="leading" secondItem="WMN-qS-0pk" secondAttribute="leading" constant="20" id="fZo-7z-LK0"/>
-                                            <constraint firstAttribute="height" constant="1000" id="m5T-IA-rIl"/>
-                                            <constraint firstAttribute="bottom" secondItem="xDe-Pb-RHF" secondAttribute="bottom" constant="704" id="mQF-91-JJT"/>
-                                            <constraint firstItem="LX2-Rv-GM5" firstAttribute="top" secondItem="WMN-qS-0pk" secondAttribute="top" constant="335" id="ztH-sK-3OL"/>
+                                            <constraint firstAttribute="height" constant="1191" id="m5T-IA-rIl"/>
+                                            <constraint firstAttribute="bottom" secondItem="xDe-Pb-RHF" secondAttribute="bottom" constant="929" id="mQF-91-JJT"/>
+                                            <constraint firstItem="LX2-Rv-GM5" firstAttribute="top" secondItem="WMN-qS-0pk" secondAttribute="top" constant="290" id="ztH-sK-3OL"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -928,7 +928,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="WMN-qS-0pk" secondAttribute="bottom" id="80R-dn-xMf"/>
                                     <constraint firstItem="WMN-qS-0pk" firstAttribute="leading" secondItem="xPT-D9-DqJ" secondAttribute="leading" id="8Sb-yE-wyD"/>
-                                    <constraint firstItem="WMN-qS-0pk" firstAttribute="top" secondItem="xPT-D9-DqJ" secondAttribute="top" id="Muw-GX-65e"/>
+                                    <constraint firstItem="WMN-qS-0pk" firstAttribute="top" secondItem="xPT-D9-DqJ" secondAttribute="top" constant="1" id="Muw-GX-65e"/>
                                     <constraint firstItem="WMN-qS-0pk" firstAttribute="centerX" secondItem="xPT-D9-DqJ" secondAttribute="centerX" id="tNi-Ik-VN4"/>
                                     <constraint firstAttribute="trailing" secondItem="WMN-qS-0pk" secondAttribute="trailing" id="uFK-E7-mB7"/>
                                 </constraints>
@@ -942,6 +942,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                             <constraint firstItem="xPT-D9-DqJ" firstAttribute="leading" secondItem="Qac-52-9Kq" secondAttribute="leading" id="feX-DV-6UW"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -956,7 +957,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49A-yD-9Rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1494" y="1121"/>
+            <point key="canvasLocation" x="-1473" y="1063"/>
         </scene>
     </scenes>
     <resources>

@@ -139,7 +139,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
         // Categories
         font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
         attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-        summaryLine = [[NSAttributedString alloc] initWithString:@"\nBars:" attributes:attrsDictionary];
+        summaryLine = [[NSAttributedString alloc] initWithString:@"\n\nBars:" attributes:attrsDictionary];
         [summaryAttributedString appendAttributedString:summaryLine];
 
         NSIndexPath *itemIndexPath;
@@ -177,7 +177,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             // Categories
             font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-            summaryLine = [[NSAttributedString alloc] initWithString:@"\n\n\n\n\n\n\n\n\nMost Common Emotions" attributes:attrsDictionary];
+            summaryLine = [[NSAttributedString alloc] initWithString:@"\n\n\n\n\n\n\n\n\n\n\nMost Common Emotions" attributes:attrsDictionary];
             [summaryAttributedString appendAttributedString:summaryLine];
             
             // Set up font for body text

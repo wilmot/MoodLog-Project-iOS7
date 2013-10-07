@@ -21,7 +21,7 @@
                               fear: [UIColor colorWithRed:253/255.0f green:239/255.0f blue:2/255.0f alpha:1.0f],
                               };
         self.textColors = @{ love: [UIColor colorWithRed:102/255.0f green:217/255.0f blue:27/255.0f alpha:1.0f],
-                              joy: [UIColor colorWithRed:255.0f/255.0f green:158.0f/255.0f blue:29.0f/255.0f alpha:1.0f],
+                              joy: [UIColor colorWithRed:218/255.0f green:122/255.0f blue:22/255.0f alpha:1.0f],
                               surprise: [UIColor colorWithRed:206/255.0f green:82/255.0f blue:212/255.0f alpha:1.0f],
                               anger: [UIColor colorWithRed:246/255.0f green:50/255.0f blue:36/255.0f alpha:1.0f],
                               sadness: [UIColor colorWithRed:69/255.0f green:126/255.0f blue:248/255.0f alpha:1.0f],

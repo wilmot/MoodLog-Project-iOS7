@@ -275,7 +275,7 @@ Boolean firstLoad;
     else { // Pie
         NSString *key;
         NSNumber *itemCount;
-        NSDictionary *colorz = [MlColorChoices basicColors];
+        NSDictionary *colorz = [MlColorChoices textColors];
         
         key = @"Love";
         itemCount= (NSNumber *)[categoryCounts objectForKey:key];
