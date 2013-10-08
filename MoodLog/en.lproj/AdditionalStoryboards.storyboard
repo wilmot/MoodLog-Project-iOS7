@@ -900,19 +900,19 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <viewControllerLayoutGuide type="bottom" id="xEW-4O-uYu"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qac-52-9Kq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="1832"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1192"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMN-qS-0pk">
-                                        <rect key="frame" x="0.0" y="1" width="320" height="1191"/>
+                                        <rect key="frame" x="0.0" y="1" width="320" height="1194"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiQ-57-ra9">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="1191"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="1194"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -945,15 +945,15 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             <constraint firstAttribute="trailing" secondItem="LX2-Rv-GM5" secondAttribute="trailing" constant="20" id="USX-5s-Xi2"/>
                                             <constraint firstItem="KiQ-57-ra9" firstAttribute="leading" secondItem="WMN-qS-0pk" secondAttribute="leading" id="XMB-Qt-qU7"/>
                                             <constraint firstItem="LX2-Rv-GM5" firstAttribute="leading" secondItem="WMN-qS-0pk" secondAttribute="leading" constant="20" id="fZo-7z-LK0"/>
-                                            <constraint firstAttribute="height" constant="1191" id="m5T-IA-rIl"/>
-                                            <constraint firstAttribute="bottom" secondItem="xDe-Pb-RHF" secondAttribute="bottom" constant="929" id="mQF-91-JJT"/>
+                                            <constraint firstAttribute="height" constant="1194" id="m5T-IA-rIl"/>
+                                            <constraint firstAttribute="bottom" secondItem="xDe-Pb-RHF" secondAttribute="bottom" constant="932" id="mQF-91-JJT"/>
                                             <constraint firstItem="LX2-Rv-GM5" firstAttribute="top" secondItem="WMN-qS-0pk" secondAttribute="top" constant="290" id="ztH-sK-3OL"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="WMN-qS-0pk" secondAttribute="bottom" id="80R-dn-xMf"/>
+                                    <constraint firstAttribute="bottom" secondItem="WMN-qS-0pk" secondAttribute="bottom" constant="-1" id="80R-dn-xMf"/>
                                     <constraint firstItem="WMN-qS-0pk" firstAttribute="leading" secondItem="xPT-D9-DqJ" secondAttribute="leading" id="8Sb-yE-wyD"/>
                                     <constraint firstItem="WMN-qS-0pk" firstAttribute="top" secondItem="xPT-D9-DqJ" secondAttribute="top" constant="1" id="Muw-GX-65e"/>
                                     <constraint firstItem="WMN-qS-0pk" firstAttribute="centerX" secondItem="xPT-D9-DqJ" secondAttribute="centerX" id="tNi-Ik-VN4"/>
