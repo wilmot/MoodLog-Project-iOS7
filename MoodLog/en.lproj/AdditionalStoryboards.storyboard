@@ -251,7 +251,7 @@ Cgo
                                         <string key="content">
 Mood Log is meant for educational purposes only. This app is not intended as a substitute for, nor does it replace, professional health care or advice. Please consult a professional such as a medical doctor, counselor, psychologist or psychiatrist if you have any concerns or questions.
 
-	-------- Swipe for more information -------->
+	------ Swipe for more information ------>
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
@@ -900,19 +900,19 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <viewControllerLayoutGuide type="bottom" id="xEW-4O-uYu"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qac-52-9Kq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="1228"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="1191"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1164"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMN-qS-0pk">
-                                        <rect key="frame" x="0.0" y="1" width="320" height="1164"/>
+                                        <rect key="frame" x="0.0" y="1" width="320" height="1191"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiQ-57-ra9">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="1164"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="1191"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -945,8 +945,8 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             <constraint firstAttribute="trailing" secondItem="LX2-Rv-GM5" secondAttribute="trailing" constant="20" id="USX-5s-Xi2"/>
                                             <constraint firstItem="KiQ-57-ra9" firstAttribute="leading" secondItem="WMN-qS-0pk" secondAttribute="leading" id="XMB-Qt-qU7"/>
                                             <constraint firstItem="LX2-Rv-GM5" firstAttribute="leading" secondItem="WMN-qS-0pk" secondAttribute="leading" constant="20" id="fZo-7z-LK0"/>
-                                            <constraint firstAttribute="height" constant="1164" id="m5T-IA-rIl"/>
-                                            <constraint firstAttribute="bottom" secondItem="xDe-Pb-RHF" secondAttribute="bottom" constant="902" id="mQF-91-JJT"/>
+                                            <constraint firstAttribute="height" constant="1191" id="m5T-IA-rIl"/>
+                                            <constraint firstAttribute="bottom" secondItem="xDe-Pb-RHF" secondAttribute="bottom" constant="929" id="mQF-91-JJT"/>
                                             <constraint firstItem="LX2-Rv-GM5" firstAttribute="top" secondItem="WMN-qS-0pk" secondAttribute="top" constant="290" id="ztH-sK-3OL"/>
                                         </constraints>
                                     </view>
