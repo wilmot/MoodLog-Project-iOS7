@@ -588,16 +588,6 @@ static CGFloat CELL_HEIGHT;
     [as addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:journalRange];
     cell.mainLabel.attributedText = as;
     
-//    // Color the cells based on overall mood
-//    UIColor *barColor;
-//    CGFloat overallValue = [object.overall floatValue];
-//    if (overallValue >= 0) { // Tint green
-//        barColor = [UIColor colorWithRed:fabsf((overallValue  - 10.0)/20.0) green:(overallValue + 10.0)/20.0 blue:1.0 - (overallValue + 10.0)/20.0 alpha:0.05];
-//    }
-//    else { // Tint red
-//        barColor = [UIColor colorWithRed:fabsf((overallValue - 10.0)/20.0) green:(overallValue + 10.0)/20.0 blue:1.0 - fabsf((overallValue - 10.0)/20.0) alpha:0.05];
-//    }
-//    [cell.cellBackground setBackgroundColor:barColor];
 }
 
 @end

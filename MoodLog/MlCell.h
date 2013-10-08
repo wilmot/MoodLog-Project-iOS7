@@ -15,6 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *calendarImage;
 @property (weak, nonatomic) IBOutlet UILabel *subLabel;
-@property (weak, nonatomic) IBOutlet UIView *cellBackground;
 
 @end
