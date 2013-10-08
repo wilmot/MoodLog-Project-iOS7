@@ -1050,10 +1050,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03V-cM-9lN">
-                                                    <rect key="frame" x="129" y="1" width="148" height="176"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="148" id="ILV-SJ-chS"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="136" y="1" width="141" height="176"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Moods">
                                                             <attributes>
@@ -1065,21 +1062,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioU-7X-bBA" customClass="MlChartDrawingView">
-                                                    <rect key="frame" x="13" y="4" width="115" height="165"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoundMoodLog.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZQ-5j-Tds">
-                                                            <rect key="frame" x="-3" y="-5" width="118" height="176"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                    </subviews>
+                                                    <rect key="frame" x="13" y="2" width="115" height="175"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="rZQ-5j-Tds" secondAttribute="bottom" constant="-6" id="4lG-BL-Kbv"/>
-                                                        <constraint firstItem="rZQ-5j-Tds" firstAttribute="top" secondItem="ioU-7X-bBA" secondAttribute="top" constant="-5" id="EV5-DG-gxl"/>
-                                                        <constraint firstAttribute="height" constant="165" id="Htx-Qn-WUh"/>
-                                                        <constraint firstAttribute="trailing" secondItem="rZQ-5j-Tds" secondAttribute="trailing" id="MQg-IR-Xfi"/>
-                                                        <constraint firstItem="rZQ-5j-Tds" firstAttribute="leading" secondItem="ioU-7X-bBA" secondAttribute="leading" constant="-3" id="mUf-S8-Njh"/>
-                                                        <constraint firstAttribute="width" constant="115" id="uYn-2T-dX1"/>
+                                                        <constraint firstAttribute="width" constant="115" id="3gZ-4X-5S3"/>
                                                     </constraints>
                                                 </view>
                                                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap to select moods" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-4H-DNv">
@@ -1091,10 +1077,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RoundMoodLog.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZQ-5j-Tds">
+                                                    <rect key="frame" x="4" y="2" width="118" height="176"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ioU-7X-bBA" firstAttribute="leading" secondItem="4IW-tx-fTs" secondAttribute="leading" constant="13" id="7QA-OH-LPk"/>
-                                                <constraint firstItem="03V-cM-9lN" firstAttribute="leading" secondItem="ioU-7X-bBA" secondAttribute="trailing" constant="1" id="gAz-SR-Oae"/>
+                                                <constraint firstItem="03V-cM-9lN" firstAttribute="leading" secondItem="ioU-7X-bBA" secondAttribute="trailing" constant="8" id="gAz-SR-Oae"/>
                                                 <constraint firstItem="ioU-7X-bBA" firstAttribute="leading" secondItem="1uT-4H-DNv" secondAttribute="leading" id="hFU-vn-5Vm"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1104,9 +1094,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <constraint firstAttribute="trailing" secondItem="1uT-4H-DNv" secondAttribute="trailing" constant="36" id="9Ea-XI-oge"/>
                                             <constraint firstItem="03V-cM-9lN" firstAttribute="top" secondItem="gRi-SK-i7n" secondAttribute="top" constant="1" id="TI5-XP-2Oe"/>
                                             <constraint firstAttribute="trailing" secondItem="03V-cM-9lN" secondAttribute="trailing" constant="43" id="bWE-s4-ivT"/>
-                                            <constraint firstItem="ioU-7X-bBA" firstAttribute="top" secondItem="gRi-SK-i7n" secondAttribute="top" constant="4" id="jmu-65-Aah"/>
+                                            <constraint firstItem="ioU-7X-bBA" firstAttribute="top" secondItem="gRi-SK-i7n" secondAttribute="top" constant="2" id="jmu-65-Aah"/>
                                             <constraint firstAttribute="bottom" secondItem="03V-cM-9lN" secondAttribute="bottom" constant="2" id="qFU-sL-2xd"/>
-                                            <constraint firstAttribute="bottom" secondItem="ioU-7X-bBA" secondAttribute="bottom" constant="10" id="tug-pH-RbQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="ioU-7X-bBA" secondAttribute="bottom" constant="2" id="tug-pH-RbQ"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="Haq-rW-jQt" kind="push" identifier="MoodFullScreenSegue" id="fzz-FM-e2s"/>
