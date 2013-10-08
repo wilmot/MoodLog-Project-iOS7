@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ydB-QR-mAB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ydB-QR-mAB">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -432,6 +432,28 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                     <segue destination="Yoh-xf-rzN" kind="embed" identifier="SummarySegue" id="cPT-X0-BfD"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-SK-ZzK">
+                                <rect key="frame" x="0.0" y="64" width="568" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Mood Log entries by tapping the ‘+’ button in the main view." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="p4w-R3-cNo">
+                                        <rect key="frame" x="144" y="59" width="281" height="138"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="281" id="ChF-cr-ORX"/>
+                                            <constraint firstAttribute="height" constant="138" id="r5k-yI-klJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="p4w-R3-cNo" secondAttribute="centerY" id="fhn-qY-0T4"/>
+                                    <constraint firstAttribute="centerX" secondItem="p4w-R3-cNo" secondAttribute="centerX" constant="-0.5" id="twJ-TS-07J"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -439,12 +461,16 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="leading" secondItem="2j5-jQ-LI8" secondAttribute="leading" id="2We-9E-G0e"/>
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="trailing" secondItem="vBf-4Y-1d7" secondAttribute="trailing" id="5YS-YV-ySy"/>
                             <constraint firstItem="IFR-je-Sop" firstAttribute="top" secondItem="9oB-Ss-gZ3" secondAttribute="bottom" constant="44" id="8s0-wM-UBN"/>
+                            <constraint firstItem="zwq-G4-LQV" firstAttribute="top" secondItem="hXT-SK-ZzK" secondAttribute="bottom" id="Ctq-hM-ghl"/>
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="leading" secondItem="vBf-4Y-1d7" secondAttribute="leading" id="J6b-24-Ij9"/>
+                            <constraint firstItem="hXT-SK-ZzK" firstAttribute="top" secondItem="9oB-Ss-gZ3" secondAttribute="bottom" constant="44" id="LKM-h5-Uuv"/>
                             <constraint firstAttribute="trailing" secondItem="rF0-RR-vm2" secondAttribute="trailing" id="VVZ-Mv-UCf"/>
+                            <constraint firstAttribute="trailing" secondItem="hXT-SK-ZzK" secondAttribute="trailing" id="XR1-DL-eKs"/>
                             <constraint firstAttribute="bottom" secondItem="vBf-4Y-1d7" secondAttribute="bottom" id="asK-Nl-jh0"/>
                             <constraint firstAttribute="trailing" secondItem="IFR-je-Sop" secondAttribute="trailing" id="j1Z-LD-SEG"/>
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="top" secondItem="9oB-Ss-gZ3" secondAttribute="bottom" id="j8g-CO-Iy2"/>
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="bottom" secondItem="vBf-4Y-1d7" secondAttribute="top" id="jS0-h1-TLh"/>
+                            <constraint firstItem="hXT-SK-ZzK" firstAttribute="leading" secondItem="2j5-jQ-LI8" secondAttribute="leading" id="jZD-Gl-rpk"/>
                             <constraint firstItem="vBf-4Y-1d7" firstAttribute="top" secondItem="2j5-jQ-LI8" secondAttribute="top" constant="64" id="qJv-Dk-uwn"/>
                             <constraint firstItem="zwq-G4-LQV" firstAttribute="top" secondItem="IFR-je-Sop" secondAttribute="bottom" id="sOl-XP-Qe9"/>
                         </constraints>
@@ -454,6 +480,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="chartContainer" destination="vBf-4Y-1d7" id="m0h-x3-g37"/>
+                        <outlet property="noRecordsView" destination="hXT-SK-ZzK" id="X56-aj-YSY"/>
                         <outlet property="segment" destination="cdd-b7-Jpi" id="W0T-eY-RDq"/>
                         <outlet property="summaryView" destination="IFR-je-Sop" id="hzb-xa-fxE"/>
                         <outlet property="toolBar" destination="rF0-RR-vm2" id="C2x-YD-Pkj"/>
@@ -873,10 +900,10 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <viewControllerLayoutGuide type="bottom" id="xEW-4O-uYu"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qac-52-9Kq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="1192"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="1832"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
