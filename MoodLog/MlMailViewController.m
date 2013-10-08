@@ -58,12 +58,12 @@ NSUserDefaults *defaults;
     
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
     NSUInteger events = [sectionInfo numberOfObjects];
-    [self.startSlider setMinimumValue:0];
-    [self.startSlider setMaximumValue:events - 1];
-    [self.endSlider setMinimumValue:0];
-    [self.endSlider setMaximumValue:events - 1];
-        
+    
     if (events > 0) {
+        [self.startSlider setMinimumValue:0];
+        [self.startSlider setMaximumValue:events - 1];
+        [self.endSlider setMinimumValue:0];
+        [self.endSlider setMaximumValue:events - 1];
         for (id item in self.itemsToDisableTogether) {
             ((UIControl *)item).enabled = YES;
         }
@@ -79,15 +79,14 @@ NSUserDefaults *defaults;
         today = [object valueForKey:@"date"];
         dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
         self.endDateLabel.text = [dateFormatter stringFromDate: today];
-        //    self.eventCountView.layer.cornerRadius = 8;
-        //    self.eventCountView.layer.shadowColor = [[UIColor blackColor] CGColor];
-        //    self.eventCountView.layer.shadowOpacity = 0.4;
-        //    self.eventCountView.layer.shadowRadius = 12;
-        //    self.eventCountView.layer.shadowOffset = CGSizeMake(4.0f, 4.0f);
-        
+        [self updateDateRangeDrawing];
     }
     else {
-        for (id item in self.itemsToDisableTogether) {
+        [self.startSlider setMinimumValue:0];
+        [self.startSlider setMaximumValue:0];
+        [self.endSlider setMinimumValue:0];
+        [self.endSlider setMaximumValue:0];
+       for (id item in self.itemsToDisableTogether) {
             ((UIControl *)item).enabled = NO;
 
         }
@@ -96,7 +95,6 @@ NSUserDefaults *defaults;
     self.startSlider.value = [defaults floatForKey:@"DefaultMailStartValue"];
     self.endSlider.value = [defaults floatForKey:@"DefaultMailEndValue"];
     self.recipientList.text = [defaults stringForKey:@"DefaultRecipientList"];
-    [self updateDateRangeDrawing];
 }
 
 
