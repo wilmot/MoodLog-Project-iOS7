@@ -380,6 +380,7 @@
 		4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */; };
 		4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F0164B8C870055CC3D /* MlMailViewController.m */; };
 		4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */; };
+		4CFC9E391809E789008DDAF0 /* MlSlidersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9E381809E789008DDAF0 /* MlSlidersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -812,6 +813,8 @@
 		4CFB21F0164B8C870055CC3D /* MlMailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMailViewController.m; sourceTree = "<group>"; };
 		4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCalendarViewController.h; sourceTree = "<group>"; };
 		4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCalendarViewController.m; sourceTree = "<group>"; };
+		4CFC9E371809E789008DDAF0 /* MlSlidersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlSlidersViewController.h; sourceTree = "<group>"; };
+		4CFC9E381809E789008DDAF0 /* MlSlidersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlSlidersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1239,6 +1242,8 @@
 				4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */,
 				4C61F1831780F9990032B200 /* MlJournalEditorViewController.h */,
 				4C61F1841780F9990032B200 /* MlJournalEditorViewController.m */,
+				4CFC9E371809E789008DDAF0 /* MlSlidersViewController.h */,
+				4CFC9E381809E789008DDAF0 /* MlSlidersViewController.m */,
 				4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */,
 				4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */,
 				4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */,
@@ -1756,6 +1761,7 @@
 				4C55CC0E162DE67500EAA878 /* MlDetailViewController.m in Sources */,
 				4C7C789E162E9192008DC828 /* MlCell.m in Sources */,
 				4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */,
+				4CFC9E391809E789008DDAF0 /* MlSlidersViewController.m in Sources */,
 				4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */,
 				4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */,
 				4C589C67163200F100428C52 /* Stressors.m in Sources */,

@@ -40,6 +40,16 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
     [self summaryInformationQuick: self];
 }
 
+#pragma mark - Orientation change
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self.barChartForSummary setNeedsDisplay];
+}
+
+//- (void)deviceOrientationDidChange:(NSNotification *)notification {
+//    [self.class reloadData];
+//}
+
+
 - (void)summaryInformationQuick: (id)sender {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByDate sections][0];
     NSUInteger events = [sectionInfo numberOfObjects];

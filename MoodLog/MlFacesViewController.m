@@ -87,16 +87,20 @@ UIImage *buttonImageHighlight;
     NSString *sortStyle = self.detailItem.sortStyleEditing;
     if ([sortStyle isEqualToString:groupSort]) {
         [self.sortStyleSegmentedControl setSelectedSegmentIndex:GROUP_SORT];
+        [self.randomizeButton setHidden:YES];
     }
     else if ([sortStyle isEqualToString:alphabeticalSort]) {
         [self.sortStyleSegmentedControl setSelectedSegmentIndex:AZ_SORT];
+        [self.randomizeButton setHidden:YES];
     }
     else if ([sortStyle isEqualToString:reverseAlphabeticalSort]) {
         [self.sortStyleSegmentedControl setSelectedSegmentIndex:AZ_SORT];
+        [self.randomizeButton setHidden:YES];
     }
     else if ([sortStyle isEqualToString:shuffleSort]) {
         [self.sortStyleSegmentedControl setSelectedSegmentIndex:SHUFFLE_SORT];
-    }
+        [self.randomizeButton setHidden:NO];
+   }
     [defaults setObject:sortStyle forKey:@"DefaultSortStyleEditing"];
     [defaults synchronize];
 }
@@ -105,11 +109,14 @@ UIImage *buttonImageHighlight;
     NSString *sortStyle;
     if(self.sortStyleSegmentedControl.selectedSegmentIndex == GROUP_SORT) {
         sortStyle = groupSort;
-    }
+        [self.randomizeButton setHidden:YES];
+   }
     else if (self.sortStyleSegmentedControl.selectedSegmentIndex == AZ_SORT) {        sortStyle = alphabeticalSort;
-    }
+        [self.randomizeButton setHidden:YES];
+   }
     else if (self.sortStyleSegmentedControl.selectedSegmentIndex == SHUFFLE_SORT) {
         sortStyle = shuffleSort;
+        [self.randomizeButton setHidden:NO];
     }
     else {
         // there is no fourth option
@@ -117,6 +124,10 @@ UIImage *buttonImageHighlight;
     self.detailItem.sortStyleEditing = sortStyle;
     [defaults setObject:sortStyle forKey:@"DefaultSortStyleEditing"];
     [defaults synchronize];
+    [self.myMoodCollectionViewController refresh];
+}
+
+- (IBAction)rerandomize:(id)sender {
     [self.myMoodCollectionViewController refresh];
 }
 

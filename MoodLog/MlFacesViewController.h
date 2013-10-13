@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *fewerMoreSlider;
 @property (weak, nonatomic) IBOutlet UIButton *fewerButton;
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (weak, nonatomic) IBOutlet UIButton *randomizeButton;
 
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 @property (weak, nonatomic) MlMoodCollectionViewController *myMoodCollectionViewController;
@@ -29,5 +30,6 @@
 - (IBAction)setFewer:(id)sender;
 - (IBAction)setMore:(id)sender;
 - (IBAction)selectSegmentForSortStyle:(id)sender;
+- (IBAction)rerandomize:(id)sender;
 
 @end

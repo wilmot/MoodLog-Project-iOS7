@@ -33,11 +33,15 @@ static NSUInteger numberOfDivisions = 20;
     CGContextRef context = UIGraphicsGetCurrentContext();
     NSDictionary *colorz = [MlColorChoices basicColors];
     
-    if ([self.chartType isEqual:@"Bar"]) {
+    if ([self.chartType isEqual:@"Bar"]) { // Bar chart
         NSUInteger interval = rect.size.height/numberOfDivisions;
       
         // Draw the chart bar
         [self drawChartBars:rect];
+        
+        // Outline
+        CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
+        CGContextStrokeRect(context, rect);
 
         // Horizontal stripes
         CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 0.25);
@@ -55,7 +59,9 @@ static NSUInteger numberOfDivisions = 20;
     }
     else { // Pie
         CGFloat pi = 3.1415926535897932384626433832795;
-        CGFloat circumference = 40.0;
+        if (self.circumference == 0.0) {
+            self.circumference = 40.0; // default circumference
+        }
         CGFloat centerx = rect.size.width/2.0;
         CGFloat centery;
         if (self.dividerLine) { // hacky way of telling that I'm on the chart page
@@ -64,8 +70,11 @@ static NSUInteger numberOfDivisions = 20;
         else { // I'm on the detailView
              centery = rect.size.height/2.0;
         }
-//        CGContextAddArc(context,centerx, centery,circumference,0,2*pi,1);
+        
+        // Outline around pie chart
+//        CGContextAddArc(context,centerx, centery,self.circumference,0,2*pi,1);
 //        CGContextDrawPath(context,kCGPathStroke);
+        
         CGFloat loveCount = [self.categoryCounts[love] floatValue];
         CGFloat joyCount = [self.categoryCounts[joy] floatValue];
         CGFloat surpriseCount = [self.categoryCounts[surprise] floatValue];
@@ -88,37 +97,37 @@ static NSUInteger numberOfDivisions = 20;
         // Love - Green
         CGContextSetFillColor(context, CGColorGetComponents( [[colorz objectForKey:love] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
-        CGContextAddArc(context,centerx,centery,circumference,loveEnd,loveStart,1);
+        CGContextAddArc(context,centerx,centery,self.circumference,loveEnd,loveStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
         // Joy - Orange
         CGContextSetFillColor(context, CGColorGetComponents( [[colorz objectForKey:joy] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
-        CGContextAddArc(context,centerx,centery,circumference,joyEnd,joyStart,1);
+        CGContextAddArc(context,centerx,centery,self.circumference,joyEnd,joyStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
         // Surprise - Purple
         CGContextSetFillColor(context, CGColorGetComponents( [[colorz objectForKey:surprise] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
-        CGContextAddArc(context,centerx,centery,circumference,surpriseEnd,surpriseStart,1);
+        CGContextAddArc(context,centerx,centery,self.circumference,surpriseEnd,surpriseStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
         // Anger - Red
         CGContextSetFillColor(context, CGColorGetComponents( [[colorz objectForKey:anger] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
-        CGContextAddArc(context,centerx,centery,circumference,angerEnd,angerStart,1);
+        CGContextAddArc(context,centerx,centery,self.circumference,angerEnd,angerStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
        // Sadness - Blue
         CGContextSetFillColor(context, CGColorGetComponents( [[colorz objectForKey:sadness] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
-        CGContextAddArc(context,centerx,centery,circumference,sadnessEnd,sadnessStart,1);
+        CGContextAddArc(context,centerx,centery,self.circumference,sadnessEnd,sadnessStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
         // Fear - Yellow
         CGContextSetFillColor(context, CGColorGetComponents( [[colorz objectForKey:fear] CGColor]));
         CGContextMoveToPoint(context, centerx, centery);
-        CGContextAddArc(context,centerx,centery,circumference,fearEnd,fearStart,1);
+        CGContextAddArc(context,centerx,centery,self.circumference,fearEnd,fearStart,1);
         CGContextClosePath(context);
         CGContextFillPath(context);
     }
@@ -137,6 +146,7 @@ static NSUInteger numberOfDivisions = 20;
     CGFloat barHeight, barOriginY;
     NSUInteger interval = rect.size.height/numberOfDivisions;
     CGContextRef context = UIGraphicsGetCurrentContext();
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:11], NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
    // CGContextSetRGBFillColor(context, 0.25, 0.75, 0.25, 0.25);
     CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0);
     
@@ -152,7 +162,10 @@ static NSUInteger numberOfDivisions = 20;
         barOriginY = interval*10.0;
     }
     CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightOverall] CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0, barOriginY, rect.size.width/4 - 1, barHeight));
+    CGRect overallRect = CGRectMake(0.0, barOriginY, rect.size.width/4 - 1, barHeight);
+    CGRect overallBoundingRect = CGRectMake(0.0, 0.0, rect.size.width/4 - 1, interval*10.0);
+    CGContextFillRect(context, overallRect);
+    [@"Overall" drawInRect:overallBoundingRect withAttributes:attrsDictionary];
 
     // Sleep
     barHeight = interval*fabs(round(self.chartHeightSleep));
@@ -163,7 +176,10 @@ static NSUInteger numberOfDivisions = 20;
         barOriginY = interval*10.0;
     }
     CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightSleep] CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0 + rect.size.width/4, barOriginY, rect.size.width/4 - 1, barHeight));
+    CGRect sleepRect = CGRectMake(0.0 + rect.size.width/4, barOriginY, rect.size.width/4 - 1, barHeight);
+    CGRect sleepBoundingRect = CGRectMake(0.0 + rect.size.width/4, 0.0, rect.size.width/4 - 1, interval*10.0);
+    CGContextFillRect(context, sleepRect);
+    [@"Sleep" drawInRect:sleepBoundingRect withAttributes:attrsDictionary];
 
     // Energy
     barHeight = interval*fabs(round(self.chartHeightEnergy));
@@ -174,7 +190,10 @@ static NSUInteger numberOfDivisions = 20;
         barOriginY = interval*10.0;
     }
     CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightEnergy] CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0 + 2*rect.size.width/4, barOriginY, rect.size.width/4 - 1, barHeight));
+    CGRect energyRect = CGRectMake(0.0 + 2*rect.size.width/4, barOriginY, rect.size.width/4 - 1, barHeight);
+    CGRect energyBoundingRect = CGRectMake(0.0 + 2*rect.size.width/4, 0.0, rect.size.width/4 - 1, interval*10.0);
+    CGContextFillRect(context, energyRect);
+    [@"Energy" drawInRect:energyBoundingRect withAttributes:attrsDictionary];
 
     // Health
     barHeight = interval*fabs(round(self.chartHeightHealth));
@@ -185,7 +204,10 @@ static NSUInteger numberOfDivisions = 20;
         barOriginY = interval*10.0;
     }
     CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightHealth] CGColor]);
-    CGContextFillRect(context, CGRectMake(0.0 + 3*rect.size.width/4, barOriginY, rect.size.width/4 - 1, barHeight));
+    CGRect healthRect = CGRectMake(0.0 + 3*rect.size.width/4, barOriginY, rect.size.width/4 - 1, barHeight);
+    CGRect healthBoundingRect = CGRectMake(0.0 + 3*rect.size.width/4, 0.0, rect.size.width/4 - 1, interval*10.0);
+    CGContextFillRect(context, healthRect);
+    [@"Health" drawInRect:healthBoundingRect withAttributes:attrsDictionary];
 }
 
 - (UIColor *) theBarColor: (CGFloat) barHeight {

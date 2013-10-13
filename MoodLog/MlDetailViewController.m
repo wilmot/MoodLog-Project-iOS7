@@ -11,6 +11,7 @@
 #import "MlAppDelegate.h"
 #import "MlDatePickerViewController.h"
 #import "MlJournalEditorViewController.h"
+#import "MlSlidersViewController.h"
 #import "Prefs.h"
 #import "MlColorChoices.h"
 
@@ -31,7 +32,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     SLIDERS,
     ADDENTRYBUTTON
 };
-
 
 #pragma mark - Managing the detail item
 
@@ -83,6 +83,15 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self saveContext];
 }
 
+#pragma mark - Orientation change
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self.sliderChartView setNeedsDisplay];
+}
+
+//- (void)deviceOrientationDidChange:(NSNotification *)notification {
+//    [self.class reloadData];
+//}
+
 
 - (void)configureView
 {
@@ -132,7 +141,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             self.entryLogTextView.textColor = [UIColor grayColor];
             [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18]];
             self.entryLogTextView.textAlignment = NSTextAlignmentRight;
-            self.entryLogTextView.text = @"Tap to add a journal entry";
+            self.entryLogTextView.text = @"Tap to enter your thoughts";
             self.littleKeyboardIcon.hidden = NO;
         }
         
@@ -165,6 +174,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             }
         }
         self.moodsDrawingView.chartType = @"Pie";
+        self.moodsDrawingView.circumference = 48.0;
         self.moodsDrawingView.categoryCounts = categoryCounts;
         self.moodsDrawingView.dividerLine = NO;
         [self.moodsDrawingView setNeedsDisplay];
@@ -183,6 +193,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self setSliderColor:self.sleepSlider];
         [self setSliderColor:self.energySlider];
         [self setSliderColor:self.healthSlider ];
+ 
         [self setVisibilityofNoMoodsLabel]; // Should only show if there are no moods selected
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             // iPad
@@ -217,7 +228,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 }
 
 - (void) setSliderCellVisibility {
-    if (self.detailItem.sliderValuesSet.boolValue) { // If the chart is visible
+    if (self.detailItem.sliderValuesSet.boolValue || (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) { // If the chart is visible
         self.sliderChartView.chartType = @"Bar";
         [self.sliderChartView setChartHeightOverall:[self.detailItem.overall floatValue]];
         [self.sliderChartView setChartHeightSleep:[self.detailItem.sleep floatValue]];
@@ -347,6 +358,10 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         MlJournalEditorViewController *myJournalEntryViewController = [segue destinationViewController];
         myJournalEntryViewController.detailItem = self.detailItem;
         myDatePickerViewController.detailViewController = self;
+    }
+    else if ([segue.identifier isEqualToString:@"slidersSegue"]) {
+        MlSlidersViewController *mySlidersViewController = [segue destinationViewController];
+        mySlidersViewController.detailItem = self.detailItem;
     }
     else if ([segue.identifier isEqualToString:@"chartView"]) {
         // iPad Only
