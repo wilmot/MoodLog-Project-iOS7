@@ -1547,8 +1547,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Euphoric" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBw-a9-hbP">
-                                            <rect key="frame" x="0.0" y="0.0" width="96" height="32"/>
+                                            <rect key="frame" x="20" y="0.0" width="76" height="32"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="✅" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEu-4z-sg4">
+                                            <rect key="frame" x="-1" y="2" width="22" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="22" id="7Ai-nu-nbQ"/>
+                                                <constraint firstAttribute="height" constant="29" id="mz0-Kh-gkC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1557,13 +1566,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="GBw-a9-hbP" firstAttribute="leading" secondItem="1J2-is-Zzw" secondAttribute="leading" id="Oeg-0J-o4a"/>
+                                    <constraint firstItem="dEu-4z-sg4" firstAttribute="leading" secondItem="1J2-is-Zzw" secondAttribute="leading" constant="-1" id="7KF-UE-55j"/>
+                                    <constraint firstItem="GBw-a9-hbP" firstAttribute="leading" secondItem="1J2-is-Zzw" secondAttribute="leading" constant="20" id="Oeg-0J-o4a"/>
+                                    <constraint firstItem="dEu-4z-sg4" firstAttribute="top" secondItem="1J2-is-Zzw" secondAttribute="top" constant="2" id="aPw-gP-3X7"/>
                                     <constraint firstItem="GBw-a9-hbP" firstAttribute="trailing" secondItem="1J2-is-Zzw" secondAttribute="trailing" id="gB7-Yk-asH"/>
                                     <constraint firstItem="GBw-a9-hbP" firstAttribute="bottom" secondItem="1J2-is-Zzw" secondAttribute="bottom" id="oZG-L0-2A7"/>
+                                    <constraint firstItem="dEu-4z-sg4" firstAttribute="centerY" secondItem="GBw-a9-hbP" secondAttribute="centerY" constant="0.5" id="pCE-PJ-elK"/>
                                     <constraint firstItem="GBw-a9-hbP" firstAttribute="top" secondItem="1J2-is-Zzw" secondAttribute="top" id="qDE-Sg-HBl"/>
                                 </constraints>
                                 <size key="customSize" width="96" height="32"/>
                                 <connections>
+                                    <outlet property="checkMark" destination="dEu-4z-sg4" id="iFe-7Z-xu1"/>
                                     <outlet property="moodName" destination="GBw-a9-hbP" id="PPV-SJ-9DR"/>
                                 </connections>
                             </collectionViewCell>

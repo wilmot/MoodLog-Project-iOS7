@@ -360,7 +360,8 @@ MoodLogEvents *myLogEntry;
                 [[cell face] setImage:[self.faceImageDictionary objectForKey:[aMood valueForKey:@"mood"]]];
           }
             else { // no faces
-                [[cell moodName] setText:[NSString stringWithFormat:@"%@%@", check, aMood.mood]];
+                [[cell checkMark] setHidden:NO];
+                [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.mood]];
                 [[cell moodName] setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:18]];
            }
         }
@@ -392,7 +393,7 @@ MoodLogEvents *myLogEntry;
             [[cell face] setImage:[self.faceImageDictionary objectForKey:[aMood valueForKey:@"mood"]]];
        }
         else if ([self.cellIdentifier isEqual: @"moodCell"]) {
-            [[cell moodName] setText:[NSString stringWithFormat:@"    %@", aMood.mood]];
+            [[cell moodName] setText:[NSString stringWithFormat:@"%@", aMood.mood]];
             [[cell moodName] setFont:[UIFont fontWithName:@"HelveticaNeue" size:18]];
         }
     }
