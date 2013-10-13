@@ -20,10 +20,12 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextView *entryLogTextView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailToolBar;
-@property (weak, nonatomic) IBOutlet UISlider *overallSlider;
-@property (weak, nonatomic) IBOutlet UISlider *sleepSlider;
+@property (weak, nonatomic) IBOutlet UISlider *overallSlider; //mood
+@property (weak, nonatomic) IBOutlet UISlider *stressSlider;
 @property (weak, nonatomic) IBOutlet UISlider *energySlider;
+@property (weak, nonatomic) IBOutlet UISlider *thoughtsSlider;
 @property (weak, nonatomic) IBOutlet UISlider *healthSlider;
+@property (weak, nonatomic) IBOutlet UISlider *sleepSlider;
 @property (weak, nonatomic) IBOutlet UIView *moodContainer;
 @property (weak, nonatomic) IBOutlet UIButton *sortABCButton;
 @property (weak, nonatomic) IBOutlet UIButton *sortGroupButton;
@@ -35,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *expandButton; // edit button
 @property (weak, nonatomic) IBOutlet UIView *moodViewWithHeader;
 @property (weak, nonatomic) IBOutlet UILabel *noMoodsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *noFactorsLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *noMoodsImage;
 @property (weak, nonatomic) IBOutlet UITableViewCell *dateCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *moodsCell;

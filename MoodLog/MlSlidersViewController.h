@@ -11,10 +11,12 @@
 
 @interface MlSlidersViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UISlider *overallSlider;
-@property (weak, nonatomic) IBOutlet UISlider *sleepSlider;
+@property (weak, nonatomic) IBOutlet UISlider *moodSlider;
+@property (weak, nonatomic) IBOutlet UISlider *stressSlider;
 @property (weak, nonatomic) IBOutlet UISlider *energySlider;
+@property (weak, nonatomic) IBOutlet UISlider *thoughtsSlider;
 @property (weak, nonatomic) IBOutlet UISlider *healthSlider;
+@property (weak, nonatomic) IBOutlet UISlider *sleepSlider;
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *chartDrawingView;
 
 @property (strong, nonatomic) id detailItem;

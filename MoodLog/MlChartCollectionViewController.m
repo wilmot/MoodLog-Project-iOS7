@@ -361,10 +361,11 @@ Boolean firstLoad;
         CGFloat height = emotionArrayCount>0 ? feelTotal/emotionArrayCount : 0; // Average (mean)
         cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
         [cell.chartDrawingView setChartHeightOverall:[moodLogObject.overall floatValue]];
-        [cell.chartDrawingView setChartHeightSleep:[moodLogObject.sleep floatValue]];
+        [cell.chartDrawingView setChartHeightStress:[moodLogObject.stress floatValue]];
         [cell.chartDrawingView setChartHeightEnergy:[moodLogObject.energy floatValue]];
+        [cell.chartDrawingView setChartHeightThoughts:[moodLogObject.thoughts floatValue]];
         [cell.chartDrawingView setChartHeightHealth:[moodLogObject.health floatValue]];
-
+        [cell.chartDrawingView setChartHeightSleep:[moodLogObject.sleep floatValue]];
     }
     else { // Pie
         

@@ -160,20 +160,24 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
 
         NSIndexPath *itemIndexPath;
         MoodLogEvents *moodLogRecord;
-        NSMutableDictionary *barTotals = [@{@"overall" : @0, @"sleep" : @0, @"energy" : @0, @"health" : @0} mutableCopy];
+        NSMutableDictionary *barTotals = [@{@"overall" : @0, @"stress" : @0, @"energy" : @0, @"thoughts" : @0, @"health" : @0, @"sleep" : @0} mutableCopy];
        for (int i =0; i<events; i++) {
             itemIndexPath = [NSIndexPath indexPathForItem:i inSection:0];
             moodLogRecord = [self.fetchedResultsControllerByDate objectAtIndexPath:itemIndexPath];
            [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"overall"] floatValue] + [moodLogRecord.overall floatValue]] forKey:@"overall"];
-           [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"sleep"] floatValue] + [moodLogRecord.sleep floatValue]] forKey:@"sleep"];
+           [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"stress"] floatValue] + [moodLogRecord.stress floatValue]] forKey:@"stress"];
            [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"energy"] floatValue] + [moodLogRecord.energy floatValue]] forKey:@"energy"];
+           [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"thoughts"] floatValue] + [moodLogRecord.thoughts floatValue]] forKey:@"thoughts"];
            [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"health"] floatValue] + [moodLogRecord.health floatValue]] forKey:@"health"];
+           [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"sleep"] floatValue] + [moodLogRecord.sleep floatValue]] forKey:@"sleep"];
        }
         self.barChartForSummary.chartType = @"Bar";
         self.barChartForSummary.chartHeightOverall = [[barTotals objectForKey:@"overall"] floatValue]/events;
-        self.barChartForSummary.chartHeightSleep = [[barTotals objectForKey:@"sleep"] floatValue]/events;
+        self.barChartForSummary.chartHeightStress = [[barTotals objectForKey:@"stress"] floatValue]/events;
         self.barChartForSummary.chartHeightEnergy = [[barTotals objectForKey:@"energy"] floatValue]/events;
+        self.barChartForSummary.chartHeightThoughts = [[barTotals objectForKey:@"thoughts"] floatValue]/events;
         self.barChartForSummary.chartHeightHealth = [[barTotals objectForKey:@"health"] floatValue]/events;
+        self.barChartForSummary.chartHeightSleep = [[barTotals objectForKey:@"sleep"] floatValue]/events;
         [self.barChartForSummary setNeedsDisplay]; // without this, the bars don't match the data
 
         self.summaryText.attributedText = summaryAttributedString;

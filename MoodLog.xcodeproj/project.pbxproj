@@ -305,6 +305,7 @@
 		4C4044011783E5FD00710F2A /* greyButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043FD1783E5FD00710F2A /* greyButton@2x.png */; };
 		4C4044021783E5FD00710F2A /* greyButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043FE1783E5FD00710F2A /* greyButtonHighlight.png */; };
 		4C4044031783E5FD00710F2A /* greyButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043FF1783E5FD00710F2A /* greyButtonHighlight@2x.png */; };
+		4C4193ED180B1445007999AA /* MoodLogEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4193EC180B1445007999AA /* MoodLogEvents.m */; };
 		4C47E6A317501E8F0023298F /* Emotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6A217501E8F0023298F /* Emotions.m */; };
 		4C47E6B41751AC580023298F /* MlChartCellEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */; };
 		4C47E6B71755C5E10023298F /* MlDateRangeDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */; };
@@ -339,7 +340,6 @@
 		4C7C789E162E9192008DC828 /* MlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C789D162E9192008DC828 /* MlCell.m */; };
 		4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */; };
 		4C7CB595170561E300971849 /* MlMoodCollectionViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */; };
-		4C7F572E178E92550065543C /* MoodLogEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F572D178E92550065543C /* MoodLogEvents.m */; };
 		4C7F5730178FC8170065543C /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7F572F178FC8170065543C /* add.png */; };
 		4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */; };
 		4C8BB41417ECEC2000754252 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7BF7BC176A39F200DC8088 /* XCTest.framework */; };
@@ -698,6 +698,8 @@
 		4C4043FD1783E5FD00710F2A /* greyButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButton@2x.png"; sourceTree = "<group>"; };
 		4C4043FE1783E5FD00710F2A /* greyButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButtonHighlight.png; sourceTree = "<group>"; };
 		4C4043FF1783E5FD00710F2A /* greyButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		4C4193EB180B1445007999AA /* MoodLogEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodLogEvents.h; sourceTree = "<group>"; };
+		4C4193EC180B1445007999AA /* MoodLogEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodLogEvents.m; sourceTree = "<group>"; };
 		4C47E6A117501E8F0023298F /* Emotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotions.h; sourceTree = "<group>"; };
 		4C47E6A217501E8F0023298F /* Emotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emotions.m; sourceTree = "<group>"; };
 		4C47E6B21751AC570023298F /* MlChartCellEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCellEntryViewController.h; sourceTree = "<group>"; };
@@ -756,8 +758,6 @@
 		4C7CB593170561E300971849 /* MlMoodCollectionViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlMoodCollectionViewHeaderView.h; sourceTree = "<group>"; };
 		4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlMoodCollectionViewHeaderView.m; sourceTree = "<group>"; };
 		4C7F572B178E91EB0065543C /* MoodLog 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 8.xcdatamodel"; sourceTree = "<group>"; };
-		4C7F572C178E92550065543C /* MoodLogEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodLogEvents.h; sourceTree = "<group>"; };
-		4C7F572D178E92550065543C /* MoodLogEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodLogEvents.m; sourceTree = "<group>"; };
 		4C7F572F178FC8170065543C /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Images/add.png; sourceTree = "<group>"; };
 		4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartCollectionViewController.h; sourceTree = "<group>"; };
 		4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartCollectionViewController.m; sourceTree = "<group>"; };
@@ -815,6 +815,7 @@
 		4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCalendarViewController.m; sourceTree = "<group>"; };
 		4CFC9E371809E789008DDAF0 /* MlSlidersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlSlidersViewController.h; sourceTree = "<group>"; };
 		4CFC9E381809E789008DDAF0 /* MlSlidersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlSlidersViewController.m; sourceTree = "<group>"; };
+		4CFC9E3A180B0C88008DDAF0 /* MoodLog 9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 9.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1282,8 +1283,6 @@
 				4C47E6A217501E8F0023298F /* Emotions.m */,
 				4C589C65163200F100428C52 /* Stressors.h */,
 				4C589C66163200F100428C52 /* Stressors.m */,
-				4C7F572C178E92550065543C /* MoodLogEvents.h */,
-				4C7F572D178E92550065543C /* MoodLogEvents.m */,
 				4C7CA28C1630770800CC5CCA /* MlMoodDataItem.h */,
 				4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */,
 				4CB8E8EF17C8647700E26857 /* Images.xcassets */,
@@ -1300,6 +1299,8 @@
 				4C4043E61783E59F00710F2A /* Images */,
 				4C0C7671164AC84000DD372F /* Faces */,
 				4C55CC06162DE67500EAA878 /* MoodLog.xcdatamodeld */,
+				4C4193EB180B1445007999AA /* MoodLogEvents.h */,
+				4C4193EC180B1445007999AA /* MoodLogEvents.m */,
 				4C4C53DF1665F14900DDDBA2 /* MoodList.plist */,
 				4C55CBF0162DE67400EAA878 /* MoodLog-Info.plist */,
 				4C55CBF1162DE67400EAA878 /* InfoPlist.strings */,
@@ -1784,7 +1785,7 @@
 				4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */,
 				4C03FF0117683843001BA22B /* MlChartView.m in Sources */,
 				4C61F1851780F9990032B200 /* MlJournalEditorViewController.m in Sources */,
-				4C7F572E178E92550065543C /* MoodLogEvents.m in Sources */,
+				4C4193ED180B1445007999AA /* MoodLogEvents.m in Sources */,
 				4C4AC9411794B3AE004DA98E /* MlNotificationsTableViewController.m in Sources */,
 				4C4AC9471795F2FA004DA98E /* MlRemindersViewController.m in Sources */,
 				4C92BE0C1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m in Sources */,
@@ -2065,9 +2066,10 @@
 				4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */,
 				4C353EE917607BAA000ECE33 /* MoodLog 7.xcdatamodel */,
 				4C7F572B178E91EB0065543C /* MoodLog 8.xcdatamodel */,
+				4CFC9E3A180B0C88008DDAF0 /* MoodLog 9.xcdatamodel */,
 				4C55CC07162DE67500EAA878 /* MoodLog.xcdatamodel */,
 			);
-			currentVersion = 4C7F572B178E91EB0065543C /* MoodLog 8.xcdatamodel */;
+			currentVersion = 4CFC9E3A180B0C88008DDAF0 /* MoodLog 9.xcdatamodel */;
 			path = MoodLog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -27,18 +27,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
     // Set the sliders
-    [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
-    [self.sleepSlider setValue:[[self.detailItem valueForKey:@"sleep"] floatValue]];
+    [self.moodSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
+    [self.stressSlider setValue:[[self.detailItem valueForKey:@"stress"] floatValue]];
     [self.energySlider setValue:[[self.detailItem valueForKey:@"energy"] floatValue]];
+    [self.thoughtsSlider setValue:[[self.detailItem valueForKey:@"thoughts"] floatValue]];
     [self.healthSlider setValue:[[self.detailItem valueForKey:@"health"] floatValue]];
+    [self.sleepSlider setValue:[[self.detailItem valueForKey:@"sleep"] floatValue]];
     // Set the slider colors
-    [self setSliderColor:self.overallSlider];
-    [self setSliderColor:self.sleepSlider];
+    [self setSliderColor:self.moodSlider];
+    [self setSliderColor:self.stressSlider];
     [self setSliderColor:self.energySlider];
+    [self setSliderColor:self.thoughtsSlider];
     [self setSliderColor:self.healthSlider ];
+    [self setSliderColor:self.sleepSlider];
     
     [self updateChart];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
@@ -46,13 +56,25 @@
 }
 
 #pragma mark - Orientation change
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    [self.chartDrawingView setNeedsDisplay];
+- (void)orientationChanged:(NSNotification *)notification {
+    UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
+    if (UIDeviceOrientationIsLandscape(deviceOrientation)) {
+        //landscape
+        [self performSegueWithIdentifier:@"landscapeSliders" sender:self];
+    }
+    else {
+        //portrait
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
-//- (void)deviceOrientationDidChange:(NSNotification *)notification {
-//    [self.class reloadData];
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"landscapeSliders"]) {
+        MlSlidersViewController *destinationViewController = [segue destinationViewController]; // Getting a reference to the collection view
+        destinationViewController.detailItem = self.detailItem;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -62,10 +84,12 @@
 
 - (void) updateChart {
     self.chartDrawingView.chartType = @"Bar";
-    [self.chartDrawingView setChartHeightOverall:[self.overallSlider value]];
-    [self.chartDrawingView setChartHeightSleep:[self.sleepSlider value]];
+    [self.chartDrawingView setChartHeightOverall:[self.moodSlider value]];
+    [self.chartDrawingView setChartHeightStress:[self.stressSlider value]];
     [self.chartDrawingView setChartHeightEnergy:[self.energySlider value]];
+    [self.chartDrawingView setChartHeightThoughts:[self.thoughtsSlider value]];
     [self.chartDrawingView setChartHeightHealth:[self.healthSlider value]];
+    [self.chartDrawingView setChartHeightSleep:[self.sleepSlider value]];
     self.chartDrawingView.dividerLine = NO;
     [self.chartDrawingView setNeedsDisplay];
 }
@@ -99,17 +123,23 @@
 
 - (void) setSliderData:(id) sender {
     NSString *key;
-    if ([self.overallSlider isEqual:sender]) {
+    if ([self.moodSlider isEqual:sender]) {
         key = @"overall";
     }
-    else if ([self.sleepSlider isEqual:sender]) {
-        key = @"sleep";
+    else if ([self.stressSlider isEqual:sender]) {
+        key = @"stress";
     }
     else if ([self.energySlider isEqual:sender]) {
         key = @"energy";
     }
+    else if ([self.thoughtsSlider isEqual:sender]) {
+        key = @"thoughts";
+    }
     else if ([self.healthSlider isEqual:sender]) {
         key = @"health";
+    }
+    else if ([self.sleepSlider isEqual:sender]) {
+        key = @"sleep";
     }
     
     NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];

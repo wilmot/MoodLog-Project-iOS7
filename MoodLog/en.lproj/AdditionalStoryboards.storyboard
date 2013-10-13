@@ -930,7 +930,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX2-Rv-GM5" customClass="MlChartDrawingView">
                                                 <rect key="frame" x="20" y="290" width="280" height="151"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="151" id="ckR-Hq-Jbd"/>
                                                 </constraints>

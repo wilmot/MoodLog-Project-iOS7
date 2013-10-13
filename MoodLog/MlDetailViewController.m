@@ -27,8 +27,8 @@ NSUserDefaults *defaults;
 
 typedef NS_ENUM(NSInteger, DetailCells) {
     CALENDAR,
+    MOODS,
     JOURNAL,
-    MOODS, 
     SLIDERS,
     ADDENTRYBUTTON
 };
@@ -174,7 +174,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             }
         }
         self.moodsDrawingView.chartType = @"Pie";
-        self.moodsDrawingView.circumference = 48.0;
+        self.moodsDrawingView.circumference = 46.0;
         self.moodsDrawingView.categoryCounts = categoryCounts;
         self.moodsDrawingView.dividerLine = NO;
         [self.moodsDrawingView setNeedsDisplay];
@@ -185,16 +185,21 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         
         // Set the sliders
         [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
-        [self.sleepSlider setValue:[[self.detailItem valueForKey:@"sleep"] floatValue]];
+        [self.stressSlider setValue:[[self.detailItem valueForKey:@"stress"] floatValue]];
         [self.energySlider setValue:[[self.detailItem valueForKey:@"energy"] floatValue]];
+        [self.thoughtsSlider setValue:[[self.detailItem valueForKey:@"thoughts"] floatValue]];
         [self.healthSlider setValue:[[self.detailItem valueForKey:@"health"] floatValue]];
+        [self.sleepSlider setValue:[[self.detailItem valueForKey:@"sleep"] floatValue]];
         // Set the slider colors
         [self setSliderColor:self.overallSlider];
-        [self setSliderColor:self.sleepSlider];
+        [self setSliderColor:self.stressSlider];
         [self setSliderColor:self.energySlider];
+        [self setSliderColor:self.thoughtsSlider];
         [self setSliderColor:self.healthSlider ];
+        [self setSliderColor:self.sleepSlider];
  
-        [self setVisibilityofNoMoodsLabel]; // Should only show if there are no moods selected
+        [self setVisibilityOfNoMoodsLabel]; // Should only show if there are no moods selected
+        [self setVisibilityOfNoFactorsLabel]; // Only show if all the factors are zeroed
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             // iPad
             if (self.detailItem.editing.boolValue == YES) {
@@ -231,9 +236,11 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     if (self.detailItem.sliderValuesSet.boolValue || (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) { // If the chart is visible
         self.sliderChartView.chartType = @"Bar";
         [self.sliderChartView setChartHeightOverall:[self.detailItem.overall floatValue]];
-        [self.sliderChartView setChartHeightSleep:[self.detailItem.sleep floatValue]];
+        [self.sliderChartView setChartHeightStress:[self.detailItem.stress floatValue]];
         [self.sliderChartView setChartHeightEnergy:[self.detailItem.energy floatValue]];
+        [self.sliderChartView setChartHeightThoughts:[self.detailItem.thoughts floatValue]];
         [self.sliderChartView setChartHeightHealth:[self.detailItem.health floatValue]];
+        [self.sliderChartView setChartHeightSleep:[self.detailItem.sleep floatValue]];
         self.sliderChartView.dividerLine = NO;
         [self.sliderChartView setNeedsDisplay];
 
@@ -315,14 +322,20 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     if ([self.overallSlider isEqual:sender]) {
         key = @"overall";
     }
-    else if ([self.sleepSlider isEqual:sender]) {
-        key = @"sleep";
+    else if ([self.stressSlider isEqual:sender]) {
+        key = @"stress";
     }
     else if ([self.energySlider isEqual:sender]) {
         key = @"energy";
     }
+    else if ([self.thoughtsSlider isEqual:sender]) {
+        key = @"thoughts";
+    }
     else if ([self.healthSlider isEqual:sender]) {
         key = @"health";
+    }
+    else if ([self.sleepSlider isEqual:sender]) {
+        key = @"sleep";
     }
     
     NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
@@ -397,7 +410,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             self.detailItem.editing = [NSNumber numberWithBool:NO];
             [self.myMoodCollectionViewController refresh];
         }
-        [self setVisibilityofNoMoodsLabel];
+        [self setVisibilityOfNoMoodsLabel];
     }
     else { // iPhone
         // On the iPhone I have a segue to a modal view, so I don't change the button text
@@ -406,13 +419,22 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self saveContext];
 }
 
-- (void) setVisibilityofNoMoodsLabel {
+- (void) setVisibilityOfNoMoodsLabel {
     BOOL shouldHideLabel = YES;
     if (self.moodListTextView.text.length == 0) {
-            shouldHideLabel = NO; // Should only show if there are no moods selected
+            shouldHideLabel = NO; // Should only show if there are no emotions selected
     }
     [self.noMoodsLabel setHidden:shouldHideLabel];
     [self.noMoodsImage setHidden:shouldHideLabel];
+}
+
+- (void) setVisibilityOfNoFactorsLabel {
+    BOOL shouldHideLabel = YES;
+    if ([[self.detailItem valueForKey:@"overall"] floatValue] == 0 && [[self.detailItem valueForKey:@"stress"] floatValue] == 0 && [[self.detailItem valueForKey:@"energy"] floatValue] == 0 && [[self.detailItem valueForKey:@"thoughts"] floatValue] == 0 && [[self.detailItem valueForKey:@"health"] floatValue] == 0 && [[self.detailItem valueForKey:@"sleep"] floatValue] == 0) {
+        shouldHideLabel = NO; // Should only show if none of the factors are modified
+    }
+    [self.noFactorsLabel setHidden:shouldHideLabel];
+    
 }
 
 // TODO: Trying to get the gap to disappear when hiding a static table section
@@ -452,16 +474,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
                 height = 65.0;
             }
             break;
-        case JOURNAL: //Journal
-            if (orientation == UIInterfaceOrientationPortrait) {
-                textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(273.0, FLT_MAX)];
-            }
-            else {
-                textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(521.0, FLT_MAX)];
-            }
-            height = textViewSize.height + 20.0;
-            break;
-       case MOODS: //Moods
+       case MOODS: //Emotions
             if (self.moodListTextView.text.length == 0) {
                 height = 100.0;
             }
@@ -476,8 +489,17 @@ typedef NS_ENUM(NSInteger, DetailCells) {
                 if (height < 100.0) { height = 100.0;}
             }
             break;
-        case SLIDERS: //Sliders & Slider Chart
-            height = 192.0;
+        case JOURNAL: //Journal
+            if (orientation == UIInterfaceOrientationPortrait) {
+                textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(273.0, FLT_MAX)];
+            }
+            else {
+                textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(521.0, FLT_MAX)];
+            }
+            height = textViewSize.height + 20.0;
+            break;
+       case SLIDERS: //Sliders & Slider Chart
+            height = 140.0;
             break;
         case ADDENTRYBUTTON:
             if (self.detailItem == nil) {
@@ -521,7 +543,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self setExpandButton:nil];
     [self setSortGroupButton:nil];
     [self setNoMoodsLabel:nil];
-    [self setOverallSlider:nil];
     [super viewDidUnload];
 }
 @end
