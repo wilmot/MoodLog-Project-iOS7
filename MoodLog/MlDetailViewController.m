@@ -27,7 +27,7 @@ NSUserDefaults *defaults;
 
 typedef NS_ENUM(NSInteger, DetailCells) {
     CALENDAR,
-    MOODS,
+    EMOTIONS,
     JOURNAL,
     SLIDERS,
     ADDENTRYBUTTON
@@ -86,6 +86,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 #pragma mark - Orientation change
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [self.sliderChartView setNeedsDisplay];
+    [self.moodsDrawingView setNeedsDisplay];
 }
 
 //- (void)deviceOrientationDidChange:(NSNotification *)notification {
@@ -136,13 +137,15 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             self.entryLogTextView.textAlignment = NSTextAlignmentLeft;
             self.entryLogTextView.text = self.detailItem.journalEntry;
             self.littleKeyboardIcon.hidden = YES;
+            self.noJournalLabel.hidden = YES;
         }
         else {
-            self.entryLogTextView.textColor = [UIColor grayColor];
-            [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18]];
-            self.entryLogTextView.textAlignment = NSTextAlignmentRight;
-            self.entryLogTextView.text = @"Tap to enter your thoughts";
+//            self.entryLogTextView.textColor = [UIColor grayColor];
+//            [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18]];
+//            self.entryLogTextView.textAlignment = NSTextAlignmentRight;
+            self.entryLogTextView.text = @""; // Empty journal entry
             self.littleKeyboardIcon.hidden = NO;
+            self.noJournalLabel.hidden = NO;
         }
         
         // Set the Pie Chart and list of moods
@@ -471,10 +474,10 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                 height = 128.0;
             } else {
-                height = 65.0;
+                height = 62.0;
             }
             break;
-       case MOODS: //Emotions
+        case EMOTIONS:
             if (self.moodListTextView.text.length == 0) {
                 height = 100.0;
             }
@@ -499,7 +502,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             height = textViewSize.height + 20.0;
             break;
        case SLIDERS: //Sliders & Slider Chart
-            height = 140.0;
+            height = 144.0;
             break;
         case ADDENTRYBUTTON:
             if (self.detailItem == nil) {
