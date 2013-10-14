@@ -127,7 +127,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         
         self.timeLabel.text = [dateFormatter stringFromDate: today];
         
-        dateFormatter.dateFormat = @"MMM YYYY";
+        dateFormatter.dateFormat = @"MMMM YYYY";
         self.monthLabel.text = [dateFormatter stringFromDate: today];
         
         if (self.detailItem.journalEntry.length > 0) {
