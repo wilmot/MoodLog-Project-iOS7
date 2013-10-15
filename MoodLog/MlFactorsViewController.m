@@ -54,6 +54,9 @@
         self.landscapeContainer.hidden = NO;
         [self.landscapeController configureView];
     }
+    else if ((deviceOrientation) == UIDeviceOrientationPortraitUpsideDown) {
+        // do nothing
+    }
     else {
         //portrait
         self.portraitContainer.hidden = NO;
