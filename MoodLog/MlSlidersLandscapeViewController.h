@@ -1,15 +1,15 @@
 //
-//  MlSlidersViewController.h
+//  MlSlidersLandscapeViewController.h
 //  MoodLog
 //
-//  Created by Barry Langdon-Lassagne on 10/12/13.
+//  Created by Barry Langdon-Lassagne on 10/14/13.
 //  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "MlDetailViewController.h"
 
-@interface MlSlidersViewController : UIViewController
+@interface MlSlidersLandscapeViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISlider *moodSlider;
 @property (weak, nonatomic) IBOutlet UISlider *stressSlider;

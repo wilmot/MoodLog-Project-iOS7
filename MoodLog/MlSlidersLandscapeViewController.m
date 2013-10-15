@@ -1,19 +1,18 @@
 //
-//  MlSlidersViewController.m
+//  MlSlidersLandscapeViewController.m
 //  MoodLog
 //
-//  Created by Barry Langdon-Lassagne on 10/12/13.
+//  Created by Barry Langdon-Lassagne on 10/14/13.
 //  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
-#import "MlSlidersViewController.h"
 #import "MlSlidersLandscapeViewController.h"
 
-@interface MlSlidersViewController ()
+@interface MlSlidersLandscapeViewController ()
 
 @end
 
-@implementation MlSlidersViewController
+@implementation MlSlidersLandscapeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,21 +61,12 @@
     UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
     if (UIDeviceOrientationIsLandscape(deviceOrientation)) {
         //landscape
-        [self performSegueWithIdentifier:@"landscapeSliders" sender:self];
     }
     else {
         //portrait
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"landscapeSliders"]) {
-        MlSlidersLandscapeViewController *destinationViewController = [segue destinationViewController]; // Getting a reference to the collection view
-        destinationViewController.detailItem = self.detailItem;
-    }
-}
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -159,6 +149,5 @@
         abort();
     }
 }
-
 
 @end
