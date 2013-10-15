@@ -1680,6 +1680,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="70" y="12" width="150" height="34"/>
                                         <connections>
                                             <action selector="moveSlider:" destination="mQK-ra-D32" eventType="valueChanged" id="6q9-PP-7LP"/>
+                                            <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpOutside" id="YcM-2p-1CN"/>
                                             <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpInside" id="e1S-Lt-ILP"/>
                                         </connections>
                                     </slider>
@@ -1700,6 +1701,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <connections>
                                             <action selector="moveSlider:" destination="mQK-ra-D32" eventType="valueChanged" id="DGY-3y-zpo"/>
                                             <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpInside" id="EPd-4J-xvY"/>
+                                            <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpOutside" id="HXT-wX-JO9"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Tense" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqM-de-D3h">
@@ -1719,6 +1721,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <connections>
                                             <action selector="moveSlider:" destination="mQK-ra-D32" eventType="valueChanged" id="QFg-uA-6QL"/>
                                             <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpInside" id="IM1-Uq-wRe"/>
+                                            <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpOutside" id="JaE-Tr-gc8"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Low Energy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqU-PQ-xvT" userLabel="  Label - Low Energy">
@@ -1737,6 +1740,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="70" y="132" width="150" height="34"/>
                                         <connections>
                                             <action selector="moveSlider:" destination="mQK-ra-D32" eventType="valueChanged" id="aQk-IN-m9x"/>
+                                            <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpOutside" id="Bfe-js-qly"/>
                                             <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpInside" id="QUU-w9-9NH"/>
                                         </connections>
                                     </slider>
@@ -1756,6 +1760,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="70" y="172" width="150" height="34"/>
                                         <connections>
                                             <action selector="moveSlider:" destination="mQK-ra-D32" eventType="valueChanged" id="5bL-wd-S1f"/>
+                                            <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpOutside" id="5zo-xh-Kju"/>
                                             <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpInside" id="gWc-ud-fTS"/>
                                         </connections>
                                     </slider>
@@ -1775,6 +1780,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="70" y="212" width="150" height="34"/>
                                         <connections>
                                             <action selector="moveSlider:" destination="mQK-ra-D32" eventType="valueChanged" id="spW-B3-Q6R"/>
+                                            <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpOutside" id="U4S-ps-Ioe"/>
                                             <action selector="setSliderData:" destination="mQK-ra-D32" eventType="touchUpInside" id="UDr-wm-Gv1"/>
                                         </connections>
                                     </slider>
@@ -1853,6 +1859,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="70" y="16" width="150" height="34"/>
                                         <connections>
                                             <action selector="moveSlider:" destination="uuS-U1-8Fe" eventType="valueChanged" id="9zv-HM-i3V"/>
+                                            <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpOutside" id="D9W-Yt-Jm7"/>
                                             <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpInside" id="sTs-SF-G0T"/>
                                         </connections>
                                     </slider>
@@ -1872,6 +1879,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="70" y="55" width="150" height="34"/>
                                         <connections>
                                             <action selector="moveSlider:" destination="uuS-U1-8Fe" eventType="valueChanged" id="C1y-Ug-sy8"/>
+                                            <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpOutside" id="Iyb-6C-CAn"/>
                                             <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpInside" id="fdP-vY-8Yh"/>
                                         </connections>
                                     </slider>
@@ -1891,6 +1899,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="70" y="95" width="150" height="34"/>
                                         <connections>
                                             <action selector="moveSlider:" destination="uuS-U1-8Fe" eventType="valueChanged" id="PIg-Nd-fHs"/>
+                                            <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpOutside" id="3GN-UW-X9S"/>
                                             <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpInside" id="bUD-PJ-Ec8"/>
                                         </connections>
                                     </slider>
@@ -1910,6 +1919,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="70" y="134" width="150" height="34"/>
                                         <connections>
                                             <action selector="moveSlider:" destination="uuS-U1-8Fe" eventType="valueChanged" id="og8-6T-paN"/>
+                                            <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpOutside" id="LlK-KF-k4k"/>
                                             <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpInside" id="m2Y-16-g0Y"/>
                                         </connections>
                                     </slider>
@@ -1930,6 +1940,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <connections>
                                             <action selector="moveSlider:" destination="uuS-U1-8Fe" eventType="valueChanged" id="dua-T9-1F7"/>
                                             <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpInside" id="Yig-cy-VtS"/>
+                                            <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpOutside" id="tCy-hC-8Va"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Sick" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYb-Df-QIM">
@@ -1949,6 +1960,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <connections>
                                             <action selector="moveSlider:" destination="uuS-U1-8Fe" eventType="valueChanged" id="mlW-ZO-CUP"/>
                                             <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpInside" id="3ag-2f-8ZS"/>
+                                            <action selector="setSliderData:" destination="uuS-U1-8Fe" eventType="touchUpOutside" id="xGL-30-EP4"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Underslept" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIw-kz-1vz">
