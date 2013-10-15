@@ -26,10 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
-    
+    [self configureView];
+}
+
+- (void) configureView {
     // Set the sliders
     [self.moodSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
     [self.stressSlider setValue:[[self.detailItem valueForKey:@"stress"] floatValue]];
@@ -48,24 +48,9 @@
     [self updateChart];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    NSLog(@"ViewWillAppear %@", self.view);
-}
-
-- (void) viewWillDisappear:(BOOL)animated {
-    [self saveContext];
-}
-
-#pragma mark - Orientation change
-- (void)orientationChanged:(NSNotification *)notification {
-    UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
-    if (UIDeviceOrientationIsLandscape(deviceOrientation)) {
-        //landscape
-    }
-    else {
-        //portrait
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    NSLog(@"Called preferredInterfaceOrientationForPresentation");
+    return (UIInterfaceOrientationLandscapeLeft & UIInterfaceOrientationLandscapeRight);
 }
 
 - (void)didReceiveMemoryWarning
@@ -136,18 +121,6 @@
     
     NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
     [self.detailItem setValue:sliderValue forKey:key];
-}
-
-- (void) saveContext { // Save data to the database
-    // Save the context.
-    NSError *error = nil;
-    if (![[self.detailItem managedObjectContext] save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // TODO: Remove the aborts()
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
 }
 
 @end

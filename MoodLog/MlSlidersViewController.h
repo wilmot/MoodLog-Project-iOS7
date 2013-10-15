@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MlDetailViewController.h"
+#import "MoodLogEvents.h"
 
 @interface MlSlidersViewController : UIViewController
 
@@ -19,9 +20,10 @@
 @property (weak, nonatomic) IBOutlet UISlider *sleepSlider;
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *chartDrawingView;
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) MoodLogEvents *detailItem;
 
 - (IBAction)moveSlider:(id) sender;
 - (IBAction)setSliderData:(id)sender;
+- (void) configureView;
 
 @end
