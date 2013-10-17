@@ -161,6 +161,7 @@
 		4C0639D117E69DA200563FE6 /* Pitying.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399B17E69DA200563FE6 /* Pitying.png */; };
 		4C0639D217E69DA200563FE6 /* Pitying@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399C17E69DA200563FE6 /* Pitying@2x.png */; };
 		4C0C766C1649F95100DD372F /* MlDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */; };
+		4C22BBB618109873000E178F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C22BBB418109873000E178F /* Localizable.strings */; };
 		4C353EE6175BE307000ECE33 /* MlEmailEventCountDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */; };
 		4C353EE8175DE151000ECE33 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C353EE7175DE151000ECE33 /* MessageUI.framework */; };
 		4C3E0FB71657122100B0E060 /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E0FB61657122100B0E060 /* Prefs.m */; };
@@ -553,6 +554,7 @@
 		4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlDatePickerViewController.h; sourceTree = "<group>"; };
 		4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDatePickerViewController.m; sourceTree = "<group>"; };
 		4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 6.xcdatamodel"; sourceTree = "<group>"; };
+		4C22BBB518109873000E178F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MoodLog/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlEmailEventCountDrawing.h; sourceTree = "<group>"; };
 		4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlEmailEventCountDrawing.m; sourceTree = "<group>"; };
 		4C353EE7175DE151000ECE33 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1136,6 +1138,103 @@
 			path = Images/Faces;
 			sourceTree = "<group>";
 		};
+		4C22BBB718109896000E178F /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
+				4C65612617F280AD00F03470 /* AdditionalStoryboards.storyboard */,
+				4CEEF60117FCF48D00C29507 /* WelcomeView.xib */,
+				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		4C22BBB8181098AD000E178F /* Main Source */ = {
+			isa = PBXGroup;
+			children = (
+				4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */,
+				4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */,
+				4C3E0FB51657122100B0E060 /* Prefs.h */,
+				4C3E0FB61657122100B0E060 /* Prefs.m */,
+				4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */,
+				4C55CBF8162DE67500EAA878 /* MlAppDelegate.m */,
+				4C55CC09162DE67500EAA878 /* MlMasterViewController.h */,
+				4C55CC0A162DE67500EAA878 /* MlMasterViewController.m */,
+				4C55CC0C162DE67500EAA878 /* MlDetailViewController.h */,
+				4C55CC0D162DE67500EAA878 /* MlDetailViewController.m */,
+				4C92BE67179B3FD8005DEEC2 /* MlWelcomePageViewController.h */,
+				4C92BE68179B3FD9005DEEC2 /* MlWelcomePageViewController.m */,
+				4C7BF7CE176A482000DC8088 /* MlDetailScrollView.h */,
+				4C7BF7CF176A482000DC8088 /* MlDetailScrollView.m */,
+				4C7C789C162E9192008DC828 /* MlCell.h */,
+				4C7C789D162E9192008DC828 /* MlCell.m */,
+				4C5D051016C1F1BC0028C421 /* MlFacesViewController.h */,
+				4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */,
+				4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */,
+				4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */,
+				4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */,
+				4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */,
+				4C7CB593170561E300971849 /* MlMoodCollectionViewHeaderView.h */,
+				4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */,
+				4C61F1831780F9990032B200 /* MlJournalEditorViewController.h */,
+				4C61F1841780F9990032B200 /* MlJournalEditorViewController.m */,
+				4C82D89F180CD0ED005822DD /* MlFactorsViewController.h */,
+				4C82D8A0180CD0ED005822DD /* MlFactorsViewController.m */,
+				4CFC9E371809E789008DDAF0 /* MlSlidersViewController.h */,
+				4CFC9E381809E789008DDAF0 /* MlSlidersViewController.m */,
+				4C82D89C180CC587005822DD /* MlSlidersLandscapeViewController.h */,
+				4C82D89D180CC587005822DD /* MlSlidersLandscapeViewController.m */,
+				4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */,
+				4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */,
+				4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */,
+				4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */,
+				4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */,
+				4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */,
+				4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */,
+				4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */,
+				4C47E6B21751AC570023298F /* MlChartCellEntryViewController.h */,
+				4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */,
+				4C52861616D9A654007C878C /* MlChartDrawingView.h */,
+				4C52861716D9A654007C878C /* MlChartDrawingView.m */,
+				4C03FEFF176837B9001BA22B /* MlChartView.h */,
+				4C03FF00176837B9001BA22B /* MlChartView.m */,
+				4CA980E71767E0E2001BF7A8 /* MlChartCellFooterView.h */,
+				4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */,
+				4C4AC9451795F2FA004DA98E /* MlRemindersViewController.h */,
+				4C4AC9461795F2FA004DA98E /* MlRemindersViewController.m */,
+				4C4AC93F1794B3AE004DA98E /* MlNotificationsTableViewController.h */,
+				4C4AC9401794B3AE004DA98E /* MlNotificationsTableViewController.m */,
+				4C92BE6A179E5D6B005DEEC2 /* MlQuietHoursTableViewController.h */,
+				4C92BE6B179E5D6C005DEEC2 /* MlQuietHoursTableViewController.m */,
+				4CFB21EF164B8C870055CC3D /* MlMailViewController.h */,
+				4CFB21F0164B8C870055CC3D /* MlMailViewController.m */,
+				4C8BB42F17F23C4600754252 /* MlSummaryInfoViewController.h */,
+				4C8BB43017F23C4600754252 /* MlSummaryInfoViewController.m */,
+				4C47E6B51755C5E00023298F /* MlDateRangeDrawing.h */,
+				4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */,
+				4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */,
+				4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */,
+				4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */,
+				4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */,
+				4C92BE0A1798EA7C005DEEC2 /* MlWelcomeScreenViewController.h */,
+				4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */,
+			);
+			name = "Main Source";
+			sourceTree = "<group>";
+		};
+		4C22BBB9181098BC000E178F /* Core Data Related */ = {
+			isa = PBXGroup;
+			children = (
+				4C47E6A117501E8F0023298F /* Emotions.h */,
+				4C47E6A217501E8F0023298F /* Emotions.m */,
+				4C589C65163200F100428C52 /* Stressors.h */,
+				4C589C66163200F100428C52 /* Stressors.m */,
+				4C7CA28C1630770800CC5CCA /* MlMoodDataItem.h */,
+				4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */,
+			);
+			name = "Core Data Related";
+			sourceTree = "<group>";
+		};
 		4C4043E61783E59F00710F2A /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1219,82 +1318,9 @@
 		4C55CBEE162DE67400EAA878 /* MoodLog */ = {
 			isa = PBXGroup;
 			children = (
-				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
-				4C65612617F280AD00F03470 /* AdditionalStoryboards.storyboard */,
-				4CEEF60117FCF48D00C29507 /* WelcomeView.xib */,
-				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
-				4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */,
-				4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */,
-				4C3E0FB51657122100B0E060 /* Prefs.h */,
-				4C3E0FB61657122100B0E060 /* Prefs.m */,
-				4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */,
-				4C55CBF8162DE67500EAA878 /* MlAppDelegate.m */,
-				4C55CC09162DE67500EAA878 /* MlMasterViewController.h */,
-				4C55CC0A162DE67500EAA878 /* MlMasterViewController.m */,
-				4C55CC0C162DE67500EAA878 /* MlDetailViewController.h */,
-				4C55CC0D162DE67500EAA878 /* MlDetailViewController.m */,
-				4C92BE67179B3FD8005DEEC2 /* MlWelcomePageViewController.h */,
-				4C92BE68179B3FD9005DEEC2 /* MlWelcomePageViewController.m */,
-				4C7BF7CE176A482000DC8088 /* MlDetailScrollView.h */,
-				4C7BF7CF176A482000DC8088 /* MlDetailScrollView.m */,
-				4C7C789C162E9192008DC828 /* MlCell.h */,
-				4C7C789D162E9192008DC828 /* MlCell.m */,
-				4C5D051016C1F1BC0028C421 /* MlFacesViewController.h */,
-				4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */,
-				4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */,
-				4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */,
-				4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */,
-				4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */,
-				4C7CB593170561E300971849 /* MlMoodCollectionViewHeaderView.h */,
-				4C7CB594170561E300971849 /* MlMoodCollectionViewHeaderView.m */,
-				4C61F1831780F9990032B200 /* MlJournalEditorViewController.h */,
-				4C61F1841780F9990032B200 /* MlJournalEditorViewController.m */,
-				4C82D89F180CD0ED005822DD /* MlFactorsViewController.h */,
-				4C82D8A0180CD0ED005822DD /* MlFactorsViewController.m */,
-				4CFC9E371809E789008DDAF0 /* MlSlidersViewController.h */,
-				4CFC9E381809E789008DDAF0 /* MlSlidersViewController.m */,
-				4C82D89C180CC587005822DD /* MlSlidersLandscapeViewController.h */,
-				4C82D89D180CC587005822DD /* MlSlidersLandscapeViewController.m */,
-				4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */,
-				4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */,
-				4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */,
-				4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */,
-				4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */,
-				4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */,
-				4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */,
-				4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */,
-				4C47E6B21751AC570023298F /* MlChartCellEntryViewController.h */,
-				4C47E6B31751AC580023298F /* MlChartCellEntryViewController.m */,
-				4C52861616D9A654007C878C /* MlChartDrawingView.h */,
-				4C52861716D9A654007C878C /* MlChartDrawingView.m */,
-				4C03FEFF176837B9001BA22B /* MlChartView.h */,
-				4C03FF00176837B9001BA22B /* MlChartView.m */,
-				4CA980E71767E0E2001BF7A8 /* MlChartCellFooterView.h */,
-				4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */,
-				4C4AC9451795F2FA004DA98E /* MlRemindersViewController.h */,
-				4C4AC9461795F2FA004DA98E /* MlRemindersViewController.m */,
-				4C4AC93F1794B3AE004DA98E /* MlNotificationsTableViewController.h */,
-				4C4AC9401794B3AE004DA98E /* MlNotificationsTableViewController.m */,
-				4C92BE6A179E5D6B005DEEC2 /* MlQuietHoursTableViewController.h */,
-				4C92BE6B179E5D6C005DEEC2 /* MlQuietHoursTableViewController.m */,
-				4CFB21EF164B8C870055CC3D /* MlMailViewController.h */,
-				4CFB21F0164B8C870055CC3D /* MlMailViewController.m */,
-				4C8BB42F17F23C4600754252 /* MlSummaryInfoViewController.h */,
-				4C8BB43017F23C4600754252 /* MlSummaryInfoViewController.m */,
-				4C47E6B51755C5E00023298F /* MlDateRangeDrawing.h */,
-				4C47E6B61755C5E00023298F /* MlDateRangeDrawing.m */,
-				4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */,
-				4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */,
-				4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */,
-				4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */,
-				4C92BE0A1798EA7C005DEEC2 /* MlWelcomeScreenViewController.h */,
-				4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */,
-				4C47E6A117501E8F0023298F /* Emotions.h */,
-				4C47E6A217501E8F0023298F /* Emotions.m */,
-				4C589C65163200F100428C52 /* Stressors.h */,
-				4C589C66163200F100428C52 /* Stressors.m */,
-				4C7CA28C1630770800CC5CCA /* MlMoodDataItem.h */,
-				4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */,
+				4C22BBB718109896000E178F /* User Interface */,
+				4C22BBB8181098AD000E178F /* Main Source */,
+				4C22BBB9181098BC000E178F /* Core Data Related */,
 				4CB8E8EF17C8647700E26857 /* Images.xcassets */,
 				4C55CBEF162DE67400EAA878 /* Supporting Files */,
 			);
@@ -1314,6 +1340,7 @@
 				4C4C53DF1665F14900DDDBA2 /* MoodList.plist */,
 				4C55CBF0162DE67400EAA878 /* MoodLog-Info.plist */,
 				4C55CBF1162DE67400EAA878 /* InfoPlist.strings */,
+				4C22BBB418109873000E178F /* Localizable.strings */,
 				4C55CBF4162DE67500EAA878 /* main.m */,
 				4C55CBF6162DE67500EAA878 /* MoodLog-Prefix.pch */,
 			);
@@ -1656,6 +1683,7 @@
 				4C4043D01783E51400710F2A /* Anxious.png in Resources */,
 				4C4043D11783E51400710F2A /* Anxious@2x.png in Resources */,
 				4C4043D21783E51400710F2A /* Apologetic.png in Resources */,
+				4C22BBB618109873000E178F /* Localizable.strings in Resources */,
 				4C4043D31783E51400710F2A /* Apologetic@2x.png in Resources */,
 				4C4043D41783E51400710F2A /* Apprehensive.png in Resources */,
 				4C4043D51783E51400710F2A /* Apprehensive@2x.png in Resources */,
@@ -1825,6 +1853,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4C22BBB418109873000E178F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C22BBB518109873000E178F /* en */,
+			);
+			name = Localizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		4C55CBF1162DE67400EAA878 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
