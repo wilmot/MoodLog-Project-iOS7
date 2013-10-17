@@ -160,7 +160,14 @@ static CGFloat CELL_HEIGHT;
 - (void)showFirstTimeScreen {
     //Initial screen when no records
     MlAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] lastObject];
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    if (screenBounds.size.height == 568) { // iPhone 4 inch screen
+        self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:0];
+    }
+    else { // iPhone 3.5 inch screen
+        self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:1];
+    }
+//    [self.firstTimeView setBounds:CGRectMake(delegate.window.bounds.origin.x, delegate.window.bounds.origin.y,delegate.window.bounds.size.width,delegate.window.bounds.size.height)];
  
     [delegate.window addSubview:self.firstTimeView];
 
@@ -168,7 +175,6 @@ static CGFloat CELL_HEIGHT;
                                              initWithTarget:self action:@selector(touchedFirstTimeScreen:)];
     [tapRecognizer setNumberOfTouchesRequired:1];
     [tapRecognizer setDelegate:self];
-    //Don't forget to set the userInteractionEnabled to YES, by default It's NO.
     self.firstTimeView.userInteractionEnabled = YES;
     [self.firstTimeView addGestureRecognizer:tapRecognizer];
 }
