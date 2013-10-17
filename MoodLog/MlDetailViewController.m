@@ -248,13 +248,11 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self.sliderChartView setNeedsDisplay];
 
         self.slidersView.hidden = YES;
-        self.sliderChartView.hidden = NO;
         [self.slidersSetAdjustButton setTitle:@"Adjust" forState:UIControlStateNormal];
 
     }
     else {
         self.slidersView.hidden = NO;
-        self.sliderChartView.hidden = YES;
         [self.slidersSetAdjustButton setTitle:@"Lock" forState:UIControlStateNormal];
     }
 }
@@ -437,7 +435,8 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         shouldHideLabel = NO; // Should only show if none of the factors are modified
     }
     [self.noFactorsLabel setHidden:shouldHideLabel];
-    
+    [self.noFactorsImage setHidden:shouldHideLabel];
+    [self.sliderChartView setHidden:!shouldHideLabel];    
 }
 
 // TODO: Trying to get the gap to disappear when hiding a static table section
@@ -502,7 +501,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             height = textViewSize.height + 20.0;
             break;
        case SLIDERS: //Sliders & Slider Chart
-            height = 144.0;
+            height = 104.0;
             break;
         case ADDENTRYBUTTON:
             if (self.detailItem == nil) {

@@ -256,20 +256,22 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
 }
 
 - (void) drawTextInBar: (NSString *)text inRect:(CGRect) rect withContext:(CGContextRef) context {
-    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:11], NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-    if (rect.size.width > sidewaysWidthThreshhold) {
-        CGRect hRect = CGRectMake(rect.origin.x + (rect.size.width/2.0) - 20.0, rect.origin.y + 2.0, rect.size.width, rect.size.height);
+    NSMutableParagraphStyle * paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [paragraphStyle setAlignment:NSTextAlignmentCenter];
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:11], NSFontAttributeName, paragraphStyle, NSParagraphStyleAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
+    if (rect.size.width > sidewaysWidthThreshhold) { // Horizontal text
+        CGRect hRect = CGRectMake(rect.origin.x, rect.origin.y + 2.0, rect.size.width, rect.size.height);
         [text drawInRect:hRect withAttributes:attrsDictionary];
     }
-    else {
-        CGPoint point = CGPointMake(rect.origin.x + 2.0, 60.0);
+    else { // Vertical text
+        CGPoint point = CGPointMake(rect.origin.x + rect.size.width/2.0, rect.origin.y + rect.size.height*2.0 - 4.0);
         CGContextSaveGState(context);
         CGContextSetFillColorWithColor(context, [[UIColor blackColor] CGColor]);
         CGContextTranslateCTM(context, point.x, point.y);
         CGAffineTransform textTransform = CGAffineTransformMakeRotation(-pi/2);
         CGContextConcatCTM(context, textTransform);
         CGContextTranslateCTM(context, -point.x, -point.y);
-        [text drawAtPoint:CGPointMake(rect.origin.x + 2.0, 60.0) withFont:[UIFont systemFontOfSize:10.0]];
+        [text drawAtPoint:CGPointMake(rect.origin.x + rect.size.width/2.0, rect.origin.y + rect.size.height*2.0 - 4.0) withFont:[UIFont systemFontOfSize:10.0]];
         CGContextRestoreGState(context);
     }
 }

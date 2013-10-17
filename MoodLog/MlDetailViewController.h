@@ -40,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *noFactorsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noJournalLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *noMoodsImage;
+@property (weak, nonatomic) IBOutlet UIImageView *noFactorsImage;
 @property (weak, nonatomic) IBOutlet UITableViewCell *dateCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *moodsCell;
 @property (weak, nonatomic) IBOutlet UITextView *moodListTextView;
