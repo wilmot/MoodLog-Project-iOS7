@@ -170,7 +170,7 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
     CGRect overallRect = CGRectMake(0.0, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
     CGRect overallBoundingRect = CGRectMake(0.0, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
     CGContextFillRect(context, overallRect);
-    [self drawTextInBar:@"Mood" inRect:overallBoundingRect withContext:context];
+    [self drawTextInBar:NSLocalizedString(@"Mood", @"Mood") inRect:overallBoundingRect withContext:context];
     
     // Stress
     barHeight = interval*fabs(round(self.chartHeightStress));
@@ -184,7 +184,7 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
     CGRect stressRect = CGRectMake(0.0 + rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
     CGRect stressBoundingRect = CGRectMake(0.0 + rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
     CGContextFillRect(context, stressRect);
-    [self drawTextInBar:@"Stress" inRect:stressBoundingRect withContext:context];
+    [self drawTextInBar:NSLocalizedString(@"Stress", @"Stress") inRect:stressBoundingRect withContext:context];
 
     // Energy
     barHeight = interval*fabs(round(self.chartHeightEnergy));
@@ -198,7 +198,7 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
     CGRect energyRect = CGRectMake(0.0 + 2*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
     CGRect energyBoundingRect = CGRectMake(0.0 + 2*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
     CGContextFillRect(context, energyRect);
-    [self drawTextInBar:@"Energy" inRect:energyBoundingRect withContext:context];
+    [self drawTextInBar:NSLocalizedString(@"Energy", @"Energy") inRect:energyBoundingRect withContext:context];
 
     // Thoughts
     barHeight = interval*fabs(round(self.chartHeightThoughts));
@@ -212,7 +212,7 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
     CGRect thoughtsRect = CGRectMake(0.0 + 3*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
     CGRect thoughtsBoundingRect = CGRectMake(0.0 + 3*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
     CGContextFillRect(context, thoughtsRect);
-    [self drawTextInBar:@"Mindfulness" inRect:thoughtsBoundingRect withContext:context];
+    [self drawTextInBar:NSLocalizedString(@"Mindfulness", @"Mindfulness") inRect:thoughtsBoundingRect withContext:context];
 
     // Health
     barHeight = interval*fabs(round(self.chartHeightHealth));
@@ -226,7 +226,7 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
     CGRect healthRect = CGRectMake(0.0 + 4*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
     CGRect healthBoundingRect = CGRectMake(0.0 + 4*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
     CGContextFillRect(context, healthRect);
-    [self drawTextInBar:@"Health" inRect:healthBoundingRect withContext:context];
+    [self drawTextInBar:NSLocalizedString(@"Health", @"Health") inRect:healthBoundingRect withContext:context];
 
     // Sleep
     barHeight = interval*fabs(round(self.chartHeightSleep));
@@ -240,7 +240,7 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
     CGRect sleepRect = CGRectMake(0.0 + 5*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
     CGRect sleepBoundingRect = CGRectMake(0.0 + 5*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
     CGContextFillRect(context, sleepRect);
-    [self drawTextInBar:@"Sleep" inRect:sleepBoundingRect withContext:context];
+    [self drawTextInBar:NSLocalizedString(@"Sleep", @"Sleep") inRect:sleepBoundingRect withContext:context];
     
 }
 

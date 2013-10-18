@@ -47,15 +47,15 @@
 
 - (void)setQuietStartLabel: (NSDate *) quietStart {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"h:mm a";
-    NSString *quietStartString = [NSString stringWithFormat:@"Start time: %@",[dateFormatter stringFromDate: quietStart]];
+    dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
+    NSString *quietStartString = [NSString stringWithFormat:NSLocalizedString(@"Start time: %@", @"Start time: %@"),[dateFormatter stringFromDate: quietStart]];
     self.fromLabel.text = quietStartString;
 }
 
 - (void)setQuietEndLabel: (NSDate *) quietEnd {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"h:mm a";
-    NSString *quietEndString = [NSString stringWithFormat:@"End time: %@",[dateFormatter stringFromDate: quietEnd]];
+    dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
+    NSString *quietEndString = [NSString stringWithFormat:NSLocalizedString(@"End time: %@", @"End time: %@"),[dateFormatter stringFromDate: quietEnd]];
     self.toLabel.text = quietEndString;
 }
 

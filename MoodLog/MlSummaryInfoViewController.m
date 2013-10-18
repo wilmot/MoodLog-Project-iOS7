@@ -58,19 +58,19 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
         MoodLogEvents *moodLogRecord = [self.fetchedResultsControllerByDate objectAtIndexPath:firstItemIndexPath];
         NSDate *today = [moodLogRecord valueForKey:@"date"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
+        dateFormatter.dateFormat = NSLocalizedString(@"MMMM dd, YYYY hh:mm a", @"MMMM dd, YYYY hh:mm a format");
         NSString *startDate = [dateFormatter stringFromDate: today];
         
         NSIndexPath *lastItemIndexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
         moodLogRecord = [self.fetchedResultsControllerByDate objectAtIndexPath:lastItemIndexPath];
         today = [moodLogRecord valueForKey:@"date"];
-        dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
+        dateFormatter.dateFormat = NSLocalizedString(@"MMMM dd, YYYY hh:mm a", @"MMMM dd, YYYY hh:mm a format");
         NSString *endDate = [dateFormatter stringFromDate: today];
         
         UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
         NSAttributedString *summaryLine;
         NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor blueColor], NSForegroundColorAttributeName, nil];
-        NSAttributedString *titleString = [[NSAttributedString alloc] initWithString:@"Summary Information" attributes:attrsDictionary];
+        NSAttributedString *titleString = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Summary Information", @"Title for Summary page") attributes:attrsDictionary];
         NSMutableAttributedString *summaryAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:titleString];
         
         
@@ -79,9 +79,9 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
         attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
         NSString *textToDisplay;
         if (events > 1) {
-            textToDisplay = [NSString stringWithFormat:@"\n\nYou have created %d Mood Log entries, dating from %@ to %@.", events, startDate, endDate];
+            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou have created %d Mood Log entries, dating from %@ to %@.", @"\n\nYou have created %d Mood Log entries, dating from %@ to %@."), events, startDate, endDate];
         } else {
-            textToDisplay = [NSString stringWithFormat:@"\n\nYou have created %d Mood Log entry, dating from %@ to %@.", events, startDate, endDate];
+            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou have created %d Mood Log entry, dating from %@ to %@.", @"\n\nYou have created %d Mood Log entry, dating from %@ to %@. -- singular"), events, startDate, endDate];
         }
         summaryLine = [[NSAttributedString alloc] initWithString:textToDisplay attributes:attrsDictionary];
         [summaryAttributedString appendAttributedString:summaryLine];
@@ -102,7 +102,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             // Categories
             font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-            summaryLine = [[NSAttributedString alloc] initWithString:@"\n\nCategories" attributes:attrsDictionary];
+            summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\nCategories", @"\n\nCategories") attributes:attrsDictionary];
             [summaryAttributedString appendAttributedString:summaryLine];
             
             NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
@@ -114,7 +114,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
                 [categoryCounts setObject:[NSNumber numberWithLong:objectsInSection] forKey:sectionInfo.name];
             }
             
-            for (NSString *category in @[@"Love", @"Joy",@"Surprise",@"Anger",@"Sadness", @"Fear"]) {
+            for (NSString *category in @[love, joy, surprise, anger, sadness, fear]) {
                 NSNumber *countForCategory =[categoryCounts objectForKey:category];
                 if ([countForCategory integerValue] > 0) {
                     font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
@@ -124,7 +124,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
                     font = [UIFont fontWithName:@"HelveticaNeue" size:14];
                     attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices textDesaturatedColors] objectForKey:category], NSForegroundColorAttributeName, nil];
                 }
-                summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %d ", category, [countForCategory integerValue]] attributes:attrsDictionary];
+                summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:NSLocalizedString(@"\n\t%@: %d ", @"category and count for category"), category, [countForCategory integerValue]] attributes:attrsDictionary];
                 [summaryAttributedString appendAttributedString:summaryLine];
             }
             
@@ -155,7 +155,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
         // Categories
         font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
         attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-        summaryLine = [[NSAttributedString alloc] initWithString:@"\n\nBars:" attributes:attrsDictionary];
+        summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\nBars:", @"\n\nBars:") attributes:attrsDictionary];
         [summaryAttributedString appendAttributedString:summaryLine];
 
         NSIndexPath *itemIndexPath;
@@ -197,7 +197,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             // Categories
             font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-            summaryLine = [[NSAttributedString alloc] initWithString:@"\n\n\n\n\n\n\n\n\n\n\nMost Common Emotions" attributes:attrsDictionary];
+            summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\n\n\n\n\n\n\n\n\n\nMost Common Emotions", @"\n\n\n\n\n\n\n\n\n\n\nMost Common Emotions") attributes:attrsDictionary];
             [summaryAttributedString appendAttributedString:summaryLine];
             
             // Set up font for body text
@@ -220,7 +220,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             }
             for (MlMoodDataItem *anElement in [summaryMoodArray sortedArrayUsingSelector:@selector(itemCountReverseCompare:)]) {
                 attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices textColors] objectForKey:anElement.category], NSForegroundColorAttributeName, nil];
-                summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\t%@: %@ ", anElement.mood, anElement.itemCount] attributes:attrsDictionary];
+                summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:NSLocalizedString(@"\n\t%@: %@ ", @"Mood and itemcount"), anElement.mood, anElement.itemCount] attributes:attrsDictionary];
                 [summaryAttributedString appendAttributedString:summaryLine];
            }
             self.summaryText.attributedText = summaryAttributedString;

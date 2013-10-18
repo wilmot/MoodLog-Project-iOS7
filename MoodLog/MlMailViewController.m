@@ -71,13 +71,13 @@ NSUserDefaults *defaults;
         MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         NSDate *today = [object valueForKey:@"date"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
+        dateFormatter.dateFormat = NSLocalizedString(@"MM/dd/YY", @"MM/dd/YY format");
         self.startDateLabel.text = [dateFormatter stringFromDate: today];
         
         indexPath = [NSIndexPath indexPathForItem:events - 1 inSection:0];
         object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         today = [object valueForKey:@"date"];
-        dateFormatter.dateFormat = @"MM/dd/YY"; // TODO: Make this world savvy
+        dateFormatter.dateFormat = NSLocalizedString(@"MM/dd/YY", @"MM/dd/YY format");
         self.endDateLabel.text = [dateFormatter stringFromDate: today];
         [self updateDateRangeDrawing];
     }
@@ -200,7 +200,7 @@ NSUserDefaults *defaults;
         NSDate *today;
         NSString *theDate;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        dateFormatter.dateFormat = @"MMMM dd, YYYY hh:mm a";
+        dateFormatter.dateFormat = NSLocalizedString(@"MMMM dd, YYYY hh:mm a", @"MMMM dd, YYYY hh:mm a format");
         for (int i=startValue; i<=endValue; i++) {
             indexPath = [NSIndexPath indexPathForItem:i inSection:0];
             object = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -209,7 +209,7 @@ NSUserDefaults *defaults;
             [bodyText appendFormat:@"<b>%@:</b><br>", theDate];
             entry = [object valueForKey:@"journalEntry"];
             if (entry) {
-                [bodyText appendFormat:@"Journal Entry: %@<br>Emotions:<br>",entry];
+                [bodyText appendFormat:NSLocalizedString(@"Journal Entry: %@<br>Emotions:<br>", @"Journal Entry preface in email"),entry];
             }
             NSSet *emotionsforEntry = object.relationshipEmotions; // Get all the emotions for this record
             NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
@@ -302,13 +302,13 @@ NSUserDefaults *defaults;
         NSString *text;
         switch (events) {
             case 0:
-                text = @"No entries";
+                text = NSLocalizedString(@"No entries", @"No entries - Mail range picker");
                 break;
             case 1:
-                text = @"entry";
+                text = NSLocalizedString(@"entry", @"entry - Mail range picker");
                 break;
             default:
-                text = @"entries";
+                text = NSLocalizedString(@"entries", @"entries - Mail range picker");
                 break;
         }
         self.eventCount.text = [NSString stringWithFormat:@"%d %@",events, text];
@@ -316,7 +316,7 @@ NSUserDefaults *defaults;
         MoodLogEvents *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         NSDate *today = [object valueForKey:@"date"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        dateFormatter.dateFormat = @"MMMM dd, YYYY";
+        dateFormatter.dateFormat = NSLocalizedString(@"MMMM dd, YYYY", @"MMMM dd, YYYY date format");
         NSString *startDate = [dateFormatter stringFromDate: today];
         
         indexPath = [NSIndexPath indexPathForItem:endValue inSection:0];

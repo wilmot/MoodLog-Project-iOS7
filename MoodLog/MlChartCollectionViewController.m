@@ -216,28 +216,28 @@ Boolean firstLoad;
         [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:oldToday];
         NSInteger oldDay = [oldWeekdayComponents day];
         if (oldDay != day) {
-            dateFormatter.dateFormat = @"yyyy";
+            dateFormatter.dateFormat = NSLocalizedString(@"yyyy", @"Year date format");
             cell.dateLabel.text = [dateFormatter stringFromDate: today];
-            dateFormatter.dateFormat = @"MMMM dd";
+            dateFormatter.dateFormat = NSLocalizedString(@"MMMM dd", @"Month day date format");
             cell.monthLabel.text = [dateFormatter stringFromDate: today];
-            dateFormatter.dateFormat = @"h:mm a";
+            dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
             cell.timeLabel.text = [dateFormatter stringFromDate: today];
         }
         else {
-            dateFormatter.dateFormat = @"yyyy";
+            dateFormatter.dateFormat = NSLocalizedString(@"yyyy", @"Year date format");
             cell.dateLabel.text = @"";
-            dateFormatter.dateFormat = @"MMMM dd";
+            dateFormatter.dateFormat = NSLocalizedString(@"MMMM dd", @"Month day date format");
             cell.monthLabel.text = @"";
-            dateFormatter.dateFormat = @"h:mm a";
+            dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
             cell.timeLabel.text = [dateFormatter stringFromDate: today];
         }
     }
     else {
-        dateFormatter.dateFormat = @"yyyy";
+        dateFormatter.dateFormat = NSLocalizedString(@"yyyy", @"Year date format");
         cell.dateLabel.text = [dateFormatter stringFromDate: today];
-        dateFormatter.dateFormat = @"MMMM dd";
+        dateFormatter.dateFormat = NSLocalizedString(@"MMMM dd", @"Month day date format");
         cell.monthLabel.text = [dateFormatter stringFromDate: today];
-        dateFormatter.dateFormat = @"h:mm a";
+        dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
         cell.timeLabel.text = [dateFormatter stringFromDate: today];
     }
 
@@ -277,7 +277,7 @@ Boolean firstLoad;
         NSNumber *itemCount;
         NSDictionary *colorz = [MlColorChoices textColors];
         
-        key = @"Love";
+        key = love;
         itemCount= (NSNumber *)[categoryCounts objectForKey:key];
         if ([itemCount integerValue] > 0) {
             cell.loveLabel.font = [UIFont boldSystemFontOfSize:15];
@@ -289,7 +289,7 @@ Boolean firstLoad;
             cell.loveLabel.textColor = [[colorz objectForKey:love] colorWithAlphaComponent:0.20];
             cell.loveLabel.text = [NSString stringWithFormat:@"%@    ", key];
         }
-        key = @"Joy";
+        key = joy;
         itemCount= (NSNumber *)[categoryCounts objectForKey:key];
         if ([itemCount integerValue] > 0) {
             cell.joyLabel.font = [UIFont boldSystemFontOfSize:15];
@@ -301,7 +301,7 @@ Boolean firstLoad;
             cell.joyLabel.textColor = [[[colorz objectForKey:joy] colorWithAlphaComponent:0.20] darkerColor];
             cell.joyLabel.text = [NSString stringWithFormat:@"%@    ", key];
         }
-        key = @"Surprise";
+        key = surprise;
         itemCount= (NSNumber *)[categoryCounts objectForKey:key];
         if ([itemCount integerValue] > 0) {
             cell.surpriseLabel.font = [UIFont boldSystemFontOfSize:15];
@@ -313,7 +313,7 @@ Boolean firstLoad;
             cell.surpriseLabel.textColor = [[colorz objectForKey:surprise] colorWithAlphaComponent:0.20];
             cell.surpriseLabel.text = [NSString stringWithFormat:@"%@    ", key];
         }
-       key = @"Anger";
+       key = anger;
         itemCount= (NSNumber *)[categoryCounts objectForKey:key];
         if ([itemCount integerValue] > 0) {
             cell.angerLabel.font = [UIFont boldSystemFontOfSize:15];
@@ -325,7 +325,7 @@ Boolean firstLoad;
             cell.angerLabel.textColor = [[colorz objectForKey:anger] colorWithAlphaComponent:0.20];
             cell.angerLabel.text = [NSString stringWithFormat:@"%@    ", key];
         }
-        key = @"Sadness";
+        key = sadness;
         itemCount= (NSNumber *)[categoryCounts objectForKey:key];
         if ([itemCount integerValue] > 0) {
             cell.sadnessLabel.font = [UIFont boldSystemFontOfSize:15];
@@ -337,7 +337,7 @@ Boolean firstLoad;
             cell.sadnessLabel.textColor = [[colorz objectForKey:sadness] colorWithAlphaComponent:0.20];
             cell.sadnessLabel.text = [NSString stringWithFormat:@"%@    ", key];
         }
-        key = @"Fear";
+        key = fear;
         itemCount= (NSNumber *)[categoryCounts objectForKey:key];
         if ([itemCount integerValue] > 0) {
             cell.fearLabel.font = [UIFont boldSystemFontOfSize:15];

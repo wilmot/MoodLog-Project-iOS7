@@ -96,7 +96,6 @@ static short BAR_CHART = 2;
     [super viewDidUnload];
 }
 - (IBAction)pressDone:(id)sender {
-//    [self dismissViewControllerAnimated:YES completion:^(void){ NSLog(@"BL-L Test"); }];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

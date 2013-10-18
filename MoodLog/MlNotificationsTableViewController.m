@@ -56,13 +56,13 @@
     
     self.quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"h:mm a";
+    dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
     NSString *quietStartString = [dateFormatter stringFromDate: self.quietStart];
     
     self.quietEnd = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietEndTime"];
     NSString *quietEndString = [dateFormatter stringFromDate: self.quietEnd];
     
-    self.reminderQuietHoursText2.text = [NSString stringWithFormat:@"Quiet Hours: %@ to %@",quietStartString, quietEndString];
+    self.reminderQuietHoursText2.text = [NSString stringWithFormat:NSLocalizedString(@"Quiet Hours: %@ to %@", @"Quiet Hours: %@ to %@ - Notifications view"),quietStartString, quietEndString];
     
     // Set Random Reminder Times/Day
     self.reminderCount.text = [NSString stringWithFormat:@"%ld",(long)[defaults integerForKey:@"DefaultRandomTimesPerDay"]];
@@ -114,10 +114,10 @@
 
 - (void)setReminderTimesPerDayLabelText {
     if (self.reminderStepper.value == 1) {
-        self.timesPerDayText.text = @"Time/Day";
+        self.timesPerDayText.text = NSLocalizedString(@"Time/Day", @"Time/Day -- when only one time given");
     }
     else {
-        self.timesPerDayText.text = @"Times/Day";
+        self.timesPerDayText.text = NSLocalizedString(@"Times/Day", @"Times/Day");
     }
 }
 
@@ -131,10 +131,10 @@
 
 - (void)setReminderMinutesLabelText {
     if (self.reminderMinutesStepper.value == 1) {
-        self.minutesTimerText.text = @"Minute";
+        self.minutesTimerText.text = NSLocalizedString(@"Minute", @"Minute - singular");
     }
     else {
-        self.minutesTimerText.text = @"Minutes";
+        self.minutesTimerText.text = NSLocalizedString(@"Minutes", @"Minutes");
     }
 }
 
@@ -159,8 +159,8 @@
     NSDate *fireTime = [[NSDate date] dateByAddingTimeInterval:seconds];
     myLocalNotification.fireDate = fireTime;
     myLocalNotification.timeZone = [NSTimeZone localTimeZone];
-    myLocalNotification.alertBody = @"How are you feeling in this moment?";
-    myLocalNotification.alertAction = @"New Mood Log Entry";
+    myLocalNotification.alertBody = NSLocalizedString(@"How are you feeling in this moment?", @"Text of the timer alert");
+    myLocalNotification.alertAction = NSLocalizedString(@"New Mood Log Entry", @"Button text for timer alert");
     myLocalNotification.soundName = @"guitar_sound.caf";
     myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
     NSLog(@"Setting Badge #=%ld, badgeCount: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount, (long)myLocalNotification.applicationIconBadgeNumber);
@@ -180,7 +180,7 @@
 -(void)listScheduledNotifications {
     NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MMMM dd, YYYY h:mm:ss a V";
+    dateFormatter.dateFormat = NSLocalizedString(@"MMMM dd, YYYY h:mm:ss a V", @"MMMM dd, YYYY h:mm:ss a V date format");
     if (notifications.count > 0) {
         NSMutableString *scheduledItemsString = [[NSMutableString alloc] init];
         for (UILocalNotification *item in notifications) {
@@ -189,7 +189,7 @@
         self.scheduledNotificationsList.text = scheduledItemsString;
     }
     else {
-        self.scheduledNotificationsList.text = @"No reminders scheduled.";
+        self.scheduledNotificationsList.text = NSLocalizedString(@"No reminders scheduled", @"This string used for debugging");
     }
 }
 

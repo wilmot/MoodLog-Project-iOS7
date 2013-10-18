@@ -35,7 +35,7 @@
     
     NSDate *today = [self.detailItem valueForKey:@"date"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MMMM dd YYYY h:mm a";
+    dateFormatter.dateFormat = NSLocalizedString(@"MMMM dd YYYY h:mm a", @"Date format for Chart cells");
     self.dateLabel.text = [dateFormatter stringFromDate: today];
 
 }

@@ -38,7 +38,7 @@ static CGFloat CELL_HEIGHT;
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"New", @"New button") style:UIBarButtonItemStylePlain target:self action:@selector(insertNewObject:)];
 //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
@@ -550,7 +550,7 @@ static CGFloat CELL_HEIGHT;
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"h:mm a";
+    dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
     
     cell.timeLabel.text = [dateFormatter stringFromDate: today];
     
@@ -566,11 +566,11 @@ static CGFloat CELL_HEIGHT;
         // Treat the last emotion as special (preface with 'and' and end with '.')
         [mutableEmotionArray removeObjectAtIndex:0];
         if ([mutableEmotionArray count] > 0) {
-            lastEm = [NSString stringWithFormat:@" and %@.", [((Emotions *)[mutableEmotionArray objectAtIndex:[mutableEmotionArray count] - 1]).name lowercaseString]];
+            lastEm = [NSString stringWithFormat:NSLocalizedString(@" and %@.", @" and %@."), [((Emotions *)[mutableEmotionArray objectAtIndex:[mutableEmotionArray count] - 1]).name lowercaseString]];
             [mutableEmotionArray removeObjectAtIndex:[mutableEmotionArray count] - 1];
         }
         else {
-            lastEm = @".";
+            lastEm = NSLocalizedString(@".", @"period");
         }
         for (id emotion in mutableEmotionArray) {
             selectedEms = [selectedEms stringByAppendingFormat:@", %@", [((Emotions *)emotion).name lowercaseString]];
@@ -581,7 +581,7 @@ static CGFloat CELL_HEIGHT;
     NSUInteger entryEnd = 0;
     NSMutableAttributedString *as;
     if (emotionArray) {
-        [displayString appendFormat:@"I feel %@%@\n", selectedEms, lastEm];
+        [displayString appendFormat:NSLocalizedString(@"I feel %@%@\n", @"I feel %@%@\n -- in List view"), selectedEms, lastEm];
     }
     entryEnd = [displayString length];
     NSString *entry = [object valueForKey:@"journalEntry"];

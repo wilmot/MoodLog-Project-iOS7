@@ -123,11 +123,11 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         self.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        dateFormatter.dateFormat = @"h:mm a";
+        dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
         
         self.timeLabel.text = [dateFormatter stringFromDate: today];
         
-        dateFormatter.dateFormat = @"MMMM YYYY";
+        dateFormatter.dateFormat = NSLocalizedString(@"MMMM YYYY", @"Month Year data format");
         self.monthLabel.text = [dateFormatter stringFromDate: today];
         
         if (self.detailItem.journalEntry.length > 0) {
@@ -206,9 +206,9 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             // iPad
             if (self.detailItem.editing.boolValue == YES) {
-                [self.expandButton setTitle:@"Done" forState:UIControlStateNormal];
+                [self.expandButton setTitle:NSLocalizedString(@"Done", @"Done button") forState:UIControlStateNormal];
             } else {
-                [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
+                [self.expandButton setTitle:NSLocalizedString(@"Edit", @"Edit button") forState:UIControlStateNormal];
             }
         }
         [self.entryLogTextView setDelegate:self];
@@ -248,12 +248,12 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self.sliderChartView setNeedsDisplay];
 
         self.slidersView.hidden = YES;
-        [self.slidersSetAdjustButton setTitle:@"Adjust" forState:UIControlStateNormal];
+        [self.slidersSetAdjustButton setTitle:NSLocalizedString(@"Adjust", @"Adjust button") forState:UIControlStateNormal];
 
     }
     else {
         self.slidersView.hidden = NO;
-        [self.slidersSetAdjustButton setTitle:@"Lock" forState:UIControlStateNormal];
+        [self.slidersSetAdjustButton setTitle:NSLocalizedString(@"Lock", @"Lock button") forState:UIControlStateNormal];
     }
 }
 
@@ -265,9 +265,8 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 
 #pragma mark - Split view
 
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController {
+    barButtonItem.title = NSLocalizedString(@"Master", @"Master button");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
@@ -401,13 +400,13 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self pressedDoneButton:self];
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         // iPad
-        if ([self.expandButton.titleLabel.text isEqual:@"Edit"]) {
-            [self.expandButton setTitle:@"Done" forState:UIControlStateNormal];
+        if ([self.expandButton.titleLabel.text isEqual:NSLocalizedString(@"Edit", @"Edit button")]) {
+            [self.expandButton setTitle:NSLocalizedString(@"Done", @"Done button") forState:UIControlStateNormal];
             self.detailItem.editing = [NSNumber numberWithBool:YES];
             [self.myMoodCollectionViewController refresh];
         }
         else {
-            [self.expandButton setTitle:@"Edit" forState:UIControlStateNormal];
+            [self.expandButton setTitle:NSLocalizedString(@"Edit", @"Edit button") forState:UIControlStateNormal];
             self.detailItem.editing = [NSNumber numberWithBool:NO];
             [self.myMoodCollectionViewController refresh];
         }

@@ -149,8 +149,8 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     NSLog(@"App received a didReceiveLocalNotification. Badge #=%ld, badgeCount=%ld. Setting them to zero.",(long)[UIApplication sharedApplication].applicationIconBadgeNumber,(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
 //    if (((long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount) > 0) {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Application_Title", @"Application Title")
-                                                        message:NSLocalizedString(@"Notification_Message", @"Text to show as the reminder")
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Mood Log", @"Application Title")
+                                                        message:NSLocalizedString(@"Create a new entry to record your current mood.", @"Text to show in the reminder notification")
                                                        delegate:self cancelButtonTitle:NSLocalizedString(@"Close", @"Close button text")
                                                   otherButtonTitles:nil];
         [alertView show];

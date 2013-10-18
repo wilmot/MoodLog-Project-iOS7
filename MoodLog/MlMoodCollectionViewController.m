@@ -126,12 +126,12 @@ MoodLogEvents *myLogEntry;
         }
         else if ([myLogEntry.sortStyleEditing isEqualToString:groupSort]) {
             // TODO: Find a more elegant way to accomplish the arrays within arrays
-            NSPredicate *groupLove = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", @"Love", parrotLevel];
-            NSPredicate *groupJoy = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", @"Joy", parrotLevel];
-            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", @"Surprise", parrotLevel];
-            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", @"Anger", parrotLevel];
-            NSPredicate *groupSadness = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", @"Sadness", parrotLevel];
-            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", @"Fear", parrotLevel];
+            NSPredicate *groupLove = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", love, parrotLevel];
+            NSPredicate *groupJoy = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", joy, parrotLevel];
+            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", surprise, parrotLevel];
+            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", anger, parrotLevel];
+            NSPredicate *groupSadness = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", sadness, parrotLevel];
+            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"(category == %@) AND (parrotLevel.intValue <= %@)", fear, parrotLevel];
 
             NSArray *loveArray = [[mutableEmotionsFromPList filteredArrayUsingPredicate:groupLove] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *joyArray = [[mutableEmotionsFromPList filteredArrayUsingPredicate:groupJoy] sortedArrayUsingSelector:@selector(compare:)];
@@ -159,12 +159,12 @@ MoodLogEvents *myLogEntry;
         else if ( [myLogEntry.sortStyle isEqualToString:groupSort]) {
             // TODO: Find a more elegant way to accomplish the arrays within arrays
             NSNumber *nYES = [NSNumber numberWithBool:YES];
-            NSPredicate *groupLove = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", @"Love", nYES, parrotLevel];
-            NSPredicate *groupJoy = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", @"Joy", nYES, parrotLevel];
-            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", @"Surprise", nYES, parrotLevel];
-            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", @"Anger", nYES, parrotLevel];
-            NSPredicate *groupSadness = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", @"Sadness", nYES, parrotLevel];
-            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", @"Fear", nYES, parrotLevel];
+            NSPredicate *groupLove = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", love, nYES, parrotLevel];
+            NSPredicate *groupJoy = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", joy, nYES, parrotLevel];
+            NSPredicate *groupSurprise = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", surprise, nYES, parrotLevel];
+            NSPredicate *groupAnger = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", anger, nYES, parrotLevel];
+            NSPredicate *groupSadness = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", sadness, nYES, parrotLevel];
+            NSPredicate *groupFear = [NSPredicate predicateWithFormat:@"category == %@ AND selected == %@ AND parrotLevel.intValue <= %@", fear, nYES, parrotLevel];
             NSArray *loveArray = [[mutableEmotionsFromPList filteredArrayUsingPredicate:groupLove]  sortedArrayUsingSelector:@selector(compare:)];
             NSArray *joyArray = [[mutableEmotionsFromPList filteredArrayUsingPredicate:groupJoy] sortedArrayUsingSelector:@selector(compare:)];
             NSArray *surpriseArray = [[mutableEmotionsFromPList filteredArrayUsingPredicate:groupSurprise] sortedArrayUsingSelector:@selector(compare:)];
@@ -198,7 +198,7 @@ MoodLogEvents *myLogEntry;
     if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
         CGPoint location = [gestureRecognizer locationInView:[gestureRecognizer view]];
         UIMenuController *menuController = [UIMenuController sharedMenuController];
-        UIMenuItem *resetMenuItem = [[UIMenuItem alloc] initWithTitle:@"Define" action:@selector(showDefinition:)];
+        UIMenuItem *resetMenuItem = [[UIMenuItem alloc] initWithTitle:NSLocalizedString(@"Define", @"Define - pop up menu") action:@selector(showDefinition:)];
         
         CGPoint touchPoint = [sender locationInView:self.collectionView];
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:touchPoint];

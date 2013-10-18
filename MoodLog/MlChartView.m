@@ -11,7 +11,6 @@
 @implementation MlChartView
 
 - (void)setBounds:(CGRect)bounds {
-    NSLog(@"Chart View: %@", NSStringFromCGRect(bounds));
     [super setBounds:bounds];
 }
 
