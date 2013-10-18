@@ -102,7 +102,11 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             // Categories
             font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-            summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\nCategories", @"\n\nCategories") attributes:attrsDictionary];
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // if iOS 7 or later
+                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\nCategories", @"\n\nCategories") attributes:attrsDictionary];
+            } else { // iOS 6
+                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Categories", @"Categories") attributes:attrsDictionary];
+            }
             [summaryAttributedString appendAttributedString:summaryLine];
             
             NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
@@ -134,6 +138,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             self.pieChartForSummary.chartType = @"Pie";
             self.pieChartForSummary.categoryCounts = categoryCounts;
             self.pieChartForSummary.dividerLine = NO;
+            self.pieChartForSummary.circumference = 60.0;
             [self.pieChartForSummary setNeedsDisplay];
             
             [self summaryInformationSlow2:self];

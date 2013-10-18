@@ -49,11 +49,12 @@
 }
 
 - (void)drawRoundedRect:(CGContextRef)context rect:(CGRect)rect radius:(CGFloat)radius {
-    CGFloat colors [] = {
-        1.0, 1.0, 1.0, 1.0,
-        0.8, 0.0, 0.0, 1.0
-    };
+//    CGFloat colors [] = {
+//        1.0, 1.0, 1.0, 1.0,
+//        0.8, 0.0, 0.0, 1.0
+//    };
 	
+    CGContextSaveGState(context);
     CGColorSpaceRef baseSpace = CGColorSpaceCreateDeviceRGB();
 
 	CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
@@ -96,14 +97,17 @@
 	CGContextAddArcToPoint(context, minx, maxy, minx, midy, radius);
 	// Close the path
 	CGContextClosePath(context);
+    
 	// Fill & stroke the path
-    CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, colors, NULL, 2);
-    CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
-    CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
-    CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+//    CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, colors, NULL, 2);
+//    CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
+//    CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
+//    CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+    CGContextSetRGBFillColor(context, 255/255.0, 255/255.0, 255/255.0, 1.0);
+    CGContextFillRect(context, rect);
 
 	CGContextDrawPath(context, kCGPathFillStroke);
-    CFRelease(gradient);
+//    CFRelease(gradient);
     CFRelease(baseSpace);
  
 //    CGContextSetLineWidth(context, 0.5);
@@ -122,6 +126,8 @@
 //	CGContextClosePath(context);
 //	// Fill & stroke the path
 //	CGContextDrawPath(context, kCGPathFillStroke);
+
+    CGContextRestoreGState(context);
 }
 
 @end

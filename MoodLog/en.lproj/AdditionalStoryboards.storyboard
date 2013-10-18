@@ -462,8 +462,9 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="trailing" secondItem="vBf-4Y-1d7" secondAttribute="trailing" id="5YS-YV-ySy"/>
                             <constraint firstItem="IFR-je-Sop" firstAttribute="top" secondItem="9oB-Ss-gZ3" secondAttribute="bottom" constant="44" id="8s0-wM-UBN"/>
                             <constraint firstItem="zwq-G4-LQV" firstAttribute="top" secondItem="hXT-SK-ZzK" secondAttribute="bottom" id="Ctq-hM-ghl"/>
+                            <constraint firstItem="vBf-4Y-1d7" firstAttribute="top" secondItem="rF0-RR-vm2" secondAttribute="bottom" id="Fuq-Pg-gCp"/>
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="leading" secondItem="vBf-4Y-1d7" secondAttribute="leading" id="J6b-24-Ij9"/>
-                            <constraint firstItem="hXT-SK-ZzK" firstAttribute="top" secondItem="9oB-Ss-gZ3" secondAttribute="bottom" constant="44" id="LKM-h5-Uuv"/>
+                            <constraint firstItem="hXT-SK-ZzK" firstAttribute="top" secondItem="rF0-RR-vm2" secondAttribute="bottom" id="LKk-FL-jf9"/>
                             <constraint firstAttribute="trailing" secondItem="rF0-RR-vm2" secondAttribute="trailing" id="VVZ-Mv-UCf"/>
                             <constraint firstAttribute="trailing" secondItem="hXT-SK-ZzK" secondAttribute="trailing" id="XR1-DL-eKs"/>
                             <constraint firstAttribute="bottom" secondItem="vBf-4Y-1d7" secondAttribute="bottom" id="asK-Nl-jh0"/>
@@ -471,7 +472,6 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="top" secondItem="9oB-Ss-gZ3" secondAttribute="bottom" id="j8g-CO-Iy2"/>
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="bottom" secondItem="vBf-4Y-1d7" secondAttribute="top" id="jS0-h1-TLh"/>
                             <constraint firstItem="hXT-SK-ZzK" firstAttribute="leading" secondItem="2j5-jQ-LI8" secondAttribute="leading" id="jZD-Gl-rpk"/>
-                            <constraint firstItem="vBf-4Y-1d7" firstAttribute="top" secondItem="2j5-jQ-LI8" secondAttribute="top" constant="64" id="qJv-Dk-uwn"/>
                             <constraint firstItem="zwq-G4-LQV" firstAttribute="top" secondItem="IFR-je-Sop" secondAttribute="bottom" id="sOl-XP-Qe9"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -900,10 +900,10 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <viewControllerLayoutGuide type="bottom" id="xEW-4O-uYu"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qac-52-9Kq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="1191"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="1319"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPT-D9-DqJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>

@@ -261,7 +261,13 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
     NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:11], NSFontAttributeName, paragraphStyle, NSParagraphStyleAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
     if (rect.size.width > sidewaysWidthThreshhold) { // Horizontal text
         CGRect hRect = CGRectMake(rect.origin.x, rect.origin.y + 2.0, rect.size.width, rect.size.height);
-        [text drawInRect:hRect withAttributes:attrsDictionary];
+        if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+            [text drawInRect:hRect withAttributes:attrsDictionary];
+        }
+        else {
+            NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:text attributes:attrsDictionary];
+            [attributedText drawInRect:hRect];
+        }
     }
     else { // Vertical text
         CGPoint point = CGPointMake(rect.origin.x + rect.size.width/2.0, rect.origin.y + rect.size.height*2.0 - 4.0);
