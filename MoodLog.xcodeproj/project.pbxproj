@@ -287,10 +287,6 @@
 		4C4043DF1783E51400710F2A /* Attractive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043611783E51400710F2A /* Attractive@2x.png */; };
 		4C4043E01783E51400710F2A /* Awed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043621783E51400710F2A /* Awed.png */; };
 		4C4043E11783E51400710F2A /* Awed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043631783E51400710F2A /* Awed@2x.png */; };
-		4C4043E21783E51400710F2A /* Skeptical_orig.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043641783E51400710F2A /* Skeptical_orig.png */; };
-		4C4043E31783E51400710F2A /* Skeptical_orig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043651783E51400710F2A /* Skeptical_orig@2x.png */; };
-		4C4043E41783E51400710F2A /* Amused_old.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043661783E51400710F2A /* Amused_old.png */; };
-		4C4043E51783E51400710F2A /* Amused_old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043671783E51400710F2A /* Amused_old@2x.png */; };
 		4C4043EF1783E5CB00710F2A /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043E71783E5CB00710F2A /* calendar.png */; };
 		4C4043F01783E5CB00710F2A /* CalendarBlank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043E81783E5CB00710F2A /* CalendarBlank.png */; };
 		4C4043F11783E5CB00710F2A /* CalendarBlank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043E91783E5CB00710F2A /* CalendarBlank@2x.png */; };
@@ -684,10 +680,6 @@
 		4C4043611783E51400710F2A /* Attractive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Attractive@2x.png"; sourceTree = "<group>"; };
 		4C4043621783E51400710F2A /* Awed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Awed.png; sourceTree = "<group>"; };
 		4C4043631783E51400710F2A /* Awed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Awed@2x.png"; sourceTree = "<group>"; };
-		4C4043641783E51400710F2A /* Skeptical_orig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skeptical_orig.png; sourceTree = "<group>"; };
-		4C4043651783E51400710F2A /* Skeptical_orig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Skeptical_orig@2x.png"; sourceTree = "<group>"; };
-		4C4043661783E51400710F2A /* Amused_old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Amused_old.png; sourceTree = "<group>"; };
-		4C4043671783E51400710F2A /* Amused_old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Amused_old@2x.png"; sourceTree = "<group>"; };
 		4C4043E71783E5CB00710F2A /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		4C4043E81783E5CB00710F2A /* CalendarBlank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarBlank.png; sourceTree = "<group>"; };
 		4C4043E91783E5CB00710F2A /* CalendarBlank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarBlank@2x.png"; sourceTree = "<group>"; };
@@ -917,6 +909,8 @@
 				4C0638A817E45A6D00563FE6 /* Panicked@2x.png */,
 				4C0638A917E45A6D00563FE6 /* Outraged.png */,
 				4C0638AA17E45A6D00563FE6 /* Outraged@2x.png */,
+				4C0638C117E45A6D00563FE6 /* Optimistic.png */,
+				4C0638C217E45A6D00563FE6 /* Optimistic@2x.png */,
 				4C0638AB17E45A6D00563FE6 /* Nervous.png */,
 				4C0638AC17E45A6D00563FE6 /* Nervous@2x.png */,
 				4C0638AD17E45A6D00563FE6 /* Neglected.png */,
@@ -939,8 +933,6 @@
 				4C0638BE17E45A6D00563FE6 /* Lonely@2x.png */,
 				4C0638BF17E45A6D00563FE6 /* Loathing.png */,
 				4C0638C017E45A6D00563FE6 /* Loathing@2x.png */,
-				4C0638C117E45A6D00563FE6 /* Optimistic.png */,
-				4C0638C217E45A6D00563FE6 /* Optimistic@2x.png */,
 				4C0638C317E45A6D00563FE6 /* Likable.png */,
 				4C0638C417E45A6D00563FE6 /* Likable@2x.png */,
 				4C0638C517E45A6D00563FE6 /* Jubilant.png */,
@@ -1129,10 +1121,6 @@
 				4C4043611783E51400710F2A /* Attractive@2x.png */,
 				4C4043621783E51400710F2A /* Awed.png */,
 				4C4043631783E51400710F2A /* Awed@2x.png */,
-				4C4043641783E51400710F2A /* Skeptical_orig.png */,
-				4C4043651783E51400710F2A /* Skeptical_orig@2x.png */,
-				4C4043661783E51400710F2A /* Amused_old.png */,
-				4C4043671783E51400710F2A /* Amused_old@2x.png */,
 			);
 			name = Faces;
 			path = Images/Faces;
@@ -1152,8 +1140,6 @@
 		4C22BBB8181098AD000E178F /* Main Source */ = {
 			isa = PBXGroup;
 			children = (
-				4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */,
-				4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */,
 				4C3E0FB51657122100B0E060 /* Prefs.h */,
 				4C3E0FB61657122100B0E060 /* Prefs.m */,
 				4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */,
@@ -1218,6 +1204,8 @@
 				4CFB21F2164B8D370055CC3D /* MlCalendarViewController.h */,
 				4C92BE0A1798EA7C005DEEC2 /* MlWelcomeScreenViewController.h */,
 				4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */,
+				4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */,
+				4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */,
 			);
 			name = "Main Source";
 			sourceTree = "<group>";
@@ -1225,6 +1213,9 @@
 		4C22BBB9181098BC000E178F /* Core Data Related */ = {
 			isa = PBXGroup;
 			children = (
+				4C55CC06162DE67500EAA878 /* MoodLog.xcdatamodeld */,
+				4C4193EB180B1445007999AA /* MoodLogEvents.h */,
+				4C4193EC180B1445007999AA /* MoodLogEvents.m */,
 				4C47E6A117501E8F0023298F /* Emotions.h */,
 				4C47E6A217501E8F0023298F /* Emotions.m */,
 				4C589C65163200F100428C52 /* Stressors.h */,
@@ -1233,6 +1224,19 @@
 				4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */,
 			);
 			name = "Core Data Related";
+			sourceTree = "<group>";
+		};
+		4C22BBBA18119B17000E178F /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				4C4C53DF1665F14900DDDBA2 /* MoodList.plist */,
+				4C55CBF0162DE67400EAA878 /* MoodLog-Info.plist */,
+				4C55CBF1162DE67400EAA878 /* InfoPlist.strings */,
+				4C22BBB418109873000E178F /* Localizable.strings */,
+				4C55CBF4162DE67500EAA878 /* main.m */,
+				4C55CBF6162DE67500EAA878 /* MoodLog-Prefix.pch */,
+			);
+			name = Infrastructure;
 			sourceTree = "<group>";
 		};
 		4C4043E61783E59F00710F2A /* Images */ = {
@@ -1323,6 +1327,7 @@
 				4C22BBB9181098BC000E178F /* Core Data Related */,
 				4CB8E8EF17C8647700E26857 /* Images.xcassets */,
 				4C55CBEF162DE67400EAA878 /* Supporting Files */,
+				4C22BBBA18119B17000E178F /* Infrastructure */,
 			);
 			path = MoodLog;
 			sourceTree = "<group>";
@@ -1334,15 +1339,6 @@
 				4C65612B17F39E5000F03470 /* ParrottsEmotions.pdf */,
 				4C4043E61783E59F00710F2A /* Images */,
 				4C0C7671164AC84000DD372F /* Faces */,
-				4C55CC06162DE67500EAA878 /* MoodLog.xcdatamodeld */,
-				4C4193EB180B1445007999AA /* MoodLogEvents.h */,
-				4C4193EC180B1445007999AA /* MoodLogEvents.m */,
-				4C4C53DF1665F14900DDDBA2 /* MoodList.plist */,
-				4C55CBF0162DE67400EAA878 /* MoodLog-Info.plist */,
-				4C55CBF1162DE67400EAA878 /* InfoPlist.strings */,
-				4C22BBB418109873000E178F /* Localizable.strings */,
-				4C55CBF4162DE67500EAA878 /* main.m */,
-				4C55CBF6162DE67500EAA878 /* MoodLog-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1712,12 +1708,8 @@
 				4C92BDFF17976284005DEEC2 /* guitar_sound.caf in Resources */,
 				4C4043E01783E51400710F2A /* Awed.png in Resources */,
 				4C4043E11783E51400710F2A /* Awed@2x.png in Resources */,
-				4C4043E21783E51400710F2A /* Skeptical_orig.png in Resources */,
 				4C65612817F280AD00F03470 /* AdditionalStoryboards.storyboard in Resources */,
 				4C06395B17E45A6E00563FE6 /* Ferocious.png in Resources */,
-				4C4043E31783E51400710F2A /* Skeptical_orig@2x.png in Resources */,
-				4C4043E41783E51400710F2A /* Amused_old.png in Resources */,
-				4C4043E51783E51400710F2A /* Amused_old@2x.png in Resources */,
 				4C4043EF1783E5CB00710F2A /* calendar.png in Resources */,
 				4C4043F01783E5CB00710F2A /* CalendarBlank.png in Resources */,
 				4C06392D17E45A6E00563FE6 /* Irritable.png in Resources */,
