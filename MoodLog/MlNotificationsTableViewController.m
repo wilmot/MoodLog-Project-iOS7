@@ -50,6 +50,7 @@ NSUserDefaults *defaults;
         [self.notificationListButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
         [self.clearAllNotificationsButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.clearAllNotificationsButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [self updateRepeatingDateNotifications];
     }
     
 }
@@ -107,18 +108,21 @@ NSUserDefaults *defaults;
 - (IBAction)changeReminder0SwitchState:(id)sender {
     [defaults setBool:self.reminderTime0Switch.on forKey:@"RemindersTime0On"];
     self.reminderTime0Label.enabled = self.reminderTime0Switch.on;
+    [self updateRepeatingDateNotifications];
     [defaults synchronize];
 }
 
 - (IBAction)changeReminder1SwitchState:(id)sender {
     [defaults setBool:self.reminderTime1Switch.on forKey:@"RemindersTime1On"];
     self.reminderTime1Label.enabled = self.reminderTime1Switch.on;
-    [defaults synchronize];
+    [self updateRepeatingDateNotifications];
+   [defaults synchronize];
 }
 
 - (IBAction)changeReminder2SwitchState:(id)sender {
     [defaults setBool:self.reminderTime2Switch.on forKey:@"RemindersTime2On"];
     self.reminderTime2Label.enabled = self.reminderTime2Switch.on;
+    [self updateRepeatingDateNotifications];
     [defaults synchronize];
 }
 
@@ -192,6 +196,39 @@ NSUserDefaults *defaults;
     UILocalNotification *myLocalNotification = [[UILocalNotification alloc] init];
     if (myLocalNotification == nil) return;
     [self setNotificationSeconds:5]; // 5 seconds from now
+}
+
+- (void) removeRepeatingDateNotification: (NSDate *)date {
+    NSLog(@"To do: remove the old repeating notification");
+}
+
+- (void) updateRepeatingDateNotifications {
+    [self pressClearAllNotificationsButton:self];
+    if (self.reminderTime0Switch.on) {
+        [self setRepeatingDateNotification:self.remindersTime0];
+    }
+    if (self.reminderTime1Switch.on) {
+        [self setRepeatingDateNotification:self.remindersTime1];
+    }
+    if (self.reminderTime2Switch.on) {
+        [self setRepeatingDateNotification:self.remindersTime2];
+    }
+}
+
+
+- (void) setRepeatingDateNotification: (NSDate *)date {
+    UILocalNotification *myLocalNotification = [[UILocalNotification alloc] init];
+    if (myLocalNotification == nil) return;
+    myLocalNotification.fireDate = date;
+    myLocalNotification.timeZone = [NSTimeZone localTimeZone];
+    myLocalNotification.repeatInterval = kCFCalendarUnitDay;
+    myLocalNotification.alertBody = NSLocalizedString(@"How are you feeling in this moment?", @"Text of the timer alert");
+    myLocalNotification.alertAction = NSLocalizedString(@"New Mood Log Entry", @"Button text for timer alert");
+    myLocalNotification.soundName = @"guitar_sound.caf";
+    myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
+    NSLog(@"Setting Badge #=%ld, badgeCount: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount, (long)myLocalNotification.applicationIconBadgeNumber);
+    [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
+    [self listScheduledNotifications];
 }
 
 - (void) setNotificationSeconds: (NSTimeInterval)seconds {

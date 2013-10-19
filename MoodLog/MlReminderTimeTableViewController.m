@@ -50,6 +50,25 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    switch ([self.itemNumber integerValue]) {
+        case 0:
+            [self.detailItem setRepeatingDateNotification:self.detailItem.remindersTime0];
+            [self.detailItem removeRepeatingDateNotification:self.detailItem.remindersTime0];
+            break;
+        case 1:
+            [self.detailItem setRepeatingDateNotification:self.detailItem.remindersTime1];
+            [self.detailItem removeRepeatingDateNotification:self.detailItem.remindersTime1];
+           break;
+        case 2:
+            [self.detailItem setRepeatingDateNotification:self.detailItem.remindersTime2];
+            [self.detailItem removeRepeatingDateNotification:self.detailItem.remindersTime2];
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

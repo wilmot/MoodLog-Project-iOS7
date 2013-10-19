@@ -51,4 +51,7 @@
 - (IBAction)setMinutesTimerButton:(id)sender;
 - (IBAction)pressDoneButton:(id)sender;
 - (IBAction)pressAddButton:(id)sender;
+- (void) setRepeatingDateNotification: (NSDate *)date;
+- (void) removeRepeatingDateNotification: (NSDate *)date;
+
 @end
