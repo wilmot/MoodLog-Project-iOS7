@@ -79,16 +79,40 @@
         components.hour = 21;
         components.minute = 30;
         quietStart = [gregorian dateFromComponents: components];
-        [[NSUserDefaults standardUserDefaults] setObject:quietStart forKey:@"DefaultRandomQuietStartTime"];
+        [defaults setObject:quietStart forKey:@"DefaultRandomQuietStartTime"];
         NSDate *quietEnd = [NSDate date];
         components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
         components.hour = 9;
         components.minute = 00;
         quietEnd = [gregorian dateFromComponents: components];
-        [[NSUserDefaults standardUserDefaults] setObject:quietEnd forKey:@"DefaultRandomQuietEndTime"];
+        [defaults setObject:quietEnd forKey:@"DefaultRandomQuietEndTime"];
         [defaults setInteger:20 forKey:@"DefaultDelayMinutes"];
         [defaults setInteger:2 forKey:@"DefaultParrotLevel"];
         [defaults setBool:YES forKey:@"DefaultFacesColorState"];
+
+        NSDate *remindersTime0 = [NSDate date];
+        components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
+        components.hour = 8;
+        components.minute = 00;
+        remindersTime0 = [gregorian dateFromComponents: components];
+       [defaults setBool:NO forKey:@"RemindersTime0On"];
+        [defaults setObject:remindersTime0 forKey:@"RemindersTime0"];
+ 
+        NSDate *remindersTime1 = [NSDate date];
+        components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
+        components.hour = 13;
+        components.minute = 00;
+        remindersTime1 = [gregorian dateFromComponents: components];
+        [defaults setBool:NO forKey:@"RemindersTime1On"];
+        [defaults setObject:remindersTime1 forKey:@"RemindersTime1"];
+
+        NSDate *remindersTime2 = [NSDate date];
+        components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
+        components.hour = 19;
+        components.minute = 00;
+        remindersTime2 = [gregorian dateFromComponents: components];
+        [defaults setBool:NO forKey:@"RemindersTime2On"];
+        [defaults setObject:remindersTime2 forKey:@"RemindersTime2"];
 
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}

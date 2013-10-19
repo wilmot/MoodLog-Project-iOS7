@@ -162,6 +162,7 @@
 		4C0639D217E69DA200563FE6 /* Pitying@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399C17E69DA200563FE6 /* Pitying@2x.png */; };
 		4C0C766C1649F95100DD372F /* MlDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */; };
 		4C22BBB618109873000E178F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C22BBB418109873000E178F /* Localizable.strings */; };
+		4C22BBBD1811FF6C000E178F /* MlReminderTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C22BBBC1811FF6C000E178F /* MlReminderTimeTableViewController.m */; };
 		4C353EE6175BE307000ECE33 /* MlEmailEventCountDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */; };
 		4C353EE8175DE151000ECE33 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C353EE7175DE151000ECE33 /* MessageUI.framework */; };
 		4C3E0FB71657122100B0E060 /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E0FB61657122100B0E060 /* Prefs.m */; };
@@ -551,6 +552,8 @@
 		4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDatePickerViewController.m; sourceTree = "<group>"; };
 		4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 6.xcdatamodel"; sourceTree = "<group>"; };
 		4C22BBB518109873000E178F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MoodLog/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C22BBBB1811FF6C000E178F /* MlReminderTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlReminderTimeTableViewController.h; sourceTree = "<group>"; };
+		4C22BBBC1811FF6C000E178F /* MlReminderTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlReminderTimeTableViewController.m; sourceTree = "<group>"; };
 		4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlEmailEventCountDrawing.h; sourceTree = "<group>"; };
 		4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlEmailEventCountDrawing.m; sourceTree = "<group>"; };
 		4C353EE7175DE151000ECE33 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1190,6 +1193,8 @@
 				4C4AC9461795F2FA004DA98E /* MlRemindersViewController.m */,
 				4C4AC93F1794B3AE004DA98E /* MlNotificationsTableViewController.h */,
 				4C4AC9401794B3AE004DA98E /* MlNotificationsTableViewController.m */,
+				4C22BBBB1811FF6C000E178F /* MlReminderTimeTableViewController.h */,
+				4C22BBBC1811FF6C000E178F /* MlReminderTimeTableViewController.m */,
 				4C92BE6A179E5D6B005DEEC2 /* MlQuietHoursTableViewController.h */,
 				4C92BE6B179E5D6C005DEEC2 /* MlQuietHoursTableViewController.m */,
 				4CFB21EF164B8C870055CC3D /* MlMailViewController.h */,
@@ -1795,6 +1800,7 @@
 				4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */,
 				4CFC9E391809E789008DDAF0 /* MlSlidersViewController.m in Sources */,
 				4C9730F916307B6C00E1D0B9 /* MlMoodCollectionViewController.m in Sources */,
+				4C22BBBD1811FF6C000E178F /* MlReminderTimeTableViewController.m in Sources */,
 				4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */,
 				4C589C67163200F100428C52 /* Stressors.m in Sources */,
 				4C0C766C1649F95100DD372F /* MlDatePickerViewController.m in Sources */,

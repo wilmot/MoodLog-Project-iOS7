@@ -9,6 +9,7 @@
 #import "MlNotificationsTableViewController.h"
 #import "MlAppDelegate.h"
 #import "MlQuietHoursTableViewController.h"
+#import "MlReminderTimeTableViewController.h"
 #import "Prefs.h"
 
 @interface MlNotificationsTableViewController ()
@@ -16,6 +17,8 @@
 @end
 
 @implementation MlNotificationsTableViewController
+
+NSUserDefaults *defaults;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    defaults = [NSUserDefaults standardUserDefaults];
 	// Do any additional setup after loading the view.
     if (self.theNumber == 0) {
         self.theNumber = 1;
@@ -51,12 +55,25 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [self.reminderSwitch setOn:[defaults boolForKey:@"DefaultRandomRemindersOn"]];
-    
-    self.quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
     dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
+
+    self.remindersTime0 = (NSDate *)[defaults objectForKey:@"RemindersTime0"];
+    self.remindersTime1 = (NSDate *)[defaults objectForKey:@"RemindersTime1"];
+    self.remindersTime2 = (NSDate *)[defaults objectForKey:@"RemindersTime2"];
+    self.reminderTime0Switch.on = [defaults boolForKey:@"RemindersTime0On"];
+    self.reminderTime0Label.text = [dateFormatter stringFromDate: self.remindersTime0];
+    self.reminderTime0Label.enabled = self.reminderTime0Switch.on;
+    self.reminderTime1Switch.on = [defaults boolForKey:@"RemindersTime1On"];
+    self.reminderTime1Label.text = [dateFormatter stringFromDate: self.remindersTime1];
+    self.reminderTime1Label.enabled = self.reminderTime1Switch.on;
+    self.reminderTime2Switch.on = [defaults boolForKey:@"RemindersTime2On"];
+    self.reminderTime2Label.text = [dateFormatter stringFromDate: self.remindersTime2];
+    self.reminderTime2Label.enabled = self.reminderTime2Switch.on;
+    
+    self.randomReminderSwitch.on = [defaults boolForKey:@"DefaultRandomRemindersOn"];
+    self.quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
     NSString *quietStartString = [dateFormatter stringFromDate: self.quietStart];
     
     self.quietEnd = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietEndTime"];
@@ -75,7 +92,7 @@
     [self setReminderMinutesLabelText];
     
     // Set the background for any states you plan to use
-    [self setStateOfRemindersUI:self.reminderSwitch.on];
+    [self setStateOfRandomRemindersUI:self.randomReminderSwitch.on];
     
     [self listScheduledNotifications];
     [self.tableView reloadData];
@@ -87,15 +104,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)changeReminderSwitchState:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:self.reminderSwitch.on forKey:@"DefaultRandomRemindersOn"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    [self setStateOfRemindersUI:self.reminderSwitch.on];
+- (IBAction)changeReminder0SwitchState:(id)sender {
+    [defaults setBool:self.reminderTime0Switch.on forKey:@"RemindersTime0On"];
+    self.reminderTime0Label.enabled = self.reminderTime0Switch.on;
+    [defaults synchronize];
+}
 
+- (IBAction)changeReminder1SwitchState:(id)sender {
+    [defaults setBool:self.reminderTime1Switch.on forKey:@"RemindersTime1On"];
+    self.reminderTime1Label.enabled = self.reminderTime1Switch.on;
+    [defaults synchronize];
+}
+
+- (IBAction)changeReminder2SwitchState:(id)sender {
+    [defaults setBool:self.reminderTime2Switch.on forKey:@"RemindersTime2On"];
+    self.reminderTime2Label.enabled = self.reminderTime2Switch.on;
+    [defaults synchronize];
+}
+
+- (IBAction)changeRandomReminderSwitchState:(id)sender {
+    [defaults setBool:self.randomReminderSwitch.on forKey:@"DefaultRandomRemindersOn"];
+    [defaults synchronize];
+    [self setStateOfRandomRemindersUI:self.randomReminderSwitch.on];
 }
 
 - (void) setStateOfRemindersUI: (BOOL) state {
+    self.reminderTime0Label.enabled = state;
+}
+
+
+- (void) setStateOfRandomRemindersUI: (BOOL) state {
     self.reminderInitialText.enabled = state;
     self.reminderMinutesCount.enabled = state;
     self.timesPerDayText.enabled = state;
@@ -107,9 +145,8 @@
 - (IBAction)incrementReminders:(id)sender {
     self.reminderCount.text = [NSString stringWithFormat:@"%d",(int)round(self.reminderStepper.value)];
     [self setReminderTimesPerDayLabelText];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.reminderStepper.value forKey:@"DefaultRandomTimesPerDay"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [defaults synchronize];
 }
 
 - (void)setReminderTimesPerDayLabelText {
@@ -124,9 +161,8 @@
 - (IBAction)incrementMinuteStepper:(id)sender {
     self.reminderMinutesCount.text = [NSString stringWithFormat:@"%d",(int)round(self.reminderMinutesStepper.value)];
     [self setReminderMinutesLabelText];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.reminderMinutesStepper.value forKey:@"DefaultDelayMinutes"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [defaults synchronize];
 }
 
 - (void)setReminderMinutesLabelText {
@@ -140,6 +176,11 @@
 
 - (IBAction)pressDoneButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)pressAddButton:(id)sender {
+    // Add a row allowing user to set a time for an alarm, along with an on|off switch
+    NSLog(@"Add button pressed");
 }
 
 
@@ -198,6 +239,21 @@
     if ([[segue identifier] isEqualToString:@"quietHoursSegue"]) {
         MlQuietHoursTableViewController *myQuietHoursController = [segue destinationViewController];
         myQuietHoursController.detailItem = self;
+    }
+    else if ([[segue identifier] isEqualToString:@"reminderTime0"]) {
+        MlReminderTimeTableViewController *myRemindersTime0Controller = [segue destinationViewController];
+        myRemindersTime0Controller.detailItem = self;
+        myRemindersTime0Controller.itemNumber = [NSNumber numberWithInt:0];
+    }
+    else if ([[segue identifier] isEqualToString:@"reminderTime1"]) {
+        MlReminderTimeTableViewController *myRemindersTime1Controller = [segue destinationViewController];
+        myRemindersTime1Controller.detailItem = self;
+        myRemindersTime1Controller.itemNumber = [NSNumber numberWithInt:1];
+    }
+    else if ([[segue identifier] isEqualToString:@"reminderTime2"]) {
+        MlReminderTimeTableViewController *myRemindersTime2Controller = [segue destinationViewController];
+        myRemindersTime2Controller.detailItem = self;
+        myRemindersTime2Controller.itemNumber = [NSNumber numberWithInt:2];
     }
 }
 
