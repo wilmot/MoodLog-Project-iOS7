@@ -17,7 +17,7 @@
 
 @implementation MlWelcomePageViewController
 
-int numberOfPages = 4;
+int numberOfPages = 5;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
