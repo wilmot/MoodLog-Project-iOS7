@@ -79,6 +79,33 @@ NSUserDefaults *defaults;
         today = [object valueForKey:@"date"];
         dateFormatter.dateFormat = NSLocalizedString(@"MM/dd/YY", @"MM/dd/YY format");
         self.endDateLabel.text = [dateFormatter stringFromDate: today];
+
+        // Position the sliders and highlight the buttons
+        defaults = [NSUserDefaults standardUserDefaults];
+        self.startSlider.value = [defaults floatForKey:@"DefaultMailStartValue"];
+        self.endSlider.value = [defaults floatForKey:@"DefaultMailEndValue"];
+        self.recipientList.text = [defaults stringForKey:@"DefaultRecipientList"];
+        
+        if ([defaults boolForKey:@"MailSliderPinnedToNewest"] == YES) {
+            self.endSlider.value = self.endSlider.maximumValue;
+        }
+        if ([defaults boolForKey:@"MailLatestButtonOn"]) {
+            self.latestButton.selected = YES;
+            [self pressLatestButton:self];
+        }
+        else if ([defaults boolForKey:@"Mail7DayButtonOn"]) {
+            self.weekButton.selected = YES;
+            [self pressWeekButton:self];
+        }
+        else if ([defaults boolForKey:@"Mail30DayButtonOn"]) {
+            self.monthButton.selected = YES;
+            [self pressMonthButton:self];
+        }
+        else if ([defaults boolForKey:@"MailAllButtonOn"]) {
+            self.allButton.selected = YES;
+            [self pressAllButton:self];
+        }
+        [self updateDateRangeDrawing];
     }
     else {
         [self.startSlider setMinimumValue:0];
@@ -90,28 +117,6 @@ NSUserDefaults *defaults;
 
         }
     }
-    defaults = [NSUserDefaults standardUserDefaults];
-    self.startSlider.value = [defaults floatForKey:@"DefaultMailStartValue"];
-    self.endSlider.value = [defaults floatForKey:@"DefaultMailEndValue"];
-    self.recipientList.text = [defaults stringForKey:@"DefaultRecipientList"];
-    
-    if ([defaults boolForKey:@"MailSliderPinnedToNewest"] == YES) {
-        self.endSlider.value = self.endSlider.maximumValue;
-    }
-    if ([defaults boolForKey:@"MailLatestButtonOn"]) {
-        self.latestButton.selected = YES;
-    }
-    else if ([defaults boolForKey:@"Mail7DayButtonOn"]) {
-        self.weekButton.selected = YES;
-    }
-    else if ([defaults boolForKey:@"Mail30DayButtonOn"]) {
-        self.monthButton.selected = YES;
-    }
-    else if ([defaults boolForKey:@"MailAllButtonOn"]) {
-        self.allButton.selected = YES;
-    }
-    
-    [self updateDateRangeDrawing];
 }
 
 
@@ -147,7 +152,7 @@ NSUserDefaults *defaults;
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
     [self saveSliderState];
-    [self setButtonHighlighting:sender];
+    [self setButtonHighlighting:self.allButton];
 }
 
 - (IBAction)pressMonthButton:(id)sender {
@@ -170,7 +175,7 @@ NSUserDefaults *defaults;
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
     [self saveSliderState];
-    [self setButtonHighlighting:sender];
+    [self setButtonHighlighting:self.monthButton];
 }
 
 - (IBAction)pressWeekButton:(id)sender {
@@ -195,7 +200,7 @@ NSUserDefaults *defaults;
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
     [self saveSliderState];
-    [self setButtonHighlighting:sender];
+    [self setButtonHighlighting:self.weekButton];
 }
 
 - (IBAction)pressLatestButton:(id)sender {
@@ -203,7 +208,7 @@ NSUserDefaults *defaults;
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
     [self saveSliderState];
-    [self setButtonHighlighting:sender];
+    [self setButtonHighlighting:self.latestButton];
 }
 
 - (void) setButtonHighlighting: (UIButton *)button {
@@ -278,7 +283,7 @@ NSUserDefaults *defaults;
                 [selectedEms appendFormat:@"%@ ", ((Emotions *)emotion).name ];
             }
             if ([emotionArray count] == 0) {
-                [bodyText appendFormat:@"<blockquote>None chosen</blockquote>"];
+                [bodyText appendFormat:@"None chosen"];
             }
             [bodyText appendFormat:@"%@</blockquote>",selectedEms];
             

@@ -986,6 +986,48 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
             </objects>
             <point key="canvasLocation" x="-1473" y="1063"/>
         </scene>
+        <!--Ml Welcome Screen View Controller-->
+        <scene sceneID="rH4-Ju-t9O">
+            <objects>
+                <viewController storyboardIdentifier="welcomeScreenPage4" id="B06-do-aeF" customClass="MlWelcomeScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Abu-dp-G9f"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Yn-er-lfq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VHx-3Y-DnA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nOy-0d-Su3">
+                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Software License">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nOy-0d-Su3" firstAttribute="top" secondItem="Abu-dp-G9f" secondAttribute="bottom" constant="2" id="KKq-Eh-M8f"/>
+                            <constraint firstItem="4Yn-er-lfq" firstAttribute="top" secondItem="nOy-0d-Su3" secondAttribute="bottom" id="WPn-FK-umw"/>
+                            <constraint firstAttribute="trailing" secondItem="nOy-0d-Su3" secondAttribute="trailing" id="paC-fL-9od"/>
+                            <constraint firstItem="nOy-0d-Su3" firstAttribute="leading" secondItem="VHx-3Y-DnA" secondAttribute="leading" id="sze-Ve-f0c"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSr-rV-pgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-635" y="322"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ParrotsEmotions.png" width="850" height="1684"/>

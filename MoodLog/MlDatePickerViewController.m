@@ -30,6 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.datePicker setDate:self.dateToSet animated:YES];
+    [self.datePicker setMaximumDate:self.dateToSet];
 }
 
 - (void)didReceiveMemoryWarning

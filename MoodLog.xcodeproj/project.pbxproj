@@ -714,7 +714,7 @@
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
 		4C52861616D9A654007C878C /* MlChartDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartDrawingView.h; sourceTree = "<group>"; };
 		4C52861716D9A654007C878C /* MlChartDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartDrawingView.m; sourceTree = "<group>"; };
-		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55CBE2162DE67400EAA878 /* MoodLog T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoodLog T.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1304,7 +1304,7 @@
 		4C55CBE3162DE67400EAA878 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C55CBE2162DE67400EAA878 /* MoodLog.app */,
+				4C55CBE2162DE67400EAA878 /* MoodLog T.app */,
 				4C8BB41317ECEC2000754252 /* MoodLog_Tests.xctest */,
 			);
 			name = Products;
@@ -1385,7 +1385,7 @@
 			);
 			name = MoodLog;
 			productName = MoodLog;
-			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog.app */;
+			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog T.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4C8BB41217ECEC2000754252 /* MoodLog_Tests */ = {
@@ -1978,7 +1978,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) T";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1999,7 +1999,7 @@
 				GCC_PREFIX_HEADER = "MoodLog/MoodLog-Prefix.pch";
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME) T";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
