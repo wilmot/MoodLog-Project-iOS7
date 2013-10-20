@@ -103,9 +103,9 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
             if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // if iOS 7 or later
-                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\nCategories", @"\n\nCategories") attributes:attrsDictionary];
+                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\nCategories:", @"Categories - iOS 7") attributes:attrsDictionary];
             } else { // iOS 6
-                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Categories", @"Categories") attributes:attrsDictionary];
+                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\nCategories:", @"Categories - iOS 6") attributes:attrsDictionary];
             }
             [summaryAttributedString appendAttributedString:summaryLine];
             
@@ -160,7 +160,12 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
         // Categories
         font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
         attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-        summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\nBars:", @"\n\nBars:") attributes:attrsDictionary];
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // if iOS 7 or later
+            summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\nFactors:", @"Factors: - iOS 7") attributes:attrsDictionary];
+        }
+        else {
+            summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\nFactors:", @"Factors: - iOS 6") attributes:attrsDictionary];
+        }
         [summaryAttributedString appendAttributedString:summaryLine];
 
         NSIndexPath *itemIndexPath;
@@ -202,7 +207,12 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             // Categories
             font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
-            summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\n\n\n\n\n\n\n\n\n\nMost Common Emotions", @"\n\n\n\n\n\n\n\n\n\n\nMost Common Emotions") attributes:attrsDictionary];
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // if iOS 7 or later
+                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\n\n\n\n\n\n\n\n\n\nMost Common Emotions:", @"Most Common Emotions: - iOS 7") attributes:attrsDictionary];
+            }
+            else {
+                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\n\n\n\n\n\n\n\nMost Common Emotions:", @"Most Common Emotions: - iOS 6") attributes:attrsDictionary];
+            }
             [summaryAttributedString appendAttributedString:summaryLine];
             
             // Set up font for body text
