@@ -56,7 +56,7 @@
     
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    id testObject = [defaults objectForKey:@"DefaultFacesColorState"]; // always test the newest default
+    id testObject = [defaults objectForKey:@"RemindersTime2"]; // always test the newest default
 	if (testObject == nil) {
         [defaults setInteger:0 forKey:@"ChartSegmentState"];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -95,7 +95,7 @@
         components.hour = 8;
         components.minute = 00;
         remindersTime0 = [gregorian dateFromComponents: components];
-       [defaults setBool:NO forKey:@"RemindersTime0On"];
+        [defaults setBool:NO forKey:@"RemindersTime0On"];
         [defaults setObject:remindersTime0 forKey:@"RemindersTime0"];
  
         NSDate *remindersTime1 = [NSDate date];

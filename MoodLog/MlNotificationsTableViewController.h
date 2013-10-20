@@ -52,6 +52,7 @@
 - (IBAction)pressDoneButton:(id)sender;
 - (IBAction)pressAddButton:(id)sender;
 - (void) setRepeatingDateNotification: (NSDate *)date;
-- (void) removeRepeatingDateNotification: (NSDate *)date;
+- (void) updateRepeatingDateNotifications;
+- (void)cancelNotificationMatchingTime: (NSDate *)date;
 
 @end

@@ -14,6 +14,8 @@
 
 @implementation MlReminderTimeTableViewController
 
+NSDate *initialDate;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -48,21 +50,25 @@
         default:
             break;
     }
+    initialDate = [self.timePicker date];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     switch ([self.itemNumber integerValue]) {
         case 0:
             [self.detailItem setRepeatingDateNotification:self.detailItem.remindersTime0];
-            [self.detailItem removeRepeatingDateNotification:self.detailItem.remindersTime0];
+            [self.detailItem cancelNotificationMatchingTime:initialDate];
+            [self.detailItem updateRepeatingDateNotifications];
             break;
         case 1:
             [self.detailItem setRepeatingDateNotification:self.detailItem.remindersTime1];
-            [self.detailItem removeRepeatingDateNotification:self.detailItem.remindersTime1];
+            [self.detailItem cancelNotificationMatchingTime:initialDate];
+            [self.detailItem updateRepeatingDateNotifications];
            break;
         case 2:
             [self.detailItem setRepeatingDateNotification:self.detailItem.remindersTime2];
-            [self.detailItem removeRepeatingDateNotification:self.detailItem.remindersTime2];
+            [self.detailItem cancelNotificationMatchingTime:initialDate];
+            [self.detailItem updateRepeatingDateNotifications];
             break;
         default:
             break;

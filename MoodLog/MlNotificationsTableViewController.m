@@ -19,6 +19,7 @@
 @implementation MlNotificationsTableViewController
 
 NSUserDefaults *defaults;
+BOOL debugging;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,6 +54,9 @@ NSUserDefaults *defaults;
         [self updateRepeatingDateNotifications];
     }
     
+    debugging = [  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Debugging"] integerValue];
+    
+    NSLog(@"Debugging? %hhd",debugging);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -116,7 +120,7 @@ NSUserDefaults *defaults;
     [defaults setBool:self.reminderTime1Switch.on forKey:@"RemindersTime1On"];
     self.reminderTime1Label.enabled = self.reminderTime1Switch.on;
     [self updateRepeatingDateNotifications];
-   [defaults synchronize];
+    [defaults synchronize];
 }
 
 - (IBAction)changeReminder2SwitchState:(id)sender {
@@ -131,11 +135,6 @@ NSUserDefaults *defaults;
     [defaults synchronize];
     [self setStateOfRandomRemindersUI:self.randomReminderSwitch.on];
 }
-
-- (void) setStateOfRemindersUI: (BOOL) state {
-    self.reminderTime0Label.enabled = state;
-}
-
 
 - (void) setStateOfRandomRemindersUI: (BOOL) state {
     self.reminderInitialText.enabled = state;
@@ -203,15 +202,28 @@ NSUserDefaults *defaults;
 }
 
 - (void) updateRepeatingDateNotifications {
-    [self pressClearAllNotificationsButton:self];
     if (self.reminderTime0Switch.on) {
+        [self cancelNotificationMatchingTime: self.remindersTime0];
         [self setRepeatingDateNotification:self.remindersTime0];
     }
+    else {
+        [self cancelNotificationMatchingTime: self.remindersTime0];
+    }
+    
     if (self.reminderTime1Switch.on) {
+        [self cancelNotificationMatchingTime: self.remindersTime1];
         [self setRepeatingDateNotification:self.remindersTime1];
     }
+    else {
+        [self cancelNotificationMatchingTime: self.remindersTime1];
+    }
+    
     if (self.reminderTime2Switch.on) {
+        [self cancelNotificationMatchingTime: self.remindersTime2];
         [self setRepeatingDateNotification:self.remindersTime2];
+    }
+    else {
+        [self cancelNotificationMatchingTime: self.remindersTime2];
     }
 }
 
@@ -225,7 +237,8 @@ NSUserDefaults *defaults;
     myLocalNotification.alertBody = NSLocalizedString(@"How are you feeling in this moment?", @"Text of the timer alert");
     myLocalNotification.alertAction = NSLocalizedString(@"New Mood Log Entry", @"Button text for timer alert");
     myLocalNotification.soundName = @"guitar_sound.caf";
-    myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
+    ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 1;
+    myLocalNotification.applicationIconBadgeNumber = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
     NSLog(@"Setting Badge #=%ld, badgeCount: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount, (long)myLocalNotification.applicationIconBadgeNumber);
     [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
     [self listScheduledNotifications];
@@ -252,6 +265,26 @@ NSUserDefaults *defaults;
 
 - (IBAction)pressClearAllNotificationsButton:(id)sender {
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [self listScheduledNotifications];
+}
+
+- (void)cancelNotificationMatchingTime: (NSDate *)date {
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = NSLocalizedString(@"h:mm:ss a V", @"h:mm:ss a V date format");
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    if (notifications.count > 0) {
+        for (UILocalNotification *item in notifications) {
+            NSString *notificationDateString = [dateFormatter stringFromDate:[item fireDate]];
+            if (([item repeatInterval]==kCFCalendarUnitDay) && [dateString isEqualToString:notificationDateString]) {
+                NSLog(@"Matching Notification: %@", item);
+                [[UIApplication sharedApplication] cancelLocalNotification:item];
+            }
+        }
+    }
+    else {
+        self.scheduledNotificationsList.text = NSLocalizedString(@"No reminders scheduled", @"This string used for debugging");
+    }
     [self listScheduledNotifications];
 }
 
@@ -292,6 +325,39 @@ NSUserDefaults *defaults;
         myRemindersTime2Controller.detailItem = self;
         myRemindersTime2Controller.itemNumber = [NSNumber numberWithInt:2];
     }
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    NSUInteger sections = 1;
+    if (debugging) {
+        sections = 4;
+    }
+    return sections;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSUInteger rows = 0;
+    switch (section) {
+        case 0:
+            rows = 3;
+            break;
+        case 1:
+            rows = 1;
+            break;
+        case 2:
+            rows = 1;
+            break;
+        case 3:
+            rows = 2;
+            break;
+        default:
+            break;
+    }
+    return rows;
 }
 
 @end
