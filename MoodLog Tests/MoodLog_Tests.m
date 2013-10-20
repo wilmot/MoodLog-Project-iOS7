@@ -81,10 +81,12 @@
         
         // NSLog(@"New Mood: %@",newMoodLogEntry);
         [newMoodLogEntry setJournalEntry:[NSString stringWithFormat:@"TEST %d, test data generated automatically", i]];
-        [newMoodLogEntry setOverall:[NSNumber numberWithInt:10]];
-        [newMoodLogEntry setSleep:[NSNumber numberWithInt:8]];
-        [newMoodLogEntry setEnergy:[NSNumber numberWithInt:6]];
-        [newMoodLogEntry setHealth:[NSNumber numberWithInt:4]];
+        [newMoodLogEntry setOverall:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setStress:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setEnergy:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setThoughts:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setHealth:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setSleep:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
         emotionArray = [delegate.emotionsFromPList copy];
         randomNumberOfEmotions = (arc4random()%8);
         for (int j=0; j < randomNumberOfEmotions; j++) {
@@ -139,10 +141,12 @@
         
         // NSLog(@"New Mood: %@",newMoodLogEntry);
         [newMoodLogEntry setJournalEntry:[NSString stringWithFormat:@"TEST %d, test data generated automatically", i]];
-        [newMoodLogEntry setOverall:[NSNumber numberWithInt:10]];
-        [newMoodLogEntry setSleep:[NSNumber numberWithInt:8]];
-        [newMoodLogEntry setEnergy:[NSNumber numberWithInt:6]];
-        [newMoodLogEntry setHealth:[NSNumber numberWithInt:4]];
+        [newMoodLogEntry setOverall:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setStress:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setEnergy:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setThoughts:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setHealth:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
+        [newMoodLogEntry setSleep:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
         emotionArray = [delegate.emotionsFromPList copy];
         randomNumberOfEmotions = (arc4random()%100);
         for (int j=0; j < randomNumberOfEmotions; j++) {

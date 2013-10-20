@@ -189,7 +189,7 @@ NSUserDefaults *defaults;
          //[NSArray arrayWithObject:self.recipientList.text]];
         [controller setSubject:[NSString stringWithFormat:@"Mood Logs for %@ (%@)",self.dateRangeLabel.text, self.eventCount.text]];
  
-        NSMutableString *bodyText = [NSMutableString stringWithFormat:@"<b>%@</b><br>%@<br><br><font size=-2>",self.dateRangeLabel.text, self.eventCount.text];
+        NSMutableString *bodyText = [NSMutableString stringWithFormat:@"<b>%@</b><br><i>%@</i><br><br><font size=-2>",self.dateRangeLabel.text, self.eventCount.text];
         // loop through the records
         
         int startValue = (int)roundl(self.startSlider.value);
@@ -206,20 +206,34 @@ NSUserDefaults *defaults;
             object = [self.fetchedResultsController objectAtIndexPath:indexPath];
             today = [object valueForKey:@"date"];
             theDate = [dateFormatter stringFromDate: today];
-            [bodyText appendFormat:@"<b>%@:</b><br>", theDate];
+            [bodyText appendFormat:@"<b>%@</b><br>", theDate];
+            [bodyText appendFormat:@"<blockquote>"];
             entry = [object valueForKey:@"journalEntry"];
             if (entry) {
-                [bodyText appendFormat:NSLocalizedString(@"Journal Entry: %@<br>Emotions:<br>", @"Journal Entry preface in email"),entry];
+                [bodyText appendFormat:NSLocalizedString(@"<b>Journal Entry</b>:<br><blockquote>%@</blockquote><b>Emotions</b>:<br><blockquote>", @"Journal Entry preface in email"),entry];
             }
             NSSet *emotionsforEntry = object.relationshipEmotions; // Get all the emotions for this record
             NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
             NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
             NSMutableString *selectedEms = [[NSMutableString alloc] init];
             for (id emotion in emotionArray) {
-                //[selectedEms appendFormat:@"%@ ", [((Emotions *)emotion).name lowercaseString]];
                 [selectedEms appendFormat:@"%@ ", ((Emotions *)emotion).name ];
             }
-            [bodyText appendFormat:@"%@<br><br>",selectedEms];
+            if ([emotionArray count] == 0) {
+                [bodyText appendFormat:@"<blockquote>None chosen</blockquote>"];
+            }
+            [bodyText appendFormat:@"%@</blockquote>",selectedEms];
+            
+            // Get the additional factors
+            [bodyText appendFormat:@"<b>Factors</b>:<br><blockquote>"];
+            [bodyText appendFormat:@"     Mood: %ld<br>",(long)[object.overall integerValue]];
+            [bodyText appendFormat:@"     Stress: %ld<br>",(long)[object.stress integerValue]];
+            [bodyText appendFormat:@"     Energy: %ld<br>",(long)[object.energy integerValue]];
+            [bodyText appendFormat:@"     Thoughts: %ld<br>",(long)[object.thoughts integerValue]];
+            [bodyText appendFormat:@"     Health: %ld<br>",(long)[object.health integerValue]];
+            [bodyText appendFormat:@"     Sleep: %ld<br>",(long)[object.sleep integerValue]];
+            [bodyText appendFormat:@"</blockquote><br>"];
+            [bodyText appendFormat:@"</blockquote>"];
        }
 
         [controller setMessageBody:bodyText isHTML:YES];
