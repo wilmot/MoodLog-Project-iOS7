@@ -152,7 +152,6 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    NSLog(@"App has been backgrounded. Badge #=%ld, badgeCount=%ld, will be set to zero",(long)[UIApplication sharedApplication].applicationIconBadgeNumber, (long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 0;
     [self saveContext]; // Save data
@@ -161,7 +160,6 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    NSLog(@"App will enter foreground. Badge #=%ld, badgeCount=%ld, will be set to zero",(long)[UIApplication sharedApplication].applicationIconBadgeNumber, (long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 0;
 }
@@ -179,7 +177,6 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    NSLog(@"App received a didReceiveLocalNotification. Badge #=%ld, badgeCount=%ld. Setting them to zero.",(long)[UIApplication sharedApplication].applicationIconBadgeNumber,(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount);
 //    if (((long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount) > 0) {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Mood Log", @"Application Title")
                                                         message:NSLocalizedString(@"Create a new entry to record your current mood.", @"Text to show in the reminder notification")
@@ -197,13 +194,13 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL randomRemindersOn = [defaults boolForKey:@"DefaultRandomRemindersOn"];
     if (randomRemindersOn) {
-        NSDate *quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
-        NSDate *quietEnd = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietEndTime"];
-        NSInteger timesPerDay = [defaults integerForKey:@"DefaultRandomTimesPerDay"];
-        NSLog(@"Times/Day: %ld, Quiet Time Starts: %@, Ends: %@",(long)timesPerDay, quietStart, quietEnd);
+        // TODO: Implement random reminders
+//        NSDate *quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
+//        NSDate *quietEnd = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietEndTime"];
+//        NSInteger timesPerDay = [defaults integerForKey:@"DefaultRandomTimesPerDay"];
     }
     else {
-        NSLog(@"Random reminders are off");
+        // Nothing
     }
 
 }
@@ -217,7 +214,7 @@
              // Replace this implementation with code to handle the error appropriately.
             // TODO: Remove the aborts()
              // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
             abort();
         } 
     }
@@ -289,7 +286,7 @@
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
          
          */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
         abort();
     }    
     

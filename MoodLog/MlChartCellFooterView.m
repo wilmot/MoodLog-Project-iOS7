@@ -11,7 +11,6 @@
 @implementation MlChartCellFooterView
 
 - (void)setBounds:(CGRect)bounds {
-    NSLog(@"Chart cell view: %@", NSStringFromCGRect(bounds));
     [super setBounds:bounds];
 }
 

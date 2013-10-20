@@ -89,7 +89,7 @@
         // Replace this implementation with code to handle the error appropriately.
         // TODO: Remove the aborts()
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
         abort();
     }
 }

@@ -25,11 +25,6 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
     return self;
 }
 
-//- (void)setBounds:(CGRect)bounds {
-//    NSLog(@"Chart drawing view: %@", NSStringFromCGRect(bounds));
-//    [super setBounds:bounds];
-//}
-
 -(void) drawRect:(CGRect)rect{
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();

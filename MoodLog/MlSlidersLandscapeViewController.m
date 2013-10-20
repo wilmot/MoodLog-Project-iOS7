@@ -49,7 +49,6 @@
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    NSLog(@"Called preferredInterfaceOrientationForPresentation");
     return (UIInterfaceOrientationLandscapeLeft & UIInterfaceOrientationLandscapeRight);
 }
 

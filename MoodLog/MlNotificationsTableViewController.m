@@ -56,7 +56,6 @@ BOOL debugging;
     
     debugging = [  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Debugging"] integerValue];
     
-    NSLog(@"Debugging? %hhd",debugging);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -183,7 +182,7 @@ BOOL debugging;
 
 - (IBAction)pressAddButton:(id)sender {
     // Add a row allowing user to set a time for an alarm, along with an on|off switch
-    NSLog(@"Add button pressed");
+    // Not implemented in 1.0
 }
 
 
@@ -195,10 +194,6 @@ BOOL debugging;
     UILocalNotification *myLocalNotification = [[UILocalNotification alloc] init];
     if (myLocalNotification == nil) return;
     [self setNotificationSeconds:5]; // 5 seconds from now
-}
-
-- (void) removeRepeatingDateNotification: (NSDate *)date {
-    NSLog(@"To do: remove the old repeating notification");
 }
 
 - (void) updateRepeatingDateNotifications {
@@ -239,7 +234,6 @@ BOOL debugging;
     myLocalNotification.soundName = @"guitar_sound.caf";
     ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 1;
     myLocalNotification.applicationIconBadgeNumber = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
-    NSLog(@"Setting Badge #=%ld, badgeCount: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount, (long)myLocalNotification.applicationIconBadgeNumber);
     [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
     [self listScheduledNotifications];
 }
@@ -254,7 +248,6 @@ BOOL debugging;
     myLocalNotification.alertAction = NSLocalizedString(@"New Mood Log Entry", @"Button text for timer alert");
     myLocalNotification.soundName = @"guitar_sound.caf";
     myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
-    NSLog(@"Setting Badge #=%ld, badgeCount: %ld",(long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount, (long)myLocalNotification.applicationIconBadgeNumber);
     [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];
     [self listScheduledNotifications];
 }
@@ -277,7 +270,6 @@ BOOL debugging;
         for (UILocalNotification *item in notifications) {
             NSString *notificationDateString = [dateFormatter stringFromDate:[item fireDate]];
             if (([item repeatInterval]==kCFCalendarUnitDay) && [dateString isEqualToString:notificationDateString]) {
-                NSLog(@"Matching Notification: %@", item);
                 [[UIApplication sharedApplication] cancelLocalNotification:item];
             }
         }

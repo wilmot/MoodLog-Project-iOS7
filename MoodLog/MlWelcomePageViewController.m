@@ -92,11 +92,6 @@ int numberOfPages = 5;
     return 0;
 }
 
-//- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
-//    NSLog(@"Transition completed? %d",completed);
-//}
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

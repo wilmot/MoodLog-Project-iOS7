@@ -55,7 +55,7 @@ static CGFloat CELL_HEIGHT;
     NSArray *emotionsFromPList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionsFromPList;
     NSDateComponents *components;
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSLog(@"Running the updateOldRecords method. Turn this off after you've run it on your data.");
+    NSLog(@"Debugging: Running the updateOldRecords method. Turn this off after you've run it on your data.");
     int i = 0;
     for (MoodLogEvents *object in [[self fetchedResultsController] fetchedObjects]) {
         NSSet *emotions = object.relationshipEmotions;
@@ -74,17 +74,17 @@ static CGFloat CELL_HEIGHT;
         components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:object.date];
         object.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
         if (i++%10 == 0) {
-            NSLog(@"Saving records...");
+            NSLog(@"Debugging: Saving records...");
             [self saveContext];
         }
     }
     [self saveContext];
-    NSLog(@"Updated all records.");
+    NSLog(@"Debugging: Updated all records.");
 }
 
 - (void) deleteUnselectedEmotionsFromOldRecords {
     NSArray *emotionsFromPList = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).emotionsFromPList;
-    NSLog(@"Running the deleteUnselectedEmotionsFromOldRecords method. Turn this off after you've run it on your data.");
+    NSLog(@"Debugging: Running the deleteUnselectedEmotionsFromOldRecords method. Turn this off after you've run it on your data.");
     int i = 0;
     for (MoodLogEvents *object in [[self fetchedResultsController] fetchedObjects]) {
         NSSet *originalEmotions = object.relationshipEmotions;
@@ -101,38 +101,33 @@ static CGFloat CELL_HEIGHT;
         [object removeRelationshipEmotions:originalEmotions]; // Clear out the big set
         [object addRelationshipEmotions:newEmotions]; // Install the little set
         if (i++%10 == 0) {
-            NSLog(@"Saving records...");
+            NSLog(@"Debugging: Saving records...");
             [self saveContext];
         }
     }
     [self saveContext];
-    NSLog(@"Removed unselected emotions from all records.");
+    NSLog(@"Debugging: Removed unselected emotions from all records.");
 }
 
 - (void) deleteEmotionsWithNullParent {
     MlAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     int i = 0;
     NSArray *allTheEmotions = [[self fetchedResultsControllerForEmotions] fetchedObjects];
-    NSLog(@"Running the deleteEmotionsWithNullParent method. Processing %d records", [allTheEmotions count]);
+    NSLog(@"Debugging: Running the deleteEmotionsWithNullParent method. Processing %d records", [allTheEmotions count]);
     for (Emotions *anEmotion in allTheEmotions) {
         if (anEmotion.logParent == NULL) {
-          //  NSLog(@"About to delete %@, because logParent = %@",anEmotion,anEmotion.logParent);
           [[delegate managedObjectContext] deleteObject:anEmotion];
 
         }
         else {
-            NSLog(@"Found a fine emotion to keep: %@",anEmotion);
         }
         if (i++%20 == 0) {
-            //NSLog(@"Saving records...");
             [self saveContext];
         }
     }
     [self saveContext];
-    NSLog(@"Removed unselected emotions from all records.");
+    NSLog(@"Debugging: Removed unselected emotions from all records.");
 }
-
-
 
 - (void)viewWillAppear:(BOOL)animated {
     NSIndexPath *selection = [self.tableView indexPathForSelectedRow];
@@ -302,7 +297,7 @@ static CGFloat CELL_HEIGHT;
     if (![self.managedObjectContext save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
         abort();
     }
 }
@@ -394,7 +389,7 @@ static CGFloat CELL_HEIGHT;
 	if (![self.fetchedResultsController performFetch:&error]) {
 	     // Replace this implementation with code to handle the error appropriately.
 	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
 	    abort();
 	}
     
@@ -403,7 +398,6 @@ static CGFloat CELL_HEIGHT;
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-//    NSLog(@"Called beginUpdates");
     [self.tableView beginUpdates];
 }
 
@@ -449,7 +443,6 @@ static CGFloat CELL_HEIGHT;
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-//    NSLog(@"Called endUpdates.");
     [self.tableView endUpdates];
 }
 
@@ -486,7 +479,7 @@ static CGFloat CELL_HEIGHT;
 	if (![self.fetchedResultsControllerForEmotions performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
 	    abort();
 	}
     

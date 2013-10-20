@@ -66,7 +66,6 @@
 }
 
 - (IBAction)setTime:(id)sender {
-    NSLog(@"Timer set by: %@",sender);
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     if (indexPath.row == 0) { // Start Time
         self.detailItem.quietStart = self.timePicker.date;
@@ -78,12 +77,10 @@
         [self setQuietEndLabel:self.timePicker.date];
         [[NSUserDefaults standardUserDefaults] setObject:self.detailItem.quietEnd forKey:@"DefaultRandomQuietEndTime"];
     }
-    NSLog(@"Start and end dates: %@, %@",self.detailItem.quietStart, self.detailItem.quietEnd);
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Selected: %@",indexPath);
     if (indexPath.row == 0) { // Start Time
         self.timePicker.date = self.detailItem.quietStart;
     }

@@ -191,7 +191,6 @@ NSUserDefaults *defaults;
         object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         aDay = [object valueForKey:@"date"];
         if ([aDay timeIntervalSince1970] < [today timeIntervalSince1970]) {
-            NSLog(@"%d, %f",i+1,[self.endSlider maximumValue]);
             weekOldEntry = MIN(i+1,[self.endSlider maximumValue]);
             break;
         }
@@ -326,14 +325,12 @@ NSUserDefaults *defaults;
                         error:(NSError*)error;
 {
     if (result == MFMailComposeResultSent) {
-        // NSLog(@"It's away!");
         [controller dismissViewControllerAnimated:YES completion:^(void) {
             [self dismissViewControllerAnimated:YES completion:nil]; // Also dismiss the Mail settings view controller
         }];
         
     }
     else {
-        // NSLog(@"Mail composed, but not sent");
         [controller dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -472,7 +469,7 @@ NSUserDefaults *defaults;
 	if (![self.fetchedResultsController performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
 	    abort();
 	}
     

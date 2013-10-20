@@ -83,7 +83,6 @@ NSDate *initialDate;
 
 - (IBAction)setTime:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"Timer set by: %@", self.itemNumber);
     switch ([self.itemNumber integerValue]) {
         case 0:
             self.detailItem.remindersTime0 = self.timePicker.date;

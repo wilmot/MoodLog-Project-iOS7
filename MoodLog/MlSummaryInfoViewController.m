@@ -282,7 +282,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
 	if (![self.fetchedResultsControllerByDate performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
 	    abort();
 	}
     
@@ -322,7 +322,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
 	if (![self.fetchedResultsControllerByCategory performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
 	    abort();
 	}
     
@@ -362,7 +362,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
 	if (![self.fetchedResultsControllerByEmotion performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    NSLog(@"An unknown error has occurred:  %@, %@", error, [error userInfo]);
 	    abort();
 	}
     
