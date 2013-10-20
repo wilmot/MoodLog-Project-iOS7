@@ -56,7 +56,7 @@
     
     // See if there are any defaults and register some if not
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    id testObject = [defaults objectForKey:@"RemindersTime2"]; // always test the newest default
+    id testObject = [defaults objectForKey:@"MailSliderPinnedToNewest"]; // always test the newest default
 	if (testObject == nil) {
         [defaults setInteger:0 forKey:@"ChartSegmentState"];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -68,8 +68,7 @@
         [defaults setBool:YES forKey:@"DefaultFacesEditingState"];
         [defaults setObject:groupSort forKey:@"DefaultSortStyle"];
         [defaults setObject:groupSort forKey:@"DefaultSortStyleEditing"];
-        [defaults setFloat:0.0 forKey:@"DefaultMailStartValue"];
-        [defaults setFloat:0.0 forKey:@"DefaultMailEndValue"];
+
         // Defaults for Reminders
         [defaults setBool:NO forKey:@"DefaultRandomRemindersOn"];
         [defaults setInteger:3 forKey:@"DefaultRandomTimesPerDay"];
@@ -113,6 +112,15 @@
         remindersTime2 = [gregorian dateFromComponents: components];
         [defaults setBool:NO forKey:@"RemindersTime2On"];
         [defaults setObject:remindersTime2 forKey:@"RemindersTime2"];
+        
+        // Email settings
+        [defaults setFloat:0.0 forKey:@"DefaultMailStartValue"];
+        [defaults setFloat:0.0 forKey:@"DefaultMailEndValue"];
+        [defaults setBool:NO forKey:@"MailLatestButtonOn"];
+        [defaults setBool:NO forKey:@"Mail7DayButtonOn"];
+        [defaults setBool:NO forKey:@"Mail30DayButtonOn"];
+        [defaults setBool:NO forKey:@"MailAllButtonOn"];
+        [defaults setBool:NO forKey:@"MailSliderPinnedToNewest"];
 
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}

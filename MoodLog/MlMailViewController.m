@@ -79,14 +79,13 @@ NSUserDefaults *defaults;
         today = [object valueForKey:@"date"];
         dateFormatter.dateFormat = NSLocalizedString(@"MM/dd/YY", @"MM/dd/YY format");
         self.endDateLabel.text = [dateFormatter stringFromDate: today];
-        [self updateDateRangeDrawing];
     }
     else {
         [self.startSlider setMinimumValue:0];
         [self.startSlider setMaximumValue:0];
         [self.endSlider setMinimumValue:0];
         [self.endSlider setMaximumValue:0];
-       for (id item in self.itemsToDisableTogether) {
+        for (id item in self.itemsToDisableTogether) {
             ((UIControl *)item).enabled = NO;
 
         }
@@ -95,6 +94,24 @@ NSUserDefaults *defaults;
     self.startSlider.value = [defaults floatForKey:@"DefaultMailStartValue"];
     self.endSlider.value = [defaults floatForKey:@"DefaultMailEndValue"];
     self.recipientList.text = [defaults stringForKey:@"DefaultRecipientList"];
+    
+    if ([defaults boolForKey:@"MailSliderPinnedToNewest"] == YES) {
+        self.endSlider.value = self.endSlider.maximumValue;
+    }
+    if ([defaults boolForKey:@"MailLatestButtonOn"]) {
+        self.latestButton.selected = YES;
+    }
+    else if ([defaults boolForKey:@"Mail7DayButtonOn"]) {
+        self.weekButton.selected = YES;
+    }
+    else if ([defaults boolForKey:@"Mail30DayButtonOn"]) {
+        self.monthButton.selected = YES;
+    }
+    else if ([defaults boolForKey:@"MailAllButtonOn"]) {
+        self.allButton.selected = YES;
+    }
+    
+    [self updateDateRangeDrawing];
 }
 
 
@@ -129,6 +146,8 @@ NSUserDefaults *defaults;
     self.startSlider.value = 0.0;
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
+    [self saveSliderState];
+    [self setButtonHighlighting:sender];
 }
 
 - (IBAction)pressMonthButton:(id)sender {
@@ -150,6 +169,8 @@ NSUserDefaults *defaults;
     self.startSlider.value = monthOldEntry;
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
+    [self saveSliderState];
+    [self setButtonHighlighting:sender];
 }
 
 - (IBAction)pressWeekButton:(id)sender {
@@ -173,12 +194,48 @@ NSUserDefaults *defaults;
     self.startSlider.value = weekOldEntry;
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
+    [self saveSliderState];
+    [self setButtonHighlighting:sender];
 }
 
 - (IBAction)pressLatestButton:(id)sender {
     self.startSlider.value = [self.startSlider maximumValue];
     self.endSlider.value = [self.endSlider maximumValue];
     [self updateDateRangeDrawing];
+    [self saveSliderState];
+    [self setButtonHighlighting:sender];
+}
+
+- (void) setButtonHighlighting: (UIButton *)button {
+    // Clear all the buttons
+    [self.latestButton setSelected:NO];
+    [self.weekButton setSelected:NO];
+    [self.monthButton setSelected:NO];
+    [self.allButton setSelected:NO];
+    [defaults setBool:NO forKey:@"MailLatestButtonOn"];
+    [defaults setBool:NO forKey:@"Mail7DayButtonOn"];
+    [defaults setBool:NO forKey:@"Mail30DayButtonOn"];
+    [defaults setBool:NO forKey:@"MailAllButtonOn"];
+    // Set the one you want
+    if (button != Nil) {
+        // Determine which button was pressed so I can set the state and the defaults
+        if (button == self.latestButton) {
+            [defaults setBool:YES forKey:@"MailLatestButtonOn"];
+            [self.latestButton setSelected:YES];
+        }
+        else if (button == self.weekButton) {
+            [defaults setBool:YES forKey:@"Mail7DayButtonOn"];
+            [self.weekButton setSelected:YES];
+        }
+        else if (button == self.monthButton) {
+            [defaults setBool:YES forKey:@"Mail30DayButtonOn"];
+            [self.monthButton setSelected:YES];
+        }
+        else if (button == self.allButton) {
+            [defaults setBool:YES forKey:@"MailAllButtonOn"];
+            [self.allButton setSelected:YES];
+        }
+    }
 }
 
 - (IBAction)composeEmail:(id)sender {
@@ -210,8 +267,9 @@ NSUserDefaults *defaults;
             [bodyText appendFormat:@"<blockquote>"];
             entry = [object valueForKey:@"journalEntry"];
             if (entry) {
-                [bodyText appendFormat:NSLocalizedString(@"<b>Journal Entry</b>:<br><blockquote>%@</blockquote><b>Emotions</b>:<br><blockquote>", @"Journal Entry preface in email"),entry];
+                [bodyText appendFormat:NSLocalizedString(@"<b>Journal Entry</b>:<br><blockquote>%@</blockquote>", @"Journal Entry preface in email"), entry];
             }
+            [bodyText appendFormat:@"<b>Emotions</b>:<br><blockquote>"];
             NSSet *emotionsforEntry = object.relationshipEmotions; // Get all the emotions for this record
             NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
             NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
@@ -226,15 +284,20 @@ NSUserDefaults *defaults;
             
             // Get the additional factors
             [bodyText appendFormat:@"<b>Factors</b>:<br><blockquote>"];
-            [bodyText appendFormat:@"     Mood: %ld<br>",(long)[object.overall integerValue]];
-            [bodyText appendFormat:@"     Stress: %ld<br>",(long)[object.stress integerValue]];
-            [bodyText appendFormat:@"     Energy: %ld<br>",(long)[object.energy integerValue]];
-            [bodyText appendFormat:@"     Thoughts: %ld<br>",(long)[object.thoughts integerValue]];
-            [bodyText appendFormat:@"     Health: %ld<br>",(long)[object.health integerValue]];
-            [bodyText appendFormat:@"     Sleep: %ld<br>",(long)[object.sleep integerValue]];
+           if ([object.overall integerValue] == 0 && [object.stress integerValue] == 0 && [object.energy integerValue] == 0 && [object.thoughts integerValue] ==0 && [object.health integerValue] == 0 && [object.sleep integerValue] == 0) {
+               [bodyText appendFormat:@"None selected"];
+            }
+            else {
+                [bodyText appendFormat:@"Mood: %ld<br>",(long)[object.overall integerValue]];
+                [bodyText appendFormat:@"Stress: %ld<br>",(long)[object.stress integerValue]];
+                [bodyText appendFormat:@"Energy: %ld<br>",(long)[object.energy integerValue]];
+                [bodyText appendFormat:@"Thoughts: %ld<br>",(long)[object.thoughts integerValue]];
+                [bodyText appendFormat:@"Health: %ld<br>",(long)[object.health integerValue]];
+                [bodyText appendFormat:@"Sleep: %ld<br>",(long)[object.sleep integerValue]];
+            }
             [bodyText appendFormat:@"</blockquote><br>"];
             [bodyText appendFormat:@"</blockquote>"];
-       }
+     }
 
         [controller setMessageBody:bodyText isHTML:YES];
         if (controller) [self presentViewController:controller animated:YES completion:nil];
@@ -243,7 +306,7 @@ NSUserDefaults *defaults;
 
 - (IBAction)updatedRecipientList:(id)sender {
     [defaults setValue:self.recipientList.text forKey:@"DefaultRecipientList"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [defaults synchronize];
     
 }
 
@@ -280,6 +343,7 @@ NSUserDefaults *defaults;
         [self.endSlider setValue:[self.startSlider value]];
     }
     [self updateDateRangeDrawing];
+    [self setButtonHighlighting:nil];
 }
 
 - (IBAction)slideEndSlider:(id)sender {
@@ -287,6 +351,7 @@ NSUserDefaults *defaults;
        [self.startSlider setValue:[self.endSlider value]];
     }
     [self updateDateRangeDrawing];
+    [self setButtonHighlighting:nil];
 }
 
 - (IBAction)finishedSlidingStartSlider:(id)sender {
@@ -296,6 +361,7 @@ NSUserDefaults *defaults;
         [self.endSlider setValue:(float)discreteEndValue];
     }
     [self updateDateRangeDrawing];
+    [self saveSliderState];
 }
 
 - (IBAction)finishedSlidingEndSlider:(id)sender {
@@ -305,6 +371,7 @@ NSUserDefaults *defaults;
         [self.startSlider setValue:(float)discreteEndValue];
     }
     [self updateDateRangeDrawing];
+    [self saveSliderState];
 }
 
 - (void) updateDateRangeDrawing {
@@ -354,11 +421,19 @@ NSUserDefaults *defaults;
         }
         [self.dateRangeDrawing setNeedsDisplay];
         
-        [defaults setFloat:self.startSlider.value forKey:@"DefaultMailStartValue"];
-        [defaults setFloat:self.endSlider.value forKey:@"DefaultMailEndValue"];
-
     }
-    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void) saveSliderState {
+    [defaults setFloat:self.startSlider.value forKey:@"DefaultMailStartValue"];
+    [defaults setFloat:self.endSlider.value forKey:@"DefaultMailEndValue"];
+    if (self.endSlider.value == self.endSlider.maximumValue) {
+        [defaults setBool:YES forKey:@"MailSliderPinnedToNewest"];
+    }
+    else {
+        [defaults setBool:NO forKey:@"MailSliderPinnedToNewest"];
+    }
+    [defaults synchronize];
 }
 
 #pragma mark - Core Data delegate methods
