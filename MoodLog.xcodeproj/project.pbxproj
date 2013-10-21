@@ -340,6 +340,8 @@
 		4C6BB92D1815B57000645E2C /* chartgray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92B1815B57000645E2C /* chartgray@2x.png */; };
 		4C6BB9301815B8F900645E2C /* keyboard_down_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92E1815B8F900645E2C /* keyboard_down_white.png */; };
 		4C6BB9311815B8F900645E2C /* keyboard_down_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92F1815B8F900645E2C /* keyboard_down_white@2x.png */; };
+		4C6BB9341815BB7400645E2C /* Letter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB9321815BB7400645E2C /* Letter.png */; };
+		4C6BB9351815BB7400645E2C /* Letter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB9331815BB7400645E2C /* Letter@2x.png */; };
 		4C7BF7D0176A482000DC8088 /* MlDetailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BF7CF176A482000DC8088 /* MlDetailScrollView.m */; };
 		4C7C789E162E9192008DC828 /* MlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C789D162E9192008DC828 /* MlCell.m */; };
 		4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */; };
@@ -759,6 +761,8 @@
 		4C6BB92B1815B57000645E2C /* chartgray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chartgray@2x.png"; sourceTree = "<group>"; };
 		4C6BB92E1815B8F900645E2C /* keyboard_down_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyboard_down_white.png; path = Images/keyboard_down_white.png; sourceTree = "<group>"; };
 		4C6BB92F1815B8F900645E2C /* keyboard_down_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keyboard_down_white@2x.png"; path = "Images/keyboard_down_white@2x.png"; sourceTree = "<group>"; };
+		4C6BB9321815BB7400645E2C /* Letter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Letter.png; sourceTree = "<group>"; };
+		4C6BB9331815BB7400645E2C /* Letter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Letter@2x.png"; sourceTree = "<group>"; };
 		4C7BF7BC176A39F200DC8088 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4C7BF7CE176A482000DC8088 /* MlDetailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlDetailScrollView.h; sourceTree = "<group>"; };
 		4C7BF7CF176A482000DC8088 /* MlDetailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDetailScrollView.m; sourceTree = "<group>"; };
@@ -1293,6 +1297,8 @@
 				4CEEF60717FE388900C29507 /* shuffle_on@2x.png */,
 				4C92BE001797CCAA005DEEC2 /* TimerIcon.png */,
 				4C92BE011797CCAA005DEEC2 /* TimerIcon@2x.png */,
+				4C6BB9321815BB7400645E2C /* Letter.png */,
+				4C6BB9331815BB7400645E2C /* Letter@2x.png */,
 				4C4043E71783E5CB00710F2A /* calendar.png */,
 				4C4043E81783E5CB00710F2A /* CalendarBlank.png */,
 				4C4043E91783E5CB00710F2A /* CalendarBlank@2x.png */,
@@ -1571,6 +1577,7 @@
 				4C06392117E45A6E00563FE6 /* Loathing.png in Resources */,
 				4C06390817E45A6E00563FE6 /* Passionate@2x.png in Resources */,
 				4C4043981783E51400710F2A /* Elated.png in Resources */,
+				4C6BB9351815BB7400645E2C /* Letter@2x.png in Resources */,
 				4C4043991783E51400710F2A /* Elated@2x.png in Resources */,
 				4C0639BB17E69DA200563FE6 /* Sentimental.png in Resources */,
 				4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */,
@@ -1728,6 +1735,7 @@
 				4C0639BC17E69DA200563FE6 /* Sentimental@2x.png in Resources */,
 				4C65613117F3FAAE00F03470 /* LowerRight@2x.png in Resources */,
 				4C06394517E45A6E00563FE6 /* Grouchy.png in Resources */,
+				4C6BB9341815BB7400645E2C /* Letter.png in Resources */,
 				4C4043DC1783E51400710F2A /* Attracted.png in Resources */,
 				4C4043DD1783E51400710F2A /* Attracted@2x.png in Resources */,
 				4C0639C117E69DA200563FE6 /* Resenting.png in Resources */,
