@@ -70,23 +70,6 @@
 }
 @end
 
-//# pragma mark - Category for getting a ViewController from a UIView
-//// http://stackoverflow.com/questions/1340434/get-to-uiviewcontroller-from-uiview-on-iphone
-//@interface UIView (APIFix)
-//- (UIViewController *)viewController;
-//@end
-//
-//@implementation UIView (APIFix)
-//
-//- (UIViewController *)viewController {
-//    if ([self.nextResponder isKindOfClass:UIViewController.class])
-//        return (UIViewController *)self.nextResponder;
-//    else
-//        return nil;
-//}
-//@end
-
-
 // TODO: Notes:
 // When the button image is the wrong size (this looks like a bug), try adding and deleting a title. This seemed to fix it in at least one case
 

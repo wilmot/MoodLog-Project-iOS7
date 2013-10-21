@@ -39,10 +39,10 @@ static CGFloat CELL_HEIGHT;
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"New", @"New button") style:UIBarButtonItemStylePlain target:self action:@selector(insertNewObject:)];
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 
+    // Used for testing and debugging:
     //[self updateOldRecords];
     //[self deleteUnselectedEmotionsFromOldRecords];
     //[self deleteEmotionsWithNullParent];
@@ -145,7 +145,6 @@ static CGFloat CELL_HEIGHT;
             [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
         }
         else {
-            // lastSection = 0; // no records yet
             [self showFirstTimeScreen];
         }
     }
@@ -162,7 +161,6 @@ static CGFloat CELL_HEIGHT;
     else { // iPhone 3.5 inch screen
         self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:1];
     }
-//    [self.firstTimeView setBounds:CGRectMake(delegate.window.bounds.origin.x, delegate.window.bounds.origin.y,delegate.window.bounds.size.width,delegate.window.bounds.size.height)];
  
     [delegate.window addSubview:self.firstTimeView];
 
@@ -180,12 +178,6 @@ static CGFloat CELL_HEIGHT;
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
-//    [self.tableView reloadData];
-
-//    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
-//    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
-//    [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -264,7 +256,6 @@ static CGFloat CELL_HEIGHT;
 
 // Setting the cell height in the Storyboard doesn't set it in the running app, so I override heightForRowAtIndexPath
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
     return CELL_HEIGHT; // cell.bounds.size.height;
 }
 
@@ -318,7 +309,8 @@ static CGFloat CELL_HEIGHT;
 
 -(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Header"];
-//    UIView *view = [[UIView alloc] initWithFrame:[cell frame]]; // Wrapping the cell in a UIView to avoid the "no index path for table cell being reused" message
+    // TODO: Figure out how to get rid of the occasional 'no index path for table cell being reused' message
+//    UIView *view = [[UIView alloc] initWithFrame:[cell frame]]; // Wrapping the cell in a UIView to avoid the "no index path for table cell being reused" message -- unfortunately this caused other problems, so there's more debugging to do here
 //    [view addSubview:cell];
 
     UILabel *label = (UILabel *)[cell viewWithTag:100];
@@ -455,9 +447,6 @@ static CGFloat CELL_HEIGHT;
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Emotions" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
-//    NSPredicate *requestPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]]];
-//    [fetchRequest setPredicate:requestPredicate];
-    
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
@@ -482,17 +471,6 @@ static CGFloat CELL_HEIGHT;
     
     return _fetchedResultsControllerForEmotions;
 }
-
-
-/*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
- */
 
 #pragma mark cell configuration
 

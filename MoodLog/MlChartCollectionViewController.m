@@ -69,10 +69,6 @@ Boolean firstLoad;
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
 }
 
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-//}
-
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // On first load, go to the end of the CollectionView (most recent)

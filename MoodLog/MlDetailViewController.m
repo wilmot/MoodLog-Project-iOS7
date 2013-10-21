@@ -1,4 +1,4 @@
-    //
+//
 //  MlDetailViewController.m
 //  MoodLog
 //
@@ -54,7 +54,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [self configureView];
     defaults = [NSUserDefaults standardUserDefaults];
     UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
@@ -69,7 +68,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //[self.navigationController setToolbarHidden:YES animated: YES];
     [self configureView];
 }
 
@@ -88,11 +86,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self.sliderChartView setNeedsDisplay];
     [self.moodsDrawingView setNeedsDisplay];
 }
-
-//- (void)deviceOrientationDidChange:(NSNotification *)notification {
-//    [self.class reloadData];
-//}
-
 
 - (void)configureView
 {
@@ -140,9 +133,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             self.noJournalLabel.hidden = YES;
         }
         else {
-//            self.entryLogTextView.textColor = [UIColor grayColor];
-//            [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18]];
-//            self.entryLogTextView.textAlignment = NSTextAlignmentRight;
             self.entryLogTextView.text = @""; // Empty journal entry
             self.littleKeyboardIcon.hidden = NO;
             self.noJournalLabel.hidden = NO;
@@ -181,8 +171,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         self.moodsDrawingView.categoryCounts = categoryCounts;
         self.moodsDrawingView.dividerLine = NO;
         [self.moodsDrawingView setNeedsDisplay];
- //       NSMutableAttributedString *selectedEmotions = [[NSMutableAttributedString alloc] initWithString:selectedEms];
- //       [selectedEmotions addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0,[selectedEmotions length])];
         self.moodListTextView.attributedText = selectedEmotions;
 
         
@@ -435,29 +423,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self.noFactorsImage setHidden:shouldHideLabel];
     [self.sliderChartView setHidden:!shouldHideLabel];    
 }
-
-// TODO: Trying to get the gap to disappear when hiding a static table section
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    CGFloat height = 0;
-//    return height;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    CGFloat height = 0;
-//    return height;
-//}
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    return nil;
-//}
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    return nil;
-//}
-//
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    return nil;
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

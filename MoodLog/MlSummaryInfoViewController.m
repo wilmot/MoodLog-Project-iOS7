@@ -45,11 +45,6 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
     [self.barChartForSummary setNeedsDisplay];
 }
 
-//- (void)deviceOrientationDidChange:(NSNotification *)notification {
-//    [self.class reloadData];
-//}
-
-
 - (void)summaryInformationQuick: (id)sender {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByDate sections][0];
     NSUInteger events = [sectionInfo numberOfObjects];

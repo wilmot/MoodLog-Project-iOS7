@@ -247,7 +247,6 @@ NSUserDefaults *defaults;
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
         [controller setToRecipients:[self.recipientList.text componentsSeparatedByString:@","]];
-         //[NSArray arrayWithObject:self.recipientList.text]];
         [controller setSubject:[NSString stringWithFormat:@"Mood Logs for %@ (%@)",self.dateRangeLabel.text, self.eventCount.text]];
  
         NSMutableString *bodyText = [NSMutableString stringWithFormat:@"<b>%@</b><br><i>%@</i><br><br><font size=-2>",self.dateRangeLabel.text, self.eventCount.text];

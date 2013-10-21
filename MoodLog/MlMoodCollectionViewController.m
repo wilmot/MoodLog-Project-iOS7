@@ -85,7 +85,7 @@ MoodLogEvents *myLogEntry;
 
     // WWDC 2012 video introduction to UICollectionViews talks about registering the class
     // But apparently this isn't needed if I use Storyboards; instead I should set the "Prototype Cell" in the Storyboard
-    //[self.collectionView registerClass:[MlCollectionViewCell class] forCellWithReuseIdentifier:@"moodCell"];
+    // [self.collectionView registerClass:[MlCollectionViewCell class] forCellWithReuseIdentifier:@"moodCell"];
 
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
@@ -100,7 +100,6 @@ MoodLogEvents *myLogEntry;
 
     // Get the data from the database
     [self getMoodRecordsFromCoreData];
-
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -238,8 +237,6 @@ MoodLogEvents *myLogEntry;
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
-    //    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    //    return [sectionInfo numberOfObjects];
     return [[emotionArray objectAtIndex:section] count];
 }
 
