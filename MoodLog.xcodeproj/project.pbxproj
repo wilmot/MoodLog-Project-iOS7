@@ -163,6 +163,8 @@
 		4C0C766C1649F95100DD372F /* MlDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */; };
 		4C22BBB618109873000E178F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C22BBB418109873000E178F /* Localizable.strings */; };
 		4C22BBBD1811FF6C000E178F /* MlReminderTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C22BBBC1811FF6C000E178F /* MlReminderTimeTableViewController.m */; };
+		4C22BBC31814A994000E178F /* Discouraged.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C22BBC11814A994000E178F /* Discouraged.png */; };
+		4C22BBC41814A994000E178F /* Discouraged@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C22BBC21814A994000E178F /* Discouraged@2x.png */; };
 		4C353EE6175BE307000ECE33 /* MlEmailEventCountDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */; };
 		4C353EE8175DE151000ECE33 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C353EE7175DE151000ECE33 /* MessageUI.framework */; };
 		4C3E0FB71657122100B0E060 /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E0FB61657122100B0E060 /* Prefs.m */; };
@@ -554,6 +556,8 @@
 		4C22BBB518109873000E178F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MoodLog/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C22BBBB1811FF6C000E178F /* MlReminderTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlReminderTimeTableViewController.h; sourceTree = "<group>"; };
 		4C22BBBC1811FF6C000E178F /* MlReminderTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlReminderTimeTableViewController.m; sourceTree = "<group>"; };
+		4C22BBC11814A994000E178F /* Discouraged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Discouraged.png; sourceTree = "<group>"; };
+		4C22BBC21814A994000E178F /* Discouraged@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Discouraged@2x.png"; sourceTree = "<group>"; };
 		4C353EE4175BE307000ECE33 /* MlEmailEventCountDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlEmailEventCountDrawing.h; sourceTree = "<group>"; };
 		4C353EE5175BE307000ECE33 /* MlEmailEventCountDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlEmailEventCountDrawing.m; sourceTree = "<group>"; };
 		4C353EE7175DE151000ECE33 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1024,6 +1028,8 @@
 				4C4042FD1783E51300710F2A /* Happy@2x.png */,
 				4C4042FE1783E51300710F2A /* Jealous.png */,
 				4C4042FF1783E51300710F2A /* Jealous@2x.png */,
+				4C22BBC11814A994000E178F /* Discouraged.png */,
+				4C22BBC21814A994000E178F /* Discouraged@2x.png */,
 				4C4043001783E51300710F2A /* Dejected.png */,
 				4C4043011783E51300710F2A /* Dejected@2x.png */,
 				4C4043021783E51300710F2A /* Delighted.png */,
@@ -1447,6 +1453,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C22BBC31814A994000E178F /* Discouraged.png in Resources */,
 				4C0639CD17E69DA200563FE6 /* Proud.png in Resources */,
 				4C55CBF3162DE67400EAA878 /* InfoPlist.strings in Resources */,
 				4C55CC02162DE67500EAA878 /* MainStoryboard_iPhone.storyboard in Resources */,
@@ -1655,6 +1662,7 @@
 				4C4043C21783E51400710F2A /* Adoring.png in Resources */,
 				4C8BB42717F0EE1C00754252 /* keyboard_down.png in Resources */,
 				4C4043C31783E51400710F2A /* Adoring@2x.png in Resources */,
+				4C22BBC41814A994000E178F /* Discouraged@2x.png in Resources */,
 				4C4043C41783E51400710F2A /* Afraid.png in Resources */,
 				4C06393617E45A6E00563FE6 /* Hurting@2x.png in Resources */,
 				4C4043C51783E51400710F2A /* Afraid@2x.png in Resources */,

@@ -140,7 +140,7 @@
 	<key>Amazed</key>
 	<dict>
 		<key>category</key>
-		<string>Joy</string>
+		<string>Surprise</string>
 		<key>feelValue</key>
 		<string>5</string>
 		<key>facePath</key>
@@ -565,6 +565,21 @@
 		<string>-8</string>
 		<key>facePath</key>
 		<string>Depressed</string>
+		<key>source</key>
+		<string>Parrott</string>
+		<key>emotionDescription</key>
+		<string></string>
+		<key>parrotLevel</key>
+		<string>3</string>
+	</dict>
+	<key>Discouraged</key>
+	<dict>
+		<key>category</key>
+		<string>Sadness</string>
+		<key>feelValue</key>
+		<string>-6</string>
+		<key>facePath</key>
+		<string>Discouraged</string>
 		<key>source</key>
 		<string>Parrott</string>
 		<key>emotionDescription</key>
