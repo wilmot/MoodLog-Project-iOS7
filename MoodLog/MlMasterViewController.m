@@ -173,7 +173,13 @@ static CGFloat CELL_HEIGHT;
 }
 
 - (void)touchedFirstTimeScreen: (id)sender {
-    self.firstTimeView.hidden = YES;
+    // Fade out
+    [UIView animateWithDuration:1.0
+                                 animations:^{self.firstTimeView.alpha = 0;}
+                                 completion:^(BOOL finished){
+                                     self.firstTimeView.hidden = YES;
+                                 }];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {

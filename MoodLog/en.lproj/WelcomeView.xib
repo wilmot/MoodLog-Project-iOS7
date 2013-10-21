@@ -30,7 +30,7 @@ Tap anywhere to begin</string>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The “New” button lets you create a Mood Log entry" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="rwB-Mf-LWP">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The “New” button will create a Mood Log entry" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="rwB-Mf-LWP">
                     <rect key="frame" x="32" y="47" width="211" height="97"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -68,7 +68,7 @@ Tap anywhere to begin</string>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="0.48999999999999999" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="ORR-7G-lRR" secondAttribute="bottom" constant="37" id="0iR-Yv-4bf"/>
                 <constraint firstAttribute="trailing" secondItem="aD4-MT-C2H" secondAttribute="trailing" constant="77" id="HOY-92-Zti"/>
@@ -113,7 +113,7 @@ Tap anywhere to begin</string>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The “New” button lets you create a Mood Log entry" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="SC2-lh-Yk3">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The “New” button will create a Mood Log entry" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="SC2-lh-Yk3">
                     <rect key="frame" x="32" y="47" width="211" height="97"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -151,7 +151,7 @@ Tap anywhere to begin</string>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="0.48999999999999999" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="SC2-lh-Yk3" secondAttribute="trailing" constant="77" id="1CF-gU-DnF"/>
                 <constraint firstAttribute="trailing" secondItem="MKj-9J-v0Y" secondAttribute="trailing" constant="77" id="29f-mq-q9m"/>
@@ -176,7 +176,10 @@ Tap anywhere to begin</string>
     </objects>
     <resources>
         <image name="LowerRight.png" width="64" height="70"/>
+        <image name="LowerRight.png" width="64" height="70"/>
         <image name="SixColors.png" width="276" height="68"/>
+        <image name="SixColors.png" width="276" height="68"/>
+        <image name="UpperRight.png" width="64" height="70"/>
         <image name="UpperRight.png" width="64" height="70"/>
     </resources>
 </document>
