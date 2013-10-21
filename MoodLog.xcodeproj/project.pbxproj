@@ -298,7 +298,6 @@
 		4C4043F41783E5CB00710F2A /* CalendarBlank93.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043EC1783E5CB00710F2A /* CalendarBlank93.png */; };
 		4C4043F51783E5CB00710F2A /* CalendarBlank93@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043ED1783E5CB00710F2A /* CalendarBlank93@2x.png */; };
 		4C4043F61783E5CB00710F2A /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043EE1783E5CB00710F2A /* chart.png */; };
-		4C4043F71783E5D300710F2A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4042E61783E27600710F2A /* Default-568h@2x.png */; };
 		4C4043FA1783E5EB00710F2A /* shuffle_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043F81783E5EB00710F2A /* shuffle_off.png */; };
 		4C4043FB1783E5EB00710F2A /* shuffle_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043F91783E5EB00710F2A /* shuffle_on.png */; };
 		4C4044001783E5FD00710F2A /* greyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4043FC1783E5FD00710F2A /* greyButton.png */; };
@@ -570,7 +569,6 @@
 		4C353EE917607BAA000ECE33 /* MoodLog 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 7.xcdatamodel"; sourceTree = "<group>"; };
 		4C3E0FB51657122100B0E060 /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
 		4C3E0FB61657122100B0E060 /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prefs.m; sourceTree = "<group>"; };
-		4C4042E61783E27600710F2A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		4C4042EA1783E51300710F2A /* Affectionate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Affectionate.png; sourceTree = "<group>"; };
 		4C4042EB1783E51300710F2A /* Affectionate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Affectionate@2x.png"; sourceTree = "<group>"; };
 		4C4042EC1783E51300710F2A /* Aggravated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aggravated.png; sourceTree = "<group>"; };
@@ -1310,7 +1308,6 @@
 				4C92BE041797D40D005DEEC2 /* chart@2x.png */,
 				4C6BB92A1815B57000645E2C /* chartgray.png */,
 				4C6BB92B1815B57000645E2C /* chartgray@2x.png */,
-				4C4042E61783E27600710F2A /* Default-568h@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -1478,7 +1475,6 @@
 				4C55CC02162DE67500EAA878 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4C06390F17E45A6E00563FE6 /* Neglected.png in Resources */,
 				4C55CC05162DE67500EAA878 /* MainStoryboard_iPad.storyboard in Resources */,
-				4C4043F71783E5D300710F2A /* Default-568h@2x.png in Resources */,
 				4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */,
 				4C0639BA17E69DA200563FE6 /* Shocked@2x.png in Resources */,
 				4C4043681783E51400710F2A /* Affectionate.png in Resources */,
