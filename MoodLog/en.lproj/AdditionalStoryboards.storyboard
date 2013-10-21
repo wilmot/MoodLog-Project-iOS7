@@ -189,13 +189,17 @@ CgoKA
                                     </fragment>
                                     <fragment>
                                         <string key="content">
-This app is designed to help you keep track of your moods as they change throughout the day and from day to day. You do this by creating Mood Log Entries, recording any emotions you are currently experiencing, your overall mood, levels of energy, sleep and health and any other information you want to record. You can use it as a journal to keep track of events in your life and watch for connections between your daily life and the moods you experience. Charts and a summary page show you what’s happening over time.
+Mood Log is designed to help you keep track of your emotions as they change throughout the day and from day to day. You do this by creating new Mood Log entries, recording any emotions you are currently experiencing and other information about yourself. You can use Mood Log as a journal to keep track of events in your life and watch for connections between your daily life and the emotions you experience. A summary page and charts show you what’s happening over time. You can send email reports from within Mood Log and you can set reminders that will prompt you to create a Mood Log entry at different times in the day.
 
-When you create a new journal entry, you pick the moods that best suit you in the moment by choosing emotions from a list of moods. The mood list picker shows faces representing each mood, or you can turn off the faces and just see the names. The moods are displayed organized by group, alphabetically or in random order. A slider lets you reduce or increase the number of moods displayed.
+When you create a new Mood Log entry, there are three sections available for recording your current emotional state: the Emotion Picker, Thoughts, and Additional Factors.
 
-Describing and recording your moods in Mood Log can help you increase your emotional awareness by getting you into the habit of identifying how you are feeling at any time. You can even set reminders to prompt you to create a Mood Log entry at random times throughout the day.
+The Emotion Picker shows faces representing each emotion. You may turn off the faces and just see the names if you prefer. The emotions are organized by group, alphabetically or in random order. A slider lets you reduce or increase the number of emotions displayed. Pressing and holding on an emotion will bring up the dictionary definition.
 
-My purpose in creating Mood Log was to increase my own awareness and mindfulness around emotions. I wanted a tool that was convenient, easy to use, and didn’t attempt to influence how I was feeling. Mood Log isn’t designed to make you feel one way or another; its purpose is to help you understand how you are actually feeling. I have found Mood Log helpful for me in these ways.
+The Thoughts section is a place for you to write whatever you want to remember. It is a free-form journal. You may write as much or as little as you like.
+
+The Additional Factors section is a set of sliders to track different areas that may affect your emotions, such as level of stress, how well slept you are and your overall health.
+
+My purpose in creating Mood Log was to increase my own awareness and mindfulness around emotions. I wanted a tool that was convenient, easy to use, and didn’t attempt to influence how I was feeling. Mood Log isn’t designed to make you feel one way or another; its purpose is to help you understand how you are actually feeling. I have found Mood Log useful in this way; my hope is that when you use Mood Log to track and record your emotional state over time, it will help you increase your own emotional awareness.
 
 I hope you enjoy Mood Log and find it useful in your life -- please leave feedback in Apple’s App Store, or send email to</string>
                                         <attributes>
@@ -252,6 +256,7 @@ Cgo
 Mood Log is meant for educational purposes only. This app is not intended as a substitute for, nor does it replace, professional health care or advice. Please consult a professional such as a medical doctor, counselor, psychologist or psychiatrist if you have any concerns or questions.
 
 	------ Swipe for more information ------>
+
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
@@ -348,13 +353,14 @@ CgoKA
                                     </fragment>
                                     <fragment>
                                         <string key="content">
-Emotions have been organized and classified in many different ways by many different specialists. There is no agreed-upon definitive set of emotions, so any list or classification is bound to please some people while leaving others dissatisfied. For the MoodLog app, I gathered lists of emotions from many sources, organized them and then created simple faces to capture the essence of each one. I’m sure there are emotions I’m missing, and there are likely some on this list that may not appeal to every user, but I am hopeful that the list presented here is rich enough to help you identify your own distinct, personal feelings.
+Emotions have been organized and classified in many different ways by many different specialists. There is no agreed-upon definitive set of emotions, so any list or classification is bound to please some people while leaving others dissatisfied. For the Mood Log app, I gathered lists of emotions from many sources, organized them and then created simple faces to capture the essence of each emotion. I’m sure there are emotions I’m missing and there are likely some on this list that may not appeal to every user, but I am hopeful that the list presented here is rich enough to help you identify your own distinct, personal feelings.
 
 Two popular ways of classifying emotions are W. Gerrod Parrott’s tree-structured list of emotions, and Robert Plutchik’s Wheel of Emotions. These two categorizations influenced the list of emotions found in this app and the way those emotions are organized here.
 
-Parrott’s tree structure starts with five basic emotions: Love, Joy, Surprise, Anger, Sadness and Fear. He then describes more nuanced emotions as sub-categories of each of these. The Group organization of MoodLog is loosely based on Parrott’s tree structure, and when you slide the “Fewer—More” slider on the Mood Picker, you will see fewer or more moods under each of these groups.
+Parrott’s tree structure starts with five basic emotions: Love, Joy, Surprise, Anger, Sadness and Fear. He then describes more nuanced emotions as sub-categories of each of these. The group organization of Mood Log’s Emotion Picker is loosely based on Parrott’s tree structure. When you slide the “Fewer—More” slider in the Emotion Picker, you will see fewer or more emotions under each of these groups.
 
 Plutchik’s Wheel of Emotions shows related emotions radiating from a central point on a “wheel.”  Plutchik describes eight basic emotions (four emotions and four opposites) and eight advanced emotions with other emotions being composed of pairs of these.
+
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>

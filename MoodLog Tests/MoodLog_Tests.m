@@ -110,7 +110,7 @@
             
         }
     }
-    NSLog(@"Finishing testCreatingLotsOfRecords.");
+    NSLog(@"Finishing testCreatingAFewRecords.");
     [delegate saveContext];
 }
 
