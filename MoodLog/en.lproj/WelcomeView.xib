@@ -130,8 +130,6 @@ Tap anywhere to begin</string>
     </objects>
     <resources>
         <image name="SixColors.png" width="276" height="68"/>
-        <image name="SixColors.png" width="276" height="68"/>
-        <image name="UpperRight.png" width="64" height="70"/>
         <image name="UpperRight.png" width="64" height="70"/>
     </resources>
 </document>

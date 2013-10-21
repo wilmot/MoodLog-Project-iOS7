@@ -265,14 +265,14 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
         }
     }
     else { // Vertical text
-        CGPoint point = CGPointMake(rect.origin.x + rect.size.width/2.0, rect.origin.y + rect.size.height*2.0 - 4.0);
+        CGPoint point = CGPointMake(rect.origin.x + rect.size.width/2.0 - 6.0, rect.origin.y + rect.size.height*2.0 - 4.0);
         CGContextSaveGState(context);
         CGContextSetFillColorWithColor(context, [[UIColor blackColor] CGColor]);
         CGContextTranslateCTM(context, point.x, point.y);
         CGAffineTransform textTransform = CGAffineTransformMakeRotation(-pi/2);
         CGContextConcatCTM(context, textTransform);
         CGContextTranslateCTM(context, -point.x, -point.y);
-        [text drawAtPoint:CGPointMake(rect.origin.x + rect.size.width/2.0, rect.origin.y + rect.size.height*2.0 - 4.0) withFont:[UIFont systemFontOfSize:10.0]];
+        [text drawAtPoint:CGPointMake(rect.origin.x + rect.size.width/2.0 - 6.0, rect.origin.y + rect.size.height*2.0 - 4.0) withFont:[UIFont systemFontOfSize:10.0]];
         CGContextRestoreGState(context);
     }
 }
