@@ -482,7 +482,7 @@
         <scene sceneID="NSp-kd-EXY">
             <objects>
                 <tableViewController id="eWD-k6-ZJq" customClass="MlNotificationsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="TTa-5a-pqM">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="TTa-5a-pqM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -2170,6 +2170,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="CalendarBlank93.png" width="93" height="93"/>
         <image name="RoundMoodLog.png" width="60" height="60"/>
         <image name="TimerIcon.png" width="20" height="20"/>
+        <image name="chart.png" width="20" height="16"/>
         <image name="chart.png" width="20" height="16"/>
         <image name="keyboard.png" width="22" height="14"/>
         <image name="keyboard_down.png" width="22" height="19"/>
