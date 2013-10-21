@@ -240,6 +240,7 @@ NSUserDefaults *defaults;
             [self.allButton setSelected:YES];
         }
     }
+    [defaults synchronize];
 }
 
 - (IBAction)composeEmail:(id)sender {
