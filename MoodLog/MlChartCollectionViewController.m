@@ -370,6 +370,13 @@ Boolean firstLoad;
     else { // Pie
         
     }
+    BOOL debugging = [  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Debugging"] integerValue];
+    if (debugging) {
+        cell.detailButton.enabled = YES;
+    }
+    else {
+        cell.detailButton.enabled = NO;
+    }
     [cell.chartDrawingView setNeedsDisplay]; // without this, the bars don't match the data
 }
 

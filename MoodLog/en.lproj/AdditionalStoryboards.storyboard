@@ -758,6 +758,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                     <outlet property="angerLabel" destination="RLU-Xo-Ajy" id="chW-Tv-8DT"/>
                                     <outlet property="chartDrawingView" destination="4xj-n1-iDS" id="GuA-aH-jxY"/>
                                     <outlet property="dateLabel" destination="ndD-9R-8SW" id="SXR-iH-ooZ"/>
+                                    <outlet property="detailButton" destination="eKv-dP-Pwv" id="tvE-Iw-HOX"/>
                                     <outlet property="fearLabel" destination="5Bn-mE-fuW" id="V6a-uQ-PlU"/>
                                     <outlet property="joyLabel" destination="JPe-HF-hmw" id="KIS-Hd-Xme"/>
                                     <outlet property="loveLabel" destination="PFx-fN-e54" id="rnj-SM-DjG"/>
@@ -870,6 +871,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 <connections>
                                     <outlet property="chartDrawingView" destination="PAb-sJ-U77" id="NhH-y8-AZw"/>
                                     <outlet property="dateLabel" destination="uIT-LH-Ool" id="iUk-yW-Jk2"/>
+                                    <outlet property="detailButton" destination="otG-8q-2Ot" id="V5s-w4-SNg"/>
                                     <outlet property="emotionsLabel" destination="HJh-i9-sJ5" id="Oso-Kd-n6x"/>
                                     <outlet property="monthLabel" destination="liI-0d-KsL" id="r17-EZ-pC9"/>
                                     <outlet property="timeLabel" destination="htb-XK-hFY" id="Po5-vI-kM6"/>

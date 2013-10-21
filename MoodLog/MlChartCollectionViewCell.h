@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *fearLabel;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 @property (strong, nonatomic) MlChartCollectionViewController *myViewController;
+@property (weak, nonatomic) IBOutlet UIButton *detailButton;
 
 - (IBAction)pressDetailButton:(id)sender;
 
