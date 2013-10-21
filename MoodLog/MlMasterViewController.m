@@ -178,6 +178,7 @@ static CGFloat CELL_HEIGHT;
                                  animations:^{self.firstTimeView.alpha = 0;}
                                  completion:^(BOOL finished){
                                      self.firstTimeView.hidden = YES;
+                                     [self insertNewObject:self]; // Create a new record to start the user on their way
                                  }];
 
 }
