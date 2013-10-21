@@ -241,6 +241,16 @@ static CGFloat CELL_HEIGHT;
     [self presentViewController:chartViewController animated:YES completion:NULL];
 }
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated { // Updates the appearance of the Edit|Done button item as necessary. Clients who override it must call super first.
+    [super setEditing:editing animated:animated];
+    if (!editing) {
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    }
+    else {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
