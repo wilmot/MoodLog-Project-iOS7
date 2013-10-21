@@ -433,7 +433,7 @@
                                 <segue destination="rBa-Dg-5ia" kind="modal" identifier="mailView" id="zUV-D4-22a"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem image="chart.png" id="lbe-NL-9Pc" userLabel="Bar Button Item - Chart">
+                        <barButtonItem image="chartgray.png" id="lbe-NL-9Pc" userLabel="Bar Button Item - Chart">
                             <connections>
                                 <action selector="showCharts:" destination="12" id="yxx-pJ-RtB"/>
                             </connections>
@@ -1265,7 +1265,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chart.png" translatesAutoresizingMaskIntoConstraints="NO" id="zH7-5p-VU5">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chartgray.png" translatesAutoresizingMaskIntoConstraints="NO" id="zH7-5p-VU5">
                                                     <rect key="frame" x="25" y="37" width="43" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
@@ -1732,7 +1732,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Journal" id="ywj-Lm-pbE">
-                        <barButtonItem key="rightBarButtonItem" image="keyboard_down.png" id="oA6-74-DN4">
+                        <barButtonItem key="rightBarButtonItem" image="keyboard_down_white.png" id="oA6-74-DN4">
                             <connections>
                                 <action selector="pressDoneButton:" destination="i5c-1I-xcB" id="YqV-xl-iBK"/>
                             </connections>
@@ -2191,9 +2191,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="CalendarBlank93.png" width="93" height="93"/>
         <image name="RoundMoodLog.png" width="60" height="60"/>
         <image name="TimerIcon.png" width="20" height="20"/>
-        <image name="chart.png" width="20" height="16"/>
+        <image name="chartgray.png" width="20" height="16"/>
+        <image name="chartgray.png" width="20" height="16"/>
         <image name="keyboard.png" width="22" height="14"/>
-        <image name="keyboard_down.png" width="22" height="19"/>
+        <image name="keyboard_down_white.png" width="22" height="19"/>
         <image name="shuffle_off.png" width="25" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

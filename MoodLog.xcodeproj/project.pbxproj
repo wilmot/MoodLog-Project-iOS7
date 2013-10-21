@@ -336,6 +336,10 @@
 		4C65613217F3FAAE00F03470 /* UpperRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65613017F3FAAE00F03470 /* UpperRight@2x.png */; };
 		4C65613517F418B900F03470 /* LowerRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65613317F418B900F03470 /* LowerRight.png */; };
 		4C65613617F418B900F03470 /* UpperRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65613417F418B900F03470 /* UpperRight.png */; };
+		4C6BB92C1815B57000645E2C /* chartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92A1815B57000645E2C /* chartgray.png */; };
+		4C6BB92D1815B57000645E2C /* chartgray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92B1815B57000645E2C /* chartgray@2x.png */; };
+		4C6BB9301815B8F900645E2C /* keyboard_down_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92E1815B8F900645E2C /* keyboard_down_white.png */; };
+		4C6BB9311815B8F900645E2C /* keyboard_down_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92F1815B8F900645E2C /* keyboard_down_white@2x.png */; };
 		4C7BF7D0176A482000DC8088 /* MlDetailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BF7CF176A482000DC8088 /* MlDetailScrollView.m */; };
 		4C7C789E162E9192008DC828 /* MlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C789D162E9192008DC828 /* MlCell.m */; };
 		4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CA28D1630770800CC5CCA /* MlMoodDataItem.m */; };
@@ -751,6 +755,10 @@
 		4C65613017F3FAAE00F03470 /* UpperRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UpperRight@2x.png"; path = "Images/UpperRight@2x.png"; sourceTree = "<group>"; };
 		4C65613317F418B900F03470 /* LowerRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LowerRight.png; path = Images/LowerRight.png; sourceTree = "<group>"; };
 		4C65613417F418B900F03470 /* UpperRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpperRight.png; path = Images/UpperRight.png; sourceTree = "<group>"; };
+		4C6BB92A1815B57000645E2C /* chartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chartgray.png; sourceTree = "<group>"; };
+		4C6BB92B1815B57000645E2C /* chartgray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chartgray@2x.png"; sourceTree = "<group>"; };
+		4C6BB92E1815B8F900645E2C /* keyboard_down_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyboard_down_white.png; path = Images/keyboard_down_white.png; sourceTree = "<group>"; };
+		4C6BB92F1815B8F900645E2C /* keyboard_down_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keyboard_down_white@2x.png"; path = "Images/keyboard_down_white@2x.png"; sourceTree = "<group>"; };
 		4C7BF7BC176A39F200DC8088 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4C7BF7CE176A482000DC8088 /* MlDetailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlDetailScrollView.h; sourceTree = "<group>"; };
 		4C7BF7CF176A482000DC8088 /* MlDetailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlDetailScrollView.m; sourceTree = "<group>"; };
@@ -1267,6 +1275,8 @@
 				4C65612917F3936900F03470 /* ParrottsEmotionsOLD.png */,
 				4C8BB42517F0EE1C00754252 /* keyboard_down.png */,
 				4C8BB42617F0EE1C00754252 /* keyboard_down@2x.png */,
+				4C6BB92E1815B8F900645E2C /* keyboard_down_white.png */,
+				4C6BB92F1815B8F900645E2C /* keyboard_down_white@2x.png */,
 				4C8BB42917F0F0E000754252 /* keyboard.png */,
 				4C8BB42A17F0F0E000754252 /* keyboard@2x.png */,
 				4C92BE15179A0B68005DEEC2 /* TestArrow.png */,
@@ -1292,6 +1302,8 @@
 				4C4043ED1783E5CB00710F2A /* CalendarBlank93@2x.png */,
 				4C4043EE1783E5CB00710F2A /* chart.png */,
 				4C92BE041797D40D005DEEC2 /* chart@2x.png */,
+				4C6BB92A1815B57000645E2C /* chartgray.png */,
+				4C6BB92B1815B57000645E2C /* chartgray@2x.png */,
 				4C4042E61783E27600710F2A /* Default-568h@2x.png */,
 			);
 			name = Images;
@@ -1455,6 +1467,7 @@
 			files = (
 				4C22BBC31814A994000E178F /* Discouraged.png in Resources */,
 				4C0639CD17E69DA200563FE6 /* Proud.png in Resources */,
+				4C6BB9301815B8F900645E2C /* keyboard_down_white.png in Resources */,
 				4C55CBF3162DE67400EAA878 /* InfoPlist.strings in Resources */,
 				4C55CC02162DE67500EAA878 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4C06390F17E45A6E00563FE6 /* Neglected.png in Resources */,
@@ -1535,6 +1548,7 @@
 				4C4043871783E51400710F2A /* Desiring@2x.png in Resources */,
 				4C4043881783E51400710F2A /* Despairing.png in Resources */,
 				4C4043891783E51400710F2A /* Despairing@2x.png in Resources */,
+				4C6BB9311815B8F900645E2C /* keyboard_down_white@2x.png in Resources */,
 				4C40438A1783E51400710F2A /* Disappointed.png in Resources */,
 				4C40438B1783E51400710F2A /* Disappointed@2x.png in Resources */,
 				4C40438C1783E51400710F2A /* Disgusted.png in Resources */,
@@ -1602,6 +1616,7 @@
 				4C4043AA1783E51400710F2A /* Cheerful.png in Resources */,
 				4C4043AB1783E51400710F2A /* Cheerful@2x.png in Resources */,
 				4C0639C917E69DA200563FE6 /* Regretful.png in Resources */,
+				4C6BB92C1815B57000645E2C /* chartgray.png in Resources */,
 				4C06394217E45A6E00563FE6 /* Hating@2x.png in Resources */,
 				4C06394917E45A6E00563FE6 /* Glum.png in Resources */,
 				4C4043AC1783E51400710F2A /* Compassionate.png in Resources */,
@@ -1670,6 +1685,7 @@
 				4C4043C61783E51400710F2A /* Alarmed.png in Resources */,
 				4C4043C71783E51400710F2A /* Alarmed@2x.png in Resources */,
 				4C06393517E45A6E00563FE6 /* Hurting.png in Resources */,
+				4C6BB92D1815B57000645E2C /* chartgray@2x.png in Resources */,
 				4C4043C81783E51400710F2A /* Amused.png in Resources */,
 				4C4043C91783E51400710F2A /* Amused@2x.png in Resources */,
 				4C4043CA1783E51400710F2A /* Angry.png in Resources */,

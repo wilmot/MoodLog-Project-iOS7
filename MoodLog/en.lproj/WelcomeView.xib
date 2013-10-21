@@ -64,7 +64,6 @@ Tap anywhere to begin</string>
                 <constraint firstAttribute="trailing" secondItem="GzX-XZ-Eq5" secondAttribute="trailing" id="wIP-rD-b6t"/>
                 <constraint firstAttribute="trailing" secondItem="rwB-Mf-LWP" secondAttribute="trailing" constant="77" id="zkA-0I-BoC"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <view contentMode="scaleToFill" id="gMo-Ek-fSZ">
