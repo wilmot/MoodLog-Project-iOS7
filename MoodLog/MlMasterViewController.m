@@ -158,8 +158,8 @@ static CGFloat CELL_HEIGHT;
     if (screenBounds.size.height == 568) { // iPhone 4 inch screen
         self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:0];
     }
-    else { // iPhone 3.5 inch screen
-        self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:1];
+    else { // iPhone 3.5 inch screen (in case it needs to be different)
+        self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:0];
     }
  
     [delegate.window addSubview:self.firstTimeView];
