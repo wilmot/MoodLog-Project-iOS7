@@ -51,7 +51,6 @@ BOOL debugging;
         [self.notificationListButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
         [self.clearAllNotificationsButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.clearAllNotificationsButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-        [self updateRepeatingDateNotifications];
     }
     
     debugging = [  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Debugging"] integerValue];

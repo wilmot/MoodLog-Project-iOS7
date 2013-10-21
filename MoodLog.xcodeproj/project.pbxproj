@@ -2018,7 +2018,7 @@
 		4C8BB42317ECEC2000754252 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodLog.app/$MoodLog";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodLog.app/MoodLog";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
