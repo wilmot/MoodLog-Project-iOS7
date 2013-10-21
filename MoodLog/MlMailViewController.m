@@ -162,7 +162,7 @@ NSUserDefaults *defaults;
     today = [today dateByAddingTimeInterval: -60*60*24*30]; // Subtract a month from today
     int monthOldEntry=0;
     NSDate *aDay;
-    for (int i=[self.endSlider maximumValue]; i>0; i--) {
+    for (int i=[self.endSlider maximumValue]; i>=0; i--) {
         indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         aDay = [object valueForKey:@"date"];
@@ -185,8 +185,8 @@ NSUserDefaults *defaults;
     NSDate *today = [NSDate date];
     today = [today dateByAddingTimeInterval: -60*60*24*7]; // Subtract a week from today
     int weekOldEntry=0;
-    NSDate *aDay;
-    for (int i=[self.endSlider maximumValue]; i>0; i--) {
+    NSDate *aDay = [[NSDate alloc] init];
+    for (int i=[self.endSlider maximumValue]; i>=0; i--) {
         indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         aDay = [object valueForKey:@"date"];
