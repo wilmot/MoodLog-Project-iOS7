@@ -722,7 +722,7 @@
 		4C50A08516DAC9D1003954E6 /* MoodLog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 5.xcdatamodel"; sourceTree = "<group>"; };
 		4C52861616D9A654007C878C /* MlChartDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlChartDrawingView.h; sourceTree = "<group>"; };
 		4C52861716D9A654007C878C /* MlChartDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlChartDrawingView.m; sourceTree = "<group>"; };
-		4C55CBE2162DE67400EAA878 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55CBE2162DE67400EAA878 /* Mood-Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mood-Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55CBE6162DE67400EAA878 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C55CBE8162DE67400EAA878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C55CBEA162DE67400EAA878 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1324,7 +1324,7 @@
 		4C55CBE3162DE67400EAA878 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C55CBE2162DE67400EAA878 /* MoodLog.app */,
+				4C55CBE2162DE67400EAA878 /* Mood-Log.app */,
 				4C8BB41317ECEC2000754252 /* MoodLog_Tests.xctest */,
 			);
 			name = Products;
@@ -1392,9 +1392,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C55CBE1162DE67400EAA878 /* Mood Log */ = {
+		4C55CBE1162DE67400EAA878 /* Mood-Log */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C55CC27162DE67500EAA878 /* Build configuration list for PBXNativeTarget "Mood Log" */;
+			buildConfigurationList = 4C55CC27162DE67500EAA878 /* Build configuration list for PBXNativeTarget "Mood-Log" */;
 			buildPhases = (
 				4C55CBDE162DE67400EAA878 /* Sources */,
 				4C55CBDF162DE67400EAA878 /* Frameworks */,
@@ -1404,9 +1404,9 @@
 			);
 			dependencies = (
 			);
-			name = "Mood Log";
+			name = "Mood-Log";
 			productName = MoodLog;
-			productReference = 4C55CBE2162DE67400EAA878 /* MoodLog.app */;
+			productReference = 4C55CBE2162DE67400EAA878 /* Mood-Log.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4C8BB41217ECEC2000754252 /* MoodLog_Tests */ = {
@@ -1457,7 +1457,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C55CBE1162DE67400EAA878 /* Mood Log */,
+				4C55CBE1162DE67400EAA878 /* Mood-Log */,
 				4C8BB41217ECEC2000754252 /* MoodLog_Tests */,
 			);
 		};
@@ -1873,7 +1873,7 @@
 /* Begin PBXTargetDependency section */
 		4C8BB42117ECEC2000754252 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4C55CBE1162DE67400EAA878 /* Mood Log */;
+			target = 4C55CBE1162DE67400EAA878 /* Mood-Log */;
 			targetProxy = 4C8BB42017ECEC2000754252 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2038,7 +2038,7 @@
 		4C8BB42317ECEC2000754252 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mood Log.app/Mood Log";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mood-Log.app/Mood-Log";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -2072,7 +2072,7 @@
 		4C8BB42417ECEC2000754252 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mood Log.app/Mood Log";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mood-Log.app/Mood-Log";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -2112,7 +2112,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C55CC27162DE67500EAA878 /* Build configuration list for PBXNativeTarget "Mood Log" */ = {
+		4C55CC27162DE67500EAA878 /* Build configuration list for PBXNativeTarget "Mood-Log" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C55CC28162DE67500EAA878 /* Debug */,
