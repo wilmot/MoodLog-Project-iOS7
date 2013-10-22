@@ -3,7 +3,8 @@
 //  MoodLog Tests
 //
 //  Created by Barry Langdon-Lassagne on 9/20/13.
-//  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
+//  Copyright (c) 2013 Barry A. Langdon-Lassagne.
+//  See LICENSE.rtf for full license agreement.
 //
 
 #import <XCTest/XCTest.h>

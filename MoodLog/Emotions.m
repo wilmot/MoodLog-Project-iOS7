@@ -3,7 +3,8 @@
 //  MoodLog
 //
 //  Created by Barry Langdon-Lassagne on 5/24/13.
-//  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
+//  Copyright (c) 2013 Barry A. Langdon-Lassagne.
+//  See LICENSE.rtf for full license agreement.
 //
 
 #import "Emotions.h"

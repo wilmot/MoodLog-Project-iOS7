@@ -3,7 +3,8 @@
 //  MoodTracker
 //
 //  Created by Barry A. Langdon-Lassagne on 9/29/12.
-//  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
+//  Copyright (c) 2013 Barry A. Langdon-Lassagne.
+//  See LICENSE.rtf for full license agreement.
 //
 
 #import <Foundation/Foundation.h>
