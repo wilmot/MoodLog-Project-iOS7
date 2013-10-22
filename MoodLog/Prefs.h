@@ -3,7 +3,7 @@
 //  MoodLog
 //
 //  Created by Barry A. Langdon-Lassagne on 11/16/12.
-//  Copyright (c) 2012 Barry A. Langdon-Lassagne. All rights reserved.
+//  Copyright (c) 2013 Barry A. Langdon-Lassagne. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
