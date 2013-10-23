@@ -576,7 +576,7 @@ static CGFloat CELL_HEIGHT;
     }
     as = [[NSMutableAttributedString alloc] initWithString:displayString];
     NSRange journalRange = NSMakeRange(entryEnd, [as length] - entryEnd);
-    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Italic" size:14] range:NSMakeRange(0,entryEnd)];
+    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue" size:14] range:NSMakeRange(0,entryEnd)];
     [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Light" size:14] range:journalRange];
     [as addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:journalRange];
     cell.mainLabel.attributedText = as;
