@@ -175,10 +175,111 @@
     [delegate saveContext];
 }
 
+- (void)XtestExportingToPList {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
+    NSUInteger events = [sectionInfo numberOfObjects];
+    MoodLogEvents *moodLogRecord;
+    NSIndexPath *itemIndexPath;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *filePath = [basePath stringByAppendingPathComponent:@"exportedData.plist"];
+    
+    NSMutableArray *plistArray = [[NSMutableArray alloc] init];
+   if (events > 0) {
+        for(int i=0; i<events;i++) {
+            itemIndexPath = [NSIndexPath indexPathForItem:i inSection:0];
+            moodLogRecord = [self.fetchedResultsController objectAtIndexPath:itemIndexPath];
+            NSMutableDictionary *entryDictionary = [[NSMutableDictionary alloc] init];
+            NSString *journalEntry = moodLogRecord.journalEntry;
+            if (journalEntry == Nil) {
+                journalEntry = @"";
+            }
+            [entryDictionary setObject:journalEntry forKey:@"journalEntry"];
+            [entryDictionary setObject:moodLogRecord.date forKey:@"date"];
+            [entryDictionary setObject:moodLogRecord.dateCreated forKey:@"dateCreated"];
+            [entryDictionary setObject:moodLogRecord.overall forKey:@"mood"];
+            [entryDictionary setObject:moodLogRecord.stress forKey:@"stress"];
+            [entryDictionary setObject:moodLogRecord.energy forKey:@"energy"];
+            [entryDictionary setObject:moodLogRecord.thoughts forKey:@"mindfulness"];
+            [entryDictionary setObject:moodLogRecord.health forKey:@"health"];
+            [entryDictionary setObject:moodLogRecord.sleep forKey:@"sleep"];
+            
+            // Get the emotion list
+            NSSet *emotionsFromRecord = moodLogRecord.relationshipEmotions; // Get all the emotions for this record
+            NSPredicate *selectedPredicate = [NSPredicate predicateWithFormat:@"selected == YES"];
+            NSSet *selectedEmotionsFromRecord = [emotionsFromRecord filteredSetUsingPredicate:selectedPredicate];
+            NSMutableArray *emotionArray = [[NSMutableArray alloc] init];
+            for (Emotions *emotion in selectedEmotionsFromRecord) {
+                [emotionArray addObject:emotion.name];
+            }
+           [entryDictionary setObject:emotionArray forKey:@"emotionArray"];
+
+            NSLog(@"Writing entry: %@",entryDictionary);
+            [plistArray addObject:entryDictionary];
+        }
+    }
+   BOOL written = [plistArray writeToFile:filePath atomically:YES];
+    if (written) {
+        NSLog(@"Saved data to: \"%@\"",filePath);
+    }
+    else {
+        XCTFail(@"Something went wrong writing to \"%@\"",filePath);
+    }
+    NSLog(@"Finishing testExportingToPList.");
+}
+
+- (void)XtestImportingFromPList {
+    UIApplication *sharedApplication = [UIApplication sharedApplication];
+    MlAppDelegate *delegate =(MlAppDelegate *)sharedApplication.delegate;
+    MoodLogEvents *newMoodLogEntry;
+    NSDictionary *emotionsMasterDictionary;
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *filePath = [basePath stringByAppendingPathComponent:@"exportedData.plist"];
+    NSMutableArray* importArray = [[NSMutableArray alloc]
+                                      initWithContentsOfFile:filePath];
+    if ([importArray count] > 0) {
+        for(NSDictionary *moodLogItemDictionary in importArray) {
+            newMoodLogEntry = [[delegate masterViewController] insertNewObjectAndReturnReference:self];
+            newMoodLogEntry.dateCreated = [moodLogItemDictionary objectForKey:@"dateCreated"];
+            newMoodLogEntry.date = [moodLogItemDictionary objectForKey:@"date"];
+            components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMoodLogEntry.date];
+            newMoodLogEntry.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
+            
+            newMoodLogEntry.journalEntry = [moodLogItemDictionary objectForKey:@"journalEntry"];
+            [newMoodLogEntry setOverall:[moodLogItemDictionary objectForKey:@"mood"]];
+            [newMoodLogEntry setStress:[moodLogItemDictionary objectForKey:@"stress"]];
+            [newMoodLogEntry setEnergy:[moodLogItemDictionary objectForKey:@"energy"]];
+            [newMoodLogEntry setThoughts:[moodLogItemDictionary objectForKey:@"mindfulness"]];
+            [newMoodLogEntry setHealth:[moodLogItemDictionary objectForKey:@"health"]];
+            [newMoodLogEntry setSleep:[moodLogItemDictionary objectForKey:@"sleep"]];
+            emotionsMasterDictionary = [delegate.moodListDictionary copy];
+            NSArray *emotionsToImportArray = [moodLogItemDictionary objectForKey:@"emotionArray"];
+            for (NSString *emotionName in emotionsToImportArray) {
+                id aMood = [emotionsMasterDictionary objectForKey:emotionName];
+                // Add emotion to the record
+                Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:[delegate managedObjectContext]];
+                emotion.name = emotionName;
+                emotion.category = [aMood objectForKey:@"category"];
+                emotion.parrotLevel = [NSNumber numberWithInt:[[aMood objectForKey:@"parrotLevel"] integerValue]];
+                emotion.feelValue = [NSNumber numberWithInt:[[aMood objectForKey:@"feelValue"] integerValue]];
+                emotion.facePath = [aMood objectForKey:@"facePath"];
+                emotion.selected = [NSNumber numberWithBool:YES];
+                emotion.logParent = newMoodLogEntry; // current record
+                
+            }
+        }
+    }
+    [delegate saveContext];
+    NSLog(@"Finishing testImportingFromPList.");
+}
+
 - (void)XtestDeletingAllRecords {
     UIApplication *sharedApplication = [UIApplication sharedApplication];
     MlAppDelegate *delegate =(MlAppDelegate *)sharedApplication.delegate;
-
+    
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
     NSUInteger events = [sectionInfo numberOfObjects];
     MoodLogEvents *moodLogRecord;
@@ -186,7 +287,7 @@
     if (events > 0) {
         for(int i=0; i<events;i++) {
             itemIndexPath = [NSIndexPath indexPathForItem:i inSection:0];
-             moodLogRecord = [self.fetchedResultsController objectAtIndexPath:itemIndexPath];
+            moodLogRecord = [self.fetchedResultsController objectAtIndexPath:itemIndexPath];
             [[delegate managedObjectContext] deleteObject:moodLogRecord];
             if ((i%20) == 0) {
                 [delegate saveContext];
@@ -197,6 +298,7 @@
     NSLog(@"Finishing testDeletingAllRecords.");
     [delegate saveContext];
 }
+
 
 #pragma mark - Core Data delegate methods
 
