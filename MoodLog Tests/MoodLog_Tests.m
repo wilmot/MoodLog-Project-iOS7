@@ -175,7 +175,7 @@
     [delegate saveContext];
 }
 
-- (void)XtestExportingToPList {
+- (void)testExportingToPList {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
     NSUInteger events = [sectionInfo numberOfObjects];
     MoodLogEvents *moodLogRecord;
@@ -197,12 +197,12 @@
             [entryDictionary setObject:journalEntry forKey:@"journalEntry"];
             [entryDictionary setObject:moodLogRecord.date forKey:@"date"];
             [entryDictionary setObject:moodLogRecord.dateCreated forKey:@"dateCreated"];
-            [entryDictionary setObject:moodLogRecord.overall forKey:@"mood"];
-            [entryDictionary setObject:moodLogRecord.stress forKey:@"stress"];
-            [entryDictionary setObject:moodLogRecord.energy forKey:@"energy"];
-            [entryDictionary setObject:moodLogRecord.thoughts forKey:@"mindfulness"];
-            [entryDictionary setObject:moodLogRecord.health forKey:@"health"];
-            [entryDictionary setObject:moodLogRecord.sleep forKey:@"sleep"];
+            moodLogRecord.overall  ? [entryDictionary setObject:moodLogRecord.overall forKey:@"mood"] :[entryDictionary setObject:[NSNumber numberWithInt:0] forKey:@"mood"];
+            moodLogRecord.stress   ? [entryDictionary setObject:moodLogRecord.stress forKey:@"stress"] :[entryDictionary setObject:[NSNumber numberWithInt:0] forKey:@"stress"];
+            moodLogRecord.energy   ? [entryDictionary setObject:moodLogRecord.energy forKey:@"energy"] :[entryDictionary setObject:[NSNumber numberWithInt:0] forKey:@"energy"];
+            moodLogRecord.thoughts ? [entryDictionary setObject:moodLogRecord.thoughts forKey:@"mindfulness"] :[entryDictionary setObject:[NSNumber numberWithInt:0] forKey:@"mindfulness"];
+            moodLogRecord.health   ? [entryDictionary setObject:moodLogRecord.health forKey:@"health"] :[entryDictionary setObject:[NSNumber numberWithInt:0] forKey:@"health"];
+            moodLogRecord.sleep    ? [entryDictionary setObject:moodLogRecord.sleep forKey:@"sleep"] :[entryDictionary setObject:[NSNumber numberWithInt:0] forKey:@"sleep"];
             
             // Get the emotion list
             NSSet *emotionsFromRecord = moodLogRecord.relationshipEmotions; // Get all the emotions for this record
