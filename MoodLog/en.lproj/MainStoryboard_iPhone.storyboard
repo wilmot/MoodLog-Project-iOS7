@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -462,7 +462,7 @@
                             </button>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Mood Log" id="36">
+                    <navigationItem key="navigationItem" title="Mood-Log" id="36">
                         <barButtonItem key="backBarButtonItem" title="List" id="HQq-ol-faq"/>
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="wWj-Ce-WRI"/>
                         <barButtonItem key="rightBarButtonItem" title="New" id="uA0-33-2bj"/>

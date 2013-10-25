@@ -175,7 +175,7 @@
     [delegate saveContext];
 }
 
-- (void)testExportingToPList {
+- (void)XtestExportingToPList {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
     NSUInteger events = [sectionInfo numberOfObjects];
     MoodLogEvents *moodLogRecord;
