@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Barry A. Langdon-Lassagne.
 //  See LICENSE.rtf for full license agreement.
 //
-//  Test
 
 #import "MlAppDelegate.h"
 #import "MlMoodDataItem.h"
