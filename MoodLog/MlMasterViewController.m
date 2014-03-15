@@ -64,8 +64,8 @@ static CGFloat CELL_HEIGHT;
             for (MlMoodDataItem *mood in emotionsFromPList) {
                 if ([emotion.name isEqualToString:mood.mood]) {
                     emotion.category = mood.category;
-                    emotion.parrotLevel = [NSNumber numberWithInt:[mood.parrotLevel integerValue]];
-                    emotion.feelValue = [NSNumber numberWithInt:[mood.feelValue integerValue]];
+                    emotion.parrotLevel = [NSNumber numberWithInt:(int)[mood.parrotLevel integerValue]];
+                    emotion.feelValue = [NSNumber numberWithInt:(int)[mood.feelValue integerValue]];
                     emotion.facePath = mood.facePath;
                 }
             }
@@ -114,7 +114,7 @@ static CGFloat CELL_HEIGHT;
     MlAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     int i = 0;
     NSArray *allTheEmotions = [[self fetchedResultsControllerForEmotions] fetchedObjects];
-    NSLog(@"Debugging: Running the deleteEmotionsWithNullParent method. Processing %d records", [allTheEmotions count]);
+    NSLog(@"Debugging: Running the deleteEmotionsWithNullParent method. Processing %lu records", (unsigned long)[allTheEmotions count]);
     for (Emotions *anEmotion in allTheEmotions) {
         if (anEmotion.logParent == NULL) {
           [[delegate managedObjectContext] deleteObject:anEmotion];
@@ -327,31 +327,31 @@ static CGFloat CELL_HEIGHT;
 
 -(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Header"];
-    // TODO: Figure out how to get rid of the occasional 'no index path for table cell being reused' message
-//    UIView *view = [[UIView alloc] initWithFrame:[cell frame]]; // Wrapping the cell in a UIView to avoid the "no index path for table cell being reused" message -- unfortunately this caused other problems, so there's more debugging to do here
-//    [view addSubview:cell];
 
-    UILabel *label = (UILabel *)[cell viewWithTag:100];
-    NSString *header = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
-    
-    static NSArray *monthSymbols = nil;
-    
-    if (!monthSymbols) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setCalendar:[NSCalendar currentCalendar]];
-        monthSymbols = [formatter monthSymbols];
+    if (section) {
+        UILabel *label = (UILabel *)[cell viewWithTag:100];
+        NSString *header = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+        
+        static NSArray *monthSymbols = nil;
+        
+        if (!monthSymbols) {
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setCalendar:[NSCalendar currentCalendar]];
+            monthSymbols = [formatter monthSymbols];
+        }
+        
+        NSInteger numericSection = [header integerValue];
+        
+        NSInteger year = numericSection / 1000;
+        NSInteger month = numericSection - (year * 1000);
+        
+        NSString *headerTitle = [NSString stringWithFormat:@"%@ %ld", [monthSymbols objectAtIndex:month-1], (long)year];
+        
+        
+        [label setText:headerTitle];
+        return (UIView *)cell;
     }
-    
-    NSInteger numericSection = [header integerValue];
-    
-	NSInteger year = numericSection / 1000;
-	NSInteger month = numericSection - (year * 1000);
-	
-	NSString *headerTitle = [NSString stringWithFormat:@"%@ %ld", [monthSymbols objectAtIndex:month-1], (long)year];
-
-    
-    [label setText:headerTitle];
-    return (UIView *)cell;
+    return nil; // No sections; probably no records
 }
 
 

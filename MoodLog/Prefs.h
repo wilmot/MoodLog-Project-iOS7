@@ -21,6 +21,7 @@ FOUNDATION_EXPORT NSString *const fear;
 FOUNDATION_EXPORT NSString *const anger;
 FOUNDATION_EXPORT NSString *const sadness;
 FOUNDATION_EXPORT NSString *const mainCacheName;
+CGFloat const sliderAlpha;
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 

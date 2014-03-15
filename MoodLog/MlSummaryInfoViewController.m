@@ -226,7 +226,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
                 MlMoodDataItem *thisMood = [[MlMoodDataItem alloc] init];
                 thisMood.mood = emotionRecord.name;
                 thisMood.category = emotionRecord.category;
-                thisMood.itemCount =[NSNumber numberWithInt:objectsInSection];
+                thisMood.itemCount =[NSNumber numberWithInt:(int)objectsInSection];
                 [summaryMoodArray addObject:thisMood];
             }
             for (MlMoodDataItem *anElement in [summaryMoodArray sortedArrayUsingSelector:@selector(itemCountReverseCompare:)]) {

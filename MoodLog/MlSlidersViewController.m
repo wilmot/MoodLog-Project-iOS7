@@ -9,6 +9,7 @@
 
 #import "MlSlidersViewController.h"
 #import "MlSlidersLandscapeViewController.h"
+#import "Prefs.h"
 
 @interface MlSlidersViewController ()
 
@@ -76,23 +77,26 @@
         [self setSliderColor:sender];
         previousValue = sliderValue;
     }
-    [(UISlider *)sender setValue:sliderValue]; // pin the slider to integral values
+//    [(UISlider *)sender setValue:sliderValue]; // pin the slider to integral values
     [self updateChart];
 }
 
 - (void) setSliderColor:(id) sender {
     float sliderValue = [[NSNumber numberWithFloat:[(UISlider *)sender value]] floatValue];
     UIColor *sliderColor;
-    if (sliderValue >= 0) { // Tint green
-        sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:1.0];
+    if (sliderValue > 0) { // Tint green
+        sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:sliderAlpha];
     }
-    else { // Tint red
-        sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:1.0];
+    else if (sliderValue < 0){ // Tint red
+        sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:sliderAlpha];
     }
-    [sender performSelector:@selector(setMinimumTrackTintColor:) withObject:sliderColor];
-    [sender performSelector:@selector(setMaximumTrackTintColor:) withObject:sliderColor];
-    //[sender setThumbTintColor:sliderColor];
+    else { // == 0
+        sliderColor = [UIColor whiteColor];
+    }
     
+//    [(UISlider *)sender setMinimumTrackTintColor:sliderColor];
+//    [(UISlider *)sender setMaximumTrackTintColor:sliderColor];
+    [(UISlider *)sender setBackgroundColor:sliderColor];
 }
 
 - (void) setSliderData:(id) sender {

@@ -34,7 +34,7 @@ Boolean firstLoad;
     for (index = 0, numberOfLines = 0; index < stringLength; numberOfLines++)
         index = NSMaxRange([self.text lineRangeForRange:NSMakeRange(index, 0)]);
 
-    NSUInteger newLinesToAdd = abs(labelLines - numberOfLines - 1); // abs is just a stab in the dark
+    NSUInteger newLinesToAdd = (int)abs((int)labelLines - (int)numberOfLines - 1); // abs is just a stab in the dark
     for(int i=0; i<newLinesToAdd; i++)
         self.text = [NSString stringWithFormat:@" \n%@",self.text];
 }

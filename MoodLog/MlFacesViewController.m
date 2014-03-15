@@ -66,7 +66,7 @@ UIImage *buttonImageHighlight;
     [self setFacesColors:self.myMoodCollectionViewController.showColorsOnEmotions];
     self.detailItem.editing = [NSNumber numberWithBool:YES];
     self.fewerMoreSlider.value = (CGFloat)[defaults integerForKey:@"DefaultParrotLevel"];
-    [self adjustUIToNewParrotLevel:[defaults integerForKey:@"DefaultParrotLevel"]];
+    [self adjustUIToNewParrotLevel:(int)[defaults integerForKey:@"DefaultParrotLevel"]];
     [self.myMoodCollectionViewController refresh];
 }
 

@@ -20,7 +20,7 @@
  NSString *const sadness = @"Sadness";
  NSString *const fear = @"Fear";
  NSString *const mainCacheName = @"Master";
-
+ CGFloat       const sliderAlpha = 0.3;
 
 # pragma mark - Category for extending Emotions class (which is auto-generated)
 @implementation Emotions (Emotions_Category)

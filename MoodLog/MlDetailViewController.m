@@ -295,15 +295,14 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     float sliderValue = [[NSNumber numberWithFloat:[(UISlider *)sender value]] floatValue];
     UIColor *sliderColor;
     if (sliderValue >= 0) { // Tint green
-        sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:1.0];
+        sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:sliderAlpha];
     }
     else { // Tint red
-        sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:1.0];
+        sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:sliderAlpha];
     }
-    [sender performSelector:@selector(setMinimumTrackTintColor:) withObject:sliderColor];
-    [sender performSelector:@selector(setMaximumTrackTintColor:) withObject:sliderColor];
-    //[sender setThumbTintColor:sliderColor];
-
+//    [(UISlider *)sender setMaximumTrackTintColor:sliderColor];
+//    [(UISlider *)sender setMinimumTrackTintColor:sliderColor];
+    [(UISlider *)sender setBackgroundColor:sliderColor];
 }
 
 - (void) setSliderData:(id) sender {

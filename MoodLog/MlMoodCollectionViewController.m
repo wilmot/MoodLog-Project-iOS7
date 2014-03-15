@@ -79,7 +79,7 @@ MoodLogEvents *myLogEntry;
         self.cellIdentifier = @"moodCell";
     }
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.currentParrotLevel = [defaults integerForKey:@"DefaultParrotLevel"];
+    self.currentParrotLevel = (int)[defaults integerForKey:@"DefaultParrotLevel"];
     self.showColorsOnEmotions = [defaults boolForKey:@"DefaultFacesColorState"];
     
     self.faceImageDictionary = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).faceImageDictionary;
@@ -448,8 +448,8 @@ MoodLogEvents *myLogEntry;
     Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:[self.detailItem managedObjectContext]];
     emotion.name = aMood.mood;
     emotion.category = aMood.category;
-    emotion.parrotLevel = [NSNumber numberWithInt:[aMood.parrotLevel integerValue]];
-    emotion.feelValue = [NSNumber numberWithInt:[aMood.feelValue integerValue]];
+    emotion.parrotLevel = [NSNumber numberWithInt:(int)[aMood.parrotLevel integerValue]];
+    emotion.feelValue = [NSNumber numberWithInt:(int)[aMood.feelValue integerValue]];
     emotion.facePath = aMood.facePath;
     emotion.selected = [NSNumber numberWithBool:aMood.selected];
     emotion.logParent = myLogEntry; // current record
