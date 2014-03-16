@@ -218,7 +218,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             NSIndexPath *itemIndexPath;
             NSUInteger numberOfSections = [[self.fetchedResultsControllerByEmotion sections] count];
             NSMutableArray *summaryMoodArray = [[NSMutableArray alloc] init];
-            for (int i=0; i<MIN(numberOfSections, MAX_EMOTIONS_TO_DISPLAY); i++) {
+            for (int i=0; i < numberOfSections; i++) {
                 id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsControllerByEmotion sections][i];
                 NSUInteger objectsInSection = [sectionInfo numberOfObjects];
                 itemIndexPath = [NSIndexPath indexPathForItem:0 inSection:i];
@@ -229,11 +229,17 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
                 thisMood.itemCount =[NSNumber numberWithInt:(int)objectsInSection];
                 [summaryMoodArray addObject:thisMood];
             }
+            int emotionCount = 0;
             for (MlMoodDataItem *anElement in [summaryMoodArray sortedArrayUsingSelector:@selector(itemCountReverseCompare:)]) {
                 attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [[MlColorChoices textColors] objectForKey:anElement.category], NSForegroundColorAttributeName, nil];
                 summaryLine = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:NSLocalizedString(@"\n\t%@: %@ ", @"Mood and itemcount"), anElement.mood, anElement.itemCount] attributes:attrsDictionary];
                 [summaryAttributedString appendAttributedString:summaryLine];
+                emotionCount++;
+                if (emotionCount >= MAX_EMOTIONS_TO_DISPLAY) {
+                    break;
+                }
            }
+            NSLog(@"Number of elements to display: %d", emotionCount);
             self.summaryText.attributedText = summaryAttributedString;
             
             self.showSummary = NO;
