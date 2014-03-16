@@ -87,11 +87,14 @@
 - (void) setSliderColor:(id) sender {
     float sliderValue = [[NSNumber numberWithFloat:[(UISlider *)sender value]] floatValue];
     UIColor *sliderColor;
-    if (sliderValue >= 0) { // Tint green
+    if (sliderValue > 0) { // Tint green
         sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:sliderAlpha];
     }
-    else { // Tint red
+    else if (sliderValue < 0) { // Tint red
         sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:sliderAlpha];
+    }
+    else { // == 0
+        sliderColor = [UIColor whiteColor];
     }
 //    [(UISlider *)sender setMaximumTrackTintColor:sliderColor];
 //    [(UISlider *)sender setMinimumTrackTintColor:sliderColor];    

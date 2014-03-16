@@ -239,7 +239,6 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
                     break;
                 }
            }
-            NSLog(@"Number of elements to display: %d", emotionCount);
             self.summaryText.attributedText = summaryAttributedString;
             
             self.showSummary = NO;
