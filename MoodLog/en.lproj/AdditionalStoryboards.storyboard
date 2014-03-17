@@ -214,10 +214,10 @@ I hope you enjoy Mood Log and find it useful in your life -- please leave feedba
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="student@voyageropen.org">
+                                    <fragment content="support@voyageropen.com">
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <url key="NSLink" string="mailto:student@voyageropen.org"/>
+                                            <url key="NSLink" string="mailto:support@voyageropen.com"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
