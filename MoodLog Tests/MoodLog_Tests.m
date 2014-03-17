@@ -98,8 +98,8 @@
             Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:[delegate managedObjectContext]];
             emotion.name = aMood.mood;
             emotion.category = aMood.category;
-            emotion.parrotLevel = [NSNumber numberWithInt:[aMood.parrotLevel integerValue]];
-            emotion.feelValue = [NSNumber numberWithInt:[aMood.feelValue integerValue]];
+            emotion.parrotLevel = [NSNumber numberWithInt:(int)[aMood.parrotLevel integerValue]];
+            emotion.feelValue = [NSNumber numberWithInt:(int)[aMood.feelValue integerValue]];
             emotion.facePath = aMood.facePath;
             emotion.selected = [NSNumber numberWithBool:YES];
             emotion.logParent = newMoodLogEntry; // current record
@@ -158,8 +158,8 @@
             Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:[delegate managedObjectContext]];
             emotion.name = aMood.mood;
             emotion.category = aMood.category;
-            emotion.parrotLevel = [NSNumber numberWithInt:[aMood.parrotLevel integerValue]];
-            emotion.feelValue = [NSNumber numberWithInt:[aMood.feelValue integerValue]];
+            emotion.parrotLevel = [NSNumber numberWithInt:(int)[aMood.parrotLevel integerValue]];
+            emotion.feelValue = [NSNumber numberWithInt:(int)[aMood.feelValue integerValue]];
             emotion.facePath = aMood.facePath;
             emotion.selected = [NSNumber numberWithBool:YES];
             emotion.logParent = newMoodLogEntry; // current record
@@ -263,8 +263,8 @@
                 Emotions *emotion = [NSEntityDescription insertNewObjectForEntityForName:@"Emotions" inManagedObjectContext:[delegate managedObjectContext]];
                 emotion.name = emotionName;
                 emotion.category = [aMood objectForKey:@"category"];
-                emotion.parrotLevel = [NSNumber numberWithInt:[[aMood objectForKey:@"parrotLevel"] integerValue]];
-                emotion.feelValue = [NSNumber numberWithInt:[[aMood objectForKey:@"feelValue"] integerValue]];
+                emotion.parrotLevel = [NSNumber numberWithInt:(int)[[aMood objectForKey:@"parrotLevel"] integerValue]];
+                emotion.feelValue = [NSNumber numberWithInt:(int)[[aMood objectForKey:@"feelValue"] integerValue]];
                 emotion.facePath = [aMood objectForKey:@"facePath"];
                 emotion.selected = [NSNumber numberWithBool:YES];
                 emotion.logParent = newMoodLogEntry; // current record
