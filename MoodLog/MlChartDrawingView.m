@@ -273,7 +273,8 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
         CGAffineTransform textTransform = CGAffineTransformMakeRotation(-pi/2);
         CGContextConcatCTM(context, textTransform);
         CGContextTranslateCTM(context, -point.x, -point.y);
-        [text drawAtPoint:CGPointMake(rect.origin.x + rect.size.width/2.0 - 6.0, rect.origin.y + rect.size.height*2.0 - 4.0) withFont:[UIFont systemFontOfSize:10.0]];
+        NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:10.0], NSParagraphStyleAttributeName: paragraphStyle};
+        [text drawAtPoint:CGPointMake(rect.origin.x + rect.size.width/2.0 - 6.0, rect.origin.y + rect.size.height*2.0 - 4.0) withAttributes: attributes];
         CGContextRestoreGState(context);
     }
 }
