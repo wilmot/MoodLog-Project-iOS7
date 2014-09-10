@@ -384,7 +384,7 @@
 		4CEEF60517FD034C00C29507 /* SixColors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60417FD034C00C29507 /* SixColors.png */; };
 		4CEEF60817FE388900C29507 /* shuffle_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60617FE388900C29507 /* shuffle_off@2x.png */; };
 		4CEEF60917FE388900C29507 /* shuffle_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60717FE388900C29507 /* shuffle_on@2x.png */; };
-		4CF9164E19BFF9BE000E5887 /* MlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF9164D19BFF9BE000E5887 /* MlCell.swift */; };
+		4CF9168219C030E5000E5887 /* MlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF9168119C030E5000E5887 /* MlCell.m */; };
 		4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */; };
 		4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F0164B8C870055CC3D /* MlMailViewController.m */; };
 		4CFB21F4164B8D370055CC3D /* MlCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB21F3164B8D370055CC3D /* MlCalendarViewController.m */; };
@@ -825,7 +825,8 @@
 		4CEEF60617FE388900C29507 /* shuffle_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuffle_off@2x.png"; sourceTree = "<group>"; };
 		4CEEF60717FE388900C29507 /* shuffle_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuffle_on@2x.png"; sourceTree = "<group>"; };
 		4CF9164C19BFF9BE000E5887 /* Mood-Log-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mood-Log-Bridging-Header.h"; sourceTree = "<group>"; };
-		4CF9164D19BFF9BE000E5887 /* MlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MlCell.swift; sourceTree = "<group>"; };
+		4CF9168019C030E5000E5887 /* MlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MlCell.h; sourceTree = "<group>"; };
+		4CF9168119C030E5000E5887 /* MlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MlCell.m; sourceTree = "<group>"; };
 		4CFB21EC164B8B0F0055CC3D /* MlChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlChartViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlChartViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4CFB21EF164B8C870055CC3D /* MlMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlMailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -1173,7 +1174,8 @@
 				4C92BE68179B3FD9005DEEC2 /* MlWelcomePageViewController.m */,
 				4C7BF7CE176A482000DC8088 /* MlDetailScrollView.h */,
 				4C7BF7CF176A482000DC8088 /* MlDetailScrollView.m */,
-				4CF9164D19BFF9BE000E5887 /* MlCell.swift */,
+				4CF9168019C030E5000E5887 /* MlCell.h */,
+				4CF9168119C030E5000E5887 /* MlCell.m */,
 				4C5D051016C1F1BC0028C421 /* MlFacesViewController.h */,
 				4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */,
 				4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */,
@@ -1849,6 +1851,7 @@
 				4C47E6B41751AC580023298F /* MlChartCellEntryViewController.m in Sources */,
 				4C47E6B71755C5E10023298F /* MlDateRangeDrawing.m in Sources */,
 				4C353EE6175BE307000ECE33 /* MlEmailEventCountDrawing.m in Sources */,
+				4CF9168219C030E5000E5887 /* MlCell.m in Sources */,
 				4C7BF7D0176A482000DC8088 /* MlDetailScrollView.m in Sources */,
 				4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */,
 				4C03FF0117683843001BA22B /* MlChartView.m in Sources */,
@@ -1859,7 +1862,6 @@
 				4C92BE0C1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m in Sources */,
 				4C92BE69179B3FDA005DEEC2 /* MlWelcomePageViewController.m in Sources */,
 				4C82D8A1180CD0ED005822DD /* MlFactorsViewController.m in Sources */,
-				4CF9164E19BFF9BE000E5887 /* MlCell.swift in Sources */,
 				4C92BE6C179E5D6E005DEEC2 /* MlQuietHoursTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
