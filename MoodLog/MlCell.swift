@@ -15,8 +15,6 @@ class MlCell: UITableViewCell {
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var calendarImage: UIImageView!
-    @IBOutlet weak var subLabel: UILabel!
-
 
     override func awakeFromNib() {
         super.awakeFromNib()
