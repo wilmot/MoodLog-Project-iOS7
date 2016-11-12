@@ -243,10 +243,10 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
 - (UIColor *) theBarColor: (CGFloat) barHeight {
     UIColor *barColor;
     if (barHeight >= 0) { // Tint green
-        barColor = [UIColor colorWithRed:fabsf((barHeight  - 10.0)/20.0) green:(barHeight + 10.0)/20.0 blue:1.0 - (barHeight + 10.0)/20.0 alpha:1.0];
+        barColor = [UIColor colorWithRed:fabs((barHeight  - 10.0)/20.0) green:(barHeight + 10.0)/20.0 blue:1.0 - (barHeight + 10.0)/20.0 alpha:1.0];
     }
     else { // Tint red
-        barColor = [UIColor colorWithRed:fabsf((barHeight - 10.0)/20.0) green:(barHeight + 10.0)/20.0 blue:1.0 - fabsf((barHeight - 10.0)/20.0) alpha:1.0];
+        barColor = [UIColor colorWithRed:fabs((barHeight - 10.0)/20.0) green:(barHeight + 10.0)/20.0 blue:1.0 - fabs((barHeight - 10.0)/20.0) alpha:1.0];
     }
     return barColor;
 }

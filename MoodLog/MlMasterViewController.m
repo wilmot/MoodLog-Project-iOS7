@@ -72,7 +72,7 @@ static CGFloat CELL_HEIGHT;
             
         }
         // Make sure the header reflects the current date
-        components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:object.date];
+        components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:object.date];
         object.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
         if (i++%10 == 0) {
             NSLog(@"Debugging: Saving records...");
@@ -111,7 +111,7 @@ static CGFloat CELL_HEIGHT;
 }
 
 - (void) deleteEmotionsWithNullParent {
-    MlAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    MlAppDelegate *delegate = (MlAppDelegate *)[[UIApplication sharedApplication] delegate];
     int i = 0;
     NSArray *allTheEmotions = [[self fetchedResultsControllerForEmotions] fetchedObjects];
     NSLog(@"Debugging: Running the deleteEmotionsWithNullParent method. Processing %lu records", (unsigned long)[allTheEmotions count]);
@@ -154,7 +154,7 @@ static CGFloat CELL_HEIGHT;
 
 - (void)showFirstTimeScreen {
     //Initial screen when no records
-    MlAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    MlAppDelegate *delegate = (MlAppDelegate *)[[UIApplication sharedApplication] delegate];
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     if (screenBounds.size.height == 568) { // iPhone 4 inch screen
         self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:0];
@@ -219,7 +219,7 @@ static CGFloat CELL_HEIGHT;
     
     // ((year * 1000) + month) -- store the header in a language-agnostic way
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMood.date];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:newMood.date];
     newMood.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
     newMood.editing = [NSNumber numberWithBool:NO];
     newMood.sliderValuesSet = [NSNumber numberWithBool:NO];
@@ -501,9 +501,9 @@ static CGFloat CELL_HEIGHT;
 
     NSDate *today = [object valueForKey:@"date"];
     NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
+                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *weekdayComponents =
-    [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
+    [gregorian components:(NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:today];
     NSInteger day = [weekdayComponents day];
     NSInteger weekday = [weekdayComponents weekday];
 
@@ -520,7 +520,7 @@ static CGFloat CELL_HEIGHT;
         MoodLogEvents *previousObject = [self.fetchedResultsController objectAtIndexPath:oldIndexPath];
         NSDate *oldToday = [previousObject valueForKey:@"date"];
         NSDateComponents *oldWeekdayComponents =
-        [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:oldToday];
+        [gregorian components:(NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:oldToday];
         NSInteger oldDay = [oldWeekdayComponents day];
         if (oldDay != day) {
             cell.calendarImage.hidden = NO;

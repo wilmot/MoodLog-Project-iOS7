@@ -76,7 +76,7 @@
     float sliderValue = (float)[[NSNumber numberWithFloat:[(UISlider *)sender value]] integerValue];
     static float previousValue;
     
-    if (abs(sliderValue - previousValue) >= 1) {
+    if (fabsf(sliderValue - previousValue) >= 1) {
         [self setSliderColor:sender];
         previousValue = sliderValue;
     }
@@ -88,10 +88,10 @@
     float sliderValue = [[NSNumber numberWithFloat:[(UISlider *)sender value]] floatValue];
     UIColor *sliderColor;
     if (sliderValue > 0) { // Tint green
-        sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:sliderAlpha];
+        sliderColor = [UIColor colorWithRed:fabs((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:sliderAlpha];
     }
     else if (sliderValue < 0) { // Tint red
-        sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:sliderAlpha];
+        sliderColor = [UIColor colorWithRed:fabs((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabs((sliderValue - 10.0)/20.0) alpha:sliderAlpha];
     }
     else { // == 0
         sliderColor = [UIColor whiteColor];

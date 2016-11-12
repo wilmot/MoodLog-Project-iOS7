@@ -21,7 +21,6 @@ static short GROUP_SORT = 0;
 static short AZ_SORT = 1;
 static short SHUFFLE_SORT = 2;
 
-NSUserDefaults *defaults;
 UIImage *buttonImage;
 UIImage *buttonImageHighlight;
 
@@ -60,7 +59,7 @@ UIImage *buttonImageHighlight;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [self setSelectedSortStyleSegment]; // Highlight the segment to show the current sort style
     [self setFaces:[self.detailItem.showFacesEditing boolValue]];
     [self setFacesColors:self.myMoodCollectionViewController.showColorsOnEmotions];
@@ -101,6 +100,7 @@ UIImage *buttonImageHighlight;
         [self.sortStyleSegmentedControl setSelectedSegmentIndex:SHUFFLE_SORT];
         [self.randomizeButton setHidden:NO];
    }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:sortStyle forKey:@"DefaultSortStyleEditing"];
     [defaults synchronize];
 }
@@ -122,6 +122,7 @@ UIImage *buttonImageHighlight;
         // there is no fourth option
     }
     self.detailItem.sortStyleEditing = sortStyle;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:sortStyle forKey:@"DefaultSortStyleEditing"];
     [defaults synchronize];
     [self.myMoodCollectionViewController refresh];
@@ -134,6 +135,7 @@ UIImage *buttonImageHighlight;
 - (IBAction)toggleFaces:(id)sender {
     Boolean facesState = ![self.detailItem.showFacesEditing boolValue];
     [self setFaces:facesState];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:facesState forKey:@"DefaultFacesEditingState"];
     [defaults synchronize];
     
@@ -142,6 +144,7 @@ UIImage *buttonImageHighlight;
 - (IBAction)toggleColors:(id)sender {
     self.myMoodCollectionViewController.showColorsOnEmotions =!self.myMoodCollectionViewController.showColorsOnEmotions;
     [self setFacesColors:self.myMoodCollectionViewController.showColorsOnEmotions];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:self.myMoodCollectionViewController.showColorsOnEmotions forKey:@"DefaultFacesColorState"];
     [defaults synchronize];
 }
@@ -184,6 +187,7 @@ UIImage *buttonImageHighlight;
 }
 
 - (void)adjustUIToNewParrotLevel: (int) parrotLevel {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:parrotLevel forKey:@"DefaultParrotLevel"];
     self.myMoodCollectionViewController.currentParrotLevel = parrotLevel;
     if (parrotLevel == 1) {

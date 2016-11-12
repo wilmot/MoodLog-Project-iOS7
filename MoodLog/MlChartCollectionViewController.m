@@ -193,9 +193,9 @@ Boolean firstLoad;
     NSDate *today = [moodLogObject valueForKey:@"date"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
+                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *weekdayComponents =
-    [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
+    [gregorian components:(NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:today];
     NSInteger day = [weekdayComponents day];
     
     static NSArray *dayNames = nil;
@@ -210,7 +210,7 @@ Boolean firstLoad;
         MoodLogEvents *previousObject = [self.fetchedResultsController objectAtIndexPath:oldIndexPath];
         NSDate *oldToday = [previousObject valueForKey:@"date"];
         NSDateComponents *oldWeekdayComponents =
-        [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:oldToday];
+        [gregorian components:(NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:oldToday];
         NSInteger oldDay = [oldWeekdayComponents day];
         if (oldDay != day) {
             dateFormatter.dateFormat = NSLocalizedString(@"yyyy", @"Year date format");

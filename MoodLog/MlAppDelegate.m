@@ -74,7 +74,7 @@
         [defaults setBool:NO forKey:@"DefaultRandomRemindersOn"];
         [defaults setInteger:3 forKey:@"DefaultRandomTimesPerDay"];
         NSDate *quietStart = [NSDate date];
-        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
         NSDateComponents *components = [gregorian components: NSUIntegerMax fromDate: quietStart];
         components.hour = 21;
         components.minute = 30;

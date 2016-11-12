@@ -50,7 +50,7 @@
     mood.date = self.datePicker.date;
     // ((year * 1000) + month) -- store the header in a language-agnostic way
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:mood.date];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:mood.date];
     mood.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
     
     // Save the context.

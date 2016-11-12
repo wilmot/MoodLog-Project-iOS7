@@ -24,7 +24,6 @@
 @implementation MlDetailViewController
 
 static MlDatePickerViewController *myDatePickerViewController;
-NSUserDefaults *defaults;
 
 typedef NS_ENUM(NSInteger, DetailCells) {
     CALENDAR,
@@ -55,7 +54,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    defaults = [NSUserDefaults standardUserDefaults];
     UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
     UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
@@ -100,9 +98,9 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         NSDate *today = [self.detailItem valueForKey:@"date"];
         
         NSCalendar *gregorian = [[NSCalendar alloc]
-                                 initWithCalendarIdentifier:NSGregorianCalendar];
+                                 initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         NSDateComponents *weekdayComponents =
-        [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
+        [gregorian components:(NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:today];
         NSInteger day = [weekdayComponents day];
         NSInteger weekday = [weekdayComponents weekday];
  
@@ -285,7 +283,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     float sliderValue = [[NSNumber numberWithFloat:[(UISlider *)sender value]] floatValue];
     static float previousValue;
     
-    if (abs(sliderValue - previousValue) >= 1) {
+    if (fabsf(sliderValue - previousValue) >= 1) {
         [self setSliderColor:sender];
         previousValue = sliderValue;
     }
@@ -295,10 +293,10 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     float sliderValue = [[NSNumber numberWithFloat:[(UISlider *)sender value]] floatValue];
     UIColor *sliderColor;
     if (sliderValue >= 0) { // Tint green
-        sliderColor = [UIColor colorWithRed:fabsf((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:sliderAlpha];
+        sliderColor = [UIColor colorWithRed:fabs((sliderValue  - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - (sliderValue + 10.0)/20.0 alpha:sliderAlpha];
     }
     else { // Tint red
-        sliderColor = [UIColor colorWithRed:fabsf((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabsf((sliderValue - 10.0)/20.0) alpha:sliderAlpha];
+        sliderColor = [UIColor colorWithRed:fabs((sliderValue - 10.0)/20.0) green:(sliderValue + 10.0)/20.0 blue:1.0 - fabs((sliderValue - 10.0)/20.0) alpha:sliderAlpha];
     }
 //    [(UISlider *)sender setMaximumTrackTintColor:sliderColor];
 //    [(UISlider *)sender setMinimumTrackTintColor:sliderColor];

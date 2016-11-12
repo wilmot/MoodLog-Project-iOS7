@@ -20,8 +20,6 @@
 
 @implementation MlMailViewController
 
-NSUserDefaults *defaults;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -82,7 +80,7 @@ NSUserDefaults *defaults;
         self.endDateLabel.text = [dateFormatter stringFromDate: today];
 
         // Position the sliders and highlight the buttons
-        defaults = [NSUserDefaults standardUserDefaults];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         self.startSlider.value = [defaults floatForKey:@"DefaultMailStartValue"];
         self.endSlider.value = [defaults floatForKey:@"DefaultMailEndValue"];
         self.recipientList.text = [defaults stringForKey:@"DefaultRecipientList"];
@@ -217,6 +215,7 @@ NSUserDefaults *defaults;
     [self.weekButton setSelected:NO];
     [self.monthButton setSelected:NO];
     [self.allButton setSelected:NO];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:NO forKey:@"MailLatestButtonOn"];
     [defaults setBool:NO forKey:@"Mail7DayButtonOn"];
     [defaults setBool:NO forKey:@"Mail30DayButtonOn"];
@@ -310,6 +309,7 @@ NSUserDefaults *defaults;
 }
 
 - (IBAction)updatedRecipientList:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:self.recipientList.text forKey:@"DefaultRecipientList"];
     [defaults synchronize];
     
@@ -428,6 +428,7 @@ NSUserDefaults *defaults;
 }
 
 - (void) saveSliderState {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setFloat:self.startSlider.value forKey:@"DefaultMailStartValue"];
     [defaults setFloat:self.endSlider.value forKey:@"DefaultMailEndValue"];
     if (self.endSlider.value == self.endSlider.maximumValue) {
