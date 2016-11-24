@@ -12,6 +12,7 @@
 @interface MlWelcomeScreenViewController : UIViewController
 
 @property (nonatomic) NSNumber *pageNumber;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 - (IBAction)pressDoneButton:(id)sender;
 

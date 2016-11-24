@@ -30,6 +30,12 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewDidLayoutSubviews {
+    if (self.textView != nil) {
+    [self.textView setContentOffset:CGPointZero animated:NO];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

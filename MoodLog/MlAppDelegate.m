@@ -34,6 +34,10 @@
         _masterViewController = (MlMasterViewController *)navigationController.topViewController;
         _masterViewController.managedObjectContext = self.managedObjectContext;
 //        [navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.03 green:0.45 blue:0.08 alpha:1.0]];
+        
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
+        [application registerUserNotificationSettings:settings];
+
     }
 
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MoodList" ofType:@"plist"];

@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ydB-QR-mAB">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="ydB-QR-mAB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Ml Welcome Screen View Controller-->
@@ -14,20 +18,20 @@
                         <viewControllerLayoutGuide type="bottom" id="n7z-WB-6nm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="us9-ir-hKQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Fq-j2-E5U">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Plutchik-wheel.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Quo-Cr-jNY">
-                                        <rect key="frame" x="2" y="67" width="317" height="424"/>
+                                        <rect key="frame" x="29.5" y="67" width="317" height="424"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="424" id="myB-Ib-UeV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plutchik's Wheel of Emotions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBD-7M-0ul">
-                                        <rect key="frame" x="2" y="97" width="317" height="21"/>
+                                        <rect key="frame" x="29.5" y="97" width="317" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Ydj-Mp-ZX8"/>
                                             <constraint firstAttribute="width" constant="317" id="meR-Y6-dOk"/>
@@ -37,13 +41,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: Wikimedia Commons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ce-d3-dok">
-                                        <rect key="frame" x="20" y="452" width="272" height="14"/>
+                                        <rect key="frame" x="47.5" y="452" width="272" height="14"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7Ce-d3-dok" secondAttribute="trailing" constant="28" id="0DT-GZ-J7R"/>
                                     <constraint firstItem="Quo-Cr-jNY" firstAttribute="trailing" secondItem="yBD-7M-0ul" secondAttribute="trailing" id="0gp-df-FDb"/>
@@ -58,7 +62,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Fq-j2-E5U" firstAttribute="leading" secondItem="us9-ir-hKQ" secondAttribute="leading" id="Bld-K9-Wog"/>
                             <constraint firstAttribute="bottom" secondItem="6Fq-j2-E5U" secondAttribute="bottom" id="ng1-OT-ca7"/>
@@ -67,7 +71,6 @@
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vR7-ab-3cu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +117,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="B1Z-k6-upw" firstAttribute="top" secondItem="KoV-xG-DMx" secondAttribute="top" constant="56" id="3ac-yi-FWf"/>
                                     <constraint firstItem="B1Z-k6-upw" firstAttribute="leading" secondItem="KoV-xG-DMx" secondAttribute="leading" id="6e5-eh-DCi"/>
@@ -132,7 +135,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KoV-xG-DMx" firstAttribute="top" secondItem="zPi-2e-i9K" secondAttribute="bottom" id="BVc-uX-dS3"/>
                             <constraint firstAttribute="trailing" secondItem="KoV-xG-DMx" secondAttribute="trailing" id="Kg4-Yk-d1z"/>
@@ -146,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvP-mv-AoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1011" y="322"/>
+            <point key="canvasLocation" x="-959" y="321"/>
         </scene>
         <!--Ml Welcome Screen View Controller-->
         <scene sceneID="Uj4-FN-5Lp">
@@ -157,12 +160,12 @@
                         <viewControllerLayoutGuide type="bottom" id="a1O-ee-izJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Wu-59-mj8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ret-TP-kmL">
-                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content" base64-UTF8="YES">
@@ -261,7 +264,7 @@ Mood Log is meant for educational purposes only. This app is not intended as a s
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="a1O-ee-izJ" firstAttribute="top" secondItem="Ret-TP-kmL" secondAttribute="bottom" id="INw-s8-nNF"/>
                             <constraint firstAttribute="trailing" secondItem="Ret-TP-kmL" secondAttribute="trailing" id="nOF-1L-AHV"/>
@@ -271,10 +274,13 @@ Mood Log is meant for educational purposes only. This app is not intended as a s
                     </view>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="Ret-TP-kmL" id="3VQ-fB-6t7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMe-HS-mux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2064" y="322"/>
+            <point key="canvasLocation" x="-2148" y="322"/>
         </scene>
         <!--Ml Welcome Page View Controller-->
         <scene sceneID="TVu-Gn-fbO">
@@ -320,12 +326,12 @@ Mood Log is meant for educational purposes only. This app is not intended as a s
                         <viewControllerLayoutGuide type="bottom" id="gfp-AQ-bg6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qlP-cD-JMX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeX-Xd-VwB">
-                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content" base64-UTF8="YES">
@@ -364,7 +370,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jeX-Xd-VwB" firstAttribute="top" secondItem="RLt-fF-AtH" secondAttribute="bottom" constant="2" id="Hmh-d2-F87"/>
                             <constraint firstAttribute="trailing" secondItem="jeX-Xd-VwB" secondAttribute="trailing" id="Ref-6E-CXa"/>
@@ -374,10 +380,13 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                     </view>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="jeX-Xd-VwB" id="Gw7-ie-LqU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dt9-s4-Fad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1708" y="322"/>
+            <point key="canvasLocation" x="-1750" y="322"/>
         </scene>
         <!--Ml Chart View Controller-->
         <scene sceneID="hjw-Uv-jDM">
@@ -388,18 +397,18 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <viewControllerLayoutGuide type="bottom" id="zwq-G4-LQV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2j5-jQ-LI8">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBf-4Y-1d7" userLabel="Container View - Charts">
-                                <rect key="frame" x="0.0" y="64" width="568" height="256"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="KiF-p4-9fa" kind="embed" identifier="ChartCollectionSegue" id="uf8-Nt-OaD"/>
                                 </connections>
                             </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rF0-RR-vm2">
-                                <rect key="frame" x="0.0" y="20" width="568" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="J0a-LG-ljn">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="cdd-b7-Jpi">
@@ -424,17 +433,17 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 </items>
                             </toolbar>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFR-je-Sop" userLabel="Container View - Summary">
-                                <rect key="frame" x="0.0" y="64" width="568" height="256"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="Yoh-xf-rzN" kind="embed" identifier="SummarySegue" id="cPT-X0-BfD"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-SK-ZzK">
-                                <rect key="frame" x="0.0" y="64" width="568" height="256"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Mood Log entries by tapping ‘New’ in the main view." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="p4w-R3-cNo">
-                                        <rect key="frame" x="144" y="59" width="281" height="138"/>
+                                        <rect key="frame" x="47.5" y="232.5" width="281" height="138"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="281" id="ChF-cr-ORX"/>
                                             <constraint firstAttribute="height" constant="138" id="r5k-yI-klJ"/>
@@ -444,14 +453,14 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="p4w-R3-cNo" secondAttribute="centerY" id="fhn-qY-0T4"/>
                                     <constraint firstAttribute="centerX" secondItem="p4w-R3-cNo" secondAttribute="centerX" constant="-0.5" id="twJ-TS-07J"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IFR-je-Sop" firstAttribute="leading" secondItem="2j5-jQ-LI8" secondAttribute="leading" id="1JQ-MJ-mPe"/>
                             <constraint firstItem="rF0-RR-vm2" firstAttribute="leading" secondItem="2j5-jQ-LI8" secondAttribute="leading" id="2We-9E-G0e"/>
@@ -472,7 +481,6 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nyg-v3-cGO"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="chartContainer" destination="vBf-4Y-1d7" id="m0h-x3-g37"/>
                         <outlet property="noRecordsView" destination="hXT-SK-ZzK" id="X56-aj-YSY"/>
@@ -494,17 +502,17 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <viewControllerLayoutGuide type="bottom" id="RMf-zc-vGL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lQG-OS-4XL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Some text" translatesAutoresizingMaskIntoConstraints="NO" id="FMq-7X-WBJ">
-                                <rect key="frame" x="0.0" y="87" width="320" height="480.5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="87" width="375" height="580"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uat-8K-w9E">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Entry Details" id="5wV-jT-A2f">
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="FOV-VB-Xbw">
@@ -516,27 +524,27 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdF-qi-GFm">
-                                <rect key="frame" x="0.0" y="67" width="320" height="20.5"/>
+                                <rect key="frame" x="0.0" y="67" width="375" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="11/11/11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-Gp-9UU">
-                                        <rect key="frame" x="67" y="0.0" width="253" height="20.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="67" y="0.0" width="308" height="20.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.92974718639999998" blue="0.1276074297" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="0.92974718639999998" blue="0.1276074297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM8-6E-1ZO">
                                         <rect key="frame" x="0.0" y="0.0" width="59" height="20.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="59" id="de3-ka-4g4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.92974718639999998" blue="0.1276074297" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="0.92974718639999998" blue="0.1276074297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="DM8-6E-1ZO" firstAttribute="top" secondItem="fdF-qi-GFm" secondAttribute="top" id="6Dh-op-cvE"/>
                                     <constraint firstItem="p7c-Gp-9UU" firstAttribute="leading" secondItem="DM8-6E-1ZO" secondAttribute="trailing" constant="8" symbolic="YES" id="8ca-CH-gMU"/>
@@ -547,7 +555,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FMq-7X-WBJ" firstAttribute="top" secondItem="fdF-qi-GFm" secondAttribute="bottom" id="J5d-19-CN5"/>
                             <constraint firstItem="Uat-8K-w9E" firstAttribute="leading" secondItem="lQG-OS-4XL" secondAttribute="leading" id="Vsa-eh-oHg"/>
@@ -561,7 +569,6 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                             <constraint firstItem="FMq-7X-WBJ" firstAttribute="trailing" secondItem="lQG-OS-4XL" secondAttribute="trailing" id="vna-ks-4cl"/>
                         </constraints>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="dateLabel" destination="p7c-Gp-9UU" id="1bO-bb-MNY"/>
                         <outlet property="infoTextView" destination="FMq-7X-WBJ" id="dhd-FU-Ku7"/>
@@ -576,9 +583,9 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="KiF-p4-9fa" customClass="MlChartCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="P8x-rK-qyS">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="256"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="32f-Gw-X39">
                             <size key="itemSize" width="90" height="256"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -621,18 +628,18 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="40"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="pressDetailButton:" destination="UEL-qc-4jr" eventType="touchUpInside" id="JrC-EB-lDB"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="eKv-dP-Pwv" firstAttribute="trailing" secondItem="k90-bc-9mi" secondAttribute="trailing" id="5Nf-Lj-JdX"/>
                                                 <constraint firstItem="ndD-9R-8SW" firstAttribute="leading" secondItem="k90-bc-9mi" secondAttribute="leading" id="5SG-Jz-TIu"/>
@@ -653,7 +660,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xj-n1-iDS" customClass="MlChartDrawingView">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="216"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vF-ib-0dq" userLabel="View - Labels">
                                             <rect key="frame" x="0.0" y="112.5" width="90" height="103"/>
@@ -665,7 +672,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                         <constraint firstAttribute="height" constant="21" id="aKP-gR-VO4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" red="1" green="0.093878841310000002" blue="0.02527442869" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.093878841310000002" blue="0.02527442869" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Joy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-HF-hmw">
@@ -674,7 +681,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                         <constraint firstAttribute="height" constant="21" id="Nc6-80-igP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Surprise" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Q1-ce-Tzx">
@@ -683,7 +690,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                         <constraint firstAttribute="height" constant="21" id="Okf-xk-P5C"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Anger" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLU-Xo-Ajy">
@@ -692,23 +699,23 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                         <constraint firstAttribute="height" constant="21" id="QDL-h5-Iig"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sadness" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vh-IT-xrG">
                                                     <rect key="frame" x="-5" y="64" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Fear" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bn-mE-fuW">
                                                     <rect key="frame" x="-5" y="82" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" red="0.88926977039999999" green="0.8882553956" blue="0.0018392362410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.88926977039999999" green="0.8882553956" blue="0.0018392362410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="103" id="6sd-bH-CjN"/>
                                                 <constraint firstItem="5Bn-mE-fuW" firstAttribute="leading" secondItem="5Vh-IT-xrG" secondAttribute="leading" id="8EJ-b5-eXm"/>
@@ -734,7 +741,6 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="4xj-n1-iDS" firstAttribute="trailing" secondItem="UEL-qc-4jr" secondAttribute="trailing" id="2Kx-nn-pRv"/>
@@ -763,7 +769,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="chartCellPortrait" id="U29-nb-bRb" customClass="MlChartCollectionViewCell">
-                                <rect key="frame" x="90" y="0.0" width="90" height="256"/>
+                                <rect key="frame" x="0.0" y="347" width="90" height="256"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="90" height="256"/>
@@ -774,13 +780,13 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             <subviews>
                                                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Moods" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="85" translatesAutoresizingMaskIntoConstraints="NO" id="HJh-i9-sJ5">
                                                     <rect key="frame" x="5" y="0.0" width="85" height="216"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="HJh-i9-sJ5" firstAttribute="trailing" secondItem="PAb-sJ-U77" secondAttribute="trailing" id="97d-B7-jvu"/>
                                                 <constraint firstItem="HJh-i9-sJ5" firstAttribute="top" secondItem="PAb-sJ-U77" secondAttribute="top" id="hVW-Q6-VQB"/>
@@ -819,18 +825,18 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="pressDetailButton:" destination="U29-nb-bRb" eventType="touchUpInside" id="KLr-s0-Q76"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="uIT-LH-Ool" firstAttribute="trailing" secondItem="dHN-E4-RMf" secondAttribute="trailing" id="5Wm-Cs-VEu"/>
                                                 <constraint firstItem="otG-8q-2Ot" firstAttribute="bottom" secondItem="dHN-E4-RMf" secondAttribute="bottom" id="7f4-BP-auz"/>
@@ -849,9 +855,8 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="dHN-E4-RMf" firstAttribute="trailing" secondItem="U29-nb-bRb" secondAttribute="trailing" id="5hE-0d-pxS"/>
                                     <constraint firstItem="dHN-E4-RMf" firstAttribute="leading" secondItem="U29-nb-bRb" secondAttribute="leading" id="Lmc-Z6-IFL"/>
@@ -907,13 +912,13 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiQ-57-ra9">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1064"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDe-Pb-RHF" customClass="MlChartDrawingView">
                                                 <rect key="frame" x="129" y="115" width="162" height="151"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="151" id="kg3-Oq-IKC"/>
                                                     <constraint firstAttribute="width" constant="162" id="s1U-2F-LvD"/>
@@ -921,13 +926,13 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX2-Rv-GM5" customClass="MlChartDrawingView">
                                                 <rect key="frame" x="20" y="310" width="280" height="151"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="151" id="ckR-Hq-Jbd"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="xDe-Pb-RHF" firstAttribute="leading" secondItem="WMN-qS-0pk" secondAttribute="leading" constant="129" id="02J-mf-8a1"/>
                                             <constraint firstAttribute="trailing" secondItem="KiQ-57-ra9" secondAttribute="trailing" id="Mz5-ob-zh9"/>
@@ -942,7 +947,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="WMN-qS-0pk" secondAttribute="bottom" constant="-1" id="80R-dn-xMf"/>
                                     <constraint firstItem="WMN-qS-0pk" firstAttribute="leading" secondItem="xPT-D9-DqJ" secondAttribute="leading" id="8Sb-yE-wyD"/>
@@ -952,7 +957,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xPT-D9-DqJ" firstAttribute="top" secondItem="Qac-52-9Kq" secondAttribute="top" id="Ebz-fo-lcb"/>
                             <constraint firstAttribute="trailing" secondItem="xPT-D9-DqJ" secondAttribute="trailing" id="KXw-bU-sfI"/>
@@ -964,7 +969,6 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1128"/>
                     <connections>
@@ -976,7 +980,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49A-yD-9Rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1473" y="1063"/>
+            <point key="canvasLocation" x="-1360" y="1296"/>
         </scene>
         <!--Ml Welcome Screen View Controller-->
         <scene sceneID="rH4-Ju-t9O">
@@ -987,12 +991,12 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <viewControllerLayoutGuide type="bottom" id="4Yn-er-lfq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VHx-3Y-DnA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nOy-0d-Su3">
-                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content" base64-UTF8="YES">
@@ -1021,7 +1025,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">Copyright (c) 2013-2014, Barry Langdon-Lassagne All rights reserved.
+                                        <string key="content">Copyright (c) 2013-2016, Barry Langdon-Lassagne All rights reserved.
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 </string>
                                         <attributes>
@@ -1039,8 +1043,12 @@ Redistribution and use in source and binary forms, with or without modification,
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="1" headIndent="36" defaultTabInterval="36">
                                                 <tabStops>
-                                                    <textTab alignment="left" location="11"/>
-                                                    <textTab alignment="natural" location="36"/>
+                                                    <textTab alignment="left" location="11">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="natural" location="36">
+                                                        <options/>
+                                                    </textTab>
                                                 </tabStops>
                                             </paragraphStyle>
                                         </attributes>
@@ -1061,7 +1069,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 Cg
 </string>
                                         <attributes>
-                                            <color key="NSColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.22352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="12" name="Verdana"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
                                                 <tabStops/>
@@ -1072,7 +1080,7 @@ Cg
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nOy-0d-Su3" firstAttribute="top" secondItem="Abu-dp-G9f" secondAttribute="bottom" constant="2" id="KKq-Eh-M8f"/>
                             <constraint firstItem="4Yn-er-lfq" firstAttribute="top" secondItem="nOy-0d-Su3" secondAttribute="bottom" id="WPn-FK-umw"/>
@@ -1082,10 +1090,13 @@ Cg
                     </view>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="nOy-0d-Su3" id="c4z-gx-lYo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSr-rV-pgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-635" y="322"/>
+            <point key="canvasLocation" x="-545" y="322"/>
         </scene>
     </scenes>
     <resources>
@@ -1095,6 +1106,6 @@ Cg
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>
