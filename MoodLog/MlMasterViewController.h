@@ -14,9 +14,10 @@
 #import <CoreData/CoreData.h>
 #import "MoodLogEvents.h"
 
-@interface MlMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate>
+@interface MlMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UISearchResultsUpdating>
 
 @property (strong, nonatomic) MlDetailViewController *detailViewController;
+@property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerForEmotions;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

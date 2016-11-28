@@ -24,6 +24,8 @@
 
 static CGFloat CELL_HEIGHT;
 
+
+
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -42,6 +44,12 @@ static CGFloat CELL_HEIGHT;
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"New", @"New button") style:UIBarButtonItemStylePlain target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.definesPresentationContext = YES;
+    self.tableView.tableHeaderView = self.searchController.searchBar;
 
     // Used for testing and debugging:
     //[self updateOldRecords];
@@ -50,6 +58,10 @@ static CGFloat CELL_HEIGHT;
     
     CELL_HEIGHT = [[self.tableView dequeueReusableCellWithIdentifier:@"Cell"] bounds].size.height;
 
+}
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSLog(@"Called updateSearchResultsForSearchController");
 }
 
 - (void) updateOldRecords {
@@ -144,6 +156,8 @@ static CGFloat CELL_HEIGHT;
             lastSection = [[self.fetchedResultsController sections] count] - 1;
             NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
             [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+            // TODO: BL-L REMIND: Make sure it doesn't show the search bar on first load
+//            [self.tableView setContentOffset:CGPointMake(0, self.searchController.searchBar.frame.size.height) animated:NO];
         }
         else {
             [self showFirstTimeScreen];
@@ -328,30 +342,27 @@ static CGFloat CELL_HEIGHT;
 -(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Header"];
 
-    if (section) {
-        UILabel *label = (UILabel *)[cell viewWithTag:100];
-        NSString *header = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
-        
-        static NSArray *monthSymbols = nil;
-        
-        if (!monthSymbols) {
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            [formatter setCalendar:[NSCalendar currentCalendar]];
-            monthSymbols = [formatter monthSymbols];
-        }
-        
-        NSInteger numericSection = [header integerValue];
-        
-        NSInteger year = numericSection / 1000;
-        NSInteger month = numericSection - (year * 1000);
-        
-        NSString *headerTitle = [NSString stringWithFormat:@"%@ %ld", [monthSymbols objectAtIndex:month-1], (long)year];
-        
-        
-        [label setText:headerTitle];
-        return (UIView *)cell;
+    UILabel *label = (UILabel *)[cell viewWithTag:100];
+    NSString *header = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    
+    static NSArray *monthSymbols = nil;
+    
+    if (!monthSymbols) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setCalendar:[NSCalendar currentCalendar]];
+        monthSymbols = [formatter monthSymbols];
     }
-    return nil; // No sections; probably no records
+    
+    NSInteger numericSection = [header integerValue];
+    
+    NSInteger year = numericSection / 1000;
+    NSInteger month = numericSection - (year * 1000);
+    
+    NSString *headerTitle = [NSString stringWithFormat:@"%@ %ld", [monthSymbols objectAtIndex:month-1], (long)year];
+    
+    
+    [label setText:headerTitle];
+    return (UIView *)cell;
 }
 
 
