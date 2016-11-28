@@ -362,7 +362,7 @@ static CGFloat CELL_HEIGHT;
     
     
     [label setText:headerTitle];
-    return (UIView *)cell;
+    return (UIView *)cell.contentView;
 }
 
 

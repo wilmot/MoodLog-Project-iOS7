@@ -321,7 +321,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="76" id="lJ0-d7-vTF" customClass="MlCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="Cell" rowHeight="76" id="lJ0-d7-vTF" customClass="MlCell">
                                 <rect key="frame" x="0.0" y="22" width="375" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="bnR-2o-2Ia">
@@ -403,7 +403,7 @@
                                     <segue destination="JzN-CV-xZQ" kind="push" identifier="showDetail" id="Rzx-g6-5D2"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Header" rowHeight="23" id="SlY-q3-at0" customClass="MlCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="Header" rowHeight="23" id="SlY-q3-at0" customClass="MlCell">
                                 <rect key="frame" x="0.0" y="98" width="375" height="23"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SlY-q3-at0" id="eoj-71-g7m">
@@ -411,19 +411,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vY8-gR-vqh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                                            <rect key="frame" x="30" y="0.0" width="345" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="vY8-gR-vqh" firstAttribute="top" secondItem="eoj-71-g7m" secondAttribute="top" id="hWC-LJ-cwk"/>
-                                        <constraint firstItem="vY8-gR-vqh" firstAttribute="leading" secondItem="eoj-71-g7m" secondAttribute="leading" id="qqg-Bx-ZFq"/>
-                                        <constraint firstAttribute="trailing" secondItem="vY8-gR-vqh" secondAttribute="trailing" id="wBI-Y4-q9a"/>
+                                        <constraint firstAttribute="trailing" secondItem="vY8-gR-vqh" secondAttribute="trailing" id="ove-GT-dSB"/>
+                                        <constraint firstItem="vY8-gR-vqh" firstAttribute="top" secondItem="eoj-71-g7m" secondAttribute="top" id="rDq-2x-xej"/>
+                                        <constraint firstItem="vY8-gR-vqh" firstAttribute="leading" secondItem="eoj-71-g7m" secondAttribute="leadingMargin" constant="22" id="tIg-ie-eiQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
