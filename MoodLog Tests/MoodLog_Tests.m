@@ -77,7 +77,7 @@
         }
         newMoodLogEntry.dateCreated = theDate;
         newMoodLogEntry.date = theDate;
-        components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMoodLogEntry.date];
+        components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:newMoodLogEntry.date];
         newMoodLogEntry.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
         
         // NSLog(@"New Mood: %@",newMoodLogEntry);
@@ -137,7 +137,7 @@
         }
         newMoodLogEntry.dateCreated = theDate;
         newMoodLogEntry.date = theDate;
-        components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMoodLogEntry.date];
+        components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:newMoodLogEntry.date];
         newMoodLogEntry.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
         
         // NSLog(@"New Mood: %@",newMoodLogEntry);
@@ -245,7 +245,7 @@
             newMoodLogEntry = [[delegate masterViewController] insertNewObjectAndReturnReference:self];
             newMoodLogEntry.dateCreated = [moodLogItemDictionary objectForKey:@"dateCreated"];
             newMoodLogEntry.date = [moodLogItemDictionary objectForKey:@"date"];
-            components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit) fromDate:newMoodLogEntry.date];
+            components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:newMoodLogEntry.date];
             newMoodLogEntry.header = [NSString stringWithFormat:@"%ld", (long)([components year] * 1000) + [components month]];
             
             newMoodLogEntry.journalEntry = [moodLogItemDictionary objectForKey:@"journalEntry"];
