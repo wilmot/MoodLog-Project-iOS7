@@ -417,7 +417,7 @@ MoodLogEvents *myLogEntry;
             thisMood.selected = YES;
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error fetching Mood Log records", @"Core data result count error alert title")
-                                                                message:[NSString stringWithFormat:NSLocalizedString(@"An unexpected error has occurred.\n\n Report this issue to student@voyageropen.org", @"Core Data result count error alert text")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
+                                                                message:[NSString stringWithFormat:NSLocalizedString(@"An unexpected error has occurred.\n\n Report this issue to support@voyageropen.com", @"Core Data result count error alert text")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
             [alertView show];
         }
     }
@@ -470,7 +470,7 @@ MoodLogEvents *myLogEntry;
     NSError *error = nil;
     if (![[self.detailItem managedObjectContext] save:&error]) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error saving Mood Log data", @"Core data saving error alert title")
-                                                            message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to student@voyageropen.org", @"Core Data saving error alert text"), error, [error userInfo]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
+                                                            message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data saving error alert text"), error, [error userInfo]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
         [alertView show];
     }
 }
