@@ -14,7 +14,7 @@
 #import <CoreData/CoreData.h>
 #import "MoodLogEvents.h"
 
-@interface MlMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UISearchResultsUpdating>
+@interface MlMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UISearchResultsUpdating, UISearchBarDelegate>
 
 @property (strong, nonatomic) MlDetailViewController *detailViewController;
 @property (strong, nonatomic) UISearchController *searchController;
@@ -25,6 +25,12 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *infoButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chartButton;
 @property (strong, nonatomic) UIView *firstTimeView;
+
+typedef NS_ENUM(NSInteger, SearchTabItem) {
+    SearchTabItemAll,
+    SearchTabItemMoods,
+    SearchTabItemText
+};
 
 - (void)insertNewObject:(id)sender;
 - (MoodLogEvents *) insertNewObjectAndReturnReference: (id) sender;

@@ -23,7 +23,7 @@
 @implementation MlMasterViewController
 
 static CGFloat CELL_HEIGHT;
-
+NSPredicate *filterPredicate = nil;
 
 
 - (void)awakeFromNib
@@ -47,8 +47,10 @@ static CGFloat CELL_HEIGHT;
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
+    self.searchController.searchBar.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.definesPresentationContext = YES;
+    self.searchController.searchBar.scopeButtonTitles = @[@"All", @"Moods", @"Text"];
     self.tableView.tableHeaderView = self.searchController.searchBar;
 
     // Used for testing and debugging:
@@ -60,8 +62,54 @@ static CGFloat CELL_HEIGHT;
 
 }
 
+- (void)fetch {
+    NSError *error;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error retrieving Mood Log data", @"Core data retrieving error alert title")
+                                                            message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data saving error alert text"), error, [error userInfo]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
+        [alertView show];
+        abort();
+    }
+}
+
+- (void) updateSearch {
+    if (self.searchController.isActive && ![self.searchController.searchBar.text isEqual: @""]) {
+        switch (self.searchController.searchBar.selectedScopeButtonIndex) {
+            case SearchTabItemAll:
+                filterPredicate = [NSPredicate predicateWithFormat:@"journalEntry CONTAINS[cd] %@ OR relationshipEmotions.name CONTAINS[cd] %@", self.searchController.searchBar.text, self.searchController.searchBar.text];
+                [self.fetchedResultsController.fetchRequest setPredicate:filterPredicate];
+                [self fetch];
+                break;
+            case SearchTabItemMoods:
+                filterPredicate = [NSPredicate predicateWithFormat:@"relationshipEmotions.name CONTAINS[cd] %@", self.searchController.searchBar.text];
+                [self.fetchedResultsController.fetchRequest setPredicate:filterPredicate];
+                [self fetch];
+                break;
+            case SearchTabItemText:
+                filterPredicate = [NSPredicate predicateWithFormat:@"journalEntry CONTAINS[cd] %@", self.searchController.searchBar.text];
+                [self.fetchedResultsController.fetchRequest setPredicate:filterPredicate];
+                [self fetch];
+                break;
+            default:
+                break;
+        }
+    }
+    [self.tableView reloadData];
+}
+
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSLog(@"Called updateSearchResultsForSearchController");
+    if (self.searchController.isActive && ![self.searchController.searchBar.text isEqual: @""]) {
+        [self updateSearch];
+    }
+    else { // Fetch all the records
+        [self.fetchedResultsController.fetchRequest setPredicate:nil];
+        [self fetch];
+        [self.tableView reloadData];
+    }
+}
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    [self updateSearch];
 }
 
 - (void) updateOldRecords {
@@ -142,6 +190,10 @@ static CGFloat CELL_HEIGHT;
     NSLog(@"Debugging: Removed unselected emotions from all records.");
 }
 
+- (void)scrollToTopButDontShowSearchBar {
+    [self.tableView setContentOffset:CGPointMake(0, self.searchController.searchBar.frame.size.height) animated:NO];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     NSIndexPath *selection = [self.tableView indexPathForSelectedRow];
     
@@ -150,14 +202,9 @@ static CGFloat CELL_HEIGHT;
     if (selection){
         [[self tableView] selectRowAtIndexPath:selection animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
-    else { // On first load, go to the bottom of the TableView (dates are in ascending order)
-        NSUInteger lastSection;
+    else { // On first load, go to the top of the TableView but hide SearchBar (dates are in descending order)
         if ([[self.fetchedResultsController sections] count] > 0) {
-            lastSection = [[self.fetchedResultsController sections] count] - 1;
-            NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
-            [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-            // TODO: BL-L REMIND: Make sure it doesn't show the search bar on first load
-//            [self.tableView setContentOffset:CGPointMake(0, self.searchController.searchBar.frame.size.height) animated:NO];
+            [self scrollToTopButDontShowSearchBar];
         }
         else {
             [self showFirstTimeScreen];
@@ -210,11 +257,10 @@ static CGFloat CELL_HEIGHT;
 
 - (void)insertNewObject:(id)sender {
     [self insertNewObjectAndReturnReference:self];
-    NSUInteger lastSection = [[self.fetchedResultsController sections] count] - 1;
-    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:([self.tableView numberOfRowsInSection:lastSection] - 1) inSection:lastSection];
-    [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-    [self.tableView selectRowAtIndexPath:scrollIndexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
-    [self tableView:self.tableView didSelectRowAtIndexPath:scrollIndexPath];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+    [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
+    
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         // iPad doesn't segue, the detail view is always there
     }
@@ -314,12 +360,12 @@ static CGFloat CELL_HEIGHT;
     }
 }
 
-- (void) saveContext { // Save data to the database
+- (void)saveContext { // Save data to the database
     // Save the context.
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error saving Mood Log data", @"Core data saving error alert title")
-                                                            message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to student@voyageropen.org", @"Core Data saving error alert text"), error, [error userInfo]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
+                                                            message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data saving error alert text"), error, [error userInfo]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
         [alertView show];
     }
 }
@@ -366,8 +412,7 @@ static CGFloat CELL_HEIGHT;
 }
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         MoodLogEvents *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
@@ -386,6 +431,7 @@ static CGFloat CELL_HEIGHT;
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
     // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"MoodLogEvents" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
@@ -394,7 +440,7 @@ static CGFloat CELL_HEIGHT;
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -404,13 +450,7 @@ static CGFloat CELL_HEIGHT;
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"header" cacheName:nil]; //mainCacheName
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error retrieving Mood Log data", @"Core data retrieving error alert title")
-                                                            message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to student@voyageropen.org", @"Core Data saving error alert text"), error, [error userInfo]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
-        [alertView show];
-	}
+    [self fetch];
     
     return _fetchedResultsController;
 }
@@ -493,13 +533,7 @@ static CGFloat CELL_HEIGHT;
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"name" cacheName:nil]; // @"EmotionsCache"
     aFetchedResultsController.delegate = self;
     self.fetchedResultsControllerForEmotions = aFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![self.fetchedResultsControllerForEmotions performFetch:&error]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error retrieving Mood Log data", @"Core data retrieving error alert title")
-                                                            message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to student@voyageropen.org", @"Core Data saving error alert text"), error, [error userInfo]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
-        [alertView show];
-	}
+    [self fetch];
     
     return _fetchedResultsControllerForEmotions;
 }
@@ -539,9 +573,9 @@ static CGFloat CELL_HEIGHT;
             cell.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];            
         }
         else {
+            cell.calendarImage.hidden = YES;
             cell.dateLabel.text = @"";
             cell.weekdayLabel.text = @"";
-            cell.calendarImage.hidden = YES;
         }
     }
     else {
