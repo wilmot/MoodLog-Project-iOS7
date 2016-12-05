@@ -204,8 +204,10 @@ MoodLogEvents *myLogEntry;
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:touchPoint];
         MlMoodDataItem *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         self.wordToDefine = aMood.mood;
-
-        NSAssert([self becomeFirstResponder], @"Sorry, UIMenuController will not work with %@ since it cannot become first responder", self);
+        Boolean didBecomeFirstResponder = [self becomeFirstResponder];
+        if (!didBecomeFirstResponder) {
+            NSAssert(didBecomeFirstResponder, @"Sorry, UIMenuController will not work with %@ since it cannot become first responder", self);
+        }
         [menuController setMenuItems:[NSArray arrayWithObject:resetMenuItem]];
         [menuController setTargetRect:CGRectMake(location.x, location.y, 0.0f, 0.0f) inView:[gestureRecognizer view]];
         [menuController setMenuVisible:YES animated:YES];
