@@ -64,18 +64,35 @@ BOOL debugging;
     dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
 
     self.remindersTime0 = (NSDate *)[defaults objectForKey:@"RemindersTime0"];
-    self.remindersTime1 = (NSDate *)[defaults objectForKey:@"RemindersTime1"];
-    self.remindersTime2 = (NSDate *)[defaults objectForKey:@"RemindersTime2"];
     self.reminderTime0Switch.on = [defaults boolForKey:@"RemindersTime0On"];
     self.reminderTime0Label.text = [dateFormatter stringFromDate: self.remindersTime0];
     self.reminderTime0Label.enabled = self.reminderTime0Switch.on;
+
+    self.remindersTime1 = (NSDate *)[defaults objectForKey:@"RemindersTime1"];
     self.reminderTime1Switch.on = [defaults boolForKey:@"RemindersTime1On"];
     self.reminderTime1Label.text = [dateFormatter stringFromDate: self.remindersTime1];
     self.reminderTime1Label.enabled = self.reminderTime1Switch.on;
+
+    self.remindersTime2 = (NSDate *)[defaults objectForKey:@"RemindersTime2"];
     self.reminderTime2Switch.on = [defaults boolForKey:@"RemindersTime2On"];
     self.reminderTime2Label.text = [dateFormatter stringFromDate: self.remindersTime2];
     self.reminderTime2Label.enabled = self.reminderTime2Switch.on;
     
+    self.remindersTime3 = (NSDate *)[defaults objectForKey:@"RemindersTime3"];
+    self.reminderTime3Switch.on = [defaults boolForKey:@"RemindersTime3On"];
+    self.reminderTime3Label.text = [dateFormatter stringFromDate: self.remindersTime3];
+    self.reminderTime3Label.enabled = self.reminderTime3Switch.on;
+
+    self.remindersTime4 = (NSDate *)[defaults objectForKey:@"RemindersTime4"];
+    self.reminderTime4Switch.on = [defaults boolForKey:@"RemindersTime4On"];
+    self.reminderTime4Label.text = [dateFormatter stringFromDate: self.remindersTime4];
+    self.reminderTime4Label.enabled = self.reminderTime4Switch.on;
+
+    self.remindersTime5 = (NSDate *)[defaults objectForKey:@"RemindersTime5"];
+    self.reminderTime5Switch.on = [defaults boolForKey:@"RemindersTime5On"];
+    self.reminderTime5Label.text = [dateFormatter stringFromDate: self.remindersTime5];
+    self.reminderTime5Label.enabled = self.reminderTime5Switch.on;
+
     self.randomReminderSwitch.on = [defaults boolForKey:@"DefaultRandomRemindersOn"];
     self.quietStart = (NSDate *)[defaults objectForKey:@"DefaultRandomQuietStartTime"];
     NSString *quietStartString = [dateFormatter stringFromDate: self.quietStart];
@@ -108,23 +125,37 @@ BOOL debugging;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)changeReminder0SwitchState:(id)sender {
-    [defaults setBool:self.reminderTime0Switch.on forKey:@"RemindersTime0On"];
-    self.reminderTime0Label.enabled = self.reminderTime0Switch.on;
-    [self updateRepeatingDateNotifications];
-    [defaults synchronize];
-}
-
-- (IBAction)changeReminder1SwitchState:(id)sender {
-    [defaults setBool:self.reminderTime1Switch.on forKey:@"RemindersTime1On"];
-    self.reminderTime1Label.enabled = self.reminderTime1Switch.on;
-    [self updateRepeatingDateNotifications];
-    [defaults synchronize];
-}
-
-- (IBAction)changeReminder2SwitchState:(id)sender {
-    [defaults setBool:self.reminderTime2Switch.on forKey:@"RemindersTime2On"];
-    self.reminderTime2Label.enabled = self.reminderTime2Switch.on;
+- (IBAction)changeReminderSwitchState:(id)sender {
+    long tag = [(UISwitch *)sender tag]; // Tag is set in Interface Builder
+    NSLog(@"Sender: %ld", tag );
+    switch (tag) {
+        case 0:
+            [defaults setBool:self.reminderTime0Switch.on forKey:@"RemindersTime0On"];
+            self.reminderTime0Label.enabled = self.reminderTime0Switch.on;
+            break;
+        case 1:
+            [defaults setBool:self.reminderTime1Switch.on forKey:@"RemindersTime1On"];
+            self.reminderTime1Label.enabled = self.reminderTime1Switch.on;
+            break;
+        case 2:
+            [defaults setBool:self.reminderTime2Switch.on forKey:@"RemindersTime2On"];
+            self.reminderTime2Label.enabled = self.reminderTime2Switch.on;
+            break;
+        case 3:
+            [defaults setBool:self.reminderTime3Switch.on forKey:@"RemindersTime3On"];
+            self.reminderTime3Label.enabled = self.reminderTime3Switch.on;
+            break;
+        case 4:
+            [defaults setBool:self.reminderTime4Switch.on forKey:@"RemindersTime4On"];
+            self.reminderTime4Label.enabled = self.reminderTime4Switch.on;
+            break;
+        case 5:
+            [defaults setBool:self.reminderTime5Switch.on forKey:@"RemindersTime5On"];
+            self.reminderTime5Label.enabled = self.reminderTime5Switch.on;
+            break;
+        default:
+            break;
+    }
     [self updateRepeatingDateNotifications];
     [defaults synchronize];
 }
@@ -219,6 +250,30 @@ BOOL debugging;
     }
     else {
         [self cancelNotificationMatchingTime: self.remindersTime2];
+    }
+
+    if (self.reminderTime3Switch.on) {
+        [self cancelNotificationMatchingTime: self.remindersTime3];
+        [self setRepeatingDateNotification:self.remindersTime3];
+    }
+    else {
+        [self cancelNotificationMatchingTime: self.remindersTime3];
+    }
+
+    if (self.reminderTime4Switch.on) {
+        [self cancelNotificationMatchingTime: self.remindersTime4];
+        [self setRepeatingDateNotification:self.remindersTime4];
+    }
+    else {
+        [self cancelNotificationMatchingTime: self.remindersTime4];
+    }
+
+    if (self.reminderTime5Switch.on) {
+        [self cancelNotificationMatchingTime: self.remindersTime5];
+        [self setRepeatingDateNotification:self.remindersTime5];
+    }
+    else {
+        [self cancelNotificationMatchingTime: self.remindersTime5];
     }
 }
 
@@ -317,6 +372,21 @@ BOOL debugging;
         myRemindersTime2Controller.detailItem = self;
         myRemindersTime2Controller.itemNumber = [NSNumber numberWithInt:2];
     }
+    else if ([[segue identifier] isEqualToString:@"reminderTime3"]) {
+        MlReminderTimeTableViewController *myRemindersTime3Controller = [segue destinationViewController];
+        myRemindersTime3Controller.detailItem = self;
+        myRemindersTime3Controller.itemNumber = [NSNumber numberWithInt:3];
+    }
+    else if ([[segue identifier] isEqualToString:@"reminderTime4"]) {
+        MlReminderTimeTableViewController *myRemindersTime4Controller = [segue destinationViewController];
+        myRemindersTime4Controller.detailItem = self;
+        myRemindersTime4Controller.itemNumber = [NSNumber numberWithInt:4];
+    }
+    else if ([[segue identifier] isEqualToString:@"reminderTime5"]) {
+        MlReminderTimeTableViewController *myRemindersTime5Controller = [segue destinationViewController];
+        myRemindersTime5Controller.detailItem = self;
+        myRemindersTime5Controller.itemNumber = [NSNumber numberWithInt:5];
+    }
 }
 
 #pragma mark - Table view data source
@@ -334,10 +404,10 @@ BOOL debugging;
 {
     NSUInteger rows = 0;
     switch (section) {
-        case 0:
-            rows = 3;
+        case 0: // Ask me about my mood at
+            rows = 6;
             break;
-        case 1:
+        case 1: // Debugging
             rows = 1;
             break;
         case 2:

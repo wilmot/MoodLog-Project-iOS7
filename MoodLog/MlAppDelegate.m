@@ -104,7 +104,7 @@
  
         NSDate *remindersTime1 = [NSDate date];
         components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
-        components.hour = 13;
+        components.hour = 9;
         components.minute = 00;
         remindersTime1 = [gregorian dateFromComponents: components];
         [defaults setBool:NO forKey:@"RemindersTime1On"];
@@ -112,7 +112,7 @@
 
         NSDate *remindersTime2 = [NSDate date];
         components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
-        components.hour = 19;
+        components.hour = 13;
         components.minute = 00;
         remindersTime2 = [gregorian dateFromComponents: components];
         [defaults setBool:NO forKey:@"RemindersTime2On"];
@@ -129,6 +129,44 @@
 
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
+    
+    id testV3Object = [defaults objectForKey:@"RemindersTime5"]; // test the newest defaults for v3
+    if (testV3Object == nil) {
+        NSDate *quietStart = [NSDate date];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+        NSDateComponents *components = [gregorian components: NSUIntegerMax fromDate: quietStart];
+        components.hour = 21;
+        components.minute = 30;
+        quietStart = [gregorian dateFromComponents: components];
+        NSDate *quietEnd = [NSDate date];
+        components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
+        components.hour = 9;
+        components.minute = 00;
+
+        NSDate *remindersTime3 = [NSDate date];
+        components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
+        components.hour = 17;
+        components.minute = 00;
+        remindersTime3 = [gregorian dateFromComponents: components];
+        [defaults setBool:NO forKey:@"RemindersTime3On"];
+        [defaults setObject:remindersTime3 forKey:@"RemindersTime3"];
+        
+        NSDate *remindersTime4 = [NSDate date];
+        components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
+        components.hour = 19;
+        components.minute = 00;
+        remindersTime4 = [gregorian dateFromComponents: components];
+        [defaults setBool:NO forKey:@"RemindersTime4On"];
+        [defaults setObject:remindersTime4 forKey:@"RemindersTime4"];
+        
+        NSDate *remindersTime5 = [NSDate date];
+        components = [gregorian components: NSUIntegerMax fromDate: quietEnd];
+        components.hour = 21;
+        components.minute = 00;
+        remindersTime5 = [gregorian dateFromComponents: components];
+        [defaults setBool:NO forKey:@"RemindersTime5On"];
+        [defaults setObject:remindersTime5 forKey:@"RemindersTime5"];
+    }
     
     // Handle launching via a local notification
     UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];

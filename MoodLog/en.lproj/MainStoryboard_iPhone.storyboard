@@ -495,7 +495,7 @@
                             <tableViewSection headerTitle="Ask me about my mood at:" id="pyx-zz-aQP">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="Wl0-tI-NtW">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wl0-tI-NtW" id="VvG-tb-Hej">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -504,7 +504,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUc-w0-eXd">
                                                     <rect key="frame" x="283" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="changeReminder0SwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="3K2-uv-Tx0"/>
+                                                        <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="evD-M6-B4Q"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbv-Ei-HFR">
@@ -528,16 +528,16 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="Yua-wZ-Ukf">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yua-wZ-Ukf" id="viL-cy-ohV">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-6L-pNx">
+                                                <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-6L-pNx">
                                                     <rect key="frame" x="283" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="changeReminder1SwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="3NA-8f-FF0"/>
+                                                        <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="1Iq-dh-wYF"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:50 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueB-zq-YMR">
@@ -561,16 +561,16 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="1xm-QD-BJZ">
-                                        <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1xm-QD-BJZ" id="QyW-RK-RVt">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UUY-ZY-daV">
+                                                <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UUY-ZY-daV">
                                                     <rect key="frame" x="283" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="changeReminder2SwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="BJJ-0J-aJf"/>
+                                                        <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="pW8-KI-6Mp"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:45 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWX-3T-HHY">
@@ -593,12 +593,111 @@
                                             <segue destination="xcL-4H-1vf" kind="push" identifier="reminderTime2" id="iuu-9y-aj6"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="aEo-Cd-93V">
+                                        <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aEo-Cd-93V" id="KcD-z2-dHj">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HVD-IB-WhE">
+                                                    <rect key="frame" x="283" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="lXC-kz-XrD"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eJ-Du-ZrX">
+                                                    <rect key="frame" x="20" y="11" width="165" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9eJ-Du-ZrX" firstAttribute="leading" secondItem="KcD-z2-dHj" secondAttribute="leading" constant="20" id="2bU-2J-4cN"/>
+                                                <constraint firstItem="HVD-IB-WhE" firstAttribute="centerY" secondItem="KcD-z2-dHj" secondAttribute="centerY" id="7HQ-b9-bPd"/>
+                                                <constraint firstItem="HVD-IB-WhE" firstAttribute="centerY" secondItem="9eJ-Du-ZrX" secondAttribute="centerY" id="eZA-iX-hzR"/>
+                                                <constraint firstAttribute="trailing" secondItem="HVD-IB-WhE" secondAttribute="trailing" constant="10" id="gd6-1O-6J2"/>
+                                                <constraint firstItem="HVD-IB-WhE" firstAttribute="leading" secondItem="9eJ-Du-ZrX" secondAttribute="trailing" constant="98" id="ptg-3m-AEF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="xcL-4H-1vf" kind="push" identifier="reminderTime3" id="aYA-I0-zAt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="0A8-T1-Pka">
+                                        <rect key="frame" x="0.0" y="231.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0A8-T1-Pka" id="j4x-gK-bN4">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UZy-s2-gjm">
+                                                    <rect key="frame" x="283" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="nai-5f-Q8v"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeA-Bf-VtE">
+                                                    <rect key="frame" x="20" y="11" width="165" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UZy-s2-gjm" secondAttribute="trailing" constant="10" id="3D5-im-Txq"/>
+                                                <constraint firstItem="UZy-s2-gjm" firstAttribute="centerY" secondItem="XeA-Bf-VtE" secondAttribute="centerY" id="BVj-kK-amS"/>
+                                                <constraint firstItem="UZy-s2-gjm" firstAttribute="centerY" secondItem="j4x-gK-bN4" secondAttribute="centerY" id="LM9-8N-bcC"/>
+                                                <constraint firstItem="XeA-Bf-VtE" firstAttribute="leading" secondItem="j4x-gK-bN4" secondAttribute="leading" constant="20" id="iOg-Qs-RTK"/>
+                                                <constraint firstItem="UZy-s2-gjm" firstAttribute="leading" secondItem="XeA-Bf-VtE" secondAttribute="trailing" constant="98" id="jeZ-vt-Oto"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="xcL-4H-1vf" kind="push" identifier="reminderTime4" id="KRh-Nf-J5k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="csD-dr-jSz">
+                                        <rect key="frame" x="0.0" y="275.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="csD-dr-jSz" id="7yU-pi-E73">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qIv-AF-r0X">
+                                                    <rect key="frame" x="283" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="JKC-Ea-67D"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlD-hu-Fts">
+                                                    <rect key="frame" x="20" y="11" width="165" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TlD-hu-Fts" firstAttribute="leading" secondItem="7yU-pi-E73" secondAttribute="leading" constant="20" id="1ra-n0-ZDu"/>
+                                                <constraint firstAttribute="trailing" secondItem="qIv-AF-r0X" secondAttribute="trailing" constant="10" id="Ehg-E6-bbz"/>
+                                                <constraint firstItem="qIv-AF-r0X" firstAttribute="centerY" secondItem="7yU-pi-E73" secondAttribute="centerY" id="FUd-eF-ZpX"/>
+                                                <constraint firstItem="qIv-AF-r0X" firstAttribute="centerY" secondItem="TlD-hu-Fts" secondAttribute="centerY" id="Yw1-J0-4yv"/>
+                                                <constraint firstItem="qIv-AF-r0X" firstAttribute="leading" secondItem="TlD-hu-Fts" secondAttribute="trailing" constant="98" id="tul-dF-ehm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="xcL-4H-1vf" kind="push" identifier="reminderTime5" id="aTV-CO-Mj3"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Debugging" id="n4o-dN-1H7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="320" id="j6a-rB-mQy">
-                                        <rect key="frame" x="0.0" y="237" width="375" height="320"/>
+                                        <rect key="frame" x="0.0" y="367.5" width="375" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j6a-rB-mQy" id="fQH-78-jqq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="319"/>
@@ -670,7 +769,7 @@
                             <tableViewSection headerTitle="Ask me about my mood in:" id="lPc-bO-vAE">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="pQ0-SH-h2v">
-                                        <rect key="frame" x="0.0" y="606" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="735.5" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pQ0-SH-h2v" id="dmV-I4-txJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
@@ -728,7 +827,7 @@
                             <tableViewSection headerTitle="Ask me about my mood at a random time of day:" id="beL-Cm-y3e">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="153" id="8ao-Wa-sNR">
-                                        <rect key="frame" x="0.0" y="735" width="375" height="153"/>
+                                        <rect key="frame" x="0.0" y="863.5" width="375" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ao-Wa-sNR" id="2l6-bi-Msz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
@@ -793,7 +892,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="42" id="16j-mv-Lc5">
-                                        <rect key="frame" x="0.0" y="888" width="375" height="42"/>
+                                        <rect key="frame" x="0.0" y="1016.5" width="375" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="16j-mv-Lc5" id="z7U-BU-6gb">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="41"/>
@@ -854,13 +953,25 @@
                         <outlet property="reminderTime1Switch" destination="Bao-6L-pNx" id="Sp8-Hq-6MB"/>
                         <outlet property="reminderTime2Label" destination="HWX-3T-HHY" id="Yub-df-wet"/>
                         <outlet property="reminderTime2Switch" destination="UUY-ZY-daV" id="Zmb-qE-bLA"/>
+                        <outlet property="reminderTime3Label" destination="9eJ-Du-ZrX" id="40d-3B-xfW"/>
+                        <outlet property="reminderTime3Switch" destination="HVD-IB-WhE" id="i3m-nr-n14"/>
+                        <outlet property="reminderTime4Label" destination="XeA-Bf-VtE" id="EN6-4r-OTd"/>
+                        <outlet property="reminderTime4Switch" destination="UZy-s2-gjm" id="Lec-hJ-Ys2"/>
+                        <outlet property="reminderTime5Label" destination="TlD-hu-Fts" id="gMp-7e-8FV"/>
+                        <outlet property="reminderTime5Switch" destination="qIv-AF-r0X" id="YHf-U5-acg"/>
                         <outlet property="scheduledNotificationsList" destination="l0o-4z-ycs" id="aNy-Ag-sdE"/>
                         <outlet property="timesPerDayText" destination="qq3-v6-soP" id="TGM-QQ-jSL"/>
+                        <outletCollection property="reminderTimeSwitches" destination="uUc-w0-eXd" id="moV-mX-r50"/>
+                        <outletCollection property="reminderTimeSwitches" destination="Bao-6L-pNx" id="sGD-zQ-Rrs"/>
+                        <outletCollection property="reminderTimeSwitches" destination="UUY-ZY-daV" id="8hr-SX-0d4"/>
+                        <outletCollection property="reminderTimeSwitches" destination="HVD-IB-WhE" id="bcR-b2-gcZ"/>
+                        <outletCollection property="reminderTimeSwitches" destination="UZy-s2-gjm" id="Oce-Xx-dp7"/>
+                        <outletCollection property="reminderTimeSwitches" destination="qIv-AF-r0X" id="Cx6-DZ-Gqs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOw-Wb-W10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-365" y="1442"/>
+            <point key="canvasLocation" x="-503" y="1436"/>
         </scene>
         <!--Reminder Time-->
         <scene sceneID="Psz-Ky-nwB">
@@ -908,7 +1019,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FvV-bv-Cur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="1074"/>
+            <point key="canvasLocation" x="138" y="1032"/>
         </scene>
         <!--Mood Log Quiet Hours-->
         <scene sceneID="jfC-CF-rQO">
@@ -2186,6 +2297,6 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iuu-9y-aj6"/>
+        <segue reference="PEE-6O-EBa"/>
     </inferredMetricsTieBreakers>
 </document>

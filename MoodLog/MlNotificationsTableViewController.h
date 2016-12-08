@@ -32,16 +32,25 @@
 @property (strong, nonatomic) NSDate *remindersTime0;
 @property (strong, nonatomic) NSDate *remindersTime1;
 @property (strong, nonatomic) NSDate *remindersTime2;
+@property (strong, nonatomic) NSDate *remindersTime3;
+@property (strong, nonatomic) NSDate *remindersTime4;
+@property (strong, nonatomic) NSDate *remindersTime5;
 @property (weak, nonatomic) IBOutlet UILabel *reminderTime0Label;
 @property (weak, nonatomic) IBOutlet UILabel *reminderTime1Label;
 @property (weak, nonatomic) IBOutlet UILabel *reminderTime2Label;
+@property (weak, nonatomic) IBOutlet UILabel *reminderTime3Label;
+@property (weak, nonatomic) IBOutlet UILabel *reminderTime4Label;
+@property (weak, nonatomic) IBOutlet UILabel *reminderTime5Label;
 @property (weak, nonatomic) IBOutlet UISwitch *reminderTime0Switch;
 @property (weak, nonatomic) IBOutlet UISwitch *reminderTime1Switch;
 @property (weak, nonatomic) IBOutlet UISwitch *reminderTime2Switch;
+@property (weak, nonatomic) IBOutlet UISwitch *reminderTime3Switch;
+@property (weak, nonatomic) IBOutlet UISwitch *reminderTime4Switch;
+@property (weak, nonatomic) IBOutlet UISwitch *reminderTime5Switch;
 
-- (IBAction)changeReminder0SwitchState:(id)sender;
-- (IBAction)changeReminder1SwitchState:(id)sender;
-- (IBAction)changeReminder2SwitchState:(id)sender;
+@property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *reminderTimeSwitches;
+
+- (IBAction)changeReminderSwitchState:(id)sender;
 
 - (IBAction)changeRandomReminderSwitchState:(id)sender;
 - (IBAction)incrementReminders:(id)sender;
