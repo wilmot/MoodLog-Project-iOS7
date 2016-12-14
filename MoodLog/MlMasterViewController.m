@@ -59,7 +59,13 @@ NSPredicate *filterPredicate = nil;
     //[self deleteEmotionsWithNullParent];
     
     CELL_HEIGHT = [[self.tableView dequeueReusableCellWithIdentifier:@"Cell"] bounds].size.height;
-
+    
+    if ([[self.fetchedResultsController sections] count] > 0) {
+        [self scrollToTopButDontShowSearchBar];
+    }
+    else {
+        [self showFirstTimeScreen];
+    }
 }
 
 - (void)fetch {
@@ -191,26 +197,21 @@ NSPredicate *filterPredicate = nil;
 }
 
 - (void)scrollToTopButDontShowSearchBar {
-    [self.tableView setContentOffset:CGPointMake(0, self.searchController.searchBar.frame.size.height) animated:NO];
+    if ([[self.fetchedResultsController sections] count] > 0) { // If there are any records
+        if ((self.tableView.contentOffset.y >= 0) || (self.tableView.contentOffset.y == -20)) {
+            [self.tableView setContentOffset:CGPointMake(0, self.searchController.searchBar.frame.size.height) animated:NO];
+        }
+        else {
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSIndexPath *selection = [self.tableView indexPathForSelectedRow];
+    [super viewWillAppear:animated];
+
     
     [[self tableView] reloadData];
-    
-    if (selection){
-        [[self tableView] selectRowAtIndexPath:selection animated:NO scrollPosition:UITableViewScrollPositionNone];
-    }
-    else { // On first load, go to the top of the TableView but hide SearchBar (dates are in descending order)
-        if ([[self.fetchedResultsController sections] count] > 0) {
-            [self scrollToTopButDontShowSearchBar];
-        }
-        else {
-            [self showFirstTimeScreen];
-        }
-    }
-    [super viewWillAppear:animated];
 }
 
 - (void)showFirstTimeScreen {
@@ -256,16 +257,17 @@ NSPredicate *filterPredicate = nil;
 }
 
 - (void)insertNewObject:(id)sender {
-    [self insertNewObjectAndReturnReference:self];
+    MoodLogEvents *event = [self insertNewObjectAndReturnReference:self];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionTop];
     [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
-    
+    [self.tableView setContentOffset:CGPointMake(0, -20) animated:NO]; // Magic number related to the height of the header bars (e.g. December 2016)
+
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         // iPad doesn't segue, the detail view is always there
     }
     else { // iPhone
-        [self performSegueWithIdentifier:@"showDetail" sender:sender];
+        [self performSegueWithIdentifier:@"showDetail" sender:event];
     }
 }
 
@@ -347,7 +349,6 @@ NSPredicate *filterPredicate = nil;
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
@@ -357,6 +358,7 @@ NSPredicate *filterPredicate = nil;
         [self.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
         
         [self saveContext];
+        [self.tableView reloadData];
     }
 }
 
@@ -411,11 +413,16 @@ NSPredicate *filterPredicate = nil;
     return (UIView *)cell.contentView;
 }
 
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MoodLogEvents *object;
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        MoodLogEvents *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        if ([sender isMemberOfClass:[MoodLogEvents class]]) {
+            object = sender;
+        }
+        else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        }
         [[segue destinationViewController] setDetailItem:object];
     }
     else if ([[segue identifier] isEqualToString:@"mailView"]) {
@@ -581,6 +588,7 @@ NSPredicate *filterPredicate = nil;
     else {
         cell.dateLabel.text = [NSString stringWithFormat:@"%ld", (long)day];
         cell.weekdayLabel.text = [NSString stringWithFormat:@"%@", dayNames[weekday-1]];
+        cell.calendarImage.hidden = NO;
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
