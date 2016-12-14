@@ -28,7 +28,7 @@
 
 typedef NS_ENUM(NSInteger, SearchTabItem) {
     SearchTabItemAll,
-    SearchTabItemMoods,
+    SearchTabItemEmotions,
     SearchTabItemText
 };
 

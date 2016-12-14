@@ -50,7 +50,7 @@ NSPredicate *filterPredicate = nil;
     self.searchController.searchBar.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.definesPresentationContext = YES;
-    self.searchController.searchBar.scopeButtonTitles = @[@"All", @"Moods", @"Text"];
+    self.searchController.searchBar.scopeButtonTitles = @[@"All", @"Emotions", @"Text"];
     self.tableView.tableHeaderView = self.searchController.searchBar;
 
     // Used for testing and debugging:
@@ -86,7 +86,7 @@ NSPredicate *filterPredicate = nil;
                 [self.fetchedResultsController.fetchRequest setPredicate:filterPredicate];
                 [self fetch];
                 break;
-            case SearchTabItemMoods:
+            case SearchTabItemEmotions:
                 filterPredicate = [NSPredicate predicateWithFormat:@"relationshipEmotions.name CONTAINS[cd] %@", self.searchController.searchBar.text];
                 [self.fetchedResultsController.fetchRequest setPredicate:filterPredicate];
                 [self fetch];
