@@ -172,7 +172,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         self.moodsDrawingView.dividerLine = NO;
         [self.moodsDrawingView setNeedsDisplay];
         self.moodListTextView.attributedText = selectedEmotions;
-
         
         // Set the sliders
         [self.overallSlider setValue:[[self.detailItem valueForKey:@"overall"] floatValue]];
