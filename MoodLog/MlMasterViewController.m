@@ -621,7 +621,7 @@ NSPredicate *filterPredicate = nil;
             lastEm = NSLocalizedString(@".", @"period");
         }
         if (mutableEmotionArray.count > 3) {
-            // Lop off all but the first four and add ...
+            // Just show the first few
             for (int i=0; i<3; i++) {
                 Emotions *emotion = mutableEmotionArray[i];
                 selectedEms = [selectedEms stringByAppendingFormat:@", %@", [((Emotions *)emotion).name lowercaseString]];
