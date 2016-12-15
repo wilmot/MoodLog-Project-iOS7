@@ -1561,7 +1561,6 @@
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="Blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="bFo-9G-4hF">
                                                     <rect key="frame" x="0.0" y="1" width="80" height="115"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="k2h-Ya-qx8"/>
                                                         <constraint firstAttribute="height" constant="115" id="wce-uG-GxL"/>
                                                     </constraints>
                                                 </imageView>
@@ -1582,6 +1581,7 @@
                                             <constraints>
                                                 <constraint firstItem="In9-D0-lr4" firstAttribute="top" secondItem="qlW-YU-DD3" secondAttribute="top" constant="1" id="1Rt-62-pWd"/>
                                                 <constraint firstItem="ovC-he-pql" firstAttribute="top" secondItem="bFo-9G-4hF" secondAttribute="bottom" constant="-17" id="8Ms-lo-NT6"/>
+                                                <constraint firstAttribute="trailing" secondItem="bFo-9G-4hF" secondAttribute="trailing" id="8tr-Go-jNh"/>
                                                 <constraint firstItem="bFo-9G-4hF" firstAttribute="leading" secondItem="qlW-YU-DD3" secondAttribute="leading" id="BCt-0x-Oe1"/>
                                                 <constraint firstItem="bFo-9G-4hF" firstAttribute="top" secondItem="qlW-YU-DD3" secondAttribute="top" constant="1" id="BMk-UW-5dB"/>
                                                 <constraint firstAttribute="trailing" secondItem="ovC-he-pql" secondAttribute="trailing" id="Ieq-kh-D1D"/>
