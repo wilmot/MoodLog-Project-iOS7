@@ -164,6 +164,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
                     categoryCounts[thisCategory] = @([categoryCounts[thisCategory] integerValue] + [@1 integerValue]); // increment
                 }
             }
+            [selectedEmotions appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:attrsDictionary]];
         }
         self.moodsDrawingView.chartType = @"Pie";
         self.moodsDrawingView.circumference = 46.0;

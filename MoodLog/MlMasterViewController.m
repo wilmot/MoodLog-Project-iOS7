@@ -607,15 +607,30 @@ NSPredicate *filterPredicate = nil;
         selectedEms = [((Emotions *)[mutableEmotionArray objectAtIndex:0]).name lowercaseString];
         // Treat the last emotion as special (preface with 'and' and end with '.')
         [mutableEmotionArray removeObjectAtIndex:0];
-        if ([mutableEmotionArray count] > 0) {
+        
+        
+        if (([mutableEmotionArray count] > 0) && ([mutableEmotionArray count] <= 3)) {
             lastEm = [NSString stringWithFormat:NSLocalizedString(@" and %@.", @" and %@."), [((Emotions *)[mutableEmotionArray objectAtIndex:[mutableEmotionArray count] - 1]).name lowercaseString]];
             [mutableEmotionArray removeObjectAtIndex:[mutableEmotionArray count] - 1];
         }
-        else {
+        else if ([mutableEmotionArray count ] > 3) {
+            lastEm = @"...";
+            [mutableEmotionArray removeObjectAtIndex:[mutableEmotionArray count] - 1];
+        }
+        else { // 0
             lastEm = NSLocalizedString(@".", @"period");
         }
-        for (id emotion in mutableEmotionArray) {
-            selectedEms = [selectedEms stringByAppendingFormat:@", %@", [((Emotions *)emotion).name lowercaseString]];
+        if (mutableEmotionArray.count > 3) {
+            // Lop off all but the first four and add ...
+            for (int i=0; i<3; i++) {
+                Emotions *emotion = mutableEmotionArray[i];
+                selectedEms = [selectedEms stringByAppendingFormat:@", %@", [((Emotions *)emotion).name lowercaseString]];
+           }
+        }
+        else {
+            for (id emotion in mutableEmotionArray) {
+                selectedEms = [selectedEms stringByAppendingFormat:@", %@", [((Emotions *)emotion).name lowercaseString]];
+            }
         }
         
     }
