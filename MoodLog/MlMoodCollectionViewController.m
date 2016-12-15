@@ -101,6 +101,7 @@ MoodLogEvents *myLogEntry;
 
     // Get the data from the database
     [self getMoodRecordsFromCoreData];
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -307,25 +308,32 @@ MoodLogEvents *myLogEntry;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat width = self.layout.itemSize.width;
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat rows = (int)(screenWidth/width);
+    CGFloat newWidth = (screenWidth/rows); // No gaps between cells
     CGSize size = CGSizeMake(10.0, 10.0);
     UIInterfaceOrientation orientation;
     orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
     if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-            size = CGSizeMake(110.0, 133.0);
+            size = CGSizeMake(newWidth, 133.0);
         }
         else { // iPhone
-            size = CGSizeMake(80.0, 114.0);
+            // Get width of screen
+            // divide by the number of columns that were automatically picked (screenwidth / width) )
+            size = CGSizeMake(newWidth, 114.0);
         }
     }
     else if ([self.cellIdentifier isEqual: @"moodCell"]) {
         //
         if ((orientation == UIDeviceOrientationPortrait) || ( orientation == UIDeviceOrientationPortraitUpsideDown)) {
-            size = CGSizeMake(106.0, 32.0); // Portrait
+            size = CGSizeMake(newWidth, 32.0); // Portrait
         }
         else {
-            size = CGSizeMake(112.0, 32.0); // Landscape iPhone5
+            size = CGSizeMake(newWidth, 32.0); // Landscape iPhone5
         }
     }
     return size;
@@ -346,10 +354,10 @@ MoodLogEvents *myLogEntry;
     if (aMood.selected) {
         // set the color of the bg to something selected
         if (self.showColorsOnEmotions) {
-            [cell setBackgroundColor:[[MlColorChoices translucentColors: 0.4f] objectForKey:aMood.category]];
+            [cell.view setBackgroundColor:[[MlColorChoices translucentColors: 0.4f] objectForKey:aMood.category]];
         }
         else {
-            [cell setBackgroundColor:selectedColor];
+            [cell.view setBackgroundColor:selectedColor];
         }
         [[cell moodName] setTextColor:[UIColor blackColor]];
         if (myLogEntry.editing.boolValue == YES) {
@@ -380,10 +388,10 @@ MoodLogEvents *myLogEntry;
     else { // not selected
         // set the color to normal boring
         if (self.showColorsOnEmotions) {
-            [cell setBackgroundColor:[[MlColorChoices translucentColors: 0.2f] objectForKey:aMood.category]];
+            [cell.view setBackgroundColor:[[MlColorChoices translucentColors: 0.2f] objectForKey:aMood.category]];
         }
         else {
-            [cell setBackgroundColor:normalColor];
+            [cell.view setBackgroundColor:normalColor];
         }
         [[cell moodName] setTextColor:[UIColor blackColor]];
         [[cell checkMark] setHidden:YES];

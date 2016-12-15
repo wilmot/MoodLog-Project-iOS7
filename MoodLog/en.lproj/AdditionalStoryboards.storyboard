@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="ydB-QR-mAB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ydB-QR-mAB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vR7-ab-3cu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1359" y="322"/>
+            <point key="canvasLocation" x="-2174.4000000000001" y="289.65517241379314"/>
         </scene>
         <!--Ml Welcome Screen View Controller-->
         <scene sceneID="4u0-zI-ynr">
@@ -149,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvP-mv-AoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-959" y="321"/>
+            <point key="canvasLocation" x="-1534.4000000000001" y="288.75562218890559"/>
         </scene>
         <!--Ml Welcome Screen View Controller-->
         <scene sceneID="Uj4-FN-5Lp">
@@ -280,7 +279,7 @@ Mood Log is meant for educational purposes only. This app is not intended as a s
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMe-HS-mux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2148" y="322"/>
+            <point key="canvasLocation" x="-3436.8000000000002" y="289.65517241379314"/>
         </scene>
         <!--Ml Welcome Page View Controller-->
         <scene sceneID="TVu-Gn-fbO">
@@ -297,7 +296,7 @@ Mood Log is meant for educational purposes only. This app is not intended as a s
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8Z-cT-fey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2681" y="95"/>
+            <point key="canvasLocation" x="-4289.6000000000004" y="85.457271364317847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2JA-78-p0h">
@@ -315,7 +314,7 @@ Mood Log is meant for educational purposes only. This app is not intended as a s
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FME-7B-aXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3207" y="95"/>
+            <point key="canvasLocation" x="-5131.2000000000007" y="85.457271364317847"/>
         </scene>
         <!--Ml Welcome Screen View Controller-->
         <scene sceneID="g5I-dR-bzW">
@@ -386,7 +385,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dt9-s4-Fad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1750" y="322"/>
+            <point key="canvasLocation" x="-2800" y="289.65517241379314"/>
         </scene>
         <!--Ml Chart View Controller-->
         <scene sceneID="hjw-Uv-jDM">
@@ -491,7 +490,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ht-ZD-0Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3252" y="1078"/>
+            <point key="canvasLocation" x="-5203.2000000000007" y="969.71514242878573"/>
         </scene>
         <!--Ml Chart Cell Entry View Controller-->
         <scene sceneID="ADL-rR-ipX">
@@ -576,7 +575,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4p8-dg-i5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1857" y="1913"/>
+            <point key="canvasLocation" x="-2971.2000000000003" y="1720.8395802098953"/>
         </scene>
         <!--Ml Chart Collection View Controller-->
         <scene sceneID="qxT-Wa-Wbh">
@@ -885,12 +884,12 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                     <connections>
                         <outlet property="chartCollectionView" destination="P8x-rK-qyS" id="3xe-ms-rgd"/>
                         <outlet property="collectionView" destination="P8x-rK-qyS" id="WUE-cD-cF0"/>
-                        <segue destination="OZp-fm-LOv" kind="modal" identifier="chartCellDetail" id="Sck-Mb-0uB"/>
+                        <segue destination="OZp-fm-LOv" kind="presentation" identifier="chartCellDetail" id="Sck-Mb-0uB"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Jb-eZ-uYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2466" y="1477"/>
+            <point key="canvasLocation" x="-3945.6000000000004" y="1328.6356821589206"/>
         </scene>
         <!--Ml Summary Info View Controller-->
         <scene sceneID="Vp5-U4-4R8">
@@ -980,7 +979,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49A-yD-9Rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1360" y="1296"/>
+            <point key="canvasLocation" x="-2176" y="1165.8170914542729"/>
         </scene>
         <!--Ml Welcome Screen View Controller-->
         <scene sceneID="rH4-Ju-t9O">
@@ -1096,16 +1095,11 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSr-rV-pgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-545" y="322"/>
+            <point key="canvasLocation" x="-872" y="289.65517241379314"/>
         </scene>
     </scenes>
     <resources>
         <image name="ParrotsEmotions.png" width="850" height="1684"/>
         <image name="Plutchik-wheel.svg.png" width="512" height="519"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

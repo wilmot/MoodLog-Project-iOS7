@@ -1,27 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.29999999999999999" contentMode="scaleToFill" image="SixColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="GzX-XZ-Eq5">
-                    <rect key="frame" x="0.0" y="240" width="320" height="90"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <color key="backgroundColor" red="0.9918937087059021" green="0.80355274677276611" blue="0.03739069402217865" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="0.0" y="289.5" width="375" height="90"/>
+                    <color key="backgroundColor" red="0.9918937087059021" green="0.80355274677276611" blue="0.03739069402217865" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="7oz-YO-8cx"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="yUk-wf-li4">
-                    <rect key="frame" x="0.0" y="240" width="320" height="90"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="289.5" width="375" height="90"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="kY9-gp-Rur"/>
                     </constraints>
@@ -31,8 +32,7 @@ Tap anywhere to begin</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The “New” button will create a new Mood Log entry" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="rwB-Mf-LWP">
-                    <rect key="frame" x="32" y="47" width="211" height="97"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="87" y="47" width="211" height="97"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="211" id="G9j-WY-Z1G"/>
                         <constraint firstAttribute="height" constant="97" id="xcL-1s-VJv"/>
@@ -42,15 +42,14 @@ Tap anywhere to begin</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="UpperRight.png" translatesAutoresizingMaskIntoConstraints="NO" id="xwP-jM-Jvv">
-                    <rect key="frame" x="246" y="58" width="41" height="41"/>
-                    <autoresizingMask key="autoresizingMask"/>
+                    <rect key="frame" x="301" y="58" width="41" height="41"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="osv-Xp-d9l"/>
                         <constraint firstAttribute="width" constant="41" id="pXI-3I-WDx"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="xwP-jM-Jvv" firstAttribute="top" secondItem="1" secondAttribute="top" constant="58" id="IFb-km-FG6"/>
                 <constraint firstAttribute="centerY" secondItem="yUk-wf-li4" secondAttribute="centerY" constant="-1" id="Poa-EZ-Sg6"/>
@@ -64,23 +63,22 @@ Tap anywhere to begin</string>
                 <constraint firstAttribute="trailing" secondItem="GzX-XZ-Eq5" secondAttribute="trailing" id="wIP-rD-b6t"/>
                 <constraint firstAttribute="trailing" secondItem="rwB-Mf-LWP" secondAttribute="trailing" constant="77" id="zkA-0I-BoC"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="26" y="52"/>
         </view>
         <view contentMode="scaleToFill" id="gMo-Ek-fSZ">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.30000001192092896" contentMode="scaleToFill" image="SixColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="dqg-SH-gXV">
-                    <rect key="frame" x="0.0" y="196" width="320" height="90"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <color key="backgroundColor" red="0.99189370870000004" green="0.8035527468" blue="0.037390694019999997" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="0.0" y="290" width="375" height="90"/>
+                    <color key="backgroundColor" red="0.99189370870000004" green="0.8035527468" blue="0.037390694019999997" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="Vq8-LC-Fgo"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-uL-Uc9">
-                    <rect key="frame" x="0.0" y="196" width="320" height="90"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="290" width="375" height="90"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="H83-OQ-ULM"/>
                     </constraints>
@@ -90,8 +88,7 @@ Tap anywhere to begin</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The “New” button will create a new Mood Log entry" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="SC2-lh-Yk3">
-                    <rect key="frame" x="32" y="47" width="211" height="97"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="87" y="47" width="211" height="97"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="97" id="B6Y-8L-RHK"/>
                         <constraint firstAttribute="width" constant="211" id="oau-tr-YmS"/>
@@ -101,15 +98,14 @@ Tap anywhere to begin</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="UpperRight.png" translatesAutoresizingMaskIntoConstraints="NO" id="YRu-k7-uIn">
-                    <rect key="frame" x="246" y="58" width="41" height="41"/>
-                    <autoresizingMask key="autoresizingMask"/>
+                    <rect key="frame" x="301" y="58" width="41" height="41"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="B0A-wh-kDf"/>
                         <constraint firstAttribute="width" constant="41" id="YDF-Xg-uMT"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="SC2-lh-Yk3" secondAttribute="trailing" constant="77" id="1CF-gU-DnF"/>
                 <constraint firstAttribute="trailing" secondItem="YRu-k7-uIn" secondAttribute="trailing" constant="33" id="2Q0-uw-ACZ"/>
@@ -123,8 +119,6 @@ Tap anywhere to begin</string>
                 <constraint firstItem="KBd-uL-Uc9" firstAttribute="leading" secondItem="gMo-Ek-fSZ" secondAttribute="leading" id="p2a-fM-ves"/>
                 <constraint firstAttribute="trailing" secondItem="KBd-uL-Uc9" secondAttribute="trailing" id="y9T-bB-jUV"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>

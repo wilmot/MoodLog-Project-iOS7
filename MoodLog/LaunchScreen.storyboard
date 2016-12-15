@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="SixColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="e7B-GM-QZl">
+                                <rect key="frame" x="-1" y="28" width="376" height="349"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood-Log" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP7-hF-pMC">
+                                <rect key="frame" x="0.0" y="157" width="375" height="92"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e7B-GM-QZl" firstAttribute="trailing" secondItem="pP7-hF-pMC" secondAttribute="trailing" id="4VF-F8-vUS"/>
+                            <constraint firstAttribute="trailing" secondItem="e7B-GM-QZl" secondAttribute="trailing" id="Cz7-IU-OXu"/>
+                            <constraint firstItem="e7B-GM-QZl" firstAttribute="centerX" secondItem="pP7-hF-pMC" secondAttribute="centerX" id="NZu-AW-FQA"/>
+                            <constraint firstItem="pP7-hF-pMC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="WOP-FI-Swk"/>
+                            <constraint firstItem="e7B-GM-QZl" firstAttribute="centerY" secondItem="pP7-hF-pMC" secondAttribute="centerY" id="ZgT-oI-jJy"/>
+                            <constraint firstItem="e7B-GM-QZl" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="fAC-wK-jv8"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="e7B-GM-QZl" secondAttribute="bottom" constant="290" id="qLE-bM-hLm"/>
+                            <constraint firstItem="pP7-hF-pMC" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="137" id="xWh-DY-qGa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SixColors.png" width="276" height="68"/>
+    </resources>
+</document>

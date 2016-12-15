@@ -321,7 +321,6 @@
 		4C55CBF5162DE67500EAA878 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C55CBF4162DE67500EAA878 /* main.m */; };
 		4C55CBF9162DE67500EAA878 /* MlAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C55CBF8162DE67500EAA878 /* MlAppDelegate.m */; };
 		4C55CC02162DE67500EAA878 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */; };
-		4C55CC05162DE67500EAA878 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */; };
 		4C55CC08162DE67500EAA878 /* MoodLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C55CC06162DE67500EAA878 /* MoodLog.xcdatamodeld */; };
 		4C55CC0B162DE67500EAA878 /* MlMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C55CC0A162DE67500EAA878 /* MlMasterViewController.m */; };
 		4C55CC0E162DE67500EAA878 /* MlDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C55CC0D162DE67500EAA878 /* MlDetailViewController.m */; };
@@ -380,6 +379,7 @@
 		4CB012CA18037AE700343D43 /* RoundMoodLog.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C818037AE700343D43 /* RoundMoodLog.png */; };
 		4CB012CB18037AE700343D43 /* RoundMoodLog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C918037AE700343D43 /* RoundMoodLog@2x.png */; };
 		4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8E8EF17C8647700E26857 /* Images.xcassets */; };
+		4CDAAB511E033C6E004C5C31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDAAB501E033C6E004C5C31 /* LaunchScreen.storyboard */; };
 		4CEEF60017FB628E00C29507 /* MlColorChoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */; };
 		4CEEF60317FCF48D00C29507 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60117FCF48D00C29507 /* WelcomeView.xib */; };
 		4CEEF60517FD034C00C29507 /* SixColors.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60417FD034C00C29507 /* SixColors.png */; };
@@ -737,7 +737,6 @@
 		4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4C55CBF8162DE67500EAA878 /* MlAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4C55CC01162DE67500EAA878 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		4C55CC04162DE67500EAA878 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		4C55CC07162DE67500EAA878 /* MoodLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoodLog.xcdatamodel; sourceTree = "<group>"; };
 		4C55CC09162DE67500EAA878 /* MlMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlMasterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4C55CC0A162DE67500EAA878 /* MlMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlMasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -819,6 +818,7 @@
 		4CB012C918037AE700343D43 /* RoundMoodLog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RoundMoodLog@2x.png"; sourceTree = "<group>"; };
 		4CB8E8EF17C8647700E26857 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 4.xcdatamodel"; sourceTree = "<group>"; };
+		4CDAAB501E033C6E004C5C31 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CECC217165D50E800EE3C6B /* MoodLog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 2.xcdatamodel"; sourceTree = "<group>"; };
 		4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlColorChoices.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlColorChoices.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -1153,7 +1153,7 @@
 				4C55CC00162DE67500EAA878 /* MainStoryboard_iPhone.storyboard */,
 				4C65612617F280AD00F03470 /* AdditionalStoryboards.storyboard */,
 				4CEEF60117FCF48D00C29507 /* WelcomeView.xib */,
-				4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */,
+				4CDAAB501E033C6E004C5C31 /* LaunchScreen.storyboard */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -1483,7 +1483,6 @@
 				4C55CBF3162DE67400EAA878 /* InfoPlist.strings in Resources */,
 				4C55CC02162DE67500EAA878 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4C06390F17E45A6E00563FE6 /* Neglected.png in Resources */,
-				4C55CC05162DE67500EAA878 /* MainStoryboard_iPad.storyboard in Resources */,
 				4C4C53E01665F14900DDDBA2 /* MoodList.plist in Resources */,
 				4C0639BA17E69DA200563FE6 /* Shocked@2x.png in Resources */,
 				4C4043681783E51400710F2A /* Affectionate.png in Resources */,
@@ -1583,6 +1582,7 @@
 				4C4043981783E51400710F2A /* Elated.png in Resources */,
 				4C6BB9351815BB7400645E2C /* Letter@2x.png in Resources */,
 				4C4043991783E51400710F2A /* Elated@2x.png in Resources */,
+				4CDAAB511E033C6E004C5C31 /* LaunchScreen.storyboard in Resources */,
 				4C0639BB17E69DA200563FE6 /* Sentimental.png in Resources */,
 				4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */,
 				4C06392E17E45A6E00563FE6 /* Irritable@2x.png in Resources */,
@@ -1912,14 +1912,6 @@
 				4C55CC01162DE67500EAA878 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		4C55CC03162DE67500EAA878 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C55CC04162DE67500EAA878 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		4C65612617F280AD00F03470 /* AdditionalStoryboards.storyboard */ = {
