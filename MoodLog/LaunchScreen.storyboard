@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,9 +23,15 @@
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="SixColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="e7B-GM-QZl">
                                 <rect key="frame" x="-1" y="28" width="376" height="349"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="349" id="4Ks-hs-VUt"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood-Log" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP7-hF-pMC">
                                 <rect key="frame" x="0.0" y="157" width="375" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="NO7-R7-JK6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,14 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="e7B-GM-QZl" firstAttribute="trailing" secondItem="pP7-hF-pMC" secondAttribute="trailing" id="4VF-F8-vUS"/>
-                            <constraint firstAttribute="trailing" secondItem="e7B-GM-QZl" secondAttribute="trailing" id="Cz7-IU-OXu"/>
-                            <constraint firstItem="e7B-GM-QZl" firstAttribute="centerX" secondItem="pP7-hF-pMC" secondAttribute="centerX" id="NZu-AW-FQA"/>
-                            <constraint firstItem="pP7-hF-pMC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="WOP-FI-Swk"/>
-                            <constraint firstItem="e7B-GM-QZl" firstAttribute="centerY" secondItem="pP7-hF-pMC" secondAttribute="centerY" id="ZgT-oI-jJy"/>
-                            <constraint firstItem="e7B-GM-QZl" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="fAC-wK-jv8"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="e7B-GM-QZl" secondAttribute="bottom" constant="290" id="qLE-bM-hLm"/>
-                            <constraint firstItem="pP7-hF-pMC" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="137" id="xWh-DY-qGa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e7B-GM-QZl" secondAttribute="trailing" constant="-16" id="Ae3-JE-4mF"/>
+                            <constraint firstItem="e7B-GM-QZl" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-17" id="B89-CW-yHs"/>
+                            <constraint firstItem="e7B-GM-QZl" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="BMT-dh-zvp"/>
+                            <constraint firstItem="pP7-hF-pMC" firstAttribute="centerX" secondItem="e7B-GM-QZl" secondAttribute="centerX" id="f6T-ao-AGf"/>
+                            <constraint firstItem="pP7-hF-pMC" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="137" id="p19-0S-M34"/>
+                            <constraint firstItem="pP7-hF-pMC" firstAttribute="trailing" secondItem="e7B-GM-QZl" secondAttribute="trailing" id="zbS-OX-NMH"/>
                         </constraints>
                     </view>
                 </viewController>
