@@ -308,16 +308,16 @@ MoodLogEvents *myLogEntry;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = self.layout.itemSize.width;
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat rows = (int)(screenWidth/width);
-    CGFloat newWidth = (screenWidth/rows); // No gaps between cells
     CGSize size = CGSizeMake(10.0, 10.0);
     UIInterfaceOrientation orientation;
     orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
     if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
+        CGFloat width = 80.0;
+        CGFloat screenWidth = screenRect.size.width;
+        CGFloat columns = (int)(screenWidth/width);
+        CGFloat newWidth = (screenWidth/columns); // No gaps between cells
         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
             size = CGSizeMake(newWidth, 133.0);
         }
@@ -328,6 +328,10 @@ MoodLogEvents *myLogEntry;
         }
     }
     else if ([self.cellIdentifier isEqual: @"moodCell"]) {
+        CGFloat width = 96.0;
+        CGFloat screenWidth = screenRect.size.width;
+        CGFloat columns = (int)(screenWidth/width);
+        CGFloat newWidth = (screenWidth/columns); // No gaps between cells
         //
         if ((orientation == UIDeviceOrientationPortrait) || ( orientation == UIDeviceOrientationPortraitUpsideDown)) {
             size = CGSizeMake(newWidth, 32.0); // Portrait
