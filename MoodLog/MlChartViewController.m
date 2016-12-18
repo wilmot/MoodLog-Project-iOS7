@@ -41,7 +41,6 @@ static short BAR_CHART = 2;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
