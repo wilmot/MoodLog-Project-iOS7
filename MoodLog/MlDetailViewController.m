@@ -17,7 +17,6 @@
 #import "MlColorChoices.h"
 
 @interface MlDetailViewController ()
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
 
@@ -46,9 +45,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             [self configureView];
         }
     }
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
 }
 
 - (void)viewDidLoad
@@ -252,18 +248,18 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 
 #pragma mark - Split view
 
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master button");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-}
+//- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController {
+//    barButtonItem.title = NSLocalizedString(@"Master", @"Master button");
+//    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+//    self.masterPopoverController = popoverController;
+//}
+//
+//- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+//{
+//    // Called when the view is shown again in the split view, invalidating the button and popover controller.
+//    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+//    self.masterPopoverController = nil;
+//}
 
 - (IBAction)pressedSlidersSetAdjustButton:(id)sender {
     // Toggle the Set/Adjust value
