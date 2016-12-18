@@ -221,11 +221,20 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
 //    if (((long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount) > 0) {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Mood Log", @"Application Title")
-                                                        message:NSLocalizedString(@"Create a new entry to record your current mood.", @"Text to show in the reminder notification")
-                                                       delegate:self cancelButtonTitle:NSLocalizedString(@"Close", @"Close button text")
-                                                  otherButtonTitles:nil];
-        [alertView show];
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:NSLocalizedString(@"Mood Log", @"Application Title")
+                                     message:NSLocalizedString(@"Create a new entry to record your current mood.", @"Text to show in the reminder notification")
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* closeButton = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"Close", @"Close button text")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       //Handle your yes please button action here
+                                   }];
+        [alert addAction:closeButton];
+        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+
 //    }
     notification.applicationIconBadgeNumber = 0; // Reset badge
     //[[UIApplication sharedApplication] cancelAllLocalNotifications];
@@ -254,9 +263,19 @@
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error saving Mood Log data", @"Core data saving error alert title")
-                                        message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data saving error alert text"), error, [error userInfo]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
-            [alertView show];
+            UIAlertController * alert = [UIAlertController
+                                         alertControllerWithTitle:NSLocalizedString(@"Error saving Mood Log data", @"Core data saving error alert title")
+                                         message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data saving error alert text"), error, [error userInfo]]
+                                         preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* okButton = [UIAlertAction
+                                          actionWithTitle:NSLocalizedString(@"OK", @"OK button")
+                                          style:UIAlertActionStyleDefault
+                                          handler:^(UIAlertAction * action) {
+                                              //Handle your yes please button action here
+                                          }];
+            [alert addAction:okButton];
+            [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
         }
     }
 }
@@ -327,9 +346,19 @@
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
          
          */
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error finding Mood Log data", @"Core data persistent store coordinator error alert title")
-                                                            message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data saving error alert text"), error, [error userInfo]] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
-        [alertView show];
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:NSLocalizedString(@"Error finding Mood Log data", @"Core data persistent store coordinator error alert title")
+                                     message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data saving error alert text"), error, [error userInfo]]
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* okButton = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK button")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       //Handle your yes please button action here
+                                   }];
+        [alert addAction:okButton];
+        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
     }
     
     return _persistentStoreCoordinator;
