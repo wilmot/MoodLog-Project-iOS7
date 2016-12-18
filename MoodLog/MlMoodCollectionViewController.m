@@ -430,9 +430,19 @@ MoodLogEvents *myLogEntry;
             MlMoodDataItem *thisMood = (MlMoodDataItem *)result[0];
             thisMood.selected = YES;
         } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error fetching Mood Log records", @"Core data result count error alert title")
-                                                                message:[NSString stringWithFormat:NSLocalizedString(@"An unexpected error has occurred.\n\n Report this issue to support@voyageropen.com", @"Core Data result count error alert text")] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
-            [alertView show];
+            UIAlertController * alert = [UIAlertController
+                                         alertControllerWithTitle:NSLocalizedString(@"Error fetching Mood Log data", @"Core data retrieving error alert title")
+                                         message:[NSString stringWithFormat:NSLocalizedString(@"An unexpected error has occurred.\n\n Report this issue to support@voyageropen.com", @"Core Data result count error alert text")]
+                                         preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* okButton = [UIAlertAction
+                                       actionWithTitle:NSLocalizedString(@"OK", @"OK button")
+                                       style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * action) {
+                                           //Handle your yes please button action here
+                                       }];
+            [alert addAction:okButton];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }
 }

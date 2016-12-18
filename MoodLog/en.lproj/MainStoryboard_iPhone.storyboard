@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -127,7 +126,7 @@
                                                 <rect key="frame" x="8" y="0.0" width="397" height="56"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No Entries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-jI-0pJ">
-                                                        <rect key="frame" x="122.66666666666669" y="7" width="152" height="21"/>
+                                                        <rect key="frame" x="122.66666666666667" y="7" width="152" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="152" id="vbB-6o-KnR"/>
                                                         </constraints>
@@ -1488,7 +1487,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KDk-cp-qb5">
-                            <size key="itemSize" width="80" height="32"/>
+                            <size key="itemSize" width="96" height="32"/>
                             <size key="headerReferenceSize" width="50" height="20"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
