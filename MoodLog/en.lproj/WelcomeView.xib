@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,18 +11,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="gMo-Ek-fSZ">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.30000001192092896" contentMode="scaleToFill" image="SixColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="dqg-SH-gXV">
-                    <rect key="frame" x="0.0" y="240" width="375" height="118"/>
+                    <rect key="frame" x="0.0" y="190" width="320" height="118"/>
                     <color key="backgroundColor" red="0.99189370870000004" green="0.8035527468" blue="0.037390694019999997" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="118" id="V66-lP-Vk1"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The “New” button will create a new Mood-Log entry" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="SC2-lh-Yk3">
-                    <rect key="frame" x="142" y="47" width="156" height="97"/>
+                    <rect key="frame" x="87" y="47" width="156" height="97"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="97" id="BxG-it-h4E"/>
                         <constraint firstAttribute="width" constant="156" id="X2u-4D-Ous"/>
@@ -32,14 +32,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="UpperRight.png" translatesAutoresizingMaskIntoConstraints="NO" id="YRu-k7-uIn">
-                    <rect key="frame" x="301" y="58" width="41" height="41"/>
+                    <rect key="frame" x="246" y="58" width="41" height="41"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="OMk-JP-woo"/>
                         <constraint firstAttribute="width" constant="41" id="ucA-Ya-vBo"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-uL-Uc9">
-                    <rect key="frame" x="0.0" y="267" width="375" height="64"/>
+                    <rect key="frame" x="0.0" y="217" width="320" height="64"/>
                     <string key="text">Welcome to Mood-Log.
 Tap anywhere to begin</string>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
@@ -52,12 +52,12 @@ Tap anywhere to begin</string>
                 <constraint firstItem="KBd-uL-Uc9" firstAttribute="leading" secondItem="gMo-Ek-fSZ" secondAttribute="leading" id="DYi-pV-EeB"/>
                 <constraint firstItem="SC2-lh-Yk3" firstAttribute="top" secondItem="gMo-Ek-fSZ" secondAttribute="top" constant="47" id="Nxf-Sk-U5w"/>
                 <constraint firstItem="dqg-SH-gXV" firstAttribute="leading" secondItem="gMo-Ek-fSZ" secondAttribute="leading" id="Olu-ay-Rjd"/>
-                <constraint firstItem="dqg-SH-gXV" firstAttribute="top" secondItem="gMo-Ek-fSZ" secondAttribute="top" constant="240" id="T1k-Ar-DEI"/>
+                <constraint firstItem="dqg-SH-gXV" firstAttribute="top" secondItem="gMo-Ek-fSZ" secondAttribute="top" constant="190" id="T1k-Ar-DEI"/>
                 <constraint firstAttribute="trailing" secondItem="KBd-uL-Uc9" secondAttribute="trailing" id="Xuh-lT-ees"/>
                 <constraint firstAttribute="trailing" secondItem="YRu-k7-uIn" secondAttribute="trailing" constant="33" id="eUM-A9-Kd8"/>
                 <constraint firstAttribute="trailing" secondItem="dqg-SH-gXV" secondAttribute="trailing" id="kae-hp-Nxx"/>
                 <constraint firstItem="YRu-k7-uIn" firstAttribute="top" secondItem="gMo-Ek-fSZ" secondAttribute="top" constant="58" id="mAH-ta-3yA"/>
-                <constraint firstItem="KBd-uL-Uc9" firstAttribute="top" secondItem="gMo-Ek-fSZ" secondAttribute="top" constant="267" id="tZ0-Yt-9Ct"/>
+                <constraint firstItem="KBd-uL-Uc9" firstAttribute="top" secondItem="gMo-Ek-fSZ" secondAttribute="top" constant="217" id="tZ0-Yt-9Ct"/>
             </constraints>
             <point key="canvasLocation" x="-181" y="-866"/>
         </view>
@@ -69,6 +69,6 @@ Tap anywhere to begin</string>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

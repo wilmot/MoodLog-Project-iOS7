@@ -219,23 +219,26 @@ NSPredicate *filterPredicate = nil;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    
     [[self tableView] reloadData];
 }
 
 - (void)showFirstTimeScreen {
     //Initial screen when no records
     MlAppDelegate *delegate = (MlAppDelegate *)[[UIApplication sharedApplication] delegate];
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) { // iPhone 4 inch screen
-        self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:0];
-    }
-    else { // iPhone 3.5 inch screen (in case it needs to be different)
-        self.firstTimeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:0];
-    }
- 
-    [delegate.window addSubview:self.firstTimeView];
+    UIView *welcomeView = [[[NSBundle mainBundle] loadNibNamed:@"WelcomeView" owner:self options:nil] objectAtIndex:0];
+    self.firstTimeView = welcomeView;
+    
+    self.firstTimeView.translatesAutoresizingMaskIntoConstraints = NO;
+    welcomeView.bounds = self.view.bounds;
+    [delegate.window addSubview:welcomeView];
+    [delegate.window addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[welcomeView]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(welcomeView)]];
+    [delegate.window addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[welcomeView]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(welcomeView)]];
 
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
                                              initWithTarget:self action:@selector(touchedFirstTimeScreen:)];
