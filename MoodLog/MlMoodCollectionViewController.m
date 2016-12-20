@@ -307,38 +307,38 @@ MoodLogEvents *myLogEntry;
     
 }
 
+//- (UIEdgeInsets)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+//    return UIEdgeInsetsMake(-0.5, -0.5, -0.5, -0.5); // top, left, bottom, right
+//}
+//
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+//    
+//    return 0.0;
+//}
+//
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+//    return 0.0;
+//}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGRect viewRect = [collectionView bounds];
     CGSize size = CGSizeMake(10.0, 10.0);
     UIInterfaceOrientation orientation;
     orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
     if ([self.cellIdentifier isEqual: @"moodCellFaces"]){
         CGFloat width = 80.0;
-        CGFloat screenWidth = screenRect.size.width;
-        CGFloat columns = (int)(screenWidth/width);
-        CGFloat newWidth = (screenWidth/columns); // No gaps between cells
-        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-            size = CGSizeMake(newWidth, 133.0);
-        }
-        else { // iPhone
-            // Get width of screen
-            // divide by the number of columns that were automatically picked (screenwidth / width) )
-            size = CGSizeMake(newWidth, 114.0);
-        }
+        CGFloat viewWidth = viewRect.size.width;
+        CGFloat columns = (int)(viewWidth/width);
+        CGFloat newWidth = (viewWidth/columns); // No gaps between cells
+        size = CGSizeMake(newWidth, 114.0);
     }
     else if ([self.cellIdentifier isEqual: @"moodCell"]) {
         CGFloat width = 96.0;
-        CGFloat screenWidth = screenRect.size.width;
-        CGFloat columns = (int)(screenWidth/width);
-        CGFloat newWidth = (screenWidth/columns); // No gaps between cells
-        //
-        if ((orientation == UIDeviceOrientationPortrait) || ( orientation == UIDeviceOrientationPortraitUpsideDown)) {
-            size = CGSizeMake(newWidth, 32.0); // Portrait
-        }
-        else {
-            size = CGSizeMake(newWidth, 32.0); // Landscape iPhone5
-        }
+        CGFloat viewWidth = viewRect.size.width;
+        CGFloat columns = (int)(viewWidth/width);
+        CGFloat newWidth = (viewWidth/columns); // No gaps between cells
+        size = CGSizeMake(newWidth, 32.0);
     }
     return size;
 }
@@ -358,10 +358,10 @@ MoodLogEvents *myLogEntry;
     if (aMood.selected) {
         // set the color of the bg to something selected
         if (self.showColorsOnEmotions) {
-            [cell.view setBackgroundColor:[[MlColorChoices translucentColors: 0.4f] objectForKey:aMood.category]];
+            [cell setBackgroundColor:[[MlColorChoices translucentColors: 0.4f] objectForKey:aMood.category]];
         }
         else {
-            [cell.view setBackgroundColor:selectedColor];
+            [cell setBackgroundColor:selectedColor];
         }
         [[cell moodName] setTextColor:[UIColor blackColor]];
         if (myLogEntry.editing.boolValue == YES) {
@@ -392,10 +392,10 @@ MoodLogEvents *myLogEntry;
     else { // not selected
         // set the color to normal boring
         if (self.showColorsOnEmotions) {
-            [cell.view setBackgroundColor:[[MlColorChoices translucentColors: 0.2f] objectForKey:aMood.category]];
+            [cell setBackgroundColor:[[MlColorChoices translucentColors: 0.2f] objectForKey:aMood.category]];
         }
         else {
-            [cell.view setBackgroundColor:normalColor];
+            [cell setBackgroundColor:normalColor];
         }
         [[cell moodName] setTextColor:[UIColor blackColor]];
         [[cell checkMark] setHidden:YES];
