@@ -99,6 +99,10 @@ MoodLogEvents *myLogEntry;
         myLogEntry = self.detailItem;
     }
 
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    normalColor = [UIColor whiteColor];
+    selectedColor = [self adjustSaturation:[UIColor yellowColor] factor:5.0];
+    
     // Get the data from the database
     [self getMoodRecordsFromCoreData];
     
@@ -330,7 +334,7 @@ MoodLogEvents *myLogEntry;
         CGFloat width = 80.0;
         CGFloat viewWidth = viewRect.size.width;
         CGFloat columns = (int)(viewWidth/width);
-        CGFloat newWidth = (viewWidth/columns); // No gaps between cells
+        CGFloat newWidth = (int)(viewWidth/columns); // No gaps between cells
         size = CGSizeMake(newWidth, 114.0);
     }
     else if ([self.cellIdentifier isEqual: @"moodCell"]) {
@@ -347,6 +351,18 @@ MoodLogEvents *myLogEntry;
     [self.collectionView reloadData];
 }
 
+- (UIColor *) adjustSaturation: (UIColor *)color factor: (CGFloat) factor {
+    CGFloat hue, saturation, brightness, alpha;
+    BOOL ok = [color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha ];
+    if ( !ok ) {
+        hue = 0; saturation = 0; brightness = 0; alpha = 1.0;
+    }
+    brightness = 1.0;
+    saturation /= factor;
+    UIColor * newColor = [ UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha ];
+    return newColor;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     // we're going to use a custom UICollectionViewCell, which will hold an image and its label
@@ -355,10 +371,19 @@ MoodLogEvents *myLogEntry;
     // Configure the cell...
     MlMoodDataItem *aMood = [[emotionArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row];
     
+    CALayer *mask = [CALayer layer];
+    mask.frame = cell.bounds;
+    mask.shadowRadius = 6;
+    mask.shadowPath = CGPathCreateWithRoundedRect(CGRectInset(cell.bounds, 0, 0), 1, 1, nil);
+    mask.shadowOpacity = 1;
+    mask.shadowOffset = CGSizeZero;
+    mask.shadowColor = [UIColor whiteColor].CGColor;
+    cell.layer.mask = mask;
+
     if (aMood.selected) {
         // set the color of the bg to something selected
         if (self.showColorsOnEmotions) {
-            [cell setBackgroundColor:[[MlColorChoices translucentColors: 0.4f] objectForKey:aMood.category]];
+            [cell setBackgroundColor:[self adjustSaturation:[[MlColorChoices translucentColors: 1.0f] objectForKey:aMood.category] factor: 2.0]];
         }
         else {
             [cell setBackgroundColor:selectedColor];
@@ -392,7 +417,7 @@ MoodLogEvents *myLogEntry;
     else { // not selected
         // set the color to normal boring
         if (self.showColorsOnEmotions) {
-            [cell setBackgroundColor:[[MlColorChoices translucentColors: 0.2f] objectForKey:aMood.category]];
+            [cell setBackgroundColor:[self adjustSaturation:[[MlColorChoices translucentColors: 1.0f] objectForKey:aMood.category] factor: 5.0]];
         }
         else {
             [cell setBackgroundColor:normalColor];
