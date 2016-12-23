@@ -2040,7 +2040,7 @@
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voyageropen.${PRODUCT_NAME:rfc1034identifier}B";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyageropen.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood-Log-Bridging-Header.h";
@@ -2067,7 +2067,7 @@
 				INFOPLIST_FILE = "MoodLog/MoodLog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voyageropen.${PRODUCT_NAME:rfc1034identifier}B";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyageropen.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood-Log-Bridging-Header.h";
