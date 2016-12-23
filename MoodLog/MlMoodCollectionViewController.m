@@ -456,7 +456,7 @@ MoodLogEvents *myLogEntry;
             thisMood.selected = YES;
         } else {
             UIAlertController * alert = [UIAlertController
-                                         alertControllerWithTitle:NSLocalizedString(@"Error fetching Mood Log data", @"Core data retrieving error alert title")
+                                         alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood Log data", @"Core data retrieving error alert title")
                                          message:[NSString stringWithFormat:NSLocalizedString(@"An unexpected error has occurred.\n\n Report this issue to support@voyageropen.com", @"Core Data result count error alert text")]
                                          preferredStyle:UIAlertControllerStyleAlert];
             

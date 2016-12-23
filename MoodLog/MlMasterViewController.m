@@ -380,7 +380,7 @@ NSPredicate *filterPredicate = nil;
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
         UIAlertController * alert = [UIAlertController
-                                     alertControllerWithTitle:NSLocalizedString(@"Error saving Mood Log data", @"Core data retrieving error alert title")
+                                     alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood Log data", @"Core data retrieving error alert title")
                                      message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data unknown error alert text"), error, [error userInfo]]
                                      preferredStyle:UIAlertControllerStyleAlert];
         
