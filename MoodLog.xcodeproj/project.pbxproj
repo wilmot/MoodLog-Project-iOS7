@@ -379,6 +379,9 @@
 		4CB012CA18037AE700343D43 /* RoundMoodLog.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C818037AE700343D43 /* RoundMoodLog.png */; };
 		4CB012CB18037AE700343D43 /* RoundMoodLog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C918037AE700343D43 /* RoundMoodLog@2x.png */; };
 		4CB8E8F017C8647700E26857 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB8E8EF17C8647700E26857 /* Images.xcassets */; };
+		4CBA1F051ECFE56C00BC5B97 /* MlCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA1F041ECFE56C00BC5B97 /* MlCustomButton.swift */; };
+		4CBA1F071ECFE66D00BC5B97 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA1F061ECFE66D00BC5B97 /* Utilities.swift */; };
+		4CBA1F091ED0A08200BC5B97 /* ICloudDriveSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA1F081ED0A08200BC5B97 /* ICloudDriveSupport.swift */; };
 		4CDAAB511E033C6E004C5C31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDAAB501E033C6E004C5C31 /* LaunchScreen.storyboard */; };
 		4CEEF60017FB628E00C29507 /* MlColorChoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */; };
 		4CEEF60317FCF48D00C29507 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60117FCF48D00C29507 /* WelcomeView.xib */; };
@@ -819,6 +822,9 @@
 		4CB012C818037AE700343D43 /* RoundMoodLog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoundMoodLog.png; sourceTree = "<group>"; };
 		4CB012C918037AE700343D43 /* RoundMoodLog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RoundMoodLog@2x.png"; sourceTree = "<group>"; };
 		4CB8E8EF17C8647700E26857 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4CBA1F041ECFE56C00BC5B97 /* MlCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MlCustomButton.swift; sourceTree = "<group>"; };
+		4CBA1F061ECFE66D00BC5B97 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		4CBA1F081ED0A08200BC5B97 /* ICloudDriveSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICloudDriveSupport.swift; sourceTree = "<group>"; };
 		4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 4.xcdatamodel"; sourceTree = "<group>"; };
 		4CDAAB501E033C6E004C5C31 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CECC217165D50E800EE3C6B /* MoodLog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -1163,6 +1169,9 @@
 		4C22BBB8181098AD000E178F /* Main Source */ = {
 			isa = PBXGroup;
 			children = (
+				4CBA1F041ECFE56C00BC5B97 /* MlCustomButton.swift */,
+				4CBA1F061ECFE66D00BC5B97 /* Utilities.swift */,
+				4CBA1F081ED0A08200BC5B97 /* ICloudDriveSupport.swift */,
 				4C3E0FB51657122100B0E060 /* Prefs.h */,
 				4C3E0FB61657122100B0E060 /* Prefs.m */,
 				4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */,
@@ -1447,6 +1456,7 @@
 				TargetAttributes = {
 					4C55CBE1162DE67400EAA878 = {
 						DevelopmentTeam = 5RGAXQF9TK;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -1454,6 +1464,7 @@
 						};
 					};
 					4C8BB41217ECEC2000754252 = {
+						LastSwiftMigration = 0830;
 						TestTargetID = 4C55CBE1162DE67400EAA878;
 					};
 				};
@@ -1844,6 +1855,7 @@
 				4C22BBBD1811FF6C000E178F /* MlReminderTimeTableViewController.m in Sources */,
 				4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */,
 				4C589C67163200F100428C52 /* Stressors.m in Sources */,
+				4CBA1F051ECFE56C00BC5B97 /* MlCustomButton.swift in Sources */,
 				4C0C766C1649F95100DD372F /* MlDatePickerViewController.m in Sources */,
 				4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */,
 				4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */,
@@ -1860,6 +1872,8 @@
 				4C47E6B71755C5E10023298F /* MlDateRangeDrawing.m in Sources */,
 				4C353EE6175BE307000ECE33 /* MlEmailEventCountDrawing.m in Sources */,
 				4C51D9681CB9CAAB0095B922 /* MlCell.m in Sources */,
+				4CBA1F091ED0A08200BC5B97 /* ICloudDriveSupport.swift in Sources */,
+				4CBA1F071ECFE66D00BC5B97 /* Utilities.swift in Sources */,
 				4C7BF7D0176A482000DC8088 /* MlDetailScrollView.m in Sources */,
 				4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */,
 				4C03FF0117683843001BA22B /* MlChartView.m in Sources */,
@@ -2045,6 +2059,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood-Log-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2071,6 +2086,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood-Log-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2079,6 +2095,7 @@
 		4C8BB42317ECEC2000754252 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mood-Log.app/Mood-Log";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -2106,6 +2123,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.voyageropen.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -2114,6 +2132,7 @@
 		4C8BB42417ECEC2000754252 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mood-Log.app/Mood-Log";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -2138,6 +2157,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.voyageropen.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

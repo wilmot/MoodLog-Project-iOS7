@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -46,7 +46,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmp-5z-fTo">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Email" id="WlD-8L-Htp">
+                                    <navigationItem title="Export Mood-Log Entries" id="WlD-8L-Htp">
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="ZeL-gg-87A">
                                             <connections>
                                                 <action selector="doneButton:" destination="rBa-Dg-5ia" id="I7j-Mi-Qsj"/>
@@ -58,7 +58,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTV-Kb-CP3">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Recipients:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYW-sa-8zt">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="eMail Recipient:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYW-sa-8zt">
                                         <rect key="frame" x="8" y="14" width="169" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="169" id="nwz-1e-Pzj"/>
@@ -68,19 +68,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Req-tK-vlI">
-                                        <rect key="frame" x="106" y="299" width="109" height="43"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="109" id="D7g-0g-XMH"/>
-                                            <constraint firstAttribute="height" constant="43" id="iWD-Vw-VPI"/>
-                                        </constraints>
-                                        <state key="normal" title="Compose Email">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="composeEmail:" destination="rBa-Dg-5ia" eventType="touchUpInside" id="mPe-Be-JZd"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="&lt;email address&gt;" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gq8-Nj-3Cp">
                                         <rect key="frame" x="3" y="43" width="370" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -257,19 +244,69 @@
                                             <constraint firstItem="9m9-Ed-c0t" firstAttribute="centerY" secondItem="o9F-aT-n8z" secondAttribute="centerY" id="wDF-Ni-7GF"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Req-tK-vlI" customClass="MlCustomButton" customModule="Mood_Log" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="292" width="300" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="fAx-Jd-FTc"/>
+                                        </constraints>
+                                        <state key="normal" title="Compose Email">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="centerOffsetX">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="composeEmail:" destination="rBa-Dg-5ia" eventType="touchUpInside" id="mPe-Be-JZd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTf-5O-fC5" customClass="MlCustomButton" customModule="Mood_Log" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="350" width="300" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="yqu-Y7-JsG"/>
+                                        </constraints>
+                                        <state key="normal" title="Save to iCloud Drive">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="centerOffsetX">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="exportData:" destination="rBa-Dg-5ia" eventType="touchUpInside" id="wau-uY-Zvc"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Gq8-Nj-3Cp" secondAttribute="trailing" constant="2" id="0qQ-24-4VZ"/>
+                                    <constraint firstItem="Req-tK-vlI" firstAttribute="top" secondItem="e1G-Kl-1OH" secondAttribute="bottom" constant="36" id="35E-5i-nW4"/>
                                     <constraint firstItem="e1G-Kl-1OH" firstAttribute="trailing" secondItem="VTV-Kb-CP3" secondAttribute="trailing" id="4tM-mh-rGP"/>
-                                    <constraint firstItem="Req-tK-vlI" firstAttribute="top" secondItem="e1G-Kl-1OH" secondAttribute="bottom" constant="43" id="Rs0-13-egp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Req-tK-vlI" secondAttribute="trailing" constant="38" id="806-gN-LYl"/>
+                                    <constraint firstItem="Req-tK-vlI" firstAttribute="leading" secondItem="cTf-5O-fC5" secondAttribute="leading" id="Lr6-yd-SgZ"/>
                                     <constraint firstItem="YYW-sa-8zt" firstAttribute="top" secondItem="VTV-Kb-CP3" secondAttribute="top" constant="14" id="SLW-Ll-HZT"/>
                                     <constraint firstItem="e1G-Kl-1OH" firstAttribute="leading" secondItem="VTV-Kb-CP3" secondAttribute="leading" id="Tbr-2C-o7P"/>
-                                    <constraint firstItem="Req-tK-vlI" firstAttribute="leading" secondItem="VTV-Kb-CP3" secondAttribute="leading" constant="106" id="fgp-Xp-F0g"/>
                                     <constraint firstItem="e1G-Kl-1OH" firstAttribute="top" secondItem="VTV-Kb-CP3" secondAttribute="top" constant="90" id="g6U-AN-zdd"/>
-                                    <constraint firstAttribute="bottom" secondItem="Req-tK-vlI" secondAttribute="bottom" constant="261" id="iK6-4U-7ce"/>
+                                    <constraint firstItem="Req-tK-vlI" firstAttribute="leading" secondItem="VTV-Kb-CP3" secondAttribute="leading" constant="37" id="j3o-Yj-GMH"/>
+                                    <constraint firstItem="cTf-5O-fC5" firstAttribute="top" secondItem="Req-tK-vlI" secondAttribute="bottom" constant="8" symbolic="YES" id="mlq-ca-4Wh"/>
                                     <constraint firstItem="e1G-Kl-1OH" firstAttribute="centerX" secondItem="VTV-Kb-CP3" secondAttribute="centerX" id="ndA-og-YWR"/>
                                     <constraint firstItem="YYW-sa-8zt" firstAttribute="leading" secondItem="VTV-Kb-CP3" secondAttribute="leading" constant="8" id="sbl-EN-8az"/>
+                                    <constraint firstAttribute="bottom" secondItem="cTf-5O-fC5" secondAttribute="bottom" constant="203" id="tQC-C4-9gC"/>
+                                    <constraint firstItem="Req-tK-vlI" firstAttribute="trailing" secondItem="cTf-5O-fC5" secondAttribute="trailing" id="v7U-iM-fxp"/>
                                     <constraint firstItem="Gq8-Nj-3Cp" firstAttribute="top" secondItem="YYW-sa-8zt" secondAttribute="bottom" constant="8" symbolic="YES" id="wfK-pC-yQH"/>
                                     <constraint firstItem="Gq8-Nj-3Cp" firstAttribute="leading" secondItem="VTV-Kb-CP3" secondAttribute="leading" constant="3" id="xU9-jN-ajF"/>
                                 </constraints>
@@ -311,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLz-ia-5WE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1329.6000000000001" y="539.73013493253382"/>
+            <point key="canvasLocation" x="-1330.4000000000001" y="539.28035982008998"/>
         </scene>
         <!--Master-->
         <scene sceneID="18">
@@ -434,7 +471,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem image="Letter.png" id="54q-Um-83d">
+                        <barButtonItem systemItem="action" id="54q-Um-83d">
                             <connections>
                                 <segue destination="rBa-Dg-5ia" kind="presentation" identifier="mailView" id="zUV-D4-22a"/>
                             </connections>
@@ -452,7 +489,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Eyy-m2-Vpx"/>
                         <barButtonItem style="plain" id="RCy-EY-dUL">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Ojd-M9-3Ro">
-                                <rect key="frame" x="341" y="13" width="18" height="19"/>
+                                <rect key="frame" x="341" y="12.5" width="18" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -2285,7 +2322,6 @@
         <image name="Blank.png" width="80" height="98"/>
         <image name="CalendarBlank48.png" width="48" height="48"/>
         <image name="CalendarBlank93.png" width="93" height="93"/>
-        <image name="Letter.png" width="23" height="16"/>
         <image name="RoundMoodLog.png" width="60" height="60"/>
         <image name="TimerIcon.png" width="20" height="20"/>
         <image name="chartgray.png" width="20" height="16"/>
