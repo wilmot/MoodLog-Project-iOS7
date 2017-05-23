@@ -204,7 +204,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
             attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
             if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // if iOS 7 or later
-                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\n\n\n\n\n\n\n\n\n\nMost Common Emotions:", @"Most Common Emotions: - iOS 7") attributes:attrsDictionary];
+                summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\n\n\n\n\n\n\n\n\n\n\nMost Common Emotions:", @"Most Common Emotions: - iOS 7") attributes:attrsDictionary];
             }
             else {
                 summaryLine = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"\n\n\n\n\n\n\n\n\nMost Common Emotions:", @"Most Common Emotions: - iOS 6") attributes:attrsDictionary];

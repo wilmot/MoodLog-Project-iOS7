@@ -44,3 +44,46 @@ extension CGRect {
         return CGPoint(x: self.midX, y: self.midY)
     }
 }
+
+func message(title: String, message: String) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let action = UIAlertAction(title: "OK", style: .default, handler: {
+        alert -> Void in
+    })
+    alertController.addAction(action)
+    // Walk the hierarchy to find a place to display the alert
+    var currentVC = UIApplication.shared.keyWindow?.rootViewController
+    while ((currentVC?.presentedViewController) != nil) {
+       currentVC = currentVC?.presentedViewController
+    }
+    currentVC?.present(alertController, animated: true, completion: nil)
+}
+
+func escapeHTMLStuff(string: String) -> String {
+    var newString = string
+    let char_dictionary = [
+        "<" : "\\<",
+        ">" : "\\>",
+        "/" : "\\/",
+        "\\" : "\\\\"
+    ];
+    for (unescaped_char, escaped_char) in char_dictionary {
+        newString = newString.replacingOccurrences(of: unescaped_char, with: escaped_char, options: NSString.CompareOptions.literal, range: nil)
+    }
+    return newString
+}
+
+func htmlifyCharacters(string: String) -> String {
+    var newString = string
+    let char_dictionary = [
+        "\n" : "<br>",
+        "‘" : "&lsquo;",
+        "’" : "&rsquo;" ,
+        "“" : "&ldquo;",
+        "”" : "&rdquo;"
+    ];
+    for (unescaped_char, escaped_char) in char_dictionary {
+        newString = newString.replacingOccurrences(of: unescaped_char, with: escaped_char, options: NSString.CompareOptions.literal, range: nil)
+    }
+    return newString
+}

@@ -21,6 +21,8 @@
 
 @implementation MlMailViewController
 
+NSString *SPACE = @"";
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -244,6 +246,20 @@
     [defaults synchronize];
 }
 
+- (NSString *) escapeHTMLStuff: (NSString *) string {
+    NSString *newString = string;
+    NSDictionary  *char_dictionary = @{
+                           @"\n" : @"<br>"
+                           };
+    for (id key in char_dictionary) {
+        NSString *unescaped_char = key;
+        NSString *escaped_char = [char_dictionary objectForKey:key];
+        newString = [newString stringByReplacingOccurrencesOfString:unescaped_char withString:escaped_char];
+    }
+    return newString;
+}
+
+
 - (NSString *) mailText {
     NSMutableString *bodyText = [NSMutableString stringWithFormat:@"<b>%@</b><br><i>%@</i><br><br><font size=-2>",self.dateRangeLabel.text, self.eventCount.text];
     // loop through the records
@@ -265,6 +281,7 @@
         [bodyText appendFormat:@"<b>%@</b><br>", theDate];
         [bodyText appendFormat:@"<blockquote>"];
         entry = [object valueForKey:@"journalEntry"];
+        entry = [self escapeHTMLStuff:entry];
         if (entry) {
             [bodyText appendFormat:NSLocalizedString(@"<b>Journal Entry</b>:<br><blockquote>%@</blockquote>", @"Journal Entry preface in email"), entry];
         }
@@ -273,6 +290,7 @@
         NSPredicate *myFilter = [NSPredicate predicateWithFormat:@"selected == %@", [NSNumber numberWithBool: YES]];
         NSArray *emotionArray = [[[emotionsforEntry filteredSetUsingPredicate:myFilter] allObjects] sortedArrayUsingSelector:@selector(compare:)];
         NSMutableString *selectedEms = [[NSMutableString alloc] init];
+        [selectedEms appendFormat:@"%@", SPACE];
         for (id emotion in emotionArray) {
             [selectedEms appendFormat:@"%@ ", ((Emotions *)emotion).name ];
         }
@@ -287,12 +305,12 @@
             [bodyText appendFormat:@"None selected"];
         }
         else {
-            [bodyText appendFormat:@"Mood: %ld<br>",(long)[object.overall integerValue]];
-            [bodyText appendFormat:@"Stress: %ld<br>",(long)[object.stress integerValue]];
-            [bodyText appendFormat:@"Energy: %ld<br>",(long)[object.energy integerValue]];
-            [bodyText appendFormat:@"Thoughts: %ld<br>",(long)[object.thoughts integerValue]];
-            [bodyText appendFormat:@"Health: %ld<br>",(long)[object.health integerValue]];
-            [bodyText appendFormat:@"Sleep: %ld<br>",(long)[object.sleep integerValue]];
+            [bodyText appendFormat:@"%@Mood: %ld<br>", SPACE, (long)[object.overall integerValue]];
+            [bodyText appendFormat:@"%@Stress: %ld<br>", SPACE, (long)[object.stress integerValue]];
+            [bodyText appendFormat:@"%@Energy: %ld<br>", SPACE, (long)[object.energy integerValue]];
+            [bodyText appendFormat:@"%@Thoughts: %ld<br>", SPACE, (long)[object.thoughts integerValue]];
+            [bodyText appendFormat:@"%@Health: %ld<br>", SPACE, (long)[object.health integerValue]];
+            [bodyText appendFormat:@"%@Sleep: %ld<br>", SPACE, (long)[object.sleep integerValue]];
         }
         [bodyText appendFormat:@"</blockquote><br>"];
         [bodyText appendFormat:@"</blockquote>"];
@@ -301,8 +319,12 @@
 }
 
 - (IBAction)exportData:(id) sender {
-    NSMutableAttributedString * text = [[NSMutableAttributedString alloc] initWithString:@"Hello from across the void"];
-    [ICloudDriveSupport writeToICloudDriveWithText:text];
+    NSString *fileName = [NSString stringWithFormat:@"Mood logs for %@", self.dateRangeLabel.text];
+    SPACE = @"&emsp;&emsp;";
+    NSString *body = [self mailText];
+
+    ICloudDriveSupport *doc = [[ICloudDriveSupport alloc] init];
+    [doc writeToICloudDriveWithFilename:fileName text:body];
 }
 
 - (IBAction)composeEmail:(id)sender {
@@ -312,16 +334,19 @@
         [controller setToRecipients:[self.recipientList.text componentsSeparatedByString:@","]];
         [controller setSubject:[NSString stringWithFormat:@"Mood Logs for %@ (%@)",self.dateRangeLabel.text, self.eventCount.text]];
  
+        SPACE = @"";
         NSString *bodyText = [self mailText];
         [controller setMessageBody:bodyText isHTML:YES];
         if (controller) [self presentViewController:controller animated:YES completion:nil];
     }
     else {
-        NSLog(@"Can't send mail from within Mood-Log");
+        // Can't send mail from within Mood-Log
         NSString *recipients = [NSString stringWithFormat:@"mailto:%@", self.recipientList.text];
         NSString *subjectText = [NSString stringWithFormat:@"Mood logs for %@ (%@)", self.dateRangeLabel.text, self.eventCount.text];
         NSString *subject = [NSString stringWithFormat:@"?subject=%@", [self htmlify:subjectText]];
+        SPACE = @"";
         NSString *body = [self htmlify:[NSString stringWithFormat: @"&body=%@", [self mailText]]];
+//        NSString *body = [NSString stringWithFormat: @"&body=%@", [self mailText]];
         NSString *email = [NSString stringWithFormat:@"%@%@%@", recipients, subject, body];
         
         NSDictionary *options = @{};
