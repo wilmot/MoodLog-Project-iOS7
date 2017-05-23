@@ -17,44 +17,44 @@ import UIKit
     
     func presentCloudDisabledAlert() {
         OperationQueue.main.addOperation {
-            message(title: "iCloud is disabled", message: "Please enable iCloud Drive in Settings to enable saving files")
+            message(title: NSLocalizedString("iCloud is disabled", comment: "iCloud is disabled - iCloud Drive Support"), message: NSLocalizedString("Please enable iCloud Drive in Settings to enable saving files", comment: "Please enable iCloud Drive in Settings to enable saving files - iCloud Drive Support"))
         }
     }
 
     func openDocumentAtURL(_ url: URL) {
         let filename = url.lastPathComponent
-        message(title: "File Saved", message: "The file \"\(filename)\" has been saved to iCloud Drive")
+        message(title: NSLocalizedString("File Saved", comment: "File Saved - iCloud Drive Support"), message: "\n\"\(filename)\"\n\n" + NSLocalizedString("has been saved to iCloud Drive.", comment: "File saved to iCloud Drive - iCloud Drive Support"))
     }
 
     func createiCloudDriveDocumentsDirectory() -> URL? {
         if let iCloudDocumentsURL = FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents") {
-            print("iCloud Documents URL: \(iCloudDocumentsURL)")
+            dprint("iCloud Documents URL: \(iCloudDocumentsURL)")
             if (!FileManager.default.fileExists(atPath: iCloudDocumentsURL.path, isDirectory: nil)) {
                 do {
                     try FileManager.default.createDirectory(at: iCloudDocumentsURL, withIntermediateDirectories: true, attributes: nil)
-                    print("Created directory!")
+                    dprint("Created new directory")
                 } catch let error as NSError {
-                    print("Error: \(error)")
+                    message(title: NSLocalizedString("Error creating iCloud Drive directory", comment: "Error creating iCloud Drive directory - iCloud Drive Support"), message: "\(error)")
                 }
             }
             else {
-                print("Folder '\(iCloudDocumentsURL.path) exists")
+                dprint("Folder '\(iCloudDocumentsURL.path) exists")
             }
             return iCloudDocumentsURL
         }
         else {
-            message(title: "Error fetching URL", message: "Mood-Log was unable to get a URL for the iCloud Documents directory")
+            message(title: NSLocalizedString("Error fetching URL", comment: "Error fetching URL - iCloud Drive Support"), message: NSLocalizedString("Mood-Log was unable to get a URL for the iCloud Documents directory", comment: "Mood-Log was unable to get a URL for the iCloud Documents directory - iCloud Drive Support"))
         }
         return nil
     }
     
     func writeAttributedString(filename: String, attrString: NSAttributedString) {
         if FileManager().ubiquityIdentityToken == nil {
-            message(title: "iCloud Drive is disabled", message: "Please enable iCloud Drive in Settings to save files")
+            message(title: NSLocalizedString("iCloud Drive is disabled", comment: "iCloud Drive is disabled - iCloud Drive Support"), message: NSLocalizedString("Please enable iCloud Drive in Settings to enable saving files", comment: "Please enable iCloud Drive in Settings to enable saving files - iCloud Drive Support"))
             return
         }
         guard let _ = createiCloudDriveDocumentsDirectory() else {
-            message(title: "iCloud Drive error", message: "Couldn't create a 'Documents' directory for Mood-Log on iCloud Drive.")
+            message(title: NSLocalizedString("iCloud Drive error", comment: "iCloud Drive error - iCloud Drive Support"), message: NSLocalizedString("Couldn't create a 'Documents' directory for Mood-Log on iCloud Drive.", comment: "Couldn't create a 'Documents' directory for Mood-Log on iCloud Drive - iCloud Drive Support"))
             return
         }
         do {
@@ -64,14 +64,13 @@ import UIKit
             let data = try attrString.data(from: range, documentAttributes: [NSDocumentTypeDocumentAttribute: NSRTFTextDocumentType])
             try data.write(to: fileURL)
             let localDirectoryContents = try FileManager.default.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil, options: [])
-            print("List of files in local directory:")
+            dprint("List of files in local directory:")
             for item in localDirectoryContents {
-                print("\t\(item)")
+                dprint("\t\(item)")
             }
             copyDocumentToiCloud(localFileURL: fileURL, iCloudFilename: filename, fileExtension: "rtf")
         } catch let error as NSError {
-            print("Error: \(error)")
-            message(title: "Error writing file or moving to iCloud Drive", message: "\(error)")
+            message(title: NSLocalizedString("Error writing file or moving to iCloud Drive", comment: "Error writing file or moving to iCloud Drive - iCloud Drive Support"), message: "\(error)")
         }
     }
     
@@ -117,14 +116,25 @@ import UIKit
                     //try (writeIntent.url as NSURL).setResourceValue(true, forKey: URLResourceKey.hasHiddenExtensionKey)
                     OperationQueue.main.addOperation {
                         // TODO: Delete the local document
-                        print("readIntent: \(readIntent)")
+                        self.removeLocalFile(url: readIntent.url)
+                        dprint("readIntent: \(readIntent)")
                         self.openDocumentAtURL(writeIntent.url)
                     }
                 }
                 catch {
-                    fatalError("Unexpected error during simple file operations: \(error)")
+                    message(title: NSLocalizedString("Error", comment: "Error - iCloud Drive Support"), message: NSLocalizedString("Unexpected error when saving document to iCloud Drive:", comment: "Unexpected error when saving document to iCloud Drive: - iCloud Drive Support") + "\(error)")
                 }
             }
+        }
+    }
+    
+    func removeLocalFile(url: URL) {
+        do  {
+            let fileManager = FileManager()
+            try fileManager.removeItem(at: url)
+        }
+        catch {
+            message(title: NSLocalizedString("Error", comment: "Error - iCloud Drive Support"), message: NSLocalizedString("Unexpected error when cleaning up", comment: "Unexpected error when cleaning up - iCloud Drive Support"))
         }
     }
     
@@ -134,11 +144,10 @@ import UIKit
         if let data = htmlDoc.data(using: .utf8) {
             do {
                 let attrStr = try NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
-                print(attrStr)
                 writeAttributedString(filename: filename, attrString: attrStr)
             }
             catch {
-                print("error creating attributed string")
+                message(title: NSLocalizedString("Error", comment: "Error - iCloud Drive Support"), message: NSLocalizedString("Error creating attributed string", comment: "Error creating attributed string - iCloud Drive Support"))
             }
         }
     }

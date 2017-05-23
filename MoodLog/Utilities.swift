@@ -45,9 +45,39 @@ extension CGRect {
     }
 }
 
+var DEBUGGING: Bool {
+    get {
+        if let debug = Bundle.main.infoDictionary?["Debugging"] as? Bool {
+            return debug
+        }
+        return false
+    }
+}
+
+func prettyDateAndTime(_ date: NSDate?) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "MM/dd/YY hh:mm:ss a"
+    let dateString: String
+    if let date = date {
+        dateString = dateFormatter.string(from: date as Date)
+    }
+    else {
+        dateString = ""
+    }
+    return dateString
+}
+
+// Debug Print
+func dprint(_ text: String) {
+    if DEBUGGING {
+        let date = NSDate()
+        print("\(prettyDateAndTime(date)): \(text)")
+    }
+}
+
 func message(title: String, message: String) {
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let action = UIAlertAction(title: "OK", style: .default, handler: {
+    let action = UIAlertAction(title: NSLocalizedString("OK",  comment: "OK button"), style: .default, handler: {
         alert -> Void in
     })
     alertController.addAction(action)
