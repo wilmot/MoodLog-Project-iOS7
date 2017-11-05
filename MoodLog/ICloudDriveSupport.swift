@@ -61,7 +61,7 @@ import UIKit
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             let fileURL = documentDirectory.appendingPathComponent("\(filename).rtf")
             let range = NSMakeRange(0, attrString.length)
-            let data = try attrString.data(from: range, documentAttributes: [NSDocumentTypeDocumentAttribute: NSRTFTextDocumentType])
+            let data = try attrString.data(from: range, documentAttributes: [NSAttributedString.DocumentAttributeKey.documentType: NSAttributedString.DocumentType.rtf])
             try data.write(to: fileURL)
             let localDirectoryContents = try FileManager.default.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil, options: [])
             dprint("List of files in local directory:")
@@ -138,12 +138,13 @@ import UIKit
         }
     }
     
-    public func writeToICloudDrive(filename: String, text: String) {
+    @objc public func writeToICloudDrive(filename: String, text: String) {
         // Convert html stub to attributed string
         let htmlDoc = htmlifyCharacters(string: "<html><body>\(text)</body></html>")
         if let data = htmlDoc.data(using: .utf8) {
             do {
-                let attrStr = try NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
+                let attrs: [NSAttributedString.DocumentReadingOptionKey: Any] = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+                let attrStr = try NSAttributedString(data: data, options: attrs, documentAttributes: nil)
                 writeAttributedString(filename: filename, attrString: attrStr)
             }
             catch {

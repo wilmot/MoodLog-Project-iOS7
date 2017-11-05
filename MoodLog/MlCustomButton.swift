@@ -77,8 +77,8 @@ import UIKit
         }
         
         let title = NSAttributedString(string: subTitle,
-                    attributes: [NSForegroundColorAttributeName: subTitleTextColor,
-                                 NSFontAttributeName: UIFont.systemFont(ofSize: 14)])
+                    attributes: [NSAttributedStringKey.foregroundColor: subTitleTextColor,
+                                 NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)])
         let size = title.size()
         title.draw(at: CGPoint(x: spot.x + subTitleXOffset - size.width/2, y: rect.maxY - size.height - 14.0 + subTitleYOffset))
     }
