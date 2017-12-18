@@ -34,14 +34,14 @@ NSPredicate *filterPredicate = nil;
     [super awakeFromNib];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"New", @"New button") style:UIBarButtonItemStylePlain target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    self.addButton.action = @selector(insertNewObject:);
+    self.addButton.target = self;
+    self.navigationItem.rightBarButtonItem = self.addButton;
     self.detailViewController = (MlDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
@@ -52,7 +52,7 @@ NSPredicate *filterPredicate = nil;
     self.searchController.searchBar.scopeButtonTitles = @[@"All", @"Emotions", @"Text"];
     if (@available(iOS 11, *)) {
         self.navigationItem.searchController = self.searchController;
-        self.navigationItem.hidesSearchBarWhenScrolling = NO;
+        self.navigationItem.hidesSearchBarWhenScrolling = YES;
     }
     else {
         self.tableView.tableHeaderView = self.searchController.searchBar;
@@ -71,6 +71,14 @@ NSPredicate *filterPredicate = nil;
     else {
         [self showFirstTimeScreen];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
+    [self scrollToTopButDontShowSearchBar];
+    self.navigationItem.rightBarButtonItem.enabled = NO; // Work around a bug where the 'New' button is grayed out when returning from the DetailView
+    self.navigationItem.rightBarButtonItem.enabled = YES;
 }
 
 - (void)fetch {
@@ -227,11 +235,6 @@ NSPredicate *filterPredicate = nil;
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [[self tableView] reloadData];
-}
-
 - (void)showFirstTimeScreen {
     //Initial screen when no records
     MlAppDelegate *delegate = (MlAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -281,17 +284,16 @@ NSPredicate *filterPredicate = nil;
 
 - (void)insertNewObject:(id)sender {
     MoodLogEvents *event = [self insertNewObjectAndReturnReference:self];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionTop];
-    [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
-    [self.tableView setContentOffset:CGPointMake(0, -20) animated:NO]; // Magic number related to the height of the header bars (e.g. December 2016)
-
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         // iPad doesn't segue, the detail view is always there
     }
     else { // iPhone
         [self performSegueWithIdentifier:@"showDetail" sender:event];
     }
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionTop];
+    [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
+    [self.tableView setContentOffset:CGPointMake(0, -20) animated:NO]; // Magic number related to the height of the header bars (e.g. December 2016)
 }
 
 - (MoodLogEvents *) insertNewObjectAndReturnReference: (id) sender {

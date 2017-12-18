@@ -46,7 +46,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2161.5999999999999" y="-219.49025487256375"/>
+            <point key="canvasLocation" x="-2089" y="-230"/>
         </scene>
         <!--Ml Mail View Controller-->
         <scene sceneID="0Fh-D0-TzF">
@@ -389,7 +389,7 @@
                                             <rect key="frame" x="6" y="19" width="38" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="DKz-Fe-hw6"/>
-                                                <constraint firstAttribute="width" constant="38" id="sOI-Rn-0Gv"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="sOI-Rn-0Gv"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="29"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -398,6 +398,7 @@
                                     <constraints>
                                         <constraint firstItem="gvR-9p-Di7" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="3" id="3ap-ho-pfN"/>
                                         <constraint firstItem="gvR-9p-Di7" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" constant="2" id="6PN-N3-lHb"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="khh-RL-Vqb" secondAttribute="trailing" constant="20" symbolic="YES" id="ChI-k0-TdK"/>
                                         <constraint firstItem="wPi-0y-5Ta" firstAttribute="top" secondItem="bnR-2o-2Ia" secondAttribute="top" constant="10" id="FJE-Gl-JuX"/>
                                         <constraint firstItem="wPi-0y-5Ta" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" constant="50" id="FfS-px-Vz1"/>
                                         <constraint firstItem="Q6G-uq-HNC" firstAttribute="leading" secondItem="bnR-2o-2Ia" secondAttribute="leading" constant="6" id="a4B-pF-RA0"/>
@@ -494,7 +495,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="aNewEntryButton" destination="uA0-33-2bj" id="thm-pm-QC0"/>
+                        <outlet property="addButton" destination="uA0-33-2bj" id="cNr-Of-VEE"/>
                         <outlet property="chartButton" destination="lbe-NL-9Pc" id="sfY-rr-AHU"/>
                         <outlet property="infoButton" destination="RCy-EY-dUL" id="sX7-Oh-FrD"/>
                     </connections>
