@@ -381,7 +381,7 @@ NSPredicate *filterPredicate = nil;
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         MoodLogEvents *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"Delete Entry"] message:[NSString stringWithFormat:@"Are you sure you want to delete the entry dated '%@'? This action cannot be undone.", [self prettyDateAndTimeObjC:event.date]] preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Delete Entry", @"Delete Entry") message:[NSString stringWithFormat:NSLocalizedString(@"Are you sure you want to delete the entry dated '%@'? This action cannot be undone.", @"Are you sure you want to delete the entry dated '%@'? This action cannot be undone."), [self prettyDateAndTimeObjC:event.date]] preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
                                  {
                                      // Do nothing on Cancel

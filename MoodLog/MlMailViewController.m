@@ -565,13 +565,13 @@ NSString *SPACE = @"";
         NSString *text;
         switch (events) {
             case 0:
-                text = NSLocalizedString(@"No entries", @"No entries - Mail range picker");
+                text = NSLocalizedString(@"No entries", @"No entries - range picker");
                 break;
             case 1:
-                text = NSLocalizedString(@"entry", @"entry - Mail range picker");
+                text = NSLocalizedString(@"entry", @"entry - range picker");
                 break;
             default:
-                text = NSLocalizedString(@"entries", @"entries - Mail range picker");
+                text = NSLocalizedString(@"entries", @"entries - range picker");
                 break;
         }
         self.eventCount.text = [NSString stringWithFormat:@"%d %@",events, text];

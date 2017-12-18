@@ -445,13 +445,13 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
         NSString *text;
         switch (events) {
             case 0:
-                text = NSLocalizedString(@"No entries", @"No entries - Chart range picker");
+                text = NSLocalizedString(@"No entries", @"No entries - range picker");
                 break;
             case 1:
-                text = NSLocalizedString(@"entry", @"entry - Chart range picker");
+                text = NSLocalizedString(@"entry", @"entry - range picker");
                 break;
             default:
-                text = NSLocalizedString(@"entries", @"entries - Chart range picker");
+                text = NSLocalizedString(@"entries", @"entries - range picker");
                 break;
         }
         self.eventCount.text = [NSString stringWithFormat:@"%d %@",events, text];
