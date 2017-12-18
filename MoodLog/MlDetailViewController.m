@@ -221,6 +221,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 - (void) setSliderCellVisibility {
     if (self.detailItem.sliderValuesSet.boolValue || (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) { // If the chart is visible
         self.sliderChartView.chartType = @"Bar";
+        [self.sliderChartView setChartFontSize:14.0];
         [self.sliderChartView setChartHeightOverall:[self.detailItem.overall floatValue]];
         [self.sliderChartView setChartHeightStress:[self.detailItem.stress floatValue]];
         [self.sliderChartView setChartHeightEnergy:[self.detailItem.energy floatValue]];

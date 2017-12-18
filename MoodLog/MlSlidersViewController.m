@@ -59,6 +59,7 @@
 
 - (void) updateChart {
     self.chartDrawingView.chartType = @"Bar";
+    self.chartDrawingView.chartFontSize = 16.0;
     [self.chartDrawingView setChartHeightOverall:[self.moodSlider value]];
     [self.chartDrawingView setChartHeightStress:[self.stressSlider value]];
     [self.chartDrawingView setChartHeightEnergy:[self.energySlider value]];
@@ -122,6 +123,49 @@
     
     NSNumber *sliderValue = [NSNumber numberWithFloat:[(UISlider *)sender value]];
     [self.detailItem setValue:sliderValue forKey:key];
+}
+
+- (IBAction)panGesture:(UIPanGestureRecognizer *)gesture {
+    static UISlider *slider = nil;
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        float x = [gesture locationInView:self.chartDrawingView].x;
+        float width = self.chartDrawingView.frame.size.width;
+        int barNumber = (int)(x*6/width);
+        switch (barNumber) {
+            case 0:
+                slider = self.moodSlider;
+                break;
+            case 1:
+                slider = self.stressSlider;
+                break;
+            case 2:
+                slider = self.energySlider;
+                break;
+            case 3:
+                slider = self.thoughtsSlider;
+                break;
+            case 4:
+                slider = self.healthSlider;
+                break;
+            case 5:
+                slider = self.sleepSlider;
+                break;
+            default:
+                break;
+        }
+    }
+    else if (gesture.state == UIGestureRecognizerStateEnded) {
+        slider = nil;
+    }
+    else {
+        float y = [gesture locationInView:self.chartDrawingView].y;
+        float height = self.chartDrawingView.frame.size.height;
+        float newChartValue = (int)((height - y)*20.0/height) - 10; // sliders range from -10 to 10
+        [slider setValue:newChartValue];
+        [self updateChart];
+        [self setSliderColor:slider];
+        [self setSliderData:slider];
+    }
 }
 
 @end

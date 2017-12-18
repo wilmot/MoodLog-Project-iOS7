@@ -160,6 +160,7 @@
 		4C0639D017E69DA200563FE6 /* Pleased@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399A17E69DA200563FE6 /* Pleased@2x.png */; };
 		4C0639D117E69DA200563FE6 /* Pitying.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399B17E69DA200563FE6 /* Pitying.png */; };
 		4C0639D217E69DA200563FE6 /* Pitying@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C06399C17E69DA200563FE6 /* Pitying@2x.png */; };
+		4C0723591FE4E97A00271DF8 /* chart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0723581FE4E97900271DF8 /* chart@3x.png */; };
 		4C0C766C1649F95100DD372F /* MlDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */; };
 		4C22BBB618109873000E178F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C22BBB418109873000E178F /* Localizable.strings */; };
 		4C22BBBD1811FF6C000E178F /* MlReminderTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C22BBBC1811FF6C000E178F /* MlReminderTimeTableViewController.m */; };
@@ -334,8 +335,6 @@
 		4C65613217F3FAAE00F03470 /* UpperRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65613017F3FAAE00F03470 /* UpperRight@2x.png */; };
 		4C65613517F418B900F03470 /* LowerRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65613317F418B900F03470 /* LowerRight.png */; };
 		4C65613617F418B900F03470 /* UpperRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C65613417F418B900F03470 /* UpperRight.png */; };
-		4C6BB92C1815B57000645E2C /* chartgray.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92A1815B57000645E2C /* chartgray.png */; };
-		4C6BB92D1815B57000645E2C /* chartgray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92B1815B57000645E2C /* chartgray@2x.png */; };
 		4C6BB9301815B8F900645E2C /* keyboard_down_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92E1815B8F900645E2C /* keyboard_down_white.png */; };
 		4C6BB9311815B8F900645E2C /* keyboard_down_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB92F1815B8F900645E2C /* keyboard_down_white@2x.png */; };
 		4C6BB9341815BB7400645E2C /* Letter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB9321815BB7400645E2C /* Letter.png */; };
@@ -559,6 +558,7 @@
 		4C06399A17E69DA200563FE6 /* Pleased@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pleased@2x.png"; sourceTree = "<group>"; };
 		4C06399B17E69DA200563FE6 /* Pitying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitying.png; sourceTree = "<group>"; };
 		4C06399C17E69DA200563FE6 /* Pitying@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pitying@2x.png"; sourceTree = "<group>"; };
+		4C0723581FE4E97900271DF8 /* chart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart@3x.png"; sourceTree = "<group>"; };
 		4C0C766A1649F95100DD372F /* MlDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlDatePickerViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4C0C766B1649F95100DD372F /* MlDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlDatePickerViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4C1E10121746B9D500BF703E /* MoodLog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 6.xcdatamodel"; sourceTree = "<group>"; };
@@ -761,8 +761,6 @@
 		4C65613017F3FAAE00F03470 /* UpperRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UpperRight@2x.png"; path = "Images/UpperRight@2x.png"; sourceTree = "<group>"; };
 		4C65613317F418B900F03470 /* LowerRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LowerRight.png; path = Images/LowerRight.png; sourceTree = "<group>"; };
 		4C65613417F418B900F03470 /* UpperRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpperRight.png; path = Images/UpperRight.png; sourceTree = "<group>"; };
-		4C6BB92A1815B57000645E2C /* chartgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chartgray.png; sourceTree = "<group>"; };
-		4C6BB92B1815B57000645E2C /* chartgray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chartgray@2x.png"; sourceTree = "<group>"; };
 		4C6BB92E1815B8F900645E2C /* keyboard_down_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyboard_down_white.png; path = Images/keyboard_down_white.png; sourceTree = "<group>"; };
 		4C6BB92F1815B8F900645E2C /* keyboard_down_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "keyboard_down_white@2x.png"; path = "Images/keyboard_down_white@2x.png"; sourceTree = "<group>"; };
 		4C6BB9321815BB7400645E2C /* Letter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Letter.png; sourceTree = "<group>"; };
@@ -1319,8 +1317,7 @@
 				4C4043ED1783E5CB00710F2A /* CalendarBlank93@2x.png */,
 				4C4043EE1783E5CB00710F2A /* chart.png */,
 				4C92BE041797D40D005DEEC2 /* chart@2x.png */,
-				4C6BB92A1815B57000645E2C /* chartgray.png */,
-				4C6BB92B1815B57000645E2C /* chartgray@2x.png */,
+				4C0723581FE4E97900271DF8 /* chart@3x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -1647,7 +1644,6 @@
 				4C4043AA1783E51400710F2A /* Cheerful.png in Resources */,
 				4C4043AB1783E51400710F2A /* Cheerful@2x.png in Resources */,
 				4C0639C917E69DA200563FE6 /* Regretful.png in Resources */,
-				4C6BB92C1815B57000645E2C /* chartgray.png in Resources */,
 				4C06394217E45A6E00563FE6 /* Hating@2x.png in Resources */,
 				4C06394917E45A6E00563FE6 /* Glum.png in Resources */,
 				4C4043AC1783E51400710F2A /* Compassionate.png in Resources */,
@@ -1716,7 +1712,6 @@
 				4C4043C61783E51400710F2A /* Alarmed.png in Resources */,
 				4C4043C71783E51400710F2A /* Alarmed@2x.png in Resources */,
 				4C06393517E45A6E00563FE6 /* Hurting.png in Resources */,
-				4C6BB92D1815B57000645E2C /* chartgray@2x.png in Resources */,
 				4C4043C81783E51400710F2A /* Amused.png in Resources */,
 				4C4043C91783E51400710F2A /* Amused@2x.png in Resources */,
 				4C4043CA1783E51400710F2A /* Angry.png in Resources */,
@@ -1805,6 +1800,7 @@
 				4C06395F17E45A6E00563FE6 /* Exhilarated.png in Resources */,
 				4C06393217E45A6E00563FE6 /* Insecure@2x.png in Resources */,
 				4C0639A017E69DA200563FE6 /* Worthless@2x.png in Resources */,
+				4C0723591FE4E97A00271DF8 /* chart@3x.png in Resources */,
 				4C06392B17E45A6E00563FE6 /* Irritated.png in Resources */,
 				4CEEF60917FE388900C29507 /* shuffle_on@2x.png in Resources */,
 				4C7F5730178FC8170065543C /* add.png in Resources */,

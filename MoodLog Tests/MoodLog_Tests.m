@@ -55,6 +55,10 @@
     }
 }
 
+- (int)randomNumberFrom:(int)from to:(int)to {
+    return (int)from + arc4random() % (to-from+1);
+}
+
 - (void)testCreatingAFewRecords {
     UIApplication *sharedApplication = [UIApplication sharedApplication];
     MlAppDelegate *delegate =(MlAppDelegate *)sharedApplication.delegate;
@@ -75,6 +79,9 @@
             theDate = [theDate dateByAddingTimeInterval:-86400];
             NSLog(@"Going back in time...");
         }
+        // Change the time for every entry -1440 to 1440 (24*60)
+        theDate = [theDate dateByAddingTimeInterval:[self randomNumberFrom:-1440 to:1440]];
+        
         newMoodLogEntry.dateCreated = theDate;
         newMoodLogEntry.date = theDate;
         components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:newMoodLogEntry.date];
@@ -89,7 +96,7 @@
         [newMoodLogEntry setHealth:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
         [newMoodLogEntry setSleep:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
         emotionArray = [delegate.emotionsFromPList copy];
-        randomNumberOfEmotions = (arc4random()%8);
+        randomNumberOfEmotions = [self randomNumberFrom:0 to:8];
         for (int j=0; j < randomNumberOfEmotions; j++) {
             randomEmotionIndex = (arc4random()%([emotionArray count] - 1));
             aMood = [emotionArray objectAtIndex:randomEmotionIndex];
@@ -135,6 +142,9 @@
             theDate = [theDate dateByAddingTimeInterval:-86400];
             NSLog(@"Going back in time...");
         }
+        // Change the time for every entry -1440 to 1440 (24*60)
+        theDate = [theDate dateByAddingTimeInterval:[self randomNumberFrom:-1440 to:1440]];
+
         newMoodLogEntry.dateCreated = theDate;
         newMoodLogEntry.date = theDate;
         components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:newMoodLogEntry.date];
@@ -149,7 +159,7 @@
         [newMoodLogEntry setHealth:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
         [newMoodLogEntry setSleep:[NSNumber numberWithInt:(arc4random()%20 - 10)]];
         emotionArray = [delegate.emotionsFromPList copy];
-        randomNumberOfEmotions = (arc4random()%100);
+        randomNumberOfEmotions = [self randomNumberFrom:0 to:20];
         for (int j=0; j < randomNumberOfEmotions; j++) {
             randomEmotionIndex = (arc4random()%([emotionArray count] - 1));
             aMood = [emotionArray objectAtIndex:randomEmotionIndex];

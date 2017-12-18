@@ -14,11 +14,14 @@
 @interface MlChartCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *chartCollectionView;
+
 @property (strong, nonatomic) NSString *cellIdentifier;
 @property (strong, nonatomic) NSString *chartType;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) MoodLogEvents *detailItem;
+@property (strong, nonatomic) NSDate *startDate;
+@property (strong, nonatomic) NSDate *endDate;
 
 @property (weak, nonatomic) MlChartCellEntryViewController *myChartCellEntryViewController;
 

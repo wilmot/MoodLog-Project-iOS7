@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *healthSlider;
 @property (weak, nonatomic) IBOutlet UISlider *sleepSlider;
 @property (weak, nonatomic) IBOutlet MlChartDrawingView *chartDrawingView;
+@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
 
 @property (strong, nonatomic) MoodLogEvents *detailItem;
 

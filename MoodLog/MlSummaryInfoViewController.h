@@ -16,6 +16,8 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerByDate;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerByCategory;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerByEmotion;
+@property (strong, nonatomic) NSDate *startDate;
+@property (strong, nonatomic) NSDate *endDate;
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) MlMasterViewController *masterViewController;

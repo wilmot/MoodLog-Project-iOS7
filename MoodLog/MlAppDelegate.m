@@ -107,11 +107,11 @@
         [defaults setObject:remindersTime2 forKey:@"RemindersTime2"];
         
         // Email settings
-        [defaults setFloat:0.0 forKey:@"DefaultMailStartValue"];
+//        [defaults setFloat:0.0 forKey:@"DefaultMailStartValue"]; // Using nil check in MailViewController so don't set it here
         [defaults setFloat:0.0 forKey:@"DefaultMailEndValue"];
         [defaults setBool:NO forKey:@"MailLatestButtonOn"];
         [defaults setBool:NO forKey:@"Mail7DayButtonOn"];
-        [defaults setBool:NO forKey:@"Mail30DayButtonOn"];
+        [defaults setBool:NO forKey:@"Mail28DayButtonOn"];
         [defaults setBool:NO forKey:@"MailAllButtonOn"];
         [defaults setBool:NO forKey:@"MailSliderPinnedToNewest"];
 

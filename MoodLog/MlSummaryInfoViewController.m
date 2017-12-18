@@ -75,9 +75,9 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
         attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
         NSString *textToDisplay;
         if (events > 1) {
-            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou have created %d Mood Log entries, dating from %@ to %@.", @"\n\nYou have created %d Mood Log entries, dating from %@ to %@."), events, startDate, endDate];
+            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou created %d Mood Log entries dating from %@ to %@.", @"\n\nYou created %d Mood Log entries dating from %@ to %@."), events, startDate, endDate];
         } else {
-            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou have created %d Mood Log entry, dating from %@ to %@.", @"\n\nYou have created %d Mood Log entry, dating from %@ to %@. -- singular"), events, startDate, endDate];
+            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou created %d Mood Log entry, on %@.", @"\n\nYou created %d Mood Log entry, on %@. -- singular"), events, startDate];
         }
         summaryLine = [[NSAttributedString alloc] initWithString:textToDisplay attributes:attrsDictionary];
         [summaryAttributedString appendAttributedString:summaryLine];
@@ -135,6 +135,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
             self.pieChartForSummary.categoryCounts = categoryCounts;
             self.pieChartForSummary.dividerLine = NO;
             self.pieChartForSummary.circumference = 60.0;
+            self.pieChartForSummary.drawOutline = NO;
             [self.pieChartForSummary setNeedsDisplay];
             
             [self summaryInformationSlow2:self];
@@ -178,6 +179,8 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
            [barTotals setObject:[NSNumber numberWithFloat:[[barTotals objectForKey:@"sleep"] floatValue] + [moodLogRecord.sleep floatValue]] forKey:@"sleep"];
        }
         self.barChartForSummary.chartType = @"Bar";
+        self.barChartForSummary.drawOutline = YES;
+        self.barChartForSummary.chartFontSize = 14.0;
         self.barChartForSummary.chartHeightOverall = [[barTotals objectForKey:@"overall"] floatValue]/events;
         self.barChartForSummary.chartHeightStress = [[barTotals objectForKey:@"stress"] floatValue]/events;
         self.barChartForSummary.chartHeightEnergy = [[barTotals objectForKey:@"energy"] floatValue]/events;
@@ -266,7 +269,11 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
-    
+
+    if ((self.startDate != NULL) && (self.endDate != NULL)) {
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"date >= %@ && date <= %@", self.startDate, self.endDate];
+    }
+
     // Edit the sort key as appropriate.
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
@@ -315,7 +322,11 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
-    
+
+    if ((self.startDate != NULL) && (self.endDate != NULL)) {
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"logParent.date >= %@ && logParent.date <= %@", self.startDate, self.endDate];
+    }
+
     // Edit the sort key as appropriate.
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"category" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
@@ -364,7 +375,11 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
-    
+
+    if ((self.startDate != NULL) && (self.endDate != NULL)) {
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"logParent.date >= %@ && logParent.date <= %@", self.startDate, self.endDate];
+    }
+
     // Edit the sort key as appropriate.
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];

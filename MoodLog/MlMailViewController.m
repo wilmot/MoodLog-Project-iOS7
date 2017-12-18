@@ -52,6 +52,8 @@ NSString *SPACE = @"";
         [self.monthButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
         [self.weekButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.weekButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [self.todayButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.todayButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
         [self.latestButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.latestButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
         [self.composeButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
@@ -62,10 +64,27 @@ NSString *SPACE = @"";
     NSUInteger events = [sectionInfo numberOfObjects];
     
     if (events > 0) {
+        if (events == 1) {
+            self.startSlider.hidden = YES;
+            self.endSlider.hidden = YES;
+        }
+        else {
+            self.startSlider.hidden = NO;
+            self.endSlider.hidden = NO;
+        }
+        UIImage *clearImage = [[UIImage alloc] init];
         [self.startSlider setMinimumValue:0];
         [self.startSlider setMaximumValue:events - 1];
+        [self.startSlider setThumbImage:[UIImage imageNamed:@"slider_thumb_down_20.png"] forState:UIControlStateNormal];
+        [self.startSlider setThumbImage:[UIImage imageNamed:@"slider_thumb_down_blue_20.png"] forState:UIControlStateHighlighted];
+        [self.startSlider setMinimumTrackImage:clearImage forState:UIControlStateNormal];
+        [self.startSlider setMaximumTrackImage:clearImage forState:UIControlStateNormal];
         [self.endSlider setMinimumValue:0];
         [self.endSlider setMaximumValue:events - 1];
+        [self.endSlider setThumbImage:[UIImage imageNamed:@"slider_thumb_up_20.png"] forState:UIControlStateNormal];
+        [self.endSlider setThumbImage:[UIImage imageNamed:@"slider_thumb_up_blue_20.png"] forState:UIControlStateHighlighted];
+        [self.endSlider setMinimumTrackImage:clearImage forState:UIControlStateNormal];
+        [self.endSlider setMaximumTrackImage:clearImage forState:UIControlStateNormal];
         for (id item in self.itemsToDisableTogether) {
             ((UIControl *)item).enabled = YES;
         }
@@ -84,8 +103,16 @@ NSString *SPACE = @"";
 
         // Position the sliders and highlight the buttons
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        self.startSlider.value = [defaults floatForKey:@"DefaultMailStartValue"];
-        self.endSlider.value = [defaults floatForKey:@"DefaultMailEndValue"];
+
+        if ( [defaults objectForKey:@"DefaultMailStartValue"] == nil) {
+            self.startSlider.value = self.startSlider.maximumValue;
+            self.endSlider.value = self.startSlider.maximumValue;
+            [self pressAllButton:self];
+        }
+        else {
+            self.startSlider.value = [defaults floatForKey:@"DefaultMailStartValue"];
+            self.endSlider.value = [defaults floatForKey:@"DefaultMailEndValue"];
+        }
         self.recipientList.text = [defaults stringForKey:@"DefaultRecipientList"];
         
         if ([defaults boolForKey:@"MailSliderPinnedToNewest"] == YES) {
@@ -95,11 +122,21 @@ NSString *SPACE = @"";
             self.latestButton.selected = YES;
             [self pressLatestButton:self];
         }
+        else if ([defaults boolForKey:@"MailTodayButtonOn"]) {
+            if ([self recordsForToday]) {
+                self.todayButton.selected = YES;
+                [self pressTodayButton:self];
+            }
+            else { // Select the newest if there are no records for today.
+                self.latestButton.selected = YES;
+                [self pressLatestButton:self];
+            }
+        }
         else if ([defaults boolForKey:@"Mail7DayButtonOn"]) {
             self.weekButton.selected = YES;
             [self pressWeekButton:self];
         }
-        else if ([defaults boolForKey:@"Mail30DayButtonOn"]) {
+        else if ([defaults boolForKey:@"Mail28DayButtonOn"]) {
             self.monthButton.selected = YES;
             [self pressMonthButton:self];
         }
@@ -107,16 +144,21 @@ NSString *SPACE = @"";
             self.allButton.selected = YES;
             [self pressAllButton:self];
         }
+        if (![self recordsForToday]) {
+            self.todayButton.enabled = NO;
+            self.todayButton.selected = NO;
+        }
         [self updateDateRangeDrawing];
     }
     else {
+        self.startSlider.hidden = YES;
+        self.endSlider.hidden = YES;
         [self.startSlider setMinimumValue:0];
         [self.startSlider setMaximumValue:0];
         [self.endSlider setMinimumValue:0];
         [self.endSlider setMaximumValue:0];
         for (id item in self.itemsToDisableTogether) {
             ((UIControl *)item).enabled = NO;
-
         }
     }
 }
@@ -137,15 +179,15 @@ NSString *SPACE = @"";
     [self setAllButton:nil];
     [self setMonthButton:nil];
     [self setWeekButton:nil];
+    [self setTodayButton:nil];
     [self setLatestButton:nil];
     [self setDateRangeDrawing:nil];
-    [self setDateRangeDrawing:nil];
-    [self setComposeButton:nil];
     [self setEventCount:nil];
     [self setDateRangeLabel:nil];
+    [self setEventCountView:nil];
     [self setStartDateLabel:nil];
     [self setEndDateLabel:nil];
-    [self setEventCountView:nil];
+    [self setComposeButton:nil];
     [self setRecipientList:nil];
     [super viewDidUnload];
 }
@@ -161,7 +203,7 @@ NSString *SPACE = @"";
     NSIndexPath *indexPath;
     MoodLogEvents *object;
     NSDate *today = [NSDate date];
-    today = [today dateByAddingTimeInterval: -60*60*24*30]; // Subtract a month from today
+    today = [today dateByAddingTimeInterval: -60*60*24*28]; // Subtract 28 days from today
     int monthOldEntry=0;
     NSDate *aDay;
     for (int i=[self.endSlider maximumValue]; i>=0; i--) {
@@ -204,6 +246,30 @@ NSString *SPACE = @"";
     [self setButtonHighlighting:self.weekButton];
 }
 
+- (IBAction)pressTodayButton:(id)sender {
+    // Iterate backwards through the records until you get to the first one that's earlier than today
+    NSIndexPath *indexPath;
+    MoodLogEvents *object;
+    NSDate *today = [NSDate date];
+    today = [today dateByAddingTimeInterval: -60*60*24]; // Subtract one day from today
+    int dayOldEntry=0;
+    NSDate *aDay = [[NSDate alloc] init];
+    for (int i=[self.endSlider maximumValue]; i>=0; i--) {
+        indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+        object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        aDay = [object valueForKey:@"date"];
+        if ([aDay timeIntervalSince1970] < [today timeIntervalSince1970]) {
+            dayOldEntry = MIN(i+1,[self.endSlider maximumValue]);
+            break;
+        }
+    }
+    self.startSlider.value = dayOldEntry;
+    self.endSlider.value = [self.endSlider maximumValue];
+    [self updateDateRangeDrawing];
+    [self saveSliderState];
+    [self setButtonHighlighting:self.todayButton];
+}
+
 - (IBAction)pressLatestButton:(id)sender {
     self.startSlider.value = [self.startSlider maximumValue];
     self.endSlider.value = [self.endSlider maximumValue];
@@ -212,16 +278,38 @@ NSString *SPACE = @"";
     [self setButtonHighlighting:self.latestButton];
 }
 
+- (BOOL)recordsForToday {
+    // Iterate backwards through the records until you get to the first one that's earlier than today
+    NSIndexPath *indexPath;
+    MoodLogEvents *object;
+    NSDate *aDayAgo = [NSDate date];
+    aDayAgo = [aDayAgo dateByAddingTimeInterval: -60*60*24]; // Subtract one day from today
+    NSDate *aDay = [[NSDate alloc] init];
+    for (int i=self.endSlider.maximumValue; i>=0; i--) {
+        indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+        object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        aDay = [object valueForKey:@"date"];
+        if ([aDay timeIntervalSince1970] >= [aDayAgo timeIntervalSince1970]) {
+            return YES;
+            break;
+        }
+    }
+    return NO;
+}
+
+
 - (void) setButtonHighlighting: (UIButton *)button {
     // Clear all the buttons
     [self.latestButton setSelected:NO];
+    [self.todayButton setSelected:NO];
     [self.weekButton setSelected:NO];
     [self.monthButton setSelected:NO];
     [self.allButton setSelected:NO];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:NO forKey:@"MailLatestButtonOn"];
+    [defaults setBool:NO forKey:@"MailTodayButtonOn"];
     [defaults setBool:NO forKey:@"Mail7DayButtonOn"];
-    [defaults setBool:NO forKey:@"Mail30DayButtonOn"];
+    [defaults setBool:NO forKey:@"Mail28DayButtonOn"];
     [defaults setBool:NO forKey:@"MailAllButtonOn"];
     // Set the one you want
     if (button != Nil) {
@@ -230,12 +318,16 @@ NSString *SPACE = @"";
             [defaults setBool:YES forKey:@"MailLatestButtonOn"];
             [self.latestButton setSelected:YES];
         }
+        else if (button == self.todayButton) {
+            [defaults setBool:YES forKey:@"MailTodayButtonOn"];
+            [self.todayButton setSelected:YES];
+        }
         else if (button == self.weekButton) {
             [defaults setBool:YES forKey:@"Mail7DayButtonOn"];
             [self.weekButton setSelected:YES];
         }
         else if (button == self.monthButton) {
-            [defaults setBool:YES forKey:@"Mail30DayButtonOn"];
+            [defaults setBool:YES forKey:@"Mail28DayButtonOn"];
             [self.monthButton setSelected:YES];
         }
         else if (button == self.allButton) {
@@ -451,6 +543,19 @@ NSString *SPACE = @"";
     [self saveSliderState];
 }
 
+- (void) saveSliderState {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setFloat:self.startSlider.value forKey:@"DefaultMailStartValue"];
+    [defaults setFloat:self.endSlider.value forKey:@"DefaultMailEndValue"];
+    if (self.endSlider.value == self.endSlider.maximumValue) {
+        [defaults setBool:YES forKey:@"MailSliderPinnedToNewest"];
+    }
+    else {
+        [defaults setBool:NO forKey:@"MailSliderPinnedToNewest"];
+    }
+    [defaults synchronize];
+}
+
 - (void) updateDateRangeDrawing {
     int startValue = (int)roundl(self.startSlider.value);
     int endValue = (int)roundl(self.endSlider.value);
@@ -499,19 +604,6 @@ NSString *SPACE = @"";
         [self.dateRangeDrawing setNeedsDisplay];
         
     }
-}
-
-- (void) saveSliderState {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setFloat:self.startSlider.value forKey:@"DefaultMailStartValue"];
-    [defaults setFloat:self.endSlider.value forKey:@"DefaultMailEndValue"];
-    if (self.endSlider.value == self.endSlider.maximumValue) {
-        [defaults setBool:YES forKey:@"MailSliderPinnedToNewest"];
-    }
-    else {
-        [defaults setBool:NO forKey:@"MailSliderPinnedToNewest"];
-    }
-    [defaults synchronize];
 }
 
 #pragma mark - Core Data delegate methods

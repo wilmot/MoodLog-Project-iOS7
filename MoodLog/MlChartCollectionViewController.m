@@ -162,6 +162,10 @@ Boolean firstLoad;
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
+
+    if ((self.startDate != NULL) && (self.endDate != NULL)) {
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"date >= %@ && date <= %@", self.startDate, self.endDate];
+    }
     
     // Edit the sort key as appropriate.
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
@@ -363,9 +367,11 @@ Boolean firstLoad;
     cell.chartDrawingView.chartType = self.chartType;
     cell.chartDrawingView.categoryCounts = categoryCounts;
     cell.chartDrawingView.dividerLine = YES;
+    cell.chartDrawingView.drawOutline = YES;
     if ([self.chartType isEqualToString:@"Bar"]) {
         CGFloat height = emotionArrayCount>0 ? feelTotal/emotionArrayCount : 0; // Average (mean)
         cell.chartHeightLabel.text = [NSString stringWithFormat:@"%2.0f", height];
+        [cell.chartDrawingView setChartFontSize:10.0];
         [cell.chartDrawingView setChartHeightOverall:[moodLogObject.overall floatValue]];
         [cell.chartDrawingView setChartHeightStress:[moodLogObject.stress floatValue]];
         [cell.chartDrawingView setChartHeightEnergy:[moodLogObject.energy floatValue]];
@@ -392,6 +398,5 @@ Boolean firstLoad;
         self.myChartCellEntryViewController.detailItem = self.detailItem;
     }
 }
-
 
 @end

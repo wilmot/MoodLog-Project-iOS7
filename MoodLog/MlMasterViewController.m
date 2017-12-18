@@ -25,7 +25,6 @@
 static CGFloat CELL_HEIGHT;
 NSPredicate *filterPredicate = nil;
 
-
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -51,7 +50,13 @@ NSPredicate *filterPredicate = nil;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.definesPresentationContext = YES;
     self.searchController.searchBar.scopeButtonTitles = @[@"All", @"Emotions", @"Text"];
-    self.tableView.tableHeaderView = self.searchController.searchBar;
+    if (@available(iOS 11, *)) {
+        self.navigationItem.searchController = self.searchController;
+        self.navigationItem.hidesSearchBarWhenScrolling = NO;
+    }
+    else {
+        self.tableView.tableHeaderView = self.searchController.searchBar;
+    }
 
     // Used for testing and debugging:
     //[self updateOldRecords];
@@ -207,12 +212,17 @@ NSPredicate *filterPredicate = nil;
 }
 
 - (void)scrollToTopButDontShowSearchBar {
-    if ([[self.fetchedResultsController sections] count] > 0) { // If there are any records
-        if ((self.tableView.contentOffset.y >= 0) || (self.tableView.contentOffset.y == -20)) {
-            [self.tableView setContentOffset:CGPointMake(0, self.searchController.searchBar.frame.size.height) animated:NO];
-        }
-        else {
-            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    if (@available(iOS 11, *)) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
+    else { // Old behavior
+        if ([[self.fetchedResultsController sections] count] > 0) { // If there are any records
+            if ((self.tableView.contentOffset.y >= 0) || (self.tableView.contentOffset.y == -20)) {
+                [self.tableView setContentOffset:CGPointMake(0, self.searchController.searchBar.frame.size.height) animated:NO];
+            }
+            else {
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            }
         }
     }
 }
@@ -368,10 +378,22 @@ NSPredicate *filterPredicate = nil;
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        [self saveContext];
-        [self.tableView reloadData];
+        MoodLogEvents *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"Delete Entry"] message:[NSString stringWithFormat:@"Are you sure you want to delete the entry dated '%@'? This action cannot be undone.", [self prettyDateAndTimeObjC:event.date]] preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                                 {
+                                     // Do nothing on Cancel
+                                 }];
+        UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action)
+                                 {
+                                     [self.managedObjectContext deleteObject:event];
+                                     [self saveContext];
+                                     [self.tableView reloadData];
+                                     
+                                 }];
+        [alert addAction:cancel];
+        [alert addAction:delete];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -675,6 +697,13 @@ NSPredicate *filterPredicate = nil;
     [as addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:journalRange];
     cell.mainLabel.attributedText = as;
     
+}
+
+- (NSString *)prettyDateAndTimeObjC:(NSDate *)date {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"MM/dd/YY hh:mm:ss a";
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    return dateString;
 }
 
 @end

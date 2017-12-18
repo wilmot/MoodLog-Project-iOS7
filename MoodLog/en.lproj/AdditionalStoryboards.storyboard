@@ -15,6 +15,7 @@
         </array>
         <array key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
+            <string>HelveticaNeue-UltraLight</string>
         </array>
     </customFonts>
     <scenes>
@@ -401,49 +402,209 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBf-4Y-1d7" userLabel="Container View - Charts">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="KiF-p4-9fa" kind="embed" identifier="ChartCollectionSegue" id="uf8-Nt-OaD"/>
                                 </connections>
                             </containerView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rF0-RR-vm2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" id="J0a-LG-ljn">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="cdd-b7-Jpi">
-                                            <rect key="frame" x="16" y="7.5" width="218" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Summary"/>
-                                                <segment title="Pie"/>
-                                                <segment title="Bar"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="chooseSegment:" destination="o1t-Tq-CTV" eventType="valueChanged" id="1IA-gL-hkk"/>
-                                            </connections>
-                                        </segmentedControl>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sIU-5E-yPt"/>
-                                    <barButtonItem title="Done" id="oMU-bF-xF3">
-                                        <connections>
-                                            <action selector="pressDone:" destination="o1t-Tq-CTV" id="rSH-BW-gqj"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gx2-hj-ZUz" userLabel="Tools View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUy-er-mU6" userLabel="View - Event Counter">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgG-9M-YaB" customClass="MlDateRangeDrawing">
+                                                <rect key="frame" x="16" y="13" width="343" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Oldest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOg-BJ-OO3">
+                                                        <rect key="frame" x="5" y="4" width="44.5" height="19.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No Entries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWH-zz-Ob5">
+                                                        <rect key="frame" x="129.5" y="3.5" width="85" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Newest" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD5-SU-kSl">
+                                                        <rect key="frame" x="290" y="4" width="52" height="19.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="lD5-SU-kSl" secondAttribute="trailing" constant="1" id="9RJ-23-YHL"/>
+                                                    <constraint firstItem="lD5-SU-kSl" firstAttribute="centerY" secondItem="lgG-9M-YaB" secondAttribute="centerY" constant="-1.5" id="Ees-wJ-POZ"/>
+                                                    <constraint firstItem="gOg-BJ-OO3" firstAttribute="centerY" secondItem="lgG-9M-YaB" secondAttribute="centerY" constant="-1.5" id="HPa-35-nLO"/>
+                                                    <constraint firstItem="gOg-BJ-OO3" firstAttribute="leading" secondItem="lgG-9M-YaB" secondAttribute="leading" constant="5" id="Ia2-Zy-uhP"/>
+                                                    <constraint firstItem="wWH-zz-Ob5" firstAttribute="centerY" secondItem="lgG-9M-YaB" secondAttribute="centerY" constant="-1.5" id="MH9-R7-x3N"/>
+                                                    <constraint firstItem="wWH-zz-Ob5" firstAttribute="centerX" secondItem="lgG-9M-YaB" secondAttribute="centerX" id="oPf-Qq-XXO"/>
+                                                    <constraint firstAttribute="height" constant="30" id="w9l-gU-lkQ"/>
+                                                </constraints>
+                                            </view>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="ezw-nV-sJj">
+                                                <rect key="frame" x="6" y="-2" width="363" height="31"/>
+                                                <connections>
+                                                    <action selector="finishedSlidingStartSlider:" destination="o1t-Tq-CTV" eventType="touchUpInside" id="FS0-Uc-djv"/>
+                                                    <action selector="slideStartSlider:" destination="o1t-Tq-CTV" eventType="valueChanged" id="hNq-yO-zqr"/>
+                                                </connections>
+                                            </slider>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="9jc-Vc-Myt">
+                                                <rect key="frame" x="6" y="27" width="363" height="31"/>
+                                                <connections>
+                                                    <action selector="finishedSlidingEndSlider:" destination="o1t-Tq-CTV" eventType="touchUpInside" id="nRw-fu-7PL"/>
+                                                    <action selector="slideEndSlider:" destination="o1t-Tq-CTV" eventType="valueChanged" id="VJr-2s-AuY"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add entries by tapping ‘New’ in the main view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOk-bc-ZbL">
+                                                <rect key="frame" x="42.5" y="48" width="290" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="ne4-bc-LZe"/>
+                                                    <constraint firstAttribute="width" constant="290" id="xj4-H6-X7z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ezw-nV-sJj" firstAttribute="centerX" secondItem="lgG-9M-YaB" secondAttribute="centerX" id="9Gl-yL-onx"/>
+                                            <constraint firstItem="kOk-bc-ZbL" firstAttribute="centerX" secondItem="9jc-Vc-Myt" secondAttribute="centerX" id="LaR-g1-5GM"/>
+                                            <constraint firstAttribute="height" constant="100" id="PbE-F7-WdV"/>
+                                            <constraint firstItem="9jc-Vc-Myt" firstAttribute="top" secondItem="ezw-nV-sJj" secondAttribute="bottom" constant="-1" id="TUX-Qw-zXS"/>
+                                            <constraint firstItem="ezw-nV-sJj" firstAttribute="leading" secondItem="9jc-Vc-Myt" secondAttribute="leading" id="XBd-Ab-qMh"/>
+                                            <constraint firstItem="lgG-9M-YaB" firstAttribute="leading" secondItem="lUy-er-mU6" secondAttribute="leading" constant="16" id="c6p-mC-BO9"/>
+                                            <constraint firstAttribute="trailing" secondItem="lgG-9M-YaB" secondAttribute="trailing" constant="16" id="dGp-9Z-qKN"/>
+                                            <constraint firstItem="kOk-bc-ZbL" firstAttribute="top" secondItem="lgG-9M-YaB" secondAttribute="bottom" constant="5" id="lJ5-iM-fNA"/>
+                                            <constraint firstItem="ezw-nV-sJj" firstAttribute="leading" secondItem="lUy-er-mU6" secondAttribute="leading" constant="8" id="luz-ey-zVi"/>
+                                            <constraint firstItem="ezw-nV-sJj" firstAttribute="trailing" secondItem="9jc-Vc-Myt" secondAttribute="trailing" id="q71-Xx-6zW"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vjj-I1-dL4">
+                                        <rect key="frame" x="0.0" y="134" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWj-s9-MSd">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                                <state key="normal" title="All">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressAllButton:" destination="o1t-Tq-CTV" eventType="touchUpInside" id="gox-Fz-OJs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBJ-lb-6v7">
+                                                <rect key="frame" x="75" y="0.0" width="75" height="30"/>
+                                                <state key="normal" title="28 Days">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressMonthButton:" destination="o1t-Tq-CTV" eventType="touchUpInside" id="aov-Ak-iVp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuU-qF-eBr">
+                                                <rect key="frame" x="150" y="0.0" width="75" height="30"/>
+                                                <state key="normal" title="7 Days">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressWeekButton:" destination="o1t-Tq-CTV" eventType="touchUpInside" id="cky-B9-fvb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zd-aE-Iih">
+                                                <rect key="frame" x="225" y="0.0" width="75" height="30"/>
+                                                <state key="normal" title="Today">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressTodayButton:" destination="o1t-Tq-CTV" eventType="touchUpInside" id="s5z-4Z-M2g"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWC-c4-3Ao">
+                                                <rect key="frame" x="300" y="0.0" width="75" height="30"/>
+                                                <state key="normal" title="Last">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressLatestButton:" destination="o1t-Tq-CTV" eventType="touchUpInside" id="zWb-rW-e7G"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rF0-RR-vm2">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <items>
+                                            <barButtonItem image="disclosure_open_20" style="plain" id="5HE-Mi-kes">
+                                                <connections>
+                                                    <action selector="toggleControls:" destination="o1t-Tq-CTV" id="Kfr-He-9uc"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="z91-QR-Cva"/>
+                                            <barButtonItem style="plain" id="J0a-LG-ljn">
+                                                <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="cdd-b7-Jpi">
+                                                    <rect key="frame" x="80.5" y="7" width="214" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="Summary" width="72"/>
+                                                        <segment title="Pie" width="70"/>
+                                                        <segment title="Bar" width="70"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="chooseSegment:" destination="o1t-Tq-CTV" eventType="valueChanged" id="1IA-gL-hkk"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="ruQ-Ia-dcI"/>
+                                            <barButtonItem title="Done" id="oMU-bF-xF3">
+                                                <connections>
+                                                    <action selector="pressDone:" destination="o1t-Tq-CTV" id="rSH-BW-gqj"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </toolbar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKQ-zF-30y" userLabel="Hiding Bar">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="fzI-pJ-jNV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="lUy-er-mU6" firstAttribute="leading" secondItem="gx2-hj-ZUz" secondAttribute="leading" id="0z1-Fb-uxu"/>
+                                    <constraint firstAttribute="bottom" secondItem="ezw-nV-sJj" secondAttribute="bottom" constant="72" id="Ccp-yU-FOY"/>
+                                    <constraint firstAttribute="bottom" secondItem="lUy-er-mU6" secondAttribute="bottom" id="F05-en-wyb"/>
+                                    <constraint firstAttribute="height" constant="164" id="GeC-i1-642"/>
+                                    <constraint firstAttribute="bottom" secondItem="kOk-bc-ZbL" secondAttribute="bottom" constant="31" id="H87-0m-1GQ"/>
+                                    <constraint firstItem="rF0-RR-vm2" firstAttribute="leading" secondItem="gx2-hj-ZUz" secondAttribute="leading" id="Jid-Db-zEZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="vjj-I1-dL4" secondAttribute="bottom" id="O8u-w9-CVB"/>
+                                    <constraint firstItem="vjj-I1-dL4" firstAttribute="leading" secondItem="gx2-hj-ZUz" secondAttribute="leading" id="R4C-Kq-km8"/>
+                                    <constraint firstAttribute="trailing" secondItem="vjj-I1-dL4" secondAttribute="trailing" id="aZO-GD-gTq"/>
+                                    <constraint firstAttribute="trailing" secondItem="rF0-RR-vm2" secondAttribute="trailing" id="apX-ae-ucf"/>
+                                    <constraint firstAttribute="trailing" secondItem="lUy-er-mU6" secondAttribute="trailing" id="d36-71-2qf"/>
+                                    <constraint firstItem="rF0-RR-vm2" firstAttribute="top" secondItem="gx2-hj-ZUz" secondAttribute="top" constant="20" id="jn1-tH-uJY"/>
+                                </constraints>
+                            </view>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFR-je-Sop" userLabel="Container View - Summary">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="Yoh-xf-rzN" kind="embed" identifier="SummarySegue" id="cPT-X0-BfD"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-SK-ZzK">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Mood Log entries by tapping ‘New’ in the main view." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="p4w-R3-cNo">
-                                        <rect key="frame" x="47.5" y="232.5" width="281" height="138"/>
+                                        <rect key="frame" x="48" y="183" width="281" height="138"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="281" id="ChF-cr-ORX"/>
                                             <constraint firstAttribute="height" constant="138" id="r5k-yI-klJ"/>
@@ -463,50 +624,72 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IFR-je-Sop" firstAttribute="leading" secondItem="m5s-2t-Rad" secondAttribute="leading" id="1JQ-MJ-mPe"/>
-                            <constraint firstItem="rF0-RR-vm2" firstAttribute="leading" secondItem="m5s-2t-Rad" secondAttribute="leading" id="2We-9E-G0e"/>
+                            <constraint firstItem="m5s-2t-Rad" firstAttribute="trailing" secondItem="gKQ-zF-30y" secondAttribute="trailing" id="4Rg-Tm-PXI"/>
                             <constraint firstItem="vBf-4Y-1d7" firstAttribute="leading" secondItem="m5s-2t-Rad" secondAttribute="leading" id="5Tu-VK-ehU"/>
-                            <constraint firstItem="rF0-RR-vm2" firstAttribute="trailing" secondItem="vBf-4Y-1d7" secondAttribute="trailing" id="5YS-YV-ySy"/>
-                            <constraint firstItem="vBf-4Y-1d7" firstAttribute="top" secondItem="m5s-2t-Rad" secondAttribute="top" constant="44" id="5xX-3d-IYz"/>
-                            <constraint firstItem="IFR-je-Sop" firstAttribute="top" secondItem="m5s-2t-Rad" secondAttribute="top" constant="44" id="8s0-wM-UBN"/>
                             <constraint firstItem="m5s-2t-Rad" firstAttribute="bottom" secondItem="hXT-SK-ZzK" secondAttribute="bottom" id="Ctq-hM-ghl"/>
-                            <constraint firstItem="vBf-4Y-1d7" firstAttribute="top" secondItem="rF0-RR-vm2" secondAttribute="bottom" id="Fuq-Pg-gCp"/>
-                            <constraint firstItem="rF0-RR-vm2" firstAttribute="leading" secondItem="vBf-4Y-1d7" secondAttribute="leading" id="J6b-24-Ij9"/>
+                            <constraint firstItem="vBf-4Y-1d7" firstAttribute="top" secondItem="gx2-hj-ZUz" secondAttribute="bottom" id="Dou-0U-g3n"/>
+                            <constraint firstItem="gx2-hj-ZUz" firstAttribute="top" secondItem="m5s-2t-Rad" secondAttribute="top" constant="-20" id="FiG-90-pPW"/>
                             <constraint firstItem="m5s-2t-Rad" firstAttribute="bottom" secondItem="vBf-4Y-1d7" secondAttribute="bottom" id="JlU-O0-mBY"/>
-                            <constraint firstItem="hXT-SK-ZzK" firstAttribute="top" secondItem="rF0-RR-vm2" secondAttribute="bottom" id="LKk-FL-jf9"/>
-                            <constraint firstItem="m5s-2t-Rad" firstAttribute="trailing" secondItem="rF0-RR-vm2" secondAttribute="trailing" id="VVZ-Mv-UCf"/>
+                            <constraint firstItem="gKQ-zF-30y" firstAttribute="leading" secondItem="m5s-2t-Rad" secondAttribute="leading" id="K4k-S7-LPQ"/>
+                            <constraint firstItem="m5s-2t-Rad" firstAttribute="top" secondItem="gKQ-zF-30y" secondAttribute="top" constant="20" id="TjS-gT-spf"/>
                             <constraint firstItem="m5s-2t-Rad" firstAttribute="trailing" secondItem="hXT-SK-ZzK" secondAttribute="trailing" id="XR1-DL-eKs"/>
                             <constraint firstItem="m5s-2t-Rad" firstAttribute="trailing" secondItem="vBf-4Y-1d7" secondAttribute="trailing" id="b76-EU-JXq"/>
+                            <constraint firstItem="IFR-je-Sop" firstAttribute="top" secondItem="gx2-hj-ZUz" secondAttribute="bottom" id="bIm-tk-5or"/>
+                            <constraint firstItem="gx2-hj-ZUz" firstAttribute="leading" secondItem="m5s-2t-Rad" secondAttribute="leading" id="byG-DZ-5RR"/>
+                            <constraint firstItem="m5s-2t-Rad" firstAttribute="trailing" secondItem="gx2-hj-ZUz" secondAttribute="trailing" id="fxu-re-9UO"/>
                             <constraint firstItem="m5s-2t-Rad" firstAttribute="trailing" secondItem="IFR-je-Sop" secondAttribute="trailing" id="j1Z-LD-SEG"/>
-                            <constraint firstItem="rF0-RR-vm2" firstAttribute="top" secondItem="m5s-2t-Rad" secondAttribute="top" id="j8g-CO-Iy2"/>
-                            <constraint firstItem="rF0-RR-vm2" firstAttribute="bottom" secondItem="vBf-4Y-1d7" secondAttribute="top" id="jS0-h1-TLh"/>
                             <constraint firstItem="hXT-SK-ZzK" firstAttribute="leading" secondItem="m5s-2t-Rad" secondAttribute="leading" id="jZD-Gl-rpk"/>
+                            <constraint firstItem="hXT-SK-ZzK" firstAttribute="top" secondItem="gx2-hj-ZUz" secondAttribute="bottom" id="l3T-19-fMo"/>
                             <constraint firstItem="m5s-2t-Rad" firstAttribute="bottom" secondItem="IFR-je-Sop" secondAttribute="bottom" id="sOl-XP-Qe9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m5s-2t-Rad"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="Nyg-v3-cGO"/>
                     <connections>
+                        <outlet property="allButton" destination="jWj-s9-MSd" id="fh3-sL-rPR"/>
                         <outlet property="chartContainer" destination="vBf-4Y-1d7" id="m0h-x3-g37"/>
+                        <outlet property="dateRangeDrawing" destination="lgG-9M-YaB" id="u0P-zS-iz9"/>
+                        <outlet property="dateRangeLabel" destination="kOk-bc-ZbL" id="6Ar-DA-9Oo"/>
+                        <outlet property="disclosureTriangle" destination="5HE-Mi-kes" id="VUc-8L-iqh"/>
+                        <outlet property="doneButton" destination="oMU-bF-xF3" id="D9r-CX-JkD"/>
+                        <outlet property="endSlider" destination="9jc-Vc-Myt" id="AXP-1r-xKk"/>
+                        <outlet property="eventCount" destination="wWH-zz-Ob5" id="nlx-hd-NqS"/>
+                        <outlet property="eventCounterView" destination="lUy-er-mU6" id="mqC-Rr-GDL"/>
+                        <outlet property="latestButton" destination="yWC-c4-3Ao" id="P9t-3o-bar"/>
+                        <outlet property="monthButton" destination="sBJ-lb-6v7" id="huY-Wb-Smy"/>
                         <outlet property="noRecordsView" destination="hXT-SK-ZzK" id="X56-aj-YSY"/>
                         <outlet property="segment" destination="cdd-b7-Jpi" id="W0T-eY-RDq"/>
+                        <outlet property="startSlider" destination="ezw-nV-sJj" id="YI3-3m-8jh"/>
                         <outlet property="summaryView" destination="IFR-je-Sop" id="hzb-xa-fxE"/>
+                        <outlet property="todayButton" destination="3zd-aE-Iih" id="yWi-ih-JwN"/>
                         <outlet property="toolBar" destination="rF0-RR-vm2" id="C2x-YD-Pkj"/>
+                        <outlet property="toolsView" destination="gx2-hj-ZUz" id="y5Z-NP-j2s"/>
+                        <outlet property="toolsViewHeightConstraint" destination="GeC-i1-642" id="9vh-uY-i6x"/>
+                        <outlet property="weekButton" destination="UuU-qF-eBr" id="uBg-VK-euT"/>
+                        <outletCollection property="itemsToDisableTogether" destination="jWj-s9-MSd" id="14M-hn-8bw"/>
+                        <outletCollection property="itemsToDisableTogether" destination="sBJ-lb-6v7" id="ENR-BA-Dh4"/>
+                        <outletCollection property="itemsToDisableTogether" destination="UuU-qF-eBr" id="yyL-Sy-XSO"/>
+                        <outletCollection property="itemsToDisableTogether" destination="3zd-aE-Iih" id="nZz-ic-f7y"/>
+                        <outletCollection property="itemsToDisableTogether" destination="yWC-c4-3Ao" id="n87-aZ-DLg"/>
+                        <outletCollection property="itemsToDisableTogether" destination="ezw-nV-sJj" id="LzO-zv-0bo"/>
+                        <outletCollection property="itemsToDisableTogether" destination="9jc-Vc-Myt" id="rDU-j9-deI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ht-ZD-0Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5203.2000000000007" y="969.71514242878573"/>
+            <point key="canvasLocation" x="-5204" y="969.26536731634189"/>
         </scene>
         <!--Ml Chart Cell Entry View Controller-->
         <scene sceneID="ADL-rR-ipX">
             <objects>
                 <viewController id="OZp-fm-LOv" customClass="MlChartCellEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lQG-OS-4XL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="503"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Some text" translatesAutoresizingMaskIntoConstraints="NO" id="FMq-7X-WBJ">
-                                <rect key="frame" x="0.0" y="87" width="375" height="516"/>
+                                <rect key="frame" x="0.0" y="87" width="375" height="416"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -584,7 +767,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="KiF-p4-9fa" customClass="MlChartCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="P8x-rK-qyS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="503"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="32f-Gw-X39">
@@ -594,15 +777,15 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="pieChartCellPortrait" id="UEL-qc-4jr" customClass="MlChartCollectionViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="90" height="256"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pieChartCellPortrait" id="UEL-qc-4jr" customClass="MlChartCollectionViewCell">
+                                <rect key="frame" x="0.0" y="123.5" width="90" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="90" height="256"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k90-bc-9mi">
-                                            <rect key="frame" x="0.0" y="152" width="90" height="40"/>
+                                            <rect key="frame" x="0.0" y="216" width="90" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2013" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndD-9R-8SW">
                                                     <rect key="frame" x="0.0" y="24" width="90" height="16"/>
@@ -660,14 +843,14 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xj-n1-iDS" customClass="MlChartDrawingView">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="216"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vF-ib-0dq" userLabel="View - Labels">
-                                            <rect key="frame" x="0.0" y="49" width="90" height="103"/>
+                                            <rect key="frame" x="0.0" y="113" width="90" height="103"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Love" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFx-fN-e54">
-                                                    <rect key="frame" x="-5" y="-1" width="90" height="21"/>
+                                                    <rect key="frame" x="-5" y="4" width="90" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="OpK-UU-HXN"/>
                                                         <constraint firstAttribute="height" constant="21" id="aKP-gR-VO4"/>
@@ -677,7 +860,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Joy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-HF-hmw">
-                                                    <rect key="frame" x="-5" y="16" width="90" height="21"/>
+                                                    <rect key="frame" x="-5" y="19" width="90" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Nc6-80-igP"/>
                                                     </constraints>
@@ -686,7 +869,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Surprise" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Q1-ce-Tzx">
-                                                    <rect key="frame" x="-5" y="32" width="90" height="21"/>
+                                                    <rect key="frame" x="-5" y="35" width="90" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Okf-xk-P5C"/>
                                                     </constraints>
@@ -695,7 +878,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Anger" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLU-Xo-Ajy">
-                                                    <rect key="frame" x="-5" y="48" width="90" height="21"/>
+                                                    <rect key="frame" x="-5" y="51" width="90" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="QDL-h5-Iig"/>
                                                     </constraints>
@@ -704,7 +887,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sadness" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vh-IT-xrG">
-                                                    <rect key="frame" x="-5" y="64" width="90" height="21"/>
+                                                    <rect key="frame" x="-5" y="67" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -716,7 +899,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="103" id="6sd-bH-CjN"/>
                                                 <constraint firstItem="5Bn-mE-fuW" firstAttribute="leading" secondItem="5Vh-IT-xrG" secondAttribute="leading" id="8EJ-b5-eXm"/>
@@ -725,19 +908,19 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                 <constraint firstItem="RLU-Xo-Ajy" firstAttribute="leading" secondItem="9Q1-ce-Tzx" secondAttribute="leading" id="GoD-MG-boY"/>
                                                 <constraint firstItem="JPe-HF-hmw" firstAttribute="leading" secondItem="9Q1-ce-Tzx" secondAttribute="leading" id="Jhf-4Y-98x"/>
                                                 <constraint firstItem="9Q1-ce-Tzx" firstAttribute="trailing" secondItem="JPe-HF-hmw" secondAttribute="trailing" id="Rzu-Id-cvx"/>
-                                                <constraint firstItem="JPe-HF-hmw" firstAttribute="top" secondItem="0vF-ib-0dq" secondAttribute="top" constant="16" id="aQa-GH-TGW"/>
+                                                <constraint firstItem="JPe-HF-hmw" firstAttribute="top" secondItem="0vF-ib-0dq" secondAttribute="top" constant="19" id="aQa-GH-TGW"/>
                                                 <constraint firstItem="9Q1-ce-Tzx" firstAttribute="trailing" secondItem="RLU-Xo-Ajy" secondAttribute="trailing" id="bBs-b2-y8Z"/>
-                                                <constraint firstItem="9Q1-ce-Tzx" firstAttribute="top" secondItem="PFx-fN-e54" secondAttribute="bottom" constant="12" id="bON-wY-yB8"/>
+                                                <constraint firstItem="9Q1-ce-Tzx" firstAttribute="top" secondItem="PFx-fN-e54" secondAttribute="bottom" constant="10" id="bON-wY-yB8"/>
                                                 <constraint firstItem="5Vh-IT-xrG" firstAttribute="top" secondItem="9Q1-ce-Tzx" secondAttribute="bottom" constant="11" id="bqA-1v-W9q"/>
                                                 <constraint firstItem="RLU-Xo-Ajy" firstAttribute="top" secondItem="JPe-HF-hmw" secondAttribute="bottom" constant="11" id="cdc-Ay-dWY"/>
-                                                <constraint firstItem="PFx-fN-e54" firstAttribute="top" secondItem="0vF-ib-0dq" secondAttribute="top" constant="-1" id="hfP-hG-o7K"/>
+                                                <constraint firstItem="PFx-fN-e54" firstAttribute="top" secondItem="0vF-ib-0dq" secondAttribute="top" constant="4" id="hfP-hG-o7K"/>
                                                 <constraint firstAttribute="trailing" secondItem="PFx-fN-e54" secondAttribute="trailing" constant="5" id="kDI-vm-Kuj"/>
                                                 <constraint firstItem="PFx-fN-e54" firstAttribute="leading" secondItem="0vF-ib-0dq" secondAttribute="leading" constant="-5" id="r5T-ql-rqe"/>
                                                 <constraint firstItem="PFx-fN-e54" firstAttribute="leading" secondItem="JPe-HF-hmw" secondAttribute="leading" id="rhs-ND-OKu"/>
-                                                <constraint firstItem="5Bn-mE-fuW" firstAttribute="top" secondItem="RLU-Xo-Ajy" secondAttribute="bottom" constant="13" id="sj3-kc-Ubu"/>
+                                                <constraint firstItem="5Bn-mE-fuW" firstAttribute="top" secondItem="RLU-Xo-Ajy" secondAttribute="bottom" constant="10" id="sj3-kc-Ubu"/>
                                                 <constraint firstItem="PFx-fN-e54" firstAttribute="trailing" secondItem="JPe-HF-hmw" secondAttribute="trailing" id="uJu-bi-ctS"/>
                                                 <constraint firstAttribute="bottom" secondItem="5Bn-mE-fuW" secondAttribute="bottom" id="upv-ZO-cAL"/>
-                                                <constraint firstAttribute="bottom" secondItem="5Vh-IT-xrG" secondAttribute="bottom" constant="18" id="vJX-3h-701"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Vh-IT-xrG" secondAttribute="bottom" constant="15" id="vJX-3h-701"/>
                                                 <constraint firstItem="RLU-Xo-Ajy" firstAttribute="leading" secondItem="5Vh-IT-xrG" secondAttribute="leading" id="xHM-SQ-VI1"/>
                                             </constraints>
                                         </view>
@@ -770,7 +953,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="chartCellPortrait" id="U29-nb-bRb" customClass="MlChartCollectionViewCell">
-                                <rect key="frame" x="0.0" y="347" width="90" height="256"/>
+                                <rect key="frame" x="90" y="123.5" width="90" height="256"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="90" height="256"/>
@@ -782,6 +965,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Moods" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="85" translatesAutoresizingMaskIntoConstraints="NO" id="HJh-i9-sJ5">
                                                     <rect key="frame" x="5" y="0.0" width="85" height="216"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1097,5 +1281,6 @@ Cg
     <resources>
         <image name="ParrotsEmotions.png" width="850" height="1684"/>
         <image name="Plutchik-wheel.svg.png" width="512" height="519"/>
+        <image name="disclosure_open_20" width="20" height="20"/>
     </resources>
 </document>

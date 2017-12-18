@@ -15,13 +15,14 @@
 
 static NSUInteger numberOfDivisions = 20.0;
 static CGFloat pi = 3.1415926535897932384626433832795;
-static CGFloat sidewaysWidthThreshhold = 60.0;
+static CGFloat sidewaysWidthThreshhold = 64.0;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.chartFontSize = 14.0; // Default font size
     }
     return self;
 }
@@ -30,18 +31,20 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     NSDictionary *colorz = [MlColorChoices basicColors];
-    
-    if ([self.chartType isEqual:@"Bar"]) { // Bar chart
-        NSUInteger interval = rect.size.height/numberOfDivisions;
-      
-        // Draw the chart bar
-        [self drawChartBars:rect];
-        
-        // Outline
-        CGRect outlineRect = CGRectMake(0.0, 0.0, rect.size.width, interval*numberOfDivisions);
+    NSUInteger interval = rect.size.height/numberOfDivisions;
+
+    // Outline
+    if (self.drawOutline) {
+        CGRect outlineRect = CGRectMake(0.0, 0.0, rect.size.width, interval*(numberOfDivisions) + 10);
         CGContextSetLineWidth(context, 0.25);
         CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
         CGContextStrokeRect(context, outlineRect);
+    }
+
+    if ([self.chartType isEqual:@"Bar"]) { // Bar chart
+      
+        // Draw the chart bar
+        [self drawChartBars:rect];
 
         // Horizontal stripes
         CGContextSetLineWidth(context, 2.0);
@@ -254,7 +257,7 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
 - (void) drawTextInBar: (NSString *)text inRect:(CGRect) rect withContext:(CGContextRef) context {
     NSMutableParagraphStyle * paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [paragraphStyle setAlignment:NSTextAlignmentCenter];
-    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:11], NSFontAttributeName, paragraphStyle, NSParagraphStyleAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:self.chartFontSize], NSFontAttributeName, paragraphStyle, NSParagraphStyleAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
     if (rect.size.width > sidewaysWidthThreshhold) { // Horizontal text
         CGRect hRect = CGRectMake(rect.origin.x, rect.origin.y + 2.0, rect.size.width, rect.size.height);
         if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
@@ -273,7 +276,7 @@ static CGFloat sidewaysWidthThreshhold = 60.0;
         CGAffineTransform textTransform = CGAffineTransformMakeRotation(-pi/2);
         CGContextConcatCTM(context, textTransform);
         CGContextTranslateCTM(context, -point.x, -point.y);
-        NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:10.0], NSParagraphStyleAttributeName: paragraphStyle};
+        NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:self.chartFontSize], NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName : [[UIColor blackColor] colorWithAlphaComponent:0.75]};
         [text drawAtPoint:CGPointMake(rect.origin.x + rect.size.width/2.0 - 6.0, rect.origin.y + rect.size.height*2.0 - 4.0) withAttributes: attributes];
         CGContextRestoreGState(context);
     }
