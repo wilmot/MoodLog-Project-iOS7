@@ -389,14 +389,14 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
     NSIndexPath *indexPath;
     MoodLogEvents *object;
     NSDate *today = [NSDate date];
-    today = [today dateByAddingTimeInterval: -60*60*24]; // Subtract one day from today
+    today = [NSCalendar.currentCalendar startOfDayForDate:today];
     int dayOldEntry=0;
     NSDate *aDay = [[NSDate alloc] init];
     for (int i=[self.endSlider maximumValue]; i>=0; i--) {
         indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         aDay = [object valueForKey:@"date"];
-        if ([aDay timeIntervalSince1970] < [today timeIntervalSince1970]) {
+        if ([aDay timeIntervalSince1970] <= [today timeIntervalSince1970]) {
             dayOldEntry = MIN(i+1,[self.endSlider maximumValue]);
             break;
         }
