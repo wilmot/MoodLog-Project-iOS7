@@ -381,6 +381,7 @@
 		4CBA1F051ECFE56C00BC5B97 /* MlCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA1F041ECFE56C00BC5B97 /* MlCustomButton.swift */; };
 		4CBA1F071ECFE66D00BC5B97 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA1F061ECFE66D00BC5B97 /* Utilities.swift */; };
 		4CBA1F091ED0A08200BC5B97 /* ICloudDriveSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA1F081ED0A08200BC5B97 /* ICloudDriveSupport.swift */; };
+		4CBE4BC91FE88D8000BA5630 /* MlCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBE4BC81FE88D8000BA5630 /* MlCollectionViewFlowLayout.m */; };
 		4CDAAB511E033C6E004C5C31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDAAB501E033C6E004C5C31 /* LaunchScreen.storyboard */; };
 		4CEEF60017FB628E00C29507 /* MlColorChoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */; };
 		4CEEF60317FCF48D00C29507 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEF60117FCF48D00C29507 /* WelcomeView.xib */; };
@@ -824,6 +825,8 @@
 		4CBA1F061ECFE66D00BC5B97 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4CBA1F081ED0A08200BC5B97 /* ICloudDriveSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICloudDriveSupport.swift; sourceTree = "<group>"; };
 		4CBA1F0A1ED0A6B100BC5B97 /* Mood-Log.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mood-Log.entitlements"; sourceTree = "<group>"; };
+		4CBE4BC71FE88D8000BA5630 /* MlCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MlCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		4CBE4BC81FE88D8000BA5630 /* MlCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MlCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		4CDAAACA16BDEB2900A79F09 /* MoodLog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 4.xcdatamodel"; sourceTree = "<group>"; };
 		4CDAAB501E033C6E004C5C31 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CECC217165D50E800EE3C6B /* MoodLog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MoodLog 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -1205,6 +1208,8 @@
 				4CFB21ED164B8B0F0055CC3D /* MlChartViewController.m */,
 				4C85B41816D72B3700D1625A /* MlChartCollectionViewController.h */,
 				4C85B41916D72B3700D1625A /* MlChartCollectionViewController.m */,
+				4CBE4BC71FE88D8000BA5630 /* MlCollectionViewFlowLayout.h */,
+				4CBE4BC81FE88D8000BA5630 /* MlCollectionViewFlowLayout.m */,
 				4C90E1D016D7E31100B001EE /* MlChartCollectionViewCell.h */,
 				4C90E1D116D7E31100B001EE /* MlChartCollectionViewCell.m */,
 				4C47E6B21751AC570023298F /* MlChartCellEntryViewController.h */,
@@ -1864,6 +1869,7 @@
 				4C3E0FB71657122100B0E060 /* Prefs.m in Sources */,
 				4C5D051216C1F1BD0028C421 /* MlFacesViewController.m in Sources */,
 				4CEEF60017FB628E00C29507 /* MlColorChoices.m in Sources */,
+				4CBE4BC91FE88D8000BA5630 /* MlCollectionViewFlowLayout.m in Sources */,
 				4C85B41A16D72B3700D1625A /* MlChartCollectionViewController.m in Sources */,
 				4C90E1D216D7E31100B001EE /* MlChartCollectionViewCell.m in Sources */,
 				4C52861816D9A654007C878C /* MlChartDrawingView.m in Sources */,

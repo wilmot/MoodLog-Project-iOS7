@@ -604,7 +604,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 <rect key="frame" x="0.0" y="164" width="375" height="503"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Mood Log entries by tapping ‘New’ in the main view." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="p4w-R3-cNo">
-                                        <rect key="frame" x="48" y="183" width="281" height="138"/>
+                                        <rect key="frame" x="47" y="183" width="281" height="138"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="281" id="ChF-cr-ORX"/>
                                             <constraint firstAttribute="height" constant="138" id="r5k-yI-klJ"/>
@@ -617,7 +617,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="p4w-R3-cNo" secondAttribute="centerY" id="fhn-qY-0T4"/>
-                                    <constraint firstAttribute="centerX" secondItem="p4w-R3-cNo" secondAttribute="centerX" constant="-0.5" id="twJ-TS-07J"/>
+                                    <constraint firstAttribute="centerX" secondItem="p4w-R3-cNo" secondAttribute="centerX" id="twJ-TS-07J"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -766,11 +766,11 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
         <scene sceneID="qxT-Wa-Wbh">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="KiF-p4-9fa" customClass="MlChartCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="P8x-rK-qyS">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="P8x-rK-qyS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="503"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="32f-Gw-X39">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="32f-Gw-X39" customClass="MlCollectionViewFlowLayout">
                             <size key="itemSize" width="90" height="256"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>

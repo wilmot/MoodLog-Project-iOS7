@@ -131,7 +131,7 @@ Boolean firstLoad;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger collectionViewHeight = self.chartCollectionView.bounds.size.height;
+    NSUInteger collectionViewHeight = self.chartCollectionView.frame.size.height;
     cellSize = CGSizeMake(92.0,collectionViewHeight);
     labelLines = 16/collectionViewHeight;
 
