@@ -97,7 +97,7 @@
                                                 <rect key="frame" x="16" y="13" width="343" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Oldest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9F-aT-n8z">
-                                                        <rect key="frame" x="5" y="4" width="44.5" height="19.5"/>
+                                                        <rect key="frame" x="4" y="4" width="44.5" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Newest" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1au-1D-8EL">
-                                                        <rect key="frame" x="290" y="4" width="52" height="19.5"/>
+                                                        <rect key="frame" x="286" y="4" width="52" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -118,8 +118,8 @@
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="9ya-kK-b8W"/>
-                                                    <constraint firstItem="o9F-aT-n8z" firstAttribute="leading" secondItem="9m9-Ed-c0t" secondAttribute="leading" constant="5" id="JhR-ho-ISj"/>
-                                                    <constraint firstAttribute="trailing" secondItem="1au-1D-8EL" secondAttribute="trailing" constant="1" id="RoK-pV-swM"/>
+                                                    <constraint firstItem="o9F-aT-n8z" firstAttribute="leading" secondItem="9m9-Ed-c0t" secondAttribute="leading" constant="4" id="JhR-ho-ISj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1au-1D-8EL" secondAttribute="trailing" constant="5" id="RoK-pV-swM"/>
                                                     <constraint firstItem="eC7-jI-0pJ" firstAttribute="centerY" secondItem="9m9-Ed-c0t" secondAttribute="centerY" constant="-1.5" id="eer-KC-0K3"/>
                                                     <constraint firstItem="1au-1D-8EL" firstAttribute="centerY" secondItem="9m9-Ed-c0t" secondAttribute="centerY" constant="-1.5" id="hp2-Bg-jGY"/>
                                                     <constraint firstItem="o9F-aT-n8z" firstAttribute="centerY" secondItem="9m9-Ed-c0t" secondAttribute="centerY" constant="-1.5" id="pdy-go-Ndq"/>

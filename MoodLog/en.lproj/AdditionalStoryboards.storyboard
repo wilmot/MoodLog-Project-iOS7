@@ -418,7 +418,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                 <rect key="frame" x="16" y="13" width="343" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Oldest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOg-BJ-OO3">
-                                                        <rect key="frame" x="5" y="4" width="44.5" height="19.5"/>
+                                                        <rect key="frame" x="4" y="4" width="44.5" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -430,7 +430,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Newest" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD5-SU-kSl">
-                                                        <rect key="frame" x="290" y="4" width="52" height="19.5"/>
+                                                        <rect key="frame" x="286" y="4" width="52" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -438,10 +438,10 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="lD5-SU-kSl" secondAttribute="trailing" constant="1" id="9RJ-23-YHL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lD5-SU-kSl" secondAttribute="trailing" constant="5" id="9RJ-23-YHL"/>
                                                     <constraint firstItem="lD5-SU-kSl" firstAttribute="centerY" secondItem="lgG-9M-YaB" secondAttribute="centerY" constant="-1.5" id="Ees-wJ-POZ"/>
                                                     <constraint firstItem="gOg-BJ-OO3" firstAttribute="centerY" secondItem="lgG-9M-YaB" secondAttribute="centerY" constant="-1.5" id="HPa-35-nLO"/>
-                                                    <constraint firstItem="gOg-BJ-OO3" firstAttribute="leading" secondItem="lgG-9M-YaB" secondAttribute="leading" constant="5" id="Ia2-Zy-uhP"/>
+                                                    <constraint firstItem="gOg-BJ-OO3" firstAttribute="leading" secondItem="lgG-9M-YaB" secondAttribute="leading" constant="4" id="Ia2-Zy-uhP"/>
                                                     <constraint firstItem="wWH-zz-Ob5" firstAttribute="centerY" secondItem="lgG-9M-YaB" secondAttribute="centerY" constant="-1.5" id="MH9-R7-x3N"/>
                                                     <constraint firstItem="wWH-zz-Ob5" firstAttribute="centerX" secondItem="lgG-9M-YaB" secondAttribute="centerX" id="oPf-Qq-XXO"/>
                                                     <constraint firstAttribute="height" constant="30" id="w9l-gU-lkQ"/>

@@ -62,7 +62,7 @@
 
 - (void) updateChart {
     self.chartDrawingView.chartType = @"Bar";
-    self.chartDrawingView.chartFontSize = 14.0;
+    self.chartDrawingView.chartFontSize = 12.0;
     [self.chartDrawingView setChartHeightOverall:[self.moodSlider value]];
     [self.chartDrawingView setChartHeightStress:[self.stressSlider value]];
     [self.chartDrawingView setChartHeightEnergy:[self.energySlider value]];

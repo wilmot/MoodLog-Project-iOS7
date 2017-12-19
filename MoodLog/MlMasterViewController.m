@@ -38,7 +38,8 @@ NSPredicate *filterPredicate = nil;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    
     self.addButton.action = @selector(insertNewObject:);
     self.addButton.target = self;
     self.navigationItem.rightBarButtonItem = self.addButton;
@@ -221,7 +222,9 @@ NSPredicate *filterPredicate = nil;
 
 - (void)scrollToTopButDontShowSearchBar {
     if (@available(iOS 11, *)) {
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        if ([[self.fetchedResultsController sections] count] > 0) { // If there are any records
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        }
     }
     else { // Old behavior
         if ([[self.fetchedResultsController sections] count] > 0) { // If there are any records
