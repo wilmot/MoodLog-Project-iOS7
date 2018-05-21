@@ -36,10 +36,12 @@
     for (id mood in self.moodListDictionary) {
         MlMoodDataItem  *aMoodDataItem = [[MlMoodDataItem alloc] init];
         aMoodDataItem.mood = mood;
-        aMoodDataItem.facePath = [[self.moodListDictionary valueForKey:mood] valueForKey:@"facePath"];
-        faceFullPath = [[NSBundle mainBundle] pathForResource:aMoodDataItem.facePath ofType:@"png"];
-        [faceImageMutableDictionary setObject:[UIImage imageWithContentsOfFile:faceFullPath] forKey:mood];
-       aMoodDataItem.feelValue = [[self.moodListDictionary valueForKey:mood] valueForKey:@"feelValue"];
+        if (![[[self.moodListDictionary valueForKey:mood] valueForKey:@"facePath"]  isEqual: @""]) {
+            aMoodDataItem.facePath = [[self.moodListDictionary valueForKey:mood] valueForKey:@"facePath"];
+            faceFullPath = [[NSBundle mainBundle] pathForResource:aMoodDataItem.facePath ofType:@"png"];
+            [faceImageMutableDictionary setObject:[UIImage imageWithContentsOfFile:faceFullPath] forKey:mood];
+        }
+        aMoodDataItem.feelValue = [[self.moodListDictionary valueForKey:mood] valueForKey:@"feelValue"];
         aMoodDataItem.parrotLevel = [[self.moodListDictionary valueForKey:mood] valueForKey:@"parrotLevel"];
         aMoodDataItem.category = [[self.moodListDictionary valueForKey:mood] valueForKey:@"category"];
         aMoodDataItem.selected = FALSE;
@@ -52,12 +54,7 @@
     id testObject = [defaults objectForKey:@"MailSliderPinnedToNewest"]; // always test the newest default
 	if (testObject == nil) {
         [defaults setInteger:0 forKey:@"ChartSegmentState"];
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            [defaults setBool:YES forKey:@"DefaultFacesState"];
-        }
-        else {
-            [defaults setBool:NO forKey:@"DefaultFacesState"];
-        }
+        [defaults setBool:NO forKey:@"DefaultFacesState"];
         [defaults setBool:YES forKey:@"DefaultFacesEditingState"];
         [defaults setObject:groupSort forKey:@"DefaultSortStyle"];
         [defaults setObject:groupSort forKey:@"DefaultSortStyleEditing"];

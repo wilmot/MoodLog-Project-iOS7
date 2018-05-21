@@ -38,12 +38,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
-        
-        // Update the view.
-        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-            // iPad
-            [self configureView];
-        }
     }
 }
 
@@ -186,14 +180,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
  
         [self setVisibilityOfNoMoodsLabel]; // Should only show if there are no moods selected
         [self setVisibilityOfNoFactorsLabel]; // Only show if all the factors are zeroed
-        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-            // iPad
-            if (self.detailItem.editing.boolValue == YES) {
-                [self.expandButton setTitle:NSLocalizedString(@"Done", @"Done button") forState:UIControlStateNormal];
-            } else {
-                [self.expandButton setTitle:NSLocalizedString(@"Edit", @"Edit button") forState:UIControlStateNormal];
-            }
-        }
         [self.entryLogTextView setDelegate:self];
         [self.blankCoveringView setHidden:YES];
         [self.scrollView setHidden:NO];
@@ -209,7 +195,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         }
         self.addEntryTableViewCell.hidden = NO;
        
-        if ((self.detailItem.editing.boolValue == NO) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) {
+        if (self.detailItem.editing.boolValue == NO) {
             [self.moodContainer setHidden:NO];
         }
 
@@ -219,26 +205,19 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 }
 
 - (void) setSliderCellVisibility {
-    if (self.detailItem.sliderValuesSet.boolValue || (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) { // If the chart is visible
-        self.sliderChartView.chartType = @"Bar";
-        [self.sliderChartView setChartFontSize:14.0];
-        [self.sliderChartView setChartHeightOverall:[self.detailItem.overall floatValue]];
-        [self.sliderChartView setChartHeightStress:[self.detailItem.stress floatValue]];
-        [self.sliderChartView setChartHeightEnergy:[self.detailItem.energy floatValue]];
-        [self.sliderChartView setChartHeightThoughts:[self.detailItem.thoughts floatValue]];
-        [self.sliderChartView setChartHeightHealth:[self.detailItem.health floatValue]];
-        [self.sliderChartView setChartHeightSleep:[self.detailItem.sleep floatValue]];
-        self.sliderChartView.dividerLine = NO;
-        [self.sliderChartView setNeedsDisplay];
-
-        self.slidersView.hidden = YES;
-        [self.slidersSetAdjustButton setTitle:NSLocalizedString(@"Adjust", @"Adjust button") forState:UIControlStateNormal];
-
-    }
-    else {
-        self.slidersView.hidden = NO;
-        [self.slidersSetAdjustButton setTitle:NSLocalizedString(@"Lock", @"Lock button") forState:UIControlStateNormal];
-    }
+    self.sliderChartView.chartType = @"Bar";
+    [self.sliderChartView setChartFontSize:14.0];
+    [self.sliderChartView setChartHeightOverall:[self.detailItem.overall floatValue]];
+    [self.sliderChartView setChartHeightStress:[self.detailItem.stress floatValue]];
+    [self.sliderChartView setChartHeightEnergy:[self.detailItem.energy floatValue]];
+    [self.sliderChartView setChartHeightThoughts:[self.detailItem.thoughts floatValue]];
+    [self.sliderChartView setChartHeightHealth:[self.detailItem.health floatValue]];
+    [self.sliderChartView setChartHeightSleep:[self.detailItem.sleep floatValue]];
+    self.sliderChartView.dividerLine = NO;
+    [self.sliderChartView setNeedsDisplay];
+    
+    self.slidersView.hidden = YES;
+    [self.slidersSetAdjustButton setTitle:NSLocalizedString(@"Adjust", @"Adjust button") forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -375,9 +354,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 
 - (void) setSortStyle: (NSString *)style {
     self.detailItem.sortStyle = style;
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-        self.detailItem.sortStyleEditing = style;
-    }
 }
 
 - (IBAction)addEntryFromStartScreen:(id)sender {
@@ -389,23 +365,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self.noMoodsLabel setHidden:YES]; // Hide the label when starting an edit session
     [self.noMoodsImage setHidden:YES];
     [self pressedDoneButton:self];
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-        // iPad
-        if ([self.expandButton.titleLabel.text isEqual:NSLocalizedString(@"Edit", @"Edit button")]) {
-            [self.expandButton setTitle:NSLocalizedString(@"Done", @"Done button") forState:UIControlStateNormal];
-            self.detailItem.editing = [NSNumber numberWithBool:YES];
-            [self.myMoodCollectionViewController refresh];
-        }
-        else {
-            [self.expandButton setTitle:NSLocalizedString(@"Edit", @"Edit button") forState:UIControlStateNormal];
-            self.detailItem.editing = [NSNumber numberWithBool:NO];
-            [self.myMoodCollectionViewController refresh];
-        }
-        [self setVisibilityOfNoMoodsLabel];
-    }
-    else { // iPhone
-        // On the iPhone I have a segue to a modal view, so I don't change the button text
-   }
     
     [self saveContext];
 }
@@ -435,40 +394,27 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     CGSize textViewSize;
     UIInterfaceOrientation orientation;
     orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    CGFloat VIEWWIDTH = self.view.frame.size.width;
     switch (indexPath.section) {
         case CALENDAR: //Calendar
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-                height = 128.0;
-            } else {
-                height = 62.0;
-            }
+            height = 62.0;
             break;
         case EMOTIONS:
             if (self.moodListTextView.text.length == 0) {
                 height = 100.0;
             }
             else {
-                if (orientation == UIInterfaceOrientationPortrait) {
-                    textViewSize = [self.moodListTextView sizeThatFits:CGSizeMake(273.0, FLT_MAX)];
-                }
-                else {
-                    textViewSize = [self.moodListTextView sizeThatFits:CGSizeMake(521.0, FLT_MAX)];
-                }
+                textViewSize = [self.moodListTextView sizeThatFits:CGSizeMake(VIEWWIDTH, FLT_MAX)];
                 height = textViewSize.height - 16.0;
                 if (height < 100.0) { height = 100.0;}
             }
             break;
         case JOURNAL: //Journal
-            if (orientation == UIInterfaceOrientationPortrait) {
-                textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(273.0, FLT_MAX)];
-            }
-            else {
-                textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(521.0, FLT_MAX)];
-            }
+            textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(VIEWWIDTH, FLT_MAX)];
             height = textViewSize.height + 20.0;
             break;
        case SLIDERS: //Sliders & Slider Chart
-            height = 104.0;
+            height = 160.0;
             break;
         case ADDENTRYBUTTON:
             if (self.detailItem == nil) {

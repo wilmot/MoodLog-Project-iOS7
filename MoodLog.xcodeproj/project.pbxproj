@@ -373,6 +373,7 @@
 		4CA869C2181706DD00F77164 /* LICENSE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4CA869C0181706DD00F77164 /* LICENSE.rtf */; };
 		4CA869C3181706DD00F77164 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4CA869C1181706DD00F77164 /* README.rtf */; };
 		4CA980E91767E2FA001BF7A8 /* MlChartCellFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */; };
+		4CABBB022087C32B009DEAC7 /* EmotionEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABBB012087C32B009DEAC7 /* EmotionEditorViewController.swift */; };
 		4CB012C61803785800343D43 /* IconFace40.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C41803785800343D43 /* IconFace40.png */; };
 		4CB012C71803785800343D43 /* IconFace40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C51803785800343D43 /* IconFace40@2x.png */; };
 		4CB012CA18037AE700343D43 /* RoundMoodLog.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB012C818037AE700343D43 /* RoundMoodLog.png */; };
@@ -809,13 +810,14 @@
 		4C92BE6A179E5D6B005DEEC2 /* MlQuietHoursTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlQuietHoursTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4C92BE6B179E5D6C005DEEC2 /* MlQuietHoursTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlQuietHoursTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4C9730F716307B6B00E1D0B9 /* MlMoodCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlMoodCollectionViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlMoodCollectionViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4C9730F816307B6C00E1D0B9 /* MlMoodCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlMoodCollectionViewController.m; sourceTree = "<group>"; wrapsLines = 0; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4C9730FE163081B900E1D0B9 /* MlCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlCollectionViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4C9730FF163081B900E1D0B9 /* MlCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlCollectionViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4CA869C0181706DD00F77164 /* LICENSE.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = LICENSE.rtf; sourceTree = "<group>"; };
 		4CA869C1181706DD00F77164 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		4CA980E71767E0E2001BF7A8 /* MlChartCellFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlChartCellFooterView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4CA980E81767E0E2001BF7A8 /* MlChartCellFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlChartCellFooterView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4CABBB012087C32B009DEAC7 /* EmotionEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionEditorViewController.swift; sourceTree = "<group>"; };
 		4CB012C41803785800343D43 /* IconFace40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconFace40.png; sourceTree = "<group>"; };
 		4CB012C51803785800343D43 /* IconFace40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconFace40@2x.png"; sourceTree = "<group>"; };
 		4CB012C818037AE700343D43 /* RoundMoodLog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoundMoodLog.png; sourceTree = "<group>"; };
@@ -1174,6 +1176,7 @@
 				4CBA1F041ECFE56C00BC5B97 /* MlCustomButton.swift */,
 				4CBA1F061ECFE66D00BC5B97 /* Utilities.swift */,
 				4CBA1F081ED0A08200BC5B97 /* ICloudDriveSupport.swift */,
+				4CABBB012087C32B009DEAC7 /* EmotionEditorViewController.swift */,
 				4C3E0FB51657122100B0E060 /* Prefs.h */,
 				4C3E0FB61657122100B0E060 /* Prefs.m */,
 				4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */,
@@ -1455,7 +1458,7 @@
 			attributes = {
 				CLASSPREFIX = Ml;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Barry A. Langdon-Lassagne";
 				TargetAttributes = {
 					4C55CBE1162DE67400EAA878 = {
@@ -1853,6 +1856,7 @@
 				4C55CC08162DE67500EAA878 /* MoodLog.xcdatamodeld in Sources */,
 				4C82D89E180CC587005822DD /* MlSlidersLandscapeViewController.m in Sources */,
 				4C55CC0B162DE67500EAA878 /* MlMasterViewController.m in Sources */,
+				4CABBB022087C32B009DEAC7 /* EmotionEditorViewController.swift in Sources */,
 				4C55CC0E162DE67500EAA878 /* MlDetailViewController.m in Sources */,
 				4C7CA28E1630770800CC5CCA /* MlMoodDataItem.m in Sources */,
 				4CFC9E391809E789008DDAF0 /* MlSlidersViewController.m in Sources */,
@@ -1976,11 +1980,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -2025,11 +2031,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -2081,7 +2089,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood-Log-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2110,7 +2118,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood-Log-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -92,12 +92,7 @@ MoodLogEvents *myLogEntry;
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
 
     // Get a reference to this Log Entry
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) { // iPad
-        myLogEntry = ((MlDetailViewController *)([self parentViewController])).detailItem;
-    }
-    else { // iPhone
-        myLogEntry = self.detailItem;
-    }
+    myLogEntry = self.detailItem;
 
     self.collectionView.backgroundColor = [UIColor whiteColor];
     normalColor = [UIColor whiteColor];
@@ -203,8 +198,9 @@ MoodLogEvents *myLogEntry;
     if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
         CGPoint location = [gestureRecognizer locationInView:[gestureRecognizer view]];
         UIMenuController *menuController = [UIMenuController sharedMenuController];
-        UIMenuItem *resetMenuItem = [[UIMenuItem alloc] initWithTitle:NSLocalizedString(@"Define", @"Define - pop up menu") action:@selector(showDefinition:)];
-        
+        UIMenuItem *defineMenuItem = [[UIMenuItem alloc] initWithTitle:NSLocalizedString(@"Define", @"Define - pop up menu") action:@selector(showDefinition:)];
+        UIMenuItem *editMenuItem = [[UIMenuItem alloc] initWithTitle:NSLocalizedString(@"Edit", @"Edit - pop up menu") action:@selector(showEmotionEditor:)];
+
         CGPoint touchPoint = [sender locationInView:self.collectionView];
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:touchPoint];
         MlMoodDataItem *aMood = [[emotionArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
@@ -213,7 +209,7 @@ MoodLogEvents *myLogEntry;
         if (!didBecomeFirstResponder) {
             NSAssert(didBecomeFirstResponder, @"Sorry, UIMenuController will not work with %@ since it cannot become first responder", self);
         }
-        [menuController setMenuItems:[NSArray arrayWithObject:resetMenuItem]];
+        [menuController setMenuItems:@[defineMenuItem, editMenuItem]];
         [menuController setTargetRect:CGRectMake(location.x, location.y, 0.0f, 0.0f) inView:[gestureRecognizer view]];
         [menuController setMenuVisible:YES animated:YES];
     }
@@ -226,8 +222,13 @@ MoodLogEvents *myLogEntry;
     }
 }
 
+- (void)showEmotionEditor:(id) sender {
+    NSLog(@"About to show Emotion Editor");
+    [self.parentViewController performSegueWithIdentifier:@"emotionEditorSegue" sender:self.parentViewController];
+}
+
 - (BOOL) canPerformAction:(SEL)selector withSender:(id) sender {
-    if (selector == @selector(showDefinition:)) {
+    if (selector == @selector(showDefinition:) || selector == @selector(showEmotionEditor:)) {
         return YES;
     }
     return NO;
@@ -235,6 +236,11 @@ MoodLogEvents *myLogEntry;
 
 - (BOOL) canBecomeFirstResponder {
     return YES;
+}
+
+- (IBAction)unwindToHere:(UIStoryboardSegue *)sender {
+    UIViewController *sourceViewController = sender.sourceViewController;
+    NSLog(@"Unwinding from here: %@", sourceViewController);
 }
 
 # pragma mark - UICollectionView Delegate Methods

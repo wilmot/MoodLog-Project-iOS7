@@ -79,6 +79,9 @@ UIImage *buttonImageHighlight;
         self.myMoodCollectionViewController = [segue destinationViewController]; // Getting a reference to the collection view
         ((MlMoodCollectionViewController *)[segue destinationViewController]).detailItem = self.detailItem;
     }
+    else if ([segue.identifier isEqualToString:@"emotionEditorSegue"]) {
+        NSLog(@"Heading to the Emotion Editor");
+    }
 }
 
 

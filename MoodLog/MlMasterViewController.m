@@ -27,10 +27,6 @@ NSPredicate *filterPredicate = nil;
 
 - (void)awakeFromNib
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.clearsSelectionOnViewWillAppear = NO;
-        self.preferredContentSize = CGSizeMake(320.0, 600.0);
-    }
     [super awakeFromNib];
 }
 
@@ -287,12 +283,7 @@ NSPredicate *filterPredicate = nil;
 
 - (void)insertNewObject:(id)sender {
     MoodLogEvents *event = [self insertNewObjectAndReturnReference:self];
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
-        // iPad doesn't segue, the detail view is always there
-    }
-    else { // iPhone
-        [self performSegueWithIdentifier:@"showDetail" sender:event];
-    }
+    [self performSegueWithIdentifier:@"showDetail" sender:event];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionTop];
     [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
@@ -328,14 +319,14 @@ NSPredicate *filterPredicate = nil;
 - (IBAction)showWelcomeScreen:(id)sender {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AdditionalStoryboards" bundle:nil];
     UIViewController *welcomeViewController = [sb instantiateViewControllerWithIdentifier:@"welcomeNavigationController"];
-    [welcomeViewController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [welcomeViewController setModalPresentationStyle:UIModalPresentationOverFullScreen];
     [self presentViewController:welcomeViewController animated:YES completion:NULL];
 }
 
 - (IBAction)showCharts:(id)sender {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AdditionalStoryboards" bundle:nil];
     UIViewController *chartViewController = [sb instantiateViewControllerWithIdentifier:@"chartViewController"];
-    [chartViewController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [chartViewController setModalPresentationStyle:UIModalPresentationOverFullScreen];
     [self presentViewController:chartViewController animated:YES completion:NULL];
 }
 
@@ -430,11 +421,6 @@ NSPredicate *filterPredicate = nil;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        MoodLogEvents *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        self.detailViewController.detailItem = object;
-        [[self.detailViewController myMoodCollectionViewController] refresh];
-    }
 }
 
 -(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -659,20 +645,20 @@ NSPredicate *filterPredicate = nil;
         [mutableEmotionArray removeObjectAtIndex:0];
         
         
-        if (([mutableEmotionArray count] > 0) && ([mutableEmotionArray count] <= 3)) {
+        if (([mutableEmotionArray count] > 0) && ([mutableEmotionArray count] <= 4)) {
             lastEm = [NSString stringWithFormat:NSLocalizedString(@" and %@.", @" and %@."), [((Emotions *)[mutableEmotionArray objectAtIndex:[mutableEmotionArray count] - 1]).name lowercaseString]];
             [mutableEmotionArray removeObjectAtIndex:[mutableEmotionArray count] - 1];
         }
-        else if ([mutableEmotionArray count ] > 3) {
+        else if ([mutableEmotionArray count ] > 4) {
             lastEm = @"...";
             [mutableEmotionArray removeObjectAtIndex:[mutableEmotionArray count] - 1];
         }
         else { // 0
             lastEm = NSLocalizedString(@".", @"period");
         }
-        if (mutableEmotionArray.count > 3) {
+        if (mutableEmotionArray.count > 4) {
             // Just show the first few
-            for (int i=0; i<3; i++) {
+            for (int i=0; i<4; i++) {
                 Emotions *emotion = mutableEmotionArray[i];
                 selectedEms = [selectedEms stringByAppendingFormat:@", %@", [((Emotions *)emotion).name lowercaseString]];
            }
