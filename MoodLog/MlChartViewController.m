@@ -559,19 +559,18 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
         self.mySummaryInfoViewController.fetchedResultsControllerByEmotion = nil;
         self.mySummaryInfoViewController.fetchedResultsControllerByCategory = nil;
         [self.myChartCollectionViewController.collectionView reloadData];
-        [self scrollToEnd];
         self.mySummaryInfoViewController.showSummary = YES;
         [self.mySummaryInfoViewController summaryInformationQuick:self];
         // [self.mySummaryInfoViewController summaryInformationSlow: self];
+        [self scrollToEnd];
     }
 }
 
 - (void) scrollToEnd {
-    UICollectionView *collectionView = self.myChartCollectionViewController.collectionView;
-    NSInteger section = 0;
-    NSInteger item = [collectionView numberOfItemsInSection:section] - 1;
+    NSInteger section = [self.myChartCollectionViewController.collectionView numberOfSections] - 1;
+    NSInteger item = [self.myChartCollectionViewController.collectionView numberOfItemsInSection:section] - 1;
     NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:section];
-    [collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+    [self.myChartCollectionViewController.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
 }
 
 - (void) setButtonHighlighting: (UIButton *)button {
