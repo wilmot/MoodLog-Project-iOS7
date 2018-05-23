@@ -9,6 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MlAppDelegate.h"
+#import "Prefs.h"
 
 @interface MlChartDrawingView : UIView
 
@@ -22,6 +23,7 @@
 @property (nonatomic, assign) CGFloat chartFontSize;
 @property (nonatomic, assign) CGFloat circumference;
 @property (strong, nonatomic) NSString *chartType;
+@property ChartFactorType chartFactorType;
 @property (nonatomic, assign) BOOL dividerLine;
 @property (strong, nonatomic) NSDictionary *categoryCounts;
 @property (nonatomic, assign) BOOL drawOutline;

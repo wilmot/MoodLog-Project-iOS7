@@ -392,9 +392,6 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 {
     CGFloat height;
     CGSize textViewSize;
-    UIInterfaceOrientation orientation;
-    orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    CGFloat VIEWWIDTH = self.view.frame.size.width;
     switch (indexPath.section) {
         case CALENDAR: //Calendar
             height = 62.0;
@@ -404,13 +401,13 @@ typedef NS_ENUM(NSInteger, DetailCells) {
                 height = 100.0;
             }
             else {
-                textViewSize = [self.moodListTextView sizeThatFits:CGSizeMake(VIEWWIDTH, FLT_MAX)];
+                textViewSize = [self.moodListTextView sizeThatFits:CGSizeMake(self.moodListTextView.frame.size.width, FLT_MAX)];
                 height = textViewSize.height - 16.0;
                 if (height < 100.0) { height = 100.0;}
             }
             break;
         case JOURNAL: //Journal
-            textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(VIEWWIDTH, FLT_MAX)];
+            textViewSize = [self.entryLogTextView sizeThatFits:CGSizeMake(self.entryLogTextView.frame.size.width, FLT_MAX)];
             height = textViewSize.height + 20.0;
             break;
        case SLIDERS: //Sliders & Slider Chart

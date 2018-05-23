@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "MlChartCellEntryViewController.h"
 #import "MoodLogEvents.h"
+#import "Prefs.h"
 
 @interface MlChartCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate>
 
@@ -17,6 +18,7 @@
 
 @property (strong, nonatomic) NSString *cellIdentifier;
 @property (strong, nonatomic) NSString *chartType;
+@property ChartFactorType chartFactorType;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) MoodLogEvents *detailItem;

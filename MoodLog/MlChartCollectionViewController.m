@@ -365,6 +365,7 @@ Boolean firstLoad;
         index = NSMaxRange([displayString lineRangeForRange:NSMakeRange(index, 0)]);
 
     cell.chartDrawingView.chartType = self.chartType;
+    cell.chartDrawingView.chartFactorType = self.chartFactorType;
     cell.chartDrawingView.categoryCounts = categoryCounts;
     cell.chartDrawingView.dividerLine = YES;
     cell.chartDrawingView.drawOutline = YES;

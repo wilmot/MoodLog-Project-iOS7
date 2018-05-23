@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *disclosureTriangle;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barFactorButton;
 @property (weak, nonatomic) IBOutlet UIView *toolsView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolsViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIView *eventCounterView;
@@ -43,6 +44,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+- (IBAction)chooseFactorType:(id)sender;
 - (IBAction)pressDone:(id)sender;
 - (IBAction)chooseSegment:(id)sender;
 - (IBAction)toggleControls:(id)sender;

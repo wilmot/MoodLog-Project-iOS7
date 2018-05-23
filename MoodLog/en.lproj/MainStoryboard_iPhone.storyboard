@@ -372,46 +372,7 @@
                                                     <attributes>
                                                         <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                            <tabStops>
-                                                                <textTab alignment="left" location="28">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="56">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="84">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="112">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="140">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="168">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="196">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="224">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="252">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="280">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="308">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="336">
-                                                                    <options/>
-                                                                </textTab>
-                                                            </tabStops>
-                                                        </paragraphStyle>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment>
@@ -420,46 +381,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                     <attributes>
                                                         <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                            <tabStops>
-                                                                <textTab alignment="left" location="28">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="56">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="84">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="112">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="140">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="168">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="196">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="224">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="252">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="280">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="308">
-                                                                    <options/>
-                                                                </textTab>
-                                                                <textTab alignment="left" location="336">
-                                                                    <options/>
-                                                                </textTab>
-                                                            </tabStops>
-                                                        </paragraphStyle>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -1343,8 +1265,8 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RoundMoodLog.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZQ-5j-Tds">
-                                                    <rect key="frame" x="12" y="6" width="98" height="86"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoundMoodLog.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZQ-5j-Tds">
+                                                    <rect key="frame" x="12" y="7" width="98" height="86"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="98" id="Uvu-u9-F5D"/>
                                                         <constraint firstAttribute="height" constant="86" id="seH-ZV-Jyh"/>
@@ -1370,9 +1292,10 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                 <constraint firstAttribute="bottom" secondItem="03V-cM-9lN" secondAttribute="bottom" id="2K6-53-BZW"/>
                                                 <constraint firstItem="03V-cM-9lN" firstAttribute="top" secondItem="4IW-tx-fTs" secondAttribute="top" constant="3" id="6gf-HN-IhN"/>
                                                 <constraint firstItem="1uT-4H-DNv" firstAttribute="centerY" secondItem="4IW-tx-fTs" secondAttribute="centerY" id="9lo-Ty-zgp"/>
+                                                <constraint firstAttribute="trailing" secondItem="1uT-4H-DNv" secondAttribute="trailing" constant="13.5" id="GCB-p9-0Bg"/>
                                                 <constraint firstItem="rZQ-5j-Tds" firstAttribute="centerY" secondItem="4IW-tx-fTs" secondAttribute="centerY" id="Hjd-wl-RKN"/>
                                                 <constraint firstAttribute="bottom" secondItem="ioU-7X-bBA" secondAttribute="bottom" constant="4" id="Izf-tb-ZlV"/>
-                                                <constraint firstItem="1uT-4H-DNv" firstAttribute="leading" secondItem="4IW-tx-fTs" secondAttribute="leading" constant="110" id="TLz-Xo-xMf"/>
+                                                <constraint firstItem="1uT-4H-DNv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4IW-tx-fTs" secondAttribute="leading" id="TLz-Xo-xMf"/>
                                                 <constraint firstItem="ioU-7X-bBA" firstAttribute="top" secondItem="4IW-tx-fTs" secondAttribute="top" constant="3" id="Yka-qn-cbe"/>
                                                 <constraint firstItem="ioU-7X-bBA" firstAttribute="leading" secondItem="4IW-tx-fTs" secondAttribute="leading" id="Z2e-SE-Iqy"/>
                                                 <constraint firstItem="rZQ-5j-Tds" firstAttribute="leading" secondItem="4IW-tx-fTs" secondAttribute="leading" constant="12" id="m5L-mk-FRR"/>

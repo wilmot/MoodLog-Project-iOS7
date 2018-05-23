@@ -89,11 +89,12 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
         self.noRecordsView.hidden = NO;
     }
     self.segment.selectedSegmentIndex = [defaults integerForKey:@"ChartSegmentState"];
-    
     [self setToolsHeights];
     [self initializeRangeControl];
 
     [self chooseSegment:self];
+    self.myChartCollectionViewController.chartFactorType = [defaults integerForKey:@"ChartFactorType"];
+    [self setFactorButtonTitle: self];
 }
 
 - (void) initializeRangeControl {
@@ -230,13 +231,7 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
     return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidUnload {
+- (void)didReceiveMemoryWarning {
     [self setSegment:nil];
     [self setToolBar:nil];
     [[self myChartCollectionViewController] setManagedObjectContext:nil];
@@ -252,7 +247,77 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
     [self setDateRangeDrawing:nil];
     [self setEventCount:nil];
     [self setDateRangeLabel:nil];
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
+}
+
+- (void)setFactorButtonTitle: (id) sender {
+    if (self.segment.selectedSegmentIndex == BAR_CHART) {
+        self.barFactorButton.enabled = YES;
+        switch (self.myChartCollectionViewController.chartFactorType) {
+            case AllType:
+                self.barFactorButton.title = @"All";
+                break;
+            case MoodType:
+                self.barFactorButton.title = @"Mood";
+                break;
+            case StressType:
+                self.barFactorButton.title = @"Stress";
+                break;
+            case EnergyType:
+                self.barFactorButton.title = @"Energy";
+                break;
+            case ThoughtsType:
+                self.barFactorButton.title = @"Mind";
+                break;
+            case HealthType:
+                self.barFactorButton.title = @"Health";
+                break;
+            case SleepType:
+                self.barFactorButton.title = @"Sleep";
+                break;
+            default:
+                self.barFactorButton.title = @"All";
+                break;
+        }
+    }
+    else {
+        self.barFactorButton.enabled = NO;
+        self.barFactorButton.title = @"";
+    }
+}
+
+- (IBAction)chooseFactorType:(id)sender {
+    switch (self.myChartCollectionViewController.chartFactorType) {
+        case AllType:
+            self.myChartCollectionViewController.chartFactorType = MoodType;
+            break;
+        case MoodType:
+            self.myChartCollectionViewController.chartFactorType = StressType;
+            break;
+        case StressType:
+            self.myChartCollectionViewController.chartFactorType = EnergyType;
+            break;
+        case EnergyType:
+            self.myChartCollectionViewController.chartFactorType = ThoughtsType;
+            break;
+        case ThoughtsType:
+            self.myChartCollectionViewController.chartFactorType = HealthType;
+            break;
+        case HealthType:
+            self.myChartCollectionViewController.chartFactorType = SleepType;
+            break;
+        case SleepType:
+            self.myChartCollectionViewController.chartFactorType = AllType;
+            break;
+        default:
+            self.myChartCollectionViewController.chartFactorType = AllType;
+            break;
+    }
+    [self setFactorButtonTitle: self];
+    [self.myChartCollectionViewController.collectionView reloadData];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:self.myChartCollectionViewController.chartFactorType forKey:@"ChartFactorType"];
+    [defaults synchronize];
 }
 
 - (IBAction)pressDone:(id)sender {
@@ -282,6 +347,7 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
     else {
         // there is no fourth option
     }
+    [self setFactorButtonTitle:self];
     [self.myChartCollectionViewController setCellType:self];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:self.segment.selectedSegmentIndex forKey:@"ChartSegmentState"];
@@ -493,10 +559,19 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
         self.mySummaryInfoViewController.fetchedResultsControllerByEmotion = nil;
         self.mySummaryInfoViewController.fetchedResultsControllerByCategory = nil;
         [self.myChartCollectionViewController.collectionView reloadData];
+        [self scrollToEnd];
         self.mySummaryInfoViewController.showSummary = YES;
         [self.mySummaryInfoViewController summaryInformationQuick:self];
         // [self.mySummaryInfoViewController summaryInformationSlow: self];
     }
+}
+
+- (void) scrollToEnd {
+    UICollectionView *collectionView = self.myChartCollectionViewController.collectionView;
+    NSInteger section = 0;
+    NSInteger item = [collectionView numberOfItemsInSection:section] - 1;
+    NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:section];
+    [collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
 }
 
 - (void) setButtonHighlighting: (UIButton *)button {

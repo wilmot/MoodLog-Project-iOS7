@@ -538,18 +538,23 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                                             </barButtonItem>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="z91-QR-Cva"/>
                                             <barButtonItem style="plain" id="J0a-LG-ljn">
-                                                <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="cdd-b7-Jpi">
-                                                    <rect key="frame" x="49.5" y="7" width="214" height="30"/>
+                                                <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="cdd-b7-Jpi">
+                                                    <rect key="frame" x="37.5" y="7" width="188" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
-                                                        <segment title="Summary" width="72"/>
-                                                        <segment title="Pie" width="70"/>
-                                                        <segment title="Bar" width="70"/>
+                                                        <segment title="Summary" width="66"/>
+                                                        <segment title="Pie" width="60"/>
+                                                        <segment title="Bar" width="60"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="chooseSegment:" destination="o1t-Tq-CTV" eventType="valueChanged" id="1IA-gL-hkk"/>
                                                     </connections>
                                                 </segmentedControl>
+                                            </barButtonItem>
+                                            <barButtonItem title="All" id="Hc0-Ed-w1z">
+                                                <connections>
+                                                    <action selector="chooseFactorType:" destination="o1t-Tq-CTV" id="DNW-lz-pTd"/>
+                                                </connections>
                                             </barButtonItem>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ruQ-Ia-dcI"/>
                                             <barButtonItem title="Done" id="oMU-bF-xF3">
@@ -639,6 +644,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                     <navigationItem key="navigationItem" id="Nyg-v3-cGO"/>
                     <connections>
                         <outlet property="allButton" destination="jWj-s9-MSd" id="fh3-sL-rPR"/>
+                        <outlet property="barFactorButton" destination="Hc0-Ed-w1z" id="C3b-lq-9Af"/>
                         <outlet property="chartContainer" destination="vBf-4Y-1d7" id="m0h-x3-g37"/>
                         <outlet property="dateRangeDrawing" destination="lgG-9M-YaB" id="u0P-zS-iz9"/>
                         <outlet property="dateRangeLabel" destination="kOk-bc-ZbL" id="6Ar-DA-9Oo"/>

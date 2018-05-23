@@ -10,6 +10,16 @@
 #import <Foundation/Foundation.h>
 #import "Emotions.h"
 
+typedef enum _ChartFactorType : NSUInteger {
+    AllType,
+    MoodType,
+    StressType,
+    EnergyType,
+    ThoughtsType,
+    HealthType,
+    SleepType
+} ChartFactorType;
+
 FOUNDATION_EXPORT NSString *const alphabeticalSort;
 FOUNDATION_EXPORT NSString *const groupSort;
 FOUNDATION_EXPORT NSString *const reverseAlphabeticalSort;

@@ -36,14 +36,11 @@
 
 - (void)didReceiveMemoryWarning
 {
+    [self setDatePicker:nil];
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
-    [self setDatePicker:nil];
-    [super viewDidUnload];
-}
 - (IBAction)datePicked:(id)sender {
     MoodLogEvents *mood = (MoodLogEvents *) self.detailItem;
 

@@ -153,94 +153,109 @@ static CGFloat sidewaysWidthThreshhold = 64.0;
     CGContextRef context = UIGraphicsGetCurrentContext();
    // CGContextSetRGBFillColor(context, 0.25, 0.75, 0.25, 0.25);
     CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0);
-    
+    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]); // Start with white
+    if (self.chartFactorType == 0) { // If the chart type is empty
+        self.chartFactorType = AllType;
+    }
+
     // Overall Mood
     // Bar should start in the middle
     // and draw up for positive, down for negative
     // Range is -10..10
-    barHeight = interval*fabs(round(self.chartHeightOverall));
-    if (self.chartHeightOverall > 0) {
-        barOriginY = interval*10.0 - barHeight;
+    if (self.chartFactorType == AllType || self.chartFactorType == MoodType) {
+        barHeight = interval*fabs(round(self.chartHeightOverall));
+        if (self.chartHeightOverall > 0) {
+            barOriginY = interval*10.0 - barHeight;
+        }
+        else {
+            barOriginY = interval*10.0;
+        }
+        CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightOverall] CGColor]);
+        CGRect overallRect = CGRectMake(0.0, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
+        CGRect overallBoundingRect = CGRectMake(0.0, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
+        CGContextFillRect(context, overallRect);
+        [self drawTextInBar:NSLocalizedString(@"Mood", @"Mood") inRect:overallBoundingRect withContext:context];
     }
-    else {
-        barOriginY = interval*10.0;
-    }
-    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightOverall] CGColor]);
-    CGRect overallRect = CGRectMake(0.0, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
-    CGRect overallBoundingRect = CGRectMake(0.0, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
-    CGContextFillRect(context, overallRect);
-    [self drawTextInBar:NSLocalizedString(@"Mood", @"Mood") inRect:overallBoundingRect withContext:context];
     
     // Stress
-    barHeight = interval*fabs(round(self.chartHeightStress));
-    if (self.chartHeightStress > 0) {
-        barOriginY = interval*10.0 - barHeight;
+    if (self.chartFactorType == AllType || self.chartFactorType == StressType) {
+        barHeight = interval*fabs(round(self.chartHeightStress));
+        if (self.chartHeightStress > 0) {
+            barOriginY = interval*10.0 - barHeight;
+        }
+        else {
+            barOriginY = interval*10.0;
+        }
+        CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightStress] CGColor]);
+        CGRect stressRect = CGRectMake(0.0 + rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
+        CGRect stressBoundingRect = CGRectMake(0.0 + rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
+        CGContextFillRect(context, stressRect);
+        [self drawTextInBar:NSLocalizedString(@"Stress", @"Stress") inRect:stressBoundingRect withContext:context];
     }
-    else {
-        barOriginY = interval*10.0;
-    }
-    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightStress] CGColor]);
-    CGRect stressRect = CGRectMake(0.0 + rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
-    CGRect stressBoundingRect = CGRectMake(0.0 + rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
-    CGContextFillRect(context, stressRect);
-    [self drawTextInBar:NSLocalizedString(@"Stress", @"Stress") inRect:stressBoundingRect withContext:context];
-
-    // Energy
-    barHeight = interval*fabs(round(self.chartHeightEnergy));
-    if (self.chartHeightEnergy > 0) {
-        barOriginY = interval*10.0 - barHeight;
-    }
-    else {
-        barOriginY = interval*10.0;
-    }
-    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightEnergy] CGColor]);
-    CGRect energyRect = CGRectMake(0.0 + 2*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
-    CGRect energyBoundingRect = CGRectMake(0.0 + 2*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
-    CGContextFillRect(context, energyRect);
-    [self drawTextInBar:NSLocalizedString(@"Energy", @"Energy") inRect:energyBoundingRect withContext:context];
-
-    // Thoughts
-    barHeight = interval*fabs(round(self.chartHeightThoughts));
-    if (self.chartHeightThoughts > 0) {
-        barOriginY = interval*10.0 - barHeight;
-    }
-    else {
-        barOriginY = interval*10.0;
-    }
-    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightThoughts] CGColor]);
-    CGRect thoughtsRect = CGRectMake(0.0 + 3*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
-    CGRect thoughtsBoundingRect = CGRectMake(0.0 + 3*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
-    CGContextFillRect(context, thoughtsRect);
-    [self drawTextInBar:NSLocalizedString(@"Mindfulness", @"Mindfulness") inRect:thoughtsBoundingRect withContext:context];
-
-    // Health
-    barHeight = interval*fabs(round(self.chartHeightHealth));
-    if (self.chartHeightHealth > 0) {
-        barOriginY = interval*10.0 - barHeight;
-    }
-    else {
-        barOriginY = interval*10.0;
-    }
-    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightHealth] CGColor]);
-    CGRect healthRect = CGRectMake(0.0 + 4*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
-    CGRect healthBoundingRect = CGRectMake(0.0 + 4*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
-    CGContextFillRect(context, healthRect);
-    [self drawTextInBar:NSLocalizedString(@"Health", @"Health") inRect:healthBoundingRect withContext:context];
-
-    // Sleep
-    barHeight = interval*fabs(round(self.chartHeightSleep));
-    if (self.chartHeightSleep > 0) {
-        barOriginY = interval*10.0 - barHeight;
-    }
-    else {
-        barOriginY = interval*10.0;
-    }
-    CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightSleep] CGColor]);
-    CGRect sleepRect = CGRectMake(0.0 + 5*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
-    CGRect sleepBoundingRect = CGRectMake(0.0 + 5*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
-    CGContextFillRect(context, sleepRect);
-    [self drawTextInBar:NSLocalizedString(@"Sleep", @"Sleep") inRect:sleepBoundingRect withContext:context];
     
+    // Energy
+    if (self.chartFactorType == AllType || self.chartFactorType == EnergyType) {
+        barHeight = interval*fabs(round(self.chartHeightEnergy));
+        if (self.chartHeightEnergy > 0) {
+            barOriginY = interval*10.0 - barHeight;
+        }
+        else {
+            barOriginY = interval*10.0;
+        }
+        CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightEnergy] CGColor]);
+        CGRect energyRect = CGRectMake(0.0 + 2*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
+        CGRect energyBoundingRect = CGRectMake(0.0 + 2*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
+        CGContextFillRect(context, energyRect);
+        [self drawTextInBar:NSLocalizedString(@"Energy", @"Energy") inRect:energyBoundingRect withContext:context];
+    }
+    
+    // Thoughts
+    if (self.chartFactorType == AllType || self.chartFactorType == ThoughtsType) {
+        barHeight = interval*fabs(round(self.chartHeightThoughts));
+        if (self.chartHeightThoughts > 0) {
+            barOriginY = interval*10.0 - barHeight;
+        }
+        else {
+            barOriginY = interval*10.0;
+        }
+        CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightThoughts] CGColor]);
+        CGRect thoughtsRect = CGRectMake(0.0 + 3*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
+        CGRect thoughtsBoundingRect = CGRectMake(0.0 + 3*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
+        CGContextFillRect(context, thoughtsRect);
+        [self drawTextInBar:NSLocalizedString(@"Mindfulness", @"Mindfulness") inRect:thoughtsBoundingRect withContext:context];
+    }
+    
+    // Health
+    if (self.chartFactorType == AllType || self.chartFactorType == HealthType) {
+        barHeight = interval*fabs(round(self.chartHeightHealth));
+        if (self.chartHeightHealth > 0) {
+            barOriginY = interval*10.0 - barHeight;
+        }
+        else {
+            barOriginY = interval*10.0;
+        }
+        CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightHealth] CGColor]);
+        CGRect healthRect = CGRectMake(0.0 + 4*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
+        CGRect healthBoundingRect = CGRectMake(0.0 + 4*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
+        CGContextFillRect(context, healthRect);
+        [self drawTextInBar:NSLocalizedString(@"Health", @"Health") inRect:healthBoundingRect withContext:context];
+    }
+    
+    // Sleep
+    if (self.chartFactorType == AllType || self.chartFactorType == SleepType) {
+        barHeight = interval*fabs(round(self.chartHeightSleep));
+        if (self.chartHeightSleep > 0) {
+            barOriginY = interval*10.0 - barHeight;
+        }
+        else {
+            barOriginY = interval*10.0;
+        }
+        CGContextSetFillColorWithColor(context, [[self theBarColor:self.chartHeightSleep] CGColor]);
+        CGRect sleepRect = CGRectMake(0.0 + 5*rect.size.width/numberOfBars, barOriginY, rect.size.width/numberOfBars - 1, barHeight);
+        CGRect sleepBoundingRect = CGRectMake(0.0 + 5*rect.size.width/numberOfBars, 0.0, rect.size.width/numberOfBars - 1, interval*10.0);
+        CGContextFillRect(context, sleepRect);
+        [self drawTextInBar:NSLocalizedString(@"Sleep", @"Sleep") inRect:sleepBoundingRect withContext:context];
+    }
 }
 
 - (UIColor *) theBarColor: (CGFloat) barHeight {
