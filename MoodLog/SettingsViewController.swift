@@ -19,7 +19,7 @@ class SettingsViewController: UITableViewController {
         pieDonutSwitch.isOn = PieOrDonut.donut()
         // Populate the chartExampleView
         chartExampleView.circumference = 30.0
-        chartExampleView.categoryCounts = [love:3, joy:3, surprise:2, fear:3, anger:3, sadness:3]
+        chartExampleView.categoryCounts = [love:3, joy:3, surprise:3, fear:3, anger:3, sadness:3]
     }
 
     override func didReceiveMemoryWarning() {

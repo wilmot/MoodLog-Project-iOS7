@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,12 +17,12 @@
             <objects>
                 <navigationController toolbarHidden="NO" id="3" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tMr-YW-brU">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </toolbar>
@@ -39,11 +39,11 @@
             <objects>
                 <viewController id="rBa-Dg-5ia" customClass="MlMailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Obd-sT-em8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmp-5z-fTo">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Export Mood-Log Entries" id="WlD-8L-Htp">
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="ZeL-gg-87A">
@@ -55,7 +55,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTV-Kb-CP3">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="eMail Recipient (optional):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYW-sa-8zt">
                                         <rect key="frame" x="8" y="14" width="359" height="21"/>
@@ -68,7 +68,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="&lt;email address&gt;" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gq8-Nj-3Cp">
-                                        <rect key="frame" x="3" y="43" width="315" height="30"/>
+                                        <rect key="frame" x="3" y="43" width="409" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                         <connections>
@@ -77,25 +77,25 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1G-Kl-1OH" userLabel="View - Event Counter">
-                                        <rect key="frame" x="0.0" y="115" width="320" height="100"/>
+                                        <rect key="frame" x="0.0" y="115" width="414" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9m9-Ed-c0t" customClass="MlDateRangeDrawing">
-                                                <rect key="frame" x="16" y="13" width="288" height="30"/>
+                                                <rect key="frame" x="16" y="13" width="382" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Oldest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9F-aT-n8z">
-                                                        <rect key="frame" x="4" y="4" width="44.5" height="19.5"/>
+                                                        <rect key="frame" x="4" y="4" width="44.333333333333336" height="19.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No Entries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-jI-0pJ">
-                                                        <rect key="frame" x="102" y="3.5" width="85" height="20.5"/>
+                                                        <rect key="frame" x="149" y="3.6666666666666572" width="85" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Newest" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1au-1D-8EL">
-                                                        <rect key="frame" x="231" y="4" width="52" height="19.5"/>
+                                                        <rect key="frame" x="325.33333333333331" y="4" width="51.666666666666686" height="19.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -113,21 +113,21 @@
                                                 </constraints>
                                             </view>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="82N-vr-bnA">
-                                                <rect key="frame" x="6" y="-2" width="308" height="31"/>
+                                                <rect key="frame" x="6" y="-2" width="402" height="31"/>
                                                 <connections>
                                                     <action selector="finishedSlidingStartSlider:" destination="rBa-Dg-5ia" eventType="touchUpInside" id="VIq-P7-Ses"/>
                                                     <action selector="slideStartSlider:" destination="rBa-Dg-5ia" eventType="valueChanged" id="z02-lh-FwG"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="tkD-lK-CcT">
-                                                <rect key="frame" x="6" y="27" width="308" height="31"/>
+                                                <rect key="frame" x="6" y="27" width="402" height="31"/>
                                                 <connections>
                                                     <action selector="finishedSlidingEndSlider:" destination="rBa-Dg-5ia" eventType="touchUpInside" id="kZS-F6-R66"/>
                                                     <action selector="slideEndSlider:" destination="rBa-Dg-5ia" eventType="valueChanged" id="fP3-2w-X7V"/>
                                                 </connections>
                                             </slider>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add entries by tapping ‘New’ in the main view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcR-1N-uu3">
-                                                <rect key="frame" x="15" y="48" width="290" height="21"/>
+                                                <rect key="frame" x="62" y="48" width="290" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="290" id="Z4l-OS-ODZ"/>
                                                     <constraint firstAttribute="height" constant="21" id="ZHl-Kq-q2R"/>
@@ -137,10 +137,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kov-ah-Dad">
-                                                <rect key="frame" x="0.0" y="70" width="320" height="30"/>
+                                                <rect key="frame" x="0.0" y="70" width="414" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKa-os-mPA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="30"/>
                                                         <state key="normal" title="All">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -149,7 +149,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4q-y0-mW5">
-                                                        <rect key="frame" x="64" y="0.0" width="64" height="30"/>
+                                                        <rect key="frame" x="82.666666666666671" y="0.0" width="83.000000000000014" height="30"/>
                                                         <state key="normal" title="28 Days">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -158,7 +158,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgo-Yl-TJr">
-                                                        <rect key="frame" x="128" y="0.0" width="64" height="30"/>
+                                                        <rect key="frame" x="165.66666666666666" y="0.0" width="82.666666666666657" height="30"/>
                                                         <state key="normal" title="7 Days">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -167,7 +167,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMV-Ti-HJy">
-                                                        <rect key="frame" x="192" y="0.0" width="64" height="30"/>
+                                                        <rect key="frame" x="248.33333333333337" y="0.0" width="83" height="30"/>
                                                         <state key="normal" title="Today">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -176,7 +176,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REd-7R-5Id">
-                                                        <rect key="frame" x="256" y="0.0" width="64" height="30"/>
+                                                        <rect key="frame" x="331.33333333333331" y="0.0" width="82.666666666666686" height="30"/>
                                                         <state key="normal" title="Last">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -208,7 +208,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Req-tK-vlI" customClass="MlCustomButton" customModule="Mood_Log" customModuleProvider="target">
-                                        <rect key="frame" x="37" y="292" width="245" height="50"/>
+                                        <rect key="frame" x="37" y="292" width="339" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="fAx-Jd-FTc"/>
                                         </constraints>
@@ -231,7 +231,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTf-5O-fC5" customClass="MlCustomButton" customModule="Mood_Log" customModuleProvider="target">
-                                        <rect key="frame" x="37" y="350" width="245" height="50"/>
+                                        <rect key="frame" x="37" y="350" width="339" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="yqu-Y7-JsG"/>
                                         </constraints>
@@ -321,15 +321,37 @@
             <objects>
                 <tableViewController title="Master" extendedLayoutIncludesOpaqueBars="YES" id="12" customClass="MlMasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="Header" rowHeight="23" id="SlY-q3-at0" customClass="MlCell">
+                                <rect key="frame" x="0.0" y="22" width="414" height="23"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SlY-q3-at0" id="eoj-71-g7m">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="22.666666666666668"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vY8-gR-vqh">
+                                            <rect key="frame" x="42" y="1" width="372" height="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="vY8-gR-vqh" secondAttribute="trailing" id="ove-GT-dSB"/>
+                                        <constraint firstItem="vY8-gR-vqh" firstAttribute="top" secondItem="eoj-71-g7m" secondAttribute="top" constant="1" id="rDq-2x-xej"/>
+                                        <constraint firstItem="vY8-gR-vqh" firstAttribute="leading" secondItem="eoj-71-g7m" secondAttribute="leadingMargin" constant="22" id="tIg-ie-eiQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="Cell" rowHeight="84" id="lJ0-d7-vTF" customClass="MlCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="84"/>
+                                <rect key="frame" x="0.0" y="45" width="414" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="bnR-2o-2Ia">
-                                    <rect key="frame" x="0.0" y="0.0" width="286" height="83.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="83.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wju-ol-H14">
@@ -366,7 +388,7 @@
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="wPi-0y-5Ta">
-                                            <rect key="frame" x="50" y="14" width="236" height="67"/>
+                                            <rect key="frame" x="50" y="14" width="326" height="67"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="I feel: happy, sad and elated.">
                                                     <attributes>
@@ -410,27 +432,114 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                     <segue destination="JzN-CV-xZQ" kind="show" identifier="showDetail" id="Rzx-g6-5D2"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="Header" rowHeight="23" id="SlY-q3-at0" customClass="MlCell">
-                                <rect key="frame" x="0.0" y="106" width="320" height="23"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="Cell_iPad" rowHeight="84" id="XJu-he-1a0" customClass="MlCell">
+                                <rect key="frame" x="0.0" y="129" width="414" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SlY-q3-at0" id="eoj-71-g7m">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="22.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XJu-he-1a0" id="djm-vE-weg">
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="83.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vY8-gR-vqh">
-                                            <rect key="frame" x="38" y="1" width="282" height="20"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxC-Oa-KPj">
+                                            <rect key="frame" x="0.0" y="18" width="48" height="48"/>
+                                            <subviews>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="CalendarBlank48.png" translatesAutoresizingMaskIntoConstraints="NO" id="FED-ai-tnm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Wednesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="vDO-n0-Zx4">
+                                                    <rect key="frame" x="5" y="5" width="38" height="11"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="9"/>
+                                                    <color key="textColor" red="0.79900380289999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E91-hT-OKz">
+                                                    <rect key="frame" x="5" y="16" width="38" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="29"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="NXG-W9-CUn"/>
+                                                <constraint firstAttribute="width" constant="48" id="f4S-8x-uqg"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12:25 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3D-0s-c12">
+                                            <rect key="frame" x="50" y="2" width="44" height="12"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="ut5-p4-ZhH">
+                                            <rect key="frame" x="50" y="14" width="79" height="67"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="I feel: happy, sad and elated.">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">
+Does the font shrink when I have more text? What happens when it hits line four? Does it dot?</string>
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZN4-Lx-q2a" customClass="MlChartDrawingView">
+                                            <rect key="frame" x="137" y="0.0" width="118" height="84"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="118" id="Ovs-6v-cJf"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5J-Nr-fz0" customClass="MlChartDrawingView">
+                                            <rect key="frame" x="258" y="0.0" width="118" height="84"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="118" id="7Rk-F0-UYC"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="vY8-gR-vqh" secondAttribute="trailing" id="ove-GT-dSB"/>
-                                        <constraint firstItem="vY8-gR-vqh" firstAttribute="top" secondItem="eoj-71-g7m" secondAttribute="top" constant="1" id="rDq-2x-xej"/>
-                                        <constraint firstItem="vY8-gR-vqh" firstAttribute="leading" secondItem="eoj-71-g7m" secondAttribute="leadingMargin" constant="22" id="tIg-ie-eiQ"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k3D-0s-c12" secondAttribute="trailing" id="14c-hY-lJk"/>
+                                        <constraint firstItem="ut5-p4-ZhH" firstAttribute="top" secondItem="k3D-0s-c12" secondAttribute="bottom" id="92w-89-XCV"/>
+                                        <constraint firstItem="k3D-0s-c12" firstAttribute="top" secondItem="djm-vE-weg" secondAttribute="top" constant="2" id="Avu-Oz-rxW"/>
+                                        <constraint firstItem="H5J-Nr-fz0" firstAttribute="top" secondItem="djm-vE-weg" secondAttribute="top" id="DmU-iZ-qly"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZN4-Lx-q2a" secondAttribute="bottom" constant="-0.5" id="NXB-p3-hcz"/>
+                                        <constraint firstItem="YxC-Oa-KPj" firstAttribute="leading" secondItem="djm-vE-weg" secondAttribute="leading" id="Uxc-w2-AFO"/>
+                                        <constraint firstItem="ZN4-Lx-q2a" firstAttribute="leading" secondItem="ut5-p4-ZhH" secondAttribute="trailing" constant="8" id="VMS-E8-hVT"/>
+                                        <constraint firstAttribute="bottom" secondItem="H5J-Nr-fz0" secondAttribute="bottom" constant="-0.5" id="WZH-HN-P58"/>
+                                        <constraint firstItem="H5J-Nr-fz0" firstAttribute="leading" secondItem="ZN4-Lx-q2a" secondAttribute="trailing" constant="3" id="apC-eA-xaz"/>
+                                        <constraint firstItem="k3D-0s-c12" firstAttribute="leading" secondItem="djm-vE-weg" secondAttribute="leading" constant="50" id="dtJ-TO-0A6"/>
+                                        <constraint firstItem="ut5-p4-ZhH" firstAttribute="leading" secondItem="YxC-Oa-KPj" secondAttribute="trailing" constant="2" id="hoa-4K-XxH"/>
+                                        <constraint firstAttribute="bottom" secondItem="ut5-p4-ZhH" secondAttribute="bottom" constant="2.5" id="jac-IQ-RCC"/>
+                                        <constraint firstItem="ZN4-Lx-q2a" firstAttribute="top" secondItem="djm-vE-weg" secondAttribute="top" id="mup-rL-Hfe"/>
+                                        <constraint firstItem="YxC-Oa-KPj" firstAttribute="centerY" secondItem="djm-vE-weg" secondAttribute="centerY" id="r6p-G3-9ib"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="H5J-Nr-fz0" secondAttribute="trailing" constant="38" id="OYu-af-yyN"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="calendarImage" destination="FED-ai-tnm" id="ZKK-qk-E0U"/>
+                                    <outlet property="dateLabel" destination="E91-hT-OKz" id="zOE-Sf-g8o"/>
+                                    <outlet property="factorsChart" destination="H5J-Nr-fz0" id="ZLT-U9-iOV"/>
+                                    <outlet property="mainLabel" destination="ut5-p4-ZhH" id="isl-ZB-6HI"/>
+                                    <outlet property="moodsChart" destination="ZN4-Lx-q2a" id="THC-PC-yNj"/>
+                                    <outlet property="timeLabel" destination="k3D-0s-c12" id="OGp-HV-uqV"/>
+                                    <outlet property="weekdayLabel" destination="vDO-n0-Zx4" id="qFl-mL-8N9"/>
+                                    <segue destination="JzN-CV-xZQ" kind="show" identifier="showDetail" id="Xo7-Du-HWb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -460,7 +569,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Y79-bj-dLG"/>
                         <barButtonItem style="plain" id="RCy-EY-dUL">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Ojd-M9-3Ro">
-                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                                <rect key="frame" x="372" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -472,6 +581,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                 </state>
                                 <connections>
                                     <action selector="showWelcomeScreen:" destination="12" eventType="touchUpInside" id="DOv-vu-6Fh"/>
+                                    <segue destination="Rhk-BO-aPU" kind="presentation" id="Xeb-cA-08N"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -490,34 +600,42 @@ Does the font shrink when I have more text? What happens when it hits line four?
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1380" y="-230.28169014084509"/>
+            <point key="canvasLocation" x="-1380.46875" y="-230.85937499999997"/>
+        </scene>
+        <!--AdditionalStoryboards-->
+        <scene sceneID="8br-Vr-NxM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdditionalStoryboards" id="Rhk-BO-aPU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQR-ud-DpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-666" y="21"/>
         </scene>
         <!--Reminders-->
         <scene sceneID="NSp-kd-EXY">
             <objects>
                 <tableViewController id="eWD-k6-ZJq" customClass="MlNotificationsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="TTa-5a-pqM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Ask me about my mood at:" id="pyx-zz-aQP">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="Wl0-tI-NtW">
-                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wl0-tI-NtW" id="VvG-tb-Hej">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUc-w0-eXd">
-                                                    <rect key="frame" x="227" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="317" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="evD-M6-B4Q"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbv-Ei-HFR">
-                                                    <rect key="frame" x="20" y="11" width="109" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="199" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -537,20 +655,20 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="Yua-wZ-Ukf">
-                                        <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.333333333333343" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yua-wZ-Ukf" id="viL-cy-ohV">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-6L-pNx">
-                                                    <rect key="frame" x="227" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="317" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="1Iq-dh-wYF"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:50 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueB-zq-YMR">
-                                                    <rect key="frame" x="20" y="11" width="109" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="199" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -570,20 +688,20 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="1xm-QD-BJZ">
-                                        <rect key="frame" x="0.0" y="143.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="143.33333333333334" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1xm-QD-BJZ" id="QyW-RK-RVt">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UUY-ZY-daV">
-                                                    <rect key="frame" x="227" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="317" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="pW8-KI-6Mp"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:45 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWX-3T-HHY">
-                                                    <rect key="frame" x="20" y="11" width="109" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="199" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -603,20 +721,20 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="aEo-Cd-93V">
-                                        <rect key="frame" x="0.0" y="187.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.33333333333334" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aEo-Cd-93V" id="KcD-z2-dHj">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HVD-IB-WhE">
-                                                    <rect key="frame" x="227" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="317" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="lXC-kz-XrD"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eJ-Du-ZrX">
-                                                    <rect key="frame" x="20" y="11" width="109" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="199" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -636,20 +754,20 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="0A8-T1-Pka">
-                                        <rect key="frame" x="0.0" y="231.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="231.33333333333334" width="414" height="44.000000000000028"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0A8-T1-Pka" id="j4x-gK-bN4">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UZy-s2-gjm">
-                                                    <rect key="frame" x="227" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="317" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="nai-5f-Q8v"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeA-Bf-VtE">
-                                                    <rect key="frame" x="20" y="11" width="109" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="199" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -669,20 +787,20 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="csD-dr-jSz">
-                                        <rect key="frame" x="0.0" y="275.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="275.33333333333337" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="csD-dr-jSz" id="7yU-pi-E73">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qIv-AF-r0X">
-                                                    <rect key="frame" x="227" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="317" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="changeReminderSwitchState:" destination="eWD-k6-ZJq" eventType="valueChanged" id="JKC-Ea-67D"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlD-hu-Fts">
-                                                    <rect key="frame" x="20" y="11" width="109" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="199" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -706,14 +824,14 @@ Does the font shrink when I have more text? What happens when it hits line four?
                             <tableViewSection headerTitle="Debugging" id="n4o-dN-1H7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="320" id="j6a-rB-mQy">
-                                        <rect key="frame" x="0.0" y="367.5" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="367.33333333333337" width="414" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j6a-rB-mQy" id="fQH-78-jqq">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="319.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="319.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR3-7I-1hS">
-                                                    <rect key="frame" x="18" y="11" width="113" height="40"/>
+                                                    <rect key="frame" x="22" y="11" width="113" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="113" id="Uln-EQ-18f"/>
                                                         <constraint firstAttribute="height" constant="40" id="fkx-k5-4B1"/>
@@ -726,7 +844,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                     </connections>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="A list of scheduled notifications" translatesAutoresizingMaskIntoConstraints="NO" id="l0o-4z-ycs">
-                                                    <rect key="frame" x="19" y="52" width="284" height="159"/>
+                                                    <rect key="frame" x="23" y="52" width="370" height="159"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="159" id="WMD-LM-tfy"/>
@@ -735,7 +853,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfL-Tl-0Ak">
-                                                    <rect key="frame" x="217" y="11" width="86" height="40"/>
+                                                    <rect key="frame" x="307" y="11" width="86" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="86" id="HFn-Xl-ugg"/>
                                                     </constraints>
@@ -747,7 +865,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr6-Ca-UGc">
-                                                    <rect key="frame" x="152" y="10" width="49" height="40"/>
+                                                    <rect key="frame" x="156" y="10" width="135" height="40"/>
                                                     <state key="normal" title="Clear">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -779,14 +897,14 @@ Does the font shrink when I have more text? What happens when it hits line four?
                             <tableViewSection headerTitle="Ask me about my mood in:" id="lPc-bO-vAE">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="pQ0-SH-h2v">
-                                        <rect key="frame" x="0.0" y="735.5" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="735.33333333333337" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pQ0-SH-h2v" id="dmV-I4-txJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uC-da-44c">
-                                                    <rect key="frame" x="135" y="11" width="155" height="21"/>
+                                                    <rect key="frame" x="135" y="11" width="603" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -806,7 +924,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ho8-Xp-zh3">
-                                                    <rect key="frame" x="202" y="31" width="98" height="43"/>
+                                                    <rect key="frame" x="202" y="31" width="546" height="43"/>
                                                     <state key="normal" title="Set">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -837,10 +955,10 @@ Does the font shrink when I have more text? What happens when it hits line four?
                             <tableViewSection headerTitle="Ask me about my mood at a random time of day:" id="beL-Cm-y3e">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="153" id="8ao-Wa-sNR">
-                                        <rect key="frame" x="0.0" y="881.5" width="320" height="153"/>
+                                        <rect key="frame" x="0.0" y="863.33333333333337" width="414" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ao-Wa-sNR" id="2l6-bi-Msz">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="152.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-AS-bEc">
@@ -902,10 +1020,10 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="42" id="16j-mv-Lc5">
-                                        <rect key="frame" x="0.0" y="1034.5" width="320" height="42"/>
+                                        <rect key="frame" x="0.0" y="1016.3333333333334" width="414" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="16j-mv-Lc5" id="z7U-BU-6gb">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="41.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="41.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quiet Hours:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQU-7d-uLW">
@@ -988,17 +1106,17 @@ Does the font shrink when I have more text? What happens when it hits line four?
             <objects>
                 <tableViewController id="xcL-4H-1vf" customClass="MlReminderTimeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PMJ-54-i6U">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="15p-FE-RGJ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="162" id="mCU-Ve-kwj">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mCU-Ve-kwj" id="GlD-VG-hOY">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="161.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="161.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="USE-0d-3ez">
@@ -1036,21 +1154,21 @@ Does the font shrink when I have more text? What happens when it hits line four?
             <objects>
                 <tableViewController id="2vX-gw-xTS" customClass="MlQuietHoursTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="FSL-M8-mDC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="" id="Y4D-9j-zql">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e1T-TF-upd">
-                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e1T-TF-upd" id="OlQ-aR-7fu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ko-Xi-cyb">
-                                                    <rect key="frame" x="10" y="11" width="300" height="21"/>
+                                                    <rect key="frame" x="10" y="11" width="394" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="8hv-OP-fNh"/>
                                                     </constraints>
@@ -1068,14 +1186,14 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8J4-SI-Sce">
-                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="79" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8J4-SI-Sce" id="69C-A4-PKN">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg2-2r-10K">
-                                                    <rect key="frame" x="10" y="11" width="300" height="21"/>
+                                                    <rect key="frame" x="10" y="11" width="394" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="YUl-16-fUn"/>
                                                     </constraints>
@@ -1097,14 +1215,14 @@ Does the font shrink when I have more text? What happens when it hits line four?
                             <tableViewSection headerTitle="" id="Bg5-G2-G9W">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="217" id="qeg-3C-y0l">
-                                        <rect key="frame" x="0.0" y="143" width="320" height="217"/>
+                                        <rect key="frame" x="0.0" y="143" width="414" height="217"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qeg-3C-y0l" id="iZL-NV-NCZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="216.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="216.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="OXU-Gl-Xo7">
-                                                    <rect key="frame" x="10" y="0.0" width="300" height="216"/>
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="216"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="395904600.015746">
                                                         <!--2013-07-19 05:30:00 +0000-->
                                                     </date>
@@ -1147,7 +1265,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                 <navigationController definesPresentationContext="YES" id="c1f-0h-Sha" customClass="MlRemindersViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Byw-1U-x7g"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YWC-Pd-heD">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1163,17 +1281,17 @@ Does the font shrink when I have more text? What happens when it hits line four?
             <objects>
                 <tableViewController storyboardIdentifier="moodLogDetailView" hidesBottomBarWhenPushed="YES" id="JzN-CV-xZQ" customClass="MlDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ieg-Wg-0JP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="" id="sPT-LP-oOT">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="62" id="XML-kh-WyT">
-                                        <rect key="frame" x="0.0" y="35" width="320" height="62"/>
+                                        <rect key="frame" x="0.0" y="35" width="414" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XML-kh-WyT" id="ziF-pP-EMe">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPi-sJ-lcm">
@@ -1205,7 +1323,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKR-Rk-BIU">
-                                                    <rect key="frame" x="83" y="10.5" width="200" height="41"/>
+                                                    <rect key="frame" x="83" y="10.666666666666664" width="200" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="August 2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qJ-P8-QMi">
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
@@ -1246,10 +1364,10 @@ Does the font shrink when I have more text? What happens when it hits line four?
                             <tableViewSection headerTitle="" id="ovx-Tt-PFC">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="gRi-SK-i7n">
-                                        <rect key="frame" x="0.0" y="117" width="320" height="100"/>
+                                        <rect key="frame" x="0.0" y="117" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gRi-SK-i7n" id="4IW-tx-fTs">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioU-7X-bBA" customClass="MlChartDrawingView">
@@ -1260,7 +1378,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                     </constraints>
                                                 </view>
                                                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap to select emotions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-4H-DNv">
-                                                    <rect key="frame" x="110" y="39" width="162.5" height="21"/>
+                                                    <rect key="frame" x="200" y="39" width="162.66666666666663" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="18"/>
                                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1312,14 +1430,14 @@ Does the font shrink when I have more text? What happens when it hits line four?
                             <tableViewSection headerTitle="" id="gCR-M1-aqz">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="78" id="ZCh-Jg-PsL">
-                                        <rect key="frame" x="0.0" y="237" width="320" height="78"/>
+                                        <rect key="frame" x="0.0" y="237" width="414" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZCh-Jg-PsL" id="wCG-tJ-ZBD">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Journal Entry" translatesAutoresizingMaskIntoConstraints="NO" id="YBd-1W-hJI">
-                                                    <rect key="frame" x="17" y="2" width="263" height="74"/>
+                                                    <rect key="frame" x="17" y="2" width="357" height="74"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1332,7 +1450,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                                     </constraints>
                                                 </imageView>
                                                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap to add your thoughts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRy-Fc-iUK">
-                                                    <rect key="frame" x="50" y="28.5" width="180.5" height="21"/>
+                                                    <rect key="frame" x="49.999999999999986" y="28.666666666666671" width="180.66666666666663" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="18"/>
                                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1362,21 +1480,21 @@ Does the font shrink when I have more text? What happens when it hits line four?
                             <tableViewSection headerTitle="" id="V8H-pr-lXg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="160" id="xfN-la-lID">
-                                        <rect key="frame" x="0.0" y="335" width="320" height="160"/>
+                                        <rect key="frame" x="0.0" y="335" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfN-la-lID" id="Yqx-Uw-D0g">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cx-6P-juE" customClass="MlChartDrawingView">
-                                                    <rect key="frame" x="8" y="2" width="270" height="158"/>
+                                                    <rect key="frame" x="53" y="2" width="270" height="158"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="270" id="v58-2y-p7W"/>
                                                     </constraints>
                                                 </view>
                                                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap to track additional factors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kaq-h7-d6o">
-                                                    <rect key="frame" x="50" y="69.5" width="208.5" height="21"/>
+                                                    <rect key="frame" x="49.999999999999986" y="69.666666666666671" width="208.66666666666663" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="18"/>
                                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1452,18 +1570,18 @@ Does the font shrink when I have more text? What happens when it hits line four?
             <objects>
                 <viewController id="wd0-UQ-kMV" customClass="MlFactorsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1CP-Tl-93e">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWf-py-2pi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="mQK-ra-D32" kind="embed" identifier="sliders" id="M1j-V1-dTS"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKS-BO-RX6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="uuS-U1-8Fe" kind="embed" identifier="slidersLandscape" id="BGt-er-lxW"/>
@@ -1501,7 +1619,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
             <objects>
                 <collectionViewController id="Knz-FF-nJJ" customClass="MlMoodCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="7dO-VT-1GK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="588"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KDk-cp-qb5">
@@ -1528,7 +1646,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Euphoricnostic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBw-a9-hbP">
-                                            <rect key="frame" x="27" y="8" width="97" height="17"/>
+                                            <rect key="frame" x="27" y="8" width="451" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="msb-B5-F45"/>
                                             </constraints>
@@ -1602,12 +1720,12 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="moodCellHeader" id="GrA-AZ-HCU" customClass="MlMoodCollectionViewHeaderView">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moodCellHeader" id="GrA-AZ-HCU" customClass="MlMoodCollectionViewHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQZ-Gy-JXo">
-                                    <rect key="frame" x="5" y="0.0" width="315" height="20"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQZ-Gy-JXo">
+                                    <rect key="frame" x="5" y="0.0" width="409" height="20"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -1652,11 +1770,11 @@ Does the font shrink when I have more text? What happens when it hits line four?
             <objects>
                 <viewController id="huQ-OW-BBP" customClass="EmotionEditorViewController" customModule="Mood_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sYj-tw-516">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akh-05-JeU">
-                                <rect key="frame" x="16" y="52" width="288" height="48"/>
+                                <rect key="frame" x="20" y="52" width="374" height="216"/>
                                 <string key="text">&lt;Placeholder for future feature&gt;
 Edit or Create a new Emotion</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1664,7 +1782,7 @@ Edit or Create a new Emotion</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a face from among the faces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQU-QZ-IiZ">
-                                <rect key="frame" x="16" y="123" width="282" height="21"/>
+                                <rect key="frame" x="20" y="291" width="282" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="dQ7-oo-C4m"/>
                                 </constraints>
@@ -1673,7 +1791,7 @@ Edit or Create a new Emotion</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import a Face" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCo-iC-6UE">
-                                <rect key="frame" x="16" y="168" width="105" height="21"/>
+                                <rect key="frame" x="20" y="336" width="105" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7gf-tc-cPq"/>
                                 </constraints>
@@ -1682,7 +1800,7 @@ Edit or Create a new Emotion</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a category for the emotion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3B-qg-ItI">
-                                <rect key="frame" x="16" y="219" width="233" height="21"/>
+                                <rect key="frame" x="20" y="387" width="233" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bQT-SG-4jd"/>
                                 </constraints>
@@ -1729,21 +1847,21 @@ Edit or Create a new Emotion</string>
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="Haq-rW-jQt" customClass="MlFacesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A6Z-Y0-OgJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNy-py-5fw" userLabel="View - Faces">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7h5-hV-VH6">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="588"/>
                                         <color key="backgroundColor" red="0.17895342409610748" green="0.50622552633285522" blue="0.8768002986907959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="Knz-FF-nJJ" kind="embed" identifier="MoodCollectionSegue2" id="IAH-aZ-MU7"/>
                                         </connections>
                                     </containerView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gXX-wU-3v7">
-                                        <rect key="frame" x="11" y="468" width="182" height="31"/>
+                                        <rect key="frame" x="11" y="636" width="182" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="182" id="9Vu-Ap-Ojj"/>
                                         </constraints>
@@ -1757,7 +1875,7 @@ Edit or Create a new Emotion</string>
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obW-v0-UPO">
-                                        <rect key="frame" x="206" y="467" width="50" height="30"/>
+                                        <rect key="frame" x="300" y="635" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="IPF-cL-peE"/>
                                             <constraint firstAttribute="height" constant="30" id="PVL-eT-pwk"/>
@@ -1770,7 +1888,7 @@ Edit or Create a new Emotion</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-Hq-Uqu">
-                                        <rect key="frame" x="261" y="467" width="50" height="30"/>
+                                        <rect key="frame" x="355" y="635" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="9ct-nt-VcQ"/>
                                             <constraint firstAttribute="height" constant="30" id="b9b-2h-MyN"/>
@@ -1783,14 +1901,14 @@ Edit or Create a new Emotion</string>
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-MX-tQA">
-                                        <rect key="frame" x="62" y="425" width="199" height="32"/>
+                                        <rect key="frame" x="62" y="593" width="293" height="32"/>
                                         <connections>
                                             <action selector="finishedSlidingFewerMoreSlider:" destination="Haq-rW-jQt" eventType="touchUpInside" id="uk1-Vb-Wh3"/>
                                             <action selector="slideFewerMoreSlider:" destination="Haq-rW-jQt" eventType="valueChanged" id="sWb-kF-qRh"/>
                                         </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZO-kC-Yn3">
-                                        <rect key="frame" x="261" y="424" width="50" height="30"/>
+                                        <rect key="frame" x="355" y="592" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="FDS-Q7-a7S"/>
                                             <constraint firstAttribute="height" constant="30" id="yE2-cH-lZM"/>
@@ -1801,7 +1919,7 @@ Edit or Create a new Emotion</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqg-kz-crn">
-                                        <rect key="frame" x="11" y="424" width="50" height="30"/>
+                                        <rect key="frame" x="11" y="592" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="KAX-XF-mOY"/>
                                             <constraint firstAttribute="height" constant="30" id="qhb-bD-QEo"/>
@@ -1812,7 +1930,7 @@ Edit or Create a new Emotion</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7q-KN-91e">
-                                        <rect key="frame" x="133" y="468" width="60" height="30"/>
+                                        <rect key="frame" x="133" y="636" width="60" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="67T-nX-NR7"/>
                                         </constraints>
@@ -1885,11 +2003,11 @@ Edit or Create a new Emotion</string>
             <objects>
                 <viewController id="i5c-1I-xcB" customClass="MlJournalEditorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="46o-Tb-crl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qU-QT-udi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1929,11 +2047,11 @@ Edit or Create a new Emotion</string>
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="Y9h-87-SA0" customClass="MlDatePickerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pOy-w1-VWZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CDS-YE-AKi">
-                                <rect key="frame" x="0.0" y="109" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="216"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="ISi-Md-04L"/>
@@ -1946,7 +2064,7 @@ Edit or Create a new Emotion</string>
                                 </connections>
                             </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Set a date and time for this entry." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgL-bd-sIh">
-                                <rect key="frame" x="28" y="70" width="264" height="21"/>
+                                <rect key="frame" x="32" y="70" width="350" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1990,11 +2108,11 @@ Edit or Create a new Emotion</string>
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="mQK-ra-D32" customClass="MlSlidersViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qz5-yu-dgN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-mP-Cho" userLabel="View SlidersView">
-                                <rect key="frame" x="13.5" y="304" width="302" height="185"/>
+                                <rect key="frame" x="60.666666666666657" y="472" width="302" height="185"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="2pH-Fq-9Nz" userLabel="Slider - Mood">
                                         <rect key="frame" x="70" y="0.0" width="150" height="31"/>
@@ -2148,7 +2266,7 @@ Edit or Create a new Emotion</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-Uv-JKY" customClass="MlChartDrawingView">
-                                <rect key="frame" x="10" y="68" width="295" height="218"/>
+                                <rect key="frame" x="10" y="68" width="389" height="386"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -2195,11 +2313,11 @@ Edit or Create a new Emotion</string>
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="uuS-U1-8Fe" customClass="MlSlidersLandscapeViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tna-tV-Aou">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zb-PU-6Br" customClass="MlChartDrawingView">
-                                <rect key="frame" x="3" y="68" width="16" height="432"/>
+                                <rect key="frame" x="3" y="68" width="110" height="600"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -2207,7 +2325,7 @@ Edit or Create a new Emotion</string>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAo-5p-oT3" userLabel="View SlidersView">
-                                <rect key="frame" x="25" y="99" width="295" height="185"/>
+                                <rect key="frame" x="119" y="99" width="295" height="185"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="OO8-xB-fE5" userLabel="Slider - Mood">
                                         <rect key="frame" x="70" y="0.0" width="150" height="31"/>
@@ -2409,6 +2527,7 @@ Edit or Create a new Emotion</string>
         <image name="shuffle_off.png" width="25" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Rzx-g6-5D2"/>
         <segue reference="iuu-9y-aj6"/>
     </inferredMetricsTieBreakers>
 </document>

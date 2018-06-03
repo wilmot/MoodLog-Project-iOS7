@@ -24,6 +24,7 @@
 
 static CGFloat CELL_HEIGHT;
 NSPredicate *filterPredicate = nil;
+NSString *cellIdentifier = @"Cell";
 
 - (void)awakeFromNib
 {
@@ -54,13 +55,13 @@ NSPredicate *filterPredicate = nil;
     else {
         self.tableView.tableHeaderView = self.searchController.searchBar;
     }
-
+    
     // Used for testing and debugging:
     //[self updateOldRecords];
     //[self deleteUnselectedEmotionsFromOldRecords];
     //[self deleteEmotionsWithNullParent];
     
-    CELL_HEIGHT = [[self.tableView dequeueReusableCellWithIdentifier:@"Cell"] bounds].size.height;
+    CELL_HEIGHT = [[self.tableView dequeueReusableCellWithIdentifier:cellIdentifier] bounds].size.height;
     
     if ([[self.fetchedResultsController sections] count] > 0) {
         [self scrollToTopButDontShowSearchBar];
@@ -70,8 +71,33 @@ NSPredicate *filterPredicate = nil;
     }
 }
 
+- (void) setCellIdentifier: (UIUserInterfaceSizeClass) sizeClass {
+    if (sizeClass == UIUserInterfaceSizeClassCompact) {
+        cellIdentifier = @"Cell"; // iPhone
+    }
+    else if (sizeClass == UIUserInterfaceSizeClassRegular){
+        cellIdentifier = @"Cell_iPad"; // iPad (and landscape iPhone 7/8 plus)
+    }
+    else { // Unknown
+        cellIdentifier = @"Cell";
+    }
+}
+
+- (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    // Regular -- show charts
+    // Compact -- don't show charts
+    [self setCellIdentifier:newCollection.horizontalSizeClass];
+    [self.tableView reloadData];
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [self setCellIdentifier:self.view.traitCollection.horizontalSizeClass];
+    [self.tableView reloadData];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self setCellIdentifier:self.view.traitCollection.horizontalSizeClass];
     [[self tableView] reloadData];
     [self scrollToTopButDontShowSearchBar];
     self.navigationItem.rightBarButtonItem.enabled = NO; // Work around a bug where the 'New' button is grayed out when returning from the DetailView
@@ -317,10 +343,11 @@ NSPredicate *filterPredicate = nil;
 }
 
 - (IBAction)showWelcomeScreen:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AdditionalStoryboards" bundle:nil];
-    UIViewController *welcomeViewController = [sb instantiateViewControllerWithIdentifier:@"welcomeNavigationController"];
-    [welcomeViewController setModalPresentationStyle:UIModalPresentationOverFullScreen];
-    [self presentViewController:welcomeViewController animated:YES completion:NULL];
+//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AdditionalStoryboards" bundle:nil];
+//    UIViewController *welcomeViewController = [sb instantiateViewControllerWithIdentifier:@"welcomeNavigationController"];
+//    [welcomeViewController setModalPresentationStyle:UIModalPresentationOverFullScreen];
+//    [self presentViewController:welcomeViewController animated:YES completion:NULL];
+    // I do this with a Storyboard placeholder in Interface Builder now
 }
 
 - (IBAction)showCharts:(id)sender {
@@ -361,7 +388,7 @@ NSPredicate *filterPredicate = nil;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MlCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MlCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -668,7 +695,19 @@ NSPredicate *filterPredicate = nil;
                 selectedEms = [selectedEms stringByAppendingFormat:@", %@", [((Emotions *)emotion).name lowercaseString]];
             }
         }
-        
+        // Set up the charts
+        if (cell.moodsChart != nil) {
+            NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
+            for (Emotions *emotion in emotionArray) {
+                NSString *thisCategory = emotion.category;
+                if (categoryCounts[thisCategory]) {
+                    categoryCounts[thisCategory] = @([categoryCounts[thisCategory] integerValue] + [@1 integerValue]); // increment
+                }
+            }
+            cell.moodsChart.categoryCounts = categoryCounts;
+            cell.moodsChart.chartType = @"Pie";
+            [cell.moodsChart setNeedsDisplay];
+        }
     }
     NSMutableString *displayString = [[NSMutableString alloc] init];
     NSUInteger entryEnd = 0;
@@ -687,7 +726,19 @@ NSPredicate *filterPredicate = nil;
     [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Light" size:14] range:journalRange];
     [as addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:journalRange];
     cell.mainLabel.attributedText = as;
-    
+
+    // Set up the bar chart
+    if (cell.factorsChart != nil) {
+        cell.factorsChart.chartType = @"Bar";
+        [cell.factorsChart setChartHeightOverall:[object.overall floatValue]];
+        [cell.factorsChart setChartHeightStress:[object.stress floatValue]];
+        [cell.factorsChart setChartHeightEnergy:[object.energy floatValue]];
+        [cell.factorsChart setChartHeightThoughts:[object.thoughts floatValue]];
+        [cell.factorsChart setChartHeightHealth:[object.health floatValue]];
+        [cell.factorsChart setChartHeightSleep:[object.sleep floatValue]];
+        cell.factorsChart.dividerLine = NO;
+        [cell.factorsChart setNeedsDisplay];
+    }
 }
 
 - (NSString *)prettyDateAndTimeObjC:(NSDate *)date {
