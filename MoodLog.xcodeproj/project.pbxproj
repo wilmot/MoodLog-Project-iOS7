@@ -327,6 +327,7 @@
 		4C55CC0E162DE67500EAA878 /* MlDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C55CC0D162DE67500EAA878 /* MlDetailViewController.m */; };
 		4C589C67163200F100428C52 /* Stressors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C589C66163200F100428C52 /* Stressors.m */; };
 		4C5D051216C1F1BD0028C421 /* MlFacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */; };
+		4C5D3A8220BF759700AA62D7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D3A8120BF759600AA62D7 /* SettingsViewController.swift */; };
 		4C61F1851780F9990032B200 /* MlJournalEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C61F1841780F9990032B200 /* MlJournalEditorViewController.m */; };
 		4C65612817F280AD00F03470 /* AdditionalStoryboards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612617F280AD00F03470 /* AdditionalStoryboards.storyboard */; };
 		4C65612C17F39E5000F03470 /* ParrottsEmotions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4C65612B17F39E5000F03470 /* ParrottsEmotions.pdf */; };
@@ -754,6 +755,8 @@
 		4C589C66163200F100428C52 /* Stressors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Stressors.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4C5D051016C1F1BC0028C421 /* MlFacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlFacesViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4C5D051116C1F1BC0028C421 /* MlFacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlFacesViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4C5D3A8120BF759600AA62D7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4C5D3A8320C069CC00AA62D7 /* Mood_Log-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mood_Log-Bridging-Header.h"; sourceTree = "<group>"; };
 		4C61F1831780F9990032B200 /* MlJournalEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MlJournalEditorViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4C61F1841780F9990032B200 /* MlJournalEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MlJournalEditorViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4C65612717F280AD00F03470 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/AdditionalStoryboards.storyboard; sourceTree = "<group>"; };
@@ -1177,6 +1180,7 @@
 				4CBA1F061ECFE66D00BC5B97 /* Utilities.swift */,
 				4CBA1F081ED0A08200BC5B97 /* ICloudDriveSupport.swift */,
 				4CABBB012087C32B009DEAC7 /* EmotionEditorViewController.swift */,
+				4C5D3A8120BF759600AA62D7 /* SettingsViewController.swift */,
 				4C3E0FB51657122100B0E060 /* Prefs.h */,
 				4C3E0FB61657122100B0E060 /* Prefs.m */,
 				4C55CBF7162DE67500EAA878 /* MlAppDelegate.h */,
@@ -1247,6 +1251,7 @@
 				4C92BE0B1798EA7D005DEEC2 /* MlWelcomeScreenViewController.m */,
 				4CEEF5FE17FB628E00C29507 /* MlColorChoices.h */,
 				4CEEF5FF17FB628E00C29507 /* MlColorChoices.m */,
+				4C5D3A8320C069CC00AA62D7 /* Mood_Log-Bridging-Header.h */,
 			);
 			name = "Main Source";
 			sourceTree = "<group>";
@@ -1865,6 +1870,7 @@
 				4C973100163081B900E1D0B9 /* MlCollectionViewCell.m in Sources */,
 				4C589C67163200F100428C52 /* Stressors.m in Sources */,
 				4CBA1F051ECFE56C00BC5B97 /* MlCustomButton.swift in Sources */,
+				4C5D3A8220BF759700AA62D7 /* SettingsViewController.swift in Sources */,
 				4C0C766C1649F95100DD372F /* MlDatePickerViewController.m in Sources */,
 				4CFB21EE164B8B0F0055CC3D /* MlChartViewController.m in Sources */,
 				4CFB21F1164B8C870055CC3D /* MlMailViewController.m in Sources */,
@@ -2015,6 +2021,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Mood_Log-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2058,6 +2065,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Mood_Log-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -2086,7 +2094,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.voyageropen.Mood-Log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood-Log-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood_Log-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2116,7 +2124,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.voyageropen.Mood-Log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood-Log-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MoodLog/Mood_Log-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

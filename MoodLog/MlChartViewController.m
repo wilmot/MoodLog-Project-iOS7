@@ -226,11 +226,6 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
     return YES;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
-}
-
 - (void)didReceiveMemoryWarning {
     [self setSegment:nil];
     [self setToolBar:nil];

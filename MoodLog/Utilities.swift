@@ -8,6 +8,27 @@
 
 import UIKit
 
+let kPieOrDonutChartKey = "pieOrDonutChartDefault"
+public var pieOrDonutChart: Bool = false // false is pie, true is donut
+
+@objc public class PieOrDonut: NSObject {
+ 
+    override public init() {
+    }
+    
+    @objc class func donut() -> Bool {
+        let defaults = UserDefaults.standard
+
+        // pie or donut
+        if defaults.object(forKey: kPieOrDonutChartKey) == nil {
+            defaults.set(pieOrDonutChart, forKey: kPieOrDonutChartKey)
+            defaults.synchronize()
+        }
+        pieOrDonutChart = defaults.bool(forKey: kPieOrDonutChartKey)
+        return pieOrDonutChart
+    }
+}
+
 extension UIColor {
     class func color(withData data:Data) -> UIColor {
         return NSKeyedUnarchiver.unarchiveObject(with: data) as! UIColor

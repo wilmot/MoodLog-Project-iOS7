@@ -71,7 +71,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 }
 
 #pragma mark - Orientation change
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [self.sliderChartView setNeedsDisplay];
     [self.moodsDrawingView setNeedsDisplay];
 }
@@ -224,6 +224,18 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [self setMoodContainer:nil];
+    [self setMonthLabel:nil];
+    [self setSortABCButton:nil];
+    [self setSortCBAButton:nil];
+    [self setSortShuffleButton:nil];
+    [self setToggleFacesButton:nil];
+    [self setBlankCoveringView:nil];
+    [self setExpandButton:nil];
+    [self setMoodViewWithHeader:nil];
+    [self setExpandButton:nil];
+    [self setSortGroupButton:nil];
+    [self setNoMoodsLabel:nil];
 }
 
 #pragma mark - Split view
@@ -442,19 +454,4 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self saveContext];
 }
 
-- (void)viewDidUnload {
-    [self setMoodContainer:nil];
-    [self setMonthLabel:nil];
-    [self setSortABCButton:nil];
-    [self setSortCBAButton:nil];
-    [self setSortShuffleButton:nil];
-    [self setToggleFacesButton:nil];
-    [self setBlankCoveringView:nil];
-    [self setExpandButton:nil];
-    [self setMoodViewWithHeader:nil];
-    [self setExpandButton:nil];
-    [self setSortGroupButton:nil];
-    [self setNoMoodsLabel:nil];
-    [super viewDidUnload];
-}
 @end

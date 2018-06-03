@@ -42,7 +42,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
 }
 
 #pragma mark - Orientation change
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [self.barChartForSummary setNeedsDisplay];
 }
 

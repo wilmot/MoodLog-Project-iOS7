@@ -10,6 +10,7 @@
 #import "MlChartDrawingView.h"
 #import "Prefs.h"
 #import "MlColorChoices.h"
+#import "Mood_Log-Swift.h"
 
 @implementation MlChartDrawingView
 
@@ -136,11 +137,13 @@ static CGFloat sidewaysWidthThreshhold = 64.0;
         CGContextFillPath(context);
         
         // Turn Pie into Donut!
-        CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
-        CGContextMoveToPoint(context, centerx, centery);
-        CGContextAddArc(context, centerx, centery, self.circumference / 2.0, 2*pi, 0, 1);
-        CGContextClosePath(context);
-        CGContextFillPath(context);
+        if([PieOrDonut donut]) {
+            CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
+            CGContextMoveToPoint(context, centerx, centery);
+            CGContextAddArc(context, centerx, centery, self.circumference / 2.0, 2*pi, 0, 1);
+            CGContextClosePath(context);
+            CGContextFillPath(context);
+        }
 
     }
     

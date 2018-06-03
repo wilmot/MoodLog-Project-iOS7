@@ -111,10 +111,6 @@ MoodLogEvents *myLogEntry;
     [self updateMoodRecordsForLogEntry];
 }
 
-- (void) viewDidUnload {
-    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
-}
-
 - (void) refresh {
 
     NSPredicate *myFilter;
@@ -191,6 +187,7 @@ MoodLogEvents *myLogEntry;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
 }
 
 - (IBAction)longPress:(id)sender {

@@ -45,15 +45,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [self setInfoTextView:nil];
+    [self setDateLabel:nil];
 }
 
 - (IBAction)doneButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)viewDidUnload {
-    [self setInfoTextView:nil];
-    [self setDateLabel:nil];
-    [super viewDidUnload];
-}
 @end

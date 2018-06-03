@@ -70,6 +70,12 @@ int numberOfPages = 5;
     return view;
 }
 
+- (IBAction)unwindToHere:(UIStoryboardSegue *)sender {
+    UIViewController *sourceViewController = sender.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
+    NSLog(@"Unwound to here from %@", sourceViewController);
+}
+
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
     
     MlWelcomeScreenViewController *view = nil;

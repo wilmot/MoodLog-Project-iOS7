@@ -88,14 +88,10 @@ Boolean firstLoad;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidUnload {
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
     [self setChartCollectionView:nil];
     [self setManagedObjectContext:nil];
     [self setFetchedResultsController:nil];
-    [super viewDidUnload];
 }
 
 - (void) setCellType: (id)sender {
@@ -110,7 +106,7 @@ Boolean firstLoad;
 
 
 #pragma mark - Orientation change
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [self.chartCollectionView.collectionViewLayout invalidateLayout];
 }
 

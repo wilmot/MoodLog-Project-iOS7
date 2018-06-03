@@ -168,12 +168,6 @@ NSString *SPACE = @"";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)doneButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-- (void)viewDidUnload {
     [self setStartSlider:nil];
     [self setEndSlider:nil];
     [self setAllButton:nil];
@@ -189,8 +183,12 @@ NSString *SPACE = @"";
     [self setEndDateLabel:nil];
     [self setComposeButton:nil];
     [self setRecipientList:nil];
-    [super viewDidUnload];
 }
+
+- (IBAction)doneButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)pressAllButton:(id)sender {
     self.startSlider.value = 0.0;
     self.endSlider.value = [self.endSlider maximumValue];
