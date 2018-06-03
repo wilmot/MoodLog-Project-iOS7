@@ -422,7 +422,7 @@ NSString *SPACE = @"";
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
         [controller setToRecipients:[self.recipientList.text componentsSeparatedByString:@","]];
-        [controller setSubject:[NSString stringWithFormat:@"Mood Logs for %@ (%@)",self.dateRangeLabel.text, self.eventCount.text]];
+        [controller setSubject:[NSString stringWithFormat:@"Mood logs for %@ (%@)",self.dateRangeLabel.text, self.eventCount.text]];
  
         SPACE = @"";
         NSString *bodyText = [self mailText];
@@ -634,7 +634,7 @@ NSString *SPACE = @"";
 	NSError *error = nil;
 	if (![self.fetchedResultsController performFetch:&error]) {
         UIAlertController * alert = [UIAlertController
-                                     alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood Log data", @"Core data retrieving error alert title")
+                                     alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood-Log data", @"Core data retrieving error alert title")
                                      message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data unknown error alert text"), error, [error userInfo]]
                                      preferredStyle:UIAlertControllerStyleAlert];
         

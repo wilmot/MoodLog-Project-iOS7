@@ -905,7 +905,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                         <rect key="frame" x="0.0" y="1034.5" width="320" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="16j-mv-Lc5" id="z7U-BU-6gb">
-                                            <rect key="frame" x="0.0" y="0.0" width="294" height="41.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="286" height="41.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quiet Hours:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQU-7d-uLW">
@@ -1031,7 +1031,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
             </objects>
             <point key="canvasLocation" x="220.80000000000001" y="928.33583208395817"/>
         </scene>
-        <!--Mood Log Quiet Hours-->
+        <!--Mood-Log Quiet Hours-->
         <scene sceneID="jfC-CF-rQO">
             <objects>
                 <tableViewController id="2vX-gw-xTS" customClass="MlQuietHoursTableViewController" sceneMemberID="viewController">
@@ -1129,7 +1129,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                             <outlet property="delegate" destination="2vX-gw-xTS" id="5Y3-jb-D8D"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Mood Log Quiet Hours" id="wmR-RT-8Xj"/>
+                    <navigationItem key="navigationItem" title="Mood-Log Quiet Hours" id="wmR-RT-8Xj"/>
                     <connections>
                         <outlet property="fromCell" destination="e1T-TF-upd" id="cqs-Xl-Vts"/>
                         <outlet property="fromLabel" destination="3ko-Xi-cyb" id="mU7-Gb-9qP"/>
@@ -1158,7 +1158,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
             </objects>
             <point key="canvasLocation" x="-582.39999999999998" y="522.63868065967017"/>
         </scene>
-        <!--Mood Log Entry-->
+        <!--Mood-Log Entry-->
         <scene sceneID="fO1-RU-NEO">
             <objects>
                 <tableViewController storyboardIdentifier="moodLogDetailView" hidesBottomBarWhenPushed="YES" id="JzN-CV-xZQ" customClass="MlDetailViewController" sceneMemberID="viewController">
@@ -1413,7 +1413,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                             <outlet property="delegate" destination="JzN-CV-xZQ" id="NvV-Qc-QIs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Mood Log Entry" id="P0o-SE-Hfx">
+                    <navigationItem key="navigationItem" title="Mood-Log Entry" id="P0o-SE-Hfx">
                         <barButtonItem key="backBarButtonItem" title="Entry" id="ZuG-Wc-HGD"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="iw1-W1-YFy">
                             <connections>

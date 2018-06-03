@@ -207,7 +207,7 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
 //    if (((long)((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount) > 0) {
         UIAlertController * alert = [UIAlertController
-                                     alertControllerWithTitle:NSLocalizedString(@"Mood Log", @"Application Title")
+                                     alertControllerWithTitle:NSLocalizedString(@"Mood-Log", @"Application Title")
                                      message:NSLocalizedString(@"Create a new entry to record your current mood.", @"Text to show in the reminder notification")
                                      preferredStyle:UIAlertControllerStyleAlert];
         
@@ -249,7 +249,7 @@
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             UIAlertController * alert = [UIAlertController
-                                         alertControllerWithTitle:NSLocalizedString(@"Error saving Mood Log data", @"Core data saving error alert title")
+                                         alertControllerWithTitle:NSLocalizedString(@"Error saving Mood-Log data", @"Core data saving error alert title")
                                          message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data unknown error alert text"), error, [error userInfo]]
                                          preferredStyle:UIAlertControllerStyleAlert];
             
@@ -332,7 +332,7 @@
          
          */
         UIAlertController * alert = [UIAlertController
-                                     alertControllerWithTitle:NSLocalizedString(@"Error finding Mood Log data", @"Core data persistent store coordinator error alert title")
+                                     alertControllerWithTitle:NSLocalizedString(@"Error finding Mood-Log data", @"Core data persistent store coordinator error alert title")
                                      message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data unknown error alert text"), error, [error userInfo]]
                                      preferredStyle:UIAlertControllerStyleAlert];
         

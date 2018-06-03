@@ -228,6 +228,9 @@ BOOL debugging;
 }
 
 - (void) updateRepeatingDateNotifications {
+    // First, clear all notifications to eliminate any stray ones
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+
     if (self.reminderTime0Switch.on) {
         [self cancelNotificationMatchingTime: self.remindersTime0];
         [self setRepeatingDateNotification:self.remindersTime0];
@@ -285,7 +288,7 @@ BOOL debugging;
     myLocalNotification.timeZone = [NSTimeZone localTimeZone];
     myLocalNotification.repeatInterval = kCFCalendarUnitDay;
     myLocalNotification.alertBody = NSLocalizedString(@"How are you feeling in this moment?", @"Text of the timer alert");
-    myLocalNotification.alertAction = NSLocalizedString(@"Launch Mood Log", @"Button text for timer alert");
+    myLocalNotification.alertAction = NSLocalizedString(@"Launch Mood-Log", @"Button text for timer alert");
     myLocalNotification.soundName = @"guitar_sound.caf";
     ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 1;
     myLocalNotification.applicationIconBadgeNumber = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
@@ -300,7 +303,7 @@ BOOL debugging;
     myLocalNotification.fireDate = fireTime;
     myLocalNotification.timeZone = [NSTimeZone localTimeZone];
     myLocalNotification.alertBody = NSLocalizedString(@"How are you feeling in this moment?", @"Text of the timer alert");
-    myLocalNotification.alertAction = NSLocalizedString(@"Launch Mood Log", @"Button text for timer alert");
+    myLocalNotification.alertAction = NSLocalizedString(@"Launch Mood-Log", @"Button text for timer alert");
     myLocalNotification.soundName = @"guitar_sound.caf";
     myLocalNotification.applicationIconBadgeNumber = ++((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount;
     [[UIApplication sharedApplication] scheduleLocalNotification:myLocalNotification];

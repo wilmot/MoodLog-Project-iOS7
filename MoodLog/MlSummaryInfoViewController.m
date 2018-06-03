@@ -75,9 +75,9 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
         attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor darkTextColor], NSForegroundColorAttributeName, nil];
         NSString *textToDisplay;
         if (events > 1) {
-            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou created %d Mood Log entries dating from %@ to %@.", @"\n\nYou created %d Mood Log entries dating from %@ to %@."), events, startDate, endDate];
+            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou created %d Mood-Log entries dating from %@ to %@.", @"\n\nYou created %d Mood-Log entries dating from %@ to %@."), events, startDate, endDate];
         } else {
-            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou created %d Mood Log entry, on %@.", @"\n\nYou created %d Mood Log entry, on %@. -- singular"), events, startDate];
+            textToDisplay = [NSString stringWithFormat:NSLocalizedString(@"\n\nYou created %d Mood-Log entry, on %@.", @"\n\nYou created %d Mood-Log entry, on %@. -- singular"), events, startDate];
         }
         summaryLine = [[NSAttributedString alloc] initWithString:textToDisplay attributes:attrsDictionary];
         [summaryAttributedString appendAttributedString:summaryLine];
@@ -289,7 +289,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
 	NSError *error = nil;
 	if (![self.fetchedResultsControllerByDate performFetch:&error]) {
         UIAlertController * alert = [UIAlertController
-                                     alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood Log data", @"Core data retrieving error alert title")
+                                     alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood-Log data", @"Core data retrieving error alert title")
                                      message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data unknown error alert text"), error, [error userInfo]]
                                      preferredStyle:UIAlertControllerStyleAlert];
         
@@ -342,7 +342,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
 	NSError *error = nil;
 	if (![self.fetchedResultsControllerByCategory performFetch:&error]) {
         UIAlertController * alert = [UIAlertController
-                                     alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood Log data", @"Core data retrieving error alert title")
+                                     alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood-Log data", @"Core data retrieving error alert title")
                                      message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data unknown error alert text"), error, [error userInfo]]
                                      preferredStyle:UIAlertControllerStyleAlert];
         
@@ -395,7 +395,7 @@ NSUInteger MAX_EMOTIONS_TO_DISPLAY = 25;
 	NSError *error = nil;
 	if (![self.fetchedResultsControllerByEmotion performFetch:&error]) {
         UIAlertController * alert = [UIAlertController
-                                     alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood Log data", @"Core data retrieving error alert title")
+                                     alertControllerWithTitle:NSLocalizedString(@"Error retrieving Mood-Log data", @"Core data retrieving error alert title")
                                      message:[NSString stringWithFormat:NSLocalizedString(@"An unknown error has occurred:  %@, %@.\n\n Report this issue to support@voyageropen.com", @"Core Data unknown error alert text"), error, [error userInfo]]
                                      preferredStyle:UIAlertControllerStyleAlert];
         
