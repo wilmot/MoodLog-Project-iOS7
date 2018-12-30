@@ -33,12 +33,14 @@ MoodLogEvents *mood;
     [self.journalTextView setDelegate:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeSizeCategoryChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     mood = (MoodLogEvents *) self.detailItem;
     self.journalTextView.text = mood.journalEntry;
     [self.journalToolbar setRightBarButtonItem:nil animated:YES];
+    [self configureJournalFont];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,6 +58,19 @@ MoodLogEvents *mood;
     // CGRect statusBarFrame = [self.view.window convertRect:[UIApplication sharedApplication].statusBarFrame toView:self.view];
     // Might need this for iOS 6: [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.parentViewController.view.bounds.size.height - self.navigationController.toolbar.frame.size.height - statusBarFrame.size.height)];
     [self.journalTextView setFrame:CGRectMake(0,0,self.parentViewController.view.bounds.size.width,self.parentViewController.view.bounds.size.height)];
+}
+
+-(void) noticeSizeCategoryChanged:(NSNotification *)notification {
+    NSLog(@"Noticed that the size category changed");
+    [self configureJournalFont];
+}
+
+- (void)configureJournalFont {
+    UIFont *preferred = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    CGFloat preferredFontSize = preferred.pointSize;
+    UIFont *journalFont = self.journalTextView.font;
+    UIFont *newJournalFont = [UIFont fontWithName:journalFont.fontName size:preferredFontSize];
+    self.journalTextView.font = newJournalFont;
 }
 
 - (void)didReceiveMemoryWarning

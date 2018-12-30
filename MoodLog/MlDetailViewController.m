@@ -53,6 +53,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self.slidersSetAdjustButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.slidersSetAdjustButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeSizeCategoryChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -76,8 +77,20 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     [self.moodsDrawingView setNeedsDisplay];
 }
 
-- (void)configureView
-{
+-(void)noticeSizeCategoryChanged:(NSNotification *)notification {
+    NSLog(@"Noticed that the size category changed");
+    [self configureEntryFont];
+}
+
+- (void)configureEntryFont {
+    UIFont *preferred = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    CGFloat preferredFontSize = preferred.pointSize;
+    UIFont *entryFont = self.entryLogTextView.font;
+    UIFont *newEntryFont = [UIFont fontWithName:entryFont.fontName size:preferredFontSize];
+    self.entryLogTextView.font = newEntryFont;
+}
+
+- (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
         for (id object in self.tableViewCellCollection) {
@@ -118,6 +131,7 @@ typedef NS_ENUM(NSInteger, DetailCells) {
             [self.entryLogTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:14]];
             self.entryLogTextView.textAlignment = NSTextAlignmentLeft;
             self.entryLogTextView.text = self.detailItem.journalEntry;
+            [self configureEntryFont];
             self.littleKeyboardIcon.hidden = YES;
             self.noJournalLabel.hidden = YES;
         }

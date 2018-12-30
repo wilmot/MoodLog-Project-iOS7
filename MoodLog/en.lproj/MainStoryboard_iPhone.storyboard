@@ -398,16 +398,18 @@
                                             <attributedString key="attributedText">
                                                 <fragment content="I feel: happy, sad and elated.">
                                                     <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment>
                                                     <string key="content">
-Does the font shrink when I have more text? What happens when it hits line four? Does it dot?</string>
+Does the font shrink when I have more text? What happens when it hits line four? Does it dot?
+Here's another line
+And yet another</string>
                                                     <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                     </attributes>
@@ -487,21 +489,22 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="ut5-p4-ZhH">
-                                            <rect key="frame" x="50" y="14" width="391" height="67.333333333333329"/>
+                                            <rect key="frame" x="50" y="14" width="399" height="67.333333333333329"/>
                                             <string key="text">I feel: happy, sad and elated.
-Does the font shrink when I have more text? What happens when it hits line four? Does it dot?</string>
+Does the font shrink when I have more text? What happens when it hits line four? Does it dot?
+Here's line four!</string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZN4-Lx-q2a" customClass="MlChartDrawingView">
-                                            <rect key="frame" x="449" y="0.0" width="118" height="84.333333333333329"/>
+                                            <rect key="frame" x="457" y="0.0" width="118" height="84.333333333333329"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="118" id="Ovs-6v-cJf"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5J-Nr-fz0" customClass="MlChartDrawingView">
-                                            <rect key="frame" x="570" y="0.0" width="118" height="84.333333333333329"/>
+                                            <rect key="frame" x="578" y="4" width="118" height="75.666666666666671"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="118" id="7Rk-F0-UYC"/>
@@ -512,12 +515,12 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k3D-0s-c12" secondAttribute="trailing" id="14c-hY-lJk"/>
                                         <constraint firstItem="ut5-p4-ZhH" firstAttribute="top" secondItem="k3D-0s-c12" secondAttribute="bottom" id="92w-89-XCV"/>
                                         <constraint firstItem="k3D-0s-c12" firstAttribute="top" secondItem="djm-vE-weg" secondAttribute="top" constant="2" id="Avu-Oz-rxW"/>
-                                        <constraint firstItem="H5J-Nr-fz0" firstAttribute="top" secondItem="djm-vE-weg" secondAttribute="top" id="DmU-iZ-qly"/>
                                         <constraint firstAttribute="bottom" secondItem="ZN4-Lx-q2a" secondAttribute="bottom" constant="-0.5" id="NXB-p3-hcz"/>
+                                        <constraint firstAttribute="bottom" secondItem="H5J-Nr-fz0" secondAttribute="bottom" constant="4" id="UnM-Mq-SrO"/>
                                         <constraint firstItem="YxC-Oa-KPj" firstAttribute="leading" secondItem="djm-vE-weg" secondAttribute="leading" id="Uxc-w2-AFO"/>
                                         <constraint firstItem="ZN4-Lx-q2a" firstAttribute="leading" secondItem="ut5-p4-ZhH" secondAttribute="trailing" constant="8" id="VMS-E8-hVT"/>
-                                        <constraint firstAttribute="bottom" secondItem="H5J-Nr-fz0" secondAttribute="bottom" constant="-0.5" id="WZH-HN-P58"/>
                                         <constraint firstItem="H5J-Nr-fz0" firstAttribute="leading" secondItem="ZN4-Lx-q2a" secondAttribute="trailing" constant="3" id="apC-eA-xaz"/>
+                                        <constraint firstItem="H5J-Nr-fz0" firstAttribute="top" secondItem="djm-vE-weg" secondAttribute="top" constant="4" id="cFL-f0-ne1"/>
                                         <constraint firstItem="k3D-0s-c12" firstAttribute="leading" secondItem="djm-vE-weg" secondAttribute="leading" constant="50" id="dtJ-TO-0A6"/>
                                         <constraint firstItem="ut5-p4-ZhH" firstAttribute="leading" secondItem="YxC-Oa-KPj" secondAttribute="trailing" constant="2" id="hoa-4K-XxH"/>
                                         <constraint firstAttribute="bottom" secondItem="ut5-p4-ZhH" secondAttribute="bottom" constant="2.5" id="jac-IQ-RCC"/>
@@ -527,7 +530,7 @@ Does the font shrink when I have more text? What happens when it hits line four?
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="H5J-Nr-fz0" secondAttribute="trailing" constant="48" id="OYu-af-yyN"/>
+                                    <constraint firstItem="djm-vE-weg" firstAttribute="trailing" secondItem="H5J-Nr-fz0" secondAttribute="trailing" constant="2" id="OYu-af-yyN"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="calendarImage" destination="FED-ai-tnm" id="ZKK-qk-E0U"/>
@@ -2000,7 +2003,7 @@ Edit or Create a new Emotion</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qU-QT-udi">
-                                <rect key="frame" x="0.0" y="-20" width="736" height="434"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2012,7 +2015,6 @@ Edit or Create a new Emotion</string>
                             <constraint firstItem="5qU-QT-udi" firstAttribute="bottom" secondItem="46o-Tb-crl" secondAttribute="bottom" id="cYa-T3-UZZ"/>
                             <constraint firstItem="5qU-QT-udi" firstAttribute="top" secondItem="46o-Tb-crl" secondAttribute="top" id="cgE-Cx-GVx"/>
                             <constraint firstItem="5qU-QT-udi" firstAttribute="leading" secondItem="zFA-uC-hkf" secondAttribute="leading" id="oNl-Rg-cUu"/>
-                            <constraint firstItem="zFA-uC-hkf" firstAttribute="top" secondItem="5qU-QT-udi" secondAttribute="top" constant="64" id="pDM-ri-uRb"/>
                             <constraint firstItem="zFA-uC-hkf" firstAttribute="bottom" secondItem="5qU-QT-udi" secondAttribute="bottom" id="u9x-S4-9lJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zFA-uC-hkf"/>

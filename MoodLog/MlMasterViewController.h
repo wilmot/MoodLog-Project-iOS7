@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *infoButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chartButton;
 @property (strong, nonatomic) UIView *firstTimeView;
+@property (strong, nonatomic) UIFont *timeLabelFont;
 
 typedef NS_ENUM(NSInteger, SearchTabItem) {
     SearchTabItemAll,

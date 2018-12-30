@@ -23,6 +23,7 @@
 @implementation MlMasterViewController
 
 static CGFloat CELL_HEIGHT;
+CGFloat preferredFontSize;
 NSPredicate *filterPredicate = nil;
 NSString *cellIdentifier = @"Cell";
 
@@ -34,6 +35,8 @@ NSString *cellIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeSizeCategoryChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
+
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     
@@ -61,8 +64,6 @@ NSString *cellIdentifier = @"Cell";
     //[self deleteUnselectedEmotionsFromOldRecords];
     //[self deleteEmotionsWithNullParent];
     
-    CELL_HEIGHT = [[self.tableView dequeueReusableCellWithIdentifier:cellIdentifier] bounds].size.height;
-    
     if ([[self.fetchedResultsController sections] count] > 0) {
         [self scrollToTopButDontShowSearchBar];
     }
@@ -83,6 +84,11 @@ NSString *cellIdentifier = @"Cell";
     }
 }
 
+ -(void) noticeSizeCategoryChanged:(NSNotification *)notification {
+     NSLog(@"Noticed that the size category changed");
+     [self adjustCellHeightAndPreferredFontSize];
+ }
+
 - (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     // Regular -- show charts
     // Compact -- don't show charts
@@ -102,6 +108,18 @@ NSString *cellIdentifier = @"Cell";
     [self scrollToTopButDontShowSearchBar];
     self.navigationItem.rightBarButtonItem.enabled = NO; // Work around a bug where the 'New' button is grayed out when returning from the DetailView
     self.navigationItem.rightBarButtonItem.enabled = YES;
+    
+    [self adjustCellHeightAndPreferredFontSize];
+}
+
+- (void)adjustCellHeightAndPreferredFontSize {
+    UIFont *preferred = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    preferredFontSize = preferred.pointSize;
+    UIFont *mine = [UIFont fontWithName:@"HelveticaNeue" size:preferredFontSize];
+    self.timeLabelFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:preferredFontSize - 4.0];
+    CGFloat timeLabelHeight = [self heightForLabel:@"hi" font:self.timeLabelFont width:20.0];
+    CELL_HEIGHT = [self heightForLabel:@"hi\nhi\nhi\nhi\nhi" font:mine width:20.0] + timeLabelHeight + 8.0; // 8.0 is a magic number that allows all four lines to show
+    NSLog(@"Cell height: %f",CELL_HEIGHT);
 }
 
 - (void)fetch {
@@ -378,6 +396,33 @@ NSString *cellIdentifier = @"Cell";
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [sectionInfo numberOfObjects];
+}
+
+/*
+  func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
+    let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.greatestFiniteMagnitude))
+    label.numberOfLines = 0
+    label.lineBreakMode = NSLineBreakMode.byWordWrapping
+    label.font = font
+    label.text = text
+
+    label.sizeToFit()
+    return label.frame.height
+}
+
+let font = UIFont(name: "Helvetica", size: 20.0)
+
+var height = heightForView("This is just a load of text", font: font, width: 100.0)
+ */
+
+-(CGFloat)heightForLabel:(NSString *)text font:(UIFont *)font width:(CGFloat)width {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, CGFLOAT_MAX)];
+    label.numberOfLines = 4;
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    label.font = font;
+    label.text = text;
+    [label sizeToFit];
+    return [label frame].size.height;
 }
 
 // Setting the cell height in the Storyboard doesn't set it in the running app, so I override heightForRowAtIndexPath
@@ -657,6 +702,7 @@ NSString *cellIdentifier = @"Cell";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = NSLocalizedString(@"h:mm a", @"h:mm a date format");
     
+    cell.timeLabel.font = self.timeLabelFont;
     cell.timeLabel.text = [dateFormatter stringFromDate: today];
     
     // Fetch the Mood list for this journal entry
@@ -722,8 +768,8 @@ NSString *cellIdentifier = @"Cell";
     }
     as = [[NSMutableAttributedString alloc] initWithString:displayString];
     NSRange journalRange = NSMakeRange(entryEnd, [as length] - entryEnd);
-    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue" size:14] range:NSMakeRange(0,entryEnd)];
-    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Light" size:14] range:journalRange];
+    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue" size:preferredFontSize] range:NSMakeRange(0,entryEnd)];
+    [as addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Light" size:preferredFontSize] range:journalRange];
     [as addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:journalRange];
     cell.mainLabel.attributedText = as;
 
