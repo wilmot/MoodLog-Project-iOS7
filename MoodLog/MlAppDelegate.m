@@ -20,6 +20,7 @@
 @synthesize masterViewController = _masterViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.loggedIn = NO;
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     _masterViewController = (MlMasterViewController *)navigationController.topViewController;
     _masterViewController.managedObjectContext = self.managedObjectContext;
@@ -174,6 +175,8 @@
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    self.loggedIn = NO;
+    [self.masterViewController viewDidAppear:YES];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -190,6 +193,7 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     ((MlAppDelegate *)[UIApplication sharedApplication].delegate).badgeCount = 0;
+    [self.masterViewController viewDidAppear:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

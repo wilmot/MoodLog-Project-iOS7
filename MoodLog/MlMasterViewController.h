@@ -8,11 +8,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class MlDetailViewController;
-
 #import <CoreData/CoreData.h>
 #import "MoodLogEvents.h"
+
+@class MlDetailViewController;
 
 @interface MlMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UISearchResultsUpdating, UISearchBarDelegate>
 
@@ -38,5 +37,6 @@ typedef NS_ENUM(NSInteger, SearchTabItem) {
 
 - (IBAction)showWelcomeScreen:(id)sender;
 - (IBAction)showCharts:(id)sender;
+- (void)makeLoggedInState: (Boolean)state;
 
 @end

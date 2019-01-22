@@ -15,8 +15,11 @@
 #import "MlCell.h"
 #import "MlMailViewController.h"
 #import "Prefs.h"
+#import "Mood_Log-Swift.h" // Bridging header for access to PrivacyViewController
 
 @interface MlMasterViewController ()
+@property (strong, nonatomic) PrivacyViewController *privacyViewController;
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
@@ -317,6 +320,9 @@ NSString *cellIdentifier = @"Cell";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    if ( ((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO ) {
+        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -535,6 +541,9 @@ var height = heightForView("This is just a load of text", font: font, width: 100
     }
     else if ([[segue identifier] isEqualToString:@"mailView"]) {
         [(MlMailViewController *)[segue destinationViewController] setMasterViewController:self];
+    }
+    else if ([[segue identifier] isEqualToString:@"showPrivacyScreen"]) {
+        self.privacyViewController = segue.destinationViewController;
     }
 }
 
@@ -792,6 +801,15 @@ var height = heightForView("This is just a load of text", font: font, width: 100
     dateFormatter.dateFormat = @"MM/dd/YY hh:mm:ss a";
     NSString *dateString = [dateFormatter stringFromDate:date];
     return dateString;
+}
+
+- (void)makeLoggedInState: (Boolean)state {
+    [self.privacyViewController makeLoggedInStateWithNewState:state];
+}
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)unwindSegue {
+//    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
 }
 
 @end

@@ -598,6 +598,7 @@ Here's line four!</string>
                         <outlet property="addButton" destination="uA0-33-2bj" id="cNr-Of-VEE"/>
                         <outlet property="chartButton" destination="lbe-NL-9Pc" id="sfY-rr-AHU"/>
                         <outlet property="infoButton" destination="RCy-EY-dUL" id="sX7-Oh-FrD"/>
+                        <segue destination="V6k-wk-E7E" kind="showDetail" identifier="showPrivacyScreen" id="uPv-X8-Pc6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
@@ -1776,7 +1777,7 @@ Here's line four!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akh-05-JeU">
-                                <rect key="frame" x="20" y="32" width="696" height="40.666666666666657"/>
+                                <rect key="frame" x="20" y="52" width="696" height="216"/>
                                 <string key="text">&lt;Placeholder for future feature&gt;
 Edit or Create a new Emotion</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1784,7 +1785,7 @@ Edit or Create a new Emotion</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose a face from among the faces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQU-QZ-IiZ">
-                                <rect key="frame" x="20" y="95.666666666666686" width="282" height="21"/>
+                                <rect key="frame" x="20" y="291" width="282" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="dQ7-oo-C4m"/>
                                 </constraints>
@@ -1793,7 +1794,7 @@ Edit or Create a new Emotion</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Import a Face" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCo-iC-6UE">
-                                <rect key="frame" x="20" y="140.66666666666666" width="105" height="21"/>
+                                <rect key="frame" x="20" y="336" width="105" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7gf-tc-cPq"/>
                                 </constraints>
@@ -1802,7 +1803,7 @@ Edit or Create a new Emotion</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Set a category for the emotion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3B-qg-ItI">
-                                <rect key="frame" x="20" y="191.66666666666669" width="233" height="21"/>
+                                <rect key="frame" x="20" y="387" width="233" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bQT-SG-4jd"/>
                                 </constraints>
@@ -1811,7 +1812,7 @@ Edit or Create a new Emotion</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pb-nx-KU4">
-                                <rect key="frame" x="263" y="0.0" width="37" height="30"/>
+                                <rect key="frame" x="263" y="20" width="37" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HVm-1j-UwG"/>
                                 </constraints>
@@ -2509,12 +2510,452 @@ Edit or Create a new Emotion</string>
             </objects>
             <point key="canvasLocation" x="1894" y="681"/>
         </scene>
+        <!--Privacy View Controller-->
+        <scene sceneID="jBy-bR-lH4">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyScreen" id="V6k-wk-E7E" customClass="PrivacyViewController" customModule="Mood_Log" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xtn-7t-HfQ">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgl-aJ-vb2">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zu3-Pz-xTJ">
+                                        <rect key="frame" x="10" y="20" width="716" height="374"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SixColors" translatesAutoresizingMaskIntoConstraints="NO" id="JpX-lY-Cp8">
+                                                <rect key="frame" x="0.0" y="0.0" width="716" height="68"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="68" id="viP-LC-gFE"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SixColors" translatesAutoresizingMaskIntoConstraints="NO" id="eOH-qW-Sze">
+                                                <rect key="frame" x="0.0" y="306" width="716" height="68"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="68" id="eaj-Uq-G8p"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3i-xb-Klc">
+                                                <rect key="frame" x="280" y="20.333333333333336" width="156" height="27.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geu-qh-9Fp" userLabel="PIN Pad View">
+                                                <rect key="frame" x="234" y="-14" width="248" height="402"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-tx-dYE">
+                                                        <rect key="frame" x="79.666666666666686" y="4" width="89" height="42"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="L7n-nl-S9G">
+                                                        <rect key="frame" x="0.0" y="54" width="248" height="248"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="N4F-wF-7Lf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="248"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy9-sB-exv" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="80" id="Egp-At-L0o"/>
+                                                                            <constraint firstAttribute="width" constant="80" id="TGg-qP-QZ7"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="1"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="EpS-Ry-e52"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXr-x9-8Pa" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="84" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="80" id="3eo-ty-pms"/>
+                                                                            <constraint firstAttribute="width" constant="80" id="G39-if-4mP"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="4"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="xlu-I3-n7G"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkC-Su-4fX" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="168" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="80" id="mRl-6X-WsR"/>
+                                                                            <constraint firstAttribute="width" constant="80" id="oWw-sO-Pfg"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="7"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="LIL-VC-wqD"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iZl-DH-Fjz">
+                                                                <rect key="frame" x="84" y="0.0" width="80" height="248"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BQ-8r-SWZ" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="Ujb-vg-WT4"/>
+                                                                            <constraint firstAttribute="height" constant="80" id="nWx-TR-rX9"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="2"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="bAG-7h-NSb"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-P8-wYb" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="84" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="bWs-Nd-hOA"/>
+                                                                            <constraint firstAttribute="height" constant="80" id="wV0-bF-1nV"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="5"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="hmP-9z-k3R"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqr-rW-BRc" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="168" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="80" id="JHJ-Dx-1g7"/>
+                                                                            <constraint firstAttribute="width" constant="80" id="bVA-C7-NDS"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="8"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="36G-yU-HfY"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-Jo-Tl7">
+                                                                <rect key="frame" x="168" y="0.0" width="80" height="248"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xx8-l5-Xpv" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="80" id="oDE-Ub-dTH"/>
+                                                                            <constraint firstAttribute="width" constant="80" id="szj-Vo-prK"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="3"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="Q7Y-bV-vpu"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5f6-Ag-ddp" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="84" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="OSw-AU-lnF"/>
+                                                                            <constraint firstAttribute="height" constant="80" id="kv3-di-5jk"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="6"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="4AW-Pc-PDM"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jo-2v-lUs" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="168" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="ZL9-o1-5ja"/>
+                                                                            <constraint firstAttribute="height" constant="80" id="mFe-4G-b0U"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="9"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="iSw-mM-1hq"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-I4-7Vk">
+                                                        <rect key="frame" x="101.66666666666669" y="310" width="45" height="30"/>
+                                                        <state key="normal" title="Delete"/>
+                                                        <connections>
+                                                            <action selector="tapDelete:" destination="V6k-wk-E7E" eventType="touchUpInside" id="JSc-CG-utW"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2P-YX-et4">
+                                                        <rect key="frame" x="22.666666666666686" y="340" width="203" height="39"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <state key="normal" title="Enter PIN or Tap Here"/>
+                                                        <state key="highlighted" title="Log Out"/>
+                                                        <connections>
+                                                            <action selector="tapButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="IgJ-IX-a3F"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Authenticate with Face ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkH-z0-hPT">
+                                                        <rect key="frame" x="0.66666666666665719" y="379" width="246.66666666666666" height="20.333333333333314"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="JqV-I4-7Vk" firstAttribute="centerX" secondItem="L7n-nl-S9G" secondAttribute="centerX" id="3l9-Li-P65"/>
+                                                    <constraint firstItem="P6H-tx-dYE" firstAttribute="centerX" secondItem="Geu-qh-9Fp" secondAttribute="centerX" id="8yK-cB-hPV"/>
+                                                    <constraint firstItem="JkH-z0-hPT" firstAttribute="top" secondItem="o2P-YX-et4" secondAttribute="bottom" id="BoN-He-6Mc"/>
+                                                    <constraint firstItem="L7n-nl-S9G" firstAttribute="centerX" secondItem="P6H-tx-dYE" secondAttribute="centerX" id="ChA-56-G40"/>
+                                                    <constraint firstItem="JkH-z0-hPT" firstAttribute="centerX" secondItem="o2P-YX-et4" secondAttribute="centerX" id="Kjf-ZX-TW4"/>
+                                                    <constraint firstItem="o2P-YX-et4" firstAttribute="top" secondItem="JqV-I4-7Vk" secondAttribute="bottom" id="Nf2-jv-VO1"/>
+                                                    <constraint firstAttribute="width" constant="248" id="S8w-qX-vZc"/>
+                                                    <constraint firstItem="L7n-nl-S9G" firstAttribute="top" secondItem="P6H-tx-dYE" secondAttribute="bottom" constant="8" id="Txd-6J-b6y"/>
+                                                    <constraint firstItem="o2P-YX-et4" firstAttribute="centerX" secondItem="JqV-I4-7Vk" secondAttribute="centerX" id="YQ7-xp-WbE"/>
+                                                    <constraint firstItem="JqV-I4-7Vk" firstAttribute="top" secondItem="L7n-nl-S9G" secondAttribute="bottom" constant="8" id="f5M-Xo-Bls"/>
+                                                    <constraint firstItem="P6H-tx-dYE" firstAttribute="top" secondItem="Geu-qh-9Fp" secondAttribute="top" constant="4" id="xVP-zQ-8pf"/>
+                                                    <constraint firstAttribute="height" constant="402" id="zpr-Sl-xIw"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Z3i-xb-Klc" firstAttribute="centerX" secondItem="JpX-lY-Cp8" secondAttribute="centerX" id="1fO-fO-Cbz"/>
+                                            <constraint firstItem="JpX-lY-Cp8" firstAttribute="leading" secondItem="Zu3-Pz-xTJ" secondAttribute="leading" id="36j-Fv-vLe"/>
+                                            <constraint firstItem="Geu-qh-9Fp" firstAttribute="centerY" secondItem="Zu3-Pz-xTJ" secondAttribute="centerY" id="6Sy-7X-rvQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="eOH-qW-Sze" secondAttribute="trailing" id="6Vb-AP-SsP"/>
+                                            <constraint firstItem="Z3i-xb-Klc" firstAttribute="centerX" secondItem="Zu3-Pz-xTJ" secondAttribute="centerX" id="DL3-w7-RtZ"/>
+                                            <constraint firstItem="eOH-qW-Sze" firstAttribute="leading" secondItem="Zu3-Pz-xTJ" secondAttribute="leading" id="NjI-9E-RhA"/>
+                                            <constraint firstItem="JpX-lY-Cp8" firstAttribute="top" secondItem="Zu3-Pz-xTJ" secondAttribute="top" id="X0G-dA-gT0"/>
+                                            <constraint firstItem="Z3i-xb-Klc" firstAttribute="centerY" secondItem="JpX-lY-Cp8" secondAttribute="centerY" id="fXy-U5-VRm"/>
+                                            <constraint firstAttribute="bottom" secondItem="eOH-qW-Sze" secondAttribute="bottom" id="gV5-Dj-xyX"/>
+                                            <constraint firstAttribute="trailing" secondItem="JpX-lY-Cp8" secondAttribute="trailing" id="kc7-or-JdY"/>
+                                            <constraint firstItem="Geu-qh-9Fp" firstAttribute="centerX" secondItem="Zu3-Pz-xTJ" secondAttribute="centerX" id="sum-Zo-iKc"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="centerY" secondItem="rgl-aJ-vb2" secondAttribute="centerY" id="9nk-F6-Oc1"/>
+                                    <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="centerX" secondItem="rgl-aJ-vb2" secondAttribute="centerX" id="Efn-oL-txG"/>
+                                    <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="leading" secondItem="rgl-aJ-vb2" secondAttribute="leading" constant="10" id="bEC-RQ-r1x"/>
+                                    <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="top" secondItem="rgl-aJ-vb2" secondAttribute="top" constant="20" id="nXu-zS-VqV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rgl-aJ-vb2" firstAttribute="top" secondItem="Xtn-7t-HfQ" secondAttribute="top" id="5bJ-76-Yim"/>
+                            <constraint firstItem="rgl-aJ-vb2" firstAttribute="leading" secondItem="kgD-bL-7Or" secondAttribute="leading" id="JC0-bS-FqX"/>
+                            <constraint firstAttribute="bottom" secondItem="rgl-aJ-vb2" secondAttribute="bottom" id="NPP-cm-fq2"/>
+                            <constraint firstItem="kgD-bL-7Or" firstAttribute="trailing" secondItem="rgl-aJ-vb2" secondAttribute="trailing" id="Nmz-hV-4eH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kgD-bL-7Or"/>
+                    </view>
+                    <connections>
+                        <outlet property="controlsView" destination="Zu3-Pz-xTJ" id="GvJ-Kz-ABx"/>
+                        <outlet property="deleteButton" destination="JqV-I4-7Vk" id="a6U-Nq-CpR"/>
+                        <outlet property="faceIDLabel" destination="JkH-z0-hPT" id="zk9-J2-gcj"/>
+                        <outlet property="loginButton" destination="o2P-YX-et4" id="0fT-Zh-tgG"/>
+                        <outlet property="pinLabel" destination="P6H-tx-dYE" id="WMI-JF-t9r"/>
+                        <outlet property="stateView" destination="rgl-aJ-vb2" id="Yfp-wa-B1m"/>
+                        <outletCollection property="pinButtons" destination="Yy9-sB-exv" collectionClass="NSMutableArray" id="n0u-n9-bCn"/>
+                        <segue destination="mby-dX-P1V" kind="unwind" identifier="unwindTest" unwindAction="unwindToList:" id="ZHq-2g-vbL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mC1-Af-maB" sceneMemberID="firstResponder"/>
+                <exit id="mby-dX-P1V" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-2108" y="659"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Blank.png" width="80" height="98"/>
         <image name="CalendarBlank48.png" width="48" height="48"/>
         <image name="CalendarBlank93.png" width="93" height="93"/>
         <image name="RoundMoodLog.png" width="60" height="60"/>
+        <image name="SixColors" width="276" height="68"/>
         <image name="TimerIcon.png" width="20" height="20"/>
         <image name="chart.png" width="20" height="18"/>
         <image name="keyboard.png" width="22" height="14"/>

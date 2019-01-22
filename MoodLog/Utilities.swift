@@ -29,43 +29,6 @@ public var pieOrDonutChart: Bool = false // false is pie, true is donut
     }
 }
 
-extension UIColor {
-    class func color(withData data:Data) -> UIColor {
-        return NSKeyedUnarchiver.unarchiveObject(with: data) as! UIColor
-    }
-    
-    func encode() -> Data {
-        return NSKeyedArchiver.archivedData(withRootObject: self)
-    }
-    
-    func lighter(by percentage:CGFloat=30.0) -> UIColor {
-        return self.adjust(by: abs(percentage) )
-    }
-    
-    func darker(by percentage:CGFloat=30.0) -> UIColor {
-        return self.adjust(by: -1 * abs(percentage) )
-    }
-    
-    func adjust(by percentage:CGFloat=30.0) -> UIColor {
-        var r:CGFloat=0, g:CGFloat=0, b:CGFloat=0, a:CGFloat=0;
-        if(self.getRed(&r, green: &g, blue: &b, alpha: &a)){
-            return UIColor(red: min(r + percentage/100, 1.0),
-                           green: min(g + percentage/100, 1.0),
-                           blue: min(b + percentage/100, 1.0),
-                           alpha: a)
-        }
-        else{
-            return self
-        }
-    }
-}
-
-extension CGRect {
-    func center() -> CGPoint {
-        return CGPoint(x: self.midX, y: self.midY)
-    }
-}
-
 var DEBUGGING: Bool {
     get {
         if let debug = Bundle.main.infoDictionary?["Debugging"] as? Bool {
@@ -137,4 +100,21 @@ func htmlifyCharacters(string: String) -> String {
         newString = newString.replacingOccurrences(of: unescaped_char, with: escaped_char, options: NSString.CompareOptions.literal, range: nil)
     }
     return newString
+}
+
+/// The available states of being logged in or not.
+enum AuthenticationState {
+    case loggedin, loggedout
+}
+
+var xloggedInState: AuthenticationState = .loggedout
+var privacyPIN = "1822"
+var pinMax = 4
+
+// Perform something after a delay
+// e.g. delay(0.5) { dprint("hello") }
+func delay(_ time: Double, aFunc: @escaping ()->()) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + TimeInterval(time)) {
+        aFunc()
+    }
 }

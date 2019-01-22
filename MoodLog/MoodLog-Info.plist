@@ -27,7 +27,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Debugging</key>
-	<false/>
+	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSUbiquitousContainers</key>
@@ -52,6 +52,8 @@
 	<string>MainStoryboard_iPhone</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Use Face ID instead of a password to access Mood-Log.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
