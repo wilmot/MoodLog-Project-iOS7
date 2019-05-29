@@ -202,6 +202,10 @@ import LocalAuthentication
         updatePINText()
         deleteButton.isHidden = true
     }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        print("View will appear for Privacy View")
+    }
 
     /// Logs out or attempts to log in when the user taps the button.
     @IBAction func tapButton(_ sender: UIButton) {

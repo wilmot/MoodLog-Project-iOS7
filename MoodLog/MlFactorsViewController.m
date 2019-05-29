@@ -50,7 +50,6 @@
 }
 
 -(void) noticeBroughtToForeground:(NSNotification *)notification {
-    NSLog(@"Noticed that the app was brought to the foreground");
     [self viewDidAppear:YES];
 }
 

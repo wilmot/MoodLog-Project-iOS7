@@ -40,7 +40,8 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
 //    [self.segment setTintColor:[UIColor colorWithRed:0.08 green:0.08 blue:0.08 alpha:1.0]];
 //    [self.toolBar setTintColor:[UIColor colorWithRed:0.08 green:0.08 blue:0.08 alpha:1.0]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 //- (void)viewWillLayoutSubviews {
@@ -95,6 +96,16 @@ CGFloat TOOLS_SHOWN_HEIGHT  = 0; // Set in setToolsHeights
     [self chooseSegment:self];
     self.myChartCollectionViewController.chartFactorType = [defaults integerForKey:@"ChartFactorType"];
     [self setFactorButtonTitle: self];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
+        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
+    }
+}
+
+-(void) noticeBroughtToForeground:(NSNotification *)notification {
+    [self viewDidAppear:YES];
 }
 
 - (void) initializeRangeControl {

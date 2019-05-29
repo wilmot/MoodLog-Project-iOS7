@@ -36,6 +36,5 @@ typedef NS_ENUM(NSInteger, SearchTabItem) {
 - (MoodLogEvents *) insertNewObjectAndReturnReference: (id) sender;
 
 - (IBAction)showWelcomeScreen:(id)sender;
-- (IBAction)showCharts:(id)sender;
 
 @end

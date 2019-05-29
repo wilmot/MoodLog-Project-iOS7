@@ -379,13 +379,6 @@ NSString *cellIdentifier = @"Cell";
     // I do this with a Storyboard placeholder in Interface Builder now
 }
 
-- (IBAction)showCharts:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"AdditionalStoryboards" bundle:nil];
-    UIViewController *chartViewController = [sb instantiateViewControllerWithIdentifier:@"chartViewController"];
-    [chartViewController setModalPresentationStyle:UIModalPresentationOverFullScreen];
-    [self presentViewController:chartViewController animated:YES completion:NULL];
-}
-
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated { // Updates the appearance of the Edit|Done button item as necessary. Clients who override it must call super first.
     [super setEditing:editing animated:animated];
     if (!editing) {

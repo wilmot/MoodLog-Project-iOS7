@@ -22,13 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Plutchik-wheel.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Quo-Cr-jNY">
-                                        <rect key="frame" x="34.5" y="67" width="251" height="424"/>
+                                        <rect key="frame" x="1.5" y="67" width="317" height="424"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="424" id="myB-Ib-UeV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plutchik's Wheel of Emotions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBD-7M-0ul">
-                                        <rect key="frame" x="34.5" y="97" width="251" height="21"/>
+                                        <rect key="frame" x="1.5" y="97" width="317" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Ydj-Mp-ZX8"/>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="317" id="meR-Y6-dOk"/>
@@ -38,7 +38,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: Wikimedia Commons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ce-d3-dok">
-                                        <rect key="frame" x="52.5" y="452" width="206" height="14"/>
+                                        <rect key="frame" x="19.5" y="452" width="272" height="14"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -690,11 +690,20 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         <outletCollection property="itemsToDisableTogether" destination="yWC-c4-3Ao" id="n87-aZ-DLg"/>
                         <outletCollection property="itemsToDisableTogether" destination="ezw-nV-sJj" id="LzO-zv-0bo"/>
                         <outletCollection property="itemsToDisableTogether" destination="9jc-Vc-Myt" id="rDU-j9-deI"/>
+                        <segue destination="i31-z7-9pY" kind="showDetail" identifier="showPrivacyScreen" id="pvZ-nP-GFX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ht-ZD-0Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5205" y="968.75"/>
+        </scene>
+        <!--PrivacyScreen-->
+        <scene sceneID="ZJa-Qw-1vM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PrivacyScreen" referencedIdentifier="PrivacyScreen" id="i31-z7-9pY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZt-4V-ZbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5164" y="1668"/>
         </scene>
         <!--Ml Chart Cell Entry View Controller-->
         <scene sceneID="ADL-rR-ipX">
@@ -1234,9 +1243,9 @@ Redistribution and use in source and binary forms, with or without modification,
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">	•	Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+                                        <string key="content">	•	Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 	•	Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
@@ -1253,9 +1262,9 @@ Redistribution and use in source and binary forms, with or without modification,
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
