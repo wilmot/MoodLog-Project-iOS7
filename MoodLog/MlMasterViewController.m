@@ -39,6 +39,8 @@ NSString *cellIdentifier = @"Cell";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeSizeCategoryChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillResignActiveNotification object:nil];
 
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
@@ -87,10 +89,13 @@ NSString *cellIdentifier = @"Cell";
     }
 }
 
- -(void) noticeSizeCategoryChanged:(NSNotification *)notification {
-     NSLog(@"Noticed that the size category changed");
-     [self adjustCellHeightAndPreferredFontSize];
- }
+-(void) noticeSizeCategoryChanged:(NSNotification *)notification {
+    [self adjustCellHeightAndPreferredFontSize];
+}
+
+-(void) noticeBroughtToForeground:(NSNotification *)notification {
+    [self viewDidAppear:YES];
+}
 
 - (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     // Regular -- show charts
@@ -320,7 +325,7 @@ NSString *cellIdentifier = @"Cell";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if ( ((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO ) {
+    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
         [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
     }
 }
@@ -803,12 +808,8 @@ var height = heightForView("This is just a load of text", font: font, width: 100
     return dateString;
 }
 
-- (void)makeLoggedInState: (Boolean)state {
-    [self.privacyViewController makeLoggedInStateWithNewState:state];
-}
-
 - (IBAction)unwindToList:(UIStoryboardSegue *)unwindSegue {
-//    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // UIViewController *sourceViewController = unwindSegue.sourceViewController;
     // Use data from the view controller which initiated the unwind segue
 }
 

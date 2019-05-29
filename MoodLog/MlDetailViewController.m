@@ -54,6 +54,8 @@ typedef NS_ENUM(NSInteger, DetailCells) {
         [self.slidersSetAdjustButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeSizeCategoryChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -62,6 +64,9 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
+        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
+    }
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
     [super viewDidAppear:animated];
     [self.tableView reloadData];
@@ -80,6 +85,10 @@ typedef NS_ENUM(NSInteger, DetailCells) {
 -(void)noticeSizeCategoryChanged:(NSNotification *)notification {
     NSLog(@"Noticed that the size category changed");
     [self configureEntryFont];
+}
+
+-(void) noticeBroughtToForeground:(NSNotification *)notification {
+    [self viewDidAppear:YES];
 }
 
 - (void)configureEntryFont {
@@ -466,6 +475,11 @@ typedef NS_ENUM(NSInteger, DetailCells) {
     // Save the database record.
     [self.detailItem setValue:[self.entryLogTextView text] forKey:@"journalEntry"];
     [self saveContext];
+}
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)unwindSegue {
+    // UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
 }
 
 @end

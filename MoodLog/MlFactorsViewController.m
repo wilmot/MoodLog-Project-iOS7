@@ -30,6 +30,8 @@
 	// Do any additional setup after loading the view.
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -37,8 +39,19 @@
     [self showPortraitOrLandscapeView];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
+        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
+    }
+}
+
 - (void) viewWillDisappear:(BOOL)animated {
     [self saveContext];
+}
+
+-(void) noticeBroughtToForeground:(NSNotification *)notification {
+    NSLog(@"Noticed that the app was brought to the foreground");
+    [self viewDidAppear:YES];
 }
 
 #pragma mark - Orientation change
@@ -103,5 +116,9 @@
     }
 }
 
+- (IBAction)unwindToList:(UIStoryboardSegue *)unwindSegue {
+    // UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
+}
 
 @end

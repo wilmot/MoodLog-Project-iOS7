@@ -52,8 +52,8 @@ import UIKit
         animation.toValue = endShape
         animation.duration = 0.25
         
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        animation.fillMode = kCAFillModeBoth // keep to value after finishing
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+        animation.fillMode = CAMediaTimingFillMode.both // keep to value after finishing
         animation.isRemovedOnCompletion = true // don't remove after finishing
 
         rectShape.add(animation, forKey: animation.keyPath)
@@ -77,8 +77,8 @@ import UIKit
         }
         
         let title = NSAttributedString(string: subTitle,
-                    attributes: [NSAttributedStringKey.foregroundColor: subTitleTextColor,
-                                 NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)])
+                    attributes: [NSAttributedString.Key.foregroundColor: subTitleTextColor,
+                                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)])
         let size = title.size()
         title.draw(at: CGPoint(x: spot.x + subTitleXOffset - size.width/2, y: rect.maxY - size.height - 14.0 + subTitleYOffset))
     }

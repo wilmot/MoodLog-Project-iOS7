@@ -8,6 +8,7 @@
 //
 
 #import "MlWelcomeScreenViewController.h"
+#import "MlAppDelegate.h"
 
 @interface MlWelcomeScreenViewController ()
 
@@ -28,6 +29,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillResignActiveNotification object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
+        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
+    }
 }
 
 - (void)viewDidLayoutSubviews {
@@ -46,5 +55,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void) noticeBroughtToForeground:(NSNotification *)notification {
+    [self viewDidAppear:YES];
+}
 
 @end

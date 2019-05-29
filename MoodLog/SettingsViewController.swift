@@ -12,14 +12,30 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var pieDonutSwitch: UISwitch!
     let defaults = UserDefaults.standard
     @IBOutlet weak var chartExampleView: MlChartDrawingView!
+    @IBOutlet weak var privacyScreenSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(noticeBroughtToForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(noticeBroughtToForeground(_:)), name: UIApplication.willResignActiveNotification, object: nil)
 
         pieDonutSwitch.isOn = PieOrDonut.donut()
+        privacyScreenSwitch.isOn = defaults.bool(forKey: kPrivacyScreenKey)
         // Populate the chartExampleView
         chartExampleView.circumference = 30.0
         chartExampleView.categoryCounts = [love:3, joy:3, surprise:3, fear:3, anger:3, sadness:3]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let delegate = UIApplication.shared.delegate as? MlAppDelegate {
+            if delegate.loggedIn == false && delegate.showPrivacyScreen == true {
+                self.performSegue(withIdentifier: "showPrivacyScreen", sender: self)
+            }
+        }
+    }
+    
+    @objc func noticeBroughtToForeground(_ sender: Any) {
+        self.viewDidAppear(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +50,59 @@ class SettingsViewController: UITableViewController {
         chartExampleView.setNeedsDisplay()
     }
     
+    @IBAction func togglePrivacyScreen(_ sender: Any) {
+        if privacyScreenSwitch.isOn {
+            showPrivacyViewController(self)
+        }
+        else {
+            hidePrivacyViewController(self)
+        }
+    }
+    
+    func wasCompleted() {
+        if let appDelegate = (UIApplication.shared.delegate as? MlAppDelegate) {
+            appDelegate.loggedIn = privacyScreenSwitch.isOn // Initial state
+            appDelegate.showPrivacyScreen = privacyScreenSwitch.isOn
+            defaults.set(appDelegate.showPrivacyScreen, forKey: kPrivacyScreenKey)
+            defaults.synchronize()
+        }
+    }
+
+    func wasCanceled() {
+        privacyScreenSwitch.isOn = !privacyScreenSwitch.isOn
+        if let appDelegate = (UIApplication.shared.delegate as? MlAppDelegate) {
+            appDelegate.showPrivacyScreen = privacyScreenSwitch.isOn
+            defaults.set(appDelegate.showPrivacyScreen, forKey: kPrivacyScreenKey)
+            defaults.synchronize()
+        }
+    }
+
+    @IBAction func showPrivacyViewController(_ sender: Any) {
+        let sb = UIStoryboard(name: "PrivacyScreen", bundle: nil)
+        if let pinVC = sb.instantiateViewController(withIdentifier: "pinViewController") as? PrivacySetterViewController {
+            pinVC.modalPresentationStyle = .overFullScreen
+            pinVC.labelText = "Choose a code"
+            pinVC.newPIN = true
+            pinVC.settingsVC = self
+            self.present(pinVC, animated: true, completion:  {
+                print("Completed from show")
+            })
+        }
+    }
+    
+    @IBAction func hidePrivacyViewController(_ sender: Any) {
+        let sb = UIStoryboard(name: "PrivacyScreen", bundle: nil)
+        if let pinVC = sb.instantiateViewController(withIdentifier: "pinViewController") as? PrivacySetterViewController {
+            pinVC.modalPresentationStyle = .overFullScreen
+            pinVC.labelText = "Enter code"
+            pinVC.newPIN = false
+            pinVC.settingsVC = self
+           self.present(pinVC, animated: true, completion: {
+                print("Completed from hide.")
+            })
+        }
+    }
+
     /*
     // MARK: - Navigation
 

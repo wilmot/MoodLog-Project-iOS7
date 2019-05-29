@@ -37,6 +37,5 @@ typedef NS_ENUM(NSInteger, SearchTabItem) {
 
 - (IBAction)showWelcomeScreen:(id)sender;
 - (IBAction)showCharts:(id)sender;
-- (void)makeLoggedInState: (Boolean)state;
 
 @end

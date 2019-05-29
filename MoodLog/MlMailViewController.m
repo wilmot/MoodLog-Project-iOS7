@@ -37,6 +37,8 @@ NSString *SPACE = @"";
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.managedObjectContext = ((MlAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -163,6 +165,15 @@ NSString *SPACE = @"";
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
+        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
+    }
+}
+
+-(void) noticeBroughtToForeground:(NSNotification *)notification {
+    [self viewDidAppear:YES];
+}
 
 - (void)didReceiveMemoryWarning
 {

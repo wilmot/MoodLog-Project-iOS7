@@ -34,6 +34,8 @@ MoodLogEvents *mood;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeSizeCategoryChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -44,6 +46,9 @@ MoodLogEvents *mood;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
+        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
+    }
     [self.journalTextView becomeFirstResponder]; // Show the keyboard after the view appears
 }
 
@@ -63,6 +68,10 @@ MoodLogEvents *mood;
 -(void) noticeSizeCategoryChanged:(NSNotification *)notification {
     NSLog(@"Noticed that the size category changed");
     [self configureJournalFont];
+}
+
+-(void) noticeBroughtToForeground:(NSNotification *)notification {
+    [self viewDidAppear:YES];
 }
 
 - (void)configureJournalFont {
@@ -115,6 +124,11 @@ MoodLogEvents *mood;
 - (IBAction)pressDoneButton:(id)sender {
     [self.journalTextView resignFirstResponder];
     [self.journalToolbar setRightBarButtonItem:nil animated:YES];
+}
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)unwindSegue {
+    // UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
 }
 
 @end

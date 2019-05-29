@@ -9,6 +9,7 @@
 
 #import "MlWelcomePageViewController.h"
 #import "MlWelcomeScreenViewController.h"
+#import "Mood_Log-Swift.h"
 
 @interface MlWelcomePageViewController ()
 
@@ -42,6 +43,9 @@ int numberOfPages = 5;
     self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     self.pageControl.backgroundColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor whiteColor]; // Eliminates the black bar that shows up when rotating the Welcome screen
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:16.0 weight:UIFontWeightMedium], NSFontAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attrsDictionary;
+    self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Mood-Log %@", [AppVersion moodLogVersion]];
 }
 
 -(void) createPages{

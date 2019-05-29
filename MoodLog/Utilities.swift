@@ -9,16 +9,36 @@
 import UIKit
 
 let kPieOrDonutChartKey = "pieOrDonutChartDefault"
+let kPrivacyScreenKey = "privacyScreenKey"
+let kPrivacyPINDefault = "privacyPINDefault"
+let numberBalls = ["⓪","①","②","③","④","⑤","⑥","⑦","⑧","⑨"]
+var loggedInState: AuthenticationState = .loggedout
+
 public var pieOrDonutChart: Bool = false // false is pie, true is donut
 
+@objc public class AppVersion: NSObject {
+@objc class func moodLogVersion() -> String {
+    if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
+        let infoPlist = NSDictionary(contentsOfFile: path)
+        if let infoPlist = infoPlist {
+            let ver = infoPlist["CFBundleShortVersionString"] as? String ?? "1.1"
+            let build = infoPlist["CFBundleVersion"] as? String ?? "--"
+            return "\(ver) (\(build))"
+        }
+    }
+    return ""
+}
+}
+
+// Expose setting to ObjC
 @objc public class PieOrDonut: NSObject {
- 
+    
     override public init() {
     }
     
     @objc class func donut() -> Bool {
         let defaults = UserDefaults.standard
-
+        
         // pie or donut
         if defaults.object(forKey: kPieOrDonutChartKey) == nil {
             defaults.set(pieOrDonutChart, forKey: kPieOrDonutChartKey)
@@ -26,6 +46,40 @@ public var pieOrDonutChart: Bool = false // false is pie, true is donut
         }
         pieOrDonutChart = defaults.bool(forKey: kPieOrDonutChartKey)
         return pieOrDonutChart
+    }
+}
+
+@objc public class PrivacyScreen: NSObject {
+    
+    override public init() {
+    }
+    
+    @objc class func isOn() -> Bool {
+        let defaults = UserDefaults.standard
+        
+        if let appDelegate = (UIApplication.shared.delegate as? MlAppDelegate) {
+            if defaults.object(forKey: kPrivacyScreenKey) == nil {
+                defaults.set(appDelegate.showPrivacyScreen, forKey: kPrivacyScreenKey)
+                defaults.synchronize()
+            }
+            var hasPINObject = false
+            if let _ = defaults.object(forKey: kPrivacyPINDefault) {
+                hasPINObject = true
+            }
+            appDelegate.showPrivacyScreen = defaults.bool(forKey: kPrivacyScreenKey) && hasPINObject
+            return appDelegate.showPrivacyScreen
+        }
+        return false
+    }
+}
+
+@objc public class LoggedInState: NSObject {
+    
+    override public init() {
+    }
+    
+    @objc class func loggedIn() -> Bool {
+        return loggedInState == .loggedin
     }
 }
 
@@ -107,9 +161,32 @@ enum AuthenticationState {
     case loggedin, loggedout
 }
 
-var xloggedInState: AuthenticationState = .loggedout
-var privacyPIN = "1822"
+var privacyPIN = ""
 var pinMax = 4
+
+func textAsStars(_ text: String) -> String {
+    var stars = ""
+    for _ in 0..<text.count {
+        stars = stars + "●"
+    }
+    for _ in text.count..<pinMax {
+        stars = stars + "○"
+    }
+    return stars
+}
+
+func textAsNumberBalls(_ text: String) -> String {
+    var numberBallText = ""
+    for c in text {
+        if let i = Int("\(c)") {
+            numberBallText = "\(numberBallText)\(numberBalls[i])"
+        }
+    }
+    for _ in text.count..<pinMax {
+        numberBallText = numberBallText + "○"
+    }
+    return numberBallText
+}
 
 // Perform something after a delay
 // e.g. delay(0.5) { dprint("hello") }

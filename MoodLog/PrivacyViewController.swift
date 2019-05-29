@@ -39,23 +39,17 @@ import LocalAuthentication
         pinText = String(pinText.dropLast())
         updatePINText()
     }
-    
-    func textAsStars(text: String) -> String {
-        var stars = ""
-        for _ in 0..<text.count {
-            stars = stars + "●"
-        }
-        for _ in text.count..<pinMax {
-            stars = stars + "○"
-        }
-        return stars
-    }
-    
+            
     func updatePINText() {
-        pinLabel.text = textAsStars(text: pinText)
+        let defaults = UserDefaults.standard
+        if let pin = defaults.object(forKey: kPrivacyPINDefault) {
+            if let pin = pin as? String {
+                privacyPIN = pin
+            }
+        }
+        pinLabel.text = textAsStars(pinText)
         deleteButton.isHidden = (pinText == "")
         if pinText == privacyPIN {
-            print("Success!")
             clearPIN(success: true, animation: false)
             // Move to the main thread because a state update triggers UI changes.
         }
@@ -152,18 +146,8 @@ import LocalAuthentication
                     self.state = .loggedin
                 }
             }
-            self.pinLabel.text = self.textAsStars(text: self.pinText)
+            self.pinLabel.text = textAsStars(self.pinText)
             self.deleteButton.isHidden = (self.pinText == "")
-        }
-    }
-    
-    @objc
-    func makeLoggedInState(newState: Bool) {
-        if newState {
-            state = .loggedin
-        }
-        else {
-            state = .loggedout
         }
     }
     
@@ -196,7 +180,8 @@ import LocalAuthentication
                 pinLabel.isHidden = true
             }
             if state == .loggedin {
-                self.performSegue(withIdentifier: "unwindTest", sender: self)
+                //self.performSegue(withIdentifier: "unwindHolder", sender: self)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydB-QR-mAB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydB-QR-mAB">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,13 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Plutchik-wheel.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Quo-Cr-jNY">
-                                        <rect key="frame" x="1.5" y="67" width="317" height="424"/>
+                                        <rect key="frame" x="34.5" y="67" width="251" height="424"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="424" id="myB-Ib-UeV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plutchik's Wheel of Emotions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBD-7M-0ul">
-                                        <rect key="frame" x="1.5" y="97" width="317" height="21"/>
+                                        <rect key="frame" x="34.5" y="97" width="251" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Ydj-Mp-ZX8"/>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="317" id="meR-Y6-dOk"/>
@@ -38,7 +38,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: Wikimedia Commons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ce-d3-dok">
-                                        <rect key="frame" x="19.5" y="452" width="272" height="14"/>
+                                        <rect key="frame" x="52.5" y="452" width="206" height="14"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -71,6 +71,9 @@
                         <viewLayoutGuide key="safeArea" id="r3U-7E-LXJ"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="K9u-uf-sLl" kind="showDetail" identifier="showPrivacyScreen" id="lZf-9Y-f3z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vR7-ab-3cu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,6 +147,9 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="830"/>
+                    <connections>
+                        <segue destination="K9u-uf-sLl" kind="showDetail" identifier="showPrivacyScreen" id="kiv-Tg-OXL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvP-mv-AoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,6 +277,7 @@ Mood-Log is meant for educational purposes only. This app is not intended as a s
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="textView" destination="Ret-TP-kmL" id="3VQ-fB-6t7"/>
+                        <segue destination="K9u-uf-sLl" kind="showDetail" identifier="showPrivacyScreen" id="NfF-s3-2f5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMe-HS-mux" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,10 +288,13 @@ Mood-Log is meant for educational purposes only. This app is not intended as a s
         <scene sceneID="TVu-Gn-fbO">
             <objects>
                 <pageViewController storyboardIdentifier="welcomeScreen" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XlR-Gm-ZBL" customClass="MlWelcomePageViewController" sceneMemberID="viewController">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ATu-vJ-cac"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="zeh-iH-Arf">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="settings_gear_20" id="04A-aW-Vdc">
                             <connections>
-                                <segue destination="KgA-Hv-iQx" kind="popoverPresentation" popoverAnchorBarButtonItem="04A-aW-Vdc" id="cEe-VG-vXv">
+                                <segue destination="KgA-Hv-iQx" kind="popoverPresentation" identifier="SettingsIdentifier" popoverAnchorBarButtonItem="04A-aW-Vdc" id="cEe-VG-vXv">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -296,6 +306,7 @@ Mood-Log is meant for educational purposes only. This app is not intended as a s
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8Z-cT-fey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -308,7 +319,7 @@ Mood-Log is meant for educational purposes only. This app is not intended as a s
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FKK-6b-dGm">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -385,6 +396,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="textView" destination="jeX-Xd-VwB" id="Gw7-ie-LqU"/>
+                        <segue destination="K9u-uf-sLl" kind="showDetail" identifier="showPrivacyScreen" id="Iyy-lC-TRa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dt9-s4-Fad" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -782,7 +794,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="pieChartCellPortrait" id="UEL-qc-4jr" customClass="MlChartCollectionViewCell">
-                                <rect key="frame" x="0.0" y="-134" width="90" height="256"/>
+                                <rect key="frame" x="0.0" y="30" width="90" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="90" height="256"/>
@@ -1185,6 +1197,7 @@ Plutchik’s Wheel of Emotions shows related emotions radiating from a central p
 CgoKA
 </string>
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
@@ -1193,6 +1206,7 @@ CgoKA
                                         <string key="content">Software License Agreement
 </string>
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
@@ -1202,15 +1216,17 @@ CgoKA
 Cg
 </string>
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">Copyright (c) 2013-2018, Barry Langdon-Lassagne All rights reserved.
+                                        <string key="content">Copyright (c) 2013-2019, Barry Langdon-Lassagne All rights reserved.
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 </string>
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="14" defaultTabInterval="36">
                                                 <tabStops/>
@@ -1218,10 +1234,11 @@ Redistribution and use in source and binary forms, with or without modification,
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">	•	Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+                                        <mutableString key="content">	•	Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 	•	Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-</string>
+</mutableString>
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="1" headIndent="36" defaultTabInterval="36">
                                                 <tabStops>
@@ -1236,10 +1253,11 @@ Redistribution and use in source and binary forms, with or without modification,
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
+                                        <mutableString key="content">
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</string>
+</mutableString>
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="14" defaultTabInterval="36">
                                                 <tabStops/>
@@ -1251,7 +1269,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 Cg
 </string>
                                         <attributes>
-                                            <color key="NSColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="12" name="Verdana"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
                                                 <tabStops/>
@@ -1275,6 +1293,7 @@ Cg
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="textView" destination="nOy-0d-Su3" id="c4z-gx-lYo"/>
+                        <segue destination="K9u-uf-sLl" kind="showDetail" identifier="showPrivacyScreen" id="eg3-zK-lJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSr-rV-pgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1284,7 +1303,7 @@ Cg
         <!--Settings-->
         <scene sceneID="3sb-R4-HX8">
             <objects>
-                <tableViewController id="vNT-QW-Iac" customClass="SettingsViewController" customModule="Mood_Log" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vNT-QW-Iac" customClass="SettingsViewController" customModule="Mood_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g3h-jh-GC4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1380,6 +1399,60 @@ Cg
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="54w-9I-4Rx">
+                                        <rect key="frame" x="0.0" y="175" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="54w-9I-4Rx" id="Jay-27-4DH">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqV-gm-7pm">
+                                                    <rect key="frame" x="261" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="togglePieOrDonut:" destination="vNT-QW-Iac" eventType="valueChanged" id="tAV-8B-Lyu"/>
+                                                        <action selector="togglePrivacyScreen:" destination="vNT-QW-Iac" eventType="valueChanged" id="nNH-Zh-UdE"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QNI-9b-TZL">
+                                                    <rect key="frame" x="16" y="10" width="129" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QNI-9b-TZL" firstAttribute="centerY" secondItem="Jay-27-4DH" secondAttribute="centerY" id="DCx-Lq-LzH"/>
+                                                <constraint firstItem="QNI-9b-TZL" firstAttribute="leading" secondItem="Jay-27-4DH" secondAttribute="leading" constant="16" id="RUa-aJ-idb"/>
+                                                <constraint firstItem="gqV-gm-7pm" firstAttribute="centerY" secondItem="Jay-27-4DH" secondAttribute="centerY" id="cAK-Lp-gbM"/>
+                                                <constraint firstAttribute="trailing" secondItem="gqV-gm-7pm" secondAttribute="trailing" constant="10" id="hLw-LG-kew"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="DoE-hN-RS3">
+                                        <rect key="frame" x="0.0" y="219" width="320" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DoE-hN-RS3" id="LH1-Y3-ZpG">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cover Mood-Log with a Privacy Screen. Require a 4-digit code before using" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bma-Eg-0jM">
+                                                    <rect key="frame" x="16" y="7.5" width="288" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="72" id="YhG-fR-X2g"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bma-Eg-0jM" firstAttribute="leading" secondItem="LH1-Y3-ZpG" secondAttribute="leading" constant="16" id="6nO-lK-Gb4"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bma-Eg-0jM" secondAttribute="trailing" constant="16" id="uJJ-lo-HXu"/>
+                                                <constraint firstItem="Bma-Eg-0jM" firstAttribute="centerY" secondItem="LH1-Y3-ZpG" secondAttribute="centerY" id="wTw-7C-OJx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1391,27 +1464,29 @@ Cg
                     <navigationItem key="navigationItem" title="Settings" id="s4X-7z-FIZ">
                         <barButtonItem key="rightBarButtonItem" title="Close" id="ipJ-Ct-3bn">
                             <connections>
-                                <segue destination="c9T-CL-MhV" kind="unwind" unwindAction="unwindToHere:" id="IX5-5w-Kig"/>
+                                <segue destination="HvI-TD-i77" kind="unwind" unwindAction="unwindToList:" id="39F-su-1cO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="chartExampleView" destination="FLe-we-a0P" id="DYg-3B-dNm"/>
                         <outlet property="pieDonutSwitch" destination="LGG-hr-Id3" id="AeW-ko-eKs"/>
+                        <outlet property="privacyScreenSwitch" destination="gqV-gm-7pm" id="a8n-Zq-oCt"/>
+                        <segue destination="K9u-uf-sLl" kind="showDetail" identifier="showPrivacyScreen" id="aG5-hI-RXK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jsy-kK-ZTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="c9T-CL-MhV" userLabel="Exit" sceneMemberID="exit"/>
+                <exit id="HvI-TD-i77" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2447" y="-785"/>
+            <point key="canvasLocation" x="-2471.25" y="-800"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IrC-vR-GNG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KgA-Hv-iQx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingsID" automaticallyAdjustsScrollViewInsets="NO" id="KgA-Hv-iQx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hTy-UD-91C">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1423,11 +1498,22 @@ Cg
             </objects>
             <point key="canvasLocation" x="-3437" y="-606"/>
         </scene>
+        <!--PrivacyScreen-->
+        <scene sceneID="lQ1-lH-YkV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PrivacyScreen" referencedIdentifier="PrivacyScreen" id="K9u-uf-sLl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7f9-oh-olz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1723" y="-684"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="ParrotsEmotions.png" width="850" height="1684"/>
+        <image name="ParrotsEmotions.png" width="425" height="842"/>
         <image name="Plutchik-wheel.svg.png" width="512" height="519"/>
         <image name="disclosure_open_20" width="20" height="20"/>
-        <image name="settings_gear_20" width="19.200000762939453" height="19.200000762939453"/>
+        <image name="settings_gear_20" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aG5-hI-RXK"/>
+    </inferredMetricsTieBreakers>
 </document>

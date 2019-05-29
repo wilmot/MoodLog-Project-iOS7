@@ -8,6 +8,7 @@
 //
 
 #import "MlFacesViewController.h"
+#import "MlAppDelegate.h"
 #import "Prefs.h"
 
 @interface MlFacesViewController ()
@@ -36,7 +37,7 @@ UIImage *buttonImageHighlight;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     // Set the background for any states you plan to use
     if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) { // iOS 6 and lower
         buttonImage = [[UIImage imageNamed:@"greyButton.png"]
@@ -45,17 +46,18 @@ UIImage *buttonImageHighlight;
                                 resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18) resizingMode:UIImageResizingModeStretch];
         [self.fewerButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.fewerButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-
+        
         [self.moreButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.moreButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-
+        
         [self.toggleColorsButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.toggleColorsButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-
+        
         [self.toggleFacesButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.toggleFacesButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-}
-
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -69,9 +71,20 @@ UIImage *buttonImageHighlight;
     [self.myMoodCollectionViewController refresh];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
+        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
+    }
+}
+
 - (void) viewWillDisappear:(BOOL)animated {
     self.detailItem.editing = [NSNumber numberWithBool:NO];
     [self saveContext];
+}
+
+-(void) noticeBroughtToForeground:(NSNotification *)notification {
+    NSLog(@"Noticed that the app was brought to the foreground");
+    [self viewDidAppear:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -262,6 +275,11 @@ UIImage *buttonImageHighlight;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)unwindSegue {
+    // UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
 }
 
 @end

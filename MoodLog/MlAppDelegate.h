@@ -24,6 +24,7 @@
 @property (readonly, strong, nonatomic) MlMasterViewController *masterViewController;
 @property (nonatomic, assign) NSInteger badgeCount;
 @property(nonatomic, assign) BOOL loggedIn;
+@property(nonatomic, assign) BOOL showPrivacyScreen;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

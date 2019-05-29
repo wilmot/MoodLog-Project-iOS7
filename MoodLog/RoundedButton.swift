@@ -52,8 +52,8 @@ import UIKit
         animation.toValue = endShape
         animation.duration = 0.25
         
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        animation.fillMode = kCAMediaTimingFunctionEaseInEaseOut // keep to value after finishing
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+        animation.fillMode = CAMediaTimingFillMode.both
         animation.isRemovedOnCompletion = true // don't remove after finishing
 
         rectShape.add(animation, forKey: animation.keyPath)
