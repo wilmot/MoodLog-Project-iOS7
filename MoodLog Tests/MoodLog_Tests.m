@@ -67,7 +67,7 @@
     MlMoodDataItem *aMood;
     emotionArray = [delegate.emotionsFromPList copy];
     NSArray *entries = @[
-                         @[@"-10", @"Expected to hear back from the college by today. I'm impatient! Also bored. Also tired, I guess. I'm not exactly sure how I feel today. I think I need something to distract me.", @[@"Bored", @"Disappointed", @"Irritated"], @[@-3,@2,@-10,@1,@5,@-6]],
+                         @[@"-10", @"I expected to hear back from the college by today. I'm impatient! Also bored. Also tired, I guess. I'm not exactly sure how I feel today. I think I need something to distract me.", @[@"Bored", @"Disappointed", @"Irritated"], @[@-3,@2,@-10,@1,@5,@-6]],
                          @[@"-9", @"Windy outside. I don't want to do my chores. Want to stay on the couch and read a book! Hole up here where it's safe and warm until the world comes to find me.", @[@"Cautious", @"Uneasy"], @[@-4,@-2,@-10,@-1,@4,@-5]],
                          @[@"-8", @"Sis's soccer team won! They played their rivals and this was the first time in three years that they won. 3-2. Sis scored one of the goals even! Luckily yesterday's wind died down and it was warm and sunny.", @[@"Proud"], @[@9,@5,@9,@6,@8,@2]],
                          @[@"-7", @"I've been accepted! I can't believe it. I'm going to college! There's so much to do. This is really huge. Can't write, gotta call Samantha.", @[@"Ecstatic", @"Happy", @"Triumphant"], @[@10,@6,@10,@-5,@7,@5]],
@@ -79,7 +79,7 @@
                          @[@"-2", @"Today is my official last day at my job. I'm glad it's over, but I also will miss my coworkers. Some of it was pretty fun.", @[@"Melancholy", @"Pleased"], @[@4,@4,@5,@6,@3,@5]],
                          @[@"-2", @"My boss wrote me a recommendation! I'll be able to take this with me and use it to help get a job sometime in the future.", @[@"Glad", @"Proud"], @[@8,@6,@4,@-3,@6,@8]],
                          @[@"-1", @"Mom was really empathetic today. She and I had a long talk about college and I told her my fears and then we went out for ice cream and to look at college supplies. It helped. She calls the college 'non-traditional' which is mom-speak for 'funky.' But she thinks they'll be really good for me, a good fit. Hope so.", @[@"Empathetic", @"Relieved", @"Sentimental"], @[@7,@3,@3,@10,@7,@7]],
-                         @[@"-0", @"Everything just changed — they called to tell me they got in! They're accepted! We'll be going to college together! Apparently I’m totally forgiven too, so we’re best friends again. Tomorrow they're coming over. We have a lot of planning to do.", @[@"Elated", @"Relieved"], @[@10,@4,@10,@8,@7,@5]]
+                         @[@"-0", @"Everything just changed for the better — they called to tell me they got in! They're accepted! We'll be going to college together! Apparently I’m totally forgiven too, so we’re best friends again. Tomorrow they're coming over. We have a lot of planning to do.", @[@"Elated", @"Relieved"], @[@10,@4,@10,@8,@7,@5]]
                          ];
     for (NSArray *entry in entries) {
         newMoodLogEntry = [[delegate masterViewController] insertNewObjectAndReturnReference:self];
