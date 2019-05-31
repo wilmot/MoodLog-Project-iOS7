@@ -179,7 +179,10 @@ class PrivacySetterViewController: UIViewController {
         context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
         if #available(iOS 11.0, *) {
             if context.biometryType == .faceID {
-                disableWithPasscodeButton.setTitle("Disable with FaceID", for: .normal)
+                disableWithPasscodeButton.setTitle("Disable with Face ID or Passcode", for: .normal)
+            }
+            else if context.biometryType == .touchID {
+                disableWithPasscodeButton.setTitle("Disable with Touch ID or Passcode", for: .normal)
             }
         }
     }
