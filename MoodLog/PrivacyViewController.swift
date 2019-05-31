@@ -30,8 +30,10 @@ import LocalAuthentication
     @IBAction func tapPINButton(_ sender: RoundedButton) {
         sender.click()
         if let text = sender.titleLabel?.text {
-            pinText = pinText + text
-            updatePINText()
+            if pinText.count < pinMax {
+                pinText = pinText + text
+                updatePINText()
+            }
         }
     }
     
@@ -203,10 +205,6 @@ import LocalAuthentication
         deleteButton.isHidden = true
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        print("View will appear for Privacy View")
-    }
-
     /// Logs out or attempts to log in when the user taps the button.
     @IBAction func tapButton(_ sender: UIButton) {
 

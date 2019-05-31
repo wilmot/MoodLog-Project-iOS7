@@ -40,7 +40,7 @@ NSString *cellIdentifier = @"Cell";
 	// Do any additional setup after loading the view, typically from a nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeSizeCategoryChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeBroughtToForeground:) name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeSentToBackground:) name:UIApplicationWillResignActiveNotification object:nil];
 
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
@@ -94,7 +94,17 @@ NSString *cellIdentifier = @"Cell";
 }
 
 -(void) noticeBroughtToForeground:(NSNotification *)notification {
-    [self viewDidAppear:YES];
+    [self showPrivacyScreenIfNeeded];
+}
+
+-(void) noticeSentToBackground:(NSNotification *)notification {
+    [self showPrivacyScreenIfNeeded];
+}
+
+-(void) showPrivacyScreenIfNeeded {
+    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
+        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
+    }
 }
 
 - (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
@@ -325,9 +335,7 @@ NSString *cellIdentifier = @"Cell";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if ( (((MlAppDelegate *)[UIApplication sharedApplication].delegate).loggedIn == NO) && (((MlAppDelegate *)[UIApplication sharedApplication].delegate).showPrivacyScreen == YES) ) {
-        [self performSegueWithIdentifier:@"showPrivacyScreen" sender:self];
-    }
+    [self showPrivacyScreenIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning

@@ -1329,8 +1329,62 @@ Cg
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cKc-De-iN0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="54w-9I-4Rx">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="54w-9I-4Rx" id="Jay-27-4DH">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqV-gm-7pm">
+                                                    <rect key="frame" x="261" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="togglePieOrDonut:" destination="vNT-QW-Iac" eventType="valueChanged" id="tAV-8B-Lyu"/>
+                                                        <action selector="togglePrivacyScreen:" destination="vNT-QW-Iac" eventType="valueChanged" id="nNH-Zh-UdE"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QNI-9b-TZL">
+                                                    <rect key="frame" x="16" y="10" width="129" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QNI-9b-TZL" firstAttribute="centerY" secondItem="Jay-27-4DH" secondAttribute="centerY" id="DCx-Lq-LzH"/>
+                                                <constraint firstItem="QNI-9b-TZL" firstAttribute="leading" secondItem="Jay-27-4DH" secondAttribute="leading" constant="16" id="RUa-aJ-idb"/>
+                                                <constraint firstItem="gqV-gm-7pm" firstAttribute="centerY" secondItem="Jay-27-4DH" secondAttribute="centerY" id="cAK-Lp-gbM"/>
+                                                <constraint firstAttribute="trailing" secondItem="gqV-gm-7pm" secondAttribute="trailing" constant="10" id="hLw-LG-kew"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="DoE-hN-RS3">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DoE-hN-RS3" id="LH1-Y3-ZpG">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cover Mood-Log with a privacy screen. Require a 4-digit code before using. When disabled, no privacy screen is shown." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bma-Eg-0jM">
+                                                    <rect key="frame" x="16" y="7.5" width="288" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="72" id="YhG-fR-X2g"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bma-Eg-0jM" firstAttribute="leading" secondItem="LH1-Y3-ZpG" secondAttribute="leading" constant="16" id="6nO-lK-Gb4"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bma-Eg-0jM" secondAttribute="trailing" constant="16" id="uJJ-lo-HXu"/>
+                                                <constraint firstItem="Bma-Eg-0jM" firstAttribute="centerY" secondItem="LH1-Y3-ZpG" secondAttribute="centerY" id="wTw-7C-OJx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cKc-De-iN0">
+                                        <rect key="frame" x="0.0" y="175" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cKc-De-iN0" id="znx-8d-90N">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -1374,7 +1428,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="TJZ-qD-cxI">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="87"/>
+                                        <rect key="frame" x="0.0" y="219" width="320" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TJZ-qD-cxI" id="9fA-EZ-216">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
@@ -1388,7 +1442,7 @@ Cg
                                                         <constraint firstAttribute="width" constant="72" id="z5i-BJ-3eL"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Mood diagrams as either a pie or a donut chart" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eR-Gp-NKM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Mood diagrams as either a pie or a donut chart." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eR-Gp-NKM">
                                                     <rect key="frame" x="103" y="7.5" width="201" height="72"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="72" id="Fh7-3O-Em6"/>
@@ -1404,60 +1458,6 @@ Cg
                                                 <constraint firstAttribute="trailing" secondItem="1eR-Gp-NKM" secondAttribute="trailing" constant="16" id="khO-yM-IRh"/>
                                                 <constraint firstItem="1eR-Gp-NKM" firstAttribute="centerY" secondItem="9fA-EZ-216" secondAttribute="centerY" id="vl7-fK-Qfl"/>
                                                 <constraint firstItem="FLe-we-a0P" firstAttribute="centerY" secondItem="9fA-EZ-216" secondAttribute="centerY" id="vsB-Ay-7Ss"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="54w-9I-4Rx">
-                                        <rect key="frame" x="0.0" y="175" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="54w-9I-4Rx" id="Jay-27-4DH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqV-gm-7pm">
-                                                    <rect key="frame" x="261" y="6.5" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="togglePieOrDonut:" destination="vNT-QW-Iac" eventType="valueChanged" id="tAV-8B-Lyu"/>
-                                                        <action selector="togglePrivacyScreen:" destination="vNT-QW-Iac" eventType="valueChanged" id="nNH-Zh-UdE"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QNI-9b-TZL">
-                                                    <rect key="frame" x="16" y="10" width="129" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="QNI-9b-TZL" firstAttribute="centerY" secondItem="Jay-27-4DH" secondAttribute="centerY" id="DCx-Lq-LzH"/>
-                                                <constraint firstItem="QNI-9b-TZL" firstAttribute="leading" secondItem="Jay-27-4DH" secondAttribute="leading" constant="16" id="RUa-aJ-idb"/>
-                                                <constraint firstItem="gqV-gm-7pm" firstAttribute="centerY" secondItem="Jay-27-4DH" secondAttribute="centerY" id="cAK-Lp-gbM"/>
-                                                <constraint firstAttribute="trailing" secondItem="gqV-gm-7pm" secondAttribute="trailing" constant="10" id="hLw-LG-kew"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="DoE-hN-RS3">
-                                        <rect key="frame" x="0.0" y="219" width="320" height="87"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DoE-hN-RS3" id="LH1-Y3-ZpG">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cover Mood-Log with a Privacy Screen. Require a 4-digit code before using" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bma-Eg-0jM">
-                                                    <rect key="frame" x="16" y="7.5" width="288" height="72"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="YhG-fR-X2g"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Bma-Eg-0jM" firstAttribute="leading" secondItem="LH1-Y3-ZpG" secondAttribute="leading" constant="16" id="6nO-lK-Gb4"/>
-                                                <constraint firstAttribute="trailing" secondItem="Bma-Eg-0jM" secondAttribute="trailing" constant="16" id="uJJ-lo-HXu"/>
-                                                <constraint firstItem="Bma-Eg-0jM" firstAttribute="centerY" secondItem="LH1-Y3-ZpG" secondAttribute="centerY" id="wTw-7C-OJx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

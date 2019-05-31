@@ -22,28 +22,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zu3-Pz-xTJ">
-                                        <rect key="frame" x="10" y="20" width="394" height="856"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SixColors" translatesAutoresizingMaskIntoConstraints="NO" id="JpX-lY-Cp8">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="68"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="68" id="viP-LC-gFE"/>
+                                                    <constraint firstAttribute="height" constant="80" id="viP-LC-gFE"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SixColors" translatesAutoresizingMaskIntoConstraints="NO" id="eOH-qW-Sze">
-                                                <rect key="frame" x="0.0" y="788" width="394" height="68"/>
+                                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="68" id="eaj-Uq-G8p"/>
+                                                    <constraint firstAttribute="height" constant="80" id="eaj-Uq-G8p"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3i-xb-Klc">
-                                                <rect key="frame" x="119" y="20.5" width="156" height="27.5"/>
+                                                <rect key="frame" x="129" y="40.5" width="156" height="27.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geu-qh-9Fp" userLabel="PIN Pad View">
-                                                <rect key="frame" x="73" y="227" width="248" height="402"/>
+                                                <rect key="frame" x="83" y="247" width="248" height="402"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-tx-dYE">
                                                         <rect key="frame" x="79.5" y="4" width="89" height="42"/>
@@ -52,10 +52,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="L7n-nl-S9G">
-                                                        <rect key="frame" x="0.0" y="54" width="248" height="248"/>
+                                                        <rect key="frame" x="0.0" y="54" width="248" height="332"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="N4F-wF-7Lf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="248"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="332"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy9-sB-exv" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -153,10 +153,21 @@
                                                                             <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="LIL-VC-wqD"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-I4-7Vk">
+                                                                        <rect key="frame" x="0.0" y="252" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="L6E-ki-FPE"/>
+                                                                            <constraint firstAttribute="height" constant="80" id="exJ-cB-NM7"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Delete"/>
+                                                                        <connections>
+                                                                            <action selector="tapDelete:" destination="V6k-wk-E7E" eventType="touchUpInside" id="JSc-CG-utW"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iZl-DH-Fjz">
-                                                                <rect key="frame" x="84" y="0.0" width="80" height="248"/>
+                                                                <rect key="frame" x="84" y="0.0" width="80" height="332"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BQ-8r-SWZ" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -254,10 +265,42 @@
                                                                             <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="36G-yU-HfY"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i1-8v-GHT" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="252" width="80" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="Rc2-nZ-WpQ"/>
+                                                                            <constraint firstAttribute="height" constant="80" id="TxD-wF-74d"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                                        <state key="normal" title="0"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                                                <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="PWZ-hl-4nS"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-Jo-Tl7">
-                                                                <rect key="frame" x="168" y="0.0" width="80" height="248"/>
+                                                                <rect key="frame" x="168" y="0.0" width="80" height="332"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xx8-l5-Xpv" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -355,48 +398,43 @@
                                                                             <action selector="tapPINButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="iSw-mM-1hq"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTe-Z7-1ay">
+                                                                        <rect key="frame" x="0.0" y="252" width="80" height="80"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="1kS-he-dJF"/>
+                                                                            <constraint firstAttribute="height" constant="80" id="cCl-Df-zPY"/>
+                                                                        </constraints>
+                                                                    </view>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-I4-7Vk">
-                                                        <rect key="frame" x="101.5" y="310" width="45" height="30"/>
-                                                        <state key="normal" title="Delete"/>
-                                                        <connections>
-                                                            <action selector="tapDelete:" destination="V6k-wk-E7E" eventType="touchUpInside" id="JSc-CG-utW"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2P-YX-et4">
-                                                        <rect key="frame" x="14" y="340" width="220" height="39"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                        <state key="normal" title="Enter Code or Tap Here"/>
-                                                        <connections>
-                                                            <action selector="tapButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="IgJ-IX-a3F"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Authenticate with Face ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkH-z0-hPT">
-                                                        <rect key="frame" x="0.5" y="379" width="247" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="JqV-I4-7Vk" firstAttribute="centerX" secondItem="L7n-nl-S9G" secondAttribute="centerX" id="3l9-Li-P65"/>
                                                     <constraint firstItem="P6H-tx-dYE" firstAttribute="centerX" secondItem="Geu-qh-9Fp" secondAttribute="centerX" id="8yK-cB-hPV"/>
-                                                    <constraint firstItem="JkH-z0-hPT" firstAttribute="top" secondItem="o2P-YX-et4" secondAttribute="bottom" id="BoN-He-6Mc"/>
                                                     <constraint firstItem="L7n-nl-S9G" firstAttribute="centerX" secondItem="P6H-tx-dYE" secondAttribute="centerX" id="ChA-56-G40"/>
-                                                    <constraint firstItem="JkH-z0-hPT" firstAttribute="centerX" secondItem="o2P-YX-et4" secondAttribute="centerX" id="Kjf-ZX-TW4"/>
-                                                    <constraint firstItem="o2P-YX-et4" firstAttribute="top" secondItem="JqV-I4-7Vk" secondAttribute="bottom" id="Nf2-jv-VO1"/>
                                                     <constraint firstAttribute="width" constant="248" id="S8w-qX-vZc"/>
                                                     <constraint firstItem="L7n-nl-S9G" firstAttribute="top" secondItem="P6H-tx-dYE" secondAttribute="bottom" constant="8" id="Txd-6J-b6y"/>
-                                                    <constraint firstItem="o2P-YX-et4" firstAttribute="centerX" secondItem="JqV-I4-7Vk" secondAttribute="centerX" id="YQ7-xp-WbE"/>
-                                                    <constraint firstItem="JqV-I4-7Vk" firstAttribute="top" secondItem="L7n-nl-S9G" secondAttribute="bottom" constant="8" id="f5M-Xo-Bls"/>
                                                     <constraint firstItem="P6H-tx-dYE" firstAttribute="top" secondItem="Geu-qh-9Fp" secondAttribute="top" constant="4" id="xVP-zQ-8pf"/>
                                                     <constraint firstAttribute="height" constant="402" id="zpr-Sl-xIw"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2P-YX-et4">
+                                                <rect key="frame" x="97" y="673" width="220" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Enter Code or Tap Here"/>
+                                                <connections>
+                                                    <action selector="tapButton:" destination="V6k-wk-E7E" eventType="touchUpInside" id="IgJ-IX-a3F"/>
+                                                </connections>
+                                            </button>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Authenticate with Face ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkH-z0-hPT">
+                                                <rect key="frame" x="83.5" y="712" width="247" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -404,12 +442,16 @@
                                             <constraint firstItem="JpX-lY-Cp8" firstAttribute="leading" secondItem="Zu3-Pz-xTJ" secondAttribute="leading" id="36j-Fv-vLe"/>
                                             <constraint firstItem="Geu-qh-9Fp" firstAttribute="centerY" secondItem="Zu3-Pz-xTJ" secondAttribute="centerY" id="6Sy-7X-rvQ"/>
                                             <constraint firstAttribute="trailing" secondItem="eOH-qW-Sze" secondAttribute="trailing" id="6Vb-AP-SsP"/>
+                                            <constraint firstItem="o2P-YX-et4" firstAttribute="centerX" secondItem="Geu-qh-9Fp" secondAttribute="centerX" id="AOi-On-UrZ"/>
                                             <constraint firstItem="Z3i-xb-Klc" firstAttribute="centerX" secondItem="Zu3-Pz-xTJ" secondAttribute="centerX" id="DL3-w7-RtZ"/>
+                                            <constraint firstItem="o2P-YX-et4" firstAttribute="top" secondItem="Geu-qh-9Fp" secondAttribute="bottom" constant="24" id="FmV-ER-egc"/>
                                             <constraint firstItem="eOH-qW-Sze" firstAttribute="leading" secondItem="Zu3-Pz-xTJ" secondAttribute="leading" id="NjI-9E-RhA"/>
+                                            <constraint firstItem="JkH-z0-hPT" firstAttribute="centerX" secondItem="o2P-YX-et4" secondAttribute="centerX" id="VVR-Og-p3z"/>
                                             <constraint firstItem="JpX-lY-Cp8" firstAttribute="top" secondItem="Zu3-Pz-xTJ" secondAttribute="top" id="X0G-dA-gT0"/>
-                                            <constraint firstItem="Z3i-xb-Klc" firstAttribute="centerY" secondItem="JpX-lY-Cp8" secondAttribute="centerY" id="fXy-U5-VRm"/>
+                                            <constraint firstItem="Z3i-xb-Klc" firstAttribute="centerY" secondItem="JpX-lY-Cp8" secondAttribute="centerY" constant="14" id="fXy-U5-VRm"/>
                                             <constraint firstAttribute="bottom" secondItem="eOH-qW-Sze" secondAttribute="bottom" id="gV5-Dj-xyX"/>
                                             <constraint firstAttribute="trailing" secondItem="JpX-lY-Cp8" secondAttribute="trailing" id="kc7-or-JdY"/>
+                                            <constraint firstItem="JkH-z0-hPT" firstAttribute="top" secondItem="o2P-YX-et4" secondAttribute="bottom" id="nZG-Rv-IR8"/>
                                             <constraint firstItem="Geu-qh-9Fp" firstAttribute="centerX" secondItem="Zu3-Pz-xTJ" secondAttribute="centerX" id="sum-Zo-iKc"/>
                                         </constraints>
                                     </view>
@@ -418,8 +460,8 @@
                                 <constraints>
                                     <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="centerY" secondItem="rgl-aJ-vb2" secondAttribute="centerY" id="9nk-F6-Oc1"/>
                                     <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="centerX" secondItem="rgl-aJ-vb2" secondAttribute="centerX" id="Efn-oL-txG"/>
-                                    <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="leading" secondItem="rgl-aJ-vb2" secondAttribute="leading" constant="10" id="bEC-RQ-r1x"/>
-                                    <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="top" secondItem="rgl-aJ-vb2" secondAttribute="top" constant="20" id="nXu-zS-VqV"/>
+                                    <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="leading" secondItem="rgl-aJ-vb2" secondAttribute="leading" id="bEC-RQ-r1x"/>
+                                    <constraint firstItem="Zu3-Pz-xTJ" firstAttribute="top" secondItem="rgl-aJ-vb2" secondAttribute="top" id="nXu-zS-VqV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -457,7 +499,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-bO-gss">
-                                <rect key="frame" x="20" y="257" width="374" height="42"/>
+                                <rect key="frame" x="20" y="215" width="374" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Fvh-z7-Pk3"/>
                                 </constraints>
@@ -466,10 +508,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ZxI-1e-wAt">
-                                <rect key="frame" x="83" y="329" width="248" height="248"/>
+                                <rect key="frame" x="83" y="287" width="248" height="332"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Z4G-l5-OS6">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="248"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="332"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEK-f3-diQ" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -567,10 +609,22 @@
                                                     <action selector="tapPINButton:" destination="f7t-Aq-rdx" eventType="touchUpInside" id="HtF-pE-Um8"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB7-1e-HNh">
+                                                <rect key="frame" x="0.0" y="252" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="f5U-VH-AM0"/>
+                                                    <constraint firstAttribute="height" constant="80" id="mKd-6l-dzh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Delete"/>
+                                                <connections>
+                                                    <action selector="tapDelete:" destination="f7t-Aq-rdx" eventType="touchUpInside" id="YIB-AB-viK"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="L3n-5x-AxL">
-                                        <rect key="frame" x="84" y="0.0" width="80" height="248"/>
+                                        <rect key="frame" x="84" y="0.0" width="80" height="332"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmz-S1-E3e" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -668,10 +722,42 @@
                                                     <action selector="tapPINButton:" destination="f7t-Aq-rdx" eventType="touchUpInside" id="8SC-io-a5F"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpO-M3-V7a" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="252" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="D2J-6u-vNO"/>
+                                                    <constraint firstAttribute="height" constant="80" id="riR-gs-6IR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="0"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="26"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="tapColor">
+                                                        <color key="value" red="0.0" green="0.50980392159999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapPINButton:" destination="f7t-Aq-rdx" eventType="touchUpInside" id="Q88-Du-8Lg"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PXQ-6g-0kW">
-                                        <rect key="frame" x="168" y="0.0" width="80" height="248"/>
+                                        <rect key="frame" x="168" y="0.0" width="80" height="332"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeg-hr-Uk7" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -769,62 +855,73 @@
                                                     <action selector="tapPINButton:" destination="f7t-Aq-rdx" eventType="touchUpInside" id="3CA-ju-d95"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G04-YS-lUE">
+                                                <rect key="frame" x="0.0" y="252" width="80" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMd-zL-yWg" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="20" width="80" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="cme-Ue-nXc"/>
+                                                            <constraint firstAttribute="height" constant="40" id="pfD-fM-lkX"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Cancel"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                                <real key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="tapCancel:" destination="f7t-Aq-rdx" eventType="touchUpInside" id="uav-T4-CbY"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="6Bv-hM-2HM"/>
+                                                    <constraint firstItem="UMd-zL-yWg" firstAttribute="centerX" secondItem="G04-YS-lUE" secondAttribute="centerX" id="IsN-km-fSh"/>
+                                                    <constraint firstItem="UMd-zL-yWg" firstAttribute="centerY" secondItem="G04-YS-lUE" secondAttribute="centerY" id="Pnv-xm-0Sp"/>
+                                                    <constraint firstAttribute="height" constant="80" id="emc-Xk-jNm"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fon-0O-YsN">
-                                <rect key="frame" x="184.5" y="587" width="45" height="30"/>
-                                <state key="normal" title="Delete"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5a-SQ-dy1">
+                                <rect key="frame" x="130" y="665" width="154" height="30"/>
+                                <state key="normal" title="Disable with Passcode"/>
                                 <connections>
-                                    <action selector="tapDelete:" destination="f7t-Aq-rdx" eventType="touchUpInside" id="fAa-C7-E7i"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMd-zL-yWg" customClass="RoundedButton" customModule="Mood_Log" customModuleProvider="target">
-                                <rect key="frame" x="157" y="637" width="100" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="cme-Ue-nXc"/>
-                                    <constraint firstAttribute="height" constant="40" id="pfD-fM-lkX"/>
-                                </constraints>
-                                <state key="normal" title="Cancel"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="tapCancel:" destination="f7t-Aq-rdx" eventType="touchUpInside" id="uav-T4-CbY"/>
+                                    <action selector="tapDisableWithPasscode:" destination="f7t-Aq-rdx" eventType="touchUpInside" id="Swe-dQ-VAl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UMd-zL-yWg" firstAttribute="centerX" secondItem="Fon-0O-YsN" secondAttribute="centerX" id="154-jE-Vq4"/>
+                            <constraint firstItem="q5a-SQ-dy1" firstAttribute="top" secondItem="ZxI-1e-wAt" secondAttribute="bottom" constant="46" id="1g7-YW-mXF"/>
+                            <constraint firstItem="q5a-SQ-dy1" firstAttribute="centerX" secondItem="ZxI-1e-wAt" secondAttribute="centerX" id="3Sp-2r-f6u"/>
                             <constraint firstItem="ZxI-1e-wAt" firstAttribute="centerY" secondItem="ohi-w2-7P4" secondAttribute="centerY" id="78E-KL-Y4l"/>
                             <constraint firstItem="ZxI-1e-wAt" firstAttribute="top" secondItem="PHZ-bO-gss" secondAttribute="bottom" constant="30" id="Hae-T5-9r5"/>
                             <constraint firstItem="ZxI-1e-wAt" firstAttribute="centerX" secondItem="ohi-w2-7P4" secondAttribute="centerX" id="RVc-zZ-9Mz"/>
                             <constraint firstItem="ohi-w2-7P4" firstAttribute="trailing" secondItem="PHZ-bO-gss" secondAttribute="trailing" constant="20" id="ULv-8w-x4g"/>
-                            <constraint firstItem="Fon-0O-YsN" firstAttribute="centerX" secondItem="ohi-w2-7P4" secondAttribute="centerX" id="hXI-5u-yJJ"/>
                             <constraint firstItem="PHZ-bO-gss" firstAttribute="leading" secondItem="ohi-w2-7P4" secondAttribute="leading" constant="20" id="iZs-kS-GHT"/>
-                            <constraint firstItem="UMd-zL-yWg" firstAttribute="top" secondItem="Fon-0O-YsN" secondAttribute="bottom" constant="20" id="ucC-om-TwH"/>
-                            <constraint firstItem="Fon-0O-YsN" firstAttribute="top" secondItem="ZxI-1e-wAt" secondAttribute="bottom" constant="10" id="wsR-VG-XUg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ohi-w2-7P4"/>
                     </view>
                     <connections>
-                        <outlet property="deleteButton" destination="Fon-0O-YsN" id="lKc-sB-mZS"/>
+                        <outlet property="deleteButton" destination="jB7-1e-HNh" id="4W8-1Q-HRl"/>
+                        <outlet property="disableWithPasscodeButton" destination="q5a-SQ-dy1" id="UKu-JW-WOL"/>
                         <outlet property="topLabel" destination="PHZ-bO-gss" id="9RS-Nh-V7M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TR-hU-rcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1007.2463768115942" y="1822.7678571428571"/>
+            <point key="canvasLocation" x="-1074" y="1823"/>
         </scene>
     </scenes>
     <resources>

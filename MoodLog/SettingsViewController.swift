@@ -27,15 +27,19 @@ class SettingsViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        showPrivacyScreenIfNeeded()
+    }
+    
+    @objc func noticeBroughtToForeground(_ sender: Any) {
+        showPrivacyScreenIfNeeded()
+    }
+    
+    func showPrivacyScreenIfNeeded() {
         if let delegate = UIApplication.shared.delegate as? MlAppDelegate {
             if delegate.loggedIn == false && delegate.showPrivacyScreen == true {
                 self.performSegue(withIdentifier: "showPrivacyScreen", sender: self)
             }
         }
-    }
-    
-    @objc func noticeBroughtToForeground(_ sender: Any) {
-        self.viewDidAppear(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +74,11 @@ class SettingsViewController: UITableViewController {
 
     func wasCanceled() {
         privacyScreenSwitch.isOn = !privacyScreenSwitch.isOn
+        if privacyScreenSwitch.isOn { // If it was canceled when on, show the privacy screen
+            if let delegate = UIApplication.shared.delegate as? MlAppDelegate {
+                delegate.showPrivacyScreen = true
+            }
+        }
         if let appDelegate = (UIApplication.shared.delegate as? MlAppDelegate) {
             appDelegate.showPrivacyScreen = privacyScreenSwitch.isOn
             defaults.set(appDelegate.showPrivacyScreen, forKey: kPrivacyScreenKey)
@@ -80,7 +89,7 @@ class SettingsViewController: UITableViewController {
     @IBAction func showPrivacyViewController(_ sender: Any) {
         let sb = UIStoryboard(name: "PrivacyScreen", bundle: nil)
         if let pinVC = sb.instantiateViewController(withIdentifier: "pinViewController") as? PrivacySetterViewController {
-            pinVC.modalPresentationStyle = .overFullScreen
+            pinVC.modalPresentationStyle = .fullScreen
             pinVC.labelText = "Choose a code"
             pinVC.newPIN = true
             pinVC.settingsVC = self
@@ -93,8 +102,8 @@ class SettingsViewController: UITableViewController {
     @IBAction func hidePrivacyViewController(_ sender: Any) {
         let sb = UIStoryboard(name: "PrivacyScreen", bundle: nil)
         if let pinVC = sb.instantiateViewController(withIdentifier: "pinViewController") as? PrivacySetterViewController {
-            pinVC.modalPresentationStyle = .overFullScreen
-            pinVC.labelText = "Enter code"
+            pinVC.modalPresentationStyle = .fullScreen
+            pinVC.labelText = "Enter code to disable Privacy Screen"
             pinVC.newPIN = false
             pinVC.settingsVC = self
            self.present(pinVC, animated: true, completion: {

@@ -169,8 +169,10 @@ func textAsStars(_ text: String) -> String {
     for _ in 0..<text.count {
         stars = stars + "●"
     }
-    for _ in text.count..<pinMax {
-        stars = stars + "○"
+    if text.count < pinMax {
+        for _ in text.count..<pinMax {
+            stars = stars + "○"
+        }
     }
     return stars
 }
@@ -182,8 +184,10 @@ func textAsNumberBalls(_ text: String) -> String {
             numberBallText = "\(numberBallText)\(numberBalls[i])"
         }
     }
-    for _ in text.count..<pinMax {
-        numberBallText = numberBallText + "○"
+    if text.count < pinMax {
+        for _ in text.count..<pinMax {
+            numberBallText = numberBallText + "○"
+        }
     }
     return numberBallText
 }
