@@ -719,6 +719,9 @@ var height = heightForView("This is just a load of text", font: font, width: 100
     
     cell.timeLabel.font = self.timeLabelFont;
     cell.timeLabel.text = [dateFormatter stringFromDate: today];
+    if ([cellIdentifier isEqualToString:@"Cell"]) {
+        cell.moodsChart.circumference = 18; // Size on iPhone and narrow displays; otherwise use default
+    }
     
     // Fetch the Mood list for this journal entry
     NSSet *emotionsforEntry = object.relationshipEmotions; // Get all the emotions for this record
@@ -758,6 +761,7 @@ var height = heightForView("This is just a load of text", font: font, width: 100
         }
         // Set up the charts
         if (cell.moodsChart != nil) {
+            [cell.moodsChart setHidden:NO];
             NSMutableDictionary *categoryCounts = [@{love : @0, joy : @0, surprise : @0, anger : @0, sadness : @0, fear : @0} mutableCopy];
             for (Emotions *emotion in emotionArray) {
                 NSString *thisCategory = emotion.category;
@@ -769,6 +773,9 @@ var height = heightForView("This is just a load of text", font: font, width: 100
             cell.moodsChart.chartType = @"Pie";
             [cell.moodsChart setNeedsDisplay];
         }
+    }
+    else {
+        [cell.moodsChart setHidden:YES]; // No moods to display
     }
     NSMutableString *displayString = [[NSMutableString alloc] init];
     NSUInteger entryEnd = 0;
